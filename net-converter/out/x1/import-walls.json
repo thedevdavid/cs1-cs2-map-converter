@@ -1156,7 +1156,7 @@
       "id": "e1253_0",
       "a": "n28056",
       "b": "n15902",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1393.34,
@@ -1304,7 +1304,7 @@
       "id": "e3130_0",
       "a": "n3095",
       "b": "n10367",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1337.55,
@@ -1325,7 +1325,7 @@
       "id": "e3511_0",
       "a": "n5486",
       "b": "n18959",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           969.24,
@@ -1431,7 +1431,7 @@
       "id": "e6208_0",
       "a": "n18959",
       "b": "n2831",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1001.35,
@@ -1452,7 +1452,7 @@
       "id": "e6441_0",
       "a": "n19399",
       "b": "n24081",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1259.47,
@@ -1707,7 +1707,7 @@
       "id": "e11878_0",
       "a": "n24081",
       "b": "n1253",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1248.48,
@@ -1897,7 +1897,7 @@
       "id": "e13764_0",
       "a": "n32402",
       "b": "n24760",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1214.62,
@@ -1981,7 +1981,7 @@
       "id": "e15458_0",
       "a": "n11212",
       "b": "n12536",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1304.18,
@@ -2002,7 +2002,7 @@
       "id": "e15645_0",
       "a": "n12536",
       "b": "n18251",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1294.41,
@@ -2280,7 +2280,7 @@
       "id": "e20259_0",
       "a": "n4888",
       "b": "n26010",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1170.12,
@@ -2513,7 +2513,7 @@
       "id": "e23256_0",
       "a": "n25620",
       "b": "n3095",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1348.64,
@@ -2705,7 +2705,7 @@
       "id": "e26399_0",
       "a": "n26010",
       "b": "n30463",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1159.34,
@@ -2936,7 +2936,7 @@
       "id": "e28383_0",
       "a": "n15902",
       "b": "n4861",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1382.26,
@@ -3336,7 +3336,7 @@
       "id": "e35143_0",
       "a": "n24760",
       "b": "n26199",
-      "prefab": "Medium Boatway",
+      "prefab": "Narrow Boatway",
       "control": [
         [
           1203.69,

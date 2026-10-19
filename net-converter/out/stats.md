@@ -107,7 +107,7 @@ None: every network prefab in the dump matched a rule.
 | Castle Wall 1 | 10 | SKIP | skip | 75 |
 | Castle Wall 3 | 2 | SKIP | skip | 75 |
 | 2966434181.Retaining Walls - AiO #01_Data | 90 | QuaySmall01 | walls | 68 |
-| Canal | 14 | Medium Boatway | walls | 69 |
+| Canal | 14 | Narrow Boatway | walls | 69 |
 | Flood Wall | 2 | Sound Barrier | walls | 70 |
 | Quay | 7 | QuaySmall01 | walls | 67 |
 
@@ -299,12 +299,12 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | 1978360460.Brown Surface Rock B Large_Data | 192 | rzrock1, rzrock7, Rock21, Rock22, Rock23, Rock24, Rock25, Rock26, Rock27, Rock28, Rock29, Rock30 |
 | 1988121829.Grey Breakwater Rocks 01_Data | 172 | rzrock2, rzrock3, rzrock4, rzrock5, rzrock8 |
 | 1978360460.Brown Surface Rock B Medium_Data | 137 | RZaridrock1, RZaridrock2, RZaridrock5, Rock11, Rock12, Rock13, Rock14, Rock15, Rock16, Rock17, Rock18, Rock19, Rock20 |
-| 2074426936.Fallen Pine Stump 02_Data | 116 | PineTreeStump01 |
+| 2074426936.Fallen Pine Stump 02_Data | 116 | LogRandom01 |
 | 767694644.R69 Big Decal Dirt_Data | 113 | SKIP: no dirt/mud decal without EAI: converted to Dirty Surfaces Pack area surfaces (import-surfaces-decals.json) |
 | 2074426936.Fallen Pine 02 TC_Data | 71 | Log01, Log02, Log03, Log04 |
 | 2097539846.[US] 4-Lane Highway Pillar_Data | 42 | SKIP: CS2 places pillars for its own bridges |
 | 2074426936.Fallen Pine 07 LP TC_Data | 40 | Log01, Log02, Log03, Log04 |
-| 2074426936.Fallen Pine Stump 01_Data | 34 | PineTreeStump01 |
+| 2074426936.Fallen Pine Stump 01_Data | 34 | LogRandom01 |
 | 2074426936.Fallen Pine 07 LP_Data | 31 | Log01, Log02, Log03, Log04 |
 | 2098643957.[US] 3-Lane Highway Pillar_Data | 28 | SKIP: CS2 places pillars for its own bridges |
 | 2074426936.Fallen Pine 02_Data | 28 | Log01, Log02, Log03, Log04 |
@@ -314,7 +314,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | Warning Light Red | 24 | WarningLight01 |
 | Modern Fence 02 | 22 | FenceResidentialPieceLow01 |
 | Destroyed Road Prop 03 | 18 | RubblePileConcrete01, RubblePileConcrete02 |
-| Trashpile | 18 | PileGarbageMediumLow01 |
+| Trashpile | 18 | TrashbagRandom01 |
 | 2074426936.Fallen Pine 03_Data | 15 | Log01, Log02, Log03, Log04 |
 | 2074426936.Fallen Pine 06 LP_Data | 11 | Log01, Log02, Log03, Log04 |
 | 2074426936.Fallen Pine 05 LP_Data | 10 | Log01, Log02, Log03, Log04 |
@@ -332,12 +332,12 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | 1988876538.Brown Modular C Formation 01_Data | 3 | CliffRock3 |
 | 2926036331.R2USA W TrWo 2x2 TRH Girder 02_Data_bridgePillar | 3 | SKIP: CS2 places pillars for its own bridges |
 | Wooden Footbridge Pillar 12 | 3 | SKIP: CS2 places pillars for its own bridges |
-| Dirt Pile 02 | 3 | PileStoneSmallLow01 |
-| Dirt Pile 01 | 3 | PileStoneSmallLow01 |
+| Dirt Pile 02 | 3 | RubblePileMixedRandom01 |
+| Dirt Pile 01 | 3 | RubblePileMixedRandom01 |
 | 874716774.R69 Big Decal Mud 2_Data | 3 | SKIP: no dirt/mud decal without EAI: converted to Dirty Surfaces Pack area surfaces (import-surfaces-decals.json) |
 | Castle Ruins 02 | 2 | RuinsCastle01 |
 | 1988876538.Brown Modular C Formation 03_Data | 2 | CliffRock3 |
-| Pier Ruins 01 | 2 | LeisurePier01Small01 |
+| Pier Ruins 01 | 2 | LeisurePier01HeadSmall |
 | 2931939156.Detroit Bridge_Data | 2 | MANUAL: CS1 bridge model placed as a building; in CS2 build TrussArchBridge01 / ExtradosedBridge01 along the road instead |
 | Stop Sign | 2 | NA_StopSign01 |
 | Bench 01 | 2 | GardenBench01 |
@@ -357,7 +357,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | Concrete Debris 03 | 1 | RubblePileConcrete01, RubblePileConcrete02 |
 | Park Trashbin 01 | 1 | SKIP: no matching bin name verified |
 | 2074426936.Fallen Pine 01 TC_Data | 1 | Log01, Log02, Log03, Log04 |
-| Dirt Pile 03 | 1 | PileStoneSmallLow01 |
+| Dirt Pile 03 | 1 | RubblePileMixedRandom01 |
 | Garbage Bin | 1 | SKIP: no matching bin name verified |
 
 - Outside connections: 25 objects (road 16, rail 4, air 4, ship 1); border nodes 20, 20 with a CS1 connection (connections-check.md).
@@ -367,7 +367,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Barrier props (import-walls-props.json): 621 ConcreteBarrier01 / SafetyBarrier01 pieces every 3 m along 62 CS1 barrier segments (piece length unverified).
 - Field surfaces (import-surfaces-fields.json): 56 polygons, 3.130 km², max 163 points; footprints also raise fertility to ≥ 220.
 - Grass surfaces from 3076 Landscape Grass props (import-surfaces-grass.json, optional): 51 polygons, 0.026 km², max 130 points.
-- Rock surfaces (import-surfaces-rock.json): 10190442-dktflls-1to1.png (|err| vs CS1 nodes 0.01 m), steep area 0.63 km² in 145 patches >= 400 m²; 151 polygons kept (0.60 km²), 0 smallest dropped.
+- Rock surfaces (import-surfaces-rock.json): DakotaFalls-1to1-4096.png (|err| vs CS1 nodes 0.01 m), steep area 0.63 km² in 145 patches >= 400 m²; 151 polygons kept (0.60 km²), 0 smallest dropped.
 - Decal surfaces (import-surfaces-decals.json; PDO23 Dirty Surface 01 / PDO23 Soil Surface 01): 41 polygons, 0.022 km², max 298 points.
 - Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
 - Resources: import-resources.json from the dump's naturalResources.
@@ -382,14 +382,14 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | Decals (R69 dirt/mud) | props | 128 | 41 as surfaces | 87 (outside ±7168) | → 16 m squares of PDO23 Dirty Surface 01 (dirt) / PDO23 Soil Surface 01 (mud), import-surfaces-decals.json |
 | Pedestrian Gravel / Elevated | network segments | 24 | 24 | 0 | → Pavement Path (roads layer, elevations kept); CS2 has no gravel path |
 | Quay | network segments | 7 | 7 | 0 | → QuayMedium01 (walls layer, import-walls.json) |
-| Canal | network segments | 14 | 14 | 0 | → Medium Boatway (walls layer); CS2 boatways are canals |
+| Canal | network segments | 14 | 14 | 0 | → Narrow Boatway (walls layer); CS2 boatways are canals |
 | Flood Wall | network segments | 2 | 2 | 0 | → Sound Barrier (walls layer), the only wall network by name |
 | Retaining Walls AiO | network segments | 90 | 90 | 0 | → QuaySmall01 (walls layer); no retaining-wall network, quay wall is the nearest (unverified inland) |
 | Concrete / Steel barriers | network segments | 62 | 61 as props | 1 (outside ±7168) | → 621 ConcreteBarrier01 / SafetyBarrier01 props every 3 m (import-walls-props.json) |
 | Castle Wall | network segments | 12 | 0 | 12 | NO TWIN, kept skipped: searched Assets.NAME for Wall/Castle/Rampart/Fort/Ruin (only garden walls EU_Wall*, RuinsCastle01 building, Sound Barrier) |
 | Ship paths | network segments | 118 | 100 | 18 | → Medium Seaway (import-shippaths.json), clipped to end on the border |
 | Airplane paths | network segments | 319 | 0 | 319 | kept skipped: the game routes planes |
-| Ruins / wreck / factory | buildings | 7 | 7 | 0 | → LeisurePier01Small01 / RubblePileWood02 / RuinsOldMill01 / RuinsCastle01 (nearest by name) |
+| Ruins / wreck / factory | buildings | 7 | 7 | 0 | → LeisurePier01HeadSmall / RubblePileWood02 / RuinsOldMill01 / RuinsCastle01 (nearest by name) |
 | Terraforming Network | network segments | 233 | 0 | 233 | kept skipped: CS1 terrain-shaping helper (terrain is in the heightmap) |
 | Pillars | buildings | 112 | 0 | 112 | kept skipped: CS2 bridges spawn their own pillars |
 | Modern Fence 02 | props | 22 | 22 | 0 | → FenceResidentialPieceLow01 (piece length unverified) |

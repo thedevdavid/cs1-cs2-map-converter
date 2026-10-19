@@ -240,3 +240,5 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
 - Network skins: IMPORT_SCHEMA.md has no edge field for them, so edges carry informational `noPillars` / `noStreetLights` fields, stats.md has a Network Skins row
   and manual-objects.md lists the segments.
 - `node tools/run-all.mjs` writes `out/ROUND7.md` (= ROUND.md).
+- Run A name fixes (live game build): Canal → Narrow Boatway (only Pier and Narrow exist), Pier Ruins → LeisurePier01HeadSmall, Fallen Pine Stump → LogRandom01,
+  Trashpile → TrashbagRandom01, Dirt Pile → RubblePileMixedRandom01; the pier and ElectricalSubstation01 have kind `object` (the bridge classifies them so).

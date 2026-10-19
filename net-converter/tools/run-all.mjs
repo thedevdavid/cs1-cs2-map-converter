@@ -74,5 +74,7 @@ ${rows.join("\n")}
 
 Reports (both folders): ${extras.map(f => `\`${f}\``).join(", ")}.
 `);
-for (const name of ["ROUND.md", "ROUND7.md"]) writeFileSync(join(out, name), summary);
+// Live results reported back from the game (hand-written, kept across reruns).
+const liveResult = existsSync(join(out, "live-result.md")) ? "\n" + readFileSync(join(out, "live-result.md"), "utf8") : "";
+for (const name of ["ROUND.md", "ROUND7.md"]) writeFileSync(join(out, name), summary + liveResult);
 console.log(`summary: ${join(out, "ROUND7.md")}`);

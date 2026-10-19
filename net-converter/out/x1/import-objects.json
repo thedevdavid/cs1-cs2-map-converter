@@ -10869,12 +10869,12 @@
     },
     {
       "id": "b21005",
-      "prefab": "LeisurePier01Small01",
+      "prefab": "LeisurePier01HeadSmall",
       "x": 4802.02,
       "z": -747.25,
       "y": 142.5,
       "rotation": 349,
-      "kind": "building",
+      "kind": "object",
       "cs1": "Pier Ruins 01"
     },
     {
@@ -12141,11 +12141,11 @@
     },
     {
       "id": "b23348",
-      "prefab": "LeisurePier01Small01",
+      "prefab": "LeisurePier01HeadSmall",
       "x": 298.47,
       "z": -2983.47,
       "rotation": 190.65,
-      "kind": "building",
+      "kind": "object",
       "cs1": "Pier Ruins 01"
     },
     {
@@ -20233,7 +20233,7 @@
       "z": 4549.11,
       "y": 163.9,
       "rotation": 318.04,
-      "kind": "building",
+      "kind": "object",
       "cs1": "SEC Extra Large Substation_Data"
     },
     {
@@ -25083,7 +25083,7 @@
     },
     {
       "id": "p182",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1274.96,
       "z": 6158.88,
       "rotation": 108,
@@ -25413,7 +25413,7 @@
     },
     {
       "id": "p792",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1384.94,
       "z": 6169.06,
       "rotation": 150.26,
@@ -25681,7 +25681,7 @@
     },
     {
       "id": "p1248",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 477.53,
       "z": 1113.24,
       "rotation": 149.5,
@@ -26131,7 +26131,7 @@
     },
     {
       "id": "p1861",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1274.44,
       "z": 6143.14,
       "y": 161.36,
@@ -26330,7 +26330,7 @@
     },
     {
       "id": "p2161",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1300.05,
       "z": 6147.29,
       "y": 157.62,
@@ -26431,7 +26431,7 @@
     },
     {
       "id": "p2300",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 595.15,
       "z": -2680.37,
       "rotation": -0,
@@ -26563,7 +26563,7 @@
     },
     {
       "id": "p2635",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1269.31,
       "z": 6147.21,
       "y": 161.36,
@@ -26634,7 +26634,7 @@
     },
     {
       "id": "p2729",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1387.69,
       "z": 6163.31,
       "rotation": 103.76,
@@ -26766,7 +26766,7 @@
     },
     {
       "id": "p2935",
-      "prefab": "PileStoneSmallLow01",
+      "prefab": "RubblePileMixedRandom01",
       "x": 1459,
       "z": 6179.21,
       "rotation": 73,
@@ -26933,7 +26933,7 @@
     },
     {
       "id": "p3239",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1373.4,
       "z": 6162.16,
       "rotation": 47.05,
@@ -27002,7 +27002,7 @@
     },
     {
       "id": "p3288",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1288.02,
       "z": 6161.61,
       "rotation": 231.02,
@@ -27425,7 +27425,7 @@
     },
     {
       "id": "p4040",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1000.24,
       "z": 3373.92,
       "rotation": 287.5,
@@ -27495,7 +27495,7 @@
     },
     {
       "id": "p4152",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1295.41,
       "z": 6148.34,
       "rotation": 93.5,
@@ -27645,7 +27645,7 @@
     },
     {
       "id": "p4474",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1299.52,
       "z": 6152.73,
       "y": 157.66,
@@ -27897,7 +27897,7 @@
     },
     {
       "id": "p5046",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1287.35,
       "z": 6152.86,
       "rotation": 349.65,
@@ -27906,7 +27906,7 @@
     },
     {
       "id": "p5054",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1426.21,
       "z": 6174.94,
       "rotation": 259.01,
@@ -27985,7 +27985,7 @@
     },
     {
       "id": "p5130",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1293.21,
       "z": 6148.46,
       "rotation": 228.65,
@@ -28132,7 +28132,7 @@
     },
     {
       "id": "p5235",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1295.75,
       "z": 6153.85,
       "y": 157.62,
@@ -28264,7 +28264,7 @@
     },
     {
       "id": "p5494",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1278.09,
       "z": 6157.65,
       "rotation": 54.5,
@@ -28352,7 +28352,7 @@
     },
     {
       "id": "p5665",
-      "prefab": "PileStoneSmallLow01",
+      "prefab": "RubblePileMixedRandom01",
       "x": 1211.38,
       "z": 6136.1,
       "rotation": 126.5,
@@ -28754,7 +28754,7 @@
     },
     {
       "id": "p6457",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1428.22,
       "z": 6170.46,
       "rotation": 254.01,
@@ -29175,7 +29175,7 @@
     },
     {
       "id": "p7100",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1386.5,
       "z": 6163.82,
       "rotation": 89.26,
@@ -29476,7 +29476,7 @@
     },
     {
       "id": "p7820",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1292.29,
       "z": 6146.66,
       "rotation": 99.9,
@@ -29764,7 +29764,7 @@
     },
     {
       "id": "p8298",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1299.7,
       "z": 6154.84,
       "y": 156.94,
@@ -29836,7 +29836,7 @@
     },
     {
       "id": "p8398",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1075.49,
       "z": 4202.3,
       "rotation": 155.5,
@@ -30304,7 +30304,7 @@
     },
     {
       "id": "p9394",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1300.29,
       "z": 6157.64,
       "y": 157.69,
@@ -30655,7 +30655,7 @@
     },
     {
       "id": "p10050",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1071.77,
       "z": 3502.22,
       "rotation": 359.5,
@@ -30858,7 +30858,7 @@
     },
     {
       "id": "p10542",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1293.98,
       "z": 6148.2,
       "rotation": 327.83,
@@ -31068,7 +31068,7 @@
     },
     {
       "id": "p10873",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1296.06,
       "z": 6141.63,
       "y": 156.86,
@@ -31500,7 +31500,7 @@
     },
     {
       "id": "p11620",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1426.35,
       "z": 6171.56,
       "rotation": 276.77,
@@ -31780,7 +31780,7 @@
     },
     {
       "id": "p12157",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1167.98,
       "z": 3985.46,
       "rotation": 272,
@@ -31898,7 +31898,7 @@
     },
     {
       "id": "p12294",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1431.62,
       "z": 6174.8,
       "y": 157.03,
@@ -32055,7 +32055,7 @@
     },
     {
       "id": "p12631",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1287.85,
       "z": 6153.2,
       "rotation": 181.15,
@@ -32633,7 +32633,7 @@
     },
     {
       "id": "p13617",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1387.32,
       "z": 6172.36,
       "rotation": 174.76,
@@ -32943,7 +32943,7 @@
     },
     {
       "id": "p14107",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1072.62,
       "z": 3501.78,
       "rotation": 359.5,
@@ -33154,7 +33154,7 @@
     },
     {
       "id": "p14383",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1426.64,
       "z": 6171.17,
       "rotation": 247.01,
@@ -33203,7 +33203,7 @@
     },
     {
       "id": "p14449",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1279.4,
       "z": 6153.62,
       "rotation": 80.15,
@@ -33696,7 +33696,7 @@
     },
     {
       "id": "p15552",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1373.5,
       "z": 6166.98,
       "rotation": 9.05,
@@ -33806,7 +33806,7 @@
     },
     {
       "id": "p15869",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1319.5,
       "z": 6152.06,
       "y": 161.48,
@@ -33816,7 +33816,7 @@
     },
     {
       "id": "p15908",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1299.1,
       "z": 6141.78,
       "y": 156.98,
@@ -33836,7 +33836,7 @@
     },
     {
       "id": "p15919",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1293.14,
       "z": 6154.59,
       "rotation": 242.15,
@@ -34532,7 +34532,7 @@
     },
     {
       "id": "p16932",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1278.27,
       "z": 6151.71,
       "rotation": 48.5,
@@ -34541,7 +34541,7 @@
     },
     {
       "id": "p16945",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1293.57,
       "z": 6148.84,
       "y": 157.66,
@@ -35562,7 +35562,7 @@
     },
     {
       "id": "p18682",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1386.93,
       "z": 6161.33,
       "rotation": 59.76,
@@ -35972,7 +35972,7 @@
     },
     {
       "id": "p19333",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1272.85,
       "z": 6154.38,
       "rotation": 162.65,
@@ -36214,7 +36214,7 @@
     },
     {
       "id": "p19718",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1390.88,
       "z": 6172.84,
       "rotation": 304.1,
@@ -36414,7 +36414,7 @@
     },
     {
       "id": "p20092",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1167.46,
       "z": 3983.1,
       "rotation": 272,
@@ -36698,7 +36698,7 @@
     },
     {
       "id": "p20677",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1426.55,
       "z": 6175.64,
       "rotation": 15.26,
@@ -36939,7 +36939,7 @@
     },
     {
       "id": "p21136",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1289.15,
       "z": 6162.25,
       "rotation": 216.52,
@@ -37008,7 +37008,7 @@
     },
     {
       "id": "p21252",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1388.82,
       "z": 6180.9,
       "rotation": 125.37,
@@ -37100,7 +37100,7 @@
     },
     {
       "id": "p21381",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1276.47,
       "z": 6155.86,
       "rotation": 323,
@@ -37109,7 +37109,7 @@
     },
     {
       "id": "p21421",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1268.64,
       "z": 6141.14,
       "y": 161.36,
@@ -37149,7 +37149,7 @@
     },
     {
       "id": "p21483",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1090.06,
       "z": 4205,
       "rotation": 290,
@@ -37449,7 +37449,7 @@
     },
     {
       "id": "p22185",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1281.95,
       "z": 6156.87,
       "rotation": 126,
@@ -37800,7 +37800,7 @@
     },
     {
       "id": "p22732",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1082.84,
       "z": 4203.07,
       "rotation": 56,
@@ -38093,7 +38093,7 @@
     },
     {
       "id": "p23329",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1380.71,
       "z": 6173.47,
       "rotation": 156,
@@ -38112,7 +38112,7 @@
     },
     {
       "id": "p23368",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1072.07,
       "z": 3501.4,
       "rotation": 359.5,
@@ -38353,7 +38353,7 @@
     },
     {
       "id": "p23693",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1426.84,
       "z": 6174.74,
       "rotation": 22.26,
@@ -38383,7 +38383,7 @@
     },
     {
       "id": "p23767",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1317.89,
       "z": 6151.6,
       "y": 161.48,
@@ -38393,7 +38393,7 @@
     },
     {
       "id": "p23768",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1294.36,
       "z": 6143.85,
       "rotation": 126.82,
@@ -38671,7 +38671,7 @@
     },
     {
       "id": "p24249",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1385.71,
       "z": 6175.05,
       "rotation": 203,
@@ -39919,7 +39919,7 @@
     },
     {
       "id": "p26406",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1425.21,
       "z": 6174.17,
       "rotation": 241.51,
@@ -40443,7 +40443,7 @@
     },
     {
       "id": "p27396",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1268.54,
       "z": 6144.81,
       "y": 161.36,
@@ -40853,7 +40853,7 @@
     },
     {
       "id": "p28050",
-      "prefab": "PileStoneSmallLow01",
+      "prefab": "RubblePileMixedRandom01",
       "x": 1210.06,
       "z": 6130.39,
       "rotation": 100.5,
@@ -40961,7 +40961,7 @@
     },
     {
       "id": "p28151",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1380.98,
       "z": 6177.81,
       "rotation": 215,
@@ -41040,7 +41040,7 @@
     },
     {
       "id": "p28211",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 540.3,
       "z": 470.67,
       "rotation": 85.5,
@@ -41499,7 +41499,7 @@
     },
     {
       "id": "p29035",
-      "prefab": "PileStoneSmallLow01",
+      "prefab": "RubblePileMixedRandom01",
       "x": 1212.94,
       "z": 6131.55,
       "rotation": 73,
@@ -41549,7 +41549,7 @@
     },
     {
       "id": "p29147",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1300.33,
       "z": 6140.28,
       "y": 156.98,
@@ -41760,7 +41760,7 @@
     },
     {
       "id": "p29470",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1386.56,
       "z": 6170.66,
       "rotation": 283.1,
@@ -41841,7 +41841,7 @@
     },
     {
       "id": "p29666",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1385.54,
       "z": 6175.98,
       "rotation": 210,
@@ -42101,7 +42101,7 @@
     },
     {
       "id": "p30154",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1387.3,
       "z": 6179.61,
       "rotation": 261.5,
@@ -42120,7 +42120,7 @@
     },
     {
       "id": "p30183",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 477.98,
       "z": 1112.53,
       "rotation": 149.5,
@@ -42373,7 +42373,7 @@
     },
     {
       "id": "p30556",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1298.45,
       "z": 6153.46,
       "y": 157.44,
@@ -43352,7 +43352,7 @@
     },
     {
       "id": "p32422",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 531.92,
       "z": 474.48,
       "rotation": 85.5,
@@ -43473,7 +43473,7 @@
     },
     {
       "id": "p32683",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1296.69,
       "z": 6144.21,
       "y": 157.11,
@@ -43493,7 +43493,7 @@
     },
     {
       "id": "p32763",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1422.16,
       "z": 6172.89,
       "rotation": 200.01,
@@ -43786,7 +43786,7 @@
     },
     {
       "id": "p33183",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1283.18,
       "z": 6170.91,
       "rotation": 281,
@@ -44123,7 +44123,7 @@
     },
     {
       "id": "p33776",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1426.03,
       "z": 6170.55,
       "rotation": 234.01,
@@ -44132,7 +44132,7 @@
     },
     {
       "id": "p33797",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1391.06,
       "z": 6169.33,
       "rotation": 136.76,
@@ -44429,7 +44429,7 @@
     },
     {
       "id": "p34288",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1432.5,
       "z": 6177.99,
       "y": 157.45,
@@ -44972,7 +44972,7 @@
     },
     {
       "id": "p35134",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1072.3,
       "z": 3983.92,
       "rotation": 77,
@@ -45490,7 +45490,7 @@
     },
     {
       "id": "p36005",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1387.3,
       "z": 6177.78,
       "rotation": 235.6,
@@ -45499,7 +45499,7 @@
     },
     {
       "id": "p36007",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1079.54,
       "z": 4202.31,
       "rotation": 56,
@@ -45625,7 +45625,7 @@
     },
     {
       "id": "p36202",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1380.33,
       "z": 6167.99,
       "rotation": 336.05,
@@ -45665,7 +45665,7 @@
     },
     {
       "id": "p36273",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1321.17,
       "z": 6153.84,
       "y": 161.48,
@@ -45715,7 +45715,7 @@
     },
     {
       "id": "p36372",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 944.11,
       "z": -3112.53,
       "rotation": 231.5,
@@ -45765,7 +45765,7 @@
     },
     {
       "id": "p36468",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1379.49,
       "z": 6173.51,
       "rotation": 156,
@@ -45774,7 +45774,7 @@
     },
     {
       "id": "p36527",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1287.31,
       "z": 6152.03,
       "rotation": 195.65,
@@ -45802,7 +45802,7 @@
     },
     {
       "id": "p36546",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1286.91,
       "z": 6163.42,
       "rotation": 187.02,
@@ -45890,7 +45890,7 @@
     },
     {
       "id": "p36648",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1382.37,
       "z": 6168.6,
       "rotation": 292.05,
@@ -46140,7 +46140,7 @@
     },
     {
       "id": "p37033",
-      "prefab": "PileStoneSmallLow01",
+      "prefab": "RubblePileMixedRandom01",
       "x": 1210,
       "z": 6143.65,
       "rotation": 45.5,
@@ -46159,7 +46159,7 @@
     },
     {
       "id": "p37048",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1294.27,
       "z": 6160.32,
       "y": 157.62,
@@ -46551,7 +46551,7 @@
     },
     {
       "id": "p37905",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1379.03,
       "z": 6171.14,
       "rotation": 126.5,
@@ -46622,7 +46622,7 @@
     },
     {
       "id": "p38004",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 943.61,
       "z": -3116.78,
       "rotation": 231.5,
@@ -46751,7 +46751,7 @@
     },
     {
       "id": "p38413",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1277.1,
       "z": 6156.98,
       "rotation": 104.65,
@@ -46770,7 +46770,7 @@
     },
     {
       "id": "p38448",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1294.67,
       "z": 6139.88,
       "rotation": 301.77,
@@ -47035,7 +47035,7 @@
     },
     {
       "id": "p38867",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1063.08,
       "z": 3957.12,
       "rotation": 77,
@@ -47165,7 +47165,7 @@
     },
     {
       "id": "p39240",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1166.1,
       "z": 3983.53,
       "rotation": 272,
@@ -47684,7 +47684,7 @@
     },
     {
       "id": "p40147",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1380.66,
       "z": 6166.74,
       "rotation": 321.55,
@@ -47904,7 +47904,7 @@
     },
     {
       "id": "p40673",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1383.43,
       "z": 6175.48,
       "rotation": 232.76,
@@ -47954,7 +47954,7 @@
     },
     {
       "id": "p40740",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1380.8,
       "z": 6176.56,
       "rotation": 197.5,
@@ -48356,7 +48356,7 @@
     },
     {
       "id": "p41391",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1299.58,
       "z": 6155.26,
       "y": 157.75,
@@ -48496,7 +48496,7 @@
     },
     {
       "id": "p41717",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1318.21,
       "z": 6153.89,
       "y": 161.48,
@@ -48688,7 +48688,7 @@
     },
     {
       "id": "p42274",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1297.32,
       "z": 6153.65,
       "y": 157.3,
@@ -48790,7 +48790,7 @@
     },
     {
       "id": "p42472",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1087.88,
       "z": 4219.5,
       "rotation": 80,
@@ -48881,7 +48881,7 @@
     },
     {
       "id": "p42594",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1077.71,
       "z": 3955.2,
       "rotation": 77,
@@ -49436,7 +49436,7 @@
     },
     {
       "id": "p43859",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 601.87,
       "z": -2678.43,
       "rotation": -0,
@@ -49674,7 +49674,7 @@
     },
     {
       "id": "p44262",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1377.47,
       "z": 6162.3,
       "rotation": 22.55,
@@ -50009,7 +50009,7 @@
     },
     {
       "id": "p44849",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1279.05,
       "z": 6155.16,
       "rotation": 87.65,
@@ -50028,7 +50028,7 @@
     },
     {
       "id": "p44899",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1386.26,
       "z": 6169.91,
       "rotation": 157.76,
@@ -50420,7 +50420,7 @@
     },
     {
       "id": "p45555",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1428.87,
       "z": 6175.52,
       "rotation": 45.02,
@@ -50583,7 +50583,7 @@
     },
     {
       "id": "p45734",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1284.86,
       "z": 6153.31,
       "rotation": 19.15,
@@ -51487,7 +51487,7 @@
     },
     {
       "id": "p47438",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1375.98,
       "z": 6162.83,
       "rotation": 30.05,
@@ -51526,7 +51526,7 @@
     },
     {
       "id": "p47541",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1094.15,
       "z": 4210.63,
       "rotation": 73,
@@ -51545,7 +51545,7 @@
     },
     {
       "id": "p47614",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1386.03,
       "z": 6177.55,
       "rotation": 250.1,
@@ -51564,7 +51564,7 @@
     },
     {
       "id": "p47661",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1283.45,
       "z": 6165.94,
       "rotation": 223,
@@ -51683,7 +51683,7 @@
     },
     {
       "id": "p47886",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 473.58,
       "z": 1115.26,
       "rotation": 149.5,
@@ -51741,7 +51741,7 @@
     },
     {
       "id": "p48051",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1293.95,
       "z": 6153.23,
       "rotation": 249.65,
@@ -51851,7 +51851,7 @@
     },
     {
       "id": "p48264",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1276.95,
       "z": 6159.63,
       "rotation": 152,
@@ -52089,7 +52089,7 @@
     },
     {
       "id": "p48650",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1300.3,
       "z": 6140.7,
       "y": 157.69,
@@ -52280,7 +52280,7 @@
     },
     {
       "id": "p49081",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1073.91,
       "z": 3980.14,
       "rotation": 77,
@@ -52289,7 +52289,7 @@
     },
     {
       "id": "p49093",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1384.09,
       "z": 6171.59,
       "rotation": 155.5,
@@ -52399,7 +52399,7 @@
     },
     {
       "id": "p49343",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1270.97,
       "z": 6145.89,
       "y": 161.36,
@@ -52449,7 +52449,7 @@
     },
     {
       "id": "p49379",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 589.21,
       "z": -2660.14,
       "rotation": -0,
@@ -52498,7 +52498,7 @@
     },
     {
       "id": "p49554",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1081.53,
       "z": 4203.22,
       "rotation": 56,
@@ -52507,7 +52507,7 @@
     },
     {
       "id": "p49597",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 535.86,
       "z": 472.6,
       "rotation": 85.5,
@@ -52566,7 +52566,7 @@
     },
     {
       "id": "p49689",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1281.23,
       "z": 6159.47,
       "rotation": 66.65,
@@ -52575,7 +52575,7 @@
     },
     {
       "id": "p49702",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1383.91,
       "z": 6175.39,
       "rotation": 203,
@@ -52604,7 +52604,7 @@
     },
     {
       "id": "p49749",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1428.38,
       "z": 6175.54,
       "rotation": 15.26,
@@ -52755,7 +52755,7 @@
     },
     {
       "id": "p49884",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1299.6,
       "z": 6155.88,
       "y": 157.69,
@@ -52765,7 +52765,7 @@
     },
     {
       "id": "p49888",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1086.77,
       "z": 4219.84,
       "rotation": 228,
@@ -53047,7 +53047,7 @@
     },
     {
       "id": "p50565",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1428.27,
       "z": 6176.39,
       "rotation": 2.26,
@@ -53184,7 +53184,7 @@
     },
     {
       "id": "p50879",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1273.77,
       "z": 6147.69,
       "y": 161.36,
@@ -53383,7 +53383,7 @@
     },
     {
       "id": "p51205",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1298.58,
       "z": 6146.71,
       "y": 157.3,
@@ -53574,7 +53574,7 @@
     },
     {
       "id": "p51584",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1279.4,
       "z": 6165.52,
       "rotation": 198.5,
@@ -53893,7 +53893,7 @@
     },
     {
       "id": "p52216",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1271.84,
       "z": 6142.81,
       "y": 161.36,
@@ -53943,7 +53943,7 @@
     },
     {
       "id": "p52373",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1427.69,
       "z": 6169.67,
       "rotation": 247.01,
@@ -54003,7 +54003,7 @@
     },
     {
       "id": "p52549",
-      "prefab": "PileStoneSmallLow01",
+      "prefab": "RubblePileMixedRandom01",
       "x": 1450.78,
       "z": 6174.2,
       "y": 161.34,
@@ -54084,7 +54084,7 @@
     },
     {
       "id": "p52691",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1285.74,
       "z": 6154.25,
       "rotation": 33.65,
@@ -54152,7 +54152,7 @@
     },
     {
       "id": "p52790",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1298.74,
       "z": 6159.73,
       "y": 157.69,
@@ -54183,7 +54183,7 @@
     },
     {
       "id": "p52825",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1300.61,
       "z": 6150.11,
       "y": 156.25,
@@ -54204,7 +54204,7 @@
     },
     {
       "id": "p52849",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1382.68,
       "z": 6168.65,
       "rotation": 124,
@@ -54425,7 +54425,7 @@
     },
     {
       "id": "p53237",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 599.19,
       "z": -2682.18,
       "rotation": -0,
@@ -54585,7 +54585,7 @@
     },
     {
       "id": "p53541",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1297.08,
       "z": 6144.51,
       "y": 156.94,
@@ -55017,7 +55017,7 @@
     },
     {
       "id": "p54359",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1423.01,
       "z": 6172.01,
       "rotation": 200.01,
@@ -55046,7 +55046,7 @@
     },
     {
       "id": "p54387",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 954.38,
       "z": -3125.44,
       "rotation": 231.5,
@@ -55227,7 +55227,7 @@
     },
     {
       "id": "p54815",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1283.68,
       "z": 6161.13,
       "rotation": 185,
@@ -55325,7 +55325,7 @@
     },
     {
       "id": "p55005",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1378.04,
       "z": 6174.44,
       "rotation": 162.5,
@@ -55877,7 +55877,7 @@
     },
     {
       "id": "p56055",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1434.07,
       "z": 6177.27,
       "y": 158.28,
@@ -55986,7 +55986,7 @@
     },
     {
       "id": "p56247",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1431.28,
       "z": 6177.87,
       "y": 156.83,
@@ -56207,7 +56207,7 @@
     },
     {
       "id": "p56627",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1280.92,
       "z": 6165.09,
       "rotation": 206,
@@ -56245,7 +56245,7 @@
     },
     {
       "id": "p56683",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1383.9,
       "z": 6174.53,
       "rotation": 190,
@@ -56976,7 +56976,7 @@
     },
     {
       "id": "p57986",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1373.32,
       "z": 6157.18,
       "rotation": 105.05,
@@ -57339,7 +57339,7 @@
     },
     {
       "id": "p58691",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1290.77,
       "z": 6155.28,
       "rotation": 264.02,
@@ -57456,7 +57456,7 @@
     },
     {
       "id": "p58884",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1092.43,
       "z": 4198.74,
       "rotation": 290,
@@ -57536,7 +57536,7 @@
     },
     {
       "id": "p59003",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1396.32,
       "z": 6169.78,
       "rotation": 19.09,
@@ -57768,7 +57768,7 @@
     },
     {
       "id": "p59357",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1068.49,
       "z": 3981.87,
       "rotation": 77,
@@ -58225,7 +58225,7 @@
     },
     {
       "id": "p60208",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1294.14,
       "z": 6158.75,
       "rotation": 285.02,
@@ -58263,7 +58263,7 @@
     },
     {
       "id": "p60274",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1431.61,
       "z": 6173.53,
       "y": 157.03,
@@ -58313,7 +58313,7 @@
     },
     {
       "id": "p60356",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1391.36,
       "z": 6170.22,
       "rotation": 321.1,
@@ -58534,7 +58534,7 @@
     },
     {
       "id": "p60881",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 952.84,
       "z": -3118.21,
       "rotation": 231.5,
@@ -58665,7 +58665,7 @@
     },
     {
       "id": "p61055",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 599.94,
       "z": -2685.71,
       "rotation": 225.5,
@@ -58674,7 +58674,7 @@
     },
     {
       "id": "p61090",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 942.71,
       "z": -3117.64,
       "rotation": 231.5,
@@ -58967,7 +58967,7 @@
     },
     {
       "id": "p61807",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1294.15,
       "z": 6147.68,
       "y": 157.44,
@@ -59159,7 +59159,7 @@
     },
     {
       "id": "p62186",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1295.45,
       "z": 6156.43,
       "rotation": 302.02,
@@ -59236,7 +59236,7 @@
     },
     {
       "id": "p62385",
-      "prefab": "PileStoneSmallLow01",
+      "prefab": "RubblePileMixedRandom01",
       "x": 1206.48,
       "z": 6136.27,
       "rotation": 75,
@@ -59376,7 +59376,7 @@
     },
     {
       "id": "p62636",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1421.75,
       "z": 6174.57,
       "rotation": 206.51,
@@ -59425,7 +59425,7 @@
     },
     {
       "id": "p62669",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1285.35,
       "z": 6152.85,
       "rotation": 151.65,
@@ -59575,7 +59575,7 @@
     },
     {
       "id": "p62892",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 472.75,
       "z": 1110.77,
       "rotation": 149.5,
@@ -59715,7 +59715,7 @@
     },
     {
       "id": "p63058",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1391.51,
       "z": 6174.29,
       "rotation": 296.6,
@@ -59973,7 +59973,7 @@
     },
     {
       "id": "p63422",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1296.36,
       "z": 6152.1,
       "rotation": 266.65,
@@ -60374,7 +60374,7 @@
     },
     {
       "id": "p64122",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1067.08,
       "z": 3981.24,
       "rotation": 77,
@@ -60495,7 +60495,7 @@
     },
     {
       "id": "p64378",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 1276.53,
       "z": 6160.86,
       "rotation": 137.5,
@@ -60894,7 +60894,7 @@
     },
     {
       "id": "p65148",
-      "prefab": "PileGarbageMediumLow01",
+      "prefab": "TrashbagRandom01",
       "x": 1297.27,
       "z": 6137.94,
       "y": 156.73,
@@ -60964,7 +60964,7 @@
     },
     {
       "id": "p65221",
-      "prefab": "PineTreeStump01",
+      "prefab": "LogRandom01",
       "x": 937.83,
       "z": -3118.96,
       "rotation": 231.5,
