@@ -76,7 +76,8 @@ static class Json
 
 // ======================================================================================================= trees
 
-public sealed record TreeObject(string Prefab, double X, double Z, string Age, string Cs1);
+/// <param name="Y">CS1 height, only for FixedHeight trees (snapped onto rocks or bridges).</param>
+public sealed record TreeObject(string Prefab, double X, double Z, string Age, string Cs1, double? Y = null);
 
 public sealed class TreeResult
 {
@@ -88,6 +89,8 @@ public sealed class TreeResult
     public Dictionary<string, string> Decision { get; } = new();
     public int Outside, SpacingRelaxed, Unassigned;
     public Dictionary<string, int> Masked { get; set; } = new();
+    public int FixedHeight;
+    public Dictionary<string, int> ScaledToAge { get; } = new();
     /// <summary>Trees removed by Mask, per rule (kept so a rule can be tried as an experiment file).</summary>
     public Dictionary<string, List<TreeObject>> Removed { get; } = new();
     /// <summary>CROP trees per 64 m raster cell (index = row·size + col, row 0 south), for the synthetic fertility layer.</summary>
@@ -111,15 +114,31 @@ public static class Trees
     }
 
     /// <summary>Per-tree points (dakota-export/cs1/trees/v1: {prefabs:[...], points:[x, z, prefabIndex, ...]}), exact positions and species.</summary>
+    /// <summary>
+    /// Since trees/v2 the point file also has y, flags and Tree Control scale per tree. FixedHeight trees (flag 0x20) keep
+    /// their y; scale picks the CS2 age (CS2 sizes trees by age): &lt; 0.6 seedling, &lt; 0.85 sapling, ≤ 1.2 adult, else elderly.
+    /// </summary>
+    public static string AgeFromScale(double s) => s < 0.6 ? "seedling" : s < 0.85 ? "sapling" : s <= 1.2 ? "adult" : "elderly";
+
     public static TreeResult FromPoints(string path, TargetMapping map, double half, ulong seed)
     {
         using var doc = JsonDocument.Parse(File.ReadAllText(path));
-        var prefabs = doc.RootElement.GetProperty("prefabs").EnumerateArray().Select(p => p.GetString()!).ToArray();
-        var pts = doc.RootElement.GetProperty("points").EnumerateArray().Select(p => p.GetDouble()).ToArray();
-        var res = new TreeResult { Source = $"points ({Path.GetFileName(path)})" };
+        var root = doc.RootElement;
+        var prefabs = root.GetProperty("prefabs").EnumerateArray().Select(p => p.GetString()!).ToArray();
+        var pts = root.GetProperty("points").EnumerateArray().Select(p => p.GetDouble()).ToArray();
+        double[]? Arr(string k) => root.TryGetProperty(k, out var a) && a.ValueKind == JsonValueKind.Array
+            ? a.EnumerateArray().Select(v => v.ValueKind == JsonValueKind.Number ? v.GetDouble() : double.NaN).ToArray() : null;
+        var ys = Arr("y"); var flags = Arr("flags"); var scales = Arr("scale");
+        var res = new TreeResult { Source = $"points ({Path.GetFileName(path)}{(ys != null ? ", trees/v2: y, flags, scale" : "")})" };
         var rng = new Rng(seed);
-        for (int i = 0; i + 2 < pts.Length; i += 3)
-            Emit(res, map, prefabs[(int)pts[i + 2]], pts[i], pts[i + 1], half, ref rng, null);
+        for (int i = 0, k = 0; i + 2 < pts.Length; i += 3, k++)
+        {
+            double? y = flags != null && ys != null && ((long)flags[k] & 0x20) != 0 ? ys[k] : null;
+            string? age = scales != null && !double.IsNaN(scales[k]) && Math.Abs(scales[k] - 1) > 0.01 ? AgeFromScale(scales[k]) : null;
+            if (y != null) res.FixedHeight++;
+            if (age != null) res.ScaledToAge[age] = res.ScaledToAge.GetValueOrDefault(age) + 1;
+            Emit(res, map, prefabs[(int)pts[i + 2]], pts[i], pts[i + 1], half, ref rng, null, y, age);
+        }
         return res;
     }
 
@@ -220,7 +239,7 @@ public static class Trees
         return global[^1].Key;
     }
 
-    static void Emit(TreeResult res, TargetMapping map, string cs1, double x, double z, double half, ref Rng rng, int? bigCell)
+    static void Emit(TreeResult res, TargetMapping map, string cs1, double x, double z, double half, ref Rng rng, int? bigCell, double? y = null, string? age = null)
     {
         res.Cs1Total[cs1] = res.Cs1Total.GetValueOrDefault(cs1) + 1;
         var targets = map.Resolve(cs1);
@@ -242,7 +261,8 @@ public static class Trees
         if (t.IsSkip) { res.Dropped[cs1] = res.Dropped.GetValueOrDefault(cs1) + 1; return; }
         if (Math.Abs(x) > half || Math.Abs(z) > half) { res.Outside++; return; }
         res.Cs2Total[t.Prefab] = res.Cs2Total.GetValueOrDefault(t.Prefab) + 1;
-        res.Objects.Add(new TreeObject(t.Prefab, x, z, Age(t.Extra, ref rng), cs1));
+        string ageNow = Age(t.Extra, ref rng);   // always draw, so the random sequence does not depend on the scale data
+        res.Objects.Add(new TreeObject(t.Prefab, x, z, age ?? ageNow, cs1, y));
     }
 
     /// <summary>Drops trees matching the first rule that applies; returns the count per rule (audit finding 2).</summary>
@@ -270,7 +290,7 @@ public static class Trees
     /// <summary>Writes import-trees-NN.json chunks of at most chunkSize objects; returns the file names.</summary>
     public static List<string> WriteChunks(string dir, TreeResult res, int chunkSize) => WriteChunks(dir, res.Objects, chunkSize, "import-trees", "trees");
 
-    public static List<string> WriteChunks(string dir, List<TreeObject> objects, int chunkSize, string filePrefix, string importName)
+    public static List<string> WriteChunks(string dir, List<TreeObject> objects, int chunkSize, string filePrefix, string importName, double heightFactor = 1)
     {
         Directory.CreateDirectory(dir);
         foreach (var old in Directory.GetFiles(dir, filePrefix + "-*.json").Where(f => System.Text.RegularExpressions.Regex.IsMatch(Path.GetFileName(f), @"-\d\d\.json$"))) File.Delete(old);
@@ -294,6 +314,7 @@ public static class Trees
                 w.WriteString("id", $"t{i + 1}");
                 w.WriteString("prefab", t.Prefab);
                 w.WriteNumber("x", Json.R2(t.X)); w.WriteNumber("z", Json.R2(t.Z));
+                if (t.Y is double ty) w.WriteNumber("y", Json.R2(ty * heightFactor));
                 w.WriteString("kind", "tree");
                 w.WriteString("age", t.Age);
                 w.WriteEndObject();
@@ -314,6 +335,8 @@ public static class Trees
         sb.AppendLine($"- Points where ≈3 m spacing could not be kept (dense cells, placed anyway): {res.SpacingRelaxed:N0}");
         sb.AppendLine($"- Points in 64 m cells without a species list (got the global mix): {res.Unassigned:N0}");
         sb.AppendLine($"- Crop cells (Corn Stalk, for fertility): {res.CropCells.Count:N0} cells of {res.CropCellSize} m");
+        if (res.FixedHeight > 0) sb.AppendLine($"- FixedHeight trees (on rocks or bridges, with y): {res.FixedHeight:N0} in the point file (before clipping and masking), written per scale as import-trees-fixed-NN.json in out/ and out/x1/");
+        if (res.ScaledToAge.Count > 0) sb.AppendLine($"- Tree Control scale → age (trees with scale ≠ 1; the rest use the mapping age profile): {string.Join(", ", res.ScaledToAge.Select(a => $"{a.Key} {a.Value:N0}"))} (scale < 0.6 seedling, < 0.85 sapling, ≤ 1.2 adult, else elderly)");
         foreach (var (reason, n) in res.Masked) sb.AppendLine($"- Masked, {reason}: {n:N0}");
         sb.AppendLine();
         sb.AppendLine("## Per CS2 prefab").AppendLine().AppendLine("| CS2 prefab | trees |").AppendLine("|---|---:|");

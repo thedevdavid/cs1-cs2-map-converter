@@ -11,6 +11,8 @@ public static class Outputs
     /// topology factor (2×) and written at heightFactor / topologyFactor, so the 1× and 2× sets differ only in heights.
     /// </summary>
     public static double YScale { get; set; } = 1;
+    /// <summary>CS1 segment id → Network Skins removals (v5), written as informational edge fields.</summary>
+    public static Dictionary<int, (bool Pillars, bool Lights)> SkinFlags { get; } = new();
     static double R2(double v) => Math.Round(v, 2);
 
     static void P(Utf8JsonWriter w, Vec3 v)
@@ -50,6 +52,7 @@ public static class Outputs
             w.WriteStartArray("control"); P(w, e.Curve.B); P(w, e.Curve.C); w.WriteEndArray();
             if (!absolute) { w.WriteStartArray("elevation"); w.WriteNumberValue(R2(e.A.Elevation * YScale)); w.WriteNumberValue(R2(e.B.Elevation * YScale)); w.WriteEndArray(); }
             if (e.Wall != null) w.WriteString("wall", e.Wall);
+            if (SkinFlags.TryGetValue(e.Cs1Segment, out var sk)) { if (sk.Pillars) w.WriteBoolean("noPillars", true); if (sk.Lights) w.WriteBoolean("noStreetLights", true); }
             w.WriteString("structure", e.Structure.ToString().ToLowerInvariant());
             w.WriteString("cs1_prefab", e.Map.Cs1Prefab);
             w.WriteNumber("cs1_segment", e.Cs1Segment);

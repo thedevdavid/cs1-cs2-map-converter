@@ -21477,6 +21477,7 @@
           -3237.78
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 10906
@@ -21498,6 +21499,7 @@
           -3219.23
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 10906
@@ -21519,6 +21521,7 @@
           -3200.22
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 10906
@@ -21540,6 +21543,7 @@
           -3182.12
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 10906
@@ -23388,6 +23392,7 @@
           -3408.77
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 12729
@@ -23409,6 +23414,7 @@
           -3388.02
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 12729
@@ -23430,6 +23436,7 @@
           -3345.74
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 12729
@@ -25845,6 +25852,7 @@
           -3165.45
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 15108
@@ -25866,6 +25874,7 @@
           -3147.02
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 15108
@@ -25887,6 +25896,7 @@
           -3115.54
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 15108
@@ -29079,6 +29089,7 @@
           54.16
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 18179
@@ -29100,6 +29111,7 @@
           83.46
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 18179
@@ -34077,6 +34089,7 @@
           -3305.82
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 22934
@@ -34098,6 +34111,7 @@
           -3261.7
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 22934
@@ -36828,6 +36842,7 @@
           -2995.66
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 26134
@@ -36849,6 +36864,7 @@
           -2965.01
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 26134
@@ -36870,6 +36886,7 @@
           -2947.62
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 26134
@@ -37374,6 +37391,7 @@
           -3078.73
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 26635
@@ -37395,6 +37413,7 @@
           -3036.7
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
       "cs1_segment": 26635
@@ -46278,6 +46297,7 @@
           100.93
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 36355
@@ -46299,6 +46319,7 @@
           132.01
         ]
       ],
+      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 36355

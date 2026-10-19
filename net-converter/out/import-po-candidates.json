@@ -1,0 +1,32 @@
+{
+  "name": "po-candidates-UNVERIFIED",
+  "_comment": "rotation = yaw in degrees about \u002By, 0 = \u002Bz, clockwise from above, from CS1 m_angle as \u2212angle\u00B7180/\u03C0 (UNVERIFIED sign). y only where the CS1 object is \u003E 2 m off the terrain (CS1 y \u00D7 height factor).",
+  "options": {
+    "dryRun": false,
+    "batchSize": 500,
+    "bypassValidation": true,
+    "report": "compact"
+  },
+  "objects": [
+    {
+      "id": "po525",
+      "prefab": "RuinsCastle01",
+      "x": 46.99,
+      "z": -2605.34,
+      "y": 325.69,
+      "rotation": 230.58,
+      "kind": "building",
+      "cs1": "Castle Ruins 02"
+    },
+    {
+      "id": "po544",
+      "prefab": "RuinsCastle01",
+      "x": 32.34,
+      "z": -2706.63,
+      "y": 322.41,
+      "rotation": 336.32,
+      "kind": "building",
+      "cs1": "Castle Ruins 03"
+    }
+  ]
+}

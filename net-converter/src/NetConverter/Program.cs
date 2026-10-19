@@ -4,6 +4,7 @@ using NetConverter;
 string? dumpPath = null, mappingPath = null, outDir = "out", livePath = null, baselineDir = null, heightmapPath = null, retryReport = null;
 bool inventoryOnly = false, retry = false, layersOnly = false;
 string? treesDir = null, rockHeightmapPath = null;
+string poOfflinePath = Path.Combine("..", "cs1-offline", "out", "po-offline.json");
 double rockDegrees = 40;
 bool seawayAtWater = false, mergeCanal = true;
 const string RockSurface = "gaga TTP - Pebbles 1L dark";
@@ -29,6 +30,7 @@ for (int i = 0; i < args.Length; i++)
         case "--rock-heightmap": rockHeightmapPath = args[++i]; break;
         case "--seaway-at-water": seawayAtWater = true; break;
         case "--no-merge-canal": mergeCanal = false; break;
+        case "--po-offline": poOfflinePath = args[++i]; break;
         case "--rock-degrees": rockDegrees = double.Parse(args[++i], System.Globalization.CultureInfo.InvariantCulture); break;
         case "--tree-seed": treeSeed = ulong.Parse(args[++i], System.Globalization.CultureInfo.InvariantCulture); break;
         case "--network-only": layersOnly = true; break;
@@ -166,6 +168,32 @@ if (seawayAtWater)
 }
 else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water to write them at the water surface once the dig test shows digging).");
 
+{
+    // v5 Network Skins: segments whose skin removes street lights or bridge pillars. The bridge has no edge field for either
+    // (IMPORT_SCHEMA.md); the converter writes informational "noPillars" / "noStreetLights" (ignored by the bridge today)
+    // and lists them in manual-objects.md.
+    var r = rootDoc.RootElement;
+    if (r.TryGetProperty("networkSkins", out var ns) && ns.ValueKind == JsonValueKind.Object)
+    {
+        var skinFlags = new Dictionary<int, (bool Pillars, bool Lights)>();
+        foreach (var sk in ns.GetProperty("skins").EnumerateArray())
+        {
+            bool pil = false, lig = false;
+            foreach (var m in sk.GetProperty("modifiers").EnumerateArray())
+            {
+                string type = m.GetProperty("type").GetString() ?? "";
+                var f = m.GetProperty("fields");
+                if (type == "PillarModifier" && f.TryGetProperty("Pillar", out var pv) && pv.ValueKind == JsonValueKind.Null) pil = true;
+                if (type == "StreetLightModifier" && f.TryGetProperty("StreetLight", out var lv) && lv.ValueKind == JsonValueKind.Null) lig = true;
+            }
+            skinFlags[sk.GetProperty("index").GetInt32()] = (pil, lig);
+        }
+        var segs = ns.GetProperty("segments").EnumerateArray().Select(v => v.GetInt32()).ToArray();
+        for (int i = 0; i + 1 < segs.Length; i += 2)
+            if (skinFlags.TryGetValue(segs[i + 1], out var fl) && (fl.Pillars || fl.Lights)) Outputs.SkinFlags[segs[i]] = fl;
+        Console.WriteLine($"network skins: {Outputs.SkinFlags.Count} segments (no pillars {Outputs.SkinFlags.Values.Count(v => v.Pillars)}, no street lights {Outputs.SkinFlags.Values.Count(v => v.Lights)})");
+    }
+}
 Outputs.WriteImport(Path.Combine(outDir, "import-highways.json"), "Dakota Falls highways", result.Layer(Layers.Highways).ToList(), absolute);
 Outputs.WriteImport(Path.Combine(outDir, "import-rail.json"), "Dakota Falls rail", result.Layer(Layers.Rail).ToList(), absolute);
 Outputs.WriteImport(Path.Combine(outDir, "import-roads.json"), "Dakota Falls roads", result.Layer(Layers.Roads).ToList(), absolute);
@@ -340,6 +368,11 @@ void WriteLayers()
         Console.WriteLine($"tree mask: {string.Join(", ", masked.Select(m => $"{m.Key} {m.Value:N0}"))}");
         auditLog.AppendLine($"- Trees masked (same set for both scales): {string.Join("; ", masked.Select(m => $"{m.Key} {m.Value:N0}"))}; total {masked.Values.Sum():N0}, {trees.Objects.Count:N0} remain.");
     }
+    // FixedHeight trees carry y, so they differ per scale: their own file in each output folder.
+    var fixedTrees = trees.Objects.Where(t => t.Y != null).ToList();
+    trees.Objects.RemoveAll(t => t.Y != null);
+    var fixedFiles = Trees.WriteChunks(outDir, fixedTrees, 50000, "import-trees-fixed", "trees-fixed", heightFactor);
+    if (fixedTrees.Count > 0) Console.WriteLine($"trees fixed height: {fixedTrees.Count} -> {string.Join(", ", fixedFiles)} (with y × {heightFactor})");
     var files = Trees.WriteChunks(tdir, trees, 50000);
     var treeReadme = Trees.Readme(trees, files, 50000);
     if (File.Exists(pointsPath))
@@ -403,11 +436,27 @@ void WriteLayers()
         extra.AppendLine($"- Procedural Objects: none exported ({poWhy.GetString()}).");
     if (po != null)
     {
+        int classified = ProceduralObjects.Classify(po, poOfflinePath);
+        if (classified > 0) Console.WriteLine($"procedural objects: {classified}/{po.Count} classified from {poOfflinePath}");
         man.Append(ProceduralObjects.Manual(po, heightFactor));
-        var cand = ProceduralObjects.Candidates(po, TargetMapping.Load(Find("object-mapping.tsv")), heightFactor, 7168, treeSeed + 2);
+        man.Append(ProceduralObjects.FallsFoam(po, heightFactor));
+        var cand = ProceduralObjects.Candidates(po, TargetMapping.Load(Find("object-mapping.tsv")), heightFactor, 7168, treeSeed + 2, structuresOnly: classified > 0);
         Objects.Write(Path.Combine(outDir, "import-po-candidates.json"), "po-candidates-UNVERIFIED", cand);
         Console.WriteLine($"procedural objects: {po.Count} listed, {cand.Count} candidates (UNVERIFIED) in import-po-candidates.json");
         extra.AppendLine($"- Procedural Objects: {po.Count} listed in manual-objects.md; {cand.Count} map through object-mapping.tsv into import-po-candidates.json (UNVERIFIED: scale is not applied, PO meshes are not CS2 assets).");
+    }
+    if (Outputs.SkinFlags.Count > 0)
+    {
+        var segById = dump.Segments.ToDictionary(s => s.Id);
+        man.AppendLine().AppendLine("## Network Skins (CS1): segments without bridge pillars or street lights").AppendLine();
+        man.AppendLine("The import edges of these CS1 segments carry \"noPillars\" / \"noStreetLights\" (ignored by the bridge today). In CS2, remove pillars or lights by hand (or with a road-upgrade mod) along them.").AppendLine();
+        man.AppendLine("| CS1 segment | prefab | x | z | no pillars | no street lights |").AppendLine("|---:|---|---:|---:|---|---|");
+        foreach (var (id, fl) in Outputs.SkinFlags.OrderBy(k => k.Key))
+            if (segById.TryGetValue(id, out var sg))
+            {
+                var mp = sg.Bezier.Eval(0.5);
+                man.AppendLine(string.Create(System.Globalization.CultureInfo.InvariantCulture, $"| {id} | {Json.Short(sg.Prefab)} | {mp.X:F0} | {mp.Z:F0} | {(fl.Pillars ? "yes" : "")} | {(fl.Lights ? "yes" : "")} |"));
+            }
     }
     File.WriteAllText(Path.Combine(outDir, "manual-objects.md"), man.ToString());
 
@@ -536,7 +585,10 @@ void WriteLayers()
     if (surfaces != null)
     {
         var ts = Surfaces.FromTerrainSurfaces(surfaces, TargetMapping.Load(Find("surface-mapping.tsv")), out var tsDecisions);
-        Surfaces.Write(Path.Combine(outDir, "import-surfaces.json"), "surfaces-01", ts, "CS1 terrainSurfaces (v3) mapped through surface-mapping.tsv.");
+        // One file per CS1 class (e.g. import-surfaces-sand.json), already unioned per class (rasterised), hole-free, simplified.
+        File.Delete(Path.Combine(outDir, "import-surfaces.json"));
+        foreach (var g in ts.GroupBy(t => t.Note.Replace("CS1 surface ", "").ToLowerInvariant()))
+            Surfaces.Write(Path.Combine(outDir, $"import-surfaces-{g.Key}.json"), $"surfaces-{g.Key}", g.ToList(), $"CS1 terrainSurfaces class {g.Key} mapped through surface-mapping.tsv (audit/theme.md table): rasterised per class on the 16 m grid, union, hole-free pieces, simplified to 2 m.");
         Console.WriteLine(Surfaces.Stats("terrain surfaces", ts) + "; " + string.Join(", ", tsDecisions.Select(d => $"{d.Key} -> {d.Value}")));
         extra.AppendLine($"- {Surfaces.Stats("Terrain surfaces (import-surfaces.json)", ts)}: {string.Join("; ", tsDecisions.Select(d => $"{d.Key} → {d.Value}"))}.");
     }
@@ -593,6 +645,7 @@ void WriteLayers()
     SegRow("Terraforming Network", "Terraforming", "kept skipped: CS1 terrain-shaping helper (terrain is in the heightmap)");
     ObjRow("Pillars", "(?i)Pillar", "buildings", "kept skipped: CS2 bridges spawn their own pillars");
     ObjRow("Modern Fence 02", "(?i)Modern Fence", "props", "→ FenceResidentialPieceLow01 (piece length unverified)");
+    extra.AppendLine($"| Network Skins (v5) | segments | {Outputs.SkinFlags.Count} | {Outputs.SkinFlags.Count} flagged | 0 | note: no pillars on {Outputs.SkinFlags.Values.Count(v => v.Pillars)}, no street lights on {Outputs.SkinFlags.Values.Count(v => v.Lights)}; edge fields noPillars / noStreetLights (no bridge field yet), list in manual-objects.md |");
     extra.Append(auditLog);
     File.AppendAllText(Path.Combine(outDir, "stats.md"), extra.ToString());
 }

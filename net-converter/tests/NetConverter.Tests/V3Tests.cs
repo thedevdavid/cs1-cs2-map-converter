@@ -123,7 +123,7 @@ public class V3Tests
         Assert.Matches("^(Rock|rzrock|RZarid)", c.Prefab);
         Assert.Equal("RuinsCastle01", cand.Single(x => x.Source == "po 3").Prefab);
         Assert.Equal(260, c.Y);
-        Assert.Contains("### Cube (1)", ProceduralObjects.Manual(po, 2));
+        Assert.Contains(": Cube (1)", ProceduralObjects.Manual(po, 2));
     }
 
     [Fact]

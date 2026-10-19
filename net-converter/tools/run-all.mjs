@@ -36,7 +36,7 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
   for (const [f, what] of [["import-walls.json", "walls: quays, retaining walls, canals, flood walls"], ["import-shippaths.json", "ship paths"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(2, p(f), `${what} (${scale})`, `${j.edges.length} edges: ${byPrefab(j.edges)}`); }
   if (existsSync(p("import-walls-props.json"))) add(5, p("import-walls-props.json"), `barrier props (${scale})`, `${J(p("import-walls-props.json")).objects.length}`);
-  for (const [f, what] of [["import-surfaces-fields.json", "field surfaces"], ["import-surfaces-rock.json", "rock surfaces (slope >= 40°)"], ["import-surfaces-decals.json", "decal surfaces (Dirty Surfaces Pack)"], ["import-surfaces.json", "terrain surfaces (v3)"], ["import-surfaces-grass.json", "grass surfaces (optional alternative to the grass plants)"]])
+  for (const [f, what] of [["import-surfaces-fields.json", "field surfaces"], ["import-surfaces-rock.json", "rock surfaces (slope >= 40°)"], ["import-surfaces-decals.json", "decal surfaces (Dirty Surfaces Pack)"], ["import-surfaces-sand.json", "sand surfaces (CS1 terrainSurfaces)"], ["import-surfaces-grass.json", "grass surfaces (optional alternative to the grass plants)"]])
     if (existsSync(p(f))) add(8, p(f), what, `${J(p(f)).surfaces.length} polygons`);
   if (existsSync(p("import-water.json"))) { const w = J(p("import-water.json")); add(3, p("import-water.json"), `water (${scale}), seaLevel ${w.seaLevel}`, `${w.sources.length} sources, ${w.sources.filter(s => s.refinedFrom).length} refined`); }
   if (existsSync(p("import-connections.json"))) add(4, p("import-connections.json"), "outside connections", `${J(p("import-connections.json")).objects.length}`);
@@ -46,6 +46,7 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
     const kinds = Object.entries(o.reduce((m, x) => (m[x.kind] = (m[x.kind] || 0) + 1, m), {})).map(([k, v]) => `${k} ${v}`).join(", ");
     add(5, p("import-objects.json"), `objects (${scale})`, `${o.length} (${kinds}; ${o.filter(x => "y" in x).length} with y)`);
   }
+  for (const ff of existsSync(dir) ? readdirSync(dir).filter(x => x.startsWith("import-trees-fixed-")) : []) add(6, p(ff), `trees at fixed height, with y (${scale})`, `${J(p(ff)).objects.length}`);
   if (existsSync(p("import-po-candidates.json"))) add(5, p("import-po-candidates.json"), `Procedural Object candidates, UNVERIFIED (${scale})`, `${J(p("import-po-candidates.json")).objects.length}`);
   if (existsSync(p("import-resources.json"))) add(7, p("import-resources.json"), "natural resources", Object.keys(J(p("import-resources.json")).layers).join(", "));
   else if (existsSync(p("import-resources-synthetic.json"))) add(7, p("import-resources-synthetic.json"), "SYNTHETIC fertility (no naturalResources in the dump)", "fertility");
@@ -56,13 +57,13 @@ for (const dir of [out, join(out, "x1")])
 const tdir = join(out, "trees");
 const ef = existsSync(tdir) ? readdirSync(tdir).filter(f => f.startsWith("experiment-trees-")).sort() : [];
 if (ef.length) rows.push(`| 9 | \`${tdir}/${ef[0]}\` | EXPERIMENT: trees on ground-net corridors (both scales) | ${ef.reduce((s, f) => s + J(join(tdir, f)).objects.length, 0).toLocaleString("en")} | |`);
-const tf = existsSync(tdir) ? readdirSync(tdir).filter(f => f.startsWith("import-trees-")).sort() : [];
+const tf = existsSync(tdir) ? readdirSync(tdir).filter(f => /^import-trees-\d\d\.json$/.test(f)).sort() : [];
 if (tf.length) rows.push(`| 6 | \`${tdir}/${tf[0]}\` … \`${tf.at(-1)}\` | trees (both scales) | ${tf.reduce((s, f) => s + J(join(tdir, f)).objects.length, 0).toLocaleString("en")} in ${tf.length} files | |`);
 rows.sort((a, b) => parseInt(a.slice(2)) - parseInt(b.slice(2)));
 const extras = ["water-check.md", "surfaces-summary.md", "surfaces.geojson", "manual-objects.md", "connections-check.md", "stats.md"].filter(f => existsSync(join(out, f)));
 const summary = (`# Conversion outputs (${new Date().toISOString().slice(0, 10)})
 
-Dump: \`${dump}\`. Import order: network → power, walls, ship paths → water → connections → objects (incl. barrier props) → trees → resources → surfaces (fields, decals; grass optional) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
+Dump: \`${dump}\`. Import order: network → power, walls, ship paths → water → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → surfaces (fields, rock, decals, sand; grass optional) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
 ${out}/ = 2× heights (Height Scale 4096), ${out}/x1/ = true heights (Height Scale 2048); same nodes and courses in both.
 
 | order | file | content | count | size |
@@ -71,5 +72,5 @@ ${rows.join("\n")}
 
 Reports (both folders): ${extras.map(f => `\`${f}\``).join(", ")}.
 `);
-for (const name of ["ROUND.md", "ROUND6.md"]) writeFileSync(join(out, name), summary);
-console.log(`summary: ${join(out, "ROUND6.md")}`);
+for (const name of ["ROUND.md", "ROUND7.md"]) writeFileSync(join(out, name), summary);
+console.log(`summary: ${join(out, "ROUND7.md")}`);

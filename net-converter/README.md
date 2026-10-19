@@ -226,3 +226,17 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   The CS1 lots (32–72 m) are much larger than the Arid rocks; the switch is noted in the mapping.
 - R69 Big Decal Dirt/Mud become 16 × 16 m Dirty Surfaces Pack squares (`import-surfaces-decals.json`): Dirt → PDO23 Dirty Surface 01, Mud → PDO23 Soil Surface 01.
 - `node tools/run-all.mjs` writes `out/ROUND6.md` (= ROUND.md), the final file list.
+
+## Round 13: final CS1 export (schema v5)
+
+- Trees from the trees/v2 point file: exact position, species and `scale` → age (< 0.6 seedling, < 0.85 sapling, ≤ 1.2 adult, else elderly). FixedHeight trees (flag 0x20)
+  carry y and go to the per-scale `import-trees-fixed-NN.json` in out/ and out/x1/; the rest stay in the shared `trees/` chunks. The mask drops trees below the sea level,
+  in CS1 water (real water surface) or on a ground-net corridor (the latter to the experiment file).
+- Resources come only from `naturalResources`; the synthetic file is no longer written.
+- `water-check.md` ends with a sea-level recommendation from the largest body's median surface.
+- `terrainSurfaces` are written per class (`import-surfaces-sand.json`, …) through `surface-mapping.tsv`, unioned, hole-free and simplified; `import-surfaces.json` is gone.
+- PO: `manual-objects.md` groups the objects by class (rules from cs1-offline po-classes.md, ids cross-checked with `--po-offline`), lists Effects Module positions as
+  "falls foam", and `import-po-candidates.json` holds only structures that map through object-mapping.tsv.
+- Network skins: IMPORT_SCHEMA.md has no edge field for them, so edges carry informational `noPillars` / `noStreetLights` fields, stats.md has a Network Skins row
+  and manual-objects.md lists the segments.
+- `node tools/run-all.mjs` writes `out/ROUND7.md` (= ROUND.md).

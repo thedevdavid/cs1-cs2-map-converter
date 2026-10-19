@@ -154,6 +154,8 @@ public sealed class WaterSurface
             var main = bodies[0].Select(i => Cells[i].Surface).ToList();
             double med = Median(main);
             sb.AppendLine(string.Create(ci, $"Largest body (the lower river): {bodies[0].Count:N0} cells ({bodies[0].Count * Grid.CellSize * Grid.CellSize / 1e6:F2} km²), median surface {med:F2} m (× {factor} = {med * factor:F2}) vs chosen sea level {seaLevelCs1:F2} m (× {factor} = {seaLevelCs1 * factor:F2}): Δ {med - seaLevelCs1:+0.00;-0.00} m."));
+            if (med < seaLevelCs1 - 0.5)
+                sb.AppendLine().AppendLine(string.Create(ci, $"**Sea level is {seaLevelCs1 - med:F2} m above the measured lower river ({(seaLevelCs1 - med) * factor:F2} m at × {factor}).** CS2 floods everything below the sea level, so the river banks between {med:F1} and {seaLevelCs1:F1} m would go under. Recommendation: lower the sea level to about {Math.Ceiling(med * 2) / 2:F1} m ({Math.Ceiling(med * 2) / 2 * factor:F1} m at × {factor}), i.e. pass --sea-level {Math.Ceiling(med * 2) / 2:F1}."));
             sb.AppendLine().AppendLine("| body | cells | km² | median surface | min | max | centre x | centre z |").AppendLine("|---:|---:|---:|---:|---:|---:|---:|---:|");
             int k = 0;
             foreach (var b in bodies.Take(15))
@@ -372,7 +374,14 @@ public sealed class TerrainSurfaces
 
 // ======================================================================================= procedural objects
 
-public sealed record ProceduralObject(int Id, string BasePrefab, double X, double Y, double Z, double Yaw, double[] Scale);
+public sealed record ProceduralObject(int Id, string BasePrefab, double X, double Y, double Z, double Yaw, double[] Scale)
+{
+    /// <summary>Effects Module effects (v4): prefab names, e.g. "Large Pool Steam".</summary>
+    public List<string> Effects { get; init; } = new();
+    /// <summary>Class and subclass from the offline decode (cs1-offline/out/po-offline.json), joined by id.</summary>
+    public string Class { get; set; } = "unclassified";
+    public string SubClass { get; set; } = "";
+}
 
 public static class ProceduralObjects
 {
@@ -422,9 +431,37 @@ public static class ProceduralObjects
                 else if (s.ValueKind == JsonValueKind.Array) scale = s.EnumerateArray().Select(v => v.GetDouble()).ToArray();
             }
             int id = o.TryGetProperty("id", out var idv) && idv.ValueKind == JsonValueKind.Number ? idv.GetInt32() : n;
-            list.Add(new ProceduralObject(id, prefab, x, y, z, Math.Round(yaw, 2), scale));
+            var effects = o.TryGetProperty("effects", out var ef) && ef.ValueKind == JsonValueKind.Array
+                ? ef.EnumerateArray().Select(e => e.TryGetProperty("prefab", out var ep) && ep.ValueKind == JsonValueKind.String ? ep.GetString()! : "?").ToList() : new List<string>();
+            list.Add(new ProceduralObject(id, prefab, x, y, z, Math.Round(yaw, 2), scale) { Effects = effects });
         }
         return list;
+    }
+
+    /// <summary>Joins the offline classes (po-classes.md rules) by object id; returns how many matched.</summary>
+    public static int Classify(List<ProceduralObject> pos, string offlinePath)
+    {
+        if (!File.Exists(offlinePath)) return 0;
+        using var doc = JsonDocument.Parse(File.ReadAllText(offlinePath));
+        var byId = doc.RootElement.GetProperty("objects").EnumerateArray()
+            .ToDictionary(o => o.GetProperty("id").GetInt32(), o => (o.GetProperty("class").GetString() ?? "?", o.TryGetProperty("subClass", out var sc) ? sc.GetString() ?? "" : ""));
+        int n = 0;
+        foreach (var p in pos)
+            if (byId.TryGetValue(p.Id, out var c)) { p.Class = c.Item1; p.SubClass = c.Item2; n++; }
+        return n;
+    }
+
+    /// <summary>Effects Module emitters (the dam steam / falls foam), one line per object.</summary>
+    public static string FallsFoam(List<ProceduralObject> pos, double factor)
+    {
+        var ci = CultureInfo.InvariantCulture;
+        var sb = new StringBuilder();
+        var fx = pos.Where(p => p.Effects.Count > 0).ToList();
+        sb.AppendLine().AppendLine("## Falls foam (PO Effects Module)").AppendLine();
+        sb.AppendLine($"{fx.Count} objects carry {fx.Sum(p => p.Effects.Count)} effects. CS2 has no PO effects: add water/steam effects by hand or leave them out. Position in CS2 metres (y × {factor}).").AppendLine();
+        sb.AppendLine("| id | base prefab | x | y | z | effects |").AppendLine("|---:|---|---:|---:|---:|---|");
+        foreach (var p in fx) sb.AppendLine(string.Create(ci, $"| {p.Id} | {Json.Short(p.BasePrefab)} | {p.X:F1} | {p.Y * factor:F1} | {p.Z:F1} | {string.Join(", ", p.Effects.GroupBy(e => e).Select(g => g.Count() > 1 ? $"{g.Key} ×{g.Count()}" : g.Key))} |"));
+        return sb.ToString();
     }
 
     public static string Manual(List<ProceduralObject> pos, double factor)
@@ -433,9 +470,12 @@ public static class ProceduralObjects
         var sb = new StringBuilder();
         sb.AppendLine().AppendLine("## Procedural Objects (CS1, from <base>-po.json)").AppendLine();
         sb.AppendLine($"{pos.Count:N0} objects. Position in CS2 metres (y × {factor}); yaw degrees, 0 = +z, clockwise from above (unverified); scale x/y/z.").AppendLine();
-        foreach (var g in pos.GroupBy(p => p.BasePrefab).OrderByDescending(g => g.Count()))
+        sb.AppendLine("| class | subclass | objects |").AppendLine("|---|---|---:|");
+        foreach (var c in pos.GroupBy(p => (p.Class, p.SubClass)).OrderBy(c => c.Key.Class).ThenBy(c => c.Key.SubClass)) sb.AppendLine($"| {c.Key.Class} | {c.Key.SubClass} | {c.Count()} |");
+        sb.AppendLine();
+        foreach (var g in pos.GroupBy(p => (p.Class, p.SubClass, p.BasePrefab)).OrderBy(g => g.Key.Class).ThenBy(g => g.Key.SubClass).ThenByDescending(g => g.Count()))
         {
-            sb.AppendLine($"### {Json.Short(g.Key)} ({g.Count()})").AppendLine();
+            sb.AppendLine($"### {g.Key.Class} / {g.Key.SubClass}: {Json.Short(g.Key.BasePrefab)} ({g.Count()})").AppendLine();
             sb.AppendLine("| id | x | y | z | yaw | scale |").AppendLine("|---:|---:|---:|---:|---:|---|");
             foreach (var p in g) sb.AppendLine(string.Create(ci, $"| {p.Id} | {p.X:F1} | {p.Y * factor:F1} | {p.Z:F1} | {p.Yaw:F1} | {string.Join(" × ", p.Scale.Select(v => v.ToString("0.##", ci)))} |"));
             sb.AppendLine();
@@ -444,12 +484,14 @@ public static class ProceduralObjects
     }
 
     /// <summary>The subset whose base prefab maps through object-mapping.tsv to a real CS2 prefab, as ordinary objects (with y; PO float).</summary>
-    public static List<PlacedObject> Candidates(List<ProceduralObject> pos, TargetMapping map, double factor, double half, ulong seed)
+    /// <param name="structuresOnly">With the offline classes joined: only class "structure" (terrain-like objects are stamped into the terrain, decals are surfaces).</param>
+    public static List<PlacedObject> Candidates(List<ProceduralObject> pos, TargetMapping map, double factor, double half, ulong seed, bool structuresOnly = false)
     {
         var rng = new Rng(seed);
         var res = new List<PlacedObject>();
         foreach (var p in pos)
         {
+            if (structuresOnly && p.Class != "structure") continue;
             if (Math.Abs(p.X) > half || Math.Abs(p.Z) > half) continue;
             var targets = map.Resolve(p.BasePrefab);
             if (targets == null) continue;

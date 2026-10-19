@@ -1,6 +1,6 @@
 # net-converter stats
 
-Dump `C:\Users\dleva\AppData\Local/DakotaExport/map-20261018-132303.json`, mapping `mapping.tsv`.
+Dump `C:\Users\dleva\AppData\Local/DakotaExport/2972879554_Dakota_Falls-20261019-063123.json`, mapping `mapping.tsv`.
 
 ## Output layers
 
@@ -128,7 +128,7 @@ Nodes 5582, segments 5532, net prefabs 62, water sources 65, outside connections
 | 2920928696.345 kV H Frame Ceramic Insulator_Data | PowerLineAI | 66 | 14.29 |
 | 2105051034.Terraforming Network Ext 0.5U_Data | CanalAI | 225 | 13.61 |
 | 2674210208.Field Wheat Network 3_Data | RoadAI | 102 | 12.24 |
-| Ship Path | ShipPathAI | 117 | 10.93 |
+| Ship Path | ShipPathAI | 117 | 10.90 |
 | 2674210208.Field Wheat Cut Network 3_Data | RoadAI | 76 | 9.07 |
 | 2452038713.USRP 1L Interstate Ramp_Data | RoadAI | 167 | 7.12 |
 | 2674210208.Field Wheat Young Network_Data | RoadAI | 55 | 7.05 |
@@ -281,7 +281,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 ## Other layers
 
 - Power: 60 courses of High-voltage Line in import-power.json (nodes on the ground).
-- Trees: 492,993 objects in 10 chunks under out\trees (rasters (trees.total 1081 grid + trees.byPrefab 270 grid)); outside ±7168 m 158,906; dropped 73,603 (see trees/README.md).
+- Trees: 496,318 objects in 10 chunks under out\trees (points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale)); outside ±7168 m 158,877; dropped 73,855 (see trees/README.md).
 - Objects: 6130 of 8408 CS1 buildings/props got a CS2 target (72.9 %); SKIP 247, MANUAL 7, unmapped 0, outside ±7168 m 2024; 2857 carry y.
 
 | CS1 prefab | count | decision |
@@ -361,12 +361,16 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | Garbage Bin | 1 | SKIP: no matching bin name verified |
 
 - Outside connections: 25 objects (road 16, rail 4, air 4, ship 1); border nodes 20, 20 with a CS1 connection (connections-check.md).
+- Procedural Objects: 604 listed in manual-objects.md; 2 map through object-mapping.tsv into import-po-candidates.json (UNVERIFIED: scale is not applied, PO meshes are not CS2 assets).
+- Water surface: 83,194 wet cells (waterSurface in the dump); source levels refined in import-water.json (water-check.md).
+- Terrain surfaces: 85,890 cells, 1 classes (surfaces-summary.md, surfaces.geojson).
 - Barrier props (import-walls-props.json): 621 ConcreteBarrier01 / SafetyBarrier01 pieces every 3 m along 62 CS1 barrier segments (piece length unverified).
 - Field surfaces (import-surfaces-fields.json): 56 polygons, 3.130 km², max 163 points; footprints also raise fertility to ≥ 220.
 - Grass surfaces from 3076 Landscape Grass props (import-surfaces-grass.json, optional): 51 polygons, 0.026 km², max 130 points.
 - Rock surfaces (import-surfaces-rock.json): 10190442-dktflls-1to1.png (|err| vs CS1 nodes 0.01 m), steep area 0.63 km² in 145 patches >= 400 m²; 151 polygons kept (0.60 km²), 0 smallest dropped.
 - Decal surfaces (import-surfaces-decals.json; PDO23 Dirty Surface 01 / PDO23 Soil Surface 01): 41 polygons, 0.022 km², max 298 points.
-- Resources: SYNTHETIC fertility from Corn Stalk density (3638 non-zero cells of 512²) in import-resources-synthetic.json; the dump has no naturalResources yet.
+- Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
+- Resources: import-resources.json from the dump's naturalResources.
 
 ## Skip review (rounds 10-12)
 
@@ -389,17 +393,18 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | Terraforming Network | network segments | 233 | 0 | 233 | kept skipped: CS1 terrain-shaping helper (terrain is in the heightmap) |
 | Pillars | buildings | 112 | 0 | 112 | kept skipped: CS2 bridges spawn their own pillars |
 | Modern Fence 02 | props | 22 | 22 | 0 | → FenceResidentialPieceLow01 (piece length unverified) |
+| Network Skins (v5) | segments | 215 | 215 flagged | 0 | note: no pillars on 164, no street lights on 62; edge fields noPillars / noStreetLights (no bridge field yet), list in manual-objects.md |
 
 ## CS2 audit fixes (audit/cs2-side.md, before the run)
 
 - Short border edges folded into their neighbour (< 10 m): 1.
 - Gravel Road border ends: 9; kept as outside connections 3 (one per CS1 connection: c31152_0, c9707_0, c35664_0); pulled 1 m inside 6: c4947_0 (7168, 690), c1237_0 (7168, 3968), c17246_0 (7168, 1202), c19544_0 (7168, 3712), c26692_0 (7168, 530), c17018_0 (7168, 4064).
-- Boatways (CS1 canals): 14; kept where water stands (CS1 water surface, or a source within 150 m above the ground) 6, dropped 8.
+- Boatways (CS1 canals): 14; kept where water stands (CS1 water surface, or a source within 150 m above the ground) 14, dropped 0.
 - Flat QuaySmall01 edges (cross-slope < 0.4 m at × 1): 21, wall right 11, both 4, left 6; their nodes raised to ≥ 4 m (one side) / ≥ 8 m (both) as the fallback.
 - Seaways stay at the riverbed (pass --seaway-at-water to write them at the water surface once the dig test shows digging).
-- Water sources: 65 → 42 (13 changes, water-check.md).
-- EXPERIMENT trees: the 5,271 net-corridor trees are in experiment-trees-net-corridor-01.json (import after the main tree files to try them; undo by its name).
-- Trees masked (same set for both scales): terrain below sea level 10,194; inside the CS1 water surface 0; on a ground-level net corridor (half width + 2 m) 5,271; total 15,465, 492,993 remain.
+- Water sources: 65 → 41 (12 changes, water-check.md).
+- EXPERIMENT trees: the 641 net-corridor trees are in experiment-trees-net-corridor-01.json (import after the main tree files to try them; undo by its name).
+- Trees masked (same set for both scales): terrain below sea level 10,093; inside the CS1 water surface 1,133; on a ground-level net corridor (half width + 2 m) 641; total 11,867, 496,368 remain.
 - Field circles: 7 overlapping pairs shrunk to touch (0.5 m gap) instead of a union, so they stay circles.
 - Grass surfaces: 2 overlapping pairs merged in 2 groups (53 → 51).
 - Decal surfaces: 227 overlapping pairs merged in 11 groups (128 → 41).

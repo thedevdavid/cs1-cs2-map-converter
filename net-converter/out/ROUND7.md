@@ -1,0 +1,47 @@
+# Conversion outputs (2026-10-19)
+
+Dump: `C:\Users\dleva\AppData\Local/DakotaExport/2972879554_Dakota_Falls-20261019-063123.json`. Import order: network → power, walls, ship paths → water → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → surfaces (fields, rock, decals, sand; grass optional) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
+out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 2048); same nodes and courses in both.
+
+| order | file | content | count | size |
+|---:|---|---|---|---:|
+| 1 | `out\import-all.json` | network (2×) | 4072 edges, 3915 nodes | 2.1 MB |
+| 1 | `out\x1\import-all.json` | network (1×) | 4072 edges, 3915 nodes | 2.1 MB |
+| 2 | `out\import-power.json` | power (2×) | 60 edges | 0.0 MB |
+| 2 | `out\import-walls.json` | walls: quays, retaining walls, canals, flood walls (2×) | 113 edges: QuaySmall01 97, Medium Boatway 14, Sound Barrier 2 | 0.1 MB |
+| 2 | `out\import-shippaths.json` | ship paths (2×) | 100 edges: Medium Seaway 100 | 0.1 MB |
+| 2 | `out\x1\import-power.json` | power (1×) | 60 edges | 0.0 MB |
+| 2 | `out\x1\import-walls.json` | walls: quays, retaining walls, canals, flood walls (1×) | 113 edges: QuaySmall01 97, Medium Boatway 14, Sound Barrier 2 | 0.1 MB |
+| 2 | `out\x1\import-shippaths.json` | ship paths (1×) | 100 edges: Medium Seaway 100 | 0.1 MB |
+| 3 | `out\import-water.json` | water (2×), seaLevel 195 | 41 sources, 0 refined | 0.0 MB |
+| 3 | `out\x1\import-water.json` | water (1×), seaLevel 97.5 | 41 sources, 0 refined | 0.0 MB |
+| 4 | `out\import-connections.json` | outside connections | 25 | 0.0 MB |
+| 4 | `out\x1\import-connections.json` | outside connections | 25 | 0.0 MB |
+| 5 | `out\import-walls-props.json` | barrier props (2×) | 621 | 0.1 MB |
+| 5 | `out\import-objects.json` | objects (2×) | 6130 (prop 3038, building 7, plant 3076, tree 9; 2857 with y) | 1.3 MB |
+| 5 | `out\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (2×) | 2 | 0.0 MB |
+| 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
+| 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3038, building 7, plant 3076, tree 9; 2857 with y) | 1.3 MB |
+| 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
+| 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |
+| 6 | `out\x1\import-trees-fixed-01.json` | trees at fixed height, with y (1×) | 50 | 0.0 MB |
+| 6 | `out\trees/import-trees-01.json` … `import-trees-10.json` | trees (both scales) | 496,318 in 10 files | |
+| 7 | `out\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
+| 7 | `out\x1\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
+| 8 | `out\import-surfaces-fields.json` | field surfaces | 56 polygons | 0.1 MB |
+| 8 | `out\import-surfaces-rock.json` | rock surfaces (slope >= 40°) | 151 polygons | 0.0 MB |
+| 8 | `out\import-surfaces-decals.json` | decal surfaces (Dirty Surfaces Pack) | 41 polygons | 0.0 MB |
+| 8 | `out\import-surfaces-sand.json` | sand surfaces (CS1 terrainSurfaces) | 479 polygons | 0.2 MB |
+| 8 | `out\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
+| 8 | `out\x1\import-surfaces-fields.json` | field surfaces | 56 polygons | 0.1 MB |
+| 8 | `out\x1\import-surfaces-rock.json` | rock surfaces (slope >= 40°) | 151 polygons | 0.0 MB |
+| 8 | `out\x1\import-surfaces-decals.json` | decal surfaces (Dirty Surfaces Pack) | 41 polygons | 0.0 MB |
+| 8 | `out\x1\import-surfaces-sand.json` | sand surfaces (CS1 terrainSurfaces) | 479 polygons | 0.2 MB |
+| 8 | `out\x1\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
+| 9 | `out\import-surfaces-decals-unmerged.json` | EXPERIMENT: decal squares, not merged | 128 polygons | 0.0 MB |
+| 9 | `out\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
+| 9 | `out\x1\import-surfaces-decals-unmerged.json` | EXPERIMENT: decal squares, not merged | 128 polygons | 0.0 MB |
+| 9 | `out\x1\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
+| 9 | `out\trees/experiment-trees-net-corridor-01.json` | EXPERIMENT: trees on ground-net corridors (both scales) | 641 | |
+
+Reports (both folders): `water-check.md`, `surfaces-summary.md`, `surfaces.geojson`, `manual-objects.md`, `connections-check.md`, `stats.md`.
