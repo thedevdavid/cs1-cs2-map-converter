@@ -296,3 +296,14 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
 - Lakes sit on the body's lowest CS2-terrain cell when the centre cell is not 0.5 m below the level; otherwise dropped with a note.
 - The CS2 heightmap default is the newest `<MMddHHmm>-dktflls-1to1.png` in the game's Heightmaps folder.
 - Gaps: gap_e15883_3lane bowed clear of the parallel 4-lane; path connectors under 10 m are left out (inside the road's footprint; the path end snaps in import-all.json).
+
+## Round 11: PO rocks v2, dam power course
+
+- `import-po-rocks.json` (import name `po-rocks-v2`, `PoRocksV2.cs`): the objects only add rock texture to the stamped terrain. Pieces of height H ≥ 12 m
+  (ASSET_PACKS.md footprints) get absolute y = terrain − (H − v), v = clamp(0.25 H, 8, 35) m visible (terrain from the CS2 heightmap, × 2 for the x2 set);
+  smaller rocks sit on the terrain. Summit piece per PO object from CliffRock5/6 / CliffStack (≥ 36 m), rzrock (12–36 m) or Boulder (< 12 m); extra pieces
+  inside large footprints are rzrock / Boulder; one CliffSide* / CliffFreeStanding only on PO mountains > 120 m above the ring around them. No two pieces
+  within 80 m share prefab and heading (± 20°). Cap 700, largest first, inside the map. The v1 positions still feed the rock scatter.
+  Live A-v3 map: undo v1 first with `POST /import/objects/undo?id=obj-20261019-165834-6`.
+- `import-power-ends.json`: a course that passes another target closer than 77 m (TransformerStation01 half-diagonal 37 m + 40 m) bends through an extra pylon
+  on the far side. The dam course now runs n2881 → dam_via (87 m from the station) → dam_end, both legs ≥ 79 m clear; the station course is unchanged.

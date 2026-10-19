@@ -633,8 +633,11 @@ void WriteLayers()
         var ends = Round8.PowerEnds(result.Layer(Layers.Power).ToList(), targets);
         Round8.WritePowerEnds(Path.Combine(outDir, "import-power-ends.json"), ends, cs2True, heightFactor, absolute);
         var pieces = Round8.LoadPoPieces(poOfflinePath);
+        // v1 cliff positions stay the rock scatter's sources (import-rock-scatter.json unchanged); import-po-rocks.json is v2.
         var (cliffs, capped, bands) = Round8.Cliffs(pieces, cs2True, 7168, treeSeed + 8);
-        Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "PO cliff objects (round 8)", cliffs);
+        var heightsH = PoRocksV2.LoadHeights(Find(Path.Combine("..", "cs2-playset", "ASSET_PACKS.md")));
+        var (v2, v2capped, v2big, v2renamed) = PoRocksV2.Build(pieces, heightsH, cs2True, heightFactor, 7168, treeSeed + 10);
+        Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "po-rocks-v2", v2.Select(p => p.O));
         var sources = objs.Objects.Where(o => Round8.IsRockLike(o.Prefab)).Concat(cliffs).Select(o => (o.X, o.Z)).ToList();
         Func<double, double, bool>? wet = surfaceEarly == null ? null : (x, z) => surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.5;
         var (scatter, rejected) = Round8.Scatter(sources, rockPolys.Select(p => p.Ring), result.Edges.Where(e => e.Map.Imported), wet, 7168, treeSeed + 9);
@@ -645,7 +648,8 @@ void WriteLayers()
             ci($"substation: {sub.Count} ({string.Join(", ", sub.Select(o => $"{o.Id} {o.Prefab} at ({o.X:F0}, {o.Z:F0}), rotation {o.Rotation}, no y"))}) -> import-substation.json"),
             dam is { } d3 ? ci($"dam: {Round8.DamPrefab} at ({d3.A.X}, {d3.A.Z}) from {dams.Count} CS1 Dam Electricity pieces, rotation {d3.A.Rotation} -> import-dam.json; deck {Round8.DamDeckPrefab} ({Round8.DamDeckA.X}, {Round8.DamDeckA.Z}) -> ({Round8.DamDeckB.X}, {Round8.DamDeckB.Z}) at crest y {Round8.DamCrestTrue * heightFactor} -> import-dam-deck.json") : "dam: no CS1 Dam Electricity building",
             "power ends: " + string.Join("; ", ends.Select(e => ci($"{e.Target}: CS1 end {e.OldEnd.Id} ({e.OldEnd.Position.X:F0}, {e.OldEnd.Position.Z:F0}), replaces {e.Replaces.Id}, new course {e.Anchor.Id} -> ({e.X:F1}, {e.Z:F1}), {Math.Sqrt((e.X - e.Anchor.Position.X) * (e.X - e.Anchor.Position.X) + (e.Z - e.Anchor.Position.Z) * (e.Z - e.Anchor.Position.Z)):F0} m"))) + " -> import-power-ends.json",
-            ci($"PO cliffs: {cliffs.Count} objects from {pieces.Count} PO pieces (mountain {pieces.Count(p => p.SubClass == "mountain")}, rock work {pieces.Count(p => p.SubClass == "rock work")}, falls steps {pieces.Count(p => p.SubClass == "falls steps")}); bands {string.Join(", ", bands.Select(b => $"{b.Key} {b.Value}"))}; {capped} over the cap of 2500 dropped -> import-po-rocks.json"),
+            ci($"PO rocks v2: {v2.Count} objects ({Round8.Counts(v2.Select(p => p.O))}) from {pieces.Count} PO pieces, {v2capped} over the cap of 700 dropped, {v2big} big cliffs (mountains > 120 m above their surroundings), {v2renamed} re-picked for the 80 m prefab/heading rule; with y (sunk) {v2.Count(p => p.O.Y != null)}; sink depth: {PoRocksV2.SinkHistogram(v2)} -> import-po-rocks.json (import name po-rocks-v2; undo the live v1 first: POST /import/objects/undo?id=obj-20261019-165834-6)"),
+            ci($"PO cliffs v1 (not written; their positions feed the rock scatter): {cliffs.Count} objects from {pieces.Count} PO pieces (mountain {pieces.Count(p => p.SubClass == "mountain")}, rock work {pieces.Count(p => p.SubClass == "rock work")}, falls steps {pieces.Count(p => p.SubClass == "falls steps")}); bands {string.Join(", ", bands.Select(b => $"{b.Key} {b.Value}"))}; {capped} over the cap of 2500 dropped -> import-po-rocks.json"),
             ci($"rock scatter: {scatter.Count} (small {scatter.Count(o => Round8.SmallRocks.Contains(o.Prefab))}, medium {scatter.Count(o => Round8.MediumRocks.Contains(o.Prefab))}, boulders {scatter.Count(o => Round8.Boulders.Contains(o.Prefab))}) around {sources.Count} rock/cliff objects (r 60 m) and in {rockPolys.Count} rock polygons; rejected road {rejected["road"]}, spacing {rejected["spacing"]}, water {rejected["water"]}, border {rejected["border"]} -> import-rock-scatter.json"),
         };
         foreach (var l in r8) { Console.WriteLine("round 8 " + l); extra.AppendLine($"- Round 8 {l}."); }

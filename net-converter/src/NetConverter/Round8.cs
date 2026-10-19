@@ -53,7 +53,17 @@ public static class Round8
 
     // ---------- 3. Power line ends ----------
 
-    public sealed record PowerEnd(string Target, OutEdge Replaces, OutNode Anchor, OutNode OldEnd, double X, double Z);
+    public sealed record PowerEnd(string Target, OutEdge Replaces, OutNode Anchor, OutNode OldEnd, double X, double Z, (double X, double Z)? Via = null, string Note = "");
+
+    /// <summary>Clearance of the other buildings: their footprint half-diagonal (TransformerStation01 48 × 56 m → 37 m) + 40 m.</summary>
+    public const double PassClearance = 77;
+
+    static double SegDist(double px, double pz, double ax, double az, double bx, double bz)
+    {
+        double dx = bx - ax, dz = bz - az, l2 = dx * dx + dz * dz;
+        double t = l2 > 0 ? Math.Clamp(((px - ax) * dx + (pz - az) * dz) / l2, 0, 1) : 0;
+        return Math.Sqrt((ax + t * dx - px) * (ax + t * dx - px) + (az + t * dz - pz) * (az + t * dz - pz));
+    }
 
     /// <summary>
     /// The power-line dead end nearest each building, matched one to one (nearest pair first). The new course runs from the old
@@ -77,6 +87,34 @@ public static class Round8
             var anchor = e.A == n ? e.B : e.A;
             double dx = anchor.Position.X - t.X, dz = anchor.Position.Z - t.Z, L = Math.Sqrt(dx * dx + dz * dz);
             res.Add(new PowerEnd(t.Name, e, anchor, n, t.X + 8 * dx / L, t.Z + 8 * dz / L));
+        }
+        // A-v3: the dam course ran past the transformer station and the game routed it through the station's connector. Where a
+        // course passes another target closer than PassClearance, it bends round it through an extra pylon on the far side.
+        for (int i = 0; i < res.Count; i++)
+        {
+            var pe = res[i];
+            foreach (var o in targets.Where(o => o.Name != pe.Target))
+            {
+                double ax = pe.Anchor.Position.X, az = pe.Anchor.Position.Z;
+                if (SegDist(o.X, o.Z, ax, az, pe.X, pe.Z) >= PassClearance) continue;
+                var t = targets.First(t => t.Name == pe.Target);
+                // Away from the other building, perpendicular to the straight course.
+                double lx = t.X - ax, lz = t.Z - az, ll = Math.Sqrt(lx * lx + lz * lz), nx = -lz / ll, nz = lx / ll;
+                double side = (o.X - ax) * nx + (o.Z - az) * nz;
+                if (side > 0) { nx = -nx; nz = -nz; }
+                (double X, double Z) via = (o.X, o.Z);
+                for (double r = PassClearance; r <= 300; r += 5)
+                {
+                    via = (o.X + nx * r, o.Z + nz * r);
+                    double ex = t.X + 8 * (via.X - t.X) / Math.Sqrt((via.X - t.X) * (via.X - t.X) + (via.Z - t.Z) * (via.Z - t.Z)), ez = t.Z + 8 * (via.Z - t.Z) / Math.Sqrt((via.X - t.X) * (via.X - t.X) + (via.Z - t.Z) * (via.Z - t.Z));
+                    if (SegDist(o.X, o.Z, ax, az, via.X, via.Z) >= PassClearance && SegDist(o.X, o.Z, via.X, via.Z, ex, ez) >= PassClearance)
+                    {
+                        res[i] = pe with { X = ex, Z = ez, Via = via, Note = string.Create(CultureInfo.InvariantCulture,
+                            $"the straight course passed the {o.Name} {SegDist(o.X, o.Z, ax, az, pe.X, pe.Z):F0} m off; extra pylon {r:F0} m from it on the far side") };
+                        break;
+                    }
+                }
+            }
         }
         return res;
     }
@@ -106,20 +144,32 @@ public static class Round8
             // Bridge 0.9.13: attach to the nearest building's high-voltage marker node; the x/z only picks the marker.
             w.WriteStartObject("connectTo"); w.WriteString("voltage", "high"); w.WriteNumber("radius", 60); w.WriteEndObject();
             w.WriteEndObject();
+            if (e.Via is { } v)
+            {
+                w.WriteStartObject();
+                w.WriteString("id", $"{e.Target}_via");
+                w.WriteNumber("x", Json.R2(v.X)); w.WriteNumber("z", Json.R2(v.Z));
+                w.WriteNumber("y", Json.R2(cs2TerrainTrue != null ? cs2TerrainTrue(v.X, v.Z) * heightFactor : e.OldEnd.Terrain * Outputs.YScale)); w.WriteNumber("elevation", 0);
+                w.WriteString("note", e.Note);
+                w.WriteEndObject();
+            }
         }
         w.WriteEndArray();
         w.WriteStartArray("edges");
         foreach (var e in ends)
-        {
-            w.WriteStartObject();
-            w.WriteString("id", $"{e.Replaces.Id}_to_{e.Target}");
-            w.WriteString("a", e.Anchor.Id); w.WriteString("b", $"{e.Target}_end");
-            w.WriteString("prefab", e.Replaces.Map.Cs2Prefab);
-            w.WriteString("replaces", e.Replaces.Id);
-            w.WriteString("cs1_prefab", e.Replaces.Map.Cs1Prefab);
-            w.WriteNumber("cs1_segment", e.Replaces.Cs1Segment);
-            w.WriteEndObject();
-        }
+            foreach (var (id, a, b) in e.Via == null ? new[] { ($"{e.Replaces.Id}_to_{e.Target}", e.Anchor.Id, $"{e.Target}_end") }
+                     : new[] { ($"{e.Replaces.Id}_to_{e.Target}_a", e.Anchor.Id, $"{e.Target}_via"), ($"{e.Replaces.Id}_to_{e.Target}_b", $"{e.Target}_via", $"{e.Target}_end") })
+            {
+                w.WriteStartObject();
+                w.WriteString("id", id);
+                w.WriteString("a", a); w.WriteString("b", b);
+                w.WriteString("prefab", e.Replaces.Map.Cs2Prefab);
+                w.WriteString("replaces", e.Replaces.Id);
+                if (e.Note.Length > 0) w.WriteString("note", e.Note);
+                w.WriteString("cs1_prefab", e.Replaces.Map.Cs1Prefab);
+                w.WriteNumber("cs1_segment", e.Replaces.Cs1Segment);
+                w.WriteEndObject();
+            }
         w.WriteEndArray();
         w.WriteStartObject("options");
         w.WriteNumber("batchSize", 64); w.WriteBoolean("nodesFirst", true); w.WriteString("heightMode", absolute ? "absolute" : "elevation"); w.WriteBoolean("dryRun", false);

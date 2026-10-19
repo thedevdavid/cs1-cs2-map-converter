@@ -14,13 +14,13 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 2 | `out\import-power.json` | power (2×) | 58 edges | 0.0 MB |
 | 2 | `out\import-walls.json` | walls: quays, retaining walls, canals, flood walls (2×) | 113 edges: QuaySmall01 97, Narrow Boatway 14, Sound Barrier 2 | 0.1 MB |
 | 2 | `out\import-shippaths.json` | ship paths (2×) | 100 edges: Medium Seaway 100 | 0.1 MB |
-| 2 | `out\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first) (2×) | 2 edges, replaces e5094_0, e32855_0 | 0.0 MB |
+| 2 | `out\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first) (2×) | 3 edges, replaces e5094_0, e32855_0 | 0.0 MB |
 | 2 | `out\import-dam-deck.json` | ROUND 8 dam deck network, absolute heights (after import-dam.json) (2×) | 1 edges | 0.0 MB |
 | 2 | `out\import-po-walls.json` | ROUND 9 QuaySmall01 sides of the PO paved blocks (2×) | 101 edges | 0.1 MB |
 | 2 | `out\x1\import-power.json` | power (1×) | 58 edges | 0.0 MB |
 | 2 | `out\x1\import-walls.json` | walls: quays, retaining walls, canals, flood walls (1×) | 113 edges: QuaySmall01 97, Narrow Boatway 14, Sound Barrier 2 | 0.1 MB |
 | 2 | `out\x1\import-shippaths.json` | ship paths (1×) | 100 edges: Medium Seaway 100 | 0.1 MB |
-| 2 | `out\x1\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first) (1×) | 2 edges, replaces e5094_0, e32855_0 | 0.0 MB |
+| 2 | `out\x1\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first) (1×) | 3 edges, replaces e5094_0, e32855_0 | 0.0 MB |
 | 2 | `out\x1\import-dam-deck.json` | ROUND 8 dam deck network, absolute heights (after import-dam.json) (1×) | 1 edges | 0.0 MB |
 | 2 | `out\x1\import-po-walls.json` | ROUND 9 QuaySmall01 sides of the PO paved blocks (1×) | 101 edges | 0.1 MB |
 | 3 | `out\import-water.json` | water (2×), seaLevel 195 | 41 sources, 0 refined | 0.0 MB |
@@ -35,7 +35,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\import-objects.json` | objects (2×) | 6130 (prop 3038, building 5, object 2, plant 3076, tree 9; 2301 with y) | 1.3 MB |
 | 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
 | 5 | `out\import-dam.json` | ROUND 8 dam HydroelectricPowerPlant01, rotation 261.7 (2×) | 1 | 0.0 MB |
-| 5 | `out\import-po-rocks.json` | ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps (2×) | 594 | 0.1 MB |
+| 5 | `out\import-po-rocks.json` | ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps (2×) | 626 | 0.1 MB |
 | 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 18994 | 3.5 MB |
 | 5 | `out\import-fort.json` | ROUND 9 fort wall props (UNVERIFIED names / lengths) (2×) | 97 | 0.0 MB |
 | 5 | `out\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (2×) | 2 | 0.0 MB |
@@ -43,7 +43,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3038, building 5, object 2, plant 3076, tree 9; 2301 with y) | 1.3 MB |
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
 | 5 | `out\x1\import-dam.json` | ROUND 8 dam HydroelectricPowerPlant01, rotation 261.7 (1×) | 1 | 0.0 MB |
-| 5 | `out\x1\import-po-rocks.json` | ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps (1×) | 594 | 0.1 MB |
+| 5 | `out\x1\import-po-rocks.json` | ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps (1×) | 626 | 0.1 MB |
 | 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 18994 | 3.5 MB |
 | 5 | `out\x1\import-fort.json` | ROUND 9 fort wall props (UNVERIFIED names / lengths) (1×) | 97 | 0.0 MB |
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
@@ -115,3 +115,7 @@ Failures, classified (round 10 fixes in brackets):
   a lake whose level is not 0.5 m above even that is dropped with a note]. The CS2 heightmap default is now the newest <MMddHHmm>-dktflls-1to1.png
   (10190843, the one A-v3 used).
 - Fort piece lengths: not reported by the bridge yet; fort-walls.tsv still holds the guesses (all 97 props were created).
+
+Owner review of A-v3 (round 11): the v1 PO cliffs (CliffFreeStanding / CliffSide, 140–195 m) stood exposed above the stamped terrain → `po-rocks-v2`
+(626 pieces: 239 sunk, 387 on the terrain). The dam's high-voltage course ran through the station's connector → it now bends round the station
+through an extra pylon. Undo on the live A-v3 map: `POST /import/objects/undo?id=obj-20261019-165834-6` (v1 po-rocks); the next build is a fresh map.

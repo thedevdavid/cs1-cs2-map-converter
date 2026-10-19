@@ -41,14 +41,22 @@
     },
     {
       "id": "dam_end",
-      "x": 1554.19,
-      "z": 4683.52,
-      "y": 167.12,
+      "x": 1555.81,
+      "z": 4685.08,
+      "y": 167.13,
       "elevation": 0,
       "connectTo": {
         "voltage": "high",
         "radius": 60
       }
+    },
+    {
+      "id": "dam_via",
+      "x": 1664.74,
+      "z": 4600.15,
+      "y": 167.36,
+      "elevation": 0,
+      "note": "the straight course passed the substation 46 m off; extra pylon 87 m from it on the far side"
     }
   ],
   "edges": [
@@ -62,11 +70,22 @@
       "cs1_segment": 5094
     },
     {
-      "id": "e32855_0_to_dam",
+      "id": "e32855_0_to_dam_a",
       "a": "n2881",
+      "b": "dam_via",
+      "prefab": "High-voltage Line",
+      "replaces": "e32855_0",
+      "note": "the straight course passed the substation 46 m off; extra pylon 87 m from it on the far side",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 32855
+    },
+    {
+      "id": "e32855_0_to_dam_b",
+      "a": "dam_via",
       "b": "dam_end",
       "prefab": "High-voltage Line",
       "replaces": "e32855_0",
+      "note": "the straight course passed the substation 46 m off; extra pylon 87 m from it on the far side",
       "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
       "cs1_segment": 32855
     }
