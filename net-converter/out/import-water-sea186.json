@@ -1,0 +1,460 @@
+{
+  "_comment": "Water sources after the CS2 audit rules (water-check.md lists every change). type natural = constant-level source; height = water level in metres (\u00D7 2); never polluted.",
+  "seaLevel": 186,
+  "sources": [
+    {
+      "id": 4,
+      "x": 1386.33,
+      "z": 5116.59,
+      "height": 315.88,
+      "radius": 99,
+      "type": "natural",
+      "rate": 9830,
+      "inPlayable": true
+    },
+    {
+      "id": 8,
+      "x": 461.75,
+      "z": 591.57,
+      "height": 219.47,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 13,
+      "x": -7097,
+      "z": 1808.36,
+      "height": 615.84,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true,
+      "note": "moved inward from (-7517, 1808)"
+    },
+    {
+      "id": 14,
+      "x": -6886.14,
+      "z": 1663.52,
+      "height": 555.16,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 15,
+      "x": -6555.04,
+      "z": 1099.5,
+      "height": 492.02,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 16,
+      "x": -6351.89,
+      "z": 549.22,
+      "height": 395.72,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 17,
+      "x": -5461.22,
+      "z": -22.3,
+      "height": 307.78,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 18,
+      "x": -4702.36,
+      "z": -110.68,
+      "height": 299.69,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 19,
+      "x": -4069.32,
+      "z": 47.54,
+      "height": 279.72,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 20,
+      "x": -3231.77,
+      "z": -256.56,
+      "height": 259.59,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 21,
+      "x": -2462.21,
+      "z": -705.76,
+      "height": 240.88,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 22,
+      "x": -1588.85,
+      "z": -1623.87,
+      "height": 205.53,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 23,
+      "x": -1881.45,
+      "z": -1437.97,
+      "height": 208.12,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 24,
+      "x": -2143.01,
+      "z": -1146.86,
+      "height": 219.56,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 35,
+      "x": 1170.61,
+      "z": 4362.1,
+      "height": 282.54,
+      "radius": 81,
+      "type": "natural",
+      "rate": 6553,
+      "inPlayable": true
+    },
+    {
+      "id": 36,
+      "x": 1157.08,
+      "z": 3536.84,
+      "height": 281.5,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 37,
+      "x": 752.03,
+      "z": 2599.98,
+      "height": 280.78,
+      "radius": 81,
+      "type": "natural",
+      "rate": 6553,
+      "inPlayable": true
+    },
+    {
+      "id": 38,
+      "x": 626.68,
+      "z": 1979.67,
+      "height": 279.69,
+      "radius": 81,
+      "type": "natural",
+      "rate": 6553,
+      "inPlayable": true
+    },
+    {
+      "id": 39,
+      "x": 468.75,
+      "z": 1378.2,
+      "height": 278.32,
+      "radius": 81,
+      "type": "natural",
+      "rate": 6553,
+      "inPlayable": true
+    },
+    {
+      "id": 40,
+      "x": 417.79,
+      "z": 2429.68,
+      "height": 280.5,
+      "radius": 26,
+      "type": "natural",
+      "rate": 655,
+      "inPlayable": true
+    },
+    {
+      "id": 41,
+      "x": 526.2,
+      "z": 619.58,
+      "height": 219.62,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 42,
+      "x": 601,
+      "z": 571.17,
+      "height": 219.5,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 43,
+      "x": 484.07,
+      "z": 333.41,
+      "height": 220.25,
+      "radius": 99,
+      "type": "natural",
+      "rate": 9830,
+      "inPlayable": true
+    },
+    {
+      "id": 44,
+      "x": -2853.74,
+      "z": -394.05,
+      "height": 255.09,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 45,
+      "x": -1202.45,
+      "z": -1968.24,
+      "height": 197.12,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 46,
+      "x": -750.94,
+      "z": -2258.84,
+      "height": 192.94,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 47,
+      "x": -161.98,
+      "z": -2905.58,
+      "height": 187.78,
+      "radius": 81,
+      "type": "natural",
+      "rate": 6553,
+      "inPlayable": true
+    },
+    {
+      "id": 48,
+      "x": -3685.67,
+      "z": -94.47,
+      "height": 276.7,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 49,
+      "x": 401.75,
+      "z": -73.87,
+      "height": 217.18,
+      "radius": 99,
+      "type": "natural",
+      "rate": 9830,
+      "inPlayable": true
+    },
+    {
+      "id": 50,
+      "x": 675.36,
+      "z": -924.45,
+      "height": 216.04,
+      "radius": 150,
+      "type": "natural",
+      "rate": 32767,
+      "inPlayable": true
+    },
+    {
+      "id": 51,
+      "x": 520.79,
+      "z": -2167.58,
+      "height": 189.97,
+      "radius": 150,
+      "type": "natural",
+      "rate": 32767,
+      "inPlayable": true
+    },
+    {
+      "id": 54,
+      "x": 4841.9,
+      "z": -1210.55,
+      "height": 277,
+      "radius": 81,
+      "type": "natural",
+      "rate": 6553,
+      "inPlayable": true
+    },
+    {
+      "id": 55,
+      "x": -1597.57,
+      "z": 1580.73,
+      "height": 398.28,
+      "radius": 81,
+      "type": "natural",
+      "rate": 6553,
+      "inPlayable": true
+    },
+    {
+      "id": 56,
+      "x": 1556.19,
+      "z": 6397.61,
+      "height": 318.28,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 57,
+      "x": 6733.14,
+      "z": 165.13,
+      "height": 278.94,
+      "radius": 150,
+      "type": "natural",
+      "rate": 32767,
+      "inPlayable": true
+    },
+    {
+      "id": 58,
+      "x": -3268.76,
+      "z": -898.61,
+      "height": 336.88,
+      "radius": 26,
+      "type": "natural",
+      "rate": 655,
+      "inPlayable": true
+    },
+    {
+      "id": 59,
+      "x": -500.61,
+      "z": -2507.25,
+      "height": 193.12,
+      "radius": 99,
+      "type": "natural",
+      "rate": 9830,
+      "inPlayable": true
+    },
+    {
+      "id": 60,
+      "x": 6337.44,
+      "z": -1795.82,
+      "height": 275.28,
+      "radius": 150,
+      "type": "natural",
+      "rate": 26213,
+      "inPlayable": true
+    },
+    {
+      "id": 61,
+      "x": 7055,
+      "z": 3091.34,
+      "height": 276.86,
+      "radius": 99,
+      "type": "natural",
+      "rate": 9830,
+      "inPlayable": true,
+      "note": "moved inward from (7337, 3091); level raised 136.31 \u2192 138.43 (depth \u2265 2 m)"
+    },
+    {
+      "id": 62,
+      "x": 1466.8,
+      "z": 7097,
+      "height": 354.81,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true,
+      "note": "moved inward from (1467, 7583); level raised 171.75 \u2192 177.41 (depth \u2265 2 m)"
+    },
+    {
+      "id": 63,
+      "x": -1420.97,
+      "z": 6370.32,
+      "height": 484.28,
+      "radius": 26,
+      "type": "natural",
+      "rate": 655,
+      "inPlayable": true
+    },
+    {
+      "id": 64,
+      "x": 1634.18,
+      "z": 6822.64,
+      "height": 324.19,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 66,
+      "x": -2160.49,
+      "z": -6698.51,
+      "height": 383.62,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": 67,
+      "x": -2317.04,
+      "z": -6397.98,
+      "height": 383.56,
+      "radius": 57,
+      "type": "natural",
+      "rate": 3276,
+      "inPlayable": true
+    },
+    {
+      "id": "30\u002B34\u002B31\u002B32\u002B33\u002B6\u002B7\u002B10\u002B9\u002B11\u002B12\u002B28\u002B27\u002B26\u002B5\u002B29\u002B25",
+      "x": 1260.18,
+      "z": 4541.36,
+      "height": 283.16,
+      "radius": 150,
+      "type": "natural",
+      "rate": 11135,
+      "inPlayable": true,
+      "note": "merged 17 canal feeds"
+    }
+  ]
+}

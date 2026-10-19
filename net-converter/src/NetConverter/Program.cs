@@ -14,7 +14,7 @@ const string NetCorridorRule = "on a ground-level net corridor (half width + 2 m
     if (File.Exists(cs2Hm)) rockHeightmapPath = cs2Hm;
 }
 ulong treeSeed = 20261019;
-double rampDelta = 6, rampLength = 60, minBridge = 8, seaLevel = 97.5, heightFactor = 2.0, topologyFactor = 2.0;
+double rampDelta = 6, rampLength = 60, minBridge = 8, seaLevel = 97.5, waterVariant = double.NaN, heightFactor = 2.0, topologyFactor = 2.0;
 bool absolute = true;
 for (int i = 0; i < args.Length; i++)
 {
@@ -41,10 +41,11 @@ for (int i = 0; i < args.Length; i++)
         case "--height-factor": heightFactor = double.Parse(args[++i], System.Globalization.CultureInfo.InvariantCulture); break;
         case "--topology-factor": topologyFactor = double.Parse(args[++i], System.Globalization.CultureInfo.InvariantCulture); break;
         case "--height-mode": absolute = args[++i] == "absolute"; break;
+        case "--water-variant": waterVariant = double.Parse(args[++i], System.Globalization.CultureInfo.InvariantCulture); break;
         case "--sea-level": seaLevel = double.Parse(args[++i], System.Globalization.CultureInfo.InvariantCulture); break;
         case "--ramp-length": rampLength = double.Parse(args[++i], System.Globalization.CultureInfo.InvariantCulture); break;
         case "--help" or "-h":
-            Console.WriteLine("net-converter <dump.json> [--mapping mapping.tsv] [--out out] [--inventory] [--live out/live-graph.json] [--baseline out/round1] [--ramp-delta 6] [--ramp-length 60] [--retry] [--trees-dir DIR] [--tree-seed N] [--network-only] [--heightmap cs2-4096.png] [--retry-report report.json] [--min-bridge-elevation 8] [--sea-level 97.5] [--height-factor 2] [--topology-factor 2] [--height-mode absolute|elevation]");
+            Console.WriteLine("net-converter <dump.json> [--mapping mapping.tsv] [--out out] [--inventory] [--live out/live-graph.json] [--baseline out/round1] [--ramp-delta 6] [--ramp-length 60] [--retry] [--trees-dir DIR] [--tree-seed N] [--network-only] [--heightmap cs2-4096.png] [--retry-report report.json] [--min-bridge-elevation 8] [--sea-level 97.5] [--water-variant 93.0] [--height-factor 2] [--topology-factor 2] [--height-mode absolute|elevation]");
             return 0;
         default: dumpPath = args[i]; break;
     }
@@ -224,6 +225,18 @@ Outputs.WriteWater(Path.Combine(outDir, "water-sources.json"), dump, 7168);
     wmd.AppendLine().AppendLine($"## Source changes (audit/cs2-side.md finding 6; sea level {seaLevel} × {heightFactor})").AppendLine();
     wmd.AppendLine($"{dump.WaterSources.Count} CS1 sources → {wsrc.Count} in import-water.json.").AppendLine();
     foreach (var l in wlog) wmd.AppendLine($"- {l}");
+    if (!double.IsNaN(waterVariant))
+    {
+        // Second sea level to switch to in game without a rerun; the same per-source rules at that level.
+        Dictionary<int, double>? vOverrides = surfaceEarly?.Check(dump, waterVariant, heightFactor, 7168).Item2;
+        var (vsrc, vlog) = Water.Plan(dump, waterVariant, heightFactor, 7168, cs1Terrain == null ? null : cs1Terrain.Sample, vOverrides, mergeCanal);
+        string vname = FormattableString.Invariant($"import-water-sea{waterVariant * heightFactor:0.#}.json");
+        Water.Write(Path.Combine(outDir, vname), vsrc, heightFactor, waterVariant * heightFactor, 7168);
+        wmd.AppendLine().AppendLine(FormattableString.Invariant($"## Variant: sea level {waterVariant} × {heightFactor} = {waterVariant * heightFactor:0.#} ({vname})")).AppendLine();
+        wmd.AppendLine($"Import instead of import-water.json to try the measured level (falls back to {seaLevel} × {heightFactor} = {seaLevel * heightFactor:0.#}). {dump.WaterSources.Count} CS1 sources → {vsrc.Count}.").AppendLine();
+        foreach (var l in vlog) wmd.AppendLine($"- {l}");
+        Console.WriteLine($"water variant: sea level {waterVariant} -> {vsrc.Count} sources in {vname}");
+    }
     File.WriteAllText(Path.Combine(outDir, "water-check.md"), wmd.ToString());
     auditLog.AppendLine($"- Water sources: {dump.WaterSources.Count} → {wsrc.Count} ({wlog.Count} changes, water-check.md).");
     Console.WriteLine($"water: {dump.WaterSources.Count} -> {wsrc.Count} sources ({wlog.Count} changes)");

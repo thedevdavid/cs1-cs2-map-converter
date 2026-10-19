@@ -1,5 +1,5 @@
 // One command for a full conversion: both scales, then out/ROUND.md (file list, counts, import order).
-// node tools/run-all.mjs [dump.json] [--heightmap ../hm-rebuild/out/DakotaFalls-1to1-4096.png] [--out out]
+// node tools/run-all.mjs [dump.json] [--heightmap ../hm-rebuild/out/DakotaFalls-1to1-4096.png] [--out out] [--water-variant 93.0]
 // Default dump: the newest *.json in %LOCALAPPDATA%\DakotaExport that is not a -trees/-po sibling.
 import { execFileSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
@@ -9,6 +9,7 @@ const args = process.argv.slice(2);
 const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args.splice(i, 2)[1] : def; };
 const heightmap = opt("--heightmap", "../hm-rebuild/out/DakotaFalls-1to1-4096.png");
 const out = opt("--out", "out");
+const waterVariant = opt("--water-variant", "93.0"); // second sea level (CS1 m) next to 97.5
 let dump = args[0];
 if (!dump) {
   const dir = join(process.env.LOCALAPPDATA ?? "", "DakotaExport");
@@ -17,7 +18,7 @@ if (!dump) {
 }
 console.log(`dump ${dump}`);
 
-const run = extra => execFileSync("dotnet", ["run", "-c", "Release", "--project", "src/NetConverter", "--", dump, "--mapping", "mapping.tsv",
+const run = extra => execFileSync("dotnet", ["run", "-c", "Release", "--project", "src/NetConverter", "--", dump, "--mapping", "mapping.tsv", "--water-variant", waterVariant,
   "--heightmap", heightmap, ...extra], { stdio: ["ignore", "inherit", "inherit"] });
 const live = join(out, "live-graph.json");
 run(["--out", out, ...(existsSync(live) ? ["--live", live, "--baseline", join(out, "none")] : [])]);
@@ -39,6 +40,7 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
   for (const [f, what] of [["import-surfaces-fields.json", "field surfaces"], ["import-surfaces-rock.json", "rock surfaces (slope >= 40°)"], ["import-surfaces-decals.json", "decal surfaces (Dirty Surfaces Pack)"], ["import-surfaces-sand.json", "sand surfaces (CS1 terrainSurfaces)"], ["import-surfaces-grass.json", "grass surfaces (optional alternative to the grass plants)"]])
     if (existsSync(p(f))) add(8, p(f), what, `${J(p(f)).surfaces.length} polygons`);
   if (existsSync(p("import-water.json"))) { const w = J(p("import-water.json")); add(3, p("import-water.json"), `water (${scale}), seaLevel ${w.seaLevel}`, `${w.sources.length} sources, ${w.sources.filter(s => s.refinedFrom).length} refined`); }
+  for (const vf of existsSync(dir) ? readdirSync(dir).filter(x => /^import-water-sea[\d.]+\.json$/.test(x)) : []) { const w = J(p(vf)); add(3, p(vf), `water VARIANT (${scale}), seaLevel ${w.seaLevel}: import instead of import-water.json to try the measured level`, `${w.sources.length} sources`); }
   if (existsSync(p("import-connections.json"))) add(4, p("import-connections.json"), "outside connections", `${J(p("import-connections.json")).objects.length}`);
   if (existsSync(p("import-objects.json")))
   {
@@ -63,7 +65,7 @@ rows.sort((a, b) => parseInt(a.slice(2)) - parseInt(b.slice(2)));
 const extras = ["water-check.md", "surfaces-summary.md", "surfaces.geojson", "manual-objects.md", "connections-check.md", "stats.md"].filter(f => existsSync(join(out, f)));
 const summary = (`# Conversion outputs (${new Date().toISOString().slice(0, 10)})
 
-Dump: \`${dump}\`. Import order: network → power, walls, ship paths → water → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → surfaces (fields, rock, decals, sand; grass optional) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
+Dump: \`${dump}\`. Import order: network → power, walls, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → surfaces (fields, rock, decals, sand; grass optional) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
 ${out}/ = 2× heights (Height Scale 4096), ${out}/x1/ = true heights (Height Scale 2048); same nodes and courses in both.
 
 | order | file | content | count | size |

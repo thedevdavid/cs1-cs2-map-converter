@@ -144,3 +144,17 @@ Largest body (the lower river): 54,091 cells (13.85 km²), median surface 92.78 
 - 62: moved inward from (1467, 7583); level raised 171.75 → 178.41 (depth ≥ 2 m)
 - 65: dropped, level 92.15 m ≤ sea level 97.5 + 1 m (× 1)
 - 30+34+31+32+33+6+7+10+9+11+12+28+27+26+5+29+25: merged 17 canal feeds into one source at (1260, 4541), radius 150 m, level 141.58
+
+## Variant: sea level 93 × 1 = 93 (import-water-sea93.json)
+
+Import instead of import-water.json to try the measured level (falls back to 97.5 × 1 = 97.5). 65 CS1 sources → 44.
+
+- 1: dropped, 1392 m outside the map (backdrop only)
+- 2: dropped, 1429 m outside the map (backdrop only)
+- 3: dropped, 1414 m outside the map (backdrop only)
+- 13: moved inward from (-7517, 1808)
+- 47: dropped, level 93.89 m ≤ sea level 93 + 1 m (× 1)
+- 61: moved inward from (7337, 3091); level raised 136.31 → 139.43 (depth ≥ 2 m)
+- 62: moved inward from (1467, 7583); level raised 171.75 → 178.41 (depth ≥ 2 m)
+- 65: dropped, level 92.15 m ≤ sea level 93 + 1 m (× 1)
+- 30+34+31+32+33+6+7+10+9+11+12+28+27+26+5+29+25: merged 17 canal feeds into one source at (1260, 4541), radius 150 m, level 141.58
