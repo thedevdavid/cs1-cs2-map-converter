@@ -122,7 +122,7 @@ auditLog.AppendLine($"- Short border edges folded into their neighbour (< 10 m):
         double ground = cs1Terrain?.Sample(x, z) ?? double.MaxValue;
         return srcs.Any(s => (s.X - x) * (s.X - x) + (s.Z - z) * (s.Z - z) <= 150 * 150 && s.Level > ground + 0.2);
     }
-    var boat = result.Layer(Layers.Walls).Where(e => e.Map.Cs2Prefab == "Medium Boatway").ToList();
+    var boat = result.Layer(Layers.Walls).Where(e => e.Map.Cs2Prefab.EndsWith("Boatway")).ToList();
     var dry = boat.Where(e => { var m = e.Curve.Eval(0.5); return !Wet(m.X, m.Z); }).ToHashSet(ReferenceEqualityComparer.Instance);
     foreach (OutEdge e in dry) result.Fate[e.Cs1Segment] = "boatway dropped: dry canal";
     result.Edges.RemoveAll(dry.Contains);
@@ -647,14 +647,14 @@ void WriteLayers()
     extra.AppendLine($"| Decals (R69 dirt/mud) | props | {objs.PerCs1.Where(kv => kv.Key.Contains("Decal")).Sum(kv => kv.Value.Count)} | {decals.Count} as surfaces | {objs.PerCs1.Where(kv => kv.Key.Contains("Decal")).Sum(kv => kv.Value.Count) - decals.Count} (outside ±7168) | → 16 m squares of PDO23 Dirty Surface 01 (dirt) / PDO23 Soil Surface 01 (mud), import-surfaces-decals.json |");
     SegRow("Pedestrian Gravel / Elevated", "^Pedestrian (Gravel|Elevated)", "→ Pavement Path (roads layer, elevations kept); CS2 has no gravel path");
     SegRow("Quay", "^Quay", "→ QuayMedium01 (walls layer, import-walls.json)");
-    SegRow("Canal", "^Canal", "→ Medium Boatway (walls layer); CS2 boatways are canals");
+    SegRow("Canal", "^Canal", "→ Narrow Boatway (walls layer); CS2 boatways are canals");
     SegRow("Flood Wall", "Flood Wall", "→ Sound Barrier (walls layer), the only wall network by name");
     SegRow("Retaining Walls AiO", "Retaining Wall", "→ QuaySmall01 (walls layer); no retaining-wall network, quay wall is the nearest (unverified inland)");
     extra.AppendLine($"| Concrete / Steel barriers | network segments | {dump.Segments.Count(s => barrierRx.IsMatch(s.Prefab))} | {barrierProps.Select(b => b.Source).Distinct().Count()} as props | {dump.Segments.Count(s => barrierRx.IsMatch(s.Prefab)) - barrierProps.Select(b => b.Source).Distinct().Count()} (outside ±7168) | → {barrierProps.Count} ConcreteBarrier01 / SafetyBarrier01 props every 3 m (import-walls-props.json) |");
     SegRow("Castle Wall", "Castle Wall", "NO TWIN, kept skipped: searched Assets.NAME for Wall/Castle/Rampart/Fort/Ruin (only garden walls EU_Wall*, RuinsCastle01 building, Sound Barrier)");
     SegRow("Ship paths", "^Ship (Connection )?Path", "→ Medium Seaway (import-shippaths.json), clipped to end on the border");
     SegRow("Airplane paths", "^Airplane", "kept skipped: the game routes planes");
-    ObjRow("Ruins / wreck / factory", "(?i)Pier Ruins|Ship Wreck|Abandoned Factory|Castle Ruins", "buildings", "→ LeisurePier01Small01 / RubblePileWood02 / RuinsOldMill01 / RuinsCastle01 (nearest by name)");
+    ObjRow("Ruins / wreck / factory", "(?i)Pier Ruins|Ship Wreck|Abandoned Factory|Castle Ruins", "buildings", "→ LeisurePier01HeadSmall / RubblePileWood02 / RuinsOldMill01 / RuinsCastle01 (nearest by name)");
     SegRow("Terraforming Network", "Terraforming", "kept skipped: CS1 terrain-shaping helper (terrain is in the heightmap)");
     ObjRow("Pillars", "(?i)Pillar", "buildings", "kept skipped: CS2 bridges spawn their own pillars");
     ObjRow("Modern Fence 02", "(?i)Modern Fence", "props", "→ FenceResidentialPieceLow01 (piece length unverified)");

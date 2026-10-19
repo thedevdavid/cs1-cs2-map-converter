@@ -116,7 +116,7 @@ public class SurfacesTests
     [InlineData("Pedestrian Elevated", "Pavement Path", Layers.Roads)]
     [InlineData("Quay", "QuaySmall01", Layers.Walls)]
     [InlineData("2966434181.Retaining Walls - AiO #01_Data", "QuaySmall01", Layers.Walls)]
-    [InlineData("Canal", "Medium Boatway", Layers.Walls)]
+    [InlineData("Canal", "Narrow Boatway", Layers.Walls)]
     [InlineData("Flood Wall", "Sound Barrier", Layers.Walls)]
     [InlineData("Ship Path", "Medium Seaway", Layers.ShipPaths)]
     [InlineData("Ship Connection Path", "Medium Seaway", Layers.ShipPaths)]

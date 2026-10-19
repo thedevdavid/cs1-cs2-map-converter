@@ -59,10 +59,10 @@
 # --- Buildings and landmarks -------------------------------------------------------------------------------
 (?i)Dam Electricity	MANUAL	1	building	CS2 hydro dam (Hydroelectric_Power_Plant_01 Dam) is placed across the river by hand
 (?i)Detroit Bridge|Hernando-Desoto Bridge	MANUAL	1	building	CS1 bridge model placed as a building; in CS2 build TrussArchBridge01 / ExtradosedBridge01 along the road instead
-(?i)Substation	ElectricalSubstation01	1	building	nearest CS2 equivalent
+(?i)Substation	ElectricalSubstation01	1	object	bridge classifies it as an object (Run A); nearest CS2 equivalent
 (?i)Castle Ruins	RuinsCastle01	1	building	CS2 landmark ruin
 (?i)Abandoned Factory	RuinsOldMill01	1	building	no abandoned factory in CS2; the old-mill ruin is the only derelict industrial ruin (searched ruin/abandon/derelict/factory/mill)
-(?i)Pier Ruins	LeisurePier01Small01	1	building	no pier ruin in CS2; nearest by name is an intact small leisure pier (searched pier/ruin/wreck)
+(?i)Pier Ruins	LeisurePier01HeadSmall	1	object	no pier ruin in CS2; nearest is a small leisure pier head (LeisurePier01Small01 does not exist in this build; bridge classifies it as an object, Run A)
 (?i)Ship Wreck	RubblePileWood02	1	prop	no wreck in CS2; wood rubble as a stand-in (searched wreck/ship/boat/derelict)
 # --- Props ------------------------------------------------------------------------------------------------
 # --- Landscape Grass 1:1 (round 12): pack grass/vegetation PlantObjects (ASSET_PACKS.md), kind plant, age adult; species vary per CS1 variant
@@ -85,7 +85,7 @@
 (?i)Landscape Grass 06	ReikUndergrowth02Trimmed	0.2	plant	
 (?i)Landscape Grass	Grass02 (Styx's)	1	plant	other variants
 (?i)Decal	SKIP	1	prop	no dirt/mud decal without EAI: converted to Dirty Surfaces Pack area surfaces (import-surfaces-decals.json)
-(?i)Fallen Pine Stump	PineTreeStump01	1	prop
+(?i)Fallen Pine Stump	LogRandom01	1	prop	no stump prop in CS2 (Run A); random log, alternatives Log01–Log11
 (?i)Fallen Pine	Log01	1	prop	fallen pine -> log
 (?i)Fallen Pine	Log02	1	prop
 (?i)Fallen Pine	Log03	1	prop
@@ -97,8 +97,8 @@
 (?i)^Modern Fence	FenceResidentialPieceLow01	1	prop	nearest CS2 fence piece; piece length unverified (gaps or overlaps possible)
 (?i)Destroyed Road Prop|Concrete Debris	RubblePileConcrete01	1	prop
 (?i)Destroyed Road Prop|Concrete Debris	RubblePileConcrete02	1	prop
-(?i)^Trashpile$	PileGarbageMediumLow01	1	prop
-(?i)^Dirt Pile	PileStoneSmallLow01	1	prop	no dirt pile in CS2; small stone pile
+(?i)^Trashpile$	TrashbagRandom01	1	prop	PileGarbageMediumLow01 does not exist in this build (Run A)
+(?i)^Dirt Pile	RubblePileMixedRandom01	1	prop	no dirt pile in CS2; PileStoneSmallLow01 does not exist in this build, mixed rubble pile instead (Run A)
 (?i)^High Vegetation	GreenBushWild02	1	tree	vegetation prop -> bush
 (?i)^Stop Sign$	NA_StopSign01	1	prop
 (?i)^(Park )?Bench 01$	GardenBench01	1	prop

@@ -66,7 +66,7 @@
 # --- Walls layer (import-walls.json, CS1 elevations kept; round 11) -------------------------------------------
 (?i)^Quay$|^Quay 	QuaySmall01	walls	CS1 vanilla Quay (QuayAI, a landscaping wall); QuayMedium01 is a two-lane road (audit/cs2-side.md finding 4), so QuaySmall01 (wall + footpath)
 (?i)Retaining Wall	QuaySmall01	walls	no retaining-wall network in CS2; QuaySmall01 is the nearest vertical wall (UNVERIFIED away from water)
-(?i)^Canal	Medium Boatway	walls	CS2 boatway = canal for boats (Assets.DESCRIPTION: canal through which boats can pass); width class guessed
+(?i)^Canal	Narrow Boatway	walls	CS2 boatway = canal for boats (Assets.DESCRIPTION: canal through which boats can pass); this build has only Pier and Narrow Boatway (live check, Run A)
 (?i)Flood Wall	Sound Barrier	walls	no flood-wall network in CS2; Sound Barrier is the only wall network by name
 # --- Ship paths (import-shippaths.json, ground, clipped so they end on the border) ---------------------------
 (?i)^Ship Path|^Ship Connection Path	Medium Seaway	shippaths	CS2 seaway (Narrow/Medium/Wide Seaway); the game makes the ship outside connection on the border node
