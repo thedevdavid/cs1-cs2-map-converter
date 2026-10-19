@@ -73,6 +73,18 @@ public sealed class WaterSurface
     }
 
     /// <summary>4-connected wet bodies, largest first.</summary>
+    /// <summary>Wet cells above sea level + 1 m with no CS1 source within 400 m, and their connected bodies (largest first).</summary>
+    public (HashSet<int> Cells, List<List<int>> Bodies) Orphans(Dump dump, double seaLevelCs1)
+    {
+        var sources = dump.WaterSources.Select(s => (s.Output.X, s.Output.Z)).ToList();
+        var orphan = Cells.Where(kv => kv.Value.Surface > seaLevelCs1 + 1).Select(kv => kv.Key)
+            .Where(i => { var (x, z) = Grid.Centre(i); return !sources.Any(s => (s.X - x) * (s.X - x) + (s.Z - z) * (s.Z - z) <= 400 * 400); })
+            .ToHashSet();
+        var orphanSurface = new WaterSurface { Grid = Grid };
+        foreach (var i in orphan) orphanSurface.Cells[i] = Cells[i];
+        return (orphan, orphanSurface.Bodies());
+    }
+
     public List<List<int>> Bodies()
     {
         var seen = new HashSet<int>();
@@ -112,7 +124,7 @@ public sealed class WaterSurface
         return list;
     }
 
-    static double Median(List<double> v) { if (v.Count == 0) return double.NaN; v.Sort(); return v.Count % 2 == 1 ? v[v.Count / 2] : (v[v.Count / 2 - 1] + v[v.Count / 2]) / 2; }
+    public static double Median(List<double> v) { if (v.Count == 0) return double.NaN; v.Sort(); return v.Count % 2 == 1 ? v[v.Count / 2] : (v[v.Count / 2 - 1] + v[v.Count / 2]) / 2; }
 
     /// <summary>
     /// water-check.md, and the per-source height overrides (CS1 metres) where the source target and the surface around it
@@ -168,13 +180,7 @@ public sealed class WaterSurface
         }
 
         // Wet cells above sea level with no source within 400 m: lakes or upper reaches the sources would not fill.
-        var sources = dump.WaterSources.Select(s => (s.Output.X, s.Output.Z)).ToList();
-        var orphan = Cells.Where(kv => kv.Value.Surface > seaLevelCs1 + 1).Select(kv => kv.Key)
-            .Where(i => { var (x, z) = Grid.Centre(i); return !sources.Any(s => (s.X - x) * (s.X - x) + (s.Z - z) * (s.Z - z) <= 400 * 400); })
-            .ToHashSet();
-        var orphanSurface = new WaterSurface { Grid = Grid };
-        foreach (var i in orphan) orphanSurface.Cells[i] = Cells[i];
-        var groups = orphanSurface.Bodies();
+        var (orphan, groups) = Orphans(dump, seaLevelCs1);
         sb.AppendLine("## Wet cells above sea level that no source within 400 m explains").AppendLine();
         sb.AppendLine($"{orphan.Count:N0} cells in {groups.Count} patches (largest 25 listed). Each may need its own source.").AppendLine();
         sb.AppendLine("| patch | cells | km² | median surface (×factor) | centre x | centre z | inside ±7168 |").AppendLine("|---:|---:|---:|---:|---:|---:|---|");

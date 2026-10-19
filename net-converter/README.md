@@ -267,3 +267,21 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
 - Bridge live tests (round 8b): substation → `TransformerStation01` (48 × 56 m), dam → `HydroelectricPowerPlant01` (48 × 72 m) at rotation 261.7 (variant B dropped).
   `import-dam-deck.json` (absolute heights, after import-dam.json): one `Hydroelectric_Power_Plant_01 Dam` edge from (1440, 4673) to (1576, 4694) at crest y 172 (× 2 = 344).
   `import-power-ends.json` end nodes carry `connectTo` {voltage high, radius 60} (bridge 0.9.13), so they attach to the building's high-voltage marker node.
+
+## Round 9 (`Round9.cs`, `tools/import-run.mjs`; both scales)
+
+- `node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--climate <name>] [--dry-run] [--bridge URL]` runs a whole
+  fresh-map import in the ROUND order (network, gaps, power, walls, po-walls, shippaths, decor, water (the file for the sea level), lakes, connections, objects,
+  barriers, substation, dam (+ deck), po-rocks, rock-scatter, fort, trees (+ fixed), resources, surfaces, power-ends, settings). One line per file; a body error
+  (HTTP 400 with problems) stops the run; the report with every importId and its undo call goes to out/x1 (x1) or out (x2) as `run-<timestamp>.md`.
+  Settings: theme named like "North America" in the game's list, latitude 40.0, longitude −105.3, sea level × scale, climate if given.
+- `import-surfaces-po-rock.json`: rock texture (`gaga TTP - Pebbles 2L`, surface-mapping.tsv `po rock`) on every cell of cs1-offline v2
+  `po-terrain-like-cs2-4096.png` > 0, hole-free, 4 m, patches ≥ 100 m². The 40° slope layer stays separate.
+- `import-fort.json`: wall props along the 12 CS1 Castle Wall Béziers from `fort-walls.tsv` (UNVERIFIED names, lengths, rotation offset).
+- `import-po-structures.json` (pavement tops of the 85 PO paved blocks; sloped tops use the plan footprint) and `import-po-walls.json` (QuaySmall01 along the long
+  sides of blocks > 4 m tall, at the top height, absolute).
+- `import-water-lakes.json`: one natural source per wet body above sea level + 1 m with no CS1 source within 400 m (median level, radius √(area/π), 20–300 m);
+  bodies whose surface spans > 3 m are flagged SLOPING REACH in the note.
+- `import-gaps.json`: e15883_0 as 3-lane (taper alternative in `import-gaps-e15883-taper.json`), e20430_0b bowed 1 m off the parallel carriageway, the CS1 gravel gap,
+  e25579_0 / e36563_0 (Run A lost their T-junction node), and connectors for the three Pavement Path stubs (snap radius 20). Ends join the live net by snapToSegment.
+  e15232_0, e17832_0 and e28650_0 were built in Run A (a curved segment sits on each) although the bridge reported them failed.

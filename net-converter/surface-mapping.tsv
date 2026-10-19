@@ -9,4 +9,5 @@
 (?i)sand	PDO23 Dirty Sand Surface 01	1		brown shore sand (Dirty Surfaces Pack; alt: Sand Surface 01)
 (?i)grass	Grass Surface 01	1
 (?i)concrete	Concrete Surface 01	1
+(?i)^po rock	gaga TTP - Pebbles 2L	1		PO mountain / rock work / falls steps footprints (Round 9; the 40° slope layer keeps gaga TTP - Pebbles 1L dark)
 (?i)clip|cliff|none	SKIP	1		not a painted surface

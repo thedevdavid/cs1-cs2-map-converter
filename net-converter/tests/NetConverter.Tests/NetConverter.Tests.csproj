@@ -27,6 +27,7 @@
     <None Include="..\..\tree-mapping.tsv" Link="tree-mapping.tsv" CopyToOutputDirectory="PreserveNewest" />
     <None Include="..\..\object-mapping.tsv" Link="object-mapping.tsv" CopyToOutputDirectory="PreserveNewest" />
     <None Include="..\..\surface-mapping.tsv" Link="surface-mapping.tsv" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\fort-walls.tsv" Link="fort-walls.tsv" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

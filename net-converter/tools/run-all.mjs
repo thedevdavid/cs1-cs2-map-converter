@@ -54,6 +54,13 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
     ["import-substation.json", 5, "ROUND 8 substation building TransformerStation01"], ["import-dam.json", 5, "ROUND 8 dam HydroelectricPowerPlant01, rotation 261.7"], ["import-po-rocks.json", 5, "ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps"],
     ["import-rock-scatter.json", 5, "ROUND 8 vanilla rock scatter"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : `${j.edges.length} edges${j.replaces ? `, replaces ${j.replaces.join(", ")}` : ""}`); }
+  // Round 9.
+  for (const [f, order, what] of [["import-gaps.json", 1, "ROUND 9 network gaps (snapToSegment onto the live network)"], ["import-gaps-e15883-taper.json", 1, "ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane"],
+    ["import-po-walls.json", 2, "ROUND 9 QuaySmall01 sides of the PO paved blocks"], ["import-water-lakes.json", 3, "ROUND 9 lake sources for unexplained wet bodies (after the water file)"],
+    ["import-fort.json", 5, "ROUND 9 fort wall props (UNVERIFIED names / lengths)"]])
+    if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : j.sources ? `${j.sources.length} sources` : `${j.edges.length} edges`); }
+  for (const [f, what] of [["import-surfaces-po-rock.json", "ROUND 9 rock texture on the PO terrain-like footprints"], ["import-po-structures.json", "ROUND 9 pavement tops of the PO paved blocks"]])
+    if (existsSync(p(f))) add(8, p(f), `${what} (${scale})`, `${J(p(f)).surfaces.length} polygons`);
   if (existsSync(p("import-po-candidates.json"))) add(5, p("import-po-candidates.json"), `Procedural Object candidates, UNVERIFIED (${scale})`, `${J(p("import-po-candidates.json")).objects.length}`);
   if (existsSync(p("import-resources.json"))) add(7, p("import-resources.json"), "natural resources", Object.keys(J(p("import-resources.json")).layers).join(", "));
   else if (existsSync(p("import-resources-synthetic.json"))) add(7, p("import-resources-synthetic.json"), "SYNTHETIC fertility (no naturalResources in the dump)", "fertility");
@@ -70,7 +77,7 @@ rows.sort((a, b) => parseInt(a.slice(2)) - parseInt(b.slice(2)));
 const extras = ["water-check.md", "surfaces-summary.md", "surfaces.geojson", "manual-objects.md", "connections-check.md", "stats.md"].filter(f => existsSync(join(out, f)));
 const summary = (`# Conversion outputs (${new Date().toISOString().slice(0, 10)})
 
-Dump: \`${dump}\`. Import order: network → power, walls, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → surfaces (fields, rock, decals, sand; grass optional) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
+Dump: \`${dump}\`. Run it all with \`node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5]\`. Import order: network → power, walls, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → surfaces (fields, rock, decals, sand; grass optional) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
 ${out}/ = 2× heights (Height Scale 4096), ${out}/x1/ = true heights (Height Scale 2048); same nodes and courses in both.
 
 | order | file | content | count | size |
@@ -81,5 +88,5 @@ Reports (both folders): ${extras.map(f => `\`${f}\``).join(", ")}.
 `);
 // Live results reported back from the game (hand-written, kept across reruns).
 const liveResult = existsSync(join(out, "live-result.md")) ? "\n" + readFileSync(join(out, "live-result.md"), "utf8") : "";
-for (const name of ["ROUND.md", "ROUND8.md"]) writeFileSync(join(out, name), summary + liveResult);
-console.log(`summary: ${join(out, "ROUND8.md")}`);
+for (const name of ["ROUND.md", "ROUND9.md"]) writeFileSync(join(out, name), summary + liveResult);
+console.log(`summary: ${join(out, "ROUND9.md")}`);

@@ -213,7 +213,15 @@ public static class Surfaces
                 double dx = (h[r * n + c + 1] - h[r * n + c - 1]) / (2 * px), dz = (h[(r + 1) * n + c] - h[(r - 1) * n + c]) / (2 * px);
                 if (dx * dx + dz * dz >= tan * tan) steep.Add(r * n + c);
             }
-        var comps = Components(steep, g).Where(cmp => cmp.Count * px * px >= minArea).OrderByDescending(cmp => cmp.Count).ToList();
+        var (kept, patches, dropped) = MaskPolygons(steep, g, minArea, tol, cap);
+        return (kept, steep.Count * px * px, kept.Sum(p => Math.Abs(Area(p))), patches, dropped);
+    }
+
+    /// <summary>Hole-free, simplified polygons of the connected patches of a cell mask (patches below minArea dropped), largest first, capped.</summary>
+    public static (List<List<(double X, double Z)>> Polygons, int Patches, int Dropped) MaskPolygons(HashSet<int> mask, GridSpec g, double minArea = 400, double tol = 4, int cap = 1500)
+    {
+        double px = g.CellSize;
+        var comps = Components(mask, g).Where(cmp => cmp.Count * px * px >= minArea).OrderByDescending(cmp => cmp.Count).ToList();
         var polys = new List<List<(double X, double Z)>>();
         foreach (var cmp in comps)
         {
@@ -221,7 +229,7 @@ public static class Surfaces
             polys.AddRange(Polygonize(cmp, g, tol).Where(p => Math.Abs(Area(p)) >= minArea));
         }
         var kept = polys.OrderByDescending(p => Math.Abs(Area(p))).Take(cap).ToList();
-        return (kept, steep.Count * px * px, kept.Sum(p => Math.Abs(Area(p))), comps.Count, Math.Max(0, polys.Count - kept.Count));
+        return (kept, comps.Count, Math.Max(0, polys.Count - kept.Count));
     }
 
     public static bool PointInPolygon(double x, double z, List<(double X, double Z)> poly)

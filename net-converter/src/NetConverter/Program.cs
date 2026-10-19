@@ -626,6 +626,46 @@ void WriteLayers()
         foreach (var l in r8) { Console.WriteLine("round 8 " + l); extra.AppendLine($"- Round 8 {l}."); }
     }
 
+    // Round 9: PO rock texture, the fort, PO paved blocks, lakes, network gaps; one import file each.
+    {
+        string ci(FormattableString f) => FormattableString.Invariant(f);
+        var r9 = new List<string>();
+        var smap = TargetMapping.Load(Find("surface-mapping.tsv"));
+        var raster = Path.Combine(Path.GetDirectoryName(poOfflinePath) ?? ".", "v2", "po-terrain-like-cs2-4096.png");
+        if (File.Exists(raster))
+        {
+            string prefab = smap.Resolve("po rock")?.FirstOrDefault()?.Prefab ?? RockSurface;
+            var (polys, area, patches, dropped) = Round9.PoRock(raster);
+            var poRock = polys.Select((r, k) => new SurfacePolygon($"porock{k + 1}", prefab, r, "PO terrain-like footprint")).ToList();
+            Surfaces.Write(Path.Combine(outDir, "import-surfaces-po-rock.json"), "surfaces-po-rock", poRock,
+                $"Rock texture on every PO mountain / rock work / falls steps footprint ({Path.GetFileName(raster)}, cells > 0, 3.5 m), hole-free, simplified to 4 m, patches >= 100 m². The 40° slope layer is import-surfaces-rock.json.");
+            r9.Add(ci($"PO rock surfaces: {poRock.Count} polygons ({poRock.Sum(p => Math.Abs(Surfaces.Area(p.Ring))) / 1e6:F2} km² of {area / 1e6:F2} km² footprint, {patches} patches, {dropped} dropped), {prefab} -> import-surfaces-po-rock.json"));
+        }
+        var fort = Round9.Fort(dump, Round9.LoadWallRules(Find("fort-walls.tsv")), 7168);
+        Objects.Write(Path.Combine(outDir, "import-fort.json"), "fort walls (round 9, UNVERIFIED prop names and lengths)", fort);
+        r9.Add(ci($"fort: {fort.Count} wall props on {fort.Select(o => o.Source).Distinct().Count()} CS1 Castle Wall segments ({Round8.Counts(fort)}) -> import-fort.json; RuinsCastle01 stays in import-objects.json"));
+        var blocks = Round9.LoadPavedBlocks(poOfflinePath);
+        string pave = smap.Resolve("pavement")?.FirstOrDefault()?.Prefab ?? "Pavement Surface 01";
+        var (ps, pn, pe, tall) = Round9.PavedStructures(blocks, pave, heightFactor, 7168);
+        Surfaces.Write(Path.Combine(outDir, "import-po-structures.json"), "po-structures", ps, $"Tops of the PO paved blocks (convex hull of the top vertices), {pave}, overlaps unioned.");
+        Round9.WriteNet(Path.Combine(outDir, "import-po-walls.json"), "Dakota Falls PO paved-block walls",
+            "QuaySmall01 along the long sides of the PO paved blocks taller than 4 m, at the block top (absolute heights); the game raises the lower side as a retaining wall.", pn, pe);
+        r9.Add(ci($"PO paved blocks: {blocks.Count} blocks -> {ps.Count} pavement polygons (import-po-structures.json); {tall} taller than 4 m -> {pe.Count} QuaySmall01 edges (import-po-walls.json); tunnel/shed and bridge/pillar PO stay in manual-objects.md"));
+        if (surfaceEarly != null)
+        {
+            var (lakes, bodies, outside, tiny) = Round9.Lakes(surfaceEarly, dump, seaLevel, 7168);
+            Water.Write(Path.Combine(outDir, "import-water-lakes.json"), lakes, heightFactor, seaLevel * heightFactor, 7168);
+            r9.Add(ci($"lakes: {bodies} wet bodies above sea level {seaLevel} + 1 m with no CS1 source within 400 m; {lakes.Count} sources (outside the map {outside}, single cells {tiny}) -> import-water-lakes.json (append after import-water*.json)"));
+        }
+        var (gn, ge, tn, te, glog) = Round9.Gaps(result, topologyFactor);
+        Round9.WriteNet(Path.Combine(outDir, "import-gaps.json"), "Dakota Falls network gaps (round 9)",
+            "Last Run A gaps; each end joins the live network through snapToSegment (an end within 2 % of a segment end joins that node).", gn, ge);
+        if (te.Count > 0) Round9.WriteNet(Path.Combine(outDir, "import-gaps-e15883-taper.json"), "e15883_0 taper alternative",
+            "Alternative to gap_e15883_3lane in import-gaps.json: 12 m of 4-lane, then 3-lane. Import only one of the two.", tn, te);
+        r9.Add($"gaps: {ge.Count} edges -> import-gaps.json ({string.Join("; ", glog)})");
+        foreach (var l in r9) { Console.WriteLine("round 9 " + l); extra.AppendLine($"- Round 9 {l}."); }
+    }
+
     // R69 Big Decal Dirt/Mud: no decal without EAI, so each becomes a 16 × 16 m Dirty Surfaces Pack square at the CS1 position and angle.
     const double DecalSize = 16; // CS1 "Big Decal" footprint not in the dump
     var decals = new List<SurfacePolygon>();
