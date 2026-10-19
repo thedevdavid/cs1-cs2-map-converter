@@ -1,0 +1,34 @@
+{
+  "_comment": "CS1 water sources. position = outputPosition; height = target surface height in metres (m_target/64); rate = outputRate (CS1 units, unscaled).",
+  "seaLevel": 195,
+  "sources": [
+    {
+      "id": 1,
+      "type": "Natural",
+      "position": [
+        -1000,
+        400,
+        3000
+      ],
+      "height": 400,
+      "rate": 4096,
+      "inputRate": 4096,
+      "flow": 1,
+      "inPlayable": true
+    },
+    {
+      "id": 2,
+      "type": "Natural",
+      "position": [
+        0,
+        194,
+        10
+      ],
+      "height": 195,
+      "rate": 16383,
+      "inputRate": 16383,
+      "flow": 1,
+      "inPlayable": true
+    }
+  ]
+}

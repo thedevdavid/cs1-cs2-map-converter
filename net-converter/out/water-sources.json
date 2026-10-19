@@ -1,0 +1,916 @@
+{
+  "_comment": "CS1 water sources. position = outputPosition; height = target surface height in metres (m_target/64); rate = outputRate (CS1 units, unscaled).",
+  "seaLevel": 184,
+  "sources": [
+    {
+      "id": 1,
+      "type": "Natural",
+      "position": [
+        2072.26,
+        399.59,
+        8560.32
+      ],
+      "height": 404.44,
+      "rate": 16383,
+      "inputRate": 16383,
+      "flow": 720,
+      "inPlayable": false
+    },
+    {
+      "id": 2,
+      "type": "Natural",
+      "position": [
+        -8596.7,
+        733.76,
+        2601.17
+      ],
+      "height": 739.47,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 533,
+      "inPlayable": false
+    },
+    {
+      "id": 3,
+      "type": "Natural",
+      "position": [
+        819.34,
+        362.89,
+        8582.05
+      ],
+      "height": 369.44,
+      "rate": 9830,
+      "inputRate": 9830,
+      "flow": 1066,
+      "inPlayable": false
+    },
+    {
+      "id": 4,
+      "type": "Natural",
+      "position": [
+        1386.33,
+        290.72,
+        5116.59
+      ],
+      "height": 318.66,
+      "rate": 9830,
+      "inputRate": 9830,
+      "flow": 2610,
+      "inPlayable": true
+    },
+    {
+      "id": 5,
+      "type": "Natural",
+      "position": [
+        1198.68,
+        260.21,
+        4530.8
+      ],
+      "height": 283.75,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 210,
+      "inPlayable": true
+    },
+    {
+      "id": 6,
+      "type": "Natural",
+      "position": [
+        1171.08,
+        259.73,
+        4561.93
+      ],
+      "height": 280.22,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 7,
+      "type": "Natural",
+      "position": [
+        1217.09,
+        260.09,
+        4569.82
+      ],
+      "height": 279.88,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 8,
+      "type": "Natural",
+      "position": [
+        461.75,
+        205.36,
+        591.57
+      ],
+      "height": 219.47,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 9,
+      "type": "Natural",
+      "position": [
+        1260.92,
+        260.02,
+        4577.66
+      ],
+      "height": 279.25,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 10,
+      "type": "Natural",
+      "position": [
+        1303.65,
+        260.56,
+        4582.94
+      ],
+      "height": 279.22,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 11,
+      "type": "Natural",
+      "position": [
+        1348.84,
+        260.24,
+        4589.76
+      ],
+      "height": 280.03,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 12,
+      "type": "Natural",
+      "position": [
+        1396.56,
+        260.42,
+        4594.2
+      ],
+      "height": 280.19,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 13,
+      "type": "Natural",
+      "position": [
+        -7517.34,
+        610.73,
+        1808.36
+      ],
+      "height": 615.84,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 180,
+      "inPlayable": false
+    },
+    {
+      "id": 14,
+      "type": "Natural",
+      "position": [
+        -6886.14,
+        548.04,
+        1663.52
+      ],
+      "height": 555.16,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 364,
+      "inPlayable": true
+    },
+    {
+      "id": 15,
+      "type": "Natural",
+      "position": [
+        -6555.04,
+        437.75,
+        1099.5
+      ],
+      "height": 451.72,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 110,
+      "inPlayable": true
+    },
+    {
+      "id": 16,
+      "type": "Natural",
+      "position": [
+        -6351.89,
+        391.69,
+        549.22
+      ],
+      "height": 395.72,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 33,
+      "inPlayable": true
+    },
+    {
+      "id": 17,
+      "type": "Natural",
+      "position": [
+        -5461.22,
+        300.91,
+        -22.3
+      ],
+      "height": 307.78,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 80,
+      "inPlayable": true
+    },
+    {
+      "id": 18,
+      "type": "Natural",
+      "position": [
+        -4702.36,
+        290.94,
+        -110.68
+      ],
+      "height": 299.69,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 490,
+      "inPlayable": true
+    },
+    {
+      "id": 19,
+      "type": "Natural",
+      "position": [
+        -4069.32,
+        273.42,
+        47.54
+      ],
+      "height": 279.72,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 20,
+      "type": "Natural",
+      "position": [
+        -3231.77,
+        252.18,
+        -256.56
+      ],
+      "height": 259.59,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 21,
+      "type": "Natural",
+      "position": [
+        -2462.21,
+        232.74,
+        -705.76
+      ],
+      "height": 243.28,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 814,
+      "inPlayable": true
+    },
+    {
+      "id": 22,
+      "type": "Natural",
+      "position": [
+        -1588.85,
+        196.6,
+        -1623.87
+      ],
+      "height": 205.53,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 238,
+      "inPlayable": true
+    },
+    {
+      "id": 23,
+      "type": "Natural",
+      "position": [
+        -1881.45,
+        204.07,
+        -1437.97
+      ],
+      "height": 208.12,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 24,
+      "type": "Natural",
+      "position": [
+        -2143.01,
+        213.54,
+        -1146.86
+      ],
+      "height": 219.56,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 25,
+      "type": "Natural",
+      "position": [
+        1241.66,
+        260.74,
+        4537.33
+      ],
+      "height": 283.91,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 152,
+      "inPlayable": true
+    },
+    {
+      "id": 26,
+      "type": "Natural",
+      "position": [
+        1288.02,
+        261.25,
+        4543.71
+      ],
+      "height": 283.66,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 168,
+      "inPlayable": true
+    },
+    {
+      "id": 27,
+      "type": "Natural",
+      "position": [
+        1334.33,
+        261.37,
+        4550.64
+      ],
+      "height": 283.53,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 92,
+      "inPlayable": true
+    },
+    {
+      "id": 28,
+      "type": "Natural",
+      "position": [
+        1377.32,
+        261.28,
+        4556.78
+      ],
+      "height": 283.47,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 138,
+      "inPlayable": true
+    },
+    {
+      "id": 29,
+      "type": "Natural",
+      "position": [
+        1154.81,
+        260.21,
+        4522.67
+      ],
+      "height": 283.81,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 185,
+      "inPlayable": true
+    },
+    {
+      "id": 30,
+      "type": "Natural",
+      "position": [
+        1182.53,
+        260.45,
+        4489.93
+      ],
+      "height": 285.25,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 498,
+      "inPlayable": true
+    },
+    {
+      "id": 31,
+      "type": "Natural",
+      "position": [
+        1225.09,
+        260.55,
+        4495.45
+      ],
+      "height": 285.06,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 456,
+      "inPlayable": true
+    },
+    {
+      "id": 32,
+      "type": "Natural",
+      "position": [
+        1269.37,
+        261.52,
+        4503.29
+      ],
+      "height": 285.72,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 376,
+      "inPlayable": true
+    },
+    {
+      "id": 33,
+      "type": "Natural",
+      "position": [
+        1314.24,
+        261.55,
+        4511.23
+      ],
+      "height": 286.25,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 560,
+      "inPlayable": true
+    },
+    {
+      "id": 34,
+      "type": "Natural",
+      "position": [
+        1138.96,
+        261.15,
+        4484.99
+      ],
+      "height": 285.59,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 470,
+      "inPlayable": true
+    },
+    {
+      "id": 35,
+      "type": "Natural",
+      "position": [
+        1170.61,
+        260.1,
+        4362.1
+      ],
+      "height": 280.06,
+      "rate": 6553,
+      "inputRate": 6553,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 36,
+      "type": "Natural",
+      "position": [
+        1157.08,
+        260.45,
+        3536.84
+      ],
+      "height": 281.5,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 37,
+      "type": "Natural",
+      "position": [
+        752.03,
+        260.38,
+        2599.98
+      ],
+      "height": 280.78,
+      "rate": 6553,
+      "inputRate": 6553,
+      "flow": 836,
+      "inPlayable": true
+    },
+    {
+      "id": 38,
+      "type": "Natural",
+      "position": [
+        626.68,
+        260.95,
+        1979.67
+      ],
+      "height": 279.69,
+      "rate": 6553,
+      "inputRate": 6553,
+      "flow": 550,
+      "inPlayable": true
+    },
+    {
+      "id": 39,
+      "type": "Natural",
+      "position": [
+        468.75,
+        262.33,
+        1378.2
+      ],
+      "height": 281.38,
+      "rate": 6553,
+      "inputRate": 6553,
+      "flow": 2090,
+      "inPlayable": true
+    },
+    {
+      "id": 40,
+      "type": "Natural",
+      "position": [
+        417.79,
+        253.65,
+        2429.68
+      ],
+      "height": 280.5,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 102,
+      "inPlayable": true
+    },
+    {
+      "id": 41,
+      "type": "Natural",
+      "position": [
+        526.2,
+        195.49,
+        619.58
+      ],
+      "height": 219.62,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 42,
+      "type": "Natural",
+      "position": [
+        601,
+        193.48,
+        571.17
+      ],
+      "height": 219.5,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 43,
+      "type": "Natural",
+      "position": [
+        484.07,
+        202.07,
+        333.41
+      ],
+      "height": 220.25,
+      "rate": 9830,
+      "inputRate": 9830,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 44,
+      "type": "Natural",
+      "position": [
+        -2853.74,
+        249.41,
+        -394.05
+      ],
+      "height": 255.09,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 45,
+      "type": "Natural",
+      "position": [
+        -1202.45,
+        188.46,
+        -1968.24
+      ],
+      "height": 197.12,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 46,
+      "type": "Natural",
+      "position": [
+        -750.94,
+        184.59,
+        -2258.84
+      ],
+      "height": 195.12,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 780,
+      "inPlayable": true
+    },
+    {
+      "id": 47,
+      "type": "Natural",
+      "position": [
+        -161.98,
+        168.83,
+        -2905.58
+      ],
+      "height": 184.28,
+      "rate": 6553,
+      "inputRate": 6553,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 48,
+      "type": "Natural",
+      "position": [
+        -3685.67,
+        265.51,
+        -94.47
+      ],
+      "height": 278.81,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 924,
+      "inPlayable": true
+    },
+    {
+      "id": 49,
+      "type": "Natural",
+      "position": [
+        401.75,
+        201.25,
+        -73.87
+      ],
+      "height": 219.97,
+      "rate": 9830,
+      "inputRate": 9830,
+      "flow": 2610,
+      "inPlayable": true
+    },
+    {
+      "id": 50,
+      "type": "Natural",
+      "position": [
+        675.36,
+        192.32,
+        -924.45
+      ],
+      "height": 218.38,
+      "rate": 32767,
+      "inputRate": 32767,
+      "flow": 6059,
+      "inPlayable": true
+    },
+    {
+      "id": 51,
+      "type": "Natural",
+      "position": [
+        520.79,
+        147.5,
+        -2167.58
+      ],
+      "height": 189.97,
+      "rate": 32767,
+      "inputRate": 32767,
+      "flow": 1445,
+      "inPlayable": true
+    },
+    {
+      "id": 54,
+      "type": "Natural",
+      "position": [
+        4841.9,
+        227.49,
+        -1210.55
+      ],
+      "height": 281.31,
+      "rate": 6553,
+      "inputRate": 6553,
+      "flow": 2898,
+      "inPlayable": true
+    },
+    {
+      "id": 55,
+      "type": "Natural",
+      "position": [
+        -1597.57,
+        343.41,
+        1580.73
+      ],
+      "height": 398.28,
+      "rate": 6553,
+      "inputRate": 6553,
+      "flow": 198,
+      "inPlayable": true
+    },
+    {
+      "id": 56,
+      "type": "Natural",
+      "position": [
+        1556.19,
+        308.6,
+        6397.61
+      ],
+      "height": 320.47,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 962,
+      "inPlayable": true
+    },
+    {
+      "id": 57,
+      "type": "Natural",
+      "position": [
+        6733.14,
+        229.71,
+        165.13
+      ],
+      "height": 278.94,
+      "rate": 32767,
+      "inputRate": 32767,
+      "flow": 4920,
+      "inPlayable": true
+    },
+    {
+      "id": 58,
+      "type": "Natural",
+      "position": [
+        -3268.76,
+        309.71,
+        -898.61
+      ],
+      "height": 336.88,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 50,
+      "inPlayable": true
+    },
+    {
+      "id": 59,
+      "type": "Natural",
+      "position": [
+        -500.61,
+        178.3,
+        -2507.25
+      ],
+      "height": 193.12,
+      "rate": 9830,
+      "inputRate": 9830,
+      "flow": 1050,
+      "inPlayable": true
+    },
+    {
+      "id": 60,
+      "type": "Natural",
+      "position": [
+        6337.44,
+        234.66,
+        -1795.82
+      ],
+      "height": 275.28,
+      "rate": 26213,
+      "inputRate": 26213,
+      "flow": 0,
+      "inPlayable": true
+    },
+    {
+      "id": 61,
+      "type": "Natural",
+      "position": [
+        7337.03,
+        209.7,
+        3091.34
+      ],
+      "height": 272.62,
+      "rate": 9830,
+      "inputRate": 9830,
+      "flow": 464,
+      "inPlayable": false
+    },
+    {
+      "id": 62,
+      "type": "Natural",
+      "position": [
+        1466.8,
+        338.97,
+        7583.47
+      ],
+      "height": 343.5,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 377,
+      "inPlayable": false
+    },
+    {
+      "id": 63,
+      "type": "Natural",
+      "position": [
+        -1420.97,
+        464.65,
+        6370.32
+      ],
+      "height": 484.28,
+      "rate": 655,
+      "inputRate": 655,
+      "flow": 24,
+      "inPlayable": true
+    },
+    {
+      "id": 64,
+      "type": "Natural",
+      "position": [
+        1634.18,
+        319.54,
+        6822.64
+      ],
+      "height": 324.19,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 14,
+      "inPlayable": true
+    },
+    {
+      "id": 65,
+      "type": "Natural",
+      "position": [
+        4152.67,
+        174.48,
+        -6955.95
+      ],
+      "height": 178.84,
+      "rate": 65,
+      "inputRate": 65,
+      "flow": 4,
+      "inPlayable": true
+    },
+    {
+      "id": 66,
+      "type": "Natural",
+      "position": [
+        -2160.49,
+        359.98,
+        -6698.51
+      ],
+      "height": 383.62,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 624,
+      "inPlayable": true
+    },
+    {
+      "id": 67,
+      "type": "Natural",
+      "position": [
+        -2317.04,
+        357.45,
+        -6397.98
+      ],
+      "height": 383.56,
+      "rate": 3276,
+      "inputRate": 3276,
+      "flow": 559,
+      "inPlayable": true
+    }
+  ]
+}

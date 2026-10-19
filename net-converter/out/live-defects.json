@@ -1,0 +1,199 @@
+{
+ "gaps": [
+  {
+   "a": {
+    "index": 52828,
+    "version": 5
+   },
+   "b": {
+    "index": 53495,
+    "version": 5
+   },
+   "prefabA": "Highway Oneway - 4 lanes",
+   "prefabB": "Highway Oneway - 3 lanes",
+   "gap": 68,
+   "x": 463,
+   "z": -4520
+  },
+  {
+   "a": {
+    "index": 57440,
+    "version": 5
+   },
+   "b": {
+    "index": 59021,
+    "version": 7
+   },
+   "prefabA": "Gravel Road",
+   "prefabB": "Gravel Road",
+   "gap": 80,
+   "x": 1383,
+   "z": 6161
+  },
+  {
+   "a": {
+    "index": 54719,
+    "version": 5
+   },
+   "b": {
+    "index": 55351,
+    "version": 7
+   },
+   "prefabA": "Highway Oneway - 2 lanes",
+   "prefabB": "Highway Oneway - 3 lanes",
+   "gap": 36,
+   "x": 3713,
+   "z": 4676
+  }
+ ],
+ "nearCrossing": [
+  {
+   "node": {
+    "index": 59423,
+    "version": 17
+   },
+   "prefab": "Gravel Road",
+   "other": "Double Train Track",
+   "distance": 37,
+   "x": -229,
+   "z": -2362
+  },
+  {
+   "node": {
+    "index": 59407,
+    "version": 23
+   },
+   "prefab": "Medium Road",
+   "other": "Highway Oneway - 1 lane",
+   "distance": 66,
+   "x": -480,
+   "z": -1481
+  },
+  {
+   "node": {
+    "index": 59521,
+    "version": 19
+   },
+   "prefab": "Medium Road",
+   "other": "Highway Oneway - 1 lane",
+   "distance": 62,
+   "x": -643,
+   "z": -1188
+  }
+ ],
+ "rampTails": [
+  {
+   "node": {
+    "index": 52828,
+    "version": 5
+   },
+   "prefab": "Highway Oneway - 4 lanes",
+   "stubLength": 69,
+   "beside": "Highway Oneway - 4 lanes",
+   "besideSegment": {
+    "index": 59882,
+    "version": 13
+   },
+   "distance": 17.9,
+   "x": 463,
+   "z": -4520
+  },
+  {
+   "node": {
+    "index": 53495,
+    "version": 5
+   },
+   "prefab": "Highway Oneway - 3 lanes",
+   "stubLength": 80,
+   "beside": "Highway Oneway - 4 lanes",
+   "besideSegment": {
+    "index": 63953,
+    "version": 17
+   },
+   "distance": 15.6,
+   "x": 412,
+   "z": -4474
+  },
+  {
+   "node": {
+    "index": 53448,
+    "version": 5
+   },
+   "prefab": "Highway Oneway - 3 lanes",
+   "stubLength": 189,
+   "beside": "Highway Oneway - 3 lanes",
+   "besideSegment": {
+    "index": 65181,
+    "version": 21
+   },
+   "distance": 23.8,
+   "x": 2293,
+   "z": 277
+  },
+  {
+   "node": {
+    "index": 53648,
+    "version": 5
+   },
+   "prefab": "Highway Oneway - 3 lanes",
+   "stubLength": 165,
+   "beside": "Highway Oneway - 3 lanes",
+   "besideSegment": {
+    "index": 63941,
+    "version": 29
+   },
+   "distance": 23.8,
+   "x": 2302,
+   "z": 255
+  },
+  {
+   "node": {
+    "index": 57440,
+    "version": 5
+   },
+   "prefab": "Gravel Road",
+   "stubLength": 10,
+   "beside": "Gravel Road",
+   "besideSegment": {
+    "index": 79451,
+    "version": 59
+   },
+   "distance": 9.9,
+   "x": 1383,
+   "z": 6161
+  },
+  {
+   "node": {
+    "index": 54719,
+    "version": 5
+   },
+   "prefab": "Highway Oneway - 2 lanes",
+   "stubLength": 38,
+   "beside": "Highway Oneway - 3 lanes",
+   "besideSegment": {
+    "index": 63831,
+    "version": 17
+   },
+   "distance": 15.6,
+   "x": 3713,
+   "z": 4676
+  },
+  {
+   "node": {
+    "index": 55351,
+    "version": 7
+   },
+   "prefab": "Highway Oneway - 3 lanes",
+   "stubLength": 17,
+   "beside": "Highway Oneway - 3 lanes",
+   "besideSegment": {
+    "index": 63831,
+    "version": 17
+   },
+   "distance": 15.6,
+   "x": 3749,
+   "z": 4678
+  }
+ ],
+ "deadEnds": 15
+}

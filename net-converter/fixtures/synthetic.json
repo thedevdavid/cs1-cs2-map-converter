@@ -1,0 +1,38 @@
+{"schema":"dakota-export/cs1/v1","metadata":{"coordinates":{"seaLevel":40}},
+"nodes":[
+{"id":1,"prefab":"Basic Road","position":[7000,100,0],"elevation":0,"terrain":100,"flags":["End","OnGround"]},
+{"id":2,"prefab":"Basic Road","position":[7300,100,0],"elevation":0,"terrain":100,"flags":["End","OnGround"]},
+{"id":10,"prefab":"Basic Road","position":[0,100,0],"elevation":0,"terrain":100,"flags":["Middle","OnGround"]},
+{"id":11,"prefab":"Basic Road","position":[100,100,0],"elevation":0,"terrain":100,"flags":["End","OnGround"]},
+{"id":12,"prefab":"Basic Road","position":[100.3,100,0],"elevation":0,"terrain":100,"flags":["End","OnGround"]},
+{"id":13,"prefab":"Basic Road","position":[102.3,100,0],"elevation":0,"terrain":100,"flags":["Middle","OnGround"]},
+{"id":14,"prefab":"Basic Road","position":[200,100,0],"elevation":0,"terrain":100,"flags":["End","OnGround"]},
+{"id":20,"prefab":"2452038713.USRP 2L Interstate_Data","position":[0,120,500],"elevation":0,"terrain":120,"flags":["End","OnGround"]},
+{"id":21,"prefab":"2452038713.USRP 2L Interstate B","position":[100,140,500],"elevation":20,"terrain":120,"flags":["Middle"]},
+{"id":30,"prefab":"Mystery Road","position":[0,100,-500],"elevation":0,"terrain":100,"flags":["End","OnGround"]},
+{"id":31,"prefab":"Mystery Road","position":[50,100,-500],"elevation":0,"terrain":100,"flags":["End","OnGround"]},
+{"id":40,"prefab":"Fence","position":[0,100,-800],"elevation":0,"terrain":100,"flags":["End","OnGround"]},
+{"id":41,"prefab":"Fence","position":[50,100,-800],"elevation":0,"terrain":100,"flags":["End","OnGround"]},
+{"id":50,"prefab":"Basic Road","position":[8000,100,1000],"elevation":0,"terrain":100,"flags":["End","OnGround"]},
+{"id":51,"prefab":"Basic Road","position":[8100,100,1000],"elevation":0,"terrain":100,"flags":["End","OnGround"]}
+],
+"segments":[
+{"id":1,"prefab":"Basic Road","startNode":1,"endNode":2,"invert":false,"bezier":[[7000,100,0],[7100,100,0],[7200,100,0],[7300,100,0]],"length":300},
+{"id":2,"prefab":"Basic Road","startNode":10,"endNode":11,"invert":false,"bezier":[[0,100,0],[33,100,0],[66,100,0],[100,100,0]],"length":100},
+{"id":3,"prefab":"Basic Road","startNode":12,"endNode":13,"invert":false,"bezier":[[100.3,100,0],[101,100,0],[101.6,100,0],[102.3,100,0]],"length":2},
+{"id":4,"prefab":"Basic Road","startNode":13,"endNode":14,"invert":false,"bezier":[[102.3,100,0],[135,100,0],[167,100,0],[200,100,0]],"length":98},
+{"id":5,"prefab":"2452038713.USRP 2L Interstate B","startNode":20,"endNode":21,"invert":true,"bezier":[[0,120,500],[33,127,500],[66,134,500],[100,140,500]],"length":100},
+{"id":6,"prefab":"Mystery Road","startNode":30,"endNode":31,"invert":false,"bezier":[[0,100,-500],[16,100,-500],[33,100,-500],[50,100,-500]],"length":50},
+{"id":7,"prefab":"Fence","startNode":40,"endNode":41,"invert":false,"bezier":[[0,100,-800],[16,100,-800],[33,100,-800],[50,100,-800]],"length":50},
+{"id":8,"prefab":"Basic Road","startNode":50,"endNode":51,"invert":false,"bezier":[[8000,100,1000],[8033,100,1000],[8066,100,1000],[8100,100,1000]],"length":100}
+],
+"netPrefabs":{
+"Basic Road":{"service":"Road","subService":"None","ai":"RoadAI","halfWidth":8,"forwardVehicleLanes":1,"backwardVehicleLanes":1},
+"2452038713.USRP 2L Interstate_Data":{"service":"Road","subService":"None","ai":"RoadAI","halfWidth":7.8,"forwardVehicleLanes":2,"backwardVehicleLanes":0},
+"2452038713.USRP 2L Interstate B":{"service":"Road","subService":"None","ai":"RoadBridgeAI","halfWidth":6.3,"forwardVehicleLanes":2,"backwardVehicleLanes":0},
+"Mystery Road":{"service":"Road","subService":"None","ai":"RoadAI","halfWidth":6,"forwardVehicleLanes":2,"backwardVehicleLanes":2},
+"Fence":{"service":"Beautification","subService":"None","ai":"DecorationWallAI","halfWidth":0.5,"forwardVehicleLanes":0,"backwardVehicleLanes":0}
+},
+"waterSources":[{"id":1,"type":"Natural","typeRaw":1,"inputPosition":[0,90,0],"outputPosition":[0,90,0],"targetRaw":6400,"targetHeight":100,"inputRate":100,"outputRate":100,"water":0,"pollution":0,"flow":1}],
+"buildings":[{"id":9,"prefab":"Road Connection","service":"Road","subService":"None","position":[8640,100,0],"angle":0,"outsideConnection":true,"incoming":true,"outgoing":true}]
+}

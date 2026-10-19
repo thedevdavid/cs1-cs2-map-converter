@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Synthetic CSL Map View export (schema CSLExportXML 4.1) for cslmap2e2c tests. Hand-written, not from a game. -->
+<CSLExportXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1">
+  <City>synthetic</City>
+  <Generated>10/18/2026 12:00:00 PM</Generated>
+  <SeaLevel>40</SeaLevel>
+  <Nodes>
+    <Node id="10" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="-1000" y="100" z="0" /></Node>
+    <Node id="11" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="-900" y="100" z="0" /></Node>
+    <Node id="12" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="-800" y="101" z="0" /></Node>
+    <Node id="13" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="-750" y="101" z="50" /></Node>
+    <Node id="20" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="0" y="120" z="0" /></Node>
+    <Node id="21" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="0" y="120" z="80" /></Node>
+    <Node id="22" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="100" y="118" z="0" /></Node>
+    <Node id="23" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="200" y="118" z="0" /></Node>
+    <Node id="30" elev="0" ug="true" og="false" srv="Road" subsrv="None" dist="0"><Pos x="500" y="90" z="500" /></Node>
+    <Node id="31" elev="0" ug="true" og="false" srv="Road" subsrv="None" dist="0"><Pos x="560" y="90" z="500" /></Node>
+    <Node id="40" elev="0" ug="false" og="true" srv="PublicTransport" subsrv="PublicTransportTrain" dist="0"><Pos x="0" y="130" z="-500" /></Node>
+    <Node id="41" elev="0" ug="false" og="true" srv="PublicTransport" subsrv="PublicTransportTrain" dist="0"><Pos x="90" y="131" z="-500" /></Node>
+    <Node id="50" elev="0" ug="false" og="true" srv="Beautification" subsrv="None" dist="0"><Pos x="0" y="120" z="300" /></Node>
+    <Node id="51" elev="0" ug="false" og="true" srv="Beautification" subsrv="None" dist="0"><Pos x="60" y="120" z="300" /></Node>
+    <Node id="60" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="8000" y="80" z="100" /></Node>
+    <Node id="61" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="8640" y="80" z="100" /></Node>
+    <Node id="70" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="-300" y="110" z="-300" /></Node>
+    <Node id="71" elev="0" ug="false" og="true" srv="Road" subsrv="None" dist="0"><Pos x="-300" y="110" z="-200" /></Node>
+  </Nodes>
+  <Segments>
+    <!-- Two consecutive one-way 2-lane interstate segments sharing node 11 -->
+    <Seg id="1" sn="10" en="11" icls="Highway" width="16">
+      <Name>2452038713.USRP 2L Interstate_Data</Name>
+      <Points><P x="-1000" y="100" z="0" /><P x="-966.6" y="100" z="0" /><P x="-933.3" y="100" z="0" /><P x="-900" y="100" z="0" /></Points>
+    </Seg>
+    <Seg id="2" sn="11" en="12" icls="Highway" width="16">
+      <Name>2452038713.USRP 2L Interstate E</Name>
+      <Points><P x="-900" y="100" z="0" /><P x="-850" y="105" z="0" /><P x="-800" y="101" z="0" /></Points>
+    </Seg>
+    <!-- Ramp leaving node 12 along a quarter circle (many points, simplification target) -->
+    <Seg id="3" sn="12" en="13" icls="Highway" width="8">
+      <Name>2452038713.USRP 1L Interstate Ramp_Data</Name>
+      <Points>
+        <P x="-800" y="101" z="0" /><P x="-799.24" y="101" z="8.72" /><P x="-796.98" y="101" z="17.1" /><P x="-793.3" y="101" z="25" />
+        <P x="-788.3" y="101" z="32.14" /><P x="-782.14" y="101" z="38.3" /><P x="-775" y="101" z="43.3" /><P x="-767.1" y="101" z="46.98" />
+        <P x="-758.72" y="101" z="49.24" /><P x="-750" y="101" z="50" />
+      </Points>
+    </Seg>
+    <!-- Two-way national road and gravel road meeting at node 20 -->
+    <Seg id="4" sn="20" en="21" icls="Highway" width="12">
+      <Name>2097530472.USRP 2-Lane National Road_Data</Name>
+      <Points><P x="0" y="120" z="0" /><P x="0" y="120" z="40" /><P x="0" y="120" z="80" /></Points>
+    </Seg>
+    <Seg id="5" sn="20" en="22" icls="Gravel Road" width="8">
+      <Name>Gravel Road</Name>
+      <CustomName>Old Mill Road</CustomName>
+      <Points><P x="0" y="120" z="0" /><P x="50" y="119" z="0" /><P x="100" y="118" z="0" /></Points>
+    </Seg>
+    <!-- One-way prefab whose only car lane runs Backward: must be reversed (23 -> 22) -->
+    <Seg id="6" sn="22" en="23" icls="Small Road" width="8">
+      <Name>Oneway Road Backward Test</Name>
+      <Points><P x="100" y="118" z="0" /><P x="200" y="118" z="0" /></Points>
+    </Seg>
+    <!-- Tunnel (underground nodes) -->
+    <Seg id="7" sn="30" en="31" icls="Highway Tunnel" width="16">
+      <Name>2452038713.USRP 3L Interstate T</Name>
+      <Points><P x="500" y="90" z="500" /><P x="560" y="90" z="500" /></Points>
+    </Seg>
+    <!-- Rail -->
+    <Seg id="8" sn="40" en="41" icls="Train Track" width="10">
+      <Name>2610252544.R2USA W GrWo 2x2_Data</Name>
+      <Points><P x="0" y="130" z="-500" /><P x="45" y="130.5" z="-500" /><P x="90" y="131" z="-500" /></Points>
+    </Seg>
+    <!-- Decorative -->
+    <Seg id="9" sn="50" en="51" icls="Beautification Item" width="2">
+      <Name>1889660581.Concrete Barrier_Data</Name>
+      <Points><P x="0" y="120" z="300" /><P x="60" y="120" z="300" /></Points>
+    </Seg>
+    <!-- Outside connection reaching the CS1 border at x = 8640 -->
+    <Seg id="10" sn="60" en="61" icls="Highway" width="16">
+      <Name>2452038713.USRP 3L Interstate_Data</Name>
+      <Points><P x="8000" y="80" z="100" /><P x="8320" y="80" z="100" /><P x="8640" y="80" z="100" /></Points>
+    </Seg>
+    <!-- Prefab no rule matches -->
+    <Seg id="11" sn="70" en="71" icls="Mystery" width="4">
+      <Name>123456.Totally Unknown Thing_Data</Name>
+      <Points><P x="-300" y="110" z="-300" /><P x="-300" y="110" z="-200" /></Points>
+    </Seg>
+  </Segments>
+  <SegmentTypes>
+    <ST name="2452038713.USRP 2L Interstate_Data" highway="true">
+      <Lanes>
+        <Lane type="Vehicle" vType="Car" dir="Forward" pos="0.95" width="3.7" speed="2.26" />
+        <Lane type="Vehicle" vType="Car" dir="Forward" pos="-2.75" width="3.7" speed="2.26" />
+      </Lanes>
+    </ST>
+    <ST name="2452038713.USRP 1L Interstate Ramp_Data" highway="true">
+      <Lanes><Lane type="Vehicle" vType="Car" dir="Forward" pos="-0.9" width="3.7" speed="1.78" /></Lanes>
+    </ST>
+    <ST name="2097530472.USRP 2-Lane National Road_Data" highway="true">
+      <Lanes>
+        <Lane type="Vehicle" vType="Car" dir="Forward" pos="1.95" width="3.7" speed="2.1" />
+        <Lane type="Vehicle" vType="Car" dir="Backward" pos="-1.95" width="3.7" speed="2.1" />
+      </Lanes>
+    </ST>
+    <ST name="Gravel Road" highway="false">
+      <Lanes>
+        <Lane type="Vehicle" vType="Car" dir="Backward" pos="-1.5" width="3" speed="0.6" />
+        <Lane type="Vehicle" vType="Car" dir="Forward" pos="1.5" width="3" speed="0.6" />
+        <Lane type="Parking" vType="Car" dir="Backward" pos="-4" width="2" speed="0.6" />
+      </Lanes>
+    </ST>
+    <ST name="Oneway Road Backward Test" highway="false">
+      <Lanes><Lane type="Vehicle" vType="Car" dir="Backward" pos="0" width="3" speed="1" /></Lanes>
+    </ST>
+    <ST name="2610252544.R2USA W GrWo 2x2_Data" highway="false">
+      <Lanes>
+        <Lane type="Vehicle" vType="Train" dir="Backward" pos="-2" width="4" speed="3" />
+        <Lane type="Vehicle" vType="Train" dir="Forward" pos="2" width="4" speed="3" />
+      </Lanes>
+    </ST>
+  </SegmentTypes>
+</CSLExportXML>

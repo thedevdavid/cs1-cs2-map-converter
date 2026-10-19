@@ -1,0 +1,107 @@
+# CS1 building / prop prefab -> CS2 object prefab(s). Rows with the same regex form one group; the first matching group wins.
+# Columns (tab-separated): regex (case-insensitive), target, weight, kind, note
+#   target = exact CS2 prefab (Assets.NAME[...] in Locale.cok, 2026-10-19), SKIP (dropped), or MANUAL (dropped, listed with
+#            position and rotation in out/manual-objects.md for hand placement)
+#   kind   = building | prop | tree (the field sent to /import/objects)
+# Outside-connection buildings are not handled here (see import-connections.json).
+#
+# --- Rocks (round 12): pack rocks from cs2-playset/ASSET_PACKS.md (RZ Rocks 140176, Arid Rocks 146553, Cliffs and Rocks 137334)
+#     mixed 50/50 with vanilla Rock01-30 as fallback. NOTE: the CS1 lots are 32x40 (Small), 48x56 (Medium), 64x72 m (Large),
+#     far larger than RZaridrock3/4 (3-5 m); if the result looks too small, move Small->rzrock*, Medium->CliffRock5, Large->CliffRock6.
+(?i)Surface Rock [AB] Small	RZaridrock3	2.5	prop	small: Arid Rocks 3/4 + vanilla Rock01-10
+(?i)Surface Rock [AB] Small	RZaridrock4	2.5	prop	
+(?i)Surface Rock [AB] Small	Rock01	0.5	prop	
+(?i)Surface Rock [AB] Small	Rock02	0.5	prop	
+(?i)Surface Rock [AB] Small	Rock03	0.5	prop	
+(?i)Surface Rock [AB] Small	Rock04	0.5	prop	
+(?i)Surface Rock [AB] Small	Rock05	0.5	prop	
+(?i)Surface Rock [AB] Small	Rock06	0.5	prop	
+(?i)Surface Rock [AB] Small	Rock07	0.5	prop	
+(?i)Surface Rock [AB] Small	Rock08	0.5	prop	
+(?i)Surface Rock [AB] Small	Rock09	0.5	prop	
+(?i)Surface Rock [AB] Small	Rock10	0.5	prop	
+(?i)Surface Rock [AB] Medium	RZaridrock1	1.6666666666666667	prop	medium: Arid Rocks 1/2/5 + vanilla Rock11-20
+(?i)Surface Rock [AB] Medium	RZaridrock2	1.6666666666666667	prop	
+(?i)Surface Rock [AB] Medium	RZaridrock5	1.6666666666666667	prop	
+(?i)Surface Rock [AB] Medium	Rock11	0.5	prop	
+(?i)Surface Rock [AB] Medium	Rock12	0.5	prop	
+(?i)Surface Rock [AB] Medium	Rock13	0.5	prop	
+(?i)Surface Rock [AB] Medium	Rock14	0.5	prop	
+(?i)Surface Rock [AB] Medium	Rock15	0.5	prop	
+(?i)Surface Rock [AB] Medium	Rock16	0.5	prop	
+(?i)Surface Rock [AB] Medium	Rock17	0.5	prop	
+(?i)Surface Rock [AB] Medium	Rock18	0.5	prop	
+(?i)Surface Rock [AB] Medium	Rock19	0.5	prop	
+(?i)Surface Rock [AB] Medium	Rock20	0.5	prop	
+(?i)Surface Rock [AB] Large	rzrock1	2.5	prop	large: RZ Rock 1/7 + vanilla Rock21-30
+(?i)Surface Rock [AB] Large	rzrock7	2.5	prop	
+(?i)Surface Rock [AB] Large	Rock21	0.5	prop	
+(?i)Surface Rock [AB] Large	Rock22	0.5	prop	
+(?i)Surface Rock [AB] Large	Rock23	0.5	prop	
+(?i)Surface Rock [AB] Large	Rock24	0.5	prop	
+(?i)Surface Rock [AB] Large	Rock25	0.5	prop	
+(?i)Surface Rock [AB] Large	Rock26	0.5	prop	
+(?i)Surface Rock [AB] Large	Rock27	0.5	prop	
+(?i)Surface Rock [AB] Large	Rock28	0.5	prop	
+(?i)Surface Rock [AB] Large	Rock29	0.5	prop	
+(?i)Surface Rock [AB] Large	Rock30	0.5	prop	
+(?i)Modular C Formation 0[13]	CliffRock3	1	prop	CS1 80-88 m formations -> CliffRock3 (76.8 x 91.6 m)
+(?i)Modular C Formation 0[24]	CliffStack	0.4	prop	CS1 64-72 m (02: 64x128) formations -> CliffStack 58x65 / CliffRock6 54x54 / CliffRock5 36x36
+(?i)Modular C Formation 0[24]	CliffRock6	0.3	prop	
+(?i)Modular C Formation 0[24]	CliffRock5	0.3	prop	
+(?i)Breakwater Rocks	rzrock2	1	prop	CS1 24x24 m -> RZ boulders 13-29 m
+(?i)Breakwater Rocks	rzrock3	1	prop	
+(?i)Breakwater Rocks	rzrock4	1	prop	
+(?i)Breakwater Rocks	rzrock5	1	prop	
+(?i)Breakwater Rocks	rzrock8	1	prop	
+# --- Network pillars: CS2 builds its own ------------------------------------------------------------------
+(?i)Pillar|_bridgePillar|BridgePillar	SKIP	1	building	CS2 places pillars for its own bridges
+# --- Buildings and landmarks -------------------------------------------------------------------------------
+(?i)Dam Electricity	MANUAL	1	building	CS2 hydro dam (Hydroelectric_Power_Plant_01 Dam) is placed across the river by hand
+(?i)Detroit Bridge|Hernando-Desoto Bridge	MANUAL	1	building	CS1 bridge model placed as a building; in CS2 build TrussArchBridge01 / ExtradosedBridge01 along the road instead
+(?i)Substation	ElectricalSubstation01	1	building	nearest CS2 equivalent
+(?i)Castle Ruins	RuinsCastle01	1	building	CS2 landmark ruin
+(?i)Abandoned Factory	RuinsOldMill01	1	building	no abandoned factory in CS2; the old-mill ruin is the only derelict industrial ruin (searched ruin/abandon/derelict/factory/mill)
+(?i)Pier Ruins	LeisurePier01Small01	1	building	no pier ruin in CS2; nearest by name is an intact small leisure pier (searched pier/ruin/wreck)
+(?i)Ship Wreck	RubblePileWood02	1	prop	no wreck in CS2; wood rubble as a stand-in (searched wreck/ship/boat/derelict)
+# --- Props ------------------------------------------------------------------------------------------------
+# --- Landscape Grass 1:1 (round 12): pack grass/vegetation PlantObjects (ASSET_PACKS.md), kind plant, age adult; species vary per CS1 variant
+(?i)Landscape Grass 01	Grass02 (Styx's)	0.4	plant	01: 1 m tufts, a few ferns and flowers
+(?i)Landscape Grass 01	Grass05 (Styx's)	0.4	plant	
+(?i)Landscape Grass 01	gaga - Fern 1	0.1	plant	
+(?i)Landscape Grass 01	PD-YellowFlower	0.1	plant	
+(?i)Landscape Grass 02	Grass03 (Styx's)	0.5	plant	02: tall 1.9 m tufts
+(?i)Landscape Grass 02	Grass06 (Styx's)	0.5	plant	
+(?i)Landscape Grass 03	Grass01 (Styx's)	0.45	plant	03: small 0.6 m tufts, bloom sparingly
+(?i)Landscape Grass 03	Grass04 (Styx's)	0.45	plant	
+(?i)Landscape Grass 03	pd Bloom	0.1	plant	
+(?i)Landscape Grass 04	gaga - Fern 1	0.35	plant	04: ferns
+(?i)Landscape Grass 04	gaga - Fern 2	0.35	plant	
+(?i)Landscape Grass 04	Grass02 (Styx's)	0.3	plant	
+(?i)Landscape Grass 05	pd Long Grass	0.5	plant	05: long grass (6 m) and tall tufts
+(?i)Landscape Grass 05	Grass03 (Styx's)	0.5	plant	
+(?i)Landscape Grass 06	pd Long Grass	0.6	plant	06: long grass and trimmed undergrowth
+(?i)Landscape Grass 06	ReikUndergrowth01Trimmed	0.2	plant	
+(?i)Landscape Grass 06	ReikUndergrowth02Trimmed	0.2	plant	
+(?i)Landscape Grass	Grass02 (Styx's)	1	plant	other variants
+(?i)Decal	SKIP	1	prop	no dirt/mud decal without EAI: converted to Dirty Surfaces Pack area surfaces (import-surfaces-decals.json)
+(?i)Fallen Pine Stump	PineTreeStump01	1	prop
+(?i)Fallen Pine	Log01	1	prop	fallen pine -> log
+(?i)Fallen Pine	Log02	1	prop
+(?i)Fallen Pine	Log03	1	prop
+(?i)Fallen Pine	Log04	1	prop
+(?i)^Park Streetlight 01$	StreetlightSingle01	1	prop
+(?i)^StreetLamp02$	StreetlightSingle02	1	prop
+(?i)^Warning Light Red$	WarningLight01	1	prop
+(?i)^Flood Light	SKIP	1	prop	no floodlight prop in CS2
+(?i)^Modern Fence	FenceResidentialPieceLow01	1	prop	nearest CS2 fence piece; piece length unverified (gaps or overlaps possible)
+(?i)Destroyed Road Prop|Concrete Debris	RubblePileConcrete01	1	prop
+(?i)Destroyed Road Prop|Concrete Debris	RubblePileConcrete02	1	prop
+(?i)^Trashpile$	PileGarbageMediumLow01	1	prop
+(?i)^Dirt Pile	PileStoneSmallLow01	1	prop	no dirt pile in CS2; small stone pile
+(?i)^High Vegetation	GreenBushWild02	1	tree	vegetation prop -> bush
+(?i)^Stop Sign$	NA_StopSign01	1	prop
+(?i)^(Park )?Bench 01$	GardenBench01	1	prop
+(?i)^Park Sign 01$	ParkSign01	1	prop
+(?i)^Park Sign 02$	ParkSign02	1	prop
+(?i)Trashbin|Garbage Bin	SKIP	1	prop	no matching bin name verified

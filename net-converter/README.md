@@ -1,0 +1,228 @@
+# net-converter
+
+Turns a DakotaExport dump (`dakota-export/cs1/v1`, see `../cs1-exporter/SCHEMA.md`) into batch-import files for the CS2MCP
+`POST /import/network` endpoint (`../cs2mcp/IMPORT_SCHEMA.md`), plus water sources, outside connections, a GeoJSON and an
+Image Overlay PNG.
+
+## Run
+
+```bash
+dotnet run -c Release --project src/NetConverter -- "%LOCALAPPDATA%/DakotaExport/map-20261018-132303.json" --mapping mapping.tsv --out out
+```
+
+With no dump argument, it uses the newest `*.json` in `%LOCALAPPDATA%\DakotaExport`. `--inventory` prints only the dump inventory.
+
+```bash
+dotnet test
+```
+
+## Outputs (`out/`)
+
+| File | Content |
+|---|---|
+| `import-highways.json`, `import-rail.json`, `import-roads.json` | One import body per layer: `nodes {id,x,y,z,elevation}`, `edges {id,a,b,prefab,control,elevation}`. Extra fields (`structure`, `cs1_prefab`, `cs1_segment`, `border`) are ignored by the importer. Import highways first, then rail, then roads. Run each with `dryRun: true` first. |
+| `water-sources.json` | 65 CS1 sources: position, height (target surface, m), type, rate, `inPlayable`. |
+| `outside-connections.json` | `borderNodes`: network ends cut at ±7168 m (the CS2 outside connections). `cs1Buildings`: the CS1 connection buildings with the nearest border node of their kind. |
+| `network.geojson` | Every edge of every layer (incl. power and skipped), CS2 metres `[x, z]`, with `cs1_prefab`, `cs2_prefab`, `layer`, `structure`, `elev_a/elev_b`. |
+| `overlay-4096.png` | 4096² transparent PNG at 3.5 m/px covering ±7168 m, north up. Orange = highways (light orange = ramps), white = Small Road, yellow = Medium Road, tan = Gravel Road, purple = rail, cyan = power lines. |
+| `stats.md` | Per-layer counts, CS2 prefabs used, unmapped prefabs, flagged decisions, full mapping table, dump inventory. |
+
+## Transform rules
+
+- x and z unchanged (factor 1.0), y = CS1 world height in metres (Height Scale 2048 m, true metres).
+- Mapping: `mapping.tsv`, regex on the CS1 prefab name, first match wins, target `SKIP` or an exact CS2 prefab name.
+  CS2 names were checked against `Assets.NAME[...]` keys in the game's `Locale.cok`
+  (`Double Train Track`, `Twoway Train Track`, `Oneway Train Track`, `Gravel Road`, `Highway Oneway - N lanes`, …).
+  A prefab no rule matches goes to layer `unmapped`. It is not imported. stats.md and the console list it with a heuristic suggestion.
+- Clipping: each Bézier is split where it crosses the ±7168 m square (sampling plus bisection, de Casteljau sub-curve). The cut
+  node is snapped exactly onto the border. Segments wholly outside are dropped.
+- Nodes closer than 0.5 m (within one layer) are merged. Border nodes win, then original CS1 nodes.
+- Edges shorter than 4 m are dropped by **collapsing** their two ends into one node, so the graph stays connected (moves ≤ 4 m).
+- Edges over 1500 m (importer limit) are split at t = 0.5. The Dakota dump has none.
+- Structure comes from the CS1 AI: `*TunnelAI` = tunnel (the USRP/R2 `S` slope and `T` tunnel variants), `*BridgeAI` = elevated, else ground.
+  A node touching a bridge or tunnel edge gets `elevation = y − terrain` (current CS1 terrain), snapped to 0 within ±0.5 m.
+  Ground-only nodes are 0. Edge `elevation` = `[elev(a), elev(b)]`.
+- One-way networks run `a → b` in traffic direction (CS1 `invert` flag honoured).
+
+## Round 2: reconciliation with the live game
+
+```bash
+node tools/pull-live-graph.mjs out/live-graph.json
+```
+
+```bash
+dotnet run -c Release --project src/NetConverter -- "%LOCALAPPDATA%/DakotaExport/map-20261018-132303.json" --mapping mapping.tsv --out out --live out/live-graph.json --baseline out/round1
+```
+
+- `tools/pull-live-graph.mjs` tiles ±7368 m with `/city/road-graph?nets=all` (radius ≤ 2000, limit 3000, splits a tile when it is full)
+  and writes every live segment and node.
+- `out/reconcile.md`: coverage per layer and prefab, before fixes (`out/round1`, the files that were imported) and after.
+  Each import edge is sampled at t = 0.1, 0.3, 0.5, 0.7, 0.9. A point counts when it is within 6 m of a live segment. A live
+  segment is drawn as the import curve whose ends coincide with it, else as its chord, with the tolerance widened by the sagitta that
+  length vs chord implies (the bridge reports no control points).
+- `out/import-<layer>-retry.json`: only missing edges (or partial with ≤ 2 of 5 points). A node within 1 m of a live node whose
+  segments carry a prefab of the same layer gets `entity {index, version}`.
+- Hairpin check: length > 1.6 × chord, self-intersection or a control point behind its end. The control points are then rebuilt from the
+  dump's start/end directions, swapped, else straight. Logged in stats.md and reconcile.md.
+- Structure (ground/elevated/tunnel) comes from node elevation. A node leaves the ground when its CS1 `m_elevation` > 0, it is
+  Underground, or it touches a B/E/S/T piece. USRP B/E/S/T suffixes map to the base prefab. `+ Exit Lane` maps to N+1 lanes and `+ 2 Exit Lanes` to N+2.
+- Ramp pass (`--ramp-delta 6 --ramp-length 60`, max grade 8 %) raises the low end and the following degree-2 ground chain to
+  `e_high − 0.08·s`.
+- Exact duplicates (same end nodes, curves ≤ 1 m apart) are dropped. Same-layer pairs < 4 m apart (horizontal and vertical) for > 20 m,
+  and edges leaving a node at < 10°, are listed in reconcile.md.
+
+## Round 3: dead ends and near-parallel pairs
+
+- **Import `out/import-all.json`** (all three layers in one body, 3 546 edges, 2.1 MB). It is the only file where junctions between layers
+  (8 highway↔Medium Road nodes, 3 rail↔road level crossings) share one node id. The per-layer files stay for partial imports,
+  but they leave those junctions as dead ends.
+- `out/deadends.md`: every end more than 60 m inside the border, with the CS1 segments meeting there and the converter's decision for
+  each (`ConvertResult.Fate`: imported, imported (clipped), SKIP, power, unmapped, outside the border, collapsed (< 4 m), degenerate after merge,
+  duplicate, duplicate transition piece). It covers live ends (from `out/live-graph.json`) and the ends predicted for `import-all.json`.
+- Node merge (< 0.5 m) is refused when the heights differ by ≥ 2 m. Stacked crossings were being fused into fake junctions.
+- Near-parallel pairs (< 10° at a shared node): if the far ends coincide, the pair is a duplicate transition and one is dropped.
+  Otherwise it is a diverge/merge, and the tangents are rotated apart to 12° (`MinDivergeAngle`). A through edge keeps its tangent and the ramp turns alone.
+- Retry files are written only with `--retry`, because entity ids are valid only in the game session they came from.
+- The 4 m collapse stays: the importer rejects edges under 4 m. A collapsed lane-drop piece becomes a prefab change at the merged node.
+
+## Round 4: failed-edge retry, CS2 terrain, deck fit
+
+```bash
+curl -s "http://127.0.0.1:8642/import/report?status=failed&limit=200" -o out/import-report-failed.json
+```
+
+```bash
+node tools/pull-live-graph.mjs out/live-graph.json
+```
+
+```bash
+dotnet run -c Release --project src/NetConverter -- "%LOCALAPPDATA%/DakotaExport/map-20261018-132303.json" --mapping mapping.tsv --out out --heightmap ../hm-rebuild/out/DakotaFalls-1to1-4096.png --retry-report out/import-report-failed.json
+```
+
+- `--heightmap`: the CS2 playable heightmap from hm-rebuild (value / 32 = m). Row order is detected against the CS1 node terrain
+  (Dakota: row 0 = north, mean error 0.01 m). Node elevations are then measured against CS2 terrain, so border cuts and other
+  interpolated nodes get true heights.
+- Deck fit: the importer sets the inner control-point heights to terrain + interpolated end elevation, which bends a flat deck down into
+  a canyon (SteepSlope, NotEnoughClearance, OverlapExisting on the canyon viaduct). Raised and sunk courses are split at t = 0.5 until the
+  predicted heights are within 2 m of the CS1 deck, or the pieces would be shorter than 15 m. Dakota: 115 courses become 274 pieces.
+- `--retry-report`: writes `out/import-retry.json` with the current pieces of every CS1 segment that failed. Nodes are bound to live
+  entities (within 1 m, same-layer prefab) when `out/live-graph.json` has segments. Otherwise they are left unbound, so pull the live graph first.
+  An empty live graph skips reconcile and dead-end reports.
+- `tools/failed-geometry.mjs <report> <import>`: chord, length/chord, end tangents and elevations of failed courses.
+- `tools/classify-failures.mjs <report> <import> out/failures.md`: what each failed course touches in the same body (approximate CS2 widths):
+  parallel diverge, duplicate, tight parallel, stacked parallel, crossing (Δy at the crossing), or no contact.
+
+## Round 5: grade separation, bridge profiles, fills, water
+
+- Crossings between layers without a shared node: where CS1 had ≥ 4 m between the decks (`GradeSeparation`), the upper course gets a node
+  at the crossing at its CS1 deck height. The node is at least `--min-bridge-elevation` (default 8 m) above terrain and the lower course. It
+  is pinned, and the ramp walk spreads it (8 % roads, 4 % track). Crossings at grade in CS1 are listed in `out/round4.md`.
+- Bridge profiles: along chains of CS1 bridge/elevated pieces, no node sits more than 1.5 m off its neighbours' chord. The ends are fixed and pinned nodes are kept.
+- Twisted-course check (control point behind an end, or self-intersection): swap the controls, else make the course straight.
+  Tiny stubs (< 10 m, from a junction to a dead end) are collapsed. Highway dead ends within 30 m of a course they run along are snapped onto it.
+- `out/import-water.json`: `{seaLevel, sources:[{id,x,z,height,radius,type,rate,inPlayable,belowSeaLevel}]}`, radius = clamp(√rate, 20, 150) m.
+  `--sea-level 97.5` sets the flag.
+- `tools/live-defects.mjs out/live-graph.json`: lists live gaps (dead ends facing each other within 250 m), dead ends within 100 m of another layer,
+  and tails beside a same-layer segment.
+- `tools/write-fills.mjs <body> <live> out/import-retry.json e123_0 e456_0:liveA:liveB`: writes whole courses, or the part of a course between two live
+  nodes, bound to live entities.
+- `tools/pull-live-graph.mjs` no longer overwrites the file when the bridge returns no segments.
+
+## Round 6: CS2 heights = 2 × CS1, absolute output, tunnel transitions
+
+- The CS2 map is the 2048 m heightmap at Height Scale 4096, so every CS2 height is 2 × CS1. `--height-factor 2` (default) scales y, terrain,
+  Béziers and water heights when the dump loads. `--height-factor 1` gives a 1:1 map. All passes then work in CS2 metres.
+- `--height-mode absolute` (default): every node has `y` = terrain + elevation. Ground nodes also carry `elevation: 0`. Raised and sunk nodes get their height
+  from `y`, and edges carry no `elevation`. `--height-mode elevation` restores the old form.
+- Deck smoothing: grade flips above 1 % along bridge/viaduct chains are removed. Single humps (overpasses) and arches stay, and so do crossing nodes (pinned).
+- Transitions: no node in (−8, 0) m. A shallow node next to the surface is the portal (0), and other shallow nodes go to −12 m. Walking in from a portal,
+  depth grows at most 15 % per metre (but at least 8 m). No deck node in (0, 2) m beside a raised node. Deck fit skips tunnel courses.
+- `import-water.json` heights are scaled too (178–740 m). `--sea-level` is in CS1 metres (97.5 → 195).
+- `out/test-e15883-halves.json` and `out/test-e15883-3lane.json`: the two test variants of the refused piece, ends bound to the live dead ends.
+
+## Round 7: mid-span sag, merge clearance
+
+- CS2 inserts its own node in the middle of raised spans of about 80 m or more. Its height comes from the game, not from our nodes, and on high
+  spans it sits 5–8 m below the deck (measured on the v8 import: 11 courses, −7.4 to −7.8 m). The deck fit now also splits raised courses
+  longer than `MaxElevatedSpan` (75 m) at the deck height. Dakota: 165 extra splits.
+- A deck/span split node keeps `SplitClearance` (10 m) from any course meeting the split course at an end. Otherwise the half next to a
+  shallow merge lies inside the other road and is dropped (e32650_0b). Dakota: 20 splits skipped.
+- `tools/live-deck-dips.mjs <live> <import body>`: height of game-inserted nodes against our deck.
+- `tools/hm-sample.mjs`: the heightmap sampler for Node scripts.
+
+## Round 8: all layers (power, trees, objects, connections, resources), two scales
+
+```bash
+dotnet run -c Release --project src/NetConverter -- "%LOCALAPPDATA%/DakotaExport/map-20261018-132303.json" --mapping mapping.tsv --out out --heightmap ../hm-rebuild/out/DakotaFalls-1to1-4096.png --live out/live-graph.json --baseline out/none
+```
+
+```bash
+dotnet run -c Release --project src/NetConverter -- "%LOCALAPPDATA%/DakotaExport/map-20261018-132303.json" --mapping mapping.tsv --out out/x1 --heightmap ../hm-rebuild/out/DakotaFalls-1to1-4096.png --height-factor 1.0 --sea-level 97.5 --trees-dir out/trees
+```
+
+- The network is always converted at `--topology-factor 2` and written at `--height-factor`. out/ and out/x1/ therefore have identical nodes and courses, and only the heights differ.
+- Power: `High-voltage Line` (Locale.cok) in `import-power.json`. Nodes are on the ground and stay out of import-all.json.
+- Trees (`tree-mapping.tsv`, weighted groups, age profiles): `trees/import-trees-NN.json`, ≤ 50 000 each, no y. Source is `<dump>-trees.json`
+  (dakota-export/cs1/trees/v1) when present, else the rasters. The 16 m cells give density, scattered with ≈3 m spacing (seed `--tree-seed`), and the 64 m cells give
+  the species multiset. Corn Stalk is CROP: dropped, and its cells feed the synthetic fertility layer.
+- Objects (`object-mapping.tsv`; SKIP, MANUAL): `import-objects.json`. rotation = −CS1 angle in degrees (sign unverified). y = CS1 y × factor only
+  when the object is > 2 m off the CS1 terrain (many rock decorations sit on cliff faces). MANUAL items go to `manual-objects.md`.
+- Outside connections: `import-connections.json`, one object per border node. A border node is matched by tracing the CS1 network outwards to the node
+  flagged Outside, else by the border projection within 300 m. Air and ship connections sit at the CS1 position clamped to the border. `connections-check.md` covers both directions.
+- Resources: `import-resources.json` from the dump's `naturalResources` (schema v2) when present, else `import-resources-synthetic.json`
+  (fertility from corn density).
+- `out/ROUND5.md`: file list, counts and import order.
+
+## Round 9: v2/v3 dump fields, one command
+
+```bash
+node tools/run-all.mjs
+```
+
+This runs both scales on the newest dump in `%LOCALAPPDATA%\DakotaExport` (or pass a path) and writes `out/ROUND.md`. Fixture: `node tools/make-v3-fixture.mjs`
+writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-all.mjs fixtures/v3/map-v3.json --out out/fixture-v3` runs it.
+
+- `waterSurface` (v3; fallback `<base>-water.png`, surface × 64, row 0 north, depth = surface − CS1 terrain) produces `water-check.md`:
+  - each source against the surface at it and the median surface within 100 m;
+  - the largest wet body against the sea level;
+  - wet patches above sea level with no source within 400 m.
+  Sources off by more than 1 m get the ring median in `import-water.json` (`refinedFrom`).
+- `naturalResources` (v2) produces `import-resources.json` with fertility, ore, oil, plus groundwater from `water` only when it has non-zero cells; forest is omitted. The synthetic file is
+  deleted once real layers exist.
+- `<base>-trees.json` (v2): exact positions and species. The tree README compares the count with the raster-based set.
+- `<base>-po.json` (v3): grouped by base prefab in `manual-objects.md`. The subset that maps through object-mapping.tsv goes to `import-po-candidates.json`
+  (UNVERIFIED, with y, scale not applied). The parser accepts several key spellings until the exporter documents v3.
+- `terrainSurfaces` (v3, may be null) produces `surfaces-summary.md` (legend, area per class, largest patches) and `surfaces.geojson` (cell-boundary
+  polygons per class, Douglas–Peucker 4 m; counter-clockwise outer rings, clockwise holes).
+
+## Round 10: surfaces and the skip review
+
+- `import-surfaces-fields.json`: CS1 field networks become Agriculture Surface 01. Each segment's half-width is swept along its Bézier on a 4 m grid, touching footprints merge,
+  pieces are cut through holes (CS2 areas have none), and rings are traced and simplified (2 m, ≤ 500 points, finer when a ring would self-intersect).
+  The footprints raise fertility to ≥ 220 in the real or the synthetic resources layer.
+- `import-surfaces-grass.json` (optional): Landscape Grass props clustered with DBSCAN (12 m, ≥ 5), convex hull padded 3 m.
+- `import-surfaces.json`: v3 terrainSurfaces through `surface-mapping.tsv`.
+- Pedestrian Gravel / Elevated become Pavement Path (roads layer). Quay becomes QuayMedium01 in `import-quays.json` (unverified). Modern Fence becomes FenceResidentialPieceLow01.
+  The skipped classes and their reasons are in `stats.md` → "Skip review".
+
+## Round 11: v3 shapes from the exporter, walls and ship paths, ruins
+
+- v3 parsing follows cs1-exporter/SCHEMA.md:
+  - `waterSurface` and `-water.png` sit on the heightmap vertex grid (x = −8640 + col·16).
+  - `terrainSurfaces` uses sparse flag values (2 PavementA … 128 Sand) on a 1080 × 16 m grid.
+  - PO is read from `proceduralObjects.file`, using `yawDegrees` (else the quaternion); a `scale` of 0 means 1.
+  - Every v3 section may be null; `sectionErrors` is printed and noted in stats.md.
+- New layers with their own import files: `walls` (`import-walls.json`, CS1 elevations: Quay → QuayMedium01, Retaining Walls → QuaySmall01, Canal → Medium Boatway,
+  Flood Wall → Sound Barrier) and `shippaths` (`import-shippaths.json`, Ship Path → Medium Seaway, ground, clipped so it ends on the border).
+  Barrier segments become ConcreteBarrier01 / SafetyBarrier01 props every 3 m (`import-walls-props.json`).
+- Ruins: Abandoned Factory → RuinsOldMill01, Pier Ruins → LeisurePier01Small01, Ship Wreck → RubblePileWood02 (nearest names; reasons in object-mapping.tsv).
+- Waiting for cs2-playset/ASSET_PACKS.md: Landscape Grass 1:1 grass props, pack rocks, pack decals. These need only object-mapping.tsv rows.
+
+## Round 12: asset packs (cs2-playset/ASSET_PACKS.md)
+
+- Landscape Grass 01–06 map 1:1 to pack plants (Styx grass tufts, ferns, pd Long Grass, trimmed undergrowth, PD-YellowFlower, pd Bloom) with kind `plant`
+  and age `adult`, keeping CS1 position and rotation. The grass-surface clusters stay as the optional alternative.
+- Rocks: Arid / RZ / Cliffs and Rocks pack rocks mixed 50/50 with vanilla per CS1 class; Modular C formations go by footprint (see object-mapping.tsv).
+  The CS1 lots (32–72 m) are much larger than the Arid rocks; the switch is noted in the mapping.
+- R69 Big Decal Dirt/Mud become 16 × 16 m Dirty Surfaces Pack squares (`import-surfaces-decals.json`): Dirt → PDO23 Dirty Surface 01, Mud → PDO23 Soil Surface 01.
+- `node tools/run-all.mjs` writes `out/ROUND6.md` (= ROUND.md), the final file list.

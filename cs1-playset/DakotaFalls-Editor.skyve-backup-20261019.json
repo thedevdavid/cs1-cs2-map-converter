@@ -1,0 +1,2521 @@
+{
+  "Name": "DakotaFalls-Editor",
+  "Temporary": false,
+  "Assets": [
+    {
+      "RelativePath": "%WORKSHOP%\\2920928696\\SEC_345kv_H_ceramic.crp",
+      "SteamId": 2920928696
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2920928696\\SEC_345kv_H_ceramic_angle.crp",
+      "SteamId": 2920928696
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2920928696\\SEC_345kv_H_polymer.crp",
+      "SteamId": 2920928696
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2920928696\\SEC_345kv_H_polymer_angle.crp",
+      "SteamId": 2920928696
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2072216451\\Animated Waterfall Regular.crp",
+      "SteamId": 2072216451
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2072216451\\Animated Waterfall Riffles A.crp",
+      "SteamId": 2072216451
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2072216451\\Animated Waterfall Riffles B.crp",
+      "SteamId": 2072216451
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2072216451\\Animated Waterfall Tiny.crp",
+      "SteamId": 2072216451
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2072216451\\Animated Waterfall Triangle.crp",
+      "SteamId": 2072216451
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\896308318\\Bare Tree D.crp",
+      "SteamId": 896308318
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1238991822\\Bare Tree E.crp",
+      "SteamId": 1238991822
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\767694644\\r69-bigdecal-dirt.crp",
+      "SteamId": 767694644
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\874716774\\r69-decal-mud-1.crp",
+      "SteamId": 874716774
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\874716774\\r69-decal-mud-2.crp",
+      "SteamId": 874716774
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\874716774\\r69-decal-mud-3.crp",
+      "SteamId": 874716774
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\874716774\\r69-decal-mud-4.crp",
+      "SteamId": 874716774
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2949743029\\Brushwood 01 AvoirRev.crp",
+      "SteamId": 2949743029
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1953870276\\Corn Stalk .crp",
+      "SteamId": 1953870276
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1251664417\\Dam Electricity.crp",
+      "SteamId": 1251664417
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\detail_shrub_cluster_01.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\detail_shrub_cluster_02.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\detail_shrub_cluster_03.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\detail_shrub_cluster_04.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\low_poly_detail_shrub_01.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\low_poly_detail_shrub_02.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\low_poly_detail_shrub_03.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\low_poly_detail_shrub_04.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\low_poly_detail_shrub_05.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\low_poly_detail_shrub_05_cluster.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\low_poly_detail_shrub_06.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2809700435\\low_poly_detail_shrub_06_cluster.crp",
+      "SteamId": 2809700435
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2957832702\\pd Aussie Bushes 1.crp",
+      "SteamId": 2957832702
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2957832702\\pd Aussie Bushes 2.crp",
+      "SteamId": 2957832702
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2957832702\\pd Wattle Bush .crp",
+      "SteamId": 2957832702
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2931939156\\detroit-bridge.crp",
+      "SteamId": 2931939156
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097856853\\PD Large EverGreen .crp",
+      "SteamId": 2097856853
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097856853\\PD Large EverGreen 2.crp",
+      "SteamId": 2097856853
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097856853\\PD Large EverGreen 3.crp",
+      "SteamId": 2097856853
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2916095473\\SEC_XtraLarge_Substation.crp",
+      "SteamId": 2916095473
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine 01 TC.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine 01.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine 02 TC.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine 02.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine 03.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine 04.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine 05 LP.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine 06 LP.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine 07 LP TC.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine 07 LP.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine Stump 01.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine Stump 02.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine Stump 03 LP.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2074426936\\Fallen Pine Stump 04.crp",
+      "SteamId": 2074426936
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_CncrtBrrrMddl_HwProRsbl.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_ConcreteBarrierMddl_HwPro.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_ConcreteBarrier_HwPro.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_ConcreteBarrier_HwProRsbl.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_Dbl_SteelBarrier_HwPro.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_Dbl_SteelBarrier_HwProRsbl.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_Sgl_SteelBarrier_HwPro.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_Sgl_SteelBarrier_HwProRsbl.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_SoundwallSteel_HwPro.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_SoundwallSteel_HwProRsbl.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_Soundwall_HwPro.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1889660581\\Clus_Soundwall_HwProRsbl.crp",
+      "SteamId": 1889660581
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2674210208\\Field Network 0.crp",
+      "SteamId": 2674210208
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2674210208\\Field soil decal.crp",
+      "SteamId": 2674210208
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2674210208\\Field Wheat Cut Network 3.crp",
+      "SteamId": 2674210208
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2674210208\\Field Wheat Network 3.crp",
+      "SteamId": 2674210208
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2674210208\\Field Wheat Young Network.crp",
+      "SteamId": 2674210208
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2674210208\\zombie.crp",
+      "SteamId": 2674210208
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2346312805\\Filler Bush Large 1.crp",
+      "SteamId": 2346312805
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2346312805\\Filler Bush Medium 1.crp",
+      "SteamId": 2346312805
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2346312805\\Filler Bush small 1.crp",
+      "SteamId": 2346312805
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2351314651\\pd Filler Grass 2.crp",
+      "SteamId": 2351314651
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2351314651\\pd Filler Grass.crp",
+      "SteamId": 2351314651
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1310328404\\Hernando-Desoto Bridge.crp",
+      "SteamId": 1310328404
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2376025671\\artdeco-truss01.crp",
+      "SteamId": 2376025671
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2376025671\\artdeco-truss02.crp",
+      "SteamId": 2376025671
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2376025671\\artdeco-truss03.crp",
+      "SteamId": 2376025671
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2077702761\\rock_c.crp",
+      "SteamId": 2077702761
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2077702761\\rock_l.crp",
+      "SteamId": 2077702761
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2077702761\\rock_r.crp",
+      "SteamId": 2077702761
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2803411105\\landscape_grass_01.crp",
+      "SteamId": 2803411105
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2803411105\\landscape_grass_02.crp",
+      "SteamId": 2803411105
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2803411105\\landscape_grass_03.crp",
+      "SteamId": 2803411105
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2803411105\\landscape_grass_04.crp",
+      "SteamId": 2803411105
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2803411105\\landscape_grass_05.crp",
+      "SteamId": 2803411105
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2803411105\\landscape_grass_06.crp",
+      "SteamId": 2803411105
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock C Formation 01.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock C Formation 02.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock C Formation 03.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock C Formation 04.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 01.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 02.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 03.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 04.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 05.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 06.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 07.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 08.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 09.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 10.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 11.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 12.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 13.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 14.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 15.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 16.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 17.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 18.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 19.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 20.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 21.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1981694823\\Mossy Grey Rock NC Single 22.crp",
+      "SteamId": 1981694823
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular C Formation 01.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular C Formation 02.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular C Formation 03.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular C Formation 04.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 01.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 02.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 03.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 04.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 05.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 06.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 07.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 08.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 09.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 10.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 11.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 12.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 13.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 14.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 15.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 16.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 17.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 18.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 19.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 20.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 21.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988876538\\Brown Modular NC Single 22.crp",
+      "SteamId": 1988876538
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1978360460\\Brown Surface Rock A Large.crp",
+      "SteamId": 1978360460
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1978360460\\Brown Surface Rock A Medium.crp",
+      "SteamId": 1978360460
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1978360460\\Brown Surface Rock A Small.crp",
+      "SteamId": 1978360460
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1978360460\\Brown Surface Rock B Large.crp",
+      "SteamId": 1978360460
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1978360460\\Brown Surface Rock B Medium.crp",
+      "SteamId": 1978360460
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1978360460\\Brown Surface Rock B Small.crp",
+      "SteamId": 1978360460
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 01.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 02.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 03.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 04.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 05.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 06.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 07.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 08.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 09.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 10.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 11.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 12.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 13.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 14.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 15.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 16.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 17.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 18.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 19.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 20.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 21.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 22.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 23.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 24.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 25.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2206365654\\Paintable Modular Rock 26.crp",
+      "SteamId": 2206365654
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1230960704\\PD - pencil pine .crp",
+      "SteamId": 1230960704
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1230960704\\PD - Pine Regular .crp",
+      "SteamId": 1230960704
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1230960704\\PD - Pine short.crp",
+      "SteamId": 1230960704
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1230960704\\PD - Pine Tall.crp",
+      "SteamId": 1230960704
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2903114021\\r2-rwyus-w-trwo-2x2-warren-02.crp",
+      "SteamId": 2903114021
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2903575412\\r2-rwyus-w-trwo-2x2-warren-03.crp",
+      "SteamId": 2903575412
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2903114284\\r2-rwyus-w-trwo-2x2-warren-04.crp",
+      "SteamId": 2903114284
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2722005927\\r2-rwyusa-grco-1x2-isl-s-hp.crp",
+      "SteamId": 2722005927
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2722005927\\r2-rwyusa-grco-1x2-isl-s-hpe.crp",
+      "SteamId": 2722005927
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2722005927\\r2-rwyusa-w-grco-1x2-isl-s-hp.crp",
+      "SteamId": 2722005927
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2722005927\\r2-rwyusa-w-grco-1x2-isl-s-hpe.crp",
+      "SteamId": 2722005927
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610252544\\r2-rwyusa-w-grwo-1x1-n.crp",
+      "SteamId": 2610252544
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610252544\\r2-rwyusa-w-grwo-1x1.crp",
+      "SteamId": 2610252544
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610252544\\r2-rwyusa-w-grwo-1x2-n.crp",
+      "SteamId": 2610252544
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610252544\\r2-rwyusa-w-grwo-1x2.crp",
+      "SteamId": 2610252544
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610252544\\r2-rwyusa-w-grwo-2x1-n.crp",
+      "SteamId": 2610252544
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610252544\\r2-rwyusa-w-grwo-2x1.crp",
+      "SteamId": 2610252544
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610252544\\r2-rwyusa-w-grwo-2x2-n.crp",
+      "SteamId": 2610252544
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610252544\\r2-rwyusa-w-grwo-2x2.crp",
+      "SteamId": 2610252544
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610252544\\r2-rwyusa-w-grwo-4x2-n.crp",
+      "SteamId": 2610252544
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610252544\\r2-rwyusa-w-grwo-4x2.crp",
+      "SteamId": 2610252544
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-grwo-1x2-gpe-l.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-grwo-1x2-gpe-r.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-grwo-1x2-s-gp-l.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-grwo-1x2-s-gp-r.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-grwo-1x2-s-gp.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-grwo-1x2-s-gpe.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-grwo-2x2-gpe.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-grwo-2x2-s-gp.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-grwo-4x2-s-gp.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-w-grwo-1x2-gpe-l.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-w-grwo-1x2-gpe-r.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-w-grwo-1x2-s-gp-l.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-w-grwo-1x2-s-gp-r.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-w-grwo-1x2-s-gp.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-w-grwo-1x2-s-gpe.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-w-grwo-2x2-gpe.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-w-grwo-2x2-s-gp.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610256766\\r2-rwyusa-w-grwo-4x2-s-gp.crp",
+      "SteamId": 2610256766
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-grwo-1x2-lpe-l.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-grwo-1x2-lpe-r.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-grwo-1x2-s-lp-l.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-grwo-1x2-s-lp-r.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-grwo-1x2-s-lp.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-grwo-1x2-s-lpe.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-grwo-2x2-lpe.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-grwo-2x2-s-lp.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-grwo-4x2-s-lp.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-grwo-4x2-s-lpe.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-w-grwo-1x2-lpe-l.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-w-grwo-1x2-lpe-r.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-w-grwo-1x2-s-lp-l.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-w-grwo-1x2-s-lp-r.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-w-grwo-1x2-s-lp.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-w-grwo-1x2-s-lpe.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-w-grwo-2x2-lpe.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-w-grwo-2x2-s-lp.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-w-grwo-4x2-s-lp.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610257966\\r2-rwyusa-w-grwo-4x2-s-lpe.crp",
+      "SteamId": 2610257966
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-grwo-1x2-s-sp-l.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-grwo-1x2-s-sp-r.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-grwo-1x2-s-sp.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-grwo-1x2-s-spe.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-grwo-1x2-spe-l.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-grwo-1x2-spe-r.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-grwo-2x2-s-sp.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-grwo-2x2-spe.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-grwo-4x2-s-sp.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-grwo-4x2-s-spe.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-w-grwo-1x2-s-sp-l.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-w-grwo-1x2-s-sp-r.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-w-grwo-1x2-s-sp.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-w-grwo-1x2-s-spe-l.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-w-grwo-1x2-s-spe-r.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-w-grwo-1x2-s-spe.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-w-grwo-2x2-s-sp.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-w-grwo-2x2-s-spe.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-w-grwo-4x2-s-sp.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610265253\\r2-rwyusa-w-grwo-4x2-s-spe.crp",
+      "SteamId": 2610265253
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2619651082\\r2-rwyusa-grwo-1x1-n.crp",
+      "SteamId": 2619651082
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2619651082\\r2-rwyusa-grwo-1x1.crp",
+      "SteamId": 2619651082
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2619651082\\r2-rwyusa-grwo-1x2-n.crp",
+      "SteamId": 2619651082
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2619651082\\r2-rwyusa-grwo-1x2.crp",
+      "SteamId": 2619651082
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2619651082\\r2-rwyusa-grwo-2x1-n.crp",
+      "SteamId": 2619651082
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2619651082\\r2-rwyusa-grwo-2x1.crp",
+      "SteamId": 2619651082
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2619651082\\r2-rwyusa-grwo-2x2-n.crp",
+      "SteamId": 2619651082
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2619651082\\r2-rwyusa-grwo-2x2.crp",
+      "SteamId": 2619651082
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2619651082\\r2-rwyusa-grwo-4x2-n.crp",
+      "SteamId": 2619651082
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2619651082\\r2-rwyusa-grwo-4x2.crp",
+      "SteamId": 2619651082
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\arkansas4-nontc.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\nesque-pillarbase.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r0-railway-tunnel-darkener.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r0-railway-tunnel-darkener2.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r2-ident01-4nec.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r2-ident01-4us.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r2-ident01nec.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r2-ident01us.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r2-ident02-4us.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r2-ident02us.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r2-weld.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r2-weldus.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2487537755\\r69railway-tunnel-darkener.crp",
+      "SteamId": 2487537755
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2518959391\\r2-fencebeam.crp",
+      "SteamId": 2518959391
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2518959391\\r2-ident01-4.crp",
+      "SteamId": 2518959391
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2518959391\\r2-ident01.crp",
+      "SteamId": 2518959391
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2518959391\\r2-ident02-4.crp",
+      "SteamId": 2518959391
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2518959391\\r2-ident02.crp",
+      "SteamId": 2518959391
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2518959391\\r2-weld.crp",
+      "SteamId": 2518959391
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2518959391\\r69railway-tunnel-darkener.crp",
+      "SteamId": 2518959391
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610418621\\r2-rwyus-w-trwo-1x2-deck-01-ar.crp",
+      "SteamId": 2610418621
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610418621\\r2-rwyus-w-trwo-2x2-deck-01-ar.crp",
+      "SteamId": 2610418621
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2919651684\\r2-inspection-stairs.crp",
+      "SteamId": 2919651684
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2919651684\\r2-rwyuseur-w-1x2-inspection-01.crp",
+      "SteamId": 2919651684
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2919651684\\yard-beam-1500k.crp",
+      "SteamId": 2919651684
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2919651684\\yard-beam-2700k.crp",
+      "SteamId": 2919651684
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2919651684\\yard-beam-3200k.crp",
+      "SteamId": 2919651684
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2919651684\\yard-beam-7000k.crp",
+      "SteamId": 2919651684
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2836620152\\r2-rwyeur-w-grco-2x2-ourense.crp",
+      "SteamId": 2836620152
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2932555116\\r2-rwyeur-w-grco-2x2-pedrido.crp",
+      "SteamId": 2932555116
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-nec-prr-t-1.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-nec-prr-t-2.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-nec-prr-t-4.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-double-cant.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-double-end.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-double-sa-a.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-double-sa-b.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-double-t.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-double.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-girderb-double.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-girderb-single.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-hudson-t.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-quad-cant.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-quad-end.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-quad-t.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-quad.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-single-cant.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-single-end.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-single-sa-a.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-single-sa-b.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-single-t.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2-rwyusa-prr-single.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2p-rwyusa-prr-double-cant.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2p-rwyusa-prr-double.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2p-rwyusa-prr-quad-cant.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2p-rwyusa-prr-quad.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2p-rwyusa-prr-single-cant.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2497719362\\r2p-rwyusa-prr-triple-cant.crp",
+      "SteamId": 2497719362
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2919967634\\r2-rwyuseur-w-1x2-yard-02.crp",
+      "SteamId": 2919967634
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2918422869\\r2-rwyuseur-w-1x2-yard-01-sta.crp",
+      "SteamId": 2918422869
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2918422869\\r2-rwyuseur-w-1x2-yard-01.crp",
+      "SteamId": 2918422869
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2926036331\\r2-rwyus-w-trwo-1x2-th-deck-02.crp",
+      "SteamId": 2926036331
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2926036331\\r2-rwyus-w-trwo-2x2-th-deck-02.crp",
+      "SteamId": 2926036331
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2786565452\\r2-rwyusa-deco-border01.crp",
+      "SteamId": 2786565452
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2786565452\\r2-rwyusa-w-grwo-2x2-overpass02.crp",
+      "SteamId": 2786565452
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2786565452\\r2-rwyusa-w-grwo-4x2-overpass04.crp",
+      "SteamId": 2786565452
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610435532\\r2-rwyus-w-trwo-1x2-deck-02-ar.crp",
+      "SteamId": 2610435532
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610435532\\r2-rwyus-w-trwo-1x2-warren-02-ar.crp",
+      "SteamId": 2610435532
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610435532\\r2-rwyus-w-trwo-2x2-deck-02-ar.crp",
+      "SteamId": 2610435532
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610436765\\r2-rwyus-w-trwo-1x2-deck-03-ar.crp",
+      "SteamId": 2610436765
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610436765\\r2-rwyus-w-trwo-1x2-warren-03-ar.crp",
+      "SteamId": 2610436765
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610436765\\r2-rwyus-w-trwo-2x2-deck-03-ar.crp",
+      "SteamId": 2610436765
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610437848\\r2-rwyus-w-trwo-1x2-deck-04-ar.crp",
+      "SteamId": 2610437848
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610437848\\r2-rwyus-w-trwo-1x2-warren-04-ar.crp",
+      "SteamId": 2610437848
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2610437848\\r2-rwyus-w-trwo-2x2-deck-04-ar.crp",
+      "SteamId": 2610437848
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2904532252\\r2-rwyus-w-trwo-1x2-deck-05.crp",
+      "SteamId": 2904532252
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2904532252\\r2-rwyus-w-trwo-1x2-warren-05.crp",
+      "SteamId": 2904532252
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2904532252\\r2-rwyus-w-trwo-2x2-deck-05.crp",
+      "SteamId": 2904532252
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2904532252\\r2-rwyus-w-trwo-2x2-warren-05.crp",
+      "SteamId": 2904532252
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-01.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-02.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-03.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-04.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-05.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-06.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-07.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-08.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-09.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-10.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-11.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-12.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-tracksign-00.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-tracksign-01.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-tracksign-02.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-tracksign-03.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2214471559\\sn-rwyusa-barrier-tracksign-04.crp",
+      "SteamId": 2214471559
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1574865364\\r69railway-bridge-border-fence.crp",
+      "SteamId": 1574865364
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1574865364\\r69railway-bridge-border.crp",
+      "SteamId": 1574865364
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1574865364\\r69railway-elevated-border.crp",
+      "SteamId": 1574865364
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1574865364\\r69railway-green-elevated-border.crp",
+      "SteamId": 1574865364
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1574865364\\r69railway-wires-1x-c.crp",
+      "SteamId": 1574865364
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1574865364\\r69railway-wires-1x.crp",
+      "SteamId": 1574865364
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1574865364\\r69railway-wires-2x-c.crp",
+      "SteamId": 1574865364
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1574865364\\r69railway-wires-2x.crp",
+      "SteamId": 1574865364
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-elevated-b-prop.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-elevated-prop.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-elevated-s-prop.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-elevatedgreen-b-prop.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-elevatedgreen-prop.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-elevatedgreen-s-prop.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-fence-beam.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-fishplate.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-slope-wall.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-tunnel-darkener.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-under-box-s.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530239308\\r69railway-under-box.crp",
+      "SteamId": 1530239308
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2966434181\\Clus_RetainingCombi#01.crp",
+      "SteamId": 2966434181
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\883313481\\Detail Reeds 2%002E0 cluster.crp",
+      "SteamId": 883313481
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\883313481\\Detail Reeds 2%002E0.crp",
+      "SteamId": 883313481
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988121829\\Grey Breakwater Rocks 01.crp",
+      "SteamId": 1988121829
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988121829\\Grey Breakwater Rocks 02.crp",
+      "SteamId": 1988121829
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988121829\\Grey Breakwater Rocks 03.crp",
+      "SteamId": 1988121829
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988121829\\Grey Breakwater Rocks 04.crp",
+      "SteamId": 1988121829
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988121829\\Grey Breakwater Rocks 05.crp",
+      "SteamId": 1988121829
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988121829\\Grey Detail Rock 01.crp",
+      "SteamId": 1988121829
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988121829\\Grey Detail Rock 02.crp",
+      "SteamId": 1988121829
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988121829\\Grey Detail Rock 03.crp",
+      "SteamId": 1988121829
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1988121829\\Grey Detail Rock 04.crp",
+      "SteamId": 1988121829
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1282267425\\Semi Bare Tree Gold.crp",
+      "SteamId": 1282267425
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1282267425\\Semi Bare Tree Green.crp",
+      "SteamId": 1282267425
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1282267425\\Semi Bare Tree Red.crp",
+      "SteamId": 1282267425
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Brick-004 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Cobble-002 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Cobble-003 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Plaza-001 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Ribbed-001 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sandstone-001 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sandstone-002 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sandstone-003 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-001 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-002 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-003 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-004 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-005 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-006 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-007 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-008 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-009 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-010 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-011 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-012 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-013 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-014 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-015 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-016 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-017 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-018 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2889685220\\Sidewalk-019 Decal.crp",
+      "SteamId": 2889685220
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2105051034\\Sp3-TerraformNet-0%002E5U.crp",
+      "SteamId": 2105051034
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2105051034\\Sp3-TerraformNet-12U.crp",
+      "SteamId": 2105051034
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2105051034\\Sp3-TerraformNet-1U.crp",
+      "SteamId": 2105051034
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2105051034\\Sp3-TerraformNet-2U.crp",
+      "SteamId": 2105051034
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2105051034\\Sp3-TerraformNet-4U.crp",
+      "SteamId": 2105051034
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2105051034\\Sp3-TerraformNet-6U.crp",
+      "SteamId": 2105051034
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2105051034\\Sp3-TerraformNet-8U.crp",
+      "SteamId": 2105051034
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\918308740\\r69-tunnel-block-1.crp",
+      "SteamId": 918308740
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\918308740\\r69-tunnel-block-2.crp",
+      "SteamId": 918308740
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\918308740\\r69-tunnel-entrance-1.crp",
+      "SteamId": 918308740
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\918308740\\r69-tunnel-entrance-2.crp",
+      "SteamId": 918308740
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097491556\\USRP_Hwy_1L_Ramp.crp",
+      "SteamId": 2097491556
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097503753\\USRP_Hwy_2L.crp",
+      "SteamId": 2097503753
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097530472\\USRP_Hwy_2L_NR.crp",
+      "SteamId": 2097530472
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097530472\\USRP_Hwy_2L_NR_dash.crp",
+      "SteamId": 2097530472
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097530472\\USRP_Hwy_2L_NR_passing.crp",
+      "SteamId": 2097530472
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097515414\\USRP_Hwy_3L.crp",
+      "SteamId": 2097515414
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2098643957\\USRP_Hwy_3L_NR.crp",
+      "SteamId": 2098643957
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097523614\\USRP_Hwy_4L.crp",
+      "SteamId": 2097523614
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2097539846\\USRP_Hwy_4L_NR.crp",
+      "SteamId": 2097539846
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2088550283\\USRP_decal_arrow_f.crp",
+      "SteamId": 2088550283
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2088550283\\USRP_decal_arrow_fr.crp",
+      "SteamId": 2088550283
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2088550283\\USRP_decal_arrow_l.crp",
+      "SteamId": 2088550283
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2088550283\\USRP_decal_arrow_lf.crp",
+      "SteamId": 2088550283
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2088550283\\USRP_decal_arrow_r.crp",
+      "SteamId": 2088550283
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2088550283\\USRP_sign_busstop.crp",
+      "SteamId": 2088550283
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_1L_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_2Ls_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_2L_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_3Le_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_3L_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_4Le_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_4Ls_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_4L_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_5Le2_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_5Le_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_5L_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_6Le2_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_6Le_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_6Ls_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2854678594\\USRP_interstate_6L_C.crp",
+      "SteamId": 2854678594
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_CrosswalkLadder_USRP_Ladder_Xwalk_cfeb4152.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_CrosswalkParallelSolidLines_USRP_Parallel_Solid_Xwalk_b333edbf.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_CrosswalkZebra_USRP_Zebra_Xwalk_850a8ae2.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_FillerChevron_USRP_Chevrons_7b0808a4.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_FillerStripe_USRP_White_Stripes_e0c67a13.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_FillerStripe_USRP_White_Stripes_Hwy_700ab803.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_FillerStripe_USRP_Yellow_Stripes_e9929d3f.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_FillerStripe_USRP_Yellow_Stripes_Hwy_c7fd13c1.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineDashed_USRP_Add_Drop_baa87885.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineDashed_USRP_Lane_c302ed5b.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineDashed_USRP_Wide_Add_Drop_Line_baa87885.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineDashed_USRP_Wide_Extension_Line_01c9d026.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineDashed_USRP_W_Add_Drop_baa87885.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineDoubleSolid_USRP_White_Double_Solid_90694586.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineDoubleSolid_USRP_Yellow_Double_Solid_38413035.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineSolidAndDashed_USRP_Yellow_Broken_Line_d54abc3b.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineSolid_USRP_White_Solid_eadd34e1.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineSolid_USRP_White_Solid_Wide_ca254b37.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_LineSolid_USRP_Yellow_Solid_f630009d.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_StopLineSharkTeeth_USRP_Yield_6754d6e1.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_StopLineSolid_USRP_Stop_ec3bdc0e.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452034874\\IMT_StopLineSolid_USRP_Stop_Wide_0759eb7f.crp",
+      "SteamId": 2452034874
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452041504\\USRP_interstate_2Ls.crp",
+      "SteamId": 2452041504
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452041504\\USRP_interstate_3Le.crp",
+      "SteamId": 2452041504
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452041504\\USRP_interstate_4Le.crp",
+      "SteamId": 2452041504
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452041504\\USRP_interstate_4Ls.crp",
+      "SteamId": 2452041504
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452041504\\USRP_interstate_5Le.crp",
+      "SteamId": 2452041504
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452041504\\USRP_interstate_5Le2.crp",
+      "SteamId": 2452041504
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452041504\\USRP_interstate_6Le.crp",
+      "SteamId": 2452041504
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452041504\\USRP_interstate_6Le2.crp",
+      "SteamId": 2452041504
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452041504\\USRP_interstate_6Ls.crp",
+      "SteamId": 2452041504
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452038713\\USRP_interstate_1L.crp",
+      "SteamId": 2452038713
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452038713\\USRP_interstate_2L.crp",
+      "SteamId": 2452038713
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452038713\\USRP_interstate_3L.crp",
+      "SteamId": 2452038713
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452038713\\USRP_interstate_4L.crp",
+      "SteamId": 2452038713
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452038713\\USRP_interstate_5L.crp",
+      "SteamId": 2452038713
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2452038713\\USRP_interstate_6L.crp",
+      "SteamId": 2452038713
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_15_hps_12.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_15_hps_12_dbl.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_15_hps_8.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_15_hps_8_dbl.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_15_led_12.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_15_led_12_dbl.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_15_led_8.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_15_led_8_dbl.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_21_hps_12.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_21_hps_12_dbl.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_21_led_12.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_21_led_12_2.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_21_led_12_dbl.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084866139\\USRP_sl_tunnel_rwyled.crp",
+      "SteamId": 2084866139
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_A1.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_A2.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_A3.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_A4.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_A5.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_A6.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_A7.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_A8.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_B1.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_B2.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_B3.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_C1.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_C2.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_C3.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_C4.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_D1.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_D2.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_D3.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_D4.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_D5.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_D6.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_E1.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_E2.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_E3.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_E4.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_E5.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_E6.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_F1.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_F2.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_F3.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_G1.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_G2.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_L1.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_L2.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_L3.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_L4.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_M1.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_M2.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_R1.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2084863228\\USRP_tl_R2.crp",
+      "SteamId": 2084863228
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2724100634\\VC Erosion Rock temp.crp",
+      "SteamId": 2724100634
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2469281223\\VC domerock.crp",
+      "SteamId": 2469281223
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2469281223\\VC rock ledge.crp",
+      "SteamId": 2469281223
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2469281223\\VC rounded rock.crp",
+      "SteamId": 2469281223
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2479784985\\VC_Rocky_Streambed.crp",
+      "SteamId": 2479784985
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2479784985\\VC_Rocky_Streambed_Curved.crp",
+      "SteamId": 2479784985
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2972879554\\Dakota Falls.crp",
+      "SteamId": 2972879554
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\3071492847\\NativeCube_Procedural.crp",
+      "SteamId": 3071492847
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\3071492847\\NativeSquare_Procedural.crp",
+      "SteamId": 3071492847
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-buff.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-cat1e.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-cat1n.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-cat1t.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-cat2e.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-cat2n.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-cat2t.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-cat4e.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-cat4n.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-cat4t.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-gant1.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-gant2.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-gant4.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-sigl.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1530376523\\r69rwp-sigr.crp",
+      "SteamId": 1530376523
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\3031623332\\CO-Boreal-Theme.crp",
+      "SteamId": 3031623332
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\3031623332\\CO-European-Theme.crp",
+      "SteamId": 3031623332
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\3031623332\\CO-Temperate-Theme.crp",
+      "SteamId": 3031623332
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\3031623332\\CO-Tropical-Theme.crp",
+      "SteamId": 3031623332
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\3031623332\\CO-Winter-Theme.crp",
+      "SteamId": 3031623332
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1305157510\\Australia Coast .crp",
+      "SteamId": 1305157510
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1594406264\\r69-coastal.crp",
+      "SteamId": 1594406264
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\2858527761\\Los Cabos by Mr Miyagi.crp",
+      "SteamId": 2858527761
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1367973971\\Owl's Albedo.crp",
+      "SteamId": 1367973971
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\1230768185\\Seychelles.crp",
+      "SteamId": 1230768185
+    },
+    {
+      "RelativePath": "%WORKSHOP%\\921636136\\Springwood.crp",
+      "SteamId": 921636136
+    }
+  ],
+  "Mods": [
+    {
+      "Enabled": true,
+      "RelativePath": "%LOCALAPPDATA%\\Addons\\Mods\\DakotaExport",
+      "SteamId": 0
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\3683231517",
+      "SteamId": 3683231517
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\845665815",
+      "SteamId": 845665815
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2632235148",
+      "SteamId": 2632235148
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\3733110460",
+      "SteamId": 3733110460
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2040656402",
+      "SteamId": 2040656402
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\1591417160",
+      "SteamId": 1591417160
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2140418403",
+      "SteamId": 2140418403
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2858591409",
+      "SteamId": 2858591409
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\1619685021",
+      "SteamId": 1619685021
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2862881785",
+      "SteamId": 2862881785
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2560782729",
+      "SteamId": 2560782729
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\3702700108",
+      "SteamId": 3702700108
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2472062376",
+      "SteamId": 2472062376
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2041457644",
+      "SteamId": 2041457644
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\3680103097",
+      "SteamId": 3680103097
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\3071492847",
+      "SteamId": 3071492847
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2956854293",
+      "SteamId": 2956854293
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2685506044",
+      "SteamId": 2685506044
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\1530376523",
+      "SteamId": 1530376523
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2474567113",
+      "SteamId": 2474567113
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2881031511",
+      "SteamId": 2881031511
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\3031623332",
+      "SteamId": 3031623332
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\1637663252",
+      "SteamId": 1637663252
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2960858317",
+      "SteamId": 2960858317
+    },
+    {
+      "Enabled": true,
+      "RelativePath": "%WORKSHOP%\\2972881605",
+      "SteamId": 2972881605
+    }
+  ],
+  "ExcludedDLCs": [],
+  "LaunchSettings": {
+    "UseCitiesExe": false,
+    "DebugMono": false,
+    "UnityProfiler": false,
+    "NoWorkshop": false,
+    "ResetAssets": false,
+    "NoAssets": false,
+    "NoMods": false,
+    "LHT": false,
+    "SaveToLoad": null,
+    "LoadSaveGame": false,
+    "DevUi": true,
+    "MapToLoad": null,
+    "StartNewGame": false,
+    "CustomArgs": "",
+    "NewAsset": false,
+    "LoadAsset": false
+  },
+  "LsmSettings": {
+    "LoadEnabled": true,
+    "LoadUsed": true,
+    "SkipFile": null,
+    "UseSkipFile": false
+  },
+  "AutoSave": false,
+  "IsFavorite": false,
+  "Color": null,
+  "LastUsed": "2026-10-19T05:00:54.4001169-07:00",
+  "Usage": -1,
+  "Author": 0,
+  "ProfileId": 0,
+  "UnsavedChanges": true,
+  "BannerBytes": null,
+  "Public": false
+}

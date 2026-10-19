@@ -1,0 +1,1 @@
+{"name":"trees-01","options":{"dryRun":false,"batchSize":500,"bypassValidation":true,"report":"compact"},"objects":[{"id":"t1","prefab":"OakTree01","x":10,"z":20,"kind":"tree","age":"elderly"},{"id":"t2","prefab":"OakTree01","x":30,"z":40,"kind":"tree","age":"adult"},{"id":"t3","prefab":"OakTree01","x":-20,"z":-20,"kind":"tree","age":"adult"}]}

@@ -1,0 +1,19 @@
+{
+  "_comment": "borderNodes: network ends cut at the CS2 border (\u00B17168 m); these become CS2 outside connections. cs1Buildings: CS1 outside-connection buildings (they sit at \u00B18640 m) with the nearest border node of the matching layer.",
+  "borderNodes": [],
+  "cs1Buildings": [
+    {
+      "id": 6,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        8640,
+        100,
+        0
+      ],
+      "side": "east"
+    }
+  ]
+}

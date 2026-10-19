@@ -1,0 +1,96 @@
+{
+  "name": "Dakota Falls fills (dakota-v3)",
+  "_comment": "Fill edges for live gaps; nodes with entity attach to the live network.",
+  "nodes": [
+    {
+      "id": "live53008",
+      "x": 463.03,
+      "y": 230.158539,
+      "z": -4519.91,
+      "entity": {
+        "index": 53008,
+        "version": 13
+      }
+    },
+    {
+      "id": "live53848",
+      "x": 412.35,
+      "y": 227.361557,
+      "z": -4473.97,
+      "entity": {
+        "index": 53848,
+        "version": 15
+      }
+    },
+    {
+      "id": "live56088",
+      "x": 3670.53,
+      "y": 384.56,
+      "z": 2153.24,
+      "entity": {
+        "index": 56088,
+        "version": 11
+      }
+    },
+    {
+      "id": "live52008",
+      "x": 3690.95,
+      "y": 386.4,
+      "z": 2176.48,
+      "entity": {
+        "index": 52008,
+        "version": 31
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e15883_0",
+      "a": "live53008",
+      "b": "live53848",
+      "prefab": "Highway Oneway - 4 lanes",
+      "control": [
+        [
+          447.45,
+          227.97,
+          -4506.55
+        ],
+        [
+          427.09,
+          227.25,
+          -4488.26
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2452038713.USRP 4L Interstate_Data",
+      "cs1_segment": 15883
+    },
+    {
+      "id": "e32650_0b",
+      "a": "live56088",
+      "b": "live52008",
+      "prefab": "Highway Oneway - 1 lane",
+      "control": [
+        [
+          3677.96,
+          385.21,
+          2161.1
+        ],
+        [
+          3685.12,
+          385.85,
+          2169.22
+        ]
+      ],
+      "structure": "elevated",
+      "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
+      "cs1_segment": 32650
+    }
+  ],
+  "options": {
+    "batchSize": 64,
+    "nodesFirst": true,
+    "heightMode": "absolute",
+    "dryRun": false
+  }
+}

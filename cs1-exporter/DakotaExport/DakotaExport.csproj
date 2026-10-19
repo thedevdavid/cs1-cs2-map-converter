@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net35</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>DakotaExport</AssemblyName>
+    <RootNamespace>DakotaExport</RootNamespace>
+    <Version>0.4.2</Version>
+    <FileVersion>0.4.2.0</FileVersion>
+    <AssemblyVersion>0.4.2.0</AssemblyVersion>
+    <Deterministic>true</Deterministic>
+    <CitiesSkylinesManagedDir Condition="'$(CitiesSkylinesManagedDir)' == ''">D:\SteamLibrary\steamapps\common\Cities_Skylines\Cities_Data\Managed</CitiesSkylinesManagedDir>
+    <InstallMod Condition="'$(InstallMod)' == ''">true</InstallMod>
+    <ModInstallDir Condition="'$(ModInstallDir)' == ''">$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\DakotaExport</ModInstallDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net35" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ICities">
+      <HintPath>$(CitiesSkylinesManagedDir)\ICities.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(CitiesSkylinesManagedDir)\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="ColossalManaged">
+      <HintPath>$(CitiesSkylinesManagedDir)\ColossalManaged.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(CitiesSkylinesManagedDir)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="ValidateCitiesSkylinesReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(CitiesSkylinesManagedDir)\ICities.dll')"
+           Text="ICities.dll was not found under '$(CitiesSkylinesManagedDir)'. Set CitiesSkylinesManagedDir to the CS1 Cities_Data\Managed directory." />
+    <Error Condition="!Exists('$(CitiesSkylinesManagedDir)\UnityEngine.dll')"
+           Text="UnityEngine.dll was not found under '$(CitiesSkylinesManagedDir)'. Set CitiesSkylinesManagedDir to the CS1 Cities_Data\Managed directory." />
+    <Error Condition="!Exists('$(CitiesSkylinesManagedDir)\Assembly-CSharp.dll')"
+           Text="Assembly-CSharp.dll was not found under '$(CitiesSkylinesManagedDir)'. Set CitiesSkylinesManagedDir to the CS1 Cities_Data\Managed directory." />
+    <Error Condition="!Exists('$(CitiesSkylinesManagedDir)\ColossalManaged.dll')"
+           Text="ColossalManaged.dll was not found under '$(CitiesSkylinesManagedDir)'. Set CitiesSkylinesManagedDir to the CS1 Cities_Data\Managed directory." />
+  </Target>
+
+  <!-- Copies only DakotaExport.dll into the CS1 local mods folder. Disable with -p:InstallMod=false. -->
+  <Target Name="InstallCs1Mod" AfterTargets="Build" Condition="'$(InstallMod)' == 'true'">
+    <MakeDir Directories="$(ModInstallDir)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModInstallDir)" SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="DakotaExport installed to $(ModInstallDir)" />
+  </Target>
+</Project>

@@ -1,0 +1,77 @@
+{
+  "name": "Dakota Falls network (all layers)",
+  "_comment": "net-converter: CS1 Dakota Falls -\u003E CS2, x/z metres unchanged (factor 1.0), clipped at \u00B17168 m; y = CS1 world height; elevation = metres above terrain",
+  "nodes": [
+    {
+      "id": "n1",
+      "x": -100,
+      "y": 271.88,
+      "z": 0,
+      "elevation": 0
+    },
+    {
+      "id": "n2",
+      "x": 100,
+      "y": 270.75,
+      "z": 0,
+      "elevation": 0
+    },
+    {
+      "id": "n3",
+      "x": 300,
+      "y": 211.76,
+      "z": 50,
+      "elevation": 0
+    }
+  ],
+  "edges": [
+    {
+      "id": "e10_0",
+      "a": "n1",
+      "b": "n2",
+      "prefab": "Gravel Road",
+      "control": [
+        [
+          -33.33,
+          200,
+          0
+        ],
+        [
+          33.33,
+          200,
+          0
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "Gravel Road",
+      "cs1_segment": 10
+    },
+    {
+      "id": "e11_0",
+      "a": "n2",
+      "b": "n3",
+      "prefab": "Gravel Road",
+      "control": [
+        [
+          166.67,
+          200,
+          16.67
+        ],
+        [
+          233.33,
+          200,
+          33.33
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "Gravel Road",
+      "cs1_segment": 11
+    }
+  ],
+  "options": {
+    "batchSize": 64,
+    "nodesFirst": true,
+    "heightMode": "absolute",
+    "dryRun": false
+  }
+}

@@ -1,0 +1,12 @@
+# nested git repo (fork of LancerComet/CS2MCP, branch editor-import)
+cs2mcp/
+# build output
+**/bin/
+**/obj/
+**/node_modules/
+# large regenerable outputs (regenerate: hm-rebuild, cs1-offline/run.mjs, net-converter)
+hm-rebuild/out/
+cs1-offline/out/payloads/
+cs1-offline/out/po-offline.json
+net-converter/out/trees/*.json
+*.log

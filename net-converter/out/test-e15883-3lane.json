@@ -1,0 +1,52 @@
+{
+  "name": "test e15883_0 as Highway Oneway - 3 lanes",
+  "_comment": "Same course as e15883_0, narrower prefab, ends bound to the live dead ends.",
+  "nodes": [
+    {
+      "id": "live53008",
+      "x": 463.03,
+      "y": 230.158539,
+      "z": -4519.91,
+      "entity": {
+        "index": 53008,
+        "version": 13
+      }
+    },
+    {
+      "id": "live53848",
+      "x": 412.35,
+      "y": 227.361557,
+      "z": -4473.97,
+      "entity": {
+        "index": 53848,
+        "version": 15
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e15883_3l",
+      "a": "live53008",
+      "b": "live53848",
+      "prefab": "Highway Oneway - 3 lanes",
+      "control": [
+        [
+          447.45,
+          113.99,
+          -4506.55
+        ],
+        [
+          427.09,
+          113.62,
+          -4488.26
+        ]
+      ]
+    }
+  ],
+  "options": {
+    "batchSize": 8,
+    "nodesFirst": true,
+    "heightMode": "elevation",
+    "dryRun": false
+  }
+}

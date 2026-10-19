@@ -1,0 +1,12 @@
+{
+  "name": "Dakota Falls highways",
+  "_comment": "net-converter: CS1 Dakota Falls -\u003E CS2, x/z metres unchanged (factor 1.0), clipped at \u00B17168 m; y = CS1 world height; elevation = metres above terrain",
+  "nodes": [],
+  "edges": [],
+  "options": {
+    "batchSize": 64,
+    "nodesFirst": true,
+    "heightMode": "absolute",
+    "dryRun": false
+  }
+}

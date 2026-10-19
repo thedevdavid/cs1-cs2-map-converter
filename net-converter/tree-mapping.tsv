@@ -1,0 +1,36 @@
+# CS1 tree prefab -> CS2 tree prefab(s). Rows with the same regex form one group; the first group whose regex matches wins.
+# Columns (tab-separated): regex (case-insensitive), target, weight, age profile, note
+#   target  = exact CS2 prefab name (verified as Assets.NAME[...] in Cities2_Data/Content/Game/Locale.cok, 2026-10-19),
+#             SKIP (dropped), or CROP (dropped; its cells feed the synthetic fertility layer)
+#   weight  = share of this CS1 species going to this target (normalised within the group)
+#   profile = default (seedling 5 %, sapling 15 %, adult 60 %, elderly 20 %) | old (adult 30 %, elderly 70 %) | young (sapling 50 %, adult 50 %)
+#
+# --- Conifers --------------------------------------------------------------------------------------------
+(?i)BorealPine	SpruceTree01	0.6	default	boreal pine -> spruce mix
+(?i)BorealPine	EuropeanSpruce01	0.4	default
+(?i)PD - Pine (Tall|Regular)	PineTree01	1	default
+(?i)PD - Pine short	PineTree01	1	young	short pines as younger pines
+(?i)pencil pine	PineTree01	1	default	no cypress in CS2; narrowest conifer
+(?i)Large EverGreen	EuropeanSpruce01	0.5	default
+(?i)Large EverGreen	SpruceTree01	0.5	default
+# --- Deciduous --------------------------------------------------------------------------------------------
+(?i)LiveOak	OakTree01	1	default
+(?i)Semi Bare Tree Gold	BirchTree01	1	default	autumn gold
+(?i)Semi Bare Tree Red	NA_HickoryTree01	1	default	autumn red
+(?i)Semi Bare Tree Green	NA_LindenTree01	1	default
+(?i)Bare Tree [DE]	BirchTree01	1	old	bare trees -> old birch (CS2 has no placeable dead tree; *Dead01 are age states)
+# --- Bushes and shrubs (CS2 bushes are tree prefabs) -----------------------------------------------------
+(?i)Filler Bush (small|Medium)	GreenBushWild01	0.6	default
+(?i)Filler Bush (small|Medium)	GreenBushWild02	0.4	default
+(?i)Filler Bush Large	GreenBushWild02	1	default
+(?i)Aussie Bushes	GreenBushWild01	0.5	default
+(?i)Aussie Bushes	FlowerBushWild01	0.25	default
+(?i)Aussie Bushes	FlowerBushWild02	0.25	default
+(?i)Detail Shrub	GreenBushWild01	0.5	default
+(?i)Detail Shrub	GreenBushWild02	0.5	default
+(?i)WildHedge	GreenBushWild02	1	default	wild hedge -> bush (CS2 hedges are fence props)
+# --- Not trees ----------------------------------------------------------------------------------------------
+(?i)Corn Stalk	CROP	1	default	crop; CS2 has no placeable crop prop (fields are Agriculture Lot areas) -> fertility
+(?i)Filler Grass	SKIP	1	default	grass is a CS2 surface, not an object
+(?i)RiverReeds	SKIP	1	default	no reed prefab in CS2
+(?i)Deadwood	SKIP	1	default	fallen deadwood; CS2 logs (Log01-09) are props, not worth 2 146 objects

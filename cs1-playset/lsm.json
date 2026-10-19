@@ -1,0 +1,986 @@
+{
+ "totalRows": 3879,
+ "neededRows": 289,
+ "usedInCityRows": 163,
+ "ids": {
+  "767694644": {
+   "id": "767694644",
+   "names": [
+    "R69 Big Decal Dirt"
+   ],
+   "types": {
+    "prop": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "874716774": {
+   "id": "874716774",
+   "names": [
+    "R69 Big Decal Mud 1",
+    "R69 Big Decal Mud 2",
+    "R69 Big Decal Mud 3",
+    "R69 Big Decal Mud 4"
+   ],
+   "types": {
+    "prop": 4
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "883313481": {
+   "id": "883313481",
+   "names": [
+    "RiverReeds Detail Edition cluste"
+   ],
+   "types": {
+    "tree": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "896308318": {
+   "id": "896308318",
+   "names": [
+    "Bare Tree D"
+   ],
+   "types": {
+    "tree": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1230960704": {
+   "id": "1230960704",
+   "names": [
+    "PD - pencil pine",
+    "PD - Pine Regular ",
+    "PD - Pine short",
+    "PD - Pine Tall"
+   ],
+   "types": {
+    "tree": 4
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1238991822": {
+   "id": "1238991822",
+   "names": [
+    "Bare Tree E"
+   ],
+   "types": {
+    "tree": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1251664417": {
+   "id": "1251664417",
+   "names": [
+    "Dam Electricity"
+   ],
+   "types": {
+    "building": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1282267425": {
+   "id": "1282267425",
+   "names": [
+    "Semi Bare Tree Gold",
+    "Semi Bare Tree Green",
+    "Semi Bare Tree Red"
+   ],
+   "types": {
+    "tree": 3
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1310328404": {
+   "id": "1310328404",
+   "names": [
+    "Hernando-Desoto Bridge"
+   ],
+   "types": {
+    "building": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1530376523": {
+   "id": "1530376523",
+   "names": [
+    "r69rwp-buff",
+    "r69rwp-cat1e",
+    "r69rwp-cat1n",
+    "r69rwp-cat2e",
+    "r69rwp-cat2n",
+    "r69rwp-cat2t",
+    "r69rwp-cat4e",
+    "r69rwp-cat4n",
+    "r69rwp-gant4",
+    "r69rwp-sigl",
+    "r69rwp-sigr"
+   ],
+   "types": {
+    "prop": 11
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1574865364": {
+   "id": "1574865364",
+   "names": [
+    "R69Railway Wires 1x Catenaries",
+    "R69Railway Wires 2x Catenaries"
+   ],
+   "types": {
+    "network": 2
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "1889660581": {
+   "id": "1889660581",
+   "names": [
+    "Concrete Barrier",
+    "Concrete Barrier - NR - Center",
+    "Concrete Barrier - NR - Center - raisable",
+    "Concrete Barrier - raisable",
+    "Double Steel Barrier",
+    "Double Steel Barrier - raisable",
+    "Single Steel Barrier",
+    "Single Steel Barrier - raisable",
+    "Soundwall ",
+    "Soundwall - raisable",
+    "Soundwall Steel Barrier - raisable",
+    "Soundwall with Steel Barrier"
+   ],
+   "types": {
+    "network": 12
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1953870276": {
+   "id": "1953870276",
+   "names": [
+    "Corn Stalk "
+   ],
+   "types": {
+    "tree": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1978360460": {
+   "id": "1978360460",
+   "names": [
+    "Brown Surface Rock A Large",
+    "Brown Surface Rock A Medium",
+    "Brown Surface Rock A Small",
+    "Brown Surface Rock B Large",
+    "Brown Surface Rock B Medium",
+    "Brown Surface Rock B Small"
+   ],
+   "types": {
+    "building": 6
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1988121829": {
+   "id": "1988121829",
+   "names": [
+    "Grey Breakwater Rocks 01"
+   ],
+   "types": {
+    "building": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "1988876538": {
+   "id": "1988876538",
+   "names": [
+    "Brown Modular C Formation 01",
+    "Brown Modular C Formation 02",
+    "Brown Modular C Formation 03",
+    "Brown Modular C Formation 04"
+   ],
+   "types": {
+    "building": 4
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2074426936": {
+   "id": "2074426936",
+   "names": [
+    "Fallen Pine 01",
+    "Fallen Pine 01 TC",
+    "Fallen Pine 02",
+    "Fallen Pine 02 TC",
+    "Fallen Pine 03",
+    "Fallen Pine 04",
+    "Fallen Pine 05 LP",
+    "Fallen Pine 06 LP",
+    "Fallen Pine 07 LP",
+    "Fallen Pine 07 LP TC",
+    "Fallen Pine Stump 01",
+    "Fallen Pine Stump 02"
+   ],
+   "types": {
+    "prop": 12
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2084863228": {
+   "id": "2084863228",
+   "names": [
+    "USRP TL A4",
+    "USRP TL D6",
+    "USRP TL E2",
+    "USRP TL F1",
+    "USRP TL G1",
+    "USRP TL L1",
+    "USRP TL M1",
+    "USRP TL M2",
+    "USRP TL R1"
+   ],
+   "types": {
+    "prop": 9
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2084866139": {
+   "id": "2084866139",
+   "names": [
+    "USRP tunnel light LED",
+    "USRP Type 21 LED Streetlight 1",
+    "USRP Type 21 LED Streetlight 2"
+   ],
+   "types": {
+    "prop": 3
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2088550283": {
+   "id": "2088550283",
+   "names": [
+    "USRP Arrow Forward",
+    "USRP Arrow Forward-Right",
+    "USRP Arrow Left",
+    "USRP Arrow Left-Forward",
+    "USRP Arrow Right"
+   ],
+   "types": {
+    "prop": 5
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2097491556": {
+   "id": "2097491556",
+   "names": [
+    "USRP 1-Lane Highway Ramp"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2097503753": {
+   "id": "2097503753",
+   "names": [
+    "USRP 2-Lane Highway"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2097515414": {
+   "id": "2097515414",
+   "names": [
+    "USRP 3-Lane Highway"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2097523614": {
+   "id": "2097523614",
+   "names": [
+    "USRP 4-Lane Highway"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2097530472": {
+   "id": "2097530472",
+   "names": [
+    "USRP 2-Lane National Road",
+    "USRP 2-Lane National Road Dashed",
+    "USRP 2-Lane National Road PL"
+   ],
+   "types": {
+    "network": 3
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2097539846": {
+   "id": "2097539846",
+   "names": [
+    "USRP 4-Lane National Road"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2097856853": {
+   "id": "2097856853",
+   "names": [
+    "PD Large EverGreen",
+    "PD Large EverGreen 2",
+    "PD Large EverGreen 3"
+   ],
+   "types": {
+    "tree": 3
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2098643957": {
+   "id": "2098643957",
+   "names": [
+    "USRP 3-Lane National Road"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2105051034": {
+   "id": "2105051034",
+   "names": [
+    "Terraforming Network Ext 0.5U",
+    "Terraforming Network Ext 12U",
+    "Terraforming Network Ext 1U",
+    "Terraforming Network Ext 2U",
+    "Terraforming Network Ext 4U",
+    "Terraforming Network Ext 6U",
+    "Terraforming Network Ext 8U"
+   ],
+   "types": {
+    "network": 7
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2214471559": {
+   "id": "2214471559",
+   "names": [
+    "SN USA Barrier 02",
+    "SN USA Barrier 04",
+    "SN USA Barrier 05"
+   ],
+   "types": {
+    "prop": 3
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2346312805": {
+   "id": "2346312805",
+   "names": [
+    "Filler Bush Large 1",
+    "Filler Bush Medium 1",
+    "Filler Bush small 1"
+   ],
+   "types": {
+    "tree": 3
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2351314651": {
+   "id": "2351314651",
+   "names": [
+    "pd Filler Grass",
+    "pd Filler Grass 2"
+   ],
+   "types": {
+    "tree": 2
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2452038713": {
+   "id": "2452038713",
+   "names": [
+    "USRP 1L Interstate Ramp",
+    "USRP 2L Interstate",
+    "USRP 3L Interstate",
+    "USRP 4L Interstate",
+    "USRP 5L Interstate",
+    "USRP 6L Interstate"
+   ],
+   "types": {
+    "network": 6
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2452041504": {
+   "id": "2452041504",
+   "names": [
+    "USRP 2L Interstate Split",
+    "USRP 3L Interstate + Exit Lane",
+    "USRP 4L Interstate + Exit Lane",
+    "USRP 4L Interstate Split",
+    "USRP 5L Interstate + 2 Exit Lanes",
+    "USRP 5L Interstate + Exit Lane",
+    "USRP 6L Interstate + 2 Exit Lanes",
+    "USRP 6L Interstate + Exit Lane",
+    "USRP 6L Interstate Split"
+   ],
+   "types": {
+    "network": 9
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2487537755": {
+   "id": "2487537755",
+   "names": [
+    "nesque-pillarbase",
+    "R0-G Railway Tunnel Darkener",
+    "r2-ident01-4us",
+    "r2-ident01us",
+    "r2-ident02-4us",
+    "r2-ident02us",
+    "r2-weldus"
+   ],
+   "types": {
+    "prop": 7
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2497719362": {
+   "id": "2497719362",
+   "names": [
+    "RWY2USA PRR Girder-B Double ",
+    "RWY2USA PRR Girder-B Single"
+   ],
+   "types": {
+    "prop": 2
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2518959391": {
+   "id": "2518959391",
+   "names": [
+    "r2-ident01",
+    "r2-ident02",
+    "r2-weld"
+   ],
+   "types": {
+    "prop": 3
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2610252544": {
+   "id": "2610252544",
+   "names": [
+    "R2USA W GrWo 1x1",
+    "R2USA W GrWo 1x1 N",
+    "R2USA W GrWo 1x2",
+    "R2USA W GrWo 1x2 N",
+    "R2USA W GrWo 2x1",
+    "R2USA W GrWo 2x1 N",
+    "R2USA W GrWo 2x2",
+    "R2USA W GrWo 2x2 N",
+    "R2USA W GrWo 4x2 ",
+    "R2USA W GrWo 4x2 N"
+   ],
+   "types": {
+    "network": 10
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2610256766": {
+   "id": "2610256766",
+   "names": [
+    "R2USA GrWo 1x2 Gr E",
+    "R2USA GrWo 1x2 Gr E L",
+    "R2USA GrWo 1x2 Gr E R",
+    "R2USA GrWo 1x2 Gr G",
+    "R2USA GrWo 1x2 Gr G L",
+    "R2USA GrWo 1x2 Gr G R",
+    "R2USA GrWo 2x2 Gr E",
+    "R2USA GrWo 2x2 Gr G",
+    "R2USA GrWo 4x2 Bypass Gr G",
+    "R2USA W GrWo 1x2 Gr E",
+    "R2USA W GrWo 1x2 Gr E L",
+    "R2USA W GrWo 1x2 Gr E R",
+    "R2USA W GrWo 1x2 Gr G",
+    "R2USA W GrWo 1x2 Gr G L",
+    "R2USA W GrWo 1x2 Gr G R",
+    "R2USA W GrWo 2x2 Gr E",
+    "R2USA W GrWo 2x2 Gr G",
+    "R2USA W GrWo 4x2 Bypass Gr G"
+   ],
+   "types": {
+    "network": 18
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2610257966": {
+   "id": "2610257966",
+   "names": [
+    "R2USA GrWo 1x2 Lo E",
+    "R2USA GrWo 1x2 Lo E L",
+    "R2USA GrWo 1x2 Lo E R",
+    "R2USA GrWo 1x2 Lo G",
+    "R2USA GrWo 1x2 Lo G L",
+    "R2USA GrWo 1x2 Lo G R",
+    "R2USA GrWo 2x2 Lo E",
+    "R2USA GrWo 2x2 Lo G",
+    "R2USA GrWo 4x2 Bypass Lo E",
+    "R2USA GrWo 4x2 Bypass Lo G",
+    "R2USA W GrWo 1x2 Lo E",
+    "R2USA W GrWo 1x2 Lo E L",
+    "R2USA W GrWo 1x2 Lo E R",
+    "R2USA W GrWo 1x2 Lo G",
+    "R2USA W GrWo 1x2 Lo G L",
+    "R2USA W GrWo 1x2 Lo G R",
+    "R2USA W GrWo 2x2 Lo E",
+    "R2USA W GrWo 2x2 Lo G",
+    "R2USA W GrWo 4x2 Bypass Lo E",
+    "R2USA W GrWo 4x2 Bypass Lo G"
+   ],
+   "types": {
+    "network": 20
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2610265253": {
+   "id": "2610265253",
+   "names": [
+    "R2USA GrWo 1x2 St E",
+    "R2USA GrWo 1x2 St E L",
+    "R2USA GrWo 1x2 St E R",
+    "R2USA GrWo 1x2 St G",
+    "R2USA GrWo 1x2 St G L",
+    "R2USA GrWo 1x2 St G R",
+    "R2USA GrWo 2x2 St E",
+    "R2USA GrWo 2x2 St G",
+    "R2USA GrWo 4x2 Bypass St E",
+    "R2USA GrWo 4x2 Bypass St G",
+    "R2USA W GrWo 1x2 St E",
+    "R2USA W GrWo 1x2 St E L",
+    "R2USA W GrWo 1x2 St E R",
+    "R2USA W GrWo 1x2 St G",
+    "R2USA W GrWo 1x2 St G L",
+    "R2USA W GrWo 1x2 St G R",
+    "R2USA W GrWo 2x2 St E",
+    "R2USA W GrWo 2x2 St G",
+    "R2USA W GrWo 4x2 Bypass St E",
+    "R2USA W GrWo 4x2 Bypass St G"
+   ],
+   "types": {
+    "network": 20
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2610418621": {
+   "id": "2610418621",
+   "names": [
+    "R2USA W TrWo 1x2 Deck Girder 01",
+    "R2USA W TrWo 2x2 Deck Girder 01"
+   ],
+   "types": {
+    "network": 2
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2610435532": {
+   "id": "2610435532",
+   "names": [
+    "R2USA W TrWo 1x2 Deck Girder 02",
+    "R2USA W TrWo 1x2 Warren TB 02",
+    "R2USA W TrWo 2x2 Deck Girder 02"
+   ],
+   "types": {
+    "network": 3
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2610436765": {
+   "id": "2610436765",
+   "names": [
+    "R2USA W TrWo 1x2 Deck Girder 03",
+    "R2USA W TrWo 1x2 Warren TB 03",
+    "R2USA W TrWo 2x2 Deck Girder 03"
+   ],
+   "types": {
+    "network": 3
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2610437848": {
+   "id": "2610437848",
+   "names": [
+    "R2USA W TrWo 1x2 Deck Girder 04",
+    "R2USA W TrWo 1x2 Warren TB 04",
+    "R2USA W TrWo 2x2 Deck Girder 04"
+   ],
+   "types": {
+    "network": 3
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2619651082": {
+   "id": "2619651082",
+   "names": [
+    "R2USA GrWo 1x1",
+    "R2USA GrWo 1x1 N",
+    "R2USA GrWo 1x2",
+    "R2USA GrWo 1x2 N",
+    "R2USA GrWo 2x1",
+    "R2USA GrWo 2x1 N",
+    "R2USA GrWo 2x2",
+    "R2USA GrWo 2x2 N",
+    "R2USA GrWo 4x2",
+    "R2USA GrWo 4x2 N"
+   ],
+   "types": {
+    "network": 10
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2674210208": {
+   "id": "2674210208",
+   "names": [
+    "Field Network 0",
+    "Field Wheat Cut Network 3",
+    "Field Wheat Network 3",
+    "Field Wheat Young Network"
+   ],
+   "types": {
+    "network": 4
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2722005927": {
+   "id": "2722005927",
+   "names": [
+    "R2USA GrCo 1x2 Island Hi E",
+    "R2USA GrCo 1x2 Island Hi G",
+    "R2USA W GrCo 1x2 Island Hi E",
+    "R2USA W GrCo 1x2 Island Hi G"
+   ],
+   "types": {
+    "network": 4
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2786565452": {
+   "id": "2786565452",
+   "names": [
+    "R2USA W GrWo 2x2 U-Overpass",
+    "R2USA W GrWo 4x2 U-Overpass"
+   ],
+   "types": {
+    "network": 2
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2803411105": {
+   "id": "2803411105",
+   "names": [
+    "Landscape Grass 01",
+    "Landscape Grass 02",
+    "Landscape Grass 03",
+    "Landscape Grass 04",
+    "Landscape Grass 06"
+   ],
+   "types": {
+    "prop": 5
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2809700435": {
+   "id": "2809700435",
+   "names": [
+    "Detail Shrub 05 Cluster",
+    "Detail Shrub 06",
+    "Detail Shrub 06 Cluster",
+    "Detail Shrub Cluster 01",
+    "Detail Shrub Cluster 02",
+    "Detail Shrub Cluster 03",
+    "Detail Shrub Cluster 04"
+   ],
+   "types": {
+    "tree": 7
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2836620152": {
+   "id": "2836620152",
+   "names": [
+    "R2EUR W GrCo 2x2 Ourense SA"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2854678594": {
+   "id": "2854678594",
+   "names": [
+    "USRP 1L Interstate C",
+    "USRP 2L Interstate C",
+    "USRP 2L Interstate Split C",
+    "USRP 3L Interstate + Exit Lane C",
+    "USRP 3L Interstate C",
+    "USRP 4L Interstate + Exit Lane C",
+    "USRP 4L Interstate C",
+    "USRP 4L Interstate Split C",
+    "USRP 5L Interstate + 2 Exit Lanes C",
+    "USRP 5L Interstate + Exit Lane C",
+    "USRP 5L Interstate C",
+    "USRP 6L Interstate + 2 Exit Lanes C",
+    "USRP 6L Interstate + Exit Lane C",
+    "USRP 6L Interstate C",
+    "USRP 6L Interstate Split C"
+   ],
+   "types": {
+    "network": 15
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2889685220": {
+   "id": "2889685220",
+   "names": [
+    "Sidewalk-003 Decal"
+   ],
+   "types": {
+    "prop": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2903114021": {
+   "id": "2903114021",
+   "names": [
+    "R2USA W TrWo 2x2 Warren TB 02"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2903114284": {
+   "id": "2903114284",
+   "names": [
+    "R2USA W TrWo 2x2 Warren TB 04"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2903575412": {
+   "id": "2903575412",
+   "names": [
+    "R2USA W TrWo 2x2 Warren TB 03"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2904532252": {
+   "id": "2904532252",
+   "names": [
+    "R2USA W TrWo 1x2 Deck Girder 05",
+    "R2USA W TrWo 1x2 Warren TB 05",
+    "R2USA W TrWo 2x2 Deck Girder 05",
+    "R2USA W TrWo 2x2 Warren TB 05"
+   ],
+   "types": {
+    "network": 4
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2916095473": {
+   "id": "2916095473",
+   "names": [
+    "SEC Extra Large Substation"
+   ],
+   "types": {
+    "building": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2918422869": {
+   "id": "2918422869",
+   "names": [
+    "R2EUR W 1x2 Yard Track 01",
+    "R2EUR W 1x2 Yard Track 01 STA"
+   ],
+   "types": {
+    "network": 2
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2919651684": {
+   "id": "2919651684",
+   "names": [
+    "R2EUR W 1x2 Inspection Track 01"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2919967634": {
+   "id": "2919967634",
+   "names": [
+    "R2EUR W 1x2 Yard Track 02"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": false
+  },
+  "2920928696": {
+   "id": "2920928696",
+   "names": [
+    "345 kV H Frame Ceramic Angled",
+    "345 kV H Frame Ceramic Insulator",
+    "345 kV H Frame Polymer Angled",
+    "345 kV H Frame Polymer Insulator"
+   ],
+   "types": {
+    "network": 4
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2926036331": {
+   "id": "2926036331",
+   "names": [
+    "R2USA W TrWo 1x2 TRH Girder 02",
+    "R2USA W TrWo 2x2 TRH Girder 02"
+   ],
+   "types": {
+    "network": 2
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2931939156": {
+   "id": "2931939156",
+   "names": [
+    "Detroit Bridge"
+   ],
+   "types": {
+    "building": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2932555116": {
+   "id": "2932555116",
+   "names": [
+    "R2EUR W GrCo 2x2 Pedrido"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2949743029": {
+   "id": "2949743029",
+   "names": [
+    "Deadwood 01"
+   ],
+   "types": {
+    "tree": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2957832702": {
+   "id": "2957832702",
+   "names": [
+    "pd Aussie Bushes 1",
+    "pd Aussie Bushes 2"
+   ],
+   "types": {
+    "tree": 2
+   },
+   "missing": 0,
+   "usedInCity": true
+  },
+  "2966434181": {
+   "id": "2966434181",
+   "names": [
+    "Retaining Walls - AiO #01"
+   ],
+   "types": {
+    "network": 1
+   },
+   "missing": 0,
+   "usedInCity": true
+  }
+ }
+}

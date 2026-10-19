@@ -1,0 +1,29 @@
+{
+  "_comment": "CS1 natural water sources. height = target water surface in true metres (Height Scale 2048). radius = clamp(sqrt(CS1 outputRate), 20, 150) m. belowSeaLevel: surface \u003C= 97.5 m (the user\u0027s measured CS2 sea level for the lower river).",
+  "seaLevel": 97.5,
+  "sources": [
+    {
+      "id": 1,
+      "x": -1000,
+      "z": 3000,
+      "height": 203.4,
+      "refinedFrom": "CS1 water surface (water-check.md)",
+      "radius": 64,
+      "type": "natural",
+      "rate": 4096,
+      "inPlayable": true,
+      "belowSeaLevel": false
+    },
+    {
+      "id": 2,
+      "x": 0,
+      "z": 10,
+      "height": 97.5,
+      "radius": 128,
+      "type": "natural",
+      "rate": 16383,
+      "inPlayable": true,
+      "belowSeaLevel": true
+    }
+  ]
+}

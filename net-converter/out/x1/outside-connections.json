@@ -1,0 +1,615 @@
+{
+  "_comment": "borderNodes: network ends cut at the CS2 border (\u00B17168 m); these become CS2 outside connections. cs1Buildings: CS1 outside-connection buildings (they sit at \u00B18640 m) with the nearest border node of the matching layer.",
+  "borderNodes": [
+    {
+      "layer": "highways",
+      "node": "c3320_0",
+      "prefab": "Highway Oneway - 2 lanes",
+      "side": "north",
+      "position": [
+        4475.13,
+        434.5,
+        7168
+      ]
+    },
+    {
+      "layer": "highways",
+      "node": "c9740_0",
+      "prefab": "Highway Oneway - 2 lanes",
+      "side": "west",
+      "position": [
+        -7168,
+        622.94,
+        1830.67
+      ]
+    },
+    {
+      "layer": "highways",
+      "node": "c10624_0",
+      "prefab": "Highway Oneway - 2 lanes",
+      "side": "north",
+      "position": [
+        4459.25,
+        434.5,
+        7168
+      ]
+    },
+    {
+      "layer": "highways",
+      "node": "c15437_0",
+      "prefab": "Highway Oneway - 3 lanes",
+      "side": "east",
+      "position": [
+        7168,
+        285.65,
+        2151.68
+      ]
+    },
+    {
+      "layer": "highways",
+      "node": "c17366_0",
+      "prefab": "Highway Oneway - 2 lanes",
+      "side": "west",
+      "position": [
+        -7168,
+        622.97,
+        1845.99
+      ]
+    },
+    {
+      "layer": "highways",
+      "node": "c22660_0",
+      "prefab": "Highway Oneway - 3 lanes",
+      "side": "south",
+      "position": [
+        1391.08,
+        226.67,
+        -7168
+      ]
+    },
+    {
+      "layer": "highways",
+      "node": "c32988_0",
+      "prefab": "Highway Oneway - 3 lanes",
+      "side": "east",
+      "position": [
+        7168,
+        285.69,
+        2178.2
+      ]
+    },
+    {
+      "layer": "highways",
+      "node": "c35891_0",
+      "prefab": "Highway Oneway - 3 lanes",
+      "side": "south",
+      "position": [
+        1371.64,
+        226.68,
+        -7168
+      ]
+    },
+    {
+      "layer": "highways",
+      "node": "c36454_0",
+      "prefab": "Highway Oneway - 3 lanes",
+      "side": "north",
+      "position": [
+        -2181.26,
+        568.1,
+        7168
+      ]
+    },
+    {
+      "layer": "highways",
+      "node": "c36711_0",
+      "prefab": "Highway Oneway - 3 lanes",
+      "side": "north",
+      "position": [
+        -2159.54,
+        567.37,
+        7168
+      ]
+    },
+    {
+      "layer": "rail",
+      "node": "c6866_0",
+      "prefab": "Double Train Track",
+      "side": "south",
+      "position": [
+        -196.46,
+        328.39,
+        -7168
+      ]
+    },
+    {
+      "layer": "rail",
+      "node": "c15951_0",
+      "prefab": "Double Train Track",
+      "side": "north",
+      "position": [
+        -1908.52,
+        521.18,
+        7168
+      ]
+    },
+    {
+      "layer": "rail",
+      "node": "c16061_0",
+      "prefab": "Double Train Track",
+      "side": "east",
+      "position": [
+        7168,
+        289.74,
+        2299.71
+      ]
+    },
+    {
+      "layer": "rail",
+      "node": "c34544_0",
+      "prefab": "Double Train Track",
+      "side": "east",
+      "position": [
+        7168,
+        242.45,
+        -6585.03
+      ]
+    },
+    {
+      "layer": "roads",
+      "node": "c1244_0",
+      "prefab": "Small Road",
+      "side": "south",
+      "position": [
+        -1616.03,
+        435.52,
+        -7168
+      ]
+    },
+    {
+      "layer": "roads",
+      "node": "c3374_0",
+      "prefab": "Small Road",
+      "side": "south",
+      "position": [
+        5823.89,
+        258.54,
+        -7168
+      ]
+    },
+    {
+      "layer": "roads",
+      "node": "c31152_0",
+      "prefab": "Gravel Road",
+      "side": "east",
+      "position": [
+        7168,
+        278.78,
+        3456.21
+      ]
+    },
+    {
+      "layer": "roads",
+      "node": "c9707_0",
+      "prefab": "Gravel Road",
+      "side": "east",
+      "position": [
+        7168,
+        278.75,
+        1714.26
+      ]
+    },
+    {
+      "layer": "roads",
+      "node": "c23437_0",
+      "prefab": "Small Road",
+      "side": "east",
+      "position": [
+        7168,
+        278.78,
+        2424.55
+      ]
+    },
+    {
+      "layer": "roads",
+      "node": "c35664_0",
+      "prefab": "Gravel Road",
+      "side": "east",
+      "position": [
+        7168,
+        278.7,
+        2034.26
+      ]
+    }
+  ],
+  "cs1Buildings": [
+    {
+      "id": 1382,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": true,
+      "outgoing": false,
+      "position": [
+        4755.65,
+        215.25,
+        8646.82
+      ],
+      "side": "north",
+      "nearestBorderNode": {
+        "node": "c3320_0",
+        "layer": "highways",
+        "prefab": "Highway Oneway - 2 lanes",
+        "distance": 1505.19
+      }
+    },
+    {
+      "id": 6789,
+      "prefab": "Train Connection",
+      "type": "train",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        8644,
+        137.38,
+        2065.3
+      ],
+      "side": "east",
+      "nearestBorderNode": {
+        "node": "c16061_0",
+        "layer": "rail",
+        "prefab": "Double Train Track",
+        "distance": 1494.5
+      }
+    },
+    {
+      "id": 7993,
+      "prefab": "Train Connection",
+      "type": "train",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        8644,
+        108.23,
+        -7901.04
+      ],
+      "side": "east",
+      "nearestBorderNode": {
+        "node": "c34544_0",
+        "layer": "rail",
+        "prefab": "Double Train Track",
+        "distance": 1977.49
+      }
+    },
+    {
+      "id": 9216,
+      "prefab": "Road Connection Small",
+      "type": "road",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        7415.68,
+        114.23,
+        -8646.4
+      ],
+      "side": "south",
+      "nearestBorderNode": {
+        "node": "c3374_0",
+        "layer": "roads",
+        "prefab": "Small Road",
+        "distance": 2172.43
+      }
+    },
+    {
+      "id": 9628,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": true,
+      "outgoing": false,
+      "position": [
+        1588.44,
+        107.52,
+        -8649.67
+      ],
+      "side": "south",
+      "nearestBorderNode": {
+        "node": "c22660_0",
+        "layer": "highways",
+        "prefab": "Highway Oneway - 3 lanes",
+        "distance": 1494.75
+      }
+    },
+    {
+      "id": 10384,
+      "prefab": "Airplane Connection",
+      "type": "plane",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        -272.17,
+        213.69,
+        -8652.8
+      ],
+      "side": "south"
+    },
+    {
+      "id": 16610,
+      "prefab": "Airplane Connection",
+      "type": "plane",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        8652.8,
+        143.72,
+        1647
+      ],
+      "side": "east"
+    },
+    {
+      "id": 19314,
+      "prefab": "Ship Connection",
+      "type": "ship",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        5736.29,
+        92.28,
+        -8652.8
+      ],
+      "side": "south"
+    },
+    {
+      "id": 20804,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": true,
+      "outgoing": false,
+      "position": [
+        8649.32,
+        138.13,
+        1916.81
+      ],
+      "side": "east",
+      "nearestBorderNode": {
+        "node": "c35664_0",
+        "layer": "roads",
+        "prefab": "Gravel Road",
+        "distance": 1485.97
+      }
+    },
+    {
+      "id": 22143,
+      "prefab": "Airplane Connection",
+      "type": "plane",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        -2561.44,
+        314.23,
+        8652.8
+      ],
+      "side": "north"
+    },
+    {
+      "id": 25565,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": true,
+      "outgoing": false,
+      "position": [
+        -3345.04,
+        349.09,
+        8649.04
+      ],
+      "side": "north",
+      "nearestBorderNode": {
+        "node": "c36454_0",
+        "layer": "highways",
+        "prefab": "Highway Oneway - 3 lanes",
+        "distance": 1883.58
+      }
+    },
+    {
+      "id": 29724,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": false,
+      "outgoing": true,
+      "position": [
+        4740.11,
+        215.25,
+        8645.24
+      ],
+      "side": "north",
+      "nearestBorderNode": {
+        "node": "c3320_0",
+        "layer": "highways",
+        "prefab": "Highway Oneway - 2 lanes",
+        "distance": 1500.81
+      }
+    },
+    {
+      "id": 31146,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": false,
+      "outgoing": true,
+      "position": [
+        -8646.81,
+        385.48,
+        2743.64
+      ],
+      "side": "west",
+      "nearestBorderNode": {
+        "node": "c17366_0",
+        "layer": "highways",
+        "prefab": "Highway Oneway - 2 lanes",
+        "distance": 1729.92
+      }
+    },
+    {
+      "id": 32422,
+      "prefab": "Train Connection",
+      "type": "train",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        19.56,
+        179.53,
+        -8644
+      ],
+      "side": "south",
+      "nearestBorderNode": {
+        "node": "c6866_0",
+        "layer": "rail",
+        "prefab": "Double Train Track",
+        "distance": 1491.72
+      }
+    },
+    {
+      "id": 33411,
+      "prefab": "Road Connection Small",
+      "type": "road",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        -593.63,
+        237.55,
+        -8646.64
+      ],
+      "side": "south",
+      "nearestBorderNode": {
+        "node": "c1244_0",
+        "layer": "roads",
+        "prefab": "Small Road",
+        "distance": 1797.69
+      }
+    },
+    {
+      "id": 36525,
+      "prefab": "Airplane Connection",
+      "type": "plane",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        -3263.24,
+        350.02,
+        8652.8
+      ],
+      "side": "north"
+    },
+    {
+      "id": 41616,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": true,
+      "outgoing": false,
+      "position": [
+        -8645.93,
+        385.48,
+        2766.26
+      ],
+      "side": "west",
+      "nearestBorderNode": {
+        "node": "c17366_0",
+        "layer": "highways",
+        "prefab": "Highway Oneway - 2 lanes",
+        "distance": 1741.03
+      }
+    },
+    {
+      "id": 41809,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": false,
+      "outgoing": true,
+      "position": [
+        8648.53,
+        137.61,
+        1943.46
+      ],
+      "side": "east",
+      "nearestBorderNode": {
+        "node": "c35664_0",
+        "layer": "roads",
+        "prefab": "Gravel Road",
+        "distance": 1483.31
+      }
+    },
+    {
+      "id": 42176,
+      "prefab": "Train Connection",
+      "type": "train",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        -2036.61,
+        285.33,
+        8643.64
+      ],
+      "side": "north",
+      "nearestBorderNode": {
+        "node": "c15951_0",
+        "layer": "rail",
+        "prefab": "Double Train Track",
+        "distance": 1481.19
+      }
+    },
+    {
+      "id": 45251,
+      "prefab": "Road Connection Small",
+      "type": "road",
+      "incoming": true,
+      "outgoing": true,
+      "position": [
+        8646.4,
+        137.39,
+        3101.64
+      ],
+      "side": "east",
+      "nearestBorderNode": {
+        "node": "c31152_0",
+        "layer": "roads",
+        "prefab": "Gravel Road",
+        "distance": 1520.33
+      }
+    },
+    {
+      "id": 45798,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": false,
+      "outgoing": true,
+      "position": [
+        -3381.62,
+        349.09,
+        8647.73
+      ],
+      "side": "north",
+      "nearestBorderNode": {
+        "node": "c36454_0",
+        "layer": "highways",
+        "prefab": "Highway Oneway - 3 lanes",
+        "distance": 1905.38
+      }
+    },
+    {
+      "id": 47978,
+      "prefab": "Road Connection",
+      "type": "road",
+      "incoming": false,
+      "outgoing": true,
+      "position": [
+        1607.73,
+        106.98,
+        -8648.2
+      ],
+      "side": "south",
+      "nearestBorderNode": {
+        "node": "c22660_0",
+        "layer": "highways",
+        "prefab": "Highway Oneway - 3 lanes",
+        "distance": 1495.97
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "outside-connections",
+  "_comment": "kind outsideConnection; road/rail objects sit on border nodes of import-all.json (node = its id); rotation = outward heading, yaw degrees, 0 = \u002Bz, clockwise from above. Prefab names from Locale.cok, to reconcile with cs2mcp/PREFAB_NAMES.md.",
+  "options": {
+    "dryRun": false,
+    "batchSize": 50,
+    "bypassValidation": true,
+    "report": "compact"
+  },
+  "objects": []
+}

@@ -1,0 +1,3257 @@
+{
+  "schema": "dakota-offline/cs1/tmpe/v1",
+  "source": "TrafficManager_v1.0 (TM:PE 11.7.4 Configuration) of the map\u0027s data asset; lane ids resolved through the decoded NetManager lane table",
+  "coordinates": "CS1 world metres, x east, y up, z north; endPosition = lane end at the node, on the node\u0027s cross line (no corner offset)",
+  "listSizes": {
+    "ExtCitizens": 0,
+    "ExtCitizenInstances": 0,
+    "ToggledTrafficLights": 0,
+    "LaneConnections": 68,
+    "LaneArrows": 39,
+    "LaneSpeedLimits": 0,
+    "LaneAllowedVehicleTypes": 0,
+    "TimedLights": 0,
+    "SegmentNodeConfs": 0,
+    "CustomDefaultSpeedLimits": 0,
+    "CustomPrioritySegments": 0,
+    "ParkingRestrictions": 0,
+    "NodeDictionary": 0,
+    "ManualSegments": 0,
+    "TimedNodes": 0,
+    "TimedNodeGroups": 0,
+    "TimedNodeSteps": 0,
+    "TimedNodeStepSegments": 0
+  },
+  "laneConnections": [
+    {
+      "node": 11611,
+      "group": "1",
+      "source": {
+        "laneId": 193943,
+        "segment": 34976,
+        "laneIndex": 2,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Backward",
+        "lanePosition": -1.85,
+        "node": 11611,
+        "endPosition": [
+          -6461.02,
+          262.83,
+          1078.33
+        ]
+      },
+      "target": {
+        "laneId": 176424,
+        "segment": 15154,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 11611,
+        "endPosition": [
+          -6465.37,
+          262.83,
+          1076.9
+        ]
+      }
+    },
+    {
+      "node": 11611,
+      "group": "1",
+      "source": {
+        "laneId": 111363,
+        "segment": 34976,
+        "laneIndex": 3,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Backward",
+        "lanePosition": -5.55,
+        "node": 11611,
+        "endPosition": [
+          -6457.65,
+          262.83,
+          1079.86
+        ]
+      },
+      "target": {
+        "laneId": 54727,
+        "segment": 15154,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 11611,
+        "endPosition": [
+          -6461.78,
+          262.83,
+          1077.79
+        ]
+      }
+    },
+    {
+      "node": 11611,
+      "group": "1",
+      "source": {
+        "laneId": 53313,
+        "segment": 31696,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 11611,
+        "endPosition": [
+          -6463.42,
+          262.83,
+          1076.94
+        ]
+      },
+      "target": {
+        "laneId": 43903,
+        "segment": 34976,
+        "laneIndex": 1,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 5.55,
+        "node": 11611,
+        "endPosition": [
+          -6467.75,
+          262.83,
+          1075.26
+        ]
+      }
+    },
+    {
+      "node": 11611,
+      "group": "1",
+      "source": {
+        "laneId": 4370,
+        "segment": 31696,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 11611,
+        "endPosition": [
+          -6460.61,
+          262.83,
+          1079.35
+        ]
+      },
+      "target": {
+        "laneId": 48261,
+        "segment": 34976,
+        "laneIndex": 0,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 1.85,
+        "node": 11611,
+        "endPosition": [
+          -6464.38,
+          262.83,
+          1076.79
+        ]
+      }
+    },
+    {
+      "node": 9988,
+      "group": "1",
+      "source": {
+        "laneId": 254201,
+        "segment": 24116,
+        "laneIndex": 0,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 1.85,
+        "node": 9988,
+        "endPosition": [
+          -6198.22,
+          235.87,
+          624.89
+        ]
+      },
+      "target": {
+        "laneId": 35912,
+        "segment": 24828,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 9988,
+        "endPosition": [
+          -6196,
+          235.87,
+          628.81
+        ]
+      }
+    },
+    {
+      "node": 9988,
+      "group": "1",
+      "source": {
+        "laneId": 166665,
+        "segment": 24116,
+        "laneIndex": 1,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 5.55,
+        "node": 9988,
+        "endPosition": [
+          -6199.19,
+          235.87,
+          621.32
+        ]
+      },
+      "target": {
+        "laneId": 218775,
+        "segment": 24828,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 9988,
+        "endPosition": [
+          -6198.34,
+          235.87,
+          625.94
+        ]
+      }
+    },
+    {
+      "node": 9988,
+      "group": "1",
+      "source": {
+        "laneId": 206620,
+        "segment": 19095,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 9988,
+        "endPosition": [
+          -6197.49,
+          235.87,
+          627.6
+        ]
+      },
+      "target": {
+        "laneId": 31816,
+        "segment": 24116,
+        "laneIndex": 3,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Backward",
+        "lanePosition": -5.55,
+        "node": 9988,
+        "endPosition": [
+          -6196.28,
+          235.87,
+          632.04
+        ]
+      }
+    },
+    {
+      "node": 9988,
+      "group": "1",
+      "source": {
+        "laneId": 99667,
+        "segment": 19095,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 9988,
+        "endPosition": [
+          -6198.46,
+          235.87,
+          624.03
+        ]
+      },
+      "target": {
+        "laneId": 149219,
+        "segment": 24116,
+        "laneIndex": 2,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Backward",
+        "lanePosition": -1.85,
+        "node": 9988,
+        "endPosition": [
+          -6197.25,
+          235.87,
+          628.46
+        ]
+      }
+    },
+    {
+      "node": 27789,
+      "group": "1",
+      "source": {
+        "laneId": 14739,
+        "segment": 16466,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 27789,
+        "endPosition": [
+          876.51,
+          167.39,
+          4023.75
+        ]
+      },
+      "target": {
+        "laneId": 212461,
+        "segment": 25138,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 27789,
+        "endPosition": [
+          875.61,
+          167.39,
+          4025.37
+        ]
+      }
+    },
+    {
+      "node": 1635,
+      "group": "1",
+      "source": {
+        "laneId": 28420,
+        "segment": 10900,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 1635,
+        "endPosition": [
+          868.91,
+          167.39,
+          4037.41
+        ]
+      },
+      "target": {
+        "laneId": 30798,
+        "segment": 20430,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 1635,
+        "endPosition": [
+          869.86,
+          167.39,
+          4035.82
+        ]
+      }
+    },
+    {
+      "node": 17002,
+      "group": "1",
+      "source": {
+        "laneId": 35575,
+        "segment": 2218,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 17002,
+        "endPosition": [
+          98.17,
+          139.69,
+          242.9
+        ]
+      },
+      "target": {
+        "laneId": 49233,
+        "segment": 32183,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 17002,
+        "endPosition": [
+          96.37,
+          139.69,
+          242.5
+        ]
+      }
+    },
+    {
+      "node": 27789,
+      "group": "1",
+      "source": {
+        "laneId": 152109,
+        "segment": 16466,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 27789,
+        "endPosition": [
+          874.7,
+          167.39,
+          4026.98
+        ]
+      },
+      "target": {
+        "laneId": 212461,
+        "segment": 25138,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 27789,
+        "endPosition": [
+          875.61,
+          167.39,
+          4025.37
+        ]
+      }
+    },
+    {
+      "node": 27789,
+      "group": "1",
+      "source": {
+        "laneId": 4791,
+        "segment": 16466,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 27789,
+        "endPosition": [
+          872.9,
+          167.39,
+          4030.21
+        ]
+      },
+      "target": {
+        "laneId": 65980,
+        "segment": 25138,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 27789,
+        "endPosition": [
+          873.8,
+          167.39,
+          4028.59
+        ]
+      }
+    },
+    {
+      "node": 27056,
+      "group": "1",
+      "source": {
+        "laneId": 84866,
+        "segment": 13450,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 27056,
+        "endPosition": [
+          83.91,
+          135.48,
+          20.04
+        ]
+      },
+      "target": {
+        "laneId": 227553,
+        "segment": 14444,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 27056,
+        "endPosition": [
+          85.67,
+          135.48,
+          19.46
+        ]
+      }
+    },
+    {
+      "node": 1635,
+      "group": "1",
+      "source": {
+        "laneId": 149107,
+        "segment": 10900,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 1635,
+        "endPosition": [
+          867.16,
+          167.39,
+          4040.67
+        ]
+      },
+      "target": {
+        "laneId": 237956,
+        "segment": 20430,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 1635,
+        "endPosition": [
+          868.05,
+          167.39,
+          4039.05
+        ]
+      }
+    },
+    {
+      "node": 1635,
+      "group": "1",
+      "source": {
+        "laneId": 149107,
+        "segment": 10900,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 1635,
+        "endPosition": [
+          867.16,
+          167.39,
+          4040.67
+        ]
+      },
+      "target": {
+        "laneId": 250808,
+        "segment": 20430,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 1635,
+        "endPosition": [
+          866.24,
+          167.39,
+          4042.28
+        ]
+      }
+    },
+    {
+      "node": 4291,
+      "group": "1",
+      "source": {
+        "laneId": 215124,
+        "segment": 22564,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 4291,
+        "endPosition": [
+          739.55,
+          167.39,
+          3945.52
+        ]
+      },
+      "target": {
+        "laneId": 185617,
+        "segment": 22842,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 4291,
+        "endPosition": [
+          738.59,
+          167.39,
+          3947.1
+        ]
+      }
+    },
+    {
+      "node": 4291,
+      "group": "1",
+      "source": {
+        "laneId": 52278,
+        "segment": 22564,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 4291,
+        "endPosition": [
+          737.62,
+          167.39,
+          3948.67
+        ]
+      },
+      "target": {
+        "laneId": 192676,
+        "segment": 22842,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 4291,
+        "endPosition": [
+          736.66,
+          167.39,
+          3950.25
+        ]
+      }
+    },
+    {
+      "node": 4291,
+      "group": "1",
+      "source": {
+        "laneId": 228702,
+        "segment": 9919,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 4291,
+        "endPosition": [
+          738.28,
+          167.39,
+          3946.78
+        ]
+      },
+      "target": {
+        "laneId": 195535,
+        "segment": 22842,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 4291,
+        "endPosition": [
+          740.52,
+          167.39,
+          3943.94
+        ]
+      }
+    },
+    {
+      "node": 23859,
+      "group": "1",
+      "source": {
+        "laneId": 214725,
+        "segment": 20118,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 23859,
+        "endPosition": [
+          729.49,
+          167.39,
+          3961.95
+        ]
+      },
+      "target": {
+        "laneId": 224793,
+        "segment": 26394,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 23859,
+        "endPosition": [
+          730.88,
+          167.39,
+          3958.66
+        ]
+      }
+    },
+    {
+      "node": 23859,
+      "group": "1",
+      "source": {
+        "laneId": 215809,
+        "segment": 20118,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 23859,
+        "endPosition": [
+          731.42,
+          167.39,
+          3958.79
+        ]
+      },
+      "target": {
+        "laneId": 186042,
+        "segment": 25731,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 23859,
+        "endPosition": [
+          730.46,
+          167.39,
+          3960.37
+        ]
+      }
+    },
+    {
+      "node": 23859,
+      "group": "1",
+      "source": {
+        "laneId": 85221,
+        "segment": 20118,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 23859,
+        "endPosition": [
+          733.35,
+          167.39,
+          3955.63
+        ]
+      },
+      "target": {
+        "laneId": 219726,
+        "segment": 25731,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 23859,
+        "endPosition": [
+          732.39,
+          167.39,
+          3957.21
+        ]
+      }
+    },
+    {
+      "node": 17387,
+      "group": "1",
+      "source": {
+        "laneId": 115192,
+        "segment": 822,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 17387,
+        "endPosition": [
+          -204.4,
+          178.37,
+          3825.67
+        ]
+      },
+      "target": {
+        "laneId": 100799,
+        "segment": 14787,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 17387,
+        "endPosition": [
+          -202.74,
+          178.37,
+          3828.82
+        ]
+      }
+    },
+    {
+      "node": 17387,
+      "group": "1",
+      "source": {
+        "laneId": 97322,
+        "segment": 822,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 17387,
+        "endPosition": [
+          -203.21,
+          178.37,
+          3829.18
+        ]
+      },
+      "target": {
+        "laneId": 193559,
+        "segment": 9948,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 17387,
+        "endPosition": [
+          -203.76,
+          178.37,
+          3827.41
+        ]
+      }
+    },
+    {
+      "node": 17387,
+      "group": "1",
+      "source": {
+        "laneId": 221162,
+        "segment": 822,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 17387,
+        "endPosition": [
+          -202.02,
+          178.37,
+          3832.68
+        ]
+      },
+      "target": {
+        "laneId": 67914,
+        "segment": 9948,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 17387,
+        "endPosition": [
+          -202.73,
+          178.37,
+          3830.96
+        ]
+      }
+    },
+    {
+      "node": 21320,
+      "group": "1",
+      "source": {
+        "laneId": 60175,
+        "segment": 35218,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 21320,
+        "endPosition": [
+          -331.14,
+          179.32,
+          3889
+        ]
+      },
+      "target": {
+        "laneId": 150235,
+        "segment": 8915,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 21320,
+        "endPosition": [
+          -331.74,
+          179.32,
+          3887.25
+        ]
+      }
+    },
+    {
+      "node": 21320,
+      "group": "1",
+      "source": {
+        "laneId": 188553,
+        "segment": 35218,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 21320,
+        "endPosition": [
+          -332.33,
+          179.32,
+          3885.5
+        ]
+      },
+      "target": {
+        "laneId": 237006,
+        "segment": 8915,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 21320,
+        "endPosition": [
+          -332.93,
+          179.32,
+          3883.74
+        ]
+      }
+    },
+    {
+      "node": 21320,
+      "group": "1",
+      "source": {
+        "laneId": 57440,
+        "segment": 12088,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 21320,
+        "endPosition": [
+          -331.23,
+          179.32,
+          3887.23
+        ]
+      },
+      "target": {
+        "laneId": 140357,
+        "segment": 8915,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 21320,
+        "endPosition": [
+          -330.55,
+          179.32,
+          3890.75
+        ]
+      }
+    },
+    {
+      "node": 15971,
+      "group": "1",
+      "source": {
+        "laneId": 30056,
+        "segment": 303,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 15971,
+        "endPosition": [
+          -270.86,
+          178.84,
+          3848.22
+        ]
+      },
+      "target": {
+        "laneId": 115192,
+        "segment": 822,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 15971,
+        "endPosition": [
+          -270.86,
+          178.84,
+          3848.22
+        ]
+      }
+    },
+    {
+      "node": 15971,
+      "group": "1",
+      "source": {
+        "laneId": 77019,
+        "segment": 303,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 15971,
+        "endPosition": [
+          -269.67,
+          178.84,
+          3851.72
+        ]
+      },
+      "target": {
+        "laneId": 97322,
+        "segment": 822,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 15971,
+        "endPosition": [
+          -269.67,
+          178.84,
+          3851.72
+        ]
+      }
+    },
+    {
+      "node": 15971,
+      "group": "1",
+      "source": {
+        "laneId": 127215,
+        "segment": 303,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 15971,
+        "endPosition": [
+          -268.49,
+          178.84,
+          3855.23
+        ]
+      },
+      "target": {
+        "laneId": 221162,
+        "segment": 822,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 15971,
+        "endPosition": [
+          -268.49,
+          178.84,
+          3855.23
+        ]
+      }
+    },
+    {
+      "node": 10346,
+      "group": "1",
+      "source": {
+        "laneId": 5329,
+        "segment": 13465,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 10346,
+        "endPosition": [
+          -337.31,
+          179.32,
+          3870.76
+        ]
+      },
+      "target": {
+        "laneId": 30056,
+        "segment": 303,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 10346,
+        "endPosition": [
+          -337.33,
+          179.32,
+          3870.77
+        ]
+      }
+    },
+    {
+      "node": 10346,
+      "group": "1",
+      "source": {
+        "laneId": 178412,
+        "segment": 13465,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 10346,
+        "endPosition": [
+          -336.15,
+          179.32,
+          3874.28
+        ]
+      },
+      "target": {
+        "laneId": 77019,
+        "segment": 303,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 10346,
+        "endPosition": [
+          -336.14,
+          179.32,
+          3874.27
+        ]
+      }
+    },
+    {
+      "node": 10346,
+      "group": "1",
+      "source": {
+        "laneId": 65239,
+        "segment": 13465,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 10346,
+        "endPosition": [
+          -334.99,
+          179.32,
+          3877.79
+        ]
+      },
+      "target": {
+        "laneId": 127215,
+        "segment": 303,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 10346,
+        "endPosition": [
+          -334.95,
+          179.32,
+          3877.78
+        ]
+      }
+    },
+    {
+      "node": 1884,
+      "group": "1",
+      "source": {
+        "laneId": 140357,
+        "segment": 8915,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 1884,
+        "endPosition": [
+          -397.02,
+          180.58,
+          3913.3
+        ]
+      },
+      "target": {
+        "laneId": 90122,
+        "segment": 7738,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 1884,
+        "endPosition": [
+          -397.02,
+          180.58,
+          3913.3
+        ]
+      }
+    },
+    {
+      "node": 1884,
+      "group": "1",
+      "source": {
+        "laneId": 150235,
+        "segment": 8915,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 1884,
+        "endPosition": [
+          -398.2,
+          180.58,
+          3909.8
+        ]
+      },
+      "target": {
+        "laneId": 81094,
+        "segment": 7738,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 1884,
+        "endPosition": [
+          -398.2,
+          180.58,
+          3909.8
+        ]
+      }
+    },
+    {
+      "node": 1884,
+      "group": "1",
+      "source": {
+        "laneId": 237006,
+        "segment": 8915,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 1884,
+        "endPosition": [
+          -399.39,
+          180.58,
+          3906.29
+        ]
+      },
+      "target": {
+        "laneId": 214187,
+        "segment": 7738,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 1884,
+        "endPosition": [
+          -399.39,
+          180.58,
+          3906.29
+        ]
+      }
+    },
+    {
+      "node": 4378,
+      "group": "1",
+      "source": {
+        "laneId": 90122,
+        "segment": 7738,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 4378,
+        "endPosition": [
+          -463.48,
+          181.6,
+          3935.85
+        ]
+      },
+      "target": {
+        "laneId": 5120,
+        "segment": 26633,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 4378,
+        "endPosition": [
+          -463.48,
+          181.6,
+          3935.85
+        ]
+      }
+    },
+    {
+      "node": 4378,
+      "group": "1",
+      "source": {
+        "laneId": 81094,
+        "segment": 7738,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 4378,
+        "endPosition": [
+          -464.67,
+          181.6,
+          3932.35
+        ]
+      },
+      "target": {
+        "laneId": 148314,
+        "segment": 26633,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 4378,
+        "endPosition": [
+          -464.67,
+          181.6,
+          3932.35
+        ]
+      }
+    },
+    {
+      "node": 4378,
+      "group": "1",
+      "source": {
+        "laneId": 214187,
+        "segment": 7738,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 4378,
+        "endPosition": [
+          -465.86,
+          181.6,
+          3928.84
+        ]
+      },
+      "target": {
+        "laneId": 239000,
+        "segment": 26633,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 4378,
+        "endPosition": [
+          -465.86,
+          181.6,
+          3928.84
+        ]
+      }
+    },
+    {
+      "node": 12950,
+      "group": "1",
+      "source": {
+        "laneId": 195535,
+        "segment": 22842,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 12950,
+        "endPosition": [
+          808.14,
+          167.39,
+          3984.49
+        ]
+      },
+      "target": {
+        "laneId": 14739,
+        "segment": 16466,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 12950,
+        "endPosition": [
+          808.14,
+          167.39,
+          3984.49
+        ]
+      }
+    },
+    {
+      "node": 12950,
+      "group": "1",
+      "source": {
+        "laneId": 185617,
+        "segment": 22842,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 12950,
+        "endPosition": [
+          806.27,
+          167.39,
+          3987.68
+        ]
+      },
+      "target": {
+        "laneId": 152109,
+        "segment": 16466,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 12950,
+        "endPosition": [
+          806.27,
+          167.39,
+          3987.68
+        ]
+      }
+    },
+    {
+      "node": 12950,
+      "group": "1",
+      "source": {
+        "laneId": 192676,
+        "segment": 22842,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 12950,
+        "endPosition": [
+          804.39,
+          167.39,
+          3990.87
+        ]
+      },
+      "target": {
+        "laneId": 4791,
+        "segment": 16466,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 12950,
+        "endPosition": [
+          804.39,
+          167.39,
+          3990.87
+        ]
+      }
+    },
+    {
+      "node": 7849,
+      "group": "1",
+      "source": {
+        "laneId": 250808,
+        "segment": 20430,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 7849,
+        "endPosition": [
+          797.48,
+          167.39,
+          4002.75
+        ]
+      },
+      "target": {
+        "laneId": 214725,
+        "segment": 20118,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 7849,
+        "endPosition": [
+          797.48,
+          167.39,
+          4002.75
+        ]
+      }
+    },
+    {
+      "node": 7849,
+      "group": "1",
+      "source": {
+        "laneId": 237956,
+        "segment": 20430,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 7849,
+        "endPosition": [
+          799.36,
+          167.39,
+          3999.56
+        ]
+      },
+      "target": {
+        "laneId": 215809,
+        "segment": 20118,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 7849,
+        "endPosition": [
+          799.36,
+          167.39,
+          3999.56
+        ]
+      }
+    },
+    {
+      "node": 7849,
+      "group": "1",
+      "source": {
+        "laneId": 30798,
+        "segment": 20430,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 7849,
+        "endPosition": [
+          801.24,
+          167.39,
+          3996.38
+        ]
+      },
+      "target": {
+        "laneId": 85221,
+        "segment": 20118,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 7849,
+        "endPosition": [
+          801.24,
+          167.39,
+          3996.38
+        ]
+      }
+    },
+    {
+      "node": 14407,
+      "group": "1",
+      "source": {
+        "laneId": 261497,
+        "segment": 7747,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 14407,
+        "endPosition": [
+          224.45,
+          169.82,
+          3458.41
+        ]
+      },
+      "target": {
+        "laneId": 189037,
+        "segment": 12566,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 14407,
+        "endPosition": [
+          222.93,
+          169.82,
+          3457.35
+        ]
+      }
+    },
+    {
+      "node": 14407,
+      "group": "1",
+      "source": {
+        "laneId": 63573,
+        "segment": 23246,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 14407,
+        "endPosition": [
+          224.54,
+          169.82,
+          3458.25
+        ]
+      },
+      "target": {
+        "laneId": 168192,
+        "segment": 12566,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 14407,
+        "endPosition": [
+          225.97,
+          169.82,
+          3459.46
+        ]
+      }
+    },
+    {
+      "node": 14204,
+      "group": "1",
+      "source": {
+        "laneId": 149672,
+        "segment": 1054,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 14204,
+        "endPosition": [
+          280.95,
+          161.13,
+          3404.6
+        ]
+      },
+      "target": {
+        "laneId": 243651,
+        "segment": 31965,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 14204,
+        "endPosition": [
+          279.43,
+          161.13,
+          3403.56
+        ]
+      }
+    },
+    {
+      "node": 14204,
+      "group": "1",
+      "source": {
+        "laneId": 139703,
+        "segment": 1054,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 14204,
+        "endPosition": [
+          277.92,
+          161.13,
+          3402.49
+        ]
+      },
+      "target": {
+        "laneId": 185930,
+        "segment": 28080,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 14204,
+        "endPosition": [
+          279.52,
+          161.13,
+          3403.44
+        ]
+      }
+    },
+    {
+      "node": 13892,
+      "group": "1",
+      "source": {
+        "laneId": 16888,
+        "segment": 35734,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 13892,
+        "endPosition": [
+          335.79,
+          161.51,
+          3325.8
+        ]
+      },
+      "target": {
+        "laneId": 149672,
+        "segment": 1054,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 13892,
+        "endPosition": [
+          335.79,
+          161.51,
+          3325.8
+        ]
+      }
+    },
+    {
+      "node": 13892,
+      "group": "1",
+      "source": {
+        "laneId": 169624,
+        "segment": 35734,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 13892,
+        "endPosition": [
+          332.75,
+          161.51,
+          3323.69
+        ]
+      },
+      "target": {
+        "laneId": 139703,
+        "segment": 1054,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 13892,
+        "endPosition": [
+          332.75,
+          161.51,
+          3323.69
+        ]
+      }
+    },
+    {
+      "node": 6802,
+      "group": "1",
+      "source": {
+        "laneId": 189037,
+        "segment": 12566,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 6802,
+        "endPosition": [
+          266.59,
+          167.1,
+          3394.61
+        ]
+      },
+      "target": {
+        "laneId": 78137,
+        "segment": 1027,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 6802,
+        "endPosition": [
+          266.59,
+          167.1,
+          3394.61
+        ]
+      }
+    },
+    {
+      "node": 6802,
+      "group": "1",
+      "source": {
+        "laneId": 168192,
+        "segment": 12566,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 6802,
+        "endPosition": [
+          269.63,
+          167.1,
+          3396.72
+        ]
+      },
+      "target": {
+        "laneId": 13179,
+        "segment": 1027,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 6802,
+        "endPosition": [
+          269.63,
+          167.1,
+          3396.72
+        ]
+      }
+    },
+    {
+      "node": 27056,
+      "group": "1",
+      "source": {
+        "laneId": 233879,
+        "segment": 501,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 27056,
+        "endPosition": [
+          83.92,
+          135.48,
+          20.06
+        ]
+      },
+      "target": {
+        "laneId": 145798,
+        "segment": 14444,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 27056,
+        "endPosition": [
+          82.17,
+          135.48,
+          20.66
+        ]
+      }
+    },
+    {
+      "node": 12773,
+      "group": "1",
+      "source": {
+        "laneId": 40927,
+        "segment": 25952,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 12773,
+        "endPosition": [
+          79.36,
+          135.48,
+          -41.43
+        ]
+      },
+      "target": {
+        "laneId": 93065,
+        "segment": 10600,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 12773,
+        "endPosition": [
+          77.85,
+          135.48,
+          -40.46
+        ]
+      }
+    },
+    {
+      "node": 12773,
+      "group": "1",
+      "source": {
+        "laneId": 157032,
+        "segment": 25952,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 12773,
+        "endPosition": [
+          75.86,
+          135.48,
+          -40.23
+        ]
+      },
+      "target": {
+        "laneId": 236026,
+        "segment": 31983,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 12773,
+        "endPosition": [
+          77.61,
+          135.48,
+          -40.83
+        ]
+      }
+    },
+    {
+      "node": 10611,
+      "group": "1",
+      "source": {
+        "laneId": 145798,
+        "segment": 14444,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 10611,
+        "endPosition": [
+          62.8,
+          135.48,
+          -35.75
+        ]
+      },
+      "target": {
+        "laneId": 229395,
+        "segment": 25187,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 10611,
+        "endPosition": [
+          62.8,
+          135.48,
+          -35.75
+        ]
+      }
+    },
+    {
+      "node": 10611,
+      "group": "1",
+      "source": {
+        "laneId": 227553,
+        "segment": 14444,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 10611,
+        "endPosition": [
+          66.3,
+          135.48,
+          -36.95
+        ]
+      },
+      "target": {
+        "laneId": 159216,
+        "segment": 25187,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 10611,
+        "endPosition": [
+          66.3,
+          135.48,
+          -36.95
+        ]
+      }
+    },
+    {
+      "node": 527,
+      "group": "1",
+      "source": {
+        "laneId": 229200,
+        "segment": 15535,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 527,
+        "endPosition": [
+          59.99,
+          135.48,
+          -97.84
+        ]
+      },
+      "target": {
+        "laneId": 40927,
+        "segment": 25952,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 527,
+        "endPosition": [
+          59.99,
+          135.48,
+          -97.84
+        ]
+      }
+    },
+    {
+      "node": 527,
+      "group": "1",
+      "source": {
+        "laneId": 2987,
+        "segment": 15535,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 527,
+        "endPosition": [
+          56.49,
+          135.48,
+          -96.64
+        ]
+      },
+      "target": {
+        "laneId": 157032,
+        "segment": 25952,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 527,
+        "endPosition": [
+          56.49,
+          135.48,
+          -96.64
+        ]
+      }
+    },
+    {
+      "node": 17002,
+      "group": "1",
+      "source": {
+        "laneId": 120505,
+        "segment": 1009,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 17002,
+        "endPosition": [
+          98.2,
+          139.69,
+          242.81
+        ]
+      },
+      "target": {
+        "laneId": 3034,
+        "segment": 32183,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 17002,
+        "endPosition": [
+          99.98,
+          139.69,
+          243.31
+        ]
+      }
+    },
+    {
+      "node": 21201,
+      "group": "1",
+      "source": {
+        "laneId": 237165,
+        "segment": 784,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 21201,
+        "endPosition": [
+          82.9,
+          139.71,
+          239.48
+        ]
+      },
+      "target": {
+        "laneId": 222370,
+        "segment": 16556,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 21201,
+        "endPosition": [
+          84.73,
+          139.71,
+          239.68
+        ]
+      }
+    },
+    {
+      "node": 21201,
+      "group": "1",
+      "source": {
+        "laneId": 38405,
+        "segment": 784,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 21201,
+        "endPosition": [
+          86.51,
+          139.71,
+          240.29
+        ]
+      },
+      "target": {
+        "laneId": 34102,
+        "segment": 15937,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 21201,
+        "endPosition": [
+          84.71,
+          139.71,
+          239.88
+        ]
+      }
+    },
+    {
+      "node": 4801,
+      "group": "1",
+      "source": {
+        "laneId": 143435,
+        "segment": 29285,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 4801,
+        "endPosition": [
+          61.9,
+          142.49,
+          333.15
+        ]
+      },
+      "target": {
+        "laneId": 237165,
+        "segment": 784,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 4801,
+        "endPosition": [
+          61.9,
+          142.49,
+          333.15
+        ]
+      }
+    },
+    {
+      "node": 4801,
+      "group": "1",
+      "source": {
+        "laneId": 141557,
+        "segment": 29285,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 4801,
+        "endPosition": [
+          65.51,
+          142.49,
+          333.96
+        ]
+      },
+      "target": {
+        "laneId": 38405,
+        "segment": 784,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 4801,
+        "endPosition": [
+          65.51,
+          142.49,
+          333.96
+        ]
+      }
+    },
+    {
+      "node": 12156,
+      "group": "1",
+      "source": {
+        "laneId": 3034,
+        "segment": 32183,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 12156,
+        "endPosition": [
+          78.97,
+          142.49,
+          336.98
+        ]
+      },
+      "target": {
+        "laneId": 19820,
+        "segment": 11276,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 12156,
+        "endPosition": [
+          78.97,
+          142.49,
+          336.98
+        ]
+      }
+    },
+    {
+      "node": 12156,
+      "group": "1",
+      "source": {
+        "laneId": 49233,
+        "segment": 32183,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 12156,
+        "endPosition": [
+          75.36,
+          142.49,
+          336.17
+        ]
+      },
+      "target": {
+        "laneId": 173724,
+        "segment": 11276,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 12156,
+        "endPosition": [
+          75.36,
+          142.49,
+          336.17
+        ]
+      }
+    }
+  ],
+  "laneArrows": [
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 4370,
+        "segment": 31696,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 11611,
+        "endPosition": [
+          -6460.61,
+          262.83,
+          1079.35
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 4791,
+        "segment": 16466,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 27789,
+        "endPosition": [
+          872.9,
+          167.39,
+          4030.21
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 14739,
+        "segment": 16466,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 27789,
+        "endPosition": [
+          876.51,
+          167.39,
+          4023.75
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 28420,
+        "segment": 10900,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 1635,
+        "endPosition": [
+          868.91,
+          167.39,
+          4037.41
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 35575,
+        "segment": 2218,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 17002,
+        "endPosition": [
+          98.17,
+          139.69,
+          242.9
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 38405,
+        "segment": 784,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 21201,
+        "endPosition": [
+          86.51,
+          139.71,
+          240.29
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 40927,
+        "segment": 25952,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 12773,
+        "endPosition": [
+          79.36,
+          135.48,
+          -41.43
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 52278,
+        "segment": 22564,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 4291,
+        "endPosition": [
+          737.62,
+          167.39,
+          3948.67
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 53313,
+        "segment": 31696,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 11611,
+        "endPosition": [
+          -6463.42,
+          262.83,
+          1076.94
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 64,
+      "arrows": "Right",
+      "lane": {
+        "laneId": 57440,
+        "segment": 12088,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 21320,
+        "endPosition": [
+          -331.23,
+          179.32,
+          3887.23
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 60175,
+        "segment": 35218,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 21320,
+        "endPosition": [
+          -331.14,
+          179.32,
+          3889
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 63573,
+        "segment": 23246,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 14407,
+        "endPosition": [
+          224.54,
+          169.82,
+          3458.25
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 84866,
+        "segment": 13450,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 27056,
+        "endPosition": [
+          83.91,
+          135.48,
+          20.04
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 85221,
+        "segment": 20118,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 23859,
+        "endPosition": [
+          733.35,
+          167.39,
+          3955.63
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 97322,
+        "segment": 822,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 17387,
+        "endPosition": [
+          -203.21,
+          178.37,
+          3829.18
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 99667,
+        "segment": 19095,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 9988,
+        "endPosition": [
+          -6198.46,
+          235.87,
+          624.03
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 111363,
+        "segment": 34976,
+        "laneIndex": 3,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Backward",
+        "lanePosition": -5.55,
+        "node": 11611,
+        "endPosition": [
+          -6457.65,
+          262.83,
+          1079.86
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 64,
+      "arrows": "Right",
+      "lane": {
+        "laneId": 115192,
+        "segment": 822,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 17387,
+        "endPosition": [
+          -204.4,
+          178.37,
+          3825.67
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 120505,
+        "segment": 1009,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 17002,
+        "endPosition": [
+          98.2,
+          139.69,
+          242.81
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 139703,
+        "segment": 1054,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 14204,
+        "endPosition": [
+          277.92,
+          161.13,
+          3402.49
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 149107,
+        "segment": 10900,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 1635,
+        "endPosition": [
+          867.16,
+          167.39,
+          4040.67
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 149672,
+        "segment": 1054,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 14204,
+        "endPosition": [
+          280.95,
+          161.13,
+          3404.6
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 151171,
+        "segment": 36804,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 18884,
+        "endPosition": [
+          278.95,
+          135.48,
+          146.39
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 152109,
+        "segment": 16466,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 27789,
+        "endPosition": [
+          874.7,
+          167.39,
+          4026.98
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 157032,
+        "segment": 25952,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 12773,
+        "endPosition": [
+          75.86,
+          135.48,
+          -40.23
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 166665,
+        "segment": 24116,
+        "laneIndex": 1,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 5.55,
+        "node": 9988,
+        "endPosition": [
+          -6199.19,
+          235.87,
+          621.32
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 168156,
+        "segment": 3338,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 18884,
+        "endPosition": [
+          278.96,
+          135.48,
+          146.4
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 188553,
+        "segment": 35218,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -2.75,
+        "node": 21320,
+        "endPosition": [
+          -332.33,
+          179.32,
+          3885.5
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 193943,
+        "segment": 34976,
+        "laneIndex": 2,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Backward",
+        "lanePosition": -1.85,
+        "node": 11611,
+        "endPosition": [
+          -6461.02,
+          262.83,
+          1078.33
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 206620,
+        "segment": 19095,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 9988,
+        "endPosition": [
+          -6197.49,
+          235.87,
+          627.6
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 64,
+      "arrows": "Right",
+      "lane": {
+        "laneId": 214725,
+        "segment": 20118,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 2.8,
+        "node": 23859,
+        "endPosition": [
+          729.49,
+          167.39,
+          3961.95
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 215124,
+        "segment": 22564,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 4291,
+        "endPosition": [
+          739.55,
+          167.39,
+          3945.52
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 215809,
+        "segment": 20118,
+        "laneIndex": 1,
+        "prefab": "2452038713.USRP 3L Interstate E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 23859,
+        "endPosition": [
+          731.42,
+          167.39,
+          3958.79
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 221162,
+        "segment": 822,
+        "laneIndex": 4,
+        "prefab": "2452038713.USRP 3L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -4.6,
+        "node": 17387,
+        "endPosition": [
+          -202.02,
+          178.37,
+          3832.68
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 228702,
+        "segment": 9919,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp E",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 4291,
+        "endPosition": [
+          738.28,
+          167.39,
+          3946.78
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 233879,
+        "segment": 501,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 27056,
+        "endPosition": [
+          83.92,
+          135.48,
+          20.06
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 237165,
+        "segment": 784,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 2L Interstate_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 0.95,
+        "node": 21201,
+        "endPosition": [
+          82.9,
+          139.71,
+          239.48
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 254201,
+        "segment": 24116,
+        "laneIndex": 0,
+        "prefab": "2097539846.USRP 4-Lane National Road_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": 1.85,
+        "node": 9988,
+        "endPosition": [
+          -6198.22,
+          235.87,
+          624.89
+        ]
+      }
+    },
+    {
+      "arrowsRaw": 16,
+      "arrows": "Forward",
+      "lane": {
+        "laneId": 261497,
+        "segment": 7747,
+        "laneIndex": 0,
+        "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+        "laneType": "Vehicle",
+        "vehicleType": "Car",
+        "direction": "Forward",
+        "lanePosition": -0.9,
+        "node": 14407,
+        "endPosition": [
+          224.45,
+          169.82,
+          3458.41
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "test e15883_0 as two halves (4 lanes)",
+  "_comment": "Two 34 m halves of e15883_0 (control points by de Casteljau at t = 0.5), ends bound to the live dead ends; mid node new, on the ground.",
+  "nodes": [
+    {
+      "id": "live53008",
+      "x": 463.03,
+      "y": 230.158539,
+      "z": -4519.91,
+      "entity": {
+        "index": 53008,
+        "version": 13
+      }
+    },
+    {
+      "id": "e15883_mid",
+      "x": 437.38,
+      "y": 113.81,
+      "z": -4497.29,
+      "elevation": 0
+    },
+    {
+      "id": "live53848",
+      "x": 412.35,
+      "y": 227.361557,
+      "z": -4473.97,
+      "entity": {
+        "index": 53848,
+        "version": 15
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e15883_h1",
+      "a": "live53008",
+      "b": "e15883_mid",
+      "prefab": "Highway Oneway - 4 lanes",
+      "control": [
+        [
+          455.24,
+          114.13,
+          -4513.23
+        ],
+        [
+          446.26,
+          113.97,
+          -4505.32
+        ]
+      ]
+    },
+    {
+      "id": "e15883_h2",
+      "a": "e15883_mid",
+      "b": "live53848",
+      "prefab": "Highway Oneway - 4 lanes",
+      "control": [
+        [
+          428.5,
+          113.65,
+          -4489.26
+        ],
+        [
+          419.72,
+          113.49,
+          -4481.11
+        ]
+      ]
+    }
+  ],
+  "options": {
+    "batchSize": 8,
+    "nodesFirst": true,
+    "heightMode": "elevation",
+    "dryRun": false
+  }
+}

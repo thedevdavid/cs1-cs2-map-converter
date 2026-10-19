@@ -1,0 +1,22 @@
+{
+  "name": "po-candidates-UNVERIFIED",
+  "_comment": "rotation = yaw in degrees about \u002By, 0 = \u002Bz, clockwise from above, from CS1 m_angle as \u2212angle\u00B7180/\u03C0 (UNVERIFIED sign). y only where the CS1 object is \u003E 2 m off the terrain (CS1 y \u00D7 height factor).",
+  "options": {
+    "dryRun": false,
+    "batchSize": 500,
+    "bypassValidation": true,
+    "report": "compact"
+  },
+  "objects": [
+    {
+      "id": "po1",
+      "prefab": "Rock28",
+      "x": 120,
+      "z": 80,
+      "y": 130,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "Brown Surface Rock A Large_Data"
+    }
+  ]
+}

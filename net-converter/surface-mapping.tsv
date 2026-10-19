@@ -1,0 +1,12 @@
+# CS1 terrain-surface class (legend name from the v3 export: None, Clip, PavementA, PavementB, Ruined, Gravel, Field, RuinedWeak, Sand)
+# -> CS2 surface prefab (vanilla, cs2mcp/SURFACES.md, or texture packs in cs2-playset/ASSET_PACKS.md) or SKIP.
+# Choices follow audit/theme.md section 3 "CS1 texture class -> CS2 surface prefab" (owner decision 2026-10-19).
+# Columns (tab-separated): regex on the legend name (case-insensitive), target, weight (unused, 1), extra (unused), note
+(?i)pavement	Pavement Surface 01	1		neutral grey (alt: PDO23 Asphalt Surface 01)
+(?i)gravel	gaga TTP - Pebbles 1M dark	1		dark brown gravel (Terrain Textures Pack - Rocks; alt: Sand Surface 02)
+(?i)ruin	gaga TTP - Ground 1A	1		brown dirt (Terrain Textures Pack - Ground; alt: PDO23 Dirty Surface 01)
+(?i)field|farm|agri	Agriculture Surface 01	1		centre-pivot circles
+(?i)sand	PDO23 Dirty Sand Surface 01	1		brown shore sand (Dirty Surfaces Pack; alt: Sand Surface 01)
+(?i)grass	Grass Surface 01	1
+(?i)concrete	Concrete Surface 01	1
+(?i)clip|cliff|none	SKIP	1		not a painted surface

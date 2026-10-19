@@ -1,0 +1,3494 @@
+{
+ "generated": "2026-10-19T12:14:26.421Z",
+ "dlc": [
+  {
+   "appId": "547502",
+   "name": "Mass Transit",
+   "ownedPerSkyve": true,
+   "removedInSkyve": false
+  }
+ ],
+ "items": [
+  {
+   "id": "766190099",
+   "title": "(unknown)",
+   "kind": "asset",
+   "tags": [],
+   "reasons": [
+    "required by 1310328404 (Hernando de Soto Bridge)"
+   ],
+   "substitutedBy": null,
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": true,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "837734529",
+   "title": "(unknown)",
+   "kind": "asset",
+   "tags": [],
+   "reasons": [
+    "required by 1988876538 (Mountain Brown Modular Rocks 2K)",
+    "required by 1981694823 (Mossy Grey Modular Rocks 2K)"
+   ],
+   "substitutedBy": null,
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": true,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2920928696",
+   "title": "345 kV Wooden H Frame Transmission Line Pack",
+   "kind": "asset",
+   "tags": [
+    "Electricity",
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 4,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 4
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1145223801",
+   "title": "Ability to Read",
+   "kind": "asset",
+   "tags": [
+    "Building",
+    "Unique Building"
+   ],
+   "reasons": [
+    "required by 3683231517 (Adaptive Networks (Emergency Fix))",
+    "required by 2084863228 (USRP Traffic Signal Props)"
+   ],
+   "substitutedBy": null,
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 2,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2072216451",
+   "title": "Animated Waterfall",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 5,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "896308318",
+   "title": "Bare Tree D",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1238991822",
+   "title": "Bare Tree E",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "767694644",
+   "title": "Big Decal Dirt",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "874716774",
+   "title": "Big Decal Mud",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 4,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 4
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2949743029",
+   "title": "Brushwood",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1953870276",
+   "title": "Corn Stalk",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1251664417",
+   "title": "Dam Electricity",
+   "kind": "asset",
+   "tags": [
+    "Building",
+    "Electricity"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "building": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2809700435",
+   "title": "Detail Shrubs",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 12,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 7
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2957832702",
+   "title": "Detailed Bushes",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 2
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2931939156",
+   "title": "Detroit Bridge [Ploppable]",
+   "kind": "asset",
+   "tags": [
+    "Building",
+    "Electricity"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "building": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2097856853",
+   "title": "EverGreen Trees",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 3
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2916095473",
+   "title": "Extra Large Substation",
+   "kind": "asset",
+   "tags": [
+    "Building",
+    "Electricity"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "building": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2074426936",
+   "title": "Fallen Pines Prop Pack",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 14,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 12
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1889660581",
+   "title": "Fences Pack - Concrete Highways",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 12,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 12
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2674210208",
+   "title": "Field Networks",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 6,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 4
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2346312805",
+   "title": "Filler Bushes",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 3
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2351314651",
+   "title": "Filler Grass",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 2,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 2
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1310328404",
+   "title": "Hernando de Soto Bridge",
+   "kind": "asset",
+   "tags": [
+    "Building",
+    "Electricity"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "building": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2376025671",
+   "title": "Hyperion's Gate - PO Elements Pack",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2077702761",
+   "title": "JP Rock shed ロックシェッド",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2803411105",
+   "title": "Landscape Grass",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 6,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 5
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1981694823",
+   "title": "Mossy Grey Modular Rocks 2K",
+   "kind": "asset",
+   "tags": [
+    "Building"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 26,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "1988876538",
+   "title": "Mountain Brown Modular Rocks 2K",
+   "kind": "asset",
+   "tags": [
+    "Building"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 26,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "building": 4
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1978360460",
+   "title": "Mountain Brown Surface Rocks",
+   "kind": "asset",
+   "tags": [
+    "Building"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 6,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "building": 6
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2206365654",
+   "title": "Paintable Prop Modular Rocks",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 26,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "1230960704",
+   "title": "Pines",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 4,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 4
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1869561285",
+   "title": "Prop Painter 4.0 + PaintUI",
+   "kind": "asset",
+   "tags": [],
+   "reasons": [
+    "required by 2206365654 (Paintable Prop Modular Rocks)",
+    "required by 2206365654 (Paintable Prop Modular Rocks)"
+   ],
+   "substitutedBy": "2685506044",
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": true,
+   "skyveStability": 4,
+   "skyveStatuses": [
+    "Deprecated->2696146766"
+   ],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2903114021",
+   "title": "RAILWAY 2 - 2 Lane Warren Truss Bridge (Black)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2903575412",
+   "title": "RAILWAY 2 - 2 Lane Warren Truss Bridge (Teal)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2903114284",
+   "title": "RAILWAY 2 - 2 Lane Warren Truss Bridge (White)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2722005927",
+   "title": "RAILWAY 2 - American Concrete Island Station Tracks (High Entry)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 4,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 4
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2610252544",
+   "title": "RAILWAY 2 - American Wooden (Network Pack)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 10,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 10
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2610256766",
+   "title": "RAILWAY 2 - American Wooden Station Tracks (Ground Entry)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 18,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 18
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2610257966",
+   "title": "RAILWAY 2 - American Wooden Station Tracks (Low Entry)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 20,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 20
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2610265253",
+   "title": "RAILWAY 2 - American Wooden Station Tracks (Standard Entry)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 20,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 20
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2619651082",
+   "title": "RAILWAY 2 - American Wooden Wireless (Network Pack)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 10,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 10
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2487537755",
+   "title": "RAILWAY 2 - Base Props (American)",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map",
+    "required by 2610252544 (RAILWAY 2 - American Wooden (Network Pack))",
+    "required by 2926036331 (RAILWAY 2 - Through Girder Bridge Pack 1)",
+    "required by 2610256766 (RAILWAY 2 - American Wooden Station Tracks (Ground Entry))",
+    "required by 2610257966 (RAILWAY 2 - American Wooden Station Tracks (Low Entry))",
+    "required by 2610265253 (RAILWAY 2 - American Wooden Station Tracks (Standard Entry))",
+    "required by 2610418621 (RAILWAY 2 - Deck Plate Girders (Pack 1))",
+    "required by 2610435532 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 2))",
+    "required by 2610436765 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 3))",
+    "required by 2610437848 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 4))",
+    "required by 2722005927 (RAILWAY 2 - American Concrete Island Station Tracks (High Entry))",
+    "required by 2786565452 (RAILWAY 2 - Urban Overpasses (Network Pack))",
+    "required by 2903114021 (RAILWAY 2 - 2 Lane Warren Truss Bridge (Black))",
+    "required by 2903114284 (RAILWAY 2 - 2 Lane Warren Truss Bridge (White))",
+    "required by 2903575412 (RAILWAY 2 - 2 Lane Warren Truss Bridge (Teal))",
+    "required by 2904532252 (RAILWAY 2 - Warren & Girder Bridge Pack 5)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 13,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 7
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2518959391",
+   "title": "RAILWAY 2 - Base Props (European)",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map",
+    "required by 2836620152 (RAILWAY 2 - Ourense Viaduct)",
+    "required by 2932555116 (RAILWAY 2 - Pedrido Bridge Complex)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 7,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 3
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2610418621",
+   "title": "RAILWAY 2 - Deck Plate Girders (Pack 1)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 2,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 2
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2919651684",
+   "title": "RAILWAY 2 - Inspection/Pit Tracks",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 6,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2836620152",
+   "title": "RAILWAY 2 - Ourense Viaduct",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2932555116",
+   "title": "RAILWAY 2 - Pedrido Bridge Complex",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2497719362",
+   "title": "RAILWAY 2 - Pennsylvania Railroad Catenary Pack",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map",
+    "required by 2926036331 (RAILWAY 2 - Through Girder Bridge Pack 1)",
+    "required by 2610418621 (RAILWAY 2 - Deck Plate Girders (Pack 1))",
+    "required by 2610435532 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 2))",
+    "required by 2610436765 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 3))",
+    "required by 2610437848 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 4))",
+    "required by 2786565452 (RAILWAY 2 - Urban Overpasses (Network Pack))",
+    "required by 2903114021 (RAILWAY 2 - 2 Lane Warren Truss Bridge (Black))",
+    "required by 2903114284 (RAILWAY 2 - 2 Lane Warren Truss Bridge (White))",
+    "required by 2903575412 (RAILWAY 2 - 2 Lane Warren Truss Bridge (Teal))",
+    "required by 2904532252 (RAILWAY 2 - Warren & Girder Bridge Pack 5)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 28,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 2
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2919967634",
+   "title": "RAILWAY 2 - Rail/Industrial Yard Network (24cm)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2918422869",
+   "title": "RAILWAY 2 - Rail/Industrial Yard Networks",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 2,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 2
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2926036331",
+   "title": "RAILWAY 2 - Through Girder Bridge Pack 1",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 2,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 2
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2786565452",
+   "title": "RAILWAY 2 - Urban Overpasses (Network Pack)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 2
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2610435532",
+   "title": "RAILWAY 2 - Warren & Deck Plate Girders (Pack 2)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 3
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2610436765",
+   "title": "RAILWAY 2 - Warren & Deck Plate Girders (Pack 3)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 3
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2610437848",
+   "title": "RAILWAY 2 - Warren & Deck Plate Girders (Pack 4)",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 3
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2904532252",
+   "title": "RAILWAY 2 - Warren & Girder Bridge Pack 5",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 4,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 4
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2214471559",
+   "title": "Railway Barriers (American)",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map",
+    "required by 2097539846 (USRP 4-Lane National Road)",
+    "required by 2098643957 (USRP 3-Lane National Road)",
+    "required by 2097530472 (USRP 2-Lane National Road)",
+    "required by 2452038713 (USRP Interstate Highway Set)",
+    "required by 2097491556 (USRP 1-Lane Highway Ramp)",
+    "required by 2097503753 (USRP 2-Lane Highway)",
+    "required by 2097515414 (USRP 3-Lane Highway)",
+    "required by 2097523614 (USRP 4-Lane Highway)",
+    "required by 2452041504 (USRP Interstate Extensions)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 17,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 3
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1574865364",
+   "title": "Railway Decorative Networks",
+   "kind": "asset",
+   "tags": [
+    "Transport",
+    "Transport Train",
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 8,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 2
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "1530239308",
+   "title": "Railway Props",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "required by 1574865364 (Railway Decorative Networks)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 12,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2966434181",
+   "title": "Retaining Walls - Pack #02 - AiO",
+   "kind": "asset",
+   "tags": [
+    "Road",
+    "Park Area"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "883313481",
+   "title": "River Reeds Detail Edition",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 2,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1988121829",
+   "title": "Sandy Grey Detail Rocks",
+   "kind": "asset",
+   "tags": [
+    "Building"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 9,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "building": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1282267425",
+   "title": "Semi Bare Tree Set",
+   "kind": "asset",
+   "tags": [
+    "Tree"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "tree": 3
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2889685220",
+   "title": "Sidewalks & More Decals + PO Textures",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 27,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 7,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2105051034",
+   "title": "Terraforming Network Extended (pack)",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 7,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 7
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "918308740",
+   "title": "Tunnel Entrances",
+   "kind": "asset",
+   "tags": [
+    "Building"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 4,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2954236385",
+   "title": "Unknown Package",
+   "kind": "asset",
+   "tags": [],
+   "reasons": [
+    "theme mix UsedAssets.txt"
+   ],
+   "substitutedBy": null,
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": true,
+   "skyveStability": 4,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2097491556",
+   "title": "USRP 1-Lane Highway Ramp",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2097503753",
+   "title": "USRP 2-Lane Highway",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2097530472",
+   "title": "USRP 2-Lane National Road",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 3
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2097515414",
+   "title": "USRP 3-Lane Highway",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2098643957",
+   "title": "USRP 3-Lane National Road",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2097523614",
+   "title": "USRP 4-Lane Highway",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2097539846",
+   "title": "USRP 4-Lane National Road",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 1
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2088550283",
+   "title": "USRP Arrow Decals",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map",
+    "required by 2097539846 (USRP 4-Lane National Road)",
+    "required by 2098643957 (USRP 3-Lane National Road)",
+    "required by 2097530472 (USRP 2-Lane National Road)",
+    "required by 2452038713 (USRP Interstate Highway Set)",
+    "required by 2097491556 (USRP 1-Lane Highway Ramp)",
+    "required by 2097503753 (USRP 2-Lane Highway)",
+    "required by 2097515414 (USRP 3-Lane Highway)",
+    "required by 2097523614 (USRP 4-Lane Highway)",
+    "required by 2452041504 (USRP Interstate Extensions)",
+    "required by 2854678594 (USRP Concrete Interstates Redux)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 6,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 5
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2854678594",
+   "title": "USRP Concrete Interstates Redux",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 15,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 15
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2452034874",
+   "title": "USRP Intersection Marking Templates",
+   "kind": "asset",
+   "tags": [
+    "Marking"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 22,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2452041504",
+   "title": "USRP Interstate Extensions",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 9,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 9
+    },
+    "missingAssets": 0,
+    "usedInCity": false
+   }
+  },
+  {
+   "id": "2452038713",
+   "title": "USRP Interstate Highway Set",
+   "kind": "asset",
+   "tags": [
+    "Road"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 6,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "network": 6
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2084866139",
+   "title": "USRP Street lights",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map",
+    "required by 2097539846 (USRP 4-Lane National Road)",
+    "required by 2098643957 (USRP 3-Lane National Road)",
+    "required by 2097530472 (USRP 2-Lane National Road)",
+    "required by 2452038713 (USRP Interstate Highway Set)",
+    "required by 2097491556 (USRP 1-Lane Highway Ramp)",
+    "required by 2097503753 (USRP 2-Lane Highway)",
+    "required by 2097515414 (USRP 3-Lane Highway)",
+    "required by 2097523614 (USRP 4-Lane Highway)",
+    "required by 2452041504 (USRP Interstate Extensions)",
+    "required by 2854678594 (USRP Concrete Interstates Redux)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 14,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 3
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2084863228",
+   "title": "USRP Traffic Signal Props",
+   "kind": "asset",
+   "tags": [
+    "Prop"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "LSM: used by the map",
+    "required by 2097539846 (USRP 4-Lane National Road)",
+    "required by 2098643957 (USRP 3-Lane National Road)",
+    "required by 2097530472 (USRP 2-Lane National Road)",
+    "required by 2452038713 (USRP Interstate Highway Set)",
+    "required by 2097491556 (USRP 1-Lane Highway Ramp)",
+    "required by 2097503753 (USRP 2-Lane Highway)",
+    "required by 2097515414 (USRP 3-Lane Highway)",
+    "required by 2097523614 (USRP 4-Lane Highway)",
+    "required by 2452041504 (USRP Interstate Extensions)",
+    "required by 2854678594 (USRP Concrete Interstates Redux)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 40,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": {
+    "types": {
+     "prop": 9
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "2724100634",
+   "title": "VC Erosion Rock",
+   "kind": "asset",
+   "tags": [
+    "Building",
+    "Electricity"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2469281223",
+   "title": "VC Rock Outcrops",
+   "kind": "asset",
+   "tags": [
+    "Building",
+    "Electricity"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 3,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2479784985",
+   "title": "VC_Rocky_Streambed",
+   "kind": "asset",
+   "tags": [
+    "Building",
+    "Electricity"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 2,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "1539181199",
+   "title": "More Relight LUTs",
+   "kind": "lut",
+   "tags": [
+    "Color Correction LUT"
+   ],
+   "reasons": [
+    "theme-mix collection 2972871641"
+   ],
+   "substitutedBy": null,
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2972879554",
+   "title": "Dakota Falls",
+   "kind": "map",
+   "tags": [
+    "Map"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "theme-mix collection 2972871641"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2669938594",
+   "title": "[BROKEN] Adaptive Networks (AN) V3.18",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.16.1-f2-compatible"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "required by 2966434181 (Retaining Walls - Pack #02 - AiO)",
+    "required by 2926036331 (RAILWAY 2 - Through Girder Bridge Pack 1)",
+    "required by 2836620152 (RAILWAY 2 - Ourense Viaduct)",
+    "required by 2932555116 (RAILWAY 2 - Pedrido Bridge Complex)",
+    "required by 2610418621 (RAILWAY 2 - Deck Plate Girders (Pack 1))",
+    "required by 2610435532 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 2))",
+    "required by 2610436765 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 3))",
+    "required by 2610437848 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 4))",
+    "required by 2786565452 (RAILWAY 2 - Urban Overpasses (Network Pack))",
+    "required by 2854678594 (USRP Concrete Interstates Redux)",
+    "required by 2903114021 (RAILWAY 2 - 2 Lane Warren Truss Bridge (Black))",
+    "required by 2903114284 (RAILWAY 2 - 2 Lane Warren Truss Bridge (White))",
+    "required by 2903575412 (RAILWAY 2 - 2 Lane Warren Truss Bridge (Teal))",
+    "required by 2904532252 (RAILWAY 2 - Warren & Girder Bridge Pack 5)",
+    "required by 2918422869 (RAILWAY 2 - Rail/Industrial Yard Networks)",
+    "required by 2919651684 (RAILWAY 2 - Inspection/Pit Tracks)",
+    "required by 2919967634 (RAILWAY 2 - Rail/Industrial Yard Network (24cm))",
+    "required by 2966434181 (Retaining Walls - Pack #02 - AiO)",
+    "required by 2926036331 (RAILWAY 2 - Through Girder Bridge Pack 1)",
+    "required by 2836620152 (RAILWAY 2 - Ourense Viaduct)",
+    "required by 2932555116 (RAILWAY 2 - Pedrido Bridge Complex)",
+    "required by 2610418621 (RAILWAY 2 - Deck Plate Girders (Pack 1))",
+    "required by 2610435532 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 2))",
+    "required by 2610436765 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 3))",
+    "required by 2610437848 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 4))",
+    "required by 2786565452 (RAILWAY 2 - Urban Overpasses (Network Pack))",
+    "required by 2854678594 (USRP Concrete Interstates Redux)",
+    "required by 2903114021 (RAILWAY 2 - 2 Lane Warren Truss Bridge (Black))",
+    "required by 2903114284 (RAILWAY 2 - 2 Lane Warren Truss Bridge (White))",
+    "required by 2903575412 (RAILWAY 2 - 2 Lane Warren Truss Bridge (Teal))",
+    "required by 2904532252 (RAILWAY 2 - Warren & Girder Bridge Pack 5)",
+    "required by 2918422869 (RAILWAY 2 - Rail/Industrial Yard Networks)",
+    "required by 2919651684 (RAILWAY 2 - Inspection/Pit Tracks)",
+    "required by 2919967634 (RAILWAY 2 - Rail/Industrial Yard Network (24cm))"
+   ],
+   "substitutedBy": "3683231517",
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 5,
+   "skyveStatuses": [],
+   "skyveBroken": true,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "1758376843",
+   "title": "[DEPRECATED] Network Skins",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": "3702700108",
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 8,
+   "skyveStatuses": [
+    "Deprecated->3702700108"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "3683231517",
+   "title": "Adaptive Networks (Emergency Fix)",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "replaces 2669938594 ([BROKEN] Adaptive Networks (AN) V3.18)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 6,
+   "removedFromWorkshop": false,
+   "skyveStability": 1,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "625608461",
+   "title": "Adaptive Prop Visibility Distance",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "required by 2206365654 (Paintable Prop Modular Rocks)",
+    "required by 2206365654 (Paintable Prop Modular Rocks)"
+   ],
+   "substitutedBy": "2956854293",
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [
+    "Deprecated->2956854293"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "845665815",
+   "title": "CSL Map View",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "QoL: CSL Map View (export)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 2,
+   "removedFromWorkshop": false,
+   "skyveStability": 3,
+   "skyveStatuses": [
+    "Deprecated"
+   ],
+   "skyveBroken": false,
+   "loadCritical": false,
+   "lsm": null
+  },
+  {
+   "id": "530871278",
+   "title": "Daylight Classic",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.16.1-f2-compatible"
+   ],
+   "reasons": [
+    "required by 2858527761 (Los Cabos by Mr Miyagi)"
+   ],
+   "substitutedBy": null,
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [
+    "Deprecated"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "767233815",
+   "title": "Decal Prop Fix (deprecated)",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "required by 767694644 (Big Decal Dirt)",
+    "required by 874716774 (Big Decal Mud)",
+    "required by 767694644 (Big Decal Dirt)",
+    "required by 874716774 (Big Decal Mud)"
+   ],
+   "substitutedBy": "2956854293",
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 2,
+   "skyveStatuses": [
+    "Deprecated->2956854293",
+    "DependencyMod"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2632235148",
+   "title": "Effects Module [PO]",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.13.3-f9-compatible"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 1,
+   "removedFromWorkshop": false,
+   "skyveStability": 8,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "502750307",
+   "title": "Extra Landscaping Tools",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.16.1-f2-compatible"
+   ],
+   "reasons": [
+    "required by 689937287 (Surface Painter)",
+    "required by 689937287 (Surface Painter)"
+   ],
+   "substitutedBy": "3733110460",
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "3733110460",
+   "title": "Extra Landscaping Tools Revisited",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "QoL: Extra Landscaping Tools Revisited",
+    "replaces 502750307 (Extra Landscaping Tools)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 1,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2040656402",
+   "title": "Harmony 2.2.2-0 (Mod Dependency)",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "QoL: Harmony (dependency)",
+    "required by 2472062376 (Node Controller Renewal 3.5.4)",
+    "required by 2862881785 (Network Anarchy)",
+    "required by 2474567113 (ROTTERdam: Road Texture Terrain Edge Remover)",
+    "required by 3683231517 (Adaptive Networks (Emergency Fix))",
+    "required by 2960858317 (Tree Control 1.0.1)",
+    "required by 2140418403 (Intersection Marking Tool 1.15)",
+    "required by 3702700108 (Network Skins Continued)",
+    "required by 1794015399 (Render It!)",
+    "required by 1591417160 (Hide It!)",
+    "required by 3031623332 (Theme Mixer 2․5)",
+    "required by 2954236385 (Unknown Package)",
+    "required by 1637663252 (TM:PE 11.9.4.1 STABLE (Traffic Manager: President Edition))",
+    "required by 2560782729 (Network Multitool 1.3.9)",
+    "required by 2858591409 (Loading Screen Mod Revisited 1.1.14)",
+    "required by 2881031511 (Skyve v4.0 [Stable])",
+    "required by 2956854293 (Prop Control 1.0.1)",
+    "required by 3680103097 (Precision Engineering (Harmony))",
+    "required by 2685506044 (Prop Painter: Revisited 1.3)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 5,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [
+    "DependencyMod"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "1591417160",
+   "title": "Hide It!",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "theme-mix collection 2972871641"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 2,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": false,
+   "lsm": null
+  },
+  {
+   "id": "2140418403",
+   "title": "Intersection Marking Tool 1.15",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "required by 2452034874 (USRP Intersection Marking Templates)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 6,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2858591409",
+   "title": "Loading Screen Mod Revisited 1.1.14",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.21.1-f8-compatible"
+   ],
+   "reasons": [
+    "QoL: Loading Screen Mod Revisited"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 2,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [
+    "StandardMod"
+   ],
+   "skyveBroken": false,
+   "loadCritical": false,
+   "lsm": null
+  },
+  {
+   "id": "1619685021",
+   "title": "Move It",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "QoL: Move It",
+    "required by 1988876538 (Mountain Brown Modular Rocks 2K)",
+    "required by 2206365654 (Paintable Prop Modular Rocks)",
+    "required by 1981694823 (Mossy Grey Modular Rocks 2K)",
+    "required by 2077702761 (JP Rock shed ロックシェッド)",
+    "required by 2685506044 (Prop Painter: Revisited 1.3)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 3,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2862881785",
+   "title": "Network Anarchy",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "QoL: Network Anarchy"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 3,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2560782729",
+   "title": "Network Multitool 1.3.9",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "QoL: Network Multitool"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 4,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": false,
+   "lsm": null
+  },
+  {
+   "id": "3702700108",
+   "title": "Network Skins Continued",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "replaces 1758376843 ([DEPRECATED] Network Skins)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 2,
+   "removedFromWorkshop": false,
+   "skyveStability": 1,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2472062376",
+   "title": "Node Controller Renewal 3.5.4",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 5,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2041457644",
+   "title": "Patch Loader Mod",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.15.1-f4-compatible"
+   ],
+   "reasons": [
+    "QoL: Patch Loader Mod (Skyve dependency)",
+    "required by 2881031511 (Skyve v4.0 [Stable])"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 5,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [
+    "DependencyMod"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "3680103097",
+   "title": "Precision Engineering (Harmony)",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "QoL: Precision Engineering (Harmony)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 2,
+   "removedFromWorkshop": false,
+   "skyveStability": 1,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": false,
+   "lsm": null
+  },
+  {
+   "id": "1094334744",
+   "title": "Procedural Objects",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.14.1-f1-compatible"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "required by 2889685220 (Sidewalks & More Decals + PO Textures)",
+    "required by 2632235148 (Effects Module [PO])",
+    "required by 2889685220 (Sidewalks & More Decals + PO Textures)",
+    "required by 2632235148 (Effects Module [PO])"
+   ],
+   "substitutedBy": "3071492847",
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 8,
+   "skyveStatuses": [
+    "SourceAvailable"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "3071492847",
+   "title": "Procedural Objects (Empty popup fix)",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "replaces 1094334744 (Procedural Objects)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 2,
+   "dll": 1,
+   "removedFromWorkshop": false,
+   "skyveStability": 2,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "593588108",
+   "title": "Prop & Tree Anarchy",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.13.1-f1-compatible"
+   ],
+   "reasons": [
+    "required by 2206365654 (Paintable Prop Modular Rocks)",
+    "required by 2206365654 (Paintable Prop Modular Rocks)"
+   ],
+   "substitutedBy": "2956854293",
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [
+    "Deprecated->2956854293/2960858317"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2956854293",
+   "title": "Prop Control 1.0.1",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "QoL: Prop Control",
+    "replaces 767233815 (Decal Prop Fix (deprecated))",
+    "replaces 593588108 (Prop & Tree Anarchy)",
+    "replaces 625608461 (Adaptive Prop Visibility Distance)",
+    "replaces 787611845 (Prop Snapping)",
+    "required by 2088550283 (USRP Arrow Decals)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 3,
+   "removedFromWorkshop": false,
+   "skyveStability": 1,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2685506044",
+   "title": "Prop Painter: Revisited 1.3",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "replaces 1869561285 (Prop Painter 4.0 + PaintUI)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 2,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "787611845",
+   "title": "Prop Snapping",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.10.0-f3-compatible"
+   ],
+   "reasons": [
+    "required by 2206365654 (Paintable Prop Modular Rocks)",
+    "required by 2206365654 (Paintable Prop Modular Rocks)"
+   ],
+   "substitutedBy": "2956854293",
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 5,
+   "skyveStatuses": [
+    "Deprecated->2956854293"
+   ],
+   "skyveBroken": true,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "1530376523",
+   "title": "Railway Replacer",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.13.3-f9-compatible"
+   ],
+   "reasons": [
+    "LSM: used by the map",
+    "required by 2610252544 (RAILWAY 2 - American Wooden (Network Pack))",
+    "required by 2836620152 (RAILWAY 2 - Ourense Viaduct)",
+    "required by 2214471559 (Railway Barriers (American))",
+    "required by 1574865364 (Railway Decorative Networks)",
+    "required by 2610256766 (RAILWAY 2 - American Wooden Station Tracks (Ground Entry))",
+    "required by 2610257966 (RAILWAY 2 - American Wooden Station Tracks (Low Entry))",
+    "required by 2610265253 (RAILWAY 2 - American Wooden Station Tracks (Standard Entry))",
+    "required by 2610418621 (RAILWAY 2 - Deck Plate Girders (Pack 1))",
+    "required by 2610435532 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 2))",
+    "required by 2610436765 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 3))",
+    "required by 2610437848 (RAILWAY 2 - Warren & Deck Plate Girders (Pack 4))",
+    "required by 2722005927 (RAILWAY 2 - American Concrete Island Station Tracks (High Entry))",
+    "required by 2903114021 (RAILWAY 2 - 2 Lane Warren Truss Bridge (Black))",
+    "required by 2903114284 (RAILWAY 2 - 2 Lane Warren Truss Bridge (White))",
+    "required by 2903575412 (RAILWAY 2 - 2 Lane Warren Truss Bridge (Teal))",
+    "required by 2904532252 (RAILWAY 2 - Warren & Girder Bridge Pack 5)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 15,
+   "dll": 1,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [
+    "SourceAvailable"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": {
+    "types": {
+     "prop": 11
+    },
+    "missingAssets": 0,
+    "usedInCity": true
+   }
+  },
+  {
+   "id": "1209581656",
+   "title": "Relight",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.11.0-f3-compatible"
+   ],
+   "reasons": [
+    "theme-mix collection 2972871641",
+    "required by 1305157510 (Australia Coast HD map theme)"
+   ],
+   "substitutedBy": null,
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [
+    "Deprecated->1794015399",
+    "SourceAvailable"
+   ],
+   "skyveBroken": false,
+   "loadCritical": false,
+   "lsm": null
+  },
+  {
+   "id": "1794015399",
+   "title": "Render It!",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "theme-mix collection 2972871641"
+   ],
+   "substitutedBy": null,
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": false,
+   "lsm": null
+  },
+  {
+   "id": "2474567113",
+   "title": "ROTTERdam: Road Texture Terrain Edge Remover",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "map collection 2970743270"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 2,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [
+    "CausesIssues"
+   ],
+   "skyveBroken": false,
+   "loadCritical": false,
+   "lsm": null
+  },
+  {
+   "id": "762520291",
+   "title": "Shadow Strength Adjuster",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "required by 1209581656 (Relight)"
+   ],
+   "substitutedBy": null,
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 3,
+   "skyveStatuses": [
+    "Deprecated->1794015399"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2881031511",
+   "title": "Skyve v4.0 [Stable]",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.21.1-f7-compatible"
+   ],
+   "reasons": [
+    "QoL: Skyve mod"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 5,
+   "removedFromWorkshop": false,
+   "skyveStability": 1,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": false,
+   "lsm": null
+  },
+  {
+   "id": "689937287",
+   "title": "Surface Painter",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.16.1-f2-compatible"
+   ],
+   "reasons": [
+    "Surface Painter (DakotaExport reads its data; dependency ELT 502750307 is met by ELT Revisited, same NaturalResourcesBrush assembly)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 1,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "3031623332",
+   "title": "Theme Mixer 2․5",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "theme-mix collection 2972871641"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 5,
+   "dll": 3,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": false,
+   "lsm": null
+  },
+  {
+   "id": "1637663252",
+   "title": "TM:PE 11.9.4.1 STABLE (Traffic Manager: President Edition)",
+   "kind": "mod",
+   "tags": [
+    "Mod",
+    "1.21.1-f5-compatible"
+   ],
+   "reasons": [
+    "TM:PE (map carries TM:PE data)",
+    "required by 2836620152 (RAILWAY 2 - Ourense Viaduct)",
+    "required by 3683231517 (Adaptive Networks (Emergency Fix))",
+    "required by 2932555116 (RAILWAY 2 - Pedrido Bridge Complex)",
+    "required by 2919651684 (RAILWAY 2 - Inspection/Pit Tracks)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 7,
+   "removedFromWorkshop": false,
+   "skyveStability": 6,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "2960858317",
+   "title": "Tree Control 1.0.1",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "map collection 2970743270",
+    "Tree Control (740k trees; not Tree Anarchy)"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 3,
+   "removedFromWorkshop": false,
+   "skyveStability": 1,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "672248733",
+   "title": "Ultimate Eyecandy v1.5.2",
+   "kind": "mod",
+   "tags": [
+    "Mod"
+   ],
+   "reasons": [
+    "required by 1209581656 (Relight)"
+   ],
+   "substitutedBy": null,
+   "present": false,
+   "crp": 0,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": 3,
+   "skyveStatuses": [
+    "Deprecated->3031621087"
+   ],
+   "skyveBroken": false,
+   "loadCritical": true,
+   "lsm": null
+  },
+  {
+   "id": "1305157510",
+   "title": "Australia Coast HD map theme",
+   "kind": "theme",
+   "tags": [
+    "Map Theme"
+   ],
+   "reasons": [
+    "theme mix UsedAssets.txt"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "1594406264",
+   "title": "Coastal Theme",
+   "kind": "theme",
+   "tags": [
+    "Map Theme"
+   ],
+   "reasons": [
+    "theme-mix collection 2972871641"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2858527761",
+   "title": "Los Cabos by Mr Miyagi",
+   "kind": "theme",
+   "tags": [
+    "Map Theme"
+   ],
+   "reasons": [
+    "theme mix UsedAssets.txt"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "1367973971",
+   "title": "Owl's Albedo Theme",
+   "kind": "theme",
+   "tags": [
+    "Map Theme"
+   ],
+   "reasons": [
+    "theme-mix collection 2972871641"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "1230768185",
+   "title": "Seychelles Map Theme",
+   "kind": "theme",
+   "tags": [
+    "Map Theme"
+   ],
+   "reasons": [
+    "theme-mix collection 2972871641"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "921636136",
+   "title": "Springwood Map Theme",
+   "kind": "theme",
+   "tags": [
+    "Map Theme"
+   ],
+   "reasons": [
+    "theme-mix collection 2972871641"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 1,
+   "dll": 0,
+   "removedFromWorkshop": false,
+   "skyveStability": null,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  },
+  {
+   "id": "2972881605",
+   "title": "Dakota Falls - Theme mix",
+   "kind": "theme-mix",
+   "tags": [
+    "Map Theme",
+    "Theme Mix"
+   ],
+   "reasons": [
+    "theme-mix collection 2972871641"
+   ],
+   "substitutedBy": null,
+   "present": true,
+   "crp": 0,
+   "dll": 1,
+   "removedFromWorkshop": false,
+   "skyveStability": 2,
+   "skyveStatuses": [],
+   "skyveBroken": false,
+   "loadCritical": null,
+   "lsm": null
+  }
+ ],
+ "playset": {
+  "mods": 27,
+  "assetFiles": 587,
+  "workshopItems": 112
+ }
+}

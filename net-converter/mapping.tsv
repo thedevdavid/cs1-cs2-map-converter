@@ -1,0 +1,84 @@
+# CS1 network prefab -> CS2 network prefab. First matching rule wins.
+# Columns (tab-separated): regex (case-insensitive, matched against the full CS1 prefab name incl. "<workshopId>." prefix)
+#   target  = exact CS2 prefab name, or SKIP
+#   layer   = highways | rail | roads | power | skip   (decides the output file)
+#   note    = free text, copied to stats.md
+# CS2 names verified against Assets.NAME[...] keys in Cities2_Data/Content/Game/Locale.cok (game build 2026-09).
+# Bridge (B/E), slope (S) and tunnel (T) variants map to the same CS2 prefab; the elevation fields make the bridge or tunnel.
+# Anything that matches no rule is UNMAPPED: not imported, listed in stats.md with a heuristic suggestion.
+#
+# --- Highways: USRP interstates (one-way, N lanes) -------------------------------------------------
+(?i)USRP 1L Interstate Ramp	Highway Oneway - 1 lane	highways	ramp
+# "+ Exit Lane" / "+ 2 Exit Lanes" variants carry extra lanes: N+1 / N+2 (none in the 2026-10-18 dump).
+(?i)USRP 1L Interstate.*[+] ?2 Exit Lanes	Highway Oneway - 3 lanes	highways	exit lanes
+(?i)USRP 2L Interstate.*[+] ?2 Exit Lanes	Highway Oneway - 4 lanes	highways	exit lanes
+(?i)USRP 3L Interstate.*[+] ?2 Exit Lanes	Highway Oneway - 5 lanes	highways	exit lanes
+(?i)USRP [45]L Interstate.*[+] ?2 Exit Lanes	Highway Oneway - 5 lanes	highways	exit lanes; CS2 max 5
+(?i)USRP 1L Interstate.*[+] ?Exit Lane	Highway Oneway - 2 lanes	highways	exit lane
+(?i)USRP 2L Interstate.*[+] ?Exit Lane	Highway Oneway - 3 lanes	highways	exit lane
+(?i)USRP 3L Interstate.*[+] ?Exit Lane	Highway Oneway - 4 lanes	highways	exit lane
+(?i)USRP [45]L Interstate.*[+] ?Exit Lane	Highway Oneway - 5 lanes	highways	exit lane; CS2 max 5
+# Suffixes B (bridge), E (elevated), S (slope), T (tunnel) are NetInfo variants with the same lanes (checked in the dump:
+# 2L Interstate _Data/B/E/S/T all forward 2, backward 0); they fall through to the base rules below.
+(?i)USRP 1L Interstate( |_|$)	Highway Oneway - 1 lane	highways
+(?i)USRP 2L Interstate( |_|$)	Highway Oneway - 2 lanes	highways
+(?i)USRP 3L Interstate( |_|$)	Highway Oneway - 3 lanes	highways
+(?i)USRP 4L Interstate( |_|$)	Highway Oneway - 4 lanes	highways
+(?i)USRP [56]L Interstate( |_|$)	Highway Oneway - 5 lanes	highways	CS2 max is 5 one-way lanes
+(?i)USRP .*Interstate.*Ramp	Highway Oneway - 1 lane	highways	ramp
+# --- Highways: vanilla CS1 ---------------------------------------------------------------------------
+(?i)^Highway Ramp	Highway Oneway - 1 lane	highways	ramp
+(?i)^Highway Connection$	Highway Oneway - 3 lanes	highways	4-lane outside-connection stub; CS1 Highway is 3 lanes
+(?i)^Highway( Elevated| Bridge| Tunnel| Slope)?$	Highway Oneway - 3 lanes	highways
+(?i)^Two Lane Highway Twoway	Highway Twoway - 2 lanes	highways
+(?i)^Two Lane Highway	Highway Oneway - 2 lanes	highways
+(?i)^Four Lane Highway	Highway Oneway - 4 lanes	highways
+(?i)^Five Lane Highway	Highway Oneway - 5 lanes	highways
+(?i)^Large Highway	Highway Oneway - 4 lanes	highways	CS1 6-lane highway, CS2 has no 6-lane one-way
+# --- Roads: USRP national roads ----------------------------------------------------------------------
+(?i)USRP 2-Lane National Road	Small Road	roads	DECISION: 2-lane rural road; Small Road keeps lane count (alt: Medium Road for width)
+(?i)USRP 3-Lane National Road	Medium Road	roads	2+1 lanes, no exact CS2 twin (alt: Medium Road Asymmetric - 1+3 lanes)
+(?i)USRP 4-Lane National Road	Medium Road	roads
+(?i)USRP 6-Lane National Road	Large Road	roads
+# --- Roads: vanilla CS1 ------------------------------------------------------------------------------
+(?i)^Gravel Road	Gravel Road	roads
+# Round 3 (none of these occur in the 2026-10-18 dump; CS2 names verified in Locale.cok):
+(?i)Two-Lane Alley|Two Lane Alley|^Alley	Alley	roads	CS1 alleys -> CS2 Alley
+(?i)Cul-De-Sac|Cul De Sac	Small Road	roads	cul-de-sac road; its end node stays a proper end
+(?i)Zonable Pedestrian|Pedestrian Promenade|Pedestrian Road	Pedestrian Street	roads	zonable pedestrian roads (alt: Small Road)
+(?i)^Basic Road|^Two-Lane|^Two Lane Road|^Small Road	Small Road	roads
+(?i)^Oneway Road|^One-Way Road	Small Road Oneway - 1 lane	roads
+(?i)^Medium Road|^Four-Lane|^Four Lane|^Avenue	Medium Road	roads
+(?i)^Large Road|^Six-Lane|^Six Lane|^Large Oneway	Large Road	roads
+# --- Rail ---------------------------------------------------------------------------------------------
+# R2USA/R2EUR "2x2" and Train Connection Track have one lane per direction (forward 1 / backward 1, or 2/2) -> double track.
+(?i)R2(USA|EUR) .*2x2	Double Train Track	rail
+(?i)R2(USA|EUR) .*1x1|R2(USA|EUR) .*Single	Twoway Train Track	rail
+(?i)R69|R0Railway|R0 Railway|BIG Railroad	Double Train Track	rail	check single vs double per prefab
+(?i)^Train Connection Track	Double Train Track	rail
+(?i)^Train Oneway Track|Oneway Train Track	Oneway Train Track	rail
+(?i)^Train Track|Station Track|Train Cargo Track	Double Train Track	rail
+# --- Power (own layer and import file; the game places the pylons) -----------------------------------
+(?i)kV|Power Line|PowerLine	High-voltage Line	power	separate import (import-power.json); CS2 name from Assets.NAME[High-voltage Line] in Locale.cok
+# --- Skipped: decoration and things CS2 handles differently ------------------------------------------
+# --- Pedestrian paths and quays (round 10) --------------------------------------------------------------------
+(?i)^Pedestrian (Gravel|Elevated|Pavement)|^Pedestrian Path	Pavement Path	roads	CS2 pedestrian path (no gravel path in CS2); elevated variant keeps its elevation
+# --- Walls layer (import-walls.json, CS1 elevations kept; round 11) -------------------------------------------
+(?i)^Quay$|^Quay 	QuaySmall01	walls	CS1 vanilla Quay (QuayAI, a landscaping wall); QuayMedium01 is a two-lane road (audit/cs2-side.md finding 4), so QuaySmall01 (wall + footpath)
+(?i)Retaining Wall	QuaySmall01	walls	no retaining-wall network in CS2; QuaySmall01 is the nearest vertical wall (UNVERIFIED away from water)
+(?i)^Canal	Medium Boatway	walls	CS2 boatway = canal for boats (Assets.DESCRIPTION: canal through which boats can pass); width class guessed
+(?i)Flood Wall	Sound Barrier	walls	no flood-wall network in CS2; Sound Barrier is the only wall network by name
+# --- Ship paths (import-shippaths.json, ground, clipped so they end on the border) ---------------------------
+(?i)^Ship Path|^Ship Connection Path	Medium Seaway	shippaths	CS2 seaway (Narrow/Medium/Wide Seaway); the game makes the ship outside connection on the border node
+# --- Kept skipped, with the reason ---------------------------------------------------------------------------
+(?i)Concrete Barrier|Steel Barrier|Guardrail	SKIP	skip	not a network in CS2: placed as ConcreteBarrier01 / SafetyBarrier01 props along the segment (import-walls-props.json)
+(?i)Castle Wall	SKIP	skip	NO TWIN: searched Locale.cok Assets.NAME for Wall|Castle|Rampart|Fort|Ruin: only garden walls (EU_Wall*), RuinsCastle01 (a building) and Sound Barrier
+(?i)Barrier|Fence|Wall|Curb|Bollard	SKIP	skip	decoration
+(?i)Field .*Network	SKIP	skip	field networks -> Agriculture Surface 01 polygons (import-surfaces-fields.json) and fertility
+(?i)Terraforming	SKIP	skip	CS1 terrain-shaping helper; the terrain is already in the heightmap
+(?i)Surface|Ground Texture|Pavement Network	SKIP	skip	surface networks; CS2 surfaces are areas
+(?i)Parking	SKIP	skip	parking-lot network
+(?i)Sidewalk|Pedestrian|Footpath|Path - 	SKIP	skip	paths without a CS2 twin
+(?i)IMT|Bridge Deco|Bridge Pillar	SKIP	skip	bridge decoration
+(?i)^Airplane|Connection Path$	SKIP	skip	the game routes planes (airplane paths stay skipped)
+(?i)Monorail	Arc Pedestrian Bridge	decor	DECORATIVE: the white multi-arch "vanilla asset bridge" below the dam (not transit); Arc Pedestrian Bridge reads as an arch outline (UNVERIFIED: may impose span limits); exact CS1 elevations
