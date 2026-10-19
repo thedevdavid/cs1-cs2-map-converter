@@ -59,7 +59,7 @@
 # --- Buildings and landmarks -------------------------------------------------------------------------------
 (?i)Dam Electricity	MANUAL	1	building	CS2 hydro dam (Hydroelectric_Power_Plant_01 Dam) is placed across the river by hand
 (?i)Detroit Bridge|Hernando-Desoto Bridge	MANUAL	1	building	CS1 bridge model placed as a building; in CS2 build TrussArchBridge01 / ExtradosedBridge01 along the road instead
-(?i)Substation	Transformer Station	1	building	PLACEHOLDER until the bridge reports the usable CS2 transformer station prefab (ElectricalSubstation01 is a decorative object, Run A); no y (buildings never get y)
+(?i)Substation	TransformerStation01	1	building	usable CS2 transformer station, 48 x 56 m (bridge live test; TransformerStation02 is the small 24 x 32 one; ElectricalSubstation01 is a decorative object, Run A); no y (buildings never get y)
 (?i)Castle Ruins	RuinsCastle01	1	building	CS2 landmark ruin
 (?i)Abandoned Factory	RuinsOldMill01	1	building	no abandoned factory in CS2; the old-mill ruin is the only derelict industrial ruin (searched ruin/abandon/derelict/factory/mill)
 (?i)Pier Ruins	LeisurePier01HeadSmall	1	object	no pier ruin in CS2; nearest is a small leisure pier head (LeisurePier01Small01 does not exist in this build; bridge classifies it as an object, Run A)

@@ -10,7 +10,7 @@
   "objects": [
     {
       "id": "b39573",
-      "prefab": "Transformer Station",
+      "prefab": "TransformerStation01",
       "x": 1594.28,
       "z": 4549.11,
       "rotation": 318.04,

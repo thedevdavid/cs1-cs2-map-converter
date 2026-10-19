@@ -12,8 +12,12 @@ public static class Round8
 {
     static readonly CultureInfo Ci = CultureInfo.InvariantCulture;
 
-    /// <summary>Placeholders until the bridge reports the prefab names (owner: the usable CS2 buildings).</summary>
-    public const string DamPrefab = "Hydroelectric Power Plant", SubstationPrefab = "Transformer Station";
+    /// <summary>Bridge live tests: TransformerStation01 (48 × 56 m; 02 is the small 24 × 32 one), HydroelectricPowerPlant01 (48 × 72 m).</summary>
+    public const string DamPrefab = "HydroelectricPowerPlant01", SubstationPrefab = "TransformerStation01";
+    /// <summary>The dam deck network (34 m wide, max slope 0, elevation 0) along the CS1 dam axis between the quays, level at the crest.</summary>
+    public const string DamDeckPrefab = "Hydroelectric_Power_Plant_01 Dam";
+    public static readonly (double X, double Z) DamDeckA = (1440, 4673), DamDeckB = (1576, 4694);
+    public const double DamCrestTrue = 172;
 
     public static readonly string[] SmallRocks = Enumerable.Range(1, 10).Select(i => $"Rock{i:00}").ToArray();
     public static readonly string[] MediumRocks = Enumerable.Range(11, 20).Select(i => $"Rock{i:00}").ToArray();
@@ -83,7 +87,7 @@ public static class Round8
         using var w = new Utf8JsonWriter(fs, Json.Indented);
         w.WriteStartObject();
         w.WriteString("name", "Dakota Falls power line ends");
-        w.WriteString("_comment", "Replaces the last course of each 345 kV circuit (undo the edges in 'replaces' first). The end node sits on the building centre moved 8 m toward the line (fallback until the bridge reports the connection point); the start node joins the existing pylon node through snapToSegment (radius 2).");
+        w.WriteString("_comment", "Replaces the last course of each 345 kV circuit (undo the edges in 'replaces' first). The end node carries connectTo {voltage high, radius 60} (bridge 0.9.13) and attaches to the building's high-voltage marker node; its x/z (building centre moved 8 m toward the line) only picks the marker. The start node joins the existing pylon node through snapToSegment (radius 2).");
         w.WriteStartArray("replaces"); foreach (var e in ends) w.WriteStringValue(e.Replaces.Id); w.WriteEndArray();
         w.WriteStartArray("nodes");
         foreach (var e in ends)
@@ -99,6 +103,8 @@ public static class Round8
             w.WriteNumber("x", Json.R2(e.X)); w.WriteNumber("z", Json.R2(e.Z));
             double ground = cs2TerrainTrue != null ? cs2TerrainTrue(e.X, e.Z) * heightFactor : e.OldEnd.Terrain * Outputs.YScale;
             w.WriteNumber("y", Json.R2(ground)); w.WriteNumber("elevation", 0);
+            // Bridge 0.9.13: attach to the nearest building's high-voltage marker node; the x/z only picks the marker.
+            w.WriteStartObject("connectTo"); w.WriteString("voltage", "high"); w.WriteNumber("radius", 60); w.WriteEndObject();
             w.WriteEndObject();
         }
         w.WriteEndArray();
@@ -117,6 +123,34 @@ public static class Round8
         w.WriteEndArray();
         w.WriteStartObject("options");
         w.WriteNumber("batchSize", 64); w.WriteBoolean("nodesFirst", true); w.WriteString("heightMode", absolute ? "absolute" : "elevation"); w.WriteBoolean("dryRun", false);
+        w.WriteEndObject();
+        w.WriteEndObject();
+    }
+
+    /// <summary>One level deck edge in absolute heights: crest y = 172 m true × heightFactor at both ends.</summary>
+    public static void WriteDamDeck(string path, double heightFactor)
+    {
+        using var fs = File.Create(path);
+        using var w = new Utf8JsonWriter(fs, Json.Indented);
+        double y = Json.R2(DamCrestTrue * heightFactor);
+        w.WriteStartObject();
+        w.WriteString("name", "Dakota Falls dam deck");
+        w.WriteString("_comment", "Companion to import-dam.json: the HydroelectricPowerPlant01 deck network along the CS1 dam axis (quays (1440, 4673) to (1576, 4694)), level at the crest (172 m true × height factor). Bridge live test: builds as a level deck.");
+        w.WriteStartArray("nodes");
+        foreach (var (id, p) in new[] { ("dam_deck_w", DamDeckA), ("dam_deck_e", DamDeckB) })
+        { w.WriteStartObject(); w.WriteString("id", id); w.WriteNumber("x", p.X); w.WriteNumber("y", y); w.WriteNumber("z", p.Z); w.WriteEndObject(); }
+        w.WriteEndArray();
+        w.WriteStartArray("edges");
+        w.WriteStartObject();
+        w.WriteString("id", "dam_deck"); w.WriteString("a", "dam_deck_w"); w.WriteString("b", "dam_deck_e"); w.WriteString("prefab", DamDeckPrefab);
+        w.WriteStartArray("control");
+        foreach (var t in new[] { 1 / 3.0, 2 / 3.0 })
+        { w.WriteStartArray(); w.WriteNumberValue(Json.R2(DamDeckA.X + t * (DamDeckB.X - DamDeckA.X))); w.WriteNumberValue(y); w.WriteNumberValue(Json.R2(DamDeckA.Z + t * (DamDeckB.Z - DamDeckA.Z))); w.WriteEndArray(); }
+        w.WriteEndArray();
+        w.WriteEndObject();
+        w.WriteEndArray();
+        w.WriteStartObject("options");
+        w.WriteNumber("batchSize", 64); w.WriteBoolean("nodesFirst", true); w.WriteString("heightMode", "absolute"); w.WriteBoolean("dryRun", false);
         w.WriteEndObject();
         w.WriteEndObject();
     }

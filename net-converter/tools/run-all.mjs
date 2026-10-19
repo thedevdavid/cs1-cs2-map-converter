@@ -50,9 +50,8 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
   }
   for (const ff of existsSync(dir) ? readdirSync(dir).filter(x => x.startsWith("import-trees-fixed-")) : []) add(6, p(ff), `trees at fixed height, with y (${scale})`, `${J(p(ff)).objects.length}`);
   // Round 8 (owner review of Run A): each its own import, to add to the live map.
-  for (const [f, order, what] of [["import-power-ends.json", 2, "ROUND 8 power-line ends at the substation and the dam (undo the replaced edges first)"],
-    ["import-substation.json", 5, "ROUND 8 substation building (placeholder prefab until the bridge reports it)"], ["import-dam.json", 5, "ROUND 8 dam, variant A (yaw −CS1 angle)"],
-    ["import-dam-B.json", 5, "ROUND 8 dam, variant B (mirrored yaw); import A or B"], ["import-po-rocks.json", 5, "ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps"],
+  for (const [f, order, what] of [["import-power-ends.json", 2, "ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first)"], ["import-dam-deck.json", 2, "ROUND 8 dam deck network, absolute heights (after import-dam.json)"],
+    ["import-substation.json", 5, "ROUND 8 substation building TransformerStation01"], ["import-dam.json", 5, "ROUND 8 dam HydroelectricPowerPlant01, rotation 261.7"], ["import-po-rocks.json", 5, "ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps"],
     ["import-rock-scatter.json", 5, "ROUND 8 vanilla rock scatter"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : `${j.edges.length} edges, replaces ${j.replaces.join(", ")}`); }
   if (existsSync(p("import-po-candidates.json"))) add(5, p("import-po-candidates.json"), `Procedural Object candidates, UNVERIFIED (${scale})`, `${J(p("import-po-candidates.json")).objects.length}`);

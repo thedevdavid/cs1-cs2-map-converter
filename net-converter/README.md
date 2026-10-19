@@ -264,3 +264,6 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
 - `import-rock-scatter.json`: Rock01–10 (70 %), Rock11–30 (25 %), Boulder01–08 (5 %), one dart per 10 m cell with p = 100/500 within 60 m of every rock/cliff object
   and inside the rock surfaces, ≥ 6 m apart and from a course's edge, none in CS1 water. Boulder02–07 are not in our name lists yet (orchestrator's list).
 - `node tools/run-all.mjs` writes `out/ROUND8.md` (= ROUND.md); ROUND7.md stays as the Run A record.
+- Bridge live tests (round 8b): substation → `TransformerStation01` (48 × 56 m), dam → `HydroelectricPowerPlant01` (48 × 72 m) at rotation 261.7 (variant B dropped).
+  `import-dam-deck.json` (absolute heights, after import-dam.json): one `Hydroelectric_Power_Plant_01 Dam` edge from (1440, 4673) to (1576, 4694) at crest y 172 (× 2 = 344).
+  `import-power-ends.json` end nodes carry `connectTo` {voltage high, radius 60} (bridge 0.9.13), so they attach to the building's high-voltage marker node.

@@ -597,8 +597,10 @@ void WriteLayers()
         var dam = Round8.Dam(dams);
         if (dam is { } dv)
         {
-            Objects.Write(Path.Combine(outDir, "import-dam.json"), "dam variant A (yaw −CS1 angle)", [dv.A]);
-            Objects.Write(Path.Combine(outDir, "import-dam-B.json"), "dam variant B (mirrored yaw)", [dv.B]);
+            // Bridge live test: yaw 261.7 (−CS1 angle) aligns the plant with the CS1 dam axis; the mirrored variant is gone.
+            Objects.Write(Path.Combine(outDir, "import-dam.json"), "dam (round 8)", [dv.A]);
+            File.Delete(Path.Combine(outDir, "import-dam-B.json"));
+            Round8.WriteDamDeck(Path.Combine(outDir, "import-dam-deck.json"), heightFactor);
         }
         var targets = new List<(string, double, double)>();
         if (subB.Count > 0) targets.Add(("substation", subB[0].X, subB[0].Z));
@@ -616,7 +618,7 @@ void WriteLayers()
         var r8 = new List<string>
         {
             ci($"substation: {sub.Count} ({string.Join(", ", sub.Select(o => $"{o.Id} {o.Prefab} at ({o.X:F0}, {o.Z:F0}), rotation {o.Rotation}, no y"))}) -> import-substation.json"),
-            dam is { } d3 ? ci($"dam: {Round8.DamPrefab} (placeholder) at ({d3.A.X}, {d3.A.Z}) from {dams.Count} CS1 Dam Electricity pieces; variant A rotation {d3.A.Rotation} -> import-dam.json, variant B {d3.B.Rotation} -> import-dam-B.json") : "dam: no CS1 Dam Electricity building",
+            dam is { } d3 ? ci($"dam: {Round8.DamPrefab} at ({d3.A.X}, {d3.A.Z}) from {dams.Count} CS1 Dam Electricity pieces, rotation {d3.A.Rotation} -> import-dam.json; deck {Round8.DamDeckPrefab} ({Round8.DamDeckA.X}, {Round8.DamDeckA.Z}) -> ({Round8.DamDeckB.X}, {Round8.DamDeckB.Z}) at crest y {Round8.DamCrestTrue * heightFactor} -> import-dam-deck.json") : "dam: no CS1 Dam Electricity building",
             "power ends: " + string.Join("; ", ends.Select(e => ci($"{e.Target}: CS1 end {e.OldEnd.Id} ({e.OldEnd.Position.X:F0}, {e.OldEnd.Position.Z:F0}), replaces {e.Replaces.Id}, new course {e.Anchor.Id} -> ({e.X:F1}, {e.Z:F1}), {Math.Sqrt((e.X - e.Anchor.Position.X) * (e.X - e.Anchor.Position.X) + (e.Z - e.Anchor.Position.Z) * (e.Z - e.Anchor.Position.Z)):F0} m"))) + " -> import-power-ends.json",
             ci($"PO cliffs: {cliffs.Count} objects from {pieces.Count} PO pieces (mountain {pieces.Count(p => p.SubClass == "mountain")}, rock work {pieces.Count(p => p.SubClass == "rock work")}, falls steps {pieces.Count(p => p.SubClass == "falls steps")}); bands {string.Join(", ", bands.Select(b => $"{b.Key} {b.Value}"))}; {capped} over the cap of 2500 dropped -> import-po-rocks.json"),
             ci($"rock scatter: {scatter.Count} (small {scatter.Count(o => Round8.SmallRocks.Contains(o.Prefab))}, medium {scatter.Count(o => Round8.MediumRocks.Contains(o.Prefab))}, boulders {scatter.Count(o => Round8.Boulders.Contains(o.Prefab))}) around {sources.Count} rock/cliff objects (r 60 m) and in {rockPolys.Count} rock polygons; rejected road {rejected["road"]}, spacing {rejected["spacing"]}, water {rejected["water"]}, border {rejected["border"]} -> import-rock-scatter.json"),
