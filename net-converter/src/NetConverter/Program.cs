@@ -170,6 +170,12 @@ if (seawayAtWater)
 else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water to write them at the water surface once the dig test shows digging).");
 
 {
+    // Live Run A: Pavement Path dead ends beside a road / gravel road / path join it through the bridge's snapToSegment.
+    var snaps = PathSnap.Apply(result, topologyFactor);
+    auditLog.AppendLine($"- Pavement Path dead ends snapped onto the segment beside them (snapToSegment, ≤ 20 m, Δy ≤ 3 m): {snaps.Count}{(snaps.Count > 0 ? ": " + string.Join("; ", snaps) : "")}.");
+    Console.WriteLine($"path ends: {snaps.Count} with snapToSegment");
+}
+{
     // v5 Network Skins: segments whose skin removes street lights or bridge pillars. The bridge has no edge field for either
     // (IMPORT_SCHEMA.md); the converter writes informational "noPillars" / "noStreetLights" (ignored by the bridge today)
     // and lists them in manual-objects.md.

@@ -242,3 +242,8 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
 - `node tools/run-all.mjs` writes `out/ROUND7.md` (= ROUND.md).
 - Run A name fixes (live game build): Canal → Narrow Boatway (only Pier and Narrow exist), Pier Ruins → LeisurePier01HeadSmall, Fallen Pine Stump → LogRandom01,
   Trashpile → TrashbagRandom01, Dirt Pile → RubblePileMixedRandom01; the pier and ElectricalSubstation01 have kind `object` (the bridge classifies them so).
+- `tools/defects.mjs <live-graph.json>` writes live-defects.md next to the graph. Walls, ship paths, power and decor (layer column of mapping.tsv) are left out of
+  the dead-end, gap and tail checks; wall ends lying on another wall without being joined get their own table (Run A: 14 zero-length quay stubs, all on an end of a
+  wall-flagged edge).
+- Pavement Path dead ends within 20 m (Δy ≤ 3 m) of a ground road, gravel road or path get `snapToSegment` {radius, prefabContains} (`PathSnap`, stats in stats.md).
+  Run A: 3 of the 4 reported stubs; the 4th, at (295, −3026), is the end of an isolated three-piece path whose "neighbour" is its own chain.

@@ -402,3 +402,49 @@ public static partial class Converter
         }
     }
 }
+
+/// <summary>
+/// Live Run A: Pavement Path dead ends (CS1 dead ends too) 7–16 m beside a road, gravel road or path. The bridge's
+/// snapToSegment splits the nearest segment there, so the path joins it. Only ground ends next to a ground segment
+/// within <c>maxDistance</c> and <c>maxDy</c> (CS1 metres), and only when the path edge stays ≥ 4 m long.
+/// </summary>
+public static class PathSnap
+{
+    public const string PathPrefab = "Pavement Path";
+
+    public static List<string> Apply(ConvertResult res, double topologyFactor, double maxDistance = 20, double maxDy = 3)
+    {
+        var log = new List<string>();
+        var net = res.Edges.Where(e => e.Map.Imported).ToList();
+        var degree = new Dictionary<OutNode, int>(ReferenceEqualityComparer.Instance);
+        foreach (var e in net) foreach (var n in new[] { e.A, e.B }) degree[n] = degree.GetValueOrDefault(n) + 1;
+        var targets = res.Layer(Layers.Roads).ToList();
+        foreach (var path in targets.Where(e => e.Map.Cs2Prefab == PathPrefab).ToList())
+            foreach (var (n, other) in new[] { (path.A, path.B), (path.B, path.A) })
+            {
+                if (degree[n] != 1 || n.Border || n.Snap != null || n.Elevation != 0) continue;
+                OutEdge? best = null; double bestD = maxDistance; Vec3 at = default;
+                foreach (var e in targets)
+                {
+                    if (e == path || e.A == n || e.B == n || e.A.Elevation != 0 || e.B.Elevation != 0) continue;
+                    // Coarse samples, then a fine pass around the closest one (long segments).
+                    double D(Vec3 p) => Math.Sqrt((p.X - n.Position.X) * (p.X - n.Position.X) + (p.Z - n.Position.Z) * (p.Z - n.Position.Z));
+                    int kBest = Enumerable.Range(0, 33).MinBy(k => D(e.Curve.Eval(k / 32.0)));
+                    for (int k = 0; k <= 64; k++)
+                    {
+                        double t = Math.Clamp((kBest - 1 + k / 32.0) / 32.0, 0, 1);
+                        var p = e.Curve.Eval(t); double d = D(p);
+                        if (d < bestD) { bestD = d; best = e; at = p; }
+                    }
+                }
+                if (best == null) continue;
+                double dy = Math.Abs(at.Y - n.Position.Y) / topologyFactor;
+                double len = Math.Sqrt((at.X - other.Position.X) * (at.X - other.Position.X) + (at.Z - other.Position.Z) * (at.Z - other.Position.Z));
+                if (dy > maxDy || len < 4) continue;
+                n.Snap = (Math.Ceiling(bestD + 1.5), best.Map.Cs2Prefab!);   // ≥ 1.5 m margin
+                log.Add(string.Create(System.Globalization.CultureInfo.InvariantCulture,
+                    $"{n.Id} ({n.Position.X:F0}, {n.Position.Z:F0}) → {best.Id} {best.Map.Cs2Prefab}, {bestD:F1} m, Δy {dy:F1} m, radius {n.Snap.Value.Radius}"));
+            }
+        return log;
+    }
+}

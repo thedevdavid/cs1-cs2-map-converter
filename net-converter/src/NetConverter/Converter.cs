@@ -14,6 +14,8 @@ public sealed class OutNode
     public bool Border { get; set; }
     public bool Underground { get; init; }
     public double Elevation { get; set; }
+    /// <summary>Bridge snapToSegment for a dead end that should join a nearby segment (radius m, prefabContains).</summary>
+    public (double Radius, string Prefab)? Snap { get; set; }
     /// <summary>Height set by grade separation; later smoothing keeps it.</summary>
     public bool Pinned { get; set; }
 }

@@ -39,6 +39,7 @@ public static class Outputs
             w.WriteNumber("x", R2(n.Position.X)); w.WriteNumber("y", R2((absolute ? n.Terrain + n.Elevation : n.Position.Y) * YScale)); w.WriteNumber("z", R2(n.Position.Z));
             if (!absolute || n.Elevation == 0) w.WriteNumber("elevation", R2(n.Elevation * YScale));
             if (n.Border) w.WriteBoolean("border", true);
+            if (n.Snap is { } sn) { w.WriteStartObject("snapToSegment"); w.WriteNumber("radius", sn.Radius); w.WriteString("prefabContains", sn.Prefab); w.WriteEndObject(); }
             w.WriteEndObject();
         }
         w.WriteEndArray();

@@ -23926,7 +23926,11 @@
       "x": 4782.64,
       "y": 145.1,
       "z": -683.1,
-      "elevation": 0
+      "elevation": 0,
+      "snapToSegment": {
+        "radius": 11,
+        "prefabContains": "Small Road"
+      }
     },
     {
       "id": "n776",
@@ -24154,7 +24158,11 @@
       "x": 736.56,
       "y": 171.39,
       "z": 4852.67,
-      "elevation": 0
+      "elevation": 0,
+      "snapToSegment": {
+        "radius": 15,
+        "prefabContains": "Gravel Road"
+      }
     },
     {
       "id": "n7922",
@@ -25173,7 +25181,11 @@
       "x": 1576.57,
       "y": 166.93,
       "z": 4694.35,
-      "elevation": 0
+      "elevation": 0,
+      "snapToSegment": {
+        "radius": 12,
+        "prefabContains": "Gravel Road"
+      }
     },
     {
       "id": "n3260",

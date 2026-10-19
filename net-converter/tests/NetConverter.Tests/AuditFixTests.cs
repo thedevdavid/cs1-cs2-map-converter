@@ -84,4 +84,20 @@ public class AuditFixTests
         Assert.Single(t.Objects);
         Assert.Equal(1, t.Cs2Total["OakTree01"]);
     }
+
+    [Fact]
+    public void PathSnap_JoinsPathEndBesideRoad_SkipsFarOrSteep()
+    {
+        var b = new DumpBuilder().Prefab("Basic Road", "RoadAI", 1, 1).Prefab("Pedestrian Gravel", "PedestrianPathAI", 0, 0, 2)
+            .Node(1, 0, 0).Node(2, 300, 0).Node(3, 100, 10).Node(4, 100, 60).Node(5, 200, 30).Node(6, 200, 90)
+            .Seg("Basic Road", 1, 2, [0, 100, 0], [300, 100, 0])
+            .Seg("Pedestrian Gravel", 3, 4, [100, 100, 10], [100, 100, 60])     // end 10 m beside the road
+            .Seg("Pedestrian Gravel", 5, 6, [200, 100, 30], [200, 100, 90]);    // end 30 m away: too far
+        var r = Converter.Run(b.Build(), Mapping.Load(MappingFile));
+        var log = PathSnap.Apply(r, 2);
+        var snapped = Assert.Single(log);
+        var n = r.Edges.SelectMany(e => new[] { e.A, e.B }).Single(x => x.Snap != null);
+        Assert.Equal(100, n.Position.X, 1); Assert.Equal(10, n.Position.Z, 1);
+        Assert.Equal(("Small Road", 12.0), (n.Snap!.Value.Prefab, n.Snap.Value.Radius));
+    }
 }
