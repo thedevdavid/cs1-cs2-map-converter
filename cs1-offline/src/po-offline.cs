@@ -331,10 +331,14 @@ else
         foreach (var (frame, n, step, fx0, fz0) in new[] { ("cs1-1081", G, Cell, -Half, Half), ("cs2-4096", 4096, 3.5, -7168 + 1.75, 7168 - 1.75) })
         {
             var mx = new float[n * n]; Array.Fill(mx, float.NegativeInfinity);
+            int splatted = 0;
             foreach (var o in set)
             {
-                RasterObject(o, fx0, fz0, step, n, n, (c, rw, y) => { int i = rw * n + c; if (y > mx[i]) mx[i] = (float)y; });
-                foreach (var v in o.World)   // thin walls and vertical faces
+                bool hit = false;
+                RasterObject(o, fx0, fz0, step, n, n, (c, rw, y) => { hit = true; int i = rw * n + c; if (y > mx[i]) mx[i] = (float)y; });
+                if (hit) continue;   // triangles only: snapping vertices to the nearest sample overstates steep flanks
+                splatted++;
+                foreach (var v in o.World)   // objects too small to cover any sample: their vertices, snapped to the nearest sample
                 {
                     int c = (int)Math.Round((v.X - fx0) / step), rw = (int)Math.Round((fz0 - v.Z) / step);
                     if (c >= 0 && rw >= 0 && c < n && rw < n && v.Y > mx[rw * n + c]) mx[rw * n + c] = (float)v.Y;
@@ -343,7 +347,7 @@ else
             var px = new int[n * n]; int cellsN = 0; float topY = 0;
             for (int i = 0; i < px.Length; i++) if (!float.IsNegativeInfinity(mx[i])) { px[i] = (int)Math.Clamp(Math.Round(mx[i] * 32), 1, 65535); cellsN++; topY = Math.Max(topY, mx[i]); }
             WritePng(Path.Combine(v2, $"po-{key}-{frame}.png"), n, n, 16, px);
-            summary.Add(string.Create(inv, $"| {key} | {frame} | {set.Count} | {cellsN} | {topY:0.0} |"));
+            summary.Add(string.Create(inv, $"| {key} | {frame} | {set.Count} | {cellsN} | {topY:0.0} | {splatted} |"));
         }
     }
     // tables
@@ -358,10 +362,10 @@ else
     md2.AppendLine();
     md2.AppendLine("- `*-cs1-1081.png`: CS1 frame, 1081 × 1081 samples at x = −8640 + col·16, z = 8640 − row·16 (the CS1 heightmap vertex grid; covers the exterior ring).");
     md2.AppendLine("- `*-cs2-4096.png`: CS2 playable frame, 4096 × 4096 pixels of 3.5 m over ±7168 m, sampled at pixel centres x = −7168 + (col + 0.5)·3.5, z = 7168 − (row + 0.5)·3.5, rasterised directly from the full-resolution triangles.");
-    md2.AppendLine("- Both: every triangle is rasterised at the samples (barycentric y), and every vertex is also splatted to its nearest sample so thin walls count.");
+    md2.AppendLine("- Both: every triangle is rasterised at the samples (barycentric y). Vertices are snapped to the nearest sample only for objects whose triangles cover no sample at all; snapping every vertex (as v1 and the in-game raster do) adds up to hundreds of metres on steep flanks at 16 m, see `../crosscheck.md`.");
     md2.AppendLine("- v1 note: `../po-offline-heights.png` used value = metres × 64 and so clipped everything above 1 024 m; v2 does not clip below 2 048 m.");
     md2.AppendLine();
-    md2.AppendLine("| layer | frame | objects | cells | max y (m) |"); md2.AppendLine("|---|---|---:|---:|---:|");
+    md2.AppendLine("| layer | frame | objects | cells | max y (m) | objects covering no sample (vertices snapped) |"); md2.AppendLine("|---|---|---:|---:|---:|---:|");
     summary.ForEach(l => md2.AppendLine(l));
     md2.AppendLine();
     md2.AppendLine("Object ids per layer: `ids-mountain.txt`, `ids-rock-work.txt`, `ids-falls-steps.txt`, `ids-terrain-like.txt` (union); removed: `ids-removed-spike.txt`, `ids-removed-overhang.txt`. Per-object numbers for all terrain-like objects: `objects-v2.json`.");

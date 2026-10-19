@@ -8,7 +8,7 @@ Reads map content straight from the Dakota Falls Workshop map (`2972879554\Dakot
 node cs1-offline/run.mjs
 ```
 
-Takes about 5 s. Needs Node and the .NET 10 SDK (`dotnet run` file-based app; the first run restores the `System.Formats.Nrbf` package). Options, all with working defaults:
+Takes about 25 s. Needs Node and the .NET 10 SDK (`dotnet run` file-based app; the first run restores the `System.Formats.Nrbf` package). Options, all with working defaults:
 
 | option | default | used for |
 |---|---|---|
@@ -17,8 +17,9 @@ Takes about 5 s. Needs Node and the .NET 10 SDK (`dotnet run` file-based app; th
 | `--dump` | `%LOCALAPPDATA%/DakotaExport/map-20261018-132303.json` | road geometry for the IMT markings (any DakotaExport main JSON of this map) |
 | `--heightmap` | `%LOCALAPPDATA%/Colossal Order/Cities_Skylines/Addons/MapEditor/Heightmaps/DakotaFalls.png` | optional: preview backdrop and above-terrain counts |
 | `--out` | `cs1-offline/out` | output folder |
+| `--export` | `%LOCALAPPDATA%/DakotaExport/2972879554_Dakota_Falls-20261019-063123` | optional: in-game export (prefix) to cross-check against; skipped when absent |
 
-Steps: `src/extract.mjs` (mod-data payloads → `out/payloads/`), `src/po-offline.cs` (Procedural Objects), `src/tmpe-offline.cs` (TM:PE, with the CS1 lane table decoded from NetManager data), `src/markings.mjs` (IMT + Node Controller), then `src/audit-corrections.md` is copied and `out/manifest.json` is written.
+Steps: `src/extract.mjs` (mod-data payloads → `out/payloads/`), `src/po-offline.cs` (Procedural Objects), `src/tmpe-offline.cs` (TM:PE, with the CS1 lane table decoded from NetManager data), `src/markings.mjs` (IMT + Node Controller), `src/crosscheck.mjs` (when the in-game export exists), then `src/audit-corrections.md` is copied and `out/manifest.json` is written.
 
 ## Outputs
 
@@ -36,6 +37,8 @@ Sizes from the 2026-10-19 run:
 | `nc-summary.md` | 126 KB | Node Controller, one row per node (1 067) |
 | `tmpe-offline.json` | 79 KB | schema `dakota-offline/cs1/tmpe/v1`: 68 lane connections and 39 lane arrows, each lane resolved to segment, lane index, node and world end position |
 | `tmpe-summary.md` | 5 KB | TM:PE list sizes, connections per node, arrows |
+| `crosscheck.md` | 6 KB | offline vs in-game export: PO objects, height rasters, the 22 mod-data payloads, heights-block vs raw |
+| `v2/` | 2 MB | terrain-like height layers (see below and `v2/README.md`) |
 | `audit-corrections.md` | 4 KB | corrections for `cs1-playset/AUDIT.md` (hand-written; source in `src/`) |
 | `manifest.json` | 1 KB | inputs and file sizes of the last run |
 | `payloads/` | 38 MB | the 22 raw mod-data payloads (gzip ones unzipped), plus `index.json` |
@@ -82,6 +85,7 @@ There is no PO "dam": the 57 Dam Electricity objects are invisible emitters. The
 ### Heights v2 (`out/v2/`, written when the CS1 heightmap is available)
 
 - **Layers**: terrain-like objects only, in four layers: mountain, rock work, falls steps, and all three combined (`terrain-like`). Per cell, the maximum over the layer.
+- **Sampling**: triangles only (barycentric height at sample points); vertices are snapped only for objects that cover no sample. Snapping every vertex (v1, and the in-game exporter, which also snaps edge points) lifts steep flanks at 16 m by up to hundreds of metres; see `crosscheck.md`.
 - **Frames**: each layer comes in two frames. `*-cs1-1081.png` is the CS1 vertex grid at 16 m. `*-cs2-4096.png` is the CS2 playable frame: 4096² pixels of 3.5 m over ±7 168 m, pixel centres, rasterized straight from the triangles.
 - **Encoding**: 16-bit, row 0 north, **value = metres × 32** (2 048 m scale), 0 = none.
 - **Filters**:

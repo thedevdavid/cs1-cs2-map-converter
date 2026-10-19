@@ -1,5 +1,5 @@
 // Regenerate everything in cs1-offline/out from the CS1 map .crp.
-// Usage: node cs1-offline/run.mjs [--crp <map.crp>] [--dump <DakotaExport main json>] [--workshop <dir>] [--heightmap <cs1 heightmap png>] [--out <dir>]
+// Usage: node cs1-offline/run.mjs [--export <in-game export prefix>] [--crp <map.crp>] [--dump <DakotaExport main json>] [--workshop <dir>] [--heightmap <cs1 heightmap png>] [--out <dir>]
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
@@ -14,6 +14,7 @@ const opt = {
   workshop: 'D:/SteamLibrary/steamapps/workshop/content/255710',
   heightmap: path.join(local, 'Colossal Order', 'Cities_Skylines', 'Addons', 'MapEditor', 'Heightmaps', 'DakotaFalls.png'),
   out: path.join(here, 'out'),
+  export: path.join(local, 'DakotaExport', '2972879554_Dakota_Falls-20261019-063123'),   // in-game export to cross-check against (optional)
 };
 const argv = process.argv.slice(2);
 for (let i = 0; i < argv.length; i += 2) { const k = argv[i].replace(/^--/, ''); if (!(k in opt)) throw new Error(`unknown option ${argv[i]}`); opt[k] = argv[i + 1]; }
@@ -36,6 +37,7 @@ step('procedural objects', 'dotnet', ['run', path.join(here, 'src', 'po-offline.
 step('TM:PE', 'dotnet', ['run', path.join(here, 'src', 'tmpe-offline.cs'), '--', opt.crp, payloads, opt.dump, opt.out]);
 step('IMT and Node Controller', process.execPath, [path.join(here, 'src', 'markings.mjs'), payloads, opt.dump, opt.out]);
 
+if (fs.existsSync(`${opt.export}-po.json`)) step('cross-check vs in-game export', process.execPath, [path.join(here, 'src', 'crosscheck.mjs'), opt.export, opt.crp, opt.out]);
 fs.copyFileSync(path.join(here, 'src', 'audit-corrections.md'), path.join(opt.out, 'audit-corrections.md'));
 const files = fs.readdirSync(opt.out).filter(f => fs.statSync(path.join(opt.out, f)).isFile()).sort();
 const manifest = { generatedUtc: new Date().toISOString(), inputs: opt, files: Object.fromEntries(files.map(f => [f, fs.statSync(path.join(opt.out, f)).size])) };

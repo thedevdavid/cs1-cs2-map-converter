@@ -8,19 +8,19 @@ All PNGs: 16-bit grey, row 0 = north, **value = metres × 32** (65535 = 2048 m),
 
 - `*-cs1-1081.png`: CS1 frame, 1081 × 1081 samples at x = −8640 + col·16, z = 8640 − row·16 (the CS1 heightmap vertex grid; covers the exterior ring).
 - `*-cs2-4096.png`: CS2 playable frame, 4096 × 4096 pixels of 3.5 m over ±7168 m, sampled at pixel centres x = −7168 + (col + 0.5)·3.5, z = 7168 − (row + 0.5)·3.5, rasterised directly from the full-resolution triangles.
-- Both: every triangle is rasterised at the samples (barycentric y), and every vertex is also splatted to its nearest sample so thin walls count.
+- Both: every triangle is rasterised at the samples (barycentric y). Vertices are snapped to the nearest sample only for objects whose triangles cover no sample at all; snapping every vertex (as v1 and the in-game raster do) adds up to hundreds of metres on steep flanks at 16 m, see `../crosscheck.md`.
 - v1 note: `../po-offline-heights.png` used value = metres × 64 and so clipped everything above 1 024 m; v2 does not clip below 2 048 m.
 
-| layer | frame | objects | cells | max y (m) |
-|---|---|---:|---:|---:|
-| mountain | cs1-1081 | 239 | 56173 | 1494.7 |
-| mountain | cs2-4096 | 239 | 364240 | 1457.5 |
-| rock-work | cs1-1081 | 89 | 1274 | 308.4 |
-| rock-work | cs2-4096 | 89 | 17976 | 308.4 |
-| falls-steps | cs1-1081 | 66 | 1455 | 288.2 |
-| falls-steps | cs2-4096 | 66 | 27689 | 288.2 |
-| terrain-like | cs1-1081 | 394 | 57877 | 1494.7 |
-| terrain-like | cs2-4096 | 394 | 394925 | 1457.5 |
+| layer | frame | objects | cells | max y (m) | objects covering no sample (vertices snapped) |
+|---|---|---:|---:|---:|---:|
+| mountain | cs1-1081 | 239 | 54745 | 1492.9 | 0 |
+| mountain | cs2-4096 | 239 | 362448 | 1457.5 | 56 |
+| rock-work | cs1-1081 | 89 | 694 | 307.0 | 1 |
+| rock-work | cs2-4096 | 89 | 14388 | 307.5 | 0 |
+| falls-steps | cs1-1081 | 66 | 1307 | 288.2 | 2 |
+| falls-steps | cs2-4096 | 66 | 27335 | 288.2 | 0 |
+| terrain-like | cs1-1081 | 394 | 56132 | 1492.9 | 3 |
+| terrain-like | cs2-4096 | 394 | 391374 | 1457.5 | 56 |
 
 Object ids per layer: `ids-mountain.txt`, `ids-rock-work.txt`, `ids-falls-steps.txt`, `ids-terrain-like.txt` (union); removed: `ids-removed-spike.txt`, `ids-removed-overhang.txt`. Per-object numbers for all terrain-like objects: `objects-v2.json`.
 

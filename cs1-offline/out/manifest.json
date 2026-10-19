@@ -1,14 +1,16 @@
 {
- "generatedUtc": "2026-10-19T13:13:06.765Z",
+ "generatedUtc": "2026-10-19T13:37:50.202Z",
  "inputs": {
   "crp": "D:/SteamLibrary/steamapps/workshop/content/255710/2972879554/Dakota Falls.crp",
   "dump": "C:\\Users\\dleva\\AppData\\Local\\DakotaExport\\map-20261018-132303.json",
   "workshop": "D:/SteamLibrary/steamapps/workshop/content/255710",
   "heightmap": "C:\\Users\\dleva\\AppData\\Local\\Colossal Order\\Cities_Skylines\\Addons\\MapEditor\\Heightmaps\\DakotaFalls.png",
-  "out": "D:\\work\\mods\\csl2-editor\\cs1-offline\\out"
+  "out": "D:\\work\\mods\\csl2-editor\\cs1-offline\\out",
+  "export": "C:\\Users\\dleva\\AppData\\Local\\DakotaExport\\2972879554_Dakota_Falls-20261019-063123"
  },
  "files": {
   "audit-corrections.md": 3780,
+  "crosscheck.md": 6337,
   "imt-markings.geojson": 1909550,
   "imt-summary.md": 2050,
   "manifest.json": 886,
