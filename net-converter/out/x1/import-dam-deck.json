@@ -1,0 +1,44 @@
+{
+  "name": "Dakota Falls dam deck",
+  "_comment": "Companion to import-dam.json: the HydroelectricPowerPlant01 deck network along the CS1 dam axis (quays (1440, 4673) to (1576, 4694)), level at the crest (172 m true \u00D7 height factor). Bridge live test: builds as a level deck.",
+  "nodes": [
+    {
+      "id": "dam_deck_w",
+      "x": 1440,
+      "y": 172,
+      "z": 4673
+    },
+    {
+      "id": "dam_deck_e",
+      "x": 1576,
+      "y": 172,
+      "z": 4694
+    }
+  ],
+  "edges": [
+    {
+      "id": "dam_deck",
+      "a": "dam_deck_w",
+      "b": "dam_deck_e",
+      "prefab": "Hydroelectric_Power_Plant_01 Dam",
+      "control": [
+        [
+          1485.33,
+          172,
+          4680
+        ],
+        [
+          1530.67,
+          172,
+          4687
+        ]
+      ]
+    }
+  ],
+  "options": {
+    "batchSize": 64,
+    "nodesFirst": true,
+    "heightMode": "absolute",
+    "dryRun": false
+  }
+}

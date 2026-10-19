@@ -1,6 +1,6 @@
 {
   "name": "Dakota Falls power line ends",
-  "_comment": "Replaces the last course of each 345 kV circuit (undo the edges in \u0027replaces\u0027 first). The end node sits on the building centre moved 8 m toward the line (fallback until the bridge reports the connection point); the start node joins the existing pylon node through snapToSegment (radius 2).",
+  "_comment": "Replaces the last course of each 345 kV circuit (undo the edges in \u0027replaces\u0027 first). The end node carries connectTo {voltage high, radius 60} (bridge 0.9.13) and attaches to the building\u0027s high-voltage marker node; its x/z (building centre moved 8 m toward the line) only picks the marker. The start node joins the existing pylon node through snapToSegment (radius 2).",
   "replaces": [
     "e5094_0",
     "e32855_0"
@@ -22,7 +22,11 @@
       "x": 1600.48,
       "z": 4544.04,
       "y": 168.36,
-      "elevation": 0
+      "elevation": 0,
+      "connectTo": {
+        "voltage": "high",
+        "radius": 60
+      }
     },
     {
       "id": "n2881",
@@ -40,7 +44,11 @@
       "x": 1554.19,
       "z": 4683.52,
       "y": 167.12,
-      "elevation": 0
+      "elevation": 0,
+      "connectTo": {
+        "voltage": "high",
+        "radius": 60
+      }
     }
   ],
   "edges": [

@@ -277,3 +277,141 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | highways | e501_0 | e13450_0 | 21 | yes | 93 | 58 | 2452038713.USRP 1L Interstate Ramp_Data / 2452038713.USRP 1L Interstate Ramp_Data |
 | highways | e31526_0 | e32991_0 | 21 | yes | 248 | 153 | 2452038713.USRP 1L Interstate Ramp_Data / 2452038713.USRP 1L Interstate Ramp_Data |
 
+
+## Other layers
+
+- Power: 60 courses of High-voltage Line in import-power.json (nodes on the ground).
+- Trees: 496,318 objects in 10 chunks under out\trees (points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale)); outside ±7168 m 158,877; dropped 73,855 (see trees/README.md).
+- Object y policy: y only > 3 m above the CS2 playable heightmap (10190615-dktflls-1to1.png), never for buildings: 2301 with y; against the old CS1-terrain rule 556 lose y, 0 gain it.
+- Objects: 6130 of 8408 CS1 buildings/props got a CS2 target (72.9 %); SKIP 247, MANUAL 7, unmapped 0, outside ±7168 m 2024; 2301 carry y.
+
+| CS1 prefab | count | decision |
+|---|---:|---|
+| 1978360460.Brown Surface Rock A Large_Data | 1463 | rzrock1, rzrock7, Rock21, Rock22, Rock23, Rock24, Rock25, Rock26, Rock27, Rock28, Rock29, Rock30 |
+| 2803411105.Landscape Grass 01_Data | 1325 | Grass02 (Styx's), Grass05 (Styx's), gaga - Fern 1, PD-YellowFlower |
+| 1988876538.Brown Modular C Formation 04_Data | 1102 | CliffStack, CliffRock6, CliffRock5 |
+| 1978360460.Brown Surface Rock A Small_Data | 912 | RZaridrock3, RZaridrock4, Rock01, Rock02, Rock03, Rock04, Rock05, Rock06, Rock07, Rock08, Rock09, Rock10 |
+| 2803411105.Landscape Grass 02_Data | 665 | Grass03 (Styx's), Grass06 (Styx's) |
+| 2803411105.Landscape Grass 04_Data | 526 | gaga - Fern 1, gaga - Fern 2, Grass02 (Styx's) |
+| 2803411105.Landscape Grass 03_Data | 342 | Grass01 (Styx's), Grass04 (Styx's), pd Bloom |
+| 1978360460.Brown Surface Rock B Small_Data | 306 | RZaridrock3, RZaridrock4, Rock01, Rock02, Rock03, Rock04, Rock05, Rock06, Rock07, Rock08, Rock09, Rock10 |
+| 1978360460.Brown Surface Rock A Medium_Data | 245 | RZaridrock1, RZaridrock2, RZaridrock5, Rock11, Rock12, Rock13, Rock14, Rock15, Rock16, Rock17, Rock18, Rock19, Rock20 |
+| 2803411105.Landscape Grass 06_Data | 218 | pd Long Grass, ReikUndergrowth01Trimmed, ReikUndergrowth02Trimmed |
+| 1978360460.Brown Surface Rock B Large_Data | 192 | rzrock1, rzrock7, Rock21, Rock22, Rock23, Rock24, Rock25, Rock26, Rock27, Rock28, Rock29, Rock30 |
+| 1988121829.Grey Breakwater Rocks 01_Data | 172 | rzrock2, rzrock3, rzrock4, rzrock5, rzrock8 |
+| 1978360460.Brown Surface Rock B Medium_Data | 137 | RZaridrock1, RZaridrock2, RZaridrock5, Rock11, Rock12, Rock13, Rock14, Rock15, Rock16, Rock17, Rock18, Rock19, Rock20 |
+| 2074426936.Fallen Pine Stump 02_Data | 116 | LogRandom01 |
+| 767694644.R69 Big Decal Dirt_Data | 113 | SKIP: no dirt/mud decal without EAI: converted to Dirty Surfaces Pack area surfaces (import-surfaces-decals.json) |
+| 2074426936.Fallen Pine 02 TC_Data | 71 | Log01, Log02, Log03, Log04 |
+| 2097539846.[US] 4-Lane Highway Pillar_Data | 42 | SKIP: CS2 places pillars for its own bridges |
+| 2074426936.Fallen Pine 07 LP TC_Data | 40 | Log01, Log02, Log03, Log04 |
+| 2074426936.Fallen Pine Stump 01_Data | 34 | LogRandom01 |
+| 2074426936.Fallen Pine 07 LP_Data | 31 | Log01, Log02, Log03, Log04 |
+| 2098643957.[US] 3-Lane Highway Pillar_Data | 28 | SKIP: CS2 places pillars for its own bridges |
+| 2074426936.Fallen Pine 02_Data | 28 | Log01, Log02, Log03, Log04 |
+| 2452038713.USRP 2L Interstate Pillar_Data | 25 | SKIP: CS2 places pillars for its own bridges |
+| 2074426936.Fallen Pine 04_Data | 25 | Log01, Log02, Log03, Log04 |
+| Park Streetlight 01 | 24 | StreetlightSingle01 |
+| Warning Light Red | 24 | WarningLight01 |
+| Modern Fence 02 | 22 | FenceResidentialPieceLow01 |
+| Destroyed Road Prop 03 | 18 | RubblePileConcrete01, RubblePileConcrete02 |
+| Trashpile | 18 | TrashbagRandom01 |
+| 2074426936.Fallen Pine 03_Data | 15 | Log01, Log02, Log03, Log04 |
+| 2074426936.Fallen Pine 06 LP_Data | 11 | Log01, Log02, Log03, Log04 |
+| 2074426936.Fallen Pine 05 LP_Data | 10 | Log01, Log02, Log03, Log04 |
+| 2074426936.Fallen Pine 01_Data | 9 | Log01, Log02, Log03, Log04 |
+| High Vegetation 02 | 9 | GreenBushWild02 |
+| 2452038713.USRP 3L Interstate Pillar_Data | 8 | SKIP: CS2 places pillars for its own bridges |
+| Destroyed Road Prop 01 | 5 | RubblePileConcrete01, RubblePileConcrete02 |
+| Flood Light Blue | 5 | SKIP: no floodlight prop in CS2 |
+| 1251664417.Dam Electricity_Data | 4 | MANUAL: CS2 hydro dam (Hydroelectric_Power_Plant_01 Dam) is placed across the river by hand |
+| 1988876538.Brown Modular C Formation 02_Data | 4 | CliffStack, CliffRock6, CliffRock5 |
+| Destroyed Road Prop 02 | 4 | RubblePileConcrete01, RubblePileConcrete02 |
+| 874716774.R69 Big Decal Mud 4_Data | 4 | SKIP: no dirt/mud decal without EAI: converted to Dirty Surfaces Pack area surfaces (import-surfaces-decals.json) |
+| 874716774.R69 Big Decal Mud 1_Data | 4 | SKIP: no dirt/mud decal without EAI: converted to Dirty Surfaces Pack area surfaces (import-surfaces-decals.json) |
+| 874716774.R69 Big Decal Mud 3_Data | 4 | SKIP: no dirt/mud decal without EAI: converted to Dirty Surfaces Pack area surfaces (import-surfaces-decals.json) |
+| 1988876538.Brown Modular C Formation 01_Data | 3 | CliffRock3 |
+| 2926036331.R2USA W TrWo 2x2 TRH Girder 02_Data_bridgePillar | 3 | SKIP: CS2 places pillars for its own bridges |
+| Wooden Footbridge Pillar 12 | 3 | SKIP: CS2 places pillars for its own bridges |
+| Dirt Pile 02 | 3 | RubblePileMixedRandom01 |
+| Dirt Pile 01 | 3 | RubblePileMixedRandom01 |
+| 874716774.R69 Big Decal Mud 2_Data | 3 | SKIP: no dirt/mud decal without EAI: converted to Dirty Surfaces Pack area surfaces (import-surfaces-decals.json) |
+| Castle Ruins 02 | 2 | RuinsCastle01 |
+| 1988876538.Brown Modular C Formation 03_Data | 2 | CliffRock3 |
+| Pier Ruins 01 | 2 | LeisurePier01HeadSmall |
+| 2931939156.Detroit Bridge_Data | 2 | MANUAL: CS1 bridge model placed as a building; in CS2 build TrussArchBridge01 / ExtradosedBridge01 along the road instead |
+| Stop Sign | 2 | NA_StopSign01 |
+| Bench 01 | 2 | GardenBench01 |
+| Wooden Footbridge Pillar 6 | 1 | SKIP: CS2 places pillars for its own bridges |
+| 1310328404.Hernando-Desoto Bridge_Data | 1 | MANUAL: CS1 bridge model placed as a building; in CS2 build TrussArchBridge01 / ExtradosedBridge01 along the road instead |
+| GravelBridgePillar | 1 | SKIP: CS2 places pillars for its own bridges |
+| 2926036331.R2USA W TrWo 1x2 TRH Girder 02_Data_bridgePillar | 1 | SKIP: CS2 places pillars for its own bridges |
+| Castle Ruins 01 | 1 | RuinsCastle01 |
+| Abandoned Factory 01 | 1 | RuinsOldMill01 |
+| 2916095473.SEC Extra Large Substation_Data | 1 | TransformerStation01 |
+| Ship Wreck 01 | 1 | RubblePileWood02 |
+| StreetLamp02 | 1 | StreetlightSingle02 |
+| Park Sign 02 | 1 | ParkSign02 |
+| Park Sign 01 | 1 | ParkSign01 |
+| Concrete Debris 02 | 1 | RubblePileConcrete01, RubblePileConcrete02 |
+| Park Bench 01 | 1 | GardenBench01 |
+| Concrete Debris 03 | 1 | RubblePileConcrete01, RubblePileConcrete02 |
+| Park Trashbin 01 | 1 | SKIP: no matching bin name verified |
+| 2074426936.Fallen Pine 01 TC_Data | 1 | Log01, Log02, Log03, Log04 |
+| Dirt Pile 03 | 1 | RubblePileMixedRandom01 |
+| Garbage Bin | 1 | SKIP: no matching bin name verified |
+
+- Outside connections: 25 objects (road 16, rail 4, air 4, ship 1); border nodes 20, 20 with a CS1 connection (connections-check.md).
+- Procedural Objects: 604 listed in manual-objects.md; 2 map through object-mapping.tsv into import-po-candidates.json (UNVERIFIED: scale is not applied, PO meshes are not CS2 assets).
+- Water surface: 83,194 wet cells (waterSurface in the dump); source levels refined in import-water.json (water-check.md).
+- Terrain surfaces: 85,890 cells, 1 classes (surfaces-summary.md, surfaces.geojson).
+- Barrier props (import-walls-props.json): 621 ConcreteBarrier01 / SafetyBarrier01 pieces every 3 m along 62 CS1 barrier segments (piece length unverified).
+- Field surfaces (import-surfaces-fields.json): 56 polygons, 3.130 km², max 163 points; footprints also raise fertility to ≥ 220.
+- Grass surfaces from 3076 Landscape Grass props (import-surfaces-grass.json, optional): 51 polygons, 0.026 km², max 130 points.
+- Rock surfaces (import-surfaces-rock.json): DakotaFalls-1to1-4096.png (|err| vs CS1 nodes 0.01 m), steep area 0.63 km² in 145 patches >= 400 m²; 151 polygons kept (0.60 km²), 0 smallest dropped.
+- Round 8 substation: 1 (b39573 TransformerStation01 at (1594, 4549), rotation 318.04, no y) -> import-substation.json.
+- Round 8 dam: HydroelectricPowerPlant01 at (1549.5, 4690) from 4 CS1 Dam Electricity pieces, rotation 261.7 -> import-dam.json; deck Hydroelectric_Power_Plant_01 Dam (1440, 4673) -> (1576, 4694) at crest y 172 -> import-dam-deck.json.
+- Round 8 power ends: substation: CS1 end n12755 (1633, 4526), replaces e5094_0, new course n26177 -> (1600.5, 4544.0), 85 m; dam: CS1 end n16152 (1651, 4542), replaces e32855_0, new course n2881 -> (1554.2, 4683.5), 221 m -> import-power-ends.json.
+- Round 8 PO cliffs: 594 objects from 399 PO pieces (mountain 239, rock work 92, falls steps 68); bands > 160 m flank 267, > 160 m summit 111, 36–80 m 120, 80–160 m 75, 12–36 m 20, 3–12 m 1; 0 over the cap of 2500 dropped -> import-po-rocks.json.
+- Round 8 rock scatter: 19020 (small 13238, medium 4868, boulders 914) around 3108 rock/cliff objects (r 60 m) and in 151 rock polygons; rejected road 377, spacing 955, water 3941, border 38 -> import-rock-scatter.json.
+- Decal surfaces (import-surfaces-decals.json; PDO23 Dirty Surface 01 / PDO23 Soil Surface 01): 41 polygons, 0.022 km², max 298 points.
+- Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
+- Resources: import-resources.json from the dump's naturalResources.
+
+## Skip review (rounds 10-12)
+
+| class | CS1 source | count | mapped | kept skipped | decision |
+|---|---|---:|---:|---:|---|
+| Field networks | network segments | 269 | 210 as surfaces | 59 (outside ±7168) | → 56 Agriculture Surface 01 polygons (import-surfaces-fields.json) + fertility; not imported as networks |
+| Landscape Grass | props | 3076 | 3076 | 0 | → 1:1 pack grass plants (Styx tufts, ferns, pd Long Grass, undergrowth, flowers; kind plant, age adult) in import-objects.json; 51 Grass Surface 01 clusters remain as the optional alternative |
+| Rocks (Surface Rock / Modular C / Breakwater) | buildings | 4538 | 4538 | 0 | → pack rocks (Arid, RZ, Cliffs and Rocks) mixed with vanilla Rock01-30, per class in object-mapping.tsv |
+| Decals (R69 dirt/mud) | props | 128 | 41 as surfaces | 87 (outside ±7168) | → 16 m squares of PDO23 Dirty Surface 01 (dirt) / PDO23 Soil Surface 01 (mud), import-surfaces-decals.json |
+| Pedestrian Gravel / Elevated | network segments | 24 | 24 | 0 | → Pavement Path (roads layer, elevations kept); CS2 has no gravel path |
+| Quay | network segments | 7 | 7 | 0 | → QuayMedium01 (walls layer, import-walls.json) |
+| Canal | network segments | 14 | 14 | 0 | → Narrow Boatway (walls layer); CS2 boatways are canals |
+| Flood Wall | network segments | 2 | 2 | 0 | → Sound Barrier (walls layer), the only wall network by name |
+| Retaining Walls AiO | network segments | 90 | 90 | 0 | → QuaySmall01 (walls layer); no retaining-wall network, quay wall is the nearest (unverified inland) |
+| Concrete / Steel barriers | network segments | 62 | 61 as props | 1 (outside ±7168) | → 621 ConcreteBarrier01 / SafetyBarrier01 props every 3 m (import-walls-props.json) |
+| Castle Wall | network segments | 12 | 0 | 12 | NO TWIN, kept skipped: searched Assets.NAME for Wall/Castle/Rampart/Fort/Ruin (only garden walls EU_Wall*, RuinsCastle01 building, Sound Barrier) |
+| Ship paths | network segments | 118 | 100 | 18 | → Medium Seaway (import-shippaths.json), clipped to end on the border |
+| Airplane paths | network segments | 319 | 0 | 319 | kept skipped: the game routes planes |
+| Ruins / wreck / factory | buildings | 7 | 7 | 0 | → LeisurePier01HeadSmall / RubblePileWood02 / RuinsOldMill01 / RuinsCastle01 (nearest by name) |
+| Terraforming Network | network segments | 233 | 0 | 233 | kept skipped: CS1 terrain-shaping helper (terrain is in the heightmap) |
+| Pillars | buildings | 112 | 0 | 112 | kept skipped: CS2 bridges spawn their own pillars |
+| Modern Fence 02 | props | 22 | 22 | 0 | → FenceResidentialPieceLow01 (piece length unverified) |
+| Network Skins (v5) | segments | 215 | 215 flagged | 0 | note: no pillars on 164, no street lights on 62; edge fields noPillars / noStreetLights (no bridge field yet), list in manual-objects.md |
+
+## CS2 audit fixes (audit/cs2-side.md, before the run)
+
+- Short border edges folded into their neighbour (< 10 m): 1.
+- Gravel Road border ends: 9; kept as outside connections 3 (one per CS1 connection: c31152_0, c9707_0, c35664_0); pulled 1 m inside 6: c4947_0 (7168, 690), c1237_0 (7168, 3968), c17246_0 (7168, 1202), c19544_0 (7168, 3712), c26692_0 (7168, 530), c17018_0 (7168, 4064).
+- Boatways (CS1 canals): 14; kept where water stands (CS1 water surface, or a source within 150 m above the ground) 14, dropped 0.
+- Flat QuaySmall01 edges (cross-slope < 0.4 m at × 1): 21, wall right 11, both 4, left 6; their nodes raised to ≥ 4 m (one side) / ≥ 8 m (both) as the fallback.
+- Seaways stay at the riverbed (pass --seaway-at-water to write them at the water surface once the dig test shows digging).
+- Pavement Path dead ends snapped onto the segment beside them (snapToSegment, ≤ 20 m, Δy ≤ 3 m): 3: n7811 (4783, -683) → e17505_0 Small Road, 9.3 m, Δy 0.0 m, radius 11; n21342 (737, 4853) → e36560_0 Gravel Road, 12.8 m, Δy 0.0 m, radius 15; n13342 (1577, 4694) → e21878_0 Gravel Road, 9.6 m, Δy 0.1 m, radius 12.
+- Water sources: 65 → 41 (12 changes, water-check.md).
+- EXPERIMENT trees: the 641 net-corridor trees are in experiment-trees-net-corridor-01.json (import after the main tree files to try them; undo by its name).
+- Trees masked (same set for both scales): terrain below sea level 10,093; inside the CS1 water surface 1,133; on a ground-level net corridor (half width + 2 m) 641; total 11,867, 496,368 remain.
+- Field circles: 7 overlapping pairs shrunk to touch (0.5 m gap) instead of a union, so they stay circles.
+- Grass surfaces: 2 overlapping pairs merged in 2 groups (53 → 51).
+- Decal surfaces: 227 overlapping pairs merged in 11 groups (128 → 41).

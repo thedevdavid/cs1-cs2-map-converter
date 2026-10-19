@@ -10,11 +10,13 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 2 | `out\import-power.json` | power (2×) | 60 edges | 0.0 MB |
 | 2 | `out\import-walls.json` | walls: quays, retaining walls, canals, flood walls (2×) | 113 edges: QuaySmall01 97, Narrow Boatway 14, Sound Barrier 2 | 0.1 MB |
 | 2 | `out\import-shippaths.json` | ship paths (2×) | 100 edges: Medium Seaway 100 | 0.1 MB |
-| 2 | `out\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam (undo the replaced edges first) (2×) | 2 edges, replaces e5094_0, e32855_0 | 0.0 MB |
+| 2 | `out\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first) (2×) | 2 edges, replaces e5094_0, e32855_0 | 0.0 MB |
+| 2 | `out\import-dam-deck.json` | ROUND 8 dam deck network, absolute heights (after import-dam.json) (2×) | 1 edges | 0.0 MB |
 | 2 | `out\x1\import-power.json` | power (1×) | 60 edges | 0.0 MB |
 | 2 | `out\x1\import-walls.json` | walls: quays, retaining walls, canals, flood walls (1×) | 113 edges: QuaySmall01 97, Narrow Boatway 14, Sound Barrier 2 | 0.1 MB |
 | 2 | `out\x1\import-shippaths.json` | ship paths (1×) | 100 edges: Medium Seaway 100 | 0.1 MB |
-| 2 | `out\x1\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam (undo the replaced edges first) (1×) | 2 edges, replaces e5094_0, e32855_0 | 0.0 MB |
+| 2 | `out\x1\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first) (1×) | 2 edges, replaces e5094_0, e32855_0 | 0.0 MB |
+| 2 | `out\x1\import-dam-deck.json` | ROUND 8 dam deck network, absolute heights (after import-dam.json) (1×) | 1 edges | 0.0 MB |
 | 3 | `out\import-water.json` | water (2×), seaLevel 195 | 41 sources, 0 refined | 0.0 MB |
 | 3 | `out\import-water-sea186.json` | water VARIANT (2×), seaLevel 186: import instead of import-water.json to try the measured level | 45 sources | 0.0 MB |
 | 3 | `out\x1\import-water.json` | water (1×), seaLevel 97.5 | 41 sources, 0 refined | 0.0 MB |
@@ -23,17 +25,15 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 4 | `out\x1\import-connections.json` | outside connections | 25 | 0.0 MB |
 | 5 | `out\import-walls-props.json` | barrier props (2×) | 621 | 0.1 MB |
 | 5 | `out\import-objects.json` | objects (2×) | 6130 (prop 3038, building 5, object 2, plant 3076, tree 9; 2301 with y) | 1.3 MB |
-| 5 | `out\import-substation.json` | ROUND 8 substation building (placeholder prefab until the bridge reports it) (2×) | 1 | 0.0 MB |
-| 5 | `out\import-dam.json` | ROUND 8 dam, variant A (yaw −CS1 angle) (2×) | 1 | 0.0 MB |
-| 5 | `out\import-dam-B.json` | ROUND 8 dam, variant B (mirrored yaw); import A or B (2×) | 1 | 0.0 MB |
+| 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
+| 5 | `out\import-dam.json` | ROUND 8 dam HydroelectricPowerPlant01, rotation 261.7 (2×) | 1 | 0.0 MB |
 | 5 | `out\import-po-rocks.json` | ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps (2×) | 594 | 0.1 MB |
 | 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 19020 | 3.5 MB |
 | 5 | `out\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (2×) | 2 | 0.0 MB |
 | 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
 | 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3038, building 5, object 2, plant 3076, tree 9; 2301 with y) | 1.3 MB |
-| 5 | `out\x1\import-substation.json` | ROUND 8 substation building (placeholder prefab until the bridge reports it) (1×) | 1 | 0.0 MB |
-| 5 | `out\x1\import-dam.json` | ROUND 8 dam, variant A (yaw −CS1 angle) (1×) | 1 | 0.0 MB |
-| 5 | `out\x1\import-dam-B.json` | ROUND 8 dam, variant B (mirrored yaw); import A or B (1×) | 1 | 0.0 MB |
+| 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
+| 5 | `out\x1\import-dam.json` | ROUND 8 dam HydroelectricPowerPlant01, rotation 261.7 (1×) | 1 | 0.0 MB |
 | 5 | `out\x1\import-po-rocks.json` | ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps (1×) | 594 | 0.1 MB |
 | 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 19020 | 3.5 MB |
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
