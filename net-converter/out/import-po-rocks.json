@@ -1172,36 +1172,36 @@
     {
       "id": "pocliff28_1",
       "prefab": "CliffSide2",
-      "x": 431.83,
-      "z": 887.62,
-      "rotation": 112.5,
+      "x": 418.83,
+      "z": 868.15,
+      "rotation": 135,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
     {
       "id": "pocliff28_2",
       "prefab": "CliffSide2Left",
-      "x": 487.27,
-      "z": 864.66,
-      "rotation": 112.5,
+      "x": 461.25,
+      "z": 825.73,
+      "rotation": 135,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
     {
       "id": "pocliff28_3",
       "prefab": "CliffSide2",
-      "x": 542.7,
-      "z": 841.7,
-      "rotation": 112.5,
+      "x": 503.68,
+      "z": 783.3,
+      "rotation": 135,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
     {
       "id": "pocliff28_4",
       "prefab": "CliffSide2Right",
-      "x": 598.13,
-      "z": 818.74,
-      "rotation": 112.5,
+      "x": 546.11,
+      "z": 740.87,
+      "rotation": 135,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
@@ -1262,36 +1262,36 @@
     {
       "id": "pocliff31_1",
       "prefab": "CliffSide2",
-      "x": 377.6,
-      "z": 1229.92,
-      "rotation": 180,
+      "x": 400.56,
+      "z": 1345.35,
+      "rotation": 22.5,
       "kind": "prop",
       "cs1": "PO mountain"
     },
     {
       "id": "pocliff31_2",
       "prefab": "CliffSide2Right",
-      "x": 377.6,
-      "z": 1169.92,
-      "rotation": 180,
+      "x": 423.52,
+      "z": 1400.79,
+      "rotation": 22.5,
       "kind": "prop",
       "cs1": "PO mountain"
     },
     {
       "id": "pocliff31_3",
       "prefab": "CliffSide2Left",
-      "x": 377.6,
-      "z": 1109.92,
-      "rotation": 180,
+      "x": 446.48,
+      "z": 1456.22,
+      "rotation": 22.5,
       "kind": "prop",
       "cs1": "PO mountain"
     },
     {
       "id": "pocliff31_4",
       "prefab": "CliffSide2Left",
-      "x": 377.6,
-      "z": 1049.92,
-      "rotation": 180,
+      "x": 469.44,
+      "z": 1511.65,
+      "rotation": 22.5,
       "kind": "prop",
       "cs1": "PO mountain"
     },
@@ -1865,27 +1865,27 @@
     {
       "id": "pocliff30_1",
       "prefab": "CliffSide2Left",
-      "x": 610.28,
-      "z": 836.84,
-      "rotation": 225,
+      "x": 652.71,
+      "z": 819.27,
+      "rotation": 180,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
     {
       "id": "pocliff30_2",
       "prefab": "CliffSide2Right",
-      "x": 567.86,
-      "z": 794.42,
-      "rotation": 225,
+      "x": 652.71,
+      "z": 759.27,
+      "rotation": 180,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
     {
       "id": "pocliff30_3",
       "prefab": "CliffSide2",
-      "x": 525.43,
-      "z": 751.99,
-      "rotation": 225,
+      "x": 652.71,
+      "z": 699.27,
+      "rotation": 180,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
@@ -2135,18 +2135,18 @@
     {
       "id": "pocliff57_1",
       "prefab": "CliffSide2Left",
-      "x": 675.79,
-      "z": 937.25,
-      "rotation": 225,
+      "x": 695.26,
+      "z": 924.25,
+      "rotation": 202.5,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
     {
       "id": "pocliff57_2",
       "prefab": "CliffSide2",
-      "x": 633.37,
-      "z": 894.83,
-      "rotation": 225,
+      "x": 672.3,
+      "z": 868.81,
+      "rotation": 202.5,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
@@ -3116,9 +3116,9 @@
     {
       "id": "pocliff72_1",
       "prefab": "CliffSide2Right",
-      "x": 454.15,
-      "z": 641.9,
-      "rotation": 112.5,
+      "x": 441.15,
+      "z": 622.43,
+      "rotation": 135,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
@@ -3152,9 +3152,9 @@
     {
       "id": "pocliff48_1",
       "prefab": "CliffSide2",
-      "x": 403.7,
-      "z": 828.18,
-      "rotation": 270,
+      "x": 463.7,
+      "z": 768.18,
+      "rotation": 180,
       "kind": "prop",
       "cs1": "PO falls steps"
     },
@@ -3188,9 +3188,9 @@
     {
       "id": "pocliff59_1",
       "prefab": "CliffSide2",
-      "x": 309.35,
-      "z": 896.51,
-      "rotation": 90,
+      "x": 272.31,
+      "z": 951.94,
+      "rotation": 22.5,
       "kind": "prop",
       "cs1": "PO mountain"
     },

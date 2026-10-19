@@ -70,14 +70,14 @@
     },
     {
       "id": "lake7",
-      "x": 6592,
-      "z": 3728,
+      "x": 6272,
+      "z": 4032,
       "height": 269.88,
       "radius": 101,
       "type": "natural",
       "rate": 10201,
       "inPlayable": true,
-      "note": "wet body of 125 cells (0.032 km\u00B2), surface 133.6\u2013136.2 m, no CS1 source within 400 m"
+      "note": "wet body of 125 cells (0.032 km\u00B2), surface 133.6\u2013136.2 m, no CS1 source within 400 m; moved to the lowest CS2 terrain cell (6272, 4032, terrain 134.26 m): the centre cell was 138.23 m"
     },
     {
       "id": "lake8",
@@ -114,14 +114,14 @@
     },
     {
       "id": "lake11",
-      "x": 6992,
-      "z": 2688,
+      "x": 6944,
+      "z": 2640,
       "height": 271.68,
       "radius": 62,
       "type": "natural",
       "rate": 3844,
       "inPlayable": true,
-      "note": "wet body of 47 cells (0.012 km\u00B2), surface 133.7\u2013136.3 m, no CS1 source within 400 m"
+      "note": "wet body of 47 cells (0.012 km\u00B2), surface 133.7\u2013136.3 m, no CS1 source within 400 m; moved to the lowest CS2 terrain cell (6944, 2640, terrain 134.79 m): the centre cell was 135.55 m"
     },
     {
       "id": "lake12",
@@ -169,14 +169,14 @@
     },
     {
       "id": "lake16",
-      "x": 656,
+      "x": 640,
       "z": 1008,
       "height": 277.83,
       "radius": 22,
       "type": "natural",
       "rate": 484,
       "inPlayable": true,
-      "note": "wet body of 6 cells (0.002 km\u00B2), surface 138.8\u2013139.0 m, no CS1 source within 400 m"
+      "note": "wet body of 6 cells (0.002 km\u00B2), surface 138.8\u2013139.0 m, no CS1 source within 400 m; moved to the lowest CS2 terrain cell (640, 1008, terrain 136.86 m): the centre cell was 138.44 m"
     },
     {
       "id": "lake17",

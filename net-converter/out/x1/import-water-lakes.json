@@ -1,193 +1,204 @@
 {
- "_comment": "Water sources after the CS2 audit rules (water-check.md lists every change). type natural = constant-level source; height = water level in metres (× 1); never polluted.",
- "seaLevel": 97.5,
- "sources": [
-  {
-   "id": "lake1",
-   "x": 6400,
-   "z": -1088,
-   "height": 138.36,
-   "radius": 300,
-   "type": "natural",
-   "rate": 90000,
-   "inPlayable": true,
-   "note": "wet body of 14903 cells (3.815 km²), surface 136.8–142.3 m, no CS1 source within 400 m; SLOPING REACH: one level source will not fill it evenly, check in game"
-  },
-  {
-   "id": "lake2",
-   "x": -1920,
-   "z": -5792,
-   "height": 191.05,
-   "radius": 300,
-   "type": "natural",
-   "rate": 90000,
-   "inPlayable": true,
-   "note": "wet body of 3357 cells (0.859 km²), surface 189.6–192.2 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake3",
-   "x": 1264,
-   "z": 5712,
-   "height": 158.05,
-   "radius": 300,
-   "type": "natural",
-   "rate": 90000,
-   "inPlayable": true,
-   "note": "wet body of 1200 cells (0.307 km²), surface 156.9–159.2 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake4",
-   "x": 4608,
-   "z": -1696,
-   "height": 138.48,
-   "radius": 250,
-   "type": "natural",
-   "rate": 62500,
-   "inPlayable": true,
-   "note": "wet body of 766 cells (0.196 km²), surface 137.6–139.1 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake5",
-   "x": 944,
-   "z": 3072,
-   "height": 139.91,
-   "radius": 114,
-   "type": "natural",
-   "rate": 12996,
-   "inPlayable": true,
-   "note": "wet body of 159 cells (0.041 km²), surface 139.3–140.4 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake6",
-   "x": 576,
-   "z": -496,
-   "height": 108.38,
-   "radius": 108,
-   "type": "natural",
-   "rate": 11664,
-   "inPlayable": true,
-   "note": "wet body of 142 cells (0.036 km²), surface 108.0–108.8 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake8",
-   "x": 608,
-   "z": -1376,
-   "height": 99.88,
-   "radius": 99,
-   "type": "natural",
-   "rate": 9801,
-   "inPlayable": true,
-   "note": "wet body of 120 cells (0.031 km²), surface 98.6–100.7 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake9",
-   "x": -6016,
-   "z": 80,
-   "height": 176.39,
-   "radius": 76,
-   "type": "natural",
-   "rate": 5776,
-   "inPlayable": true,
-   "note": "wet body of 70 cells (0.018 km²), surface 167.6–183.4 m, no CS1 source within 400 m; SLOPING REACH: one level source will not fill it evenly, check in game"
-  },
-  {
-   "id": "lake10",
-   "x": -1872,
-   "z": -7040,
-   "height": 190.98,
-   "radius": 74,
-   "type": "natural",
-   "rate": 5476,
-   "inPlayable": true,
-   "note": "wet body of 68 cells (0.017 km²), surface 190.4–191.7 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake11",
-   "x": 6992,
-   "z": 2688,
-   "height": 135.84,
-   "radius": 62,
-   "type": "natural",
-   "rate": 3844,
-   "inPlayable": true,
-   "note": "wet body of 47 cells (0.012 km²), surface 133.7–136.3 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake12",
-   "x": 1280,
-   "z": 3952,
-   "height": 141.22,
-   "radius": 55,
-   "type": "natural",
-   "rate": 3025,
-   "inPlayable": true,
-   "note": "wet body of 37 cells (0.009 km²), surface 140.8–141.6 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake13",
-   "x": 272,
-   "z": 992,
-   "height": 138.52,
-   "radius": 52,
-   "type": "natural",
-   "rate": 2704,
-   "inPlayable": true,
-   "note": "wet body of 33 cells (0.008 km²), surface 132.6–139.0 m, no CS1 source within 400 m; SLOPING REACH: one level source will not fill it evenly, check in game"
-  },
-  {
-   "id": "lake14",
-   "x": 4816,
-   "z": -784,
-   "height": 138.56,
-   "radius": 49,
-   "type": "natural",
-   "rate": 2401,
-   "inPlayable": true,
-   "note": "wet body of 29 cells (0.007 km²), surface 138.2–139.0 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake15",
-   "x": 1008,
-   "z": 3952,
-   "height": 141.14,
-   "radius": 47,
-   "type": "natural",
-   "rate": 2209,
-   "inPlayable": true,
-   "note": "wet body of 27 cells (0.007 km²), surface 140.8–141.4 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake16",
-   "x": 656,
-   "z": 1008,
-   "height": 138.92,
-   "radius": 22,
-   "type": "natural",
-   "rate": 484,
-   "inPlayable": true,
-   "note": "wet body of 6 cells (0.002 km²), surface 138.8–139.0 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake17",
-   "x": 1120,
-   "z": 3952,
-   "height": 141.2,
-   "radius": 22,
-   "type": "natural",
-   "rate": 484,
-   "inPlayable": true,
-   "note": "wet body of 6 cells (0.002 km²), surface 140.9–141.4 m, no CS1 source within 400 m"
-  },
-  {
-   "id": "lake18",
-   "x": 4464,
-   "z": -1392,
-   "height": 138.38,
-   "radius": 20,
-   "type": "natural",
-   "rate": 400,
-   "inPlayable": true,
-   "note": "wet body of 5 cells (0.001 km²), surface 138.1–138.7 m, no CS1 source within 400 m"
-  }
- ]
+  "_comment": "Water sources after the CS2 audit rules (water-check.md lists every change). type natural = constant-level source; height = water level in metres (\u00D7 1); never polluted.",
+  "seaLevel": 97.5,
+  "sources": [
+    {
+      "id": "lake1",
+      "x": 6400,
+      "z": -1088,
+      "height": 138.36,
+      "radius": 300,
+      "type": "natural",
+      "rate": 90000,
+      "inPlayable": true,
+      "note": "wet body of 14903 cells (3.815 km\u00B2), surface 136.8\u2013142.3 m, no CS1 source within 400 m; SLOPING REACH: one level source will not fill it evenly, check in game"
+    },
+    {
+      "id": "lake2",
+      "x": -1920,
+      "z": -5792,
+      "height": 191.05,
+      "radius": 300,
+      "type": "natural",
+      "rate": 90000,
+      "inPlayable": true,
+      "note": "wet body of 3357 cells (0.859 km\u00B2), surface 189.6\u2013192.2 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake3",
+      "x": 1264,
+      "z": 5712,
+      "height": 158.05,
+      "radius": 300,
+      "type": "natural",
+      "rate": 90000,
+      "inPlayable": true,
+      "note": "wet body of 1200 cells (0.307 km\u00B2), surface 156.9\u2013159.2 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake4",
+      "x": 4608,
+      "z": -1696,
+      "height": 138.48,
+      "radius": 250,
+      "type": "natural",
+      "rate": 62500,
+      "inPlayable": true,
+      "note": "wet body of 766 cells (0.196 km\u00B2), surface 137.6\u2013139.1 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake5",
+      "x": 944,
+      "z": 3072,
+      "height": 139.91,
+      "radius": 114,
+      "type": "natural",
+      "rate": 12996,
+      "inPlayable": true,
+      "note": "wet body of 159 cells (0.041 km\u00B2), surface 139.3\u2013140.4 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake6",
+      "x": 576,
+      "z": -496,
+      "height": 108.38,
+      "radius": 108,
+      "type": "natural",
+      "rate": 11664,
+      "inPlayable": true,
+      "note": "wet body of 142 cells (0.036 km\u00B2), surface 108.0\u2013108.8 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake7",
+      "x": 6272,
+      "z": 4032,
+      "height": 134.94,
+      "radius": 101,
+      "type": "natural",
+      "rate": 10201,
+      "inPlayable": true,
+      "note": "wet body of 125 cells (0.032 km\u00B2), surface 133.6\u2013136.2 m, no CS1 source within 400 m; moved to the lowest CS2 terrain cell (6272, 4032, terrain 134.26 m): the centre cell was 138.23 m"
+    },
+    {
+      "id": "lake8",
+      "x": 608,
+      "z": -1376,
+      "height": 99.88,
+      "radius": 99,
+      "type": "natural",
+      "rate": 9801,
+      "inPlayable": true,
+      "note": "wet body of 120 cells (0.031 km\u00B2), surface 98.6\u2013100.7 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake9",
+      "x": -6016,
+      "z": 80,
+      "height": 176.39,
+      "radius": 76,
+      "type": "natural",
+      "rate": 5776,
+      "inPlayable": true,
+      "note": "wet body of 70 cells (0.018 km\u00B2), surface 167.6\u2013183.4 m, no CS1 source within 400 m; SLOPING REACH: one level source will not fill it evenly, check in game"
+    },
+    {
+      "id": "lake10",
+      "x": -1872,
+      "z": -7040,
+      "height": 190.98,
+      "radius": 74,
+      "type": "natural",
+      "rate": 5476,
+      "inPlayable": true,
+      "note": "wet body of 68 cells (0.017 km\u00B2), surface 190.4\u2013191.7 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake11",
+      "x": 6944,
+      "z": 2640,
+      "height": 135.84,
+      "radius": 62,
+      "type": "natural",
+      "rate": 3844,
+      "inPlayable": true,
+      "note": "wet body of 47 cells (0.012 km\u00B2), surface 133.7\u2013136.3 m, no CS1 source within 400 m; moved to the lowest CS2 terrain cell (6944, 2640, terrain 134.79 m): the centre cell was 135.55 m"
+    },
+    {
+      "id": "lake12",
+      "x": 1280,
+      "z": 3952,
+      "height": 141.22,
+      "radius": 55,
+      "type": "natural",
+      "rate": 3025,
+      "inPlayable": true,
+      "note": "wet body of 37 cells (0.009 km\u00B2), surface 140.8\u2013141.6 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake13",
+      "x": 272,
+      "z": 992,
+      "height": 138.52,
+      "radius": 52,
+      "type": "natural",
+      "rate": 2704,
+      "inPlayable": true,
+      "note": "wet body of 33 cells (0.008 km\u00B2), surface 132.6\u2013139.0 m, no CS1 source within 400 m; SLOPING REACH: one level source will not fill it evenly, check in game"
+    },
+    {
+      "id": "lake14",
+      "x": 4816,
+      "z": -784,
+      "height": 138.56,
+      "radius": 49,
+      "type": "natural",
+      "rate": 2401,
+      "inPlayable": true,
+      "note": "wet body of 29 cells (0.007 km\u00B2), surface 138.2\u2013139.0 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake15",
+      "x": 1008,
+      "z": 3952,
+      "height": 141.14,
+      "radius": 47,
+      "type": "natural",
+      "rate": 2209,
+      "inPlayable": true,
+      "note": "wet body of 27 cells (0.007 km\u00B2), surface 140.8\u2013141.4 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake16",
+      "x": 640,
+      "z": 1008,
+      "height": 138.92,
+      "radius": 22,
+      "type": "natural",
+      "rate": 484,
+      "inPlayable": true,
+      "note": "wet body of 6 cells (0.002 km\u00B2), surface 138.8\u2013139.0 m, no CS1 source within 400 m; moved to the lowest CS2 terrain cell (640, 1008, terrain 136.86 m): the centre cell was 138.44 m"
+    },
+    {
+      "id": "lake17",
+      "x": 1120,
+      "z": 3952,
+      "height": 141.2,
+      "radius": 22,
+      "type": "natural",
+      "rate": 484,
+      "inPlayable": true,
+      "note": "wet body of 6 cells (0.002 km\u00B2), surface 140.9\u2013141.4 m, no CS1 source within 400 m"
+    },
+    {
+      "id": "lake18",
+      "x": 4464,
+      "z": -1392,
+      "height": 138.38,
+      "radius": 20,
+      "type": "natural",
+      "rate": 400,
+      "inPlayable": true,
+      "note": "wet body of 5 cells (0.001 km\u00B2), surface 138.1\u2013138.7 m, no CS1 source within 400 m"
+    }
+  ]
 }

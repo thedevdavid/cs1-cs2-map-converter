@@ -1,6 +1,7 @@
 {
   "name": "Dakota Falls power lines",
   "_comment": "net-converter: CS1 Dakota Falls -\u003E CS2, x/z metres unchanged (factor 1.0), clipped at \u00B17168 m; y = CS1 world height; elevation = metres above terrain",
+  "_note": "Left out (replaced by import-power-ends.json): e5094_0, e32855_0.",
   "nodes": [
     {
       "id": "n11873",
@@ -133,13 +134,6 @@
       "x": 5899.13,
       "y": 160.84,
       "z": 2446.98,
-      "elevation": 0
-    },
-    {
-      "id": "n12755",
-      "x": 1633.48,
-      "y": 168.61,
-      "z": 4526.24,
       "elevation": 0
     },
     {
@@ -424,13 +418,6 @@
       "elevation": 0
     },
     {
-      "id": "n16152",
-      "x": 1650.51,
-      "y": 166.67,
-      "z": 4541.73,
-      "elevation": 0
-    },
-    {
       "id": "n4619",
       "x": 5182.08,
       "y": 173.87,
@@ -648,27 +635,6 @@
       "structure": "ground",
       "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
       "cs1_segment": 4779
-    },
-    {
-      "id": "e5094_0",
-      "a": "n26177",
-      "b": "n12755",
-      "prefab": "High-voltage Line",
-      "control": [
-        [
-          1661.46,
-          344.36,
-          4495.61
-        ],
-        [
-          1638.37,
-          324.07,
-          4520.79
-        ]
-      ],
-      "structure": "ground",
-      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
-      "cs1_segment": 5094
     },
     {
       "id": "e5302_0",
@@ -1530,27 +1496,6 @@
       "structure": "ground",
       "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
       "cs1_segment": 32466
-    },
-    {
-      "id": "e32855_0",
-      "a": "n2881",
-      "b": "n16152",
-      "prefab": "High-voltage Line",
-      "control": [
-        [
-          1678.97,
-          344.36,
-          4509.99
-        ],
-        [
-          1655.51,
-          324.07,
-          4536.11
-        ]
-      ],
-      "structure": "ground",
-      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
-      "cs1_segment": 32855
     },
     {
       "id": "e32968_0",

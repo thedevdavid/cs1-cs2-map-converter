@@ -1,6 +1,6 @@
 # Reconciliation with the live game
 
-Live graph `out\x1\live-graph.json`: 3418 segments, 3273 nodes. Coverage: 5 points per import edge (t = 0.1 … 0.9), each within 6 m of a live segment (chord + sagitta allowance, or the import curve when both ends coincide).
+Live graph `out\x1\live-graph.json`: 3746 segments, 3631 nodes. Coverage: 5 points per import edge (t = 0.1 … 0.9), each within 6 m of a live segment (chord + sagitta allowance, or the import curve when both ends coincide).
 
 Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong prefab = all 5 on some network; partial = 1–4; missing = none. Retry = missing, or partial with at most 2 points.
 
@@ -15,11 +15,11 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | rail | Double Train Track | 496 | 495 | 0 | 1 | 0 | 0 |
 | roads | Gravel Road | 1291 | 1289 | 0 | 2 | 0 | 0 |
 | roads | Medium Road | 42 | 42 | 0 | 0 | 0 | 0 |
-| roads | Pavement Path | 48 | 48 | 0 | 0 | 0 | 0 |
+| roads | Pavement Path | 48 | 47 | 0 | 1 | 0 | 0 |
 | roads | Small Road | 325 | 325 | 0 | 0 | 0 | 0 |
 | **highways** | **all** | 1870 | 1868 | 0 | 1 | 1 | 2 |
 | **rail** | **all** | 496 | 495 | 0 | 1 | 0 | 0 |
-| **roads** | **all** | 1706 | 1704 | 0 | 2 | 0 | 0 |
+| **roads** | **all** | 1706 | 1703 | 0 | 3 | 0 | 0 |
 
 ### Edges not fully covered
 
@@ -28,6 +28,7 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | highways | e15883_0 | Highway Oneway - 4 lanes | Missing | 0/0 | 437 | -4497 |
 | highways | e20430_0b | Highway Oneway - 3 lanes | Partial | 2/2 | 817 | 4011 |
 | rail | e25368_0 | Double Train Track | Partial | 4/4 | -182 | 2388 |
+| roads | e19284_0 | Pavement Path | Partial | 4/4 | 771 | 4830 |
 | roads | e25579_0 | Gravel Road | Partial | 4/4 | 6745 | 1411 |
 | roads | e36563_0 | Gravel Road | Partial | 4/4 | 5535 | 820 |
 

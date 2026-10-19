@@ -285,3 +285,14 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
 - `import-gaps.json`: e15883_0 as 3-lane (taper alternative in `import-gaps-e15883-taper.json`), e20430_0b bowed 1 m off the parallel carriageway, the CS1 gravel gap,
   e25579_0 / e36563_0 (Run A lost their T-junction node), and connectors for the three Pavement Path stubs (snap radius 20). Ends join the live net by snapToSegment.
   e15232_0, e17832_0 and e28650_0 were built in Run A (a curved segment sits on each) although the bridge reported them failed.
+
+## Round 10: Run A-v3 fixes
+
+- `FootprintShift`: walls and decor that the game dropped inside a highway's footprint (drop messages in `--run-reports`, default out/x1/run-*.md) move the
+  asked distance + 1 m away from the nearest course of the named highway; highway courses that the game would merge count as one chain. A move that would land
+  inside another chain (between carriageways) is skipped and listed as IMPOSSIBLE in stats.md. Without run reports, the geometric rule (two CS2 half-widths + 1 m,
+  highways within 6 m height) applies.
+- import-power.json leaves out the courses import-power-ends.json replaces (`_note`).
+- Lakes sit on the body's lowest CS2-terrain cell when the centre cell is not 0.5 m below the level; otherwise dropped with a note.
+- The CS2 heightmap default is the newest `<MMddHHmm>-dktflls-1to1.png` in the game's Heightmaps folder.
+- Gaps: gap_e15883_3lane bowed clear of the parallel 4-lane; path connectors under 10 m are left out (inside the road's footprint; the path end snaps in import-all.json).

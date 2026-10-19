@@ -6,23 +6,23 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | order | file | content | count | size |
 |---:|---|---|---|---:|
 | 1 | `out\import-all.json` | network (2×) | 4072 edges, 3915 nodes | 2.1 MB |
-| 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 8 edges | 0.0 MB |
+| 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 6 edges | 0.0 MB |
 | 1 | `out\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (2×) | 2 edges | 0.0 MB |
 | 1 | `out\x1\import-all.json` | network (1×) | 4072 edges, 3915 nodes | 2.1 MB |
-| 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 8 edges | 0.0 MB |
+| 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 6 edges | 0.0 MB |
 | 1 | `out\x1\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (1×) | 2 edges | 0.0 MB |
-| 2 | `out\import-power.json` | power (2×) | 60 edges | 0.0 MB |
+| 2 | `out\import-power.json` | power (2×) | 58 edges | 0.0 MB |
 | 2 | `out\import-walls.json` | walls: quays, retaining walls, canals, flood walls (2×) | 113 edges: QuaySmall01 97, Narrow Boatway 14, Sound Barrier 2 | 0.1 MB |
 | 2 | `out\import-shippaths.json` | ship paths (2×) | 100 edges: Medium Seaway 100 | 0.1 MB |
 | 2 | `out\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first) (2×) | 2 edges, replaces e5094_0, e32855_0 | 0.0 MB |
 | 2 | `out\import-dam-deck.json` | ROUND 8 dam deck network, absolute heights (after import-dam.json) (2×) | 1 edges | 0.0 MB |
-| 2 | `out\import-po-walls.json` | ROUND 9 QuaySmall01 sides of the PO paved blocks (2×) | 102 edges | 0.1 MB |
-| 2 | `out\x1\import-power.json` | power (1×) | 60 edges | 0.0 MB |
+| 2 | `out\import-po-walls.json` | ROUND 9 QuaySmall01 sides of the PO paved blocks (2×) | 101 edges | 0.1 MB |
+| 2 | `out\x1\import-power.json` | power (1×) | 58 edges | 0.0 MB |
 | 2 | `out\x1\import-walls.json` | walls: quays, retaining walls, canals, flood walls (1×) | 113 edges: QuaySmall01 97, Narrow Boatway 14, Sound Barrier 2 | 0.1 MB |
 | 2 | `out\x1\import-shippaths.json` | ship paths (1×) | 100 edges: Medium Seaway 100 | 0.1 MB |
 | 2 | `out\x1\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first) (1×) | 2 edges, replaces e5094_0, e32855_0 | 0.0 MB |
 | 2 | `out\x1\import-dam-deck.json` | ROUND 8 dam deck network, absolute heights (after import-dam.json) (1×) | 1 edges | 0.0 MB |
-| 2 | `out\x1\import-po-walls.json` | ROUND 9 QuaySmall01 sides of the PO paved blocks (1×) | 102 edges | 0.1 MB |
+| 2 | `out\x1\import-po-walls.json` | ROUND 9 QuaySmall01 sides of the PO paved blocks (1×) | 101 edges | 0.1 MB |
 | 3 | `out\import-water.json` | water (2×), seaLevel 195 | 41 sources, 0 refined | 0.0 MB |
 | 3 | `out\import-water-sea186.json` | water VARIANT (2×), seaLevel 186: import instead of import-water.json to try the measured level | 45 sources | 0.0 MB |
 | 3 | `out\import-water-lakes.json` | ROUND 9 lake sources for unexplained wet bodies (after the water file) (2×) | 18 sources | 0.0 MB |
@@ -36,7 +36,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
 | 5 | `out\import-dam.json` | ROUND 8 dam HydroelectricPowerPlant01, rotation 261.7 (2×) | 1 | 0.0 MB |
 | 5 | `out\import-po-rocks.json` | ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps (2×) | 594 | 0.1 MB |
-| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 19020 | 3.5 MB |
+| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 18994 | 3.5 MB |
 | 5 | `out\import-fort.json` | ROUND 9 fort wall props (UNVERIFIED names / lengths) (2×) | 97 | 0.0 MB |
 | 5 | `out\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (2×) | 2 | 0.0 MB |
 | 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
@@ -44,12 +44,12 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
 | 5 | `out\x1\import-dam.json` | ROUND 8 dam HydroelectricPowerPlant01, rotation 261.7 (1×) | 1 | 0.0 MB |
 | 5 | `out\x1\import-po-rocks.json` | ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps (1×) | 594 | 0.1 MB |
-| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 19020 | 3.5 MB |
+| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 18994 | 3.5 MB |
 | 5 | `out\x1\import-fort.json` | ROUND 9 fort wall props (UNVERIFIED names / lengths) (1×) | 97 | 0.0 MB |
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
 | 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |
 | 6 | `out\x1\import-trees-fixed-01.json` | trees at fixed height, with y (1×) | 50 | 0.0 MB |
-| 6 | `out\trees/import-trees-01.json` … `import-trees-10.json` | trees (both scales) | 496,318 in 10 files | |
+| 6 | `out\trees/import-trees-01.json` … `import-trees-10.json` | trees (both scales) | 496,289 in 10 files | |
 | 7 | `out\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 7 | `out\x1\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 8 | `out\import-surfaces-fields.json` | field surfaces | 56 polygons | 0.1 MB |
@@ -70,7 +70,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 9 | `out\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
 | 9 | `out\x1\import-surfaces-decals-unmerged.json` | EXPERIMENT: decal squares, not merged | 128 polygons | 0.0 MB |
 | 9 | `out\x1\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
-| 9 | `out\trees/experiment-trees-net-corridor-01.json` | EXPERIMENT: trees on ground-net corridors (both scales) | 641 | |
+| 9 | `out\trees/experiment-trees-net-corridor-01.json` | EXPERIMENT: trees on ground-net corridors (both scales) | 670 | |
 
 Reports (both folders): `water-check.md`, `surfaces-summary.md`, `surfaces.geojson`, `manual-objects.md`, `connections-check.md`, `stats.md`.
 
@@ -96,3 +96,22 @@ Defect scan of Run A (`out/x1/live-defects.md`, scanner now skips walls / ship p
 and e15883_0 (68 m) are failed import edges, the Gravel 80 m at (1462, 6173) is the CS1 gap. The Gravel / Narrow Boatway 265 m pair was two CS1 dead ends
 (road 23 m above the canal end), not a converter gap. 14 zero-length QuaySmall01 stubs sit on ends of wall-flagged edges (for the bridge analysis).
 Pavement Path stubs: 3 now carry snapToSegment for the next import ((4783, −683), (1577, 4694), (737, 4853)); (295, −3026) is an isolated path, nothing to join.
+
+## Run A-v3 (fresh map, tools/import-run.mjs; reports out/x1/run-20261019-165751.md, run-20261019-165831.md)
+
+network 4 063/4 072, gaps 2/8, power 60, walls 90/113, po-walls 98/102, ship paths 100, decor 86/96, water 44, lakes 17 (lake7 rejected), connections 25,
+objects 6 130, barriers 621, station, dam + deck, po-rocks 594, scatter 19 020, fort 97, trees 496 368, resources 4, surfaces 869, power-ends 1/2.
+
+Failures, classified (round 10 fixes in brackets):
+- Game drops (course inside another net's footprint): walls 17, decor 10, po-walls 1, gaps 2.
+  [walls / decor: moved the asked distance + 1 m away from the named highway: 10 walls + 4 decor move; 7 walls + 6 decor would land inside the other
+  carriageway and stay (listed in stats.md as IMPOSSIBLE). pb646_side23 left out. gap_e15883_3lane bowed 4.5 m off the parallel 4-lane;
+  gap_n7811_path dropped (its path end snaps by itself in import-all.json; same for n13342).]
+- Geometry / detection ("only N of 3 points lie on a segment of this prefab"): network 9 (e15883_0, e20430_0b, seven Gravel), walls 3 (e835_0, e23249_0,
+  e23938_0), po-walls 3 (pb693/pb694), gaps 4 (gap_e20430_offset, gap_e25579_0, gap_e36563_0, gap_n13342_path). Not a footprint drop: the game built
+  something else or nothing there; check in game (Run A showed three such Gravel pieces built as curves).
+- power-ends: e5094_0_to_substation overlapped the original e5094_0 [import-power.json now leaves out e5094_0 and e32855_0].
+- lake7: level 134.94 m under the CS2 terrain 138.23 m at the body centre [lakes now sit on the body's lowest CS2-terrain cell (lake7, 11, 16 moved);
+  a lake whose level is not 0.5 m above even that is dropped with a note]. The CS2 heightmap default is now the newest <MMddHHmm>-dktflls-1to1.png
+  (10190843, the one A-v3 used).
+- Fort piece lengths: not reported by the bridge yet; fort-walls.tsv still holds the guesses (all 97 props were created).

@@ -188,10 +188,12 @@ public static class Round9
     /// One natural source per wet body that no CS1 source within 400 m explains (water-check.md): at the body cell nearest its centroid,
     /// level = the body's median CS1 surface, radius = √(area/π) clamped 20–300 m. Bodies of one cell are left out.
     /// </summary>
-    public static (List<WaterOut> Sources, int Bodies, int Outside, int Tiny) Lakes(WaterSurface ws, Dump dump, double seaLevelCs1, double half)
+    public static (List<WaterOut> Sources, int Bodies, int Outside, int Tiny) Lakes(WaterSurface ws, Dump dump, double seaLevelCs1, double half,
+        Func<double, double, double>? cs2TerrainTrue, out List<string> log)
     {
         var (_, bodies) = ws.Orphans(dump, seaLevelCs1);
         var res = new List<WaterOut>(); int outside = 0, tiny = 0, k = 0;
+        log = new List<string>();
         foreach (var b in bodies)
         {
             if (b.Count < 2) { tiny++; continue; }
@@ -199,16 +201,43 @@ public static class Round9
             if (Math.Abs(cx) > half || Math.Abs(cz) > half) { outside++; continue; }
             int best = b.MinBy(i => { var (x, z) = ws.Grid.Centre(i); return (x - cx) * (x - cx) + (z - cz) * (z - cz); });
             var (sx, sz) = ws.Grid.Centre(best);
+            k++;
             double area = b.Count * ws.Grid.CellSize * ws.Grid.CellSize;
             double radius = Math.Round(Math.Clamp(Math.Sqrt(area / Math.PI), 20, 300));
             var surf = b.Select(i => ws.Cells[i].Surface).ToList();
             double level = WaterSurface.Median(surf.ToList()), range = surf.Max() - surf.Min();
-            res.Add(new WaterOut($"lake{++k}", sx, sz, level, radius, (long)(radius * radius), Fmt($"wet body of {b.Count} cells ({area / 1e6:F3} km²), surface {surf.Min():F1}–{surf.Max():F1} m, no CS1 source within 400 m{(range > 3 ? "; SLOPING REACH: one level source will not fill it evenly, check in game" : "")}")));
+            // Run A-v3: lake7 was rejected ("water level is not above the terrain"): the CS2 terrain differs from CS1's. Move the
+            // source to the body cell with the lowest CS2 terrain; if the level is still not 0.5 m above it, drop the lake.
+            string moved = "";
+            if (cs2TerrainTrue != null && level <= cs2TerrainTrue(sx, sz) + 0.5)
+            {
+                int low = b.MinBy(i => { var (x, z) = ws.Grid.Centre(i); return cs2TerrainTrue(x, z); });
+                var (lx, lz) = ws.Grid.Centre(low); double t = cs2TerrainTrue(lx, lz);
+                if (level <= t + 0.5) { log.Add(Fmt($"lake{k} dropped: level {level:F2} m is not above the CS2 terrain (lowest cell of the body {t:F2} m)")); continue; }
+                moved = Fmt($"; moved to the lowest CS2 terrain cell ({lx:F0}, {lz:F0}, terrain {t:F2} m): the centre cell was {cs2TerrainTrue(sx, sz):F2} m");
+                log.Add(Fmt($"lake{k}: centre terrain {cs2TerrainTrue(sx, sz):F2} m vs level {level:F2} m, moved to ({lx:F0}, {lz:F0}) terrain {t:F2} m"));
+                (sx, sz) = (lx, lz);
+            }
+            res.Add(new WaterOut($"lake{k}", sx, sz, level, radius, (long)(radius * radius), Fmt($"wet body of {b.Count} cells ({area / 1e6:F3} km²), surface {surf.Min():F1}–{surf.Max():F1} m, no CS1 source within 400 m{(range > 3 ? "; SLOPING REACH: one level source will not fill it evenly, check in game" : "")}{moved}")));
         }
         return (res, bodies.Count, outside, tiny);
     }
 
     static string Fmt(FormattableString f) => f.ToString(Ci);
+
+    /// <summary>
+    /// Control points of a course bowed clear of a highway whose footprint would swallow it (the ends stay on their nodes, so only the
+    /// middle samples move: control shift = 4/3 of the needed clearance + 1 m). Unchanged when nothing swallows it.
+    /// </summary>
+    public static (Vec3 B, Vec3 C, string Note) Clear(ConvertResult res, OutEdge e, double half, double topologyFactor)
+    {
+        var ex = new HashSet<OutNode>(ReferenceEqualityComparer.Instance) { e.A, e.B };
+        var hit = FootprintShift.Inside(FootprintShift.Samples(e.Curve), half, (e.A.Position.Y + e.B.Position.Y) / 2, FootprintShift.Highways(res), ex, topologyFactor);
+        if (hit is not { } h) return (e.Curve.B, e.Curve.C, "");
+        double s = (h.Need + 1 - h.MinD) * 4 / 3;
+        var off = new Vec3(h.Nx * s, 0, h.Nz * s);
+        return (e.Curve.B + off, e.Curve.C + off, Fmt($"; bowed {s:F1} m away from {h.H.Id} {h.H.Map.Cs2Prefab} ({h.MinD:F1} m, needs {h.Need:F1})"));
+    }
 
     // ---------- 6. Network gaps ----------
 
@@ -236,7 +265,9 @@ public static class Round9
         if (byId.TryGetValue("e15883_0", out var e4))
         {
             nodes.Add(Snap(e4.A, 3, "Highway Oneway")); nodes.Add(Snap(e4.B, 3, "Highway Oneway"));
-            edges.Add(new NetEdge("gap_e15883_3lane", e4.A.Id, e4.B.Id, "Highway Oneway - 3 lanes", C(e4, e4.Curve.B, 1 / 3.0), C(e4, e4.Curve.C, 2 / 3.0), Note: "e15883_0 as a 3-lane course"));
+            var (b1, b2, bow) = Clear(res, e4, FootprintShift.Cs2Half("Highway Oneway - 3 lanes", 8), topologyFactor);
+            edges.Add(new NetEdge("gap_e15883_3lane", e4.A.Id, e4.B.Id, "Highway Oneway - 3 lanes", C(e4, b1, 1 / 3.0), C(e4, b2, 2 / 3.0), Note: "e15883_0 as a 3-lane course" + bow));
+            if (bow.Length > 0) log.Add("e15883_0" + bow);
             // Taper: 12 m of 4-lane from the 4-lane end.
             bool aIs4 = res.Edges.Any(x => x != e4 && (x.A == e4.A || x.B == e4.A) && x.Map.Cs2Prefab == "Highway Oneway - 4 lanes");
             double total = e4.Curve.LengthXZ(), t = Math.Clamp(12 / total, 0.05, 0.5);
@@ -288,7 +319,7 @@ public static class Round9
                 .Select(e => Enumerable.Range(0, 65).Select(k => e.Curve.Eval(k / 64.0)).MinBy(p => Len(p.X, p.Z, n.Position.X, n.Position.Z)))
                 .MinBy(p => Len(p.X, p.Z, n.Position.X, n.Position.Z));
             double d = Len(target.X, target.Z, n.Position.X, n.Position.Z);
-            if (d < 4) continue;
+            if (d < 10) { log.Add(Fmt($"path stub {n.Id}: {d:F1} m, inside the road footprint; left to its snapToSegment in import-all.json")); continue; }
             nodes.Add(Snap(n, 2, PathSnap.PathPrefab));
             nodes.Add(new NetNode($"{n.Id}_join", target.X, target.Y * Outputs.YScale, target.Z, 20, n.Snap!.Value.Prefab));
             edges.Add(new NetEdge($"gap_{n.Id}_path", n.Id, $"{n.Id}_join", PathSnap.PathPrefab, Note: Fmt($"path stub joined to {n.Snap.Value.Prefab}, {d:F1} m")));

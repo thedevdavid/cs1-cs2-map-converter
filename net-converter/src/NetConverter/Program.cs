@@ -3,7 +3,7 @@ using NetConverter;
 
 string? dumpPath = null, mappingPath = null, outDir = "out", livePath = null, baselineDir = null, heightmapPath = null, retryReport = null;
 bool inventoryOnly = false, retry = false, layersOnly = false;
-string? treesDir = null, rockHeightmapPath = null, cs2HeightmapPath = null;
+string? treesDir = null, rockHeightmapPath = null, cs2HeightmapPath = null, runReportsDir = Path.Combine("out", "x1");
 string poOfflinePath = Path.Combine("..", "cs1-offline", "out", "po-offline.json");
 double rockDegrees = 40;
 bool seawayAtWater = false, mergeCanal = true;
@@ -12,9 +12,12 @@ const string NetCorridorRule = "on a ground-level net corridor (half width + 2 m
 {
     var cs2Hm = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "AppData", "LocalLow", "Colossal Order", "Cities Skylines II", "Heightmaps", "10190442-dktflls-1to1.png");
     if (File.Exists(cs2Hm)) rockHeightmapPath = cs2Hm;
-    // The playable CS2 heightmap with the PO mountains and rock work stamped in (hm-rebuild 10190615): object y policy, cliff assets.
-    var stamped = Path.Combine(Path.GetDirectoryName(cs2Hm)!, "10190615-dktflls-1to1.png");
-    if (File.Exists(stamped)) cs2HeightmapPath = stamped;
+    // The playable CS2 heightmap (hm-rebuild): object y policy, cliff flanks, power-end ground, lake checks.
+    // Default: the newest <MMddHHmm>-dktflls-1to1.png (next-run/RUNBOOK.md naming; A-v3 used 10190843).
+    var hmDir = Path.GetDirectoryName(cs2Hm)!;
+    if (Directory.Exists(hmDir))
+        cs2HeightmapPath = Directory.GetFiles(hmDir, "*-dktflls-1to1.png").Where(p => System.Text.RegularExpressions.Regex.IsMatch(Path.GetFileName(p), @"^\d{8}-dktflls-1to1\.png$"))
+            .OrderByDescending(p => Path.GetFileName(p), StringComparer.Ordinal).FirstOrDefault();
 }
 ulong treeSeed = 20261019;
 double rampDelta = 6, rampLength = 60, minBridge = 8, seaLevel = 97.5, waterVariant = double.NaN, heightFactor = 2.0, topologyFactor = 2.0;
@@ -32,6 +35,7 @@ for (int i = 0; i < args.Length; i++)
         case "--trees-dir": treesDir = args[++i]; break;
         case "--rock-heightmap": rockHeightmapPath = args[++i]; break;
         case "--cs2-heightmap": cs2HeightmapPath = args[++i]; break;
+        case "--run-reports": runReportsDir = args[++i]; break;
         case "--seaway-at-water": seawayAtWater = true; break;
         case "--no-merge-canal": mergeCanal = false; break;
         case "--po-offline": poOfflinePath = args[++i]; break;
@@ -166,6 +170,18 @@ auditLog.AppendLine($"- Short border edges folded into their neighbour (< 10 m):
     auditLog.AppendLine($"- Flat QuaySmall01 edges (cross-slope < 0.4 m at × {heightFactor}): {flat}, wall {string.Join(", ", sides.Select(s => $"{s.Key} {s.Value}"))}; their nodes raised to ≥ 4 m (one side) / ≥ 8 m (both) as the fallback.");
     Console.WriteLine($"walls: boatways kept {boat.Count - dry.Count}/{boat.Count}; flat quays forced {flat}");
 }
+{
+    // Run A-v3: walls and decor that run inside a highway's footprint are dropped by the game; move them sideways.
+    // Ground truth: the drop messages in the import runs (tools/import-run.mjs reports, --run-reports); without them, the geometric rule.
+    var reports = Directory.Exists(runReportsDir) ? Directory.GetFiles(runReportsDir, "run-*.md").OrderBy(p => p, StringComparer.Ordinal).ToList() : new List<string>();
+    var drops = reports.Count > 0 ? FootprintShift.ParseDrops(reports) : null;
+    if (drops != null) auditLog.AppendLine($"- Run reports read for game drops: {string.Join(", ", reports.Select(Path.GetFileName))} ({drops.Count} dropped courses).");
+    var fs8 = FootprintShift.Apply(result, result.Layer(Layers.Walls).Concat(result.Layer(Layers.Decor)), topologyFactor, drops);
+    auditLog.AppendLine($"- Courses inside a highway footprint (walls, decor) moved sideways by the two CS2 half-widths + 1 m: {fs8.Shifted.Count}; impossible (between carriageways) {fs8.Impossible.Count}.");
+    foreach (var l in fs8.Shifted) auditLog.AppendLine($"  - shifted: {l}");
+    foreach (var l in fs8.Impossible) auditLog.AppendLine($"  - IMPOSSIBLE: {l}");
+    Console.WriteLine($"footprint shift: {fs8.Shifted.Count} moved, {fs8.Impossible.Count} impossible");
+}
 if (seawayAtWater)
 {
     // Finding 7: seaways at the water surface instead of the riverbed (pending the bridge's dig test).
@@ -220,7 +236,16 @@ Outputs.WriteImport(Path.Combine(outDir, "import-all.json"), "Dakota Falls netwo
     Layers.Imported.SelectMany(l => result.Layer(l)).ToList(), absolute);
 // Power stays out of import-all.json so it is a separately undoable import.
 var power = result.Layer(Layers.Power).Where(e => e.Map.Cs2Prefab != null).ToList();
-if (power.Count > 0) Outputs.WriteImport(Path.Combine(outDir, "import-power.json"), "Dakota Falls power lines", power, absolute);
+{
+    // Run A-v3: the last courses that import-power-ends.json replaces stay out of import-power.json (else the new ends overlap them).
+    var pTargets = new List<(string, double, double)>();
+    var sb0 = Round8.Buildings(rootDoc.RootElement, "(?i)Substation"); if (sb0.Count > 0) pTargets.Add(("substation", sb0[0].X, sb0[0].Z));
+    if (Round8.Dam(Round8.Buildings(rootDoc.RootElement, "(?i)Dam Electricity")) is { } dm0) pTargets.Add(("dam", dm0.A.X, dm0.A.Z));
+    var replaced = Round8.PowerEnds(power, pTargets).Select(p => p.Replaces).ToHashSet(ReferenceEqualityComparer.Instance);
+    var kept = power.Where(e => !replaced.Contains(e)).ToList();
+    if (kept.Count > 0) Outputs.WriteImport(Path.Combine(outDir, "import-power.json"), "Dakota Falls power lines", kept, absolute,
+        $"Left out (replaced by import-power-ends.json): {string.Join(", ", replaced.Cast<OutEdge>().Select(e => e.Id))}.");
+}
 Console.WriteLine($"power: {power.Count} courses -> {(power.Count > 0 ? "import-power.json" : "not written (power rule is SKIP in mapping.tsv)")}");
 foreach (var (layer, title, fileName) in new[] { (Layers.Walls, "walls (quays, retaining walls, canals, flood walls)", "import-walls.json"), (Layers.ShipPaths, "ship paths", "import-shippaths.json"), (Layers.Decor, "DECORATIVE monorail arch bridge (not transit)", "import-decor-monorail.json") })
 {
@@ -628,6 +653,7 @@ void WriteLayers()
 
     // Round 9: PO rock texture, the fort, PO paved blocks, lakes, network gaps; one import file each.
     {
+        Func<double, double, double>? cs2True = cs2Terrain == null ? null : cs2Terrain.Sample;
         string ci(FormattableString f) => FormattableString.Invariant(f);
         var r9 = new List<string>();
         var smap = TargetMapping.Load(Find("surface-mapping.tsv"));
@@ -647,13 +673,19 @@ void WriteLayers()
         var blocks = Round9.LoadPavedBlocks(poOfflinePath);
         string pave = smap.Resolve("pavement")?.FirstOrDefault()?.Prefab ?? "Pavement Surface 01";
         var (ps, pn, pe, tall) = Round9.PavedStructures(blocks, pave, heightFactor, 7168);
+        // Run A-v3: paved-block sides the game dropped inside a highway are left out (run reports).
+        var pbDrops = Directory.Exists(runReportsDir) ? FootprintShift.ParseDrops(Directory.GetFiles(runReportsDir, "run-*.md")) : new();
+        var pbOut = pe.Where(e => pbDrops.ContainsKey(e.Id)).Select(e => e.Id).ToList();
+        pe.RemoveAll(e => pbDrops.ContainsKey(e.Id));
+        if (pbOut.Count > 0) r9.Add($"PO walls left out (dropped by the game inside a highway in the run reports): {string.Join(", ", pbOut)}");
         Surfaces.Write(Path.Combine(outDir, "import-po-structures.json"), "po-structures", ps, $"Tops of the PO paved blocks (convex hull of the top vertices), {pave}, overlaps unioned.");
         Round9.WriteNet(Path.Combine(outDir, "import-po-walls.json"), "Dakota Falls PO paved-block walls",
             "QuaySmall01 along the long sides of the PO paved blocks taller than 4 m, at the block top (absolute heights); the game raises the lower side as a retaining wall.", pn, pe);
         r9.Add(ci($"PO paved blocks: {blocks.Count} blocks -> {ps.Count} pavement polygons (import-po-structures.json); {tall} taller than 4 m -> {pe.Count} QuaySmall01 edges (import-po-walls.json); tunnel/shed and bridge/pillar PO stay in manual-objects.md"));
         if (surfaceEarly != null)
         {
-            var (lakes, bodies, outside, tiny) = Round9.Lakes(surfaceEarly, dump, seaLevel, 7168);
+            var (lakes, bodies, outside, tiny) = Round9.Lakes(surfaceEarly, dump, seaLevel, 7168, cs2True, out var lakeLog);
+            foreach (var l in lakeLog) r9.Add("lake " + l);
             Water.Write(Path.Combine(outDir, "import-water-lakes.json"), lakes, heightFactor, seaLevel * heightFactor, 7168);
             r9.Add(ci($"lakes: {bodies} wet bodies above sea level {seaLevel} + 1 m with no CS1 source within 400 m; {lakes.Count} sources (outside the map {outside}, single cells {tiny}) -> import-water-lakes.json (append after import-water*.json)"));
         }

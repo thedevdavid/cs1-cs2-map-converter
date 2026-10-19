@@ -2958,25 +2958,6 @@
       "note": "PO 646 paved block, 20 m tall"
     },
     {
-      "id": "pb646_side23",
-      "a": "pb646_2",
-      "b": "pb646_3",
-      "prefab": "QuaySmall01",
-      "control": [
-        [
-          3672.41,
-          388.02,
-          2192.93
-        ],
-        [
-          3687.07,
-          388.02,
-          2205.46
-        ]
-      ],
-      "note": "PO 646 paved block, 20 m tall"
-    },
-    {
       "id": "pb647_side01",
       "a": "pb647_0",
       "b": "pb647_1",

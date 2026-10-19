@@ -24,13 +24,14 @@ public static class Outputs
 
     /// <param name="absolute">heightMode "absolute": every node carries y = terrain + elevation; only ground nodes carry
     /// elevation 0, raised/sunk nodes get their height from y (the bridge computes elevation = y − terrain); edges carry no elevation.</param>
-    public static void WriteImport(string path, string name, IReadOnlyList<OutEdge> edges, bool absolute = false)
+    public static void WriteImport(string path, string name, IReadOnlyList<OutEdge> edges, bool absolute = false, string? note = null)
     {
         using var fs = File.Create(path);
         using var w = Writer(fs);
         w.WriteStartObject();
         w.WriteString("name", name);
         w.WriteString("_comment", "net-converter: CS1 Dakota Falls -> CS2, x/z metres unchanged (factor 1.0), clipped at ±7168 m; y = CS1 world height; elevation = metres above terrain");
+        if (note != null) w.WriteString("_note", note);
         w.WriteStartArray("nodes");
         foreach (var n in edges.SelectMany(e => new[] { e.A, e.B }).Distinct())
         {

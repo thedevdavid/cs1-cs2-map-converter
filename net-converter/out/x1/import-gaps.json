@@ -103,26 +103,6 @@
       }
     },
     {
-      "id": "n13342",
-      "x": 1576.57,
-      "y": 166.93,
-      "z": 4694.35,
-      "snapToSegment": {
-        "radius": 2,
-        "prefabContains": "Pavement Path"
-      }
-    },
-    {
-      "id": "n13342_join",
-      "x": 1585.15,
-      "y": 166.95,
-      "z": 4698.74,
-      "snapToSegment": {
-        "radius": 20,
-        "prefabContains": "Gravel Road"
-      }
-    },
-    {
       "id": "n21342",
       "x": 736.56,
       "y": 171.39,
@@ -141,26 +121,6 @@
         "radius": 20,
         "prefabContains": "Gravel Road"
       }
-    },
-    {
-      "id": "n7811",
-      "x": 4782.64,
-      "y": 145.1,
-      "z": -683.1,
-      "snapToSegment": {
-        "radius": 2,
-        "prefabContains": "Pavement Path"
-      }
-    },
-    {
-      "id": "n7811_join",
-      "x": 4778.58,
-      "y": 145.91,
-      "z": -674.69,
-      "snapToSegment": {
-        "radius": 20,
-        "prefabContains": "Small Road"
-      }
     }
   ],
   "edges": [
@@ -171,17 +131,17 @@
       "prefab": "Highway Oneway - 3 lanes",
       "control": [
         [
-          447.45,
+          450.6,
           114.64,
-          -4506.55
+          -4503.29
         ],
         [
-          427.09,
+          430.24,
           114.21,
-          -4488.26
+          -4485.01
         ]
       ],
-      "note": "e15883_0 as a 3-lane course"
+      "note": "e15883_0 as a 3-lane course; bowed 4.5 m away from e1403_0 Highway Oneway - 4 lanes (15.6 m, needs 18.0)"
     },
     {
       "id": "gap_e20430_offset",
@@ -260,25 +220,6 @@
       "note": "Run A: T-junction node absorbed"
     },
     {
-      "id": "gap_n13342_path",
-      "a": "n13342",
-      "b": "n13342_join",
-      "prefab": "Pavement Path",
-      "control": [
-        [
-          1579.43,
-          166.94,
-          4695.81
-        ],
-        [
-          1582.29,
-          166.94,
-          4697.28
-        ]
-      ],
-      "note": "path stub joined to Gravel Road, 9.6 m"
-    },
-    {
       "id": "gap_n21342_path",
       "a": "n21342",
       "b": "n21342_join",
@@ -296,25 +237,6 @@
         ]
       ],
       "note": "path stub joined to Gravel Road, 12.8 m"
-    },
-    {
-      "id": "gap_n7811_path",
-      "a": "n7811",
-      "b": "n7811_join",
-      "prefab": "Pavement Path",
-      "control": [
-        [
-          4781.29,
-          145.37,
-          -680.29
-        ],
-        [
-          4779.93,
-          145.64,
-          -677.49
-        ]
-      ],
-      "note": "path stub joined to Small Road, 9.3 m"
     }
   ],
   "options": {
