@@ -3,7 +3,7 @@ using NetConverter;
 
 string? dumpPath = null, mappingPath = null, outDir = "out", livePath = null, baselineDir = null, heightmapPath = null, retryReport = null;
 bool inventoryOnly = false, retry = false, layersOnly = false;
-string? treesDir = null, rockHeightmapPath = null;
+string? treesDir = null, rockHeightmapPath = null, cs2HeightmapPath = null;
 string poOfflinePath = Path.Combine("..", "cs1-offline", "out", "po-offline.json");
 double rockDegrees = 40;
 bool seawayAtWater = false, mergeCanal = true;
@@ -12,6 +12,9 @@ const string NetCorridorRule = "on a ground-level net corridor (half width + 2 m
 {
     var cs2Hm = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "AppData", "LocalLow", "Colossal Order", "Cities Skylines II", "Heightmaps", "10190442-dktflls-1to1.png");
     if (File.Exists(cs2Hm)) rockHeightmapPath = cs2Hm;
+    // The playable CS2 heightmap with the PO mountains and rock work stamped in (hm-rebuild 10190615): object y policy, cliff assets.
+    var stamped = Path.Combine(Path.GetDirectoryName(cs2Hm)!, "10190615-dktflls-1to1.png");
+    if (File.Exists(stamped)) cs2HeightmapPath = stamped;
 }
 ulong treeSeed = 20261019;
 double rampDelta = 6, rampLength = 60, minBridge = 8, seaLevel = 97.5, waterVariant = double.NaN, heightFactor = 2.0, topologyFactor = 2.0;
@@ -28,6 +31,7 @@ for (int i = 0; i < args.Length; i++)
         case "--retry": retry = true; break;
         case "--trees-dir": treesDir = args[++i]; break;
         case "--rock-heightmap": rockHeightmapPath = args[++i]; break;
+        case "--cs2-heightmap": cs2HeightmapPath = args[++i]; break;
         case "--seaway-at-water": seawayAtWater = true; break;
         case "--no-merge-canal": mergeCanal = false; break;
         case "--po-offline": poOfflinePath = args[++i]; break;
@@ -45,7 +49,7 @@ for (int i = 0; i < args.Length; i++)
         case "--sea-level": seaLevel = double.Parse(args[++i], System.Globalization.CultureInfo.InvariantCulture); break;
         case "--ramp-length": rampLength = double.Parse(args[++i], System.Globalization.CultureInfo.InvariantCulture); break;
         case "--help" or "-h":
-            Console.WriteLine("net-converter <dump.json> [--mapping mapping.tsv] [--out out] [--inventory] [--live out/live-graph.json] [--baseline out/round1] [--ramp-delta 6] [--ramp-length 60] [--retry] [--trees-dir DIR] [--tree-seed N] [--network-only] [--heightmap cs2-4096.png] [--retry-report report.json] [--min-bridge-elevation 8] [--sea-level 97.5] [--water-variant 93.0] [--height-factor 2] [--topology-factor 2] [--height-mode absolute|elevation]");
+            Console.WriteLine("net-converter <dump.json> [--mapping mapping.tsv] [--out out] [--inventory] [--live out/live-graph.json] [--baseline out/round1] [--ramp-delta 6] [--ramp-length 60] [--retry] [--trees-dir DIR] [--tree-seed N] [--network-only] [--heightmap cs2-4096.png] [--retry-report report.json] [--min-bridge-elevation 8] [--sea-level 97.5] [--water-variant 93.0] [--cs2-heightmap 10190615-dktflls-1to1.png] [--height-factor 2] [--topology-factor 2] [--height-mode absolute|elevation]");
             return 0;
         default: dumpPath = args[i]; break;
     }
@@ -66,6 +70,14 @@ if (heightmapPath != null)
 {
     cs1Terrain = Heightmap.LoadPng(heightmapPath);
     cs1Terrain.Orient(dump.Nodes.Values.Select(n => (n.Position.X, n.Position.Z, n.Terrain)));
+}
+// CS2 playable heightmap, true metres (value / 32 at the 2048 scale), 3.5 m/px.
+Heightmap? cs2Terrain = null;
+if (cs2HeightmapPath != null && File.Exists(cs2HeightmapPath))
+{
+    cs2Terrain = Heightmap.LoadPng(cs2HeightmapPath);
+    double err2 = cs2Terrain.Orient(dump.Nodes.Values.Select(n => (n.Position.X, n.Position.Z, n.Terrain)));
+    Console.WriteLine($"cs2 heightmap {cs2HeightmapPath}: row 0 = {(cs2Terrain.NorthUp ? "north" : "south")}, mean |CS2 − CS1 terrain| at CS1 nodes {err2:F2} m");
 }
 // CS2 heights = heightFactor × CS1 (2048 m heightmap at Height Scale 4096 -> 2). Everything below works in CS2 metres.
 var inventory = Outputs.Inventory(dump);
@@ -413,9 +425,10 @@ void WriteLayers()
 
     // Buildings, props, decorations.
     Func<double, double, double>? terr = cs1Terrain == null ? null : cs1Terrain.Sample;
-    var objs = Objects.Build(root, TargetMapping.Load(Find("object-mapping.tsv")), terr, heightFactor, 7168, treeSeed + 1);
+    var objs = Objects.Build(root, TargetMapping.Load(Find("object-mapping.tsv")), terr, heightFactor, 7168, treeSeed + 1, cs2Terrain == null ? null : cs2Terrain.Sample);
     Objects.Write(Path.Combine(outDir, "import-objects.json"), "objects", objs.Objects);
-    Console.WriteLine($"objects: {objs.Targeted} placed of {objs.Total} (skip {objs.Skipped}, manual {objs.ManualCount}, unmapped {objs.Unmapped}, outside {objs.Outside}, with y {objs.WithY})");
+    Console.WriteLine($"objects: {objs.Targeted} placed of {objs.Total} (skip {objs.Skipped}, manual {objs.ManualCount}, unmapped {objs.Unmapped}, outside {objs.Outside}, with y {objs.WithY}; vs the CS1-terrain rule: lost y {objs.LostY}, gained y {objs.GainedY})");
+    extra.AppendLine($"- Object y policy: {(cs2Terrain != null ? $"y only > 3 m above the CS2 playable heightmap ({Path.GetFileName(cs2HeightmapPath)})" : "y where > 2 m off the CS1 terrain (no CS2 heightmap)")}, never for buildings: {objs.WithY} with y; against the old CS1-terrain rule {objs.LostY} lose y, {objs.GainedY} gain it.");
     extra.AppendLine($"- Objects: {objs.Targeted} of {objs.Total} CS1 buildings/props got a CS2 target ({100.0 * objs.Targeted / Math.Max(1, objs.Total):F1} %); SKIP {objs.Skipped}, MANUAL {objs.ManualCount}, unmapped {objs.Unmapped}, outside ±7168 m {objs.Outside}; {objs.WithY} carry y.");
     extra.AppendLine().AppendLine("| CS1 prefab | count | decision |").AppendLine("|---|---:|---|");
     foreach (var (k, v) in objs.PerCs1.OrderByDescending(kv => kv.Value.Count)) extra.AppendLine($"| {k} | {v.Count} | {v.Decision} |");
@@ -559,17 +572,56 @@ void WriteLayers()
 
     // Steep rock (audit/theme.md: CS1 true-height slope >= 40°): same polygons for both scales, from the 1:1 heightmap.
     var rockHm = rockHeightmapPath ?? heightmapPath;
+    var rockPolys = new List<SurfacePolygon>();
     if (rockHm != null && File.Exists(rockHm))
     {
         var hmTrue = Heightmap.LoadPng(rockHm);   // 2048 m scale = true CS1 heights
         double err = hmTrue.Orient(dump.Nodes.Values.Select(n => (n.Position.X, n.Position.Z, n.Terrain / dump.HeightFactor)));
         var rock = Surfaces.SteepRock(hmTrue, rockDegrees);
         var rocks = rock.Polygons.Select((r, k) => new SurfacePolygon($"rock{k + 1}", RockSurface, r, $"slope >= {rockDegrees}°")).ToList();
+        rockPolys = rocks;
         Surfaces.Write(Path.Combine(outDir, "import-surfaces-rock.json"), "surfaces-rock", rocks,
             $"Automatic rock surface: pixels of {Path.GetFileName(rockHm)} (true heights, 3.5 m) with slope >= {rockDegrees}°, patches >= 400 m², hole-free, simplified to 4 m, largest {rocks.Count} kept. Prefab {RockSurface} (Terrain Textures Pack - Rocks, brown scree).");
         string msg = string.Create(System.Globalization.CultureInfo.InvariantCulture, $"rock: {Path.GetFileName(rockHm)} (|err| vs CS1 nodes {err:F2} m), steep area {rock.SteepArea / 1e6:F2} km² in {rock.Patches} patches >= 400 m²; {rocks.Count} polygons kept ({rock.KeptArea / 1e6:F2} km²), {rock.Dropped} smallest dropped");
         Console.WriteLine(msg);
         extra.AppendLine($"- Rock surfaces (import-surfaces-rock.json): {msg.Substring(6)}.");
+    }
+
+    // Round 8 (owner review of Run A): substation, dam, power-line ends, PO cliff objects, rock scatter; one import file each.
+    {
+        Func<double, double, double>? cs2True = cs2Terrain == null ? null : cs2Terrain.Sample;
+        var sub = objs.Objects.Where(o => o.Prefab == Round8.SubstationPrefab).ToList();
+        Objects.Write(Path.Combine(outDir, "import-substation.json"), "substation (round 8)", sub);
+        var subB = Round8.Buildings(root, "(?i)Substation");
+        var dams = Round8.Buildings(root, "(?i)Dam Electricity");
+        var dam = Round8.Dam(dams);
+        if (dam is { } dv)
+        {
+            Objects.Write(Path.Combine(outDir, "import-dam.json"), "dam variant A (yaw −CS1 angle)", [dv.A]);
+            Objects.Write(Path.Combine(outDir, "import-dam-B.json"), "dam variant B (mirrored yaw)", [dv.B]);
+        }
+        var targets = new List<(string, double, double)>();
+        if (subB.Count > 0) targets.Add(("substation", subB[0].X, subB[0].Z));
+        if (dam is { } d2) targets.Add(("dam", d2.A.X, d2.A.Z));
+        var ends = Round8.PowerEnds(result.Layer(Layers.Power).ToList(), targets);
+        Round8.WritePowerEnds(Path.Combine(outDir, "import-power-ends.json"), ends, cs2True, heightFactor, absolute);
+        var pieces = Round8.LoadPoPieces(poOfflinePath);
+        var (cliffs, capped, bands) = Round8.Cliffs(pieces, cs2True, 7168, treeSeed + 8);
+        Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "PO cliff objects (round 8)", cliffs);
+        var sources = objs.Objects.Where(o => Round8.IsRockLike(o.Prefab)).Concat(cliffs).Select(o => (o.X, o.Z)).ToList();
+        Func<double, double, bool>? wet = surfaceEarly == null ? null : (x, z) => surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.5;
+        var (scatter, rejected) = Round8.Scatter(sources, rockPolys.Select(p => p.Ring), result.Edges.Where(e => e.Map.Imported), wet, 7168, treeSeed + 9);
+        Objects.Write(Path.Combine(outDir, "import-rock-scatter.json"), "rock scatter (round 8)", scatter);
+        string ci(FormattableString f) => FormattableString.Invariant(f);
+        var r8 = new List<string>
+        {
+            ci($"substation: {sub.Count} ({string.Join(", ", sub.Select(o => $"{o.Id} {o.Prefab} at ({o.X:F0}, {o.Z:F0}), rotation {o.Rotation}, no y"))}) -> import-substation.json"),
+            dam is { } d3 ? ci($"dam: {Round8.DamPrefab} (placeholder) at ({d3.A.X}, {d3.A.Z}) from {dams.Count} CS1 Dam Electricity pieces; variant A rotation {d3.A.Rotation} -> import-dam.json, variant B {d3.B.Rotation} -> import-dam-B.json") : "dam: no CS1 Dam Electricity building",
+            "power ends: " + string.Join("; ", ends.Select(e => ci($"{e.Target}: CS1 end {e.OldEnd.Id} ({e.OldEnd.Position.X:F0}, {e.OldEnd.Position.Z:F0}), replaces {e.Replaces.Id}, new course {e.Anchor.Id} -> ({e.X:F1}, {e.Z:F1}), {Math.Sqrt((e.X - e.Anchor.Position.X) * (e.X - e.Anchor.Position.X) + (e.Z - e.Anchor.Position.Z) * (e.Z - e.Anchor.Position.Z)):F0} m"))) + " -> import-power-ends.json",
+            ci($"PO cliffs: {cliffs.Count} objects from {pieces.Count} PO pieces (mountain {pieces.Count(p => p.SubClass == "mountain")}, rock work {pieces.Count(p => p.SubClass == "rock work")}, falls steps {pieces.Count(p => p.SubClass == "falls steps")}); bands {string.Join(", ", bands.Select(b => $"{b.Key} {b.Value}"))}; {capped} over the cap of 2500 dropped -> import-po-rocks.json"),
+            ci($"rock scatter: {scatter.Count} (small {scatter.Count(o => Round8.SmallRocks.Contains(o.Prefab))}, medium {scatter.Count(o => Round8.MediumRocks.Contains(o.Prefab))}, boulders {scatter.Count(o => Round8.Boulders.Contains(o.Prefab))}) around {sources.Count} rock/cliff objects (r 60 m) and in {rockPolys.Count} rock polygons; rejected road {rejected["road"]}, spacing {rejected["spacing"]}, water {rejected["water"]}, border {rejected["border"]} -> import-rock-scatter.json"),
+        };
+        foreach (var l in r8) { Console.WriteLine("round 8 " + l); extra.AppendLine($"- Round 8 {l}."); }
     }
 
     // R69 Big Decal Dirt/Mud: no decal without EAI, so each becomes a 16 × 16 m Dirty Surfaces Pack square at the CS1 position and angle.

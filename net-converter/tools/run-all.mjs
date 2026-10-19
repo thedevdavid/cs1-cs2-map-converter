@@ -49,6 +49,12 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
     add(5, p("import-objects.json"), `objects (${scale})`, `${o.length} (${kinds}; ${o.filter(x => "y" in x).length} with y)`);
   }
   for (const ff of existsSync(dir) ? readdirSync(dir).filter(x => x.startsWith("import-trees-fixed-")) : []) add(6, p(ff), `trees at fixed height, with y (${scale})`, `${J(p(ff)).objects.length}`);
+  // Round 8 (owner review of Run A): each its own import, to add to the live map.
+  for (const [f, order, what] of [["import-power-ends.json", 2, "ROUND 8 power-line ends at the substation and the dam (undo the replaced edges first)"],
+    ["import-substation.json", 5, "ROUND 8 substation building (placeholder prefab until the bridge reports it)"], ["import-dam.json", 5, "ROUND 8 dam, variant A (yaw −CS1 angle)"],
+    ["import-dam-B.json", 5, "ROUND 8 dam, variant B (mirrored yaw); import A or B"], ["import-po-rocks.json", 5, "ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps"],
+    ["import-rock-scatter.json", 5, "ROUND 8 vanilla rock scatter"]])
+    if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : `${j.edges.length} edges, replaces ${j.replaces.join(", ")}`); }
   if (existsSync(p("import-po-candidates.json"))) add(5, p("import-po-candidates.json"), `Procedural Object candidates, UNVERIFIED (${scale})`, `${J(p("import-po-candidates.json")).objects.length}`);
   if (existsSync(p("import-resources.json"))) add(7, p("import-resources.json"), "natural resources", Object.keys(J(p("import-resources.json")).layers).join(", "));
   else if (existsSync(p("import-resources-synthetic.json"))) add(7, p("import-resources-synthetic.json"), "SYNTHETIC fertility (no naturalResources in the dump)", "fertility");
@@ -76,5 +82,5 @@ Reports (both folders): ${extras.map(f => `\`${f}\``).join(", ")}.
 `);
 // Live results reported back from the game (hand-written, kept across reruns).
 const liveResult = existsSync(join(out, "live-result.md")) ? "\n" + readFileSync(join(out, "live-result.md"), "utf8") : "";
-for (const name of ["ROUND.md", "ROUND7.md"]) writeFileSync(join(out, name), summary + liveResult);
-console.log(`summary: ${join(out, "ROUND7.md")}`);
+for (const name of ["ROUND.md", "ROUND8.md"]) writeFileSync(join(out, name), summary + liveResult);
+console.log(`summary: ${join(out, "ROUND8.md")}`);

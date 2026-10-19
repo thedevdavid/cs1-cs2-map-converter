@@ -1,0 +1,5358 @@
+{
+  "name": "PO cliff objects (round 8)",
+  "_comment": "rotation = yaw in degrees about \u002By, 0 = \u002Bz, clockwise from above, from CS1 m_angle as \u2212angle\u00B7180/\u03C0 (UNVERIFIED sign). y only where the object is clearly on a structure: \u003E 3 m above the CS2 playable heightmap (else \u003E 2 m off the CS1 terrain); never for buildings (CS1 y \u00D7 height factor).",
+  "options": {
+    "dryRun": false,
+    "batchSize": 500,
+    "bypassValidation": true,
+    "report": "compact"
+  },
+  "objects": [
+    {
+      "id": "pocliff308_1",
+      "prefab": "CliffSide2Right",
+      "x": -7149.52,
+      "z": -4329.97,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff308_10",
+      "prefab": "CliffSide2",
+      "x": -6767.69,
+      "z": -3948.14,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff308_2",
+      "prefab": "CliffSide2",
+      "x": -7107.1,
+      "z": -4287.55,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff308_3",
+      "prefab": "CliffSide2Right",
+      "x": -7064.67,
+      "z": -4245.12,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff308_4",
+      "prefab": "CliffSide2Left",
+      "x": -7022.24,
+      "z": -4202.69,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff308_5",
+      "prefab": "CliffSide2",
+      "x": -6979.82,
+      "z": -4160.27,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff308_6",
+      "prefab": "CliffSide2",
+      "x": -6937.39,
+      "z": -4117.84,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff308_7",
+      "prefab": "CliffSide2Right",
+      "x": -6894.97,
+      "z": -4075.42,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff308_8",
+      "prefab": "CliffSide2Left",
+      "x": -6852.54,
+      "z": -4032.99,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff308_9",
+      "prefab": "CliffSide2Right",
+      "x": -6810.11,
+      "z": -3990.56,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff343_4",
+      "prefab": "CliffSide2",
+      "x": -7154.58,
+      "z": -3695.17,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff343_5",
+      "prefab": "CliffSide2Left",
+      "x": -7112.16,
+      "z": -3652.75,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff343_6",
+      "prefab": "CliffSide2",
+      "x": -7069.73,
+      "z": -3610.32,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff343_7",
+      "prefab": "CliffSide2",
+      "x": -7027.31,
+      "z": -3567.9,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff343_8",
+      "prefab": "CliffSide2Right",
+      "x": -6984.88,
+      "z": -3525.47,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff343_9",
+      "prefab": "CliffSide2Right",
+      "x": -6942.45,
+      "z": -3483.04,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff383_0",
+      "prefab": "CliffFreeStanding",
+      "x": -5832.42,
+      "z": 7101.55,
+      "rotation": 228.27,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff383_1",
+      "prefab": "CliffSide2Right",
+      "x": -5776.99,
+      "z": 7124.51,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff383_2",
+      "prefab": "CliffSide2",
+      "x": -5721.55,
+      "z": 7147.47,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff232_4",
+      "prefab": "CliffSide2Right",
+      "x": -7133.36,
+      "z": -4557.66,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff232_5",
+      "prefab": "CliffSide2",
+      "x": -7090.94,
+      "z": -4515.24,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff232_6",
+      "prefab": "CliffSide2",
+      "x": -7048.51,
+      "z": -4472.81,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff238_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6951.76,
+      "z": -5298.7,
+      "rotation": 339.17,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff238_1",
+      "prefab": "CliffSide2Left",
+      "x": -6951.76,
+      "z": -5358.7,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff238_2",
+      "prefab": "CliffSide2Left",
+      "x": -6951.76,
+      "z": -5418.7,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff238_3",
+      "prefab": "CliffSide2Left",
+      "x": -6951.76,
+      "z": -5478.7,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff238_4",
+      "prefab": "CliffSide2Right",
+      "x": -6951.76,
+      "z": -5538.7,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff238_5",
+      "prefab": "CliffSide2",
+      "x": -6951.76,
+      "z": -5598.7,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff235_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6707.77,
+      "z": -5232.58,
+      "rotation": 272.42,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff235_1",
+      "prefab": "CliffSide2",
+      "x": -6652.34,
+      "z": -5209.62,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff235_2",
+      "prefab": "CliffSide2",
+      "x": -6596.9,
+      "z": -5186.66,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff235_3",
+      "prefab": "CliffSide2",
+      "x": -6541.47,
+      "z": -5163.7,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff235_4",
+      "prefab": "CliffSide2",
+      "x": -6486.04,
+      "z": -5140.74,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff235_5",
+      "prefab": "CliffSide2Right",
+      "x": -6430.61,
+      "z": -5117.77,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff236_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6733.62,
+      "z": -5013.31,
+      "rotation": 217.17,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff236_1",
+      "prefab": "CliffSide2",
+      "x": -6673.62,
+      "z": -5013.31,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff236_2",
+      "prefab": "CliffSide2Right",
+      "x": -6613.62,
+      "z": -5013.31,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff236_3",
+      "prefab": "CliffSide2Right",
+      "x": -6553.62,
+      "z": -5013.31,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff236_4",
+      "prefab": "CliffSide2Left",
+      "x": -6493.62,
+      "z": -5013.31,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff236_5",
+      "prefab": "CliffSide2",
+      "x": -6433.62,
+      "z": -5013.31,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff234_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6936.53,
+      "z": -5234.19,
+      "rotation": 2.67,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff234_1",
+      "prefab": "CliffSide2Right",
+      "x": -6936.53,
+      "z": -5294.19,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff234_2",
+      "prefab": "CliffSide2Left",
+      "x": -6936.53,
+      "z": -5354.19,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff234_3",
+      "prefab": "CliffSide2Right",
+      "x": -6936.53,
+      "z": -5414.19,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff234_4",
+      "prefab": "CliffSide2Right",
+      "x": -6936.53,
+      "z": -5474.19,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff234_5",
+      "prefab": "CliffSide2Left",
+      "x": -6936.53,
+      "z": -5534.19,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff237_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6901.41,
+      "z": -4901.58,
+      "rotation": 225.92,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff237_1",
+      "prefab": "CliffSide2",
+      "x": -6878.45,
+      "z": -4846.15,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff237_2",
+      "prefab": "CliffSide2Right",
+      "x": -6855.49,
+      "z": -4790.71,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff237_3",
+      "prefab": "CliffSide2Left",
+      "x": -6832.53,
+      "z": -4735.28,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff237_4",
+      "prefab": "CliffSide2",
+      "x": -6809.57,
+      "z": -4679.85,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff237_5",
+      "prefab": "CliffSide2Right",
+      "x": -6786.6,
+      "z": -4624.42,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff245_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6747.05,
+      "z": -5485.37,
+      "rotation": 143.63,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff245_1",
+      "prefab": "CliffSide2Left",
+      "x": -6770.01,
+      "z": -5540.8,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff245_2",
+      "prefab": "CliffSide2Left",
+      "x": -6792.97,
+      "z": -5596.24,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff245_3",
+      "prefab": "CliffSide2",
+      "x": -6815.93,
+      "z": -5651.67,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff245_4",
+      "prefab": "CliffSide2Right",
+      "x": -6838.89,
+      "z": -5707.1,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff245_5",
+      "prefab": "CliffSide2Right",
+      "x": -6861.86,
+      "z": -5762.53,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff312_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3646.68,
+      "z": -4353.11,
+      "rotation": 246.17,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff312_1",
+      "prefab": "CliffSide2Left",
+      "x": -3586.68,
+      "z": -4353.11,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff312_2",
+      "prefab": "CliffSide2Left",
+      "x": -3526.68,
+      "z": -4353.11,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff312_3",
+      "prefab": "CliffSide2Right",
+      "x": -3466.68,
+      "z": -4353.11,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff312_4",
+      "prefab": "CliffSide2",
+      "x": -3406.68,
+      "z": -4353.11,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff312_5",
+      "prefab": "CliffSide2Left",
+      "x": -3346.68,
+      "z": -4353.11,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff279_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3384.96,
+      "z": -4982.76,
+      "rotation": 246.17,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff279_1",
+      "prefab": "CliffSide2Left",
+      "x": -3324.96,
+      "z": -4982.76,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff279_2",
+      "prefab": "CliffSide2",
+      "x": -3264.96,
+      "z": -4982.76,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff279_3",
+      "prefab": "CliffSide2",
+      "x": -3204.96,
+      "z": -4982.76,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff279_4",
+      "prefab": "CliffSide2Left",
+      "x": -3144.96,
+      "z": -4982.76,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff279_5",
+      "prefab": "CliffSide2Left",
+      "x": -3084.96,
+      "z": -4982.76,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff258_0",
+      "prefab": "CliffFreeStanding",
+      "x": -7137,
+      "z": -4725.4,
+      "rotation": 119.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff258_1",
+      "prefab": "CliffSide2Right",
+      "x": -7094.57,
+      "z": -4682.97,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff258_2",
+      "prefab": "CliffSide2Right",
+      "x": -7052.15,
+      "z": -4640.55,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff258_3",
+      "prefab": "CliffSide2Left",
+      "x": -7009.72,
+      "z": -4598.12,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff258_4",
+      "prefab": "CliffSide2Left",
+      "x": -6967.29,
+      "z": -4555.69,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff258_5",
+      "prefab": "CliffSide2",
+      "x": -6924.87,
+      "z": -4513.27,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff224_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6888.54,
+      "z": -4992.34,
+      "rotation": 196.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff224_1",
+      "prefab": "CliffSide2Left",
+      "x": -6846.11,
+      "z": -4949.91,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff224_2",
+      "prefab": "CliffSide2Right",
+      "x": -6803.69,
+      "z": -4907.49,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff224_3",
+      "prefab": "CliffSide2",
+      "x": -6761.26,
+      "z": -4865.06,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff224_4",
+      "prefab": "CliffSide2Left",
+      "x": -6718.83,
+      "z": -4822.63,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff224_5",
+      "prefab": "CliffSide2",
+      "x": -6676.41,
+      "z": -4780.21,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff223_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6884.57,
+      "z": -4778.39,
+      "rotation": 189.75,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff223_1",
+      "prefab": "CliffSide2",
+      "x": -6861.61,
+      "z": -4722.96,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff223_2",
+      "prefab": "CliffSide2Right",
+      "x": -6838.65,
+      "z": -4667.52,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff223_3",
+      "prefab": "CliffSide2Left",
+      "x": -6815.69,
+      "z": -4612.09,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff223_4",
+      "prefab": "CliffSide2",
+      "x": -6792.73,
+      "z": -4556.66,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff223_5",
+      "prefab": "CliffSide2Left",
+      "x": -6769.76,
+      "z": -4501.23,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff394_0",
+      "prefab": "CliffFreeStanding",
+      "x": -5830.61,
+      "z": 7166.9,
+      "rotation": 209.93,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff394_1",
+      "prefab": "CliffSide2",
+      "x": -5770.61,
+      "z": 7166.9,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff394_2",
+      "prefab": "CliffSide2",
+      "x": -5710.61,
+      "z": 7166.9,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff394_3",
+      "prefab": "CliffSide2Right",
+      "x": -5650.61,
+      "z": 7166.9,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff394_4",
+      "prefab": "CliffSide2Left",
+      "x": -5590.61,
+      "z": 7166.9,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff397_0",
+      "prefab": "CliffFreeStanding",
+      "x": -5961.78,
+      "z": 7103.97,
+      "rotation": 28.18,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff397_1",
+      "prefab": "CliffSide2Left",
+      "x": -5961.78,
+      "z": 7043.97,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff397_2",
+      "prefab": "CliffSide2Right",
+      "x": -5961.78,
+      "z": 6983.97,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff397_3",
+      "prefab": "CliffSide2Left",
+      "x": -5961.78,
+      "z": 6923.97,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff397_4",
+      "prefab": "CliffSide2Right",
+      "x": -5961.78,
+      "z": 6863.97,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff393_0",
+      "prefab": "CliffFreeStanding",
+      "x": -5835.21,
+      "z": 7132.92,
+      "rotation": 265.93,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff393_1",
+      "prefab": "CliffSide2Right",
+      "x": -5779.78,
+      "z": 7109.96,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff393_2",
+      "prefab": "CliffSide2Left",
+      "x": -5724.34,
+      "z": 7087,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff393_3",
+      "prefab": "CliffSide2",
+      "x": -5668.91,
+      "z": 7064.04,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff393_4",
+      "prefab": "CliffSide2",
+      "x": -5613.48,
+      "z": 7041.08,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff398_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6002.64,
+      "z": 7133.27,
+      "rotation": 99.43,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff398_1",
+      "prefab": "CliffSide2Left",
+      "x": -6058.07,
+      "z": 7110.31,
+      "rotation": 247.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff398_2",
+      "prefab": "CliffSide2",
+      "x": -6113.51,
+      "z": 7087.35,
+      "rotation": 247.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff398_3",
+      "prefab": "CliffSide2",
+      "x": -6168.94,
+      "z": 7064.39,
+      "rotation": 247.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff398_4",
+      "prefab": "CliffSide2",
+      "x": -6224.37,
+      "z": 7041.43,
+      "rotation": 247.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff396_0",
+      "prefab": "CliffFreeStanding",
+      "x": -5880.16,
+      "z": 7080.57,
+      "rotation": 345.68,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff396_1",
+      "prefab": "CliffSide2Right",
+      "x": -5903.12,
+      "z": 7025.14,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff396_2",
+      "prefab": "CliffSide2",
+      "x": -5926.08,
+      "z": 6969.7,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff396_3",
+      "prefab": "CliffSide2Right",
+      "x": -5949.04,
+      "z": 6914.27,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff396_4",
+      "prefab": "CliffSide2Right",
+      "x": -5972,
+      "z": 6858.84,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff395_0",
+      "prefab": "CliffFreeStanding",
+      "x": -5868.16,
+      "z": 7073.24,
+      "rotation": 302.93,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff395_1",
+      "prefab": "CliffSide2Right",
+      "x": -5891.12,
+      "z": 7017.81,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff395_2",
+      "prefab": "CliffSide2Left",
+      "x": -5914.08,
+      "z": 6962.37,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff395_3",
+      "prefab": "CliffSide2Left",
+      "x": -5937.04,
+      "z": 6906.94,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff395_4",
+      "prefab": "CliffSide2Right",
+      "x": -5960,
+      "z": 6851.51,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff256_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6932.1,
+      "z": -5185.92,
+      "rotation": 331.25,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff256_1",
+      "prefab": "CliffSide2",
+      "x": -6955.06,
+      "z": -5241.35,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff256_2",
+      "prefab": "CliffSide2Left",
+      "x": -6978.02,
+      "z": -5296.79,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff256_3",
+      "prefab": "CliffSide2",
+      "x": -7000.98,
+      "z": -5352.22,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff256_4",
+      "prefab": "CliffSide2Left",
+      "x": -7023.94,
+      "z": -5407.65,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff253_0",
+      "prefab": "CliffFreeStanding",
+      "x": -7126.6,
+      "z": -5001.31,
+      "rotation": 358.23,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff253_1",
+      "prefab": "CliffSide2Right",
+      "x": -7126.6,
+      "z": -5061.31,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff253_2",
+      "prefab": "CliffSide2Left",
+      "x": -7126.6,
+      "z": -5121.31,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff253_3",
+      "prefab": "CliffSide2Right",
+      "x": -7126.6,
+      "z": -5181.31,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff253_4",
+      "prefab": "CliffSide2Left",
+      "x": -7126.6,
+      "z": -5241.31,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff28_0",
+      "prefab": "CliffFreeStanding",
+      "x": 376.4,
+      "z": 910.58,
+      "rotation": 346,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff28_1",
+      "prefab": "CliffSide2",
+      "x": 431.83,
+      "z": 887.62,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff28_2",
+      "prefab": "CliffSide2Left",
+      "x": 487.27,
+      "z": 864.66,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff28_3",
+      "prefab": "CliffSide2",
+      "x": 542.7,
+      "z": 841.7,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff28_4",
+      "prefab": "CliffSide2Right",
+      "x": 598.13,
+      "z": 818.74,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff375_0",
+      "prefab": "CliffFreeStanding",
+      "x": -7122.3,
+      "z": 5937.54,
+      "rotation": 250.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff375_1",
+      "prefab": "CliffSide2Right",
+      "x": -7066.87,
+      "z": 5914.58,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff375_2",
+      "prefab": "CliffSide2Right",
+      "x": -7011.43,
+      "z": 5891.62,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff375_3",
+      "prefab": "CliffSide2Left",
+      "x": -6956,
+      "z": 5868.66,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff375_4",
+      "prefab": "CliffSide2Right",
+      "x": -6900.57,
+      "z": 5845.7,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff31_0",
+      "prefab": "CliffFreeStanding",
+      "x": 377.6,
+      "z": 1289.92,
+      "rotation": 210.69,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff31_1",
+      "prefab": "CliffSide2",
+      "x": 377.6,
+      "z": 1229.92,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff31_2",
+      "prefab": "CliffSide2Right",
+      "x": 377.6,
+      "z": 1169.92,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff31_3",
+      "prefab": "CliffSide2Left",
+      "x": 377.6,
+      "z": 1109.92,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff31_4",
+      "prefab": "CliffSide2Left",
+      "x": 377.6,
+      "z": 1049.92,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff336_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6921.88,
+      "z": -4444.1,
+      "rotation": 217.03,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff336_1",
+      "prefab": "CliffSide2Right",
+      "x": -6879.45,
+      "z": -4401.67,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff336_2",
+      "prefab": "CliffSide2Right",
+      "x": -6837.03,
+      "z": -4359.25,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff336_3",
+      "prefab": "CliffSide2Right",
+      "x": -6794.6,
+      "z": -4316.82,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff336_4",
+      "prefab": "CliffSide2Right",
+      "x": -6752.17,
+      "z": -4274.39,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff249_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6691.5,
+      "z": -4657.59,
+      "rotation": 227.28,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff249_1",
+      "prefab": "CliffSide2Left",
+      "x": -6649.07,
+      "z": -4615.16,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff249_2",
+      "prefab": "CliffSide2",
+      "x": -6606.65,
+      "z": -4572.74,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff249_3",
+      "prefab": "CliffSide2",
+      "x": -6564.22,
+      "z": -4530.31,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff249_4",
+      "prefab": "CliffSide2Right",
+      "x": -6521.79,
+      "z": -4487.88,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff337_1",
+      "prefab": "CliffSide2Left",
+      "x": -7123.4,
+      "z": -4127.35,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff337_2",
+      "prefab": "CliffSide2",
+      "x": -7063.4,
+      "z": -4127.35,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff337_3",
+      "prefab": "CliffSide2",
+      "x": -7003.4,
+      "z": -4127.35,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff337_4",
+      "prefab": "CliffSide2",
+      "x": -6943.4,
+      "z": -4127.35,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff244_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6536,
+      "z": -4912.16,
+      "rotation": 102.7,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff244_1",
+      "prefab": "CliffSide2Right",
+      "x": -6513.04,
+      "z": -4856.73,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff244_2",
+      "prefab": "CliffSide2Right",
+      "x": -6490.08,
+      "z": -4801.29,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff244_3",
+      "prefab": "CliffSide2",
+      "x": -6467.12,
+      "z": -4745.86,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff244_4",
+      "prefab": "CliffSide2Right",
+      "x": -6444.16,
+      "z": -4690.43,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff243_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6976.35,
+      "z": -4589.94,
+      "rotation": 38.2,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff243_1",
+      "prefab": "CliffSide2",
+      "x": -6933.92,
+      "z": -4547.51,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff243_2",
+      "prefab": "CliffSide2",
+      "x": -6891.5,
+      "z": -4505.09,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff243_3",
+      "prefab": "CliffSide2Right",
+      "x": -6849.07,
+      "z": -4462.66,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff243_4",
+      "prefab": "CliffSide2",
+      "x": -6806.64,
+      "z": -4420.23,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff428_0",
+      "prefab": "CliffFreeStanding",
+      "x": -1103.34,
+      "z": 4848.12,
+      "rotation": 209.7,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff428_1",
+      "prefab": "CliffSide2Left",
+      "x": -1145.77,
+      "z": 4805.69,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff428_2",
+      "prefab": "CliffSide2",
+      "x": -1188.19,
+      "z": 4763.27,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff428_3",
+      "prefab": "CliffSide2Left",
+      "x": -1230.62,
+      "z": 4720.84,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff428_4",
+      "prefab": "CliffSide2Right",
+      "x": -1273.05,
+      "z": 4678.41,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff254_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6815.39,
+      "z": -5135.95,
+      "rotation": 264.2,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff254_1",
+      "prefab": "CliffSide2Right",
+      "x": -6755.39,
+      "z": -5135.95,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff254_2",
+      "prefab": "CliffSide2Left",
+      "x": -6695.39,
+      "z": -5135.95,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff254_3",
+      "prefab": "CliffSide2Left",
+      "x": -6635.39,
+      "z": -5135.95,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff254_4",
+      "prefab": "CliffSide2Right",
+      "x": -6575.39,
+      "z": -5135.95,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff425_0",
+      "prefab": "CliffFreeStanding",
+      "x": -727.84,
+      "z": 4317.7,
+      "rotation": 161.15,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff425_1",
+      "prefab": "CliffSide2Left",
+      "x": -704.88,
+      "z": 4262.27,
+      "rotation": 157.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff425_2",
+      "prefab": "CliffSide2Left",
+      "x": -681.92,
+      "z": 4206.83,
+      "rotation": 157.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff425_3",
+      "prefab": "CliffSide2Left",
+      "x": -658.96,
+      "z": 4151.4,
+      "rotation": 157.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff425_4",
+      "prefab": "CliffSide2",
+      "x": -636,
+      "z": 4095.97,
+      "rotation": 157.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff424_0",
+      "prefab": "CliffFreeStanding",
+      "x": -1273.04,
+      "z": 4961.57,
+      "rotation": 209.7,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff424_1",
+      "prefab": "CliffSide2Left",
+      "x": -1296,
+      "z": 4906.14,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff424_2",
+      "prefab": "CliffSide2",
+      "x": -1318.96,
+      "z": 4850.7,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff424_3",
+      "prefab": "CliffSide2Right",
+      "x": -1341.92,
+      "z": 4795.27,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff423_0",
+      "prefab": "CliffFreeStanding",
+      "x": -1023.27,
+      "z": 4673.94,
+      "rotation": 231.72,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff423_1",
+      "prefab": "CliffSide2Left",
+      "x": -1046.23,
+      "z": 4618.51,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff423_2",
+      "prefab": "CliffSide2Right",
+      "x": -1069.19,
+      "z": 4563.07,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff423_3",
+      "prefab": "CliffSide2",
+      "x": -1092.15,
+      "z": 4507.64,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff0_1",
+      "prefab": "CliffSide2",
+      "x": -7152.88,
+      "z": -4440.1,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff0_2",
+      "prefab": "CliffSide2Right",
+      "x": -7092.88,
+      "z": -4440.1,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff0_3",
+      "prefab": "CliffSide2Right",
+      "x": -7032.88,
+      "z": -4440.1,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff239_0",
+      "prefab": "CliffFreeStanding",
+      "x": -7020.06,
+      "z": -4474.01,
+      "rotation": 9.06,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff239_1",
+      "prefab": "CliffSide2Left",
+      "x": -6964.63,
+      "z": -4451.05,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff239_2",
+      "prefab": "CliffSide2",
+      "x": -6909.19,
+      "z": -4428.09,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff239_3",
+      "prefab": "CliffSide2Right",
+      "x": -6853.76,
+      "z": -4405.13,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff35_0",
+      "prefab": "CliffFreeStanding",
+      "x": 425.17,
+      "z": 1424.74,
+      "rotation": 17.05,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff35_1",
+      "prefab": "CliffSide2Left",
+      "x": 425.17,
+      "z": 1364.74,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff35_2",
+      "prefab": "CliffSide2Right",
+      "x": 425.17,
+      "z": 1304.74,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff35_3",
+      "prefab": "CliffSide2",
+      "x": 425.17,
+      "z": 1244.74,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff29_0",
+      "prefab": "CliffFreeStanding",
+      "x": 595.83,
+      "z": 1107.43,
+      "rotation": 346,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff29_1",
+      "prefab": "CliffSide2",
+      "x": 572.87,
+      "z": 1162.86,
+      "rotation": 337.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff29_2",
+      "prefab": "CliffSide2Left",
+      "x": 549.91,
+      "z": 1218.3,
+      "rotation": 337.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff29_3",
+      "prefab": "CliffSide2",
+      "x": 526.95,
+      "z": 1273.73,
+      "rotation": 337.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff30_0",
+      "prefab": "CliffFreeStanding",
+      "x": 652.71,
+      "z": 879.27,
+      "rotation": 346,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff30_1",
+      "prefab": "CliffSide2Left",
+      "x": 610.28,
+      "z": 836.84,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff30_2",
+      "prefab": "CliffSide2Right",
+      "x": 567.86,
+      "z": 794.42,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff30_3",
+      "prefab": "CliffSide2",
+      "x": 525.43,
+      "z": 751.99,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff34_0",
+      "prefab": "CliffFreeStanding",
+      "x": 551.91,
+      "z": 1423.97,
+      "rotation": 355.99,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff34_1",
+      "prefab": "CliffSide2Left",
+      "x": 491.91,
+      "z": 1423.97,
+      "rotation": 270,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff34_2",
+      "prefab": "CliffSide2",
+      "x": 431.91,
+      "z": 1423.97,
+      "rotation": 270,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff34_3",
+      "prefab": "CliffSide2",
+      "x": 371.91,
+      "z": 1423.97,
+      "rotation": 270,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff36_0",
+      "prefab": "CliffFreeStanding",
+      "x": 467.45,
+      "z": 1614.28,
+      "rotation": 21.37,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff36_1",
+      "prefab": "CliffSide2",
+      "x": 444.49,
+      "z": 1558.85,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff36_2",
+      "prefab": "CliffSide2Left",
+      "x": 421.53,
+      "z": 1503.41,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff36_3",
+      "prefab": "CliffSide2Left",
+      "x": 398.57,
+      "z": 1447.98,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff305_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3122.15,
+      "z": -5538.9,
+      "rotation": 246.17,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff305_1",
+      "prefab": "CliffSide2Left",
+      "x": -3066.72,
+      "z": -5561.86,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff305_2",
+      "prefab": "CliffSide2Left",
+      "x": -3011.28,
+      "z": -5584.82,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff305_3",
+      "prefab": "CliffSide2Right",
+      "x": -2955.85,
+      "z": -5607.78,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff309_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3614.88,
+      "z": -4232.57,
+      "rotation": 253.55,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff309_1",
+      "prefab": "CliffSide2Right",
+      "x": -3559.45,
+      "z": -4209.61,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff309_2",
+      "prefab": "CliffSide2",
+      "x": -3504.01,
+      "z": -4186.65,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff309_3",
+      "prefab": "CliffSide2",
+      "x": -3448.58,
+      "z": -4163.69,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff250_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6906.77,
+      "z": -5441.94,
+      "rotation": 0,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff250_1",
+      "prefab": "CliffSide2Right",
+      "x": -6906.77,
+      "z": -5501.94,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff250_2",
+      "prefab": "CliffSide2Left",
+      "x": -6906.77,
+      "z": -5561.94,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff251_2",
+      "prefab": "CliffSide2Left",
+      "x": -7141.72,
+      "z": -4541.45,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff594_0",
+      "prefab": "CliffFreeStanding",
+      "x": 1642.64,
+      "z": 6498.5,
+      "rotation": 24.98,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff594_1",
+      "prefab": "CliffSide2Left",
+      "x": 1619.68,
+      "z": 6443.07,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff594_2",
+      "prefab": "CliffSide2Right",
+      "x": 1596.72,
+      "z": 6387.63,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff595_0",
+      "prefab": "CliffFreeStanding",
+      "x": 1359.41,
+      "z": 6238.91,
+      "rotation": 203.25,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff595_1",
+      "prefab": "CliffSide2",
+      "x": 1336.45,
+      "z": 6183.48,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff595_2",
+      "prefab": "CliffSide2Left",
+      "x": 1313.49,
+      "z": 6128.04,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff57_0",
+      "prefab": "CliffFreeStanding",
+      "x": 718.22,
+      "z": 979.68,
+      "rotation": 0.38,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff57_1",
+      "prefab": "CliffSide2Left",
+      "x": 675.79,
+      "z": 937.25,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff57_2",
+      "prefab": "CliffSide2",
+      "x": 633.37,
+      "z": 894.83,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff58_0",
+      "prefab": "CliffFreeStanding",
+      "x": 277.89,
+      "z": 766.09,
+      "rotation": 166.13,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff58_1",
+      "prefab": "CliffSide2",
+      "x": 337.89,
+      "z": 766.09,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff58_2",
+      "prefab": "CliffSide2Right",
+      "x": 397.89,
+      "z": 766.09,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff56_0",
+      "prefab": "CliffFreeStanding",
+      "x": 634.31,
+      "z": 1447.76,
+      "rotation": 186.13,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff56_1",
+      "prefab": "CliffSide2",
+      "x": 591.88,
+      "z": 1405.33,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff56_2",
+      "prefab": "CliffSide2Left",
+      "x": 549.46,
+      "z": 1362.91,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff593_0",
+      "prefab": "CliffFreeStanding",
+      "x": 1507.47,
+      "z": 6372.46,
+      "rotation": 230.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff593_1",
+      "prefab": "CliffSide2Left",
+      "x": 1452.04,
+      "z": 6349.5,
+      "rotation": 247.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff593_2",
+      "prefab": "CliffSide2Left",
+      "x": 1396.6,
+      "z": 6326.54,
+      "rotation": 247.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff675_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2949.48,
+      "z": -5981.19,
+      "rotation": 264.28,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff675_1",
+      "prefab": "CliffSide2",
+      "x": -2894.05,
+      "z": -5958.23,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff675_2",
+      "prefab": "CliffSide2Left",
+      "x": -2838.61,
+      "z": -5935.27,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff663_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3714.43,
+      "z": -4022.36,
+      "rotation": 232.85,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff663_1",
+      "prefab": "CliffSide2",
+      "x": -3659,
+      "z": -3999.4,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff663_2",
+      "prefab": "CliffSide2",
+      "x": -3603.56,
+      "z": -3976.44,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff426_0",
+      "prefab": "CliffFreeStanding",
+      "x": -880.96,
+      "z": 4354.79,
+      "rotation": 34.81,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff426_1",
+      "prefab": "CliffSide2",
+      "x": -923.39,
+      "z": 4312.36,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff426_2",
+      "prefab": "CliffSide2",
+      "x": -965.81,
+      "z": 4269.94,
+      "rotation": 225,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff321_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3012.29,
+      "z": -5445.61,
+      "rotation": 274.39,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff321_1",
+      "prefab": "CliffSide2Right",
+      "x": -2969.86,
+      "z": -5403.18,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff330_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3127.04,
+      "z": -5522.95,
+      "rotation": 274.39,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff330_1",
+      "prefab": "CliffSide2Right",
+      "x": -3127.04,
+      "z": -5462.95,
+      "rotation": 0,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff427_0",
+      "prefab": "CliffFreeStanding",
+      "x": -929.78,
+      "z": 4392.43,
+      "rotation": 34.81,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff427_1",
+      "prefab": "CliffSide2",
+      "x": -985.21,
+      "z": 4369.47,
+      "rotation": 247.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff318_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3061.87,
+      "z": -5570.6,
+      "rotation": 273.57,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff318_1",
+      "prefab": "CliffSide2",
+      "x": -3019.44,
+      "z": -5613.03,
+      "rotation": 135,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff320_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3002.8,
+      "z": -5526.37,
+      "rotation": 273.57,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff320_1",
+      "prefab": "CliffSide2",
+      "x": -2947.37,
+      "z": -5503.41,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff306_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3129.29,
+      "z": -5551.7,
+      "rotation": 273.57,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff306_1",
+      "prefab": "CliffSide2Left",
+      "x": -3106.33,
+      "z": -5607.13,
+      "rotation": 157.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff314_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3101.06,
+      "z": -5582.71,
+      "rotation": 273.57,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff314_1",
+      "prefab": "CliffSide2Right",
+      "x": -3058.63,
+      "z": -5625.14,
+      "rotation": 135,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff319_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2997.77,
+      "z": -5568.45,
+      "rotation": 273.57,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff319_1",
+      "prefab": "CliffSide2",
+      "x": -2955.34,
+      "z": -5610.88,
+      "rotation": 135,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff680_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3364.71,
+      "z": -4284.85,
+      "rotation": 66.34,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff680_1",
+      "prefab": "CliffSide2Right",
+      "x": -3304.71,
+      "z": -4284.85,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff678_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3130.88,
+      "z": -5498.86,
+      "rotation": 274.39,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff678_1",
+      "prefab": "CliffSide2Left",
+      "x": -3130.88,
+      "z": -5438.86,
+      "rotation": 0,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff666_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3070.86,
+      "z": -5835.46,
+      "rotation": 290.18,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff666_1",
+      "prefab": "CliffSide2",
+      "x": -3028.43,
+      "z": -5793.03,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff648_0",
+      "prefab": "CliffFreeStanding",
+      "x": 6633.23,
+      "z": -1171.24,
+      "rotation": 38.49,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff648_1",
+      "prefab": "CliffSide2Right",
+      "x": 6573.23,
+      "z": -1171.24,
+      "rotation": 270,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff307_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3653.65,
+      "z": -4342.71,
+      "rotation": 305.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff307_1",
+      "prefab": "CliffSide2Left",
+      "x": -3713.65,
+      "z": -4342.71,
+      "rotation": 270,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff313_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3522.45,
+      "z": -4541.01,
+      "rotation": 305.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff313_1",
+      "prefab": "CliffSide2Left",
+      "x": -3467.02,
+      "z": -4518.05,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff322_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3587.35,
+      "z": -4399.19,
+      "rotation": 305.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff322_1",
+      "prefab": "CliffSide2",
+      "x": -3531.92,
+      "z": -4376.23,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff316_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3578.61,
+      "z": -4478.14,
+      "rotation": 305.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff316_1",
+      "prefab": "CliffSide2Right",
+      "x": -3523.18,
+      "z": -4455.18,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff315_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3634.26,
+      "z": -4316.57,
+      "rotation": 305.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff315_1",
+      "prefab": "CliffSide2Right",
+      "x": -3574.26,
+      "z": -4316.57,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff329_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3623.34,
+      "z": -4422.33,
+      "rotation": 305.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff329_1",
+      "prefab": "CliffSide2Left",
+      "x": -3646.3,
+      "z": -4477.76,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff390_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3647.3,
+      "z": -4376.6,
+      "rotation": 305.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff390_1",
+      "prefab": "CliffSide2Left",
+      "x": -3702.73,
+      "z": -4353.64,
+      "rotation": 292.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff317_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3549.11,
+      "z": -4470.06,
+      "rotation": 305.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff317_1",
+      "prefab": "CliffSide2Left",
+      "x": -3493.68,
+      "z": -4447.1,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff669_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3409.19,
+      "z": -4624.23,
+      "rotation": 104.52,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff669_1",
+      "prefab": "CliffSide2Right",
+      "x": -3353.76,
+      "z": -4601.27,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff667_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3159.02,
+      "z": -5337.96,
+      "rotation": 228.33,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff667_1",
+      "prefab": "CliffSide2Left",
+      "x": -3116.59,
+      "z": -5295.53,
+      "rotation": 45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff689_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3550.45,
+      "z": -4015.07,
+      "rotation": 79.12,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff689_1",
+      "prefab": "CliffSide2",
+      "x": -3527.49,
+      "z": -3959.64,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff70_0",
+      "prefab": "CliffFreeStanding",
+      "x": 516.52,
+      "z": 772.53,
+      "rotation": 46.49,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff70_1",
+      "prefab": "CliffSide2Left",
+      "x": 576.52,
+      "z": 772.53,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff66_0",
+      "prefab": "CliffFreeStanding",
+      "x": 407.8,
+      "z": 724.11,
+      "rotation": 355.51,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff66_1",
+      "prefab": "CliffSide2Right",
+      "x": 430.76,
+      "z": 668.68,
+      "rotation": 157.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff37_0",
+      "prefab": "CliffFreeStanding",
+      "x": 548.38,
+      "z": 1653.67,
+      "rotation": 22.96,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff37_1",
+      "prefab": "CliffSide2Left",
+      "x": 492.95,
+      "z": 1676.63,
+      "rotation": 292.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff674_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2913.72,
+      "z": -5731.69,
+      "rotation": 276.61,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff674_1",
+      "prefab": "CliffSide2Right",
+      "x": -2890.76,
+      "z": -5787.12,
+      "rotation": 157.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff668_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3158.28,
+      "z": -5104.62,
+      "rotation": 285.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff668_1",
+      "prefab": "CliffSide2Right",
+      "x": -3135.32,
+      "z": -5049.19,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff676_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2844.92,
+      "z": -5992.22,
+      "rotation": 264,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff676_1",
+      "prefab": "CliffSide2Left",
+      "x": -2789.49,
+      "z": -5969.26,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff664_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2836.35,
+      "z": -5510.96,
+      "rotation": 273.7,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff664_1",
+      "prefab": "CliffSide2",
+      "x": -2793.92,
+      "z": -5553.39,
+      "rotation": 135,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff157_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6688.72,
+      "z": 1311.35,
+      "rotation": 325.47,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff157_1",
+      "prefab": "CliffSide2Left",
+      "x": -6665.76,
+      "z": 1255.92,
+      "rotation": 157.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff156_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6651.06,
+      "z": 1256.61,
+      "rotation": 325.47,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff156_1",
+      "prefab": "CliffSide2Right",
+      "x": -6628.1,
+      "z": 1201.18,
+      "rotation": 157.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff155_0",
+      "prefab": "CliffFreeStanding",
+      "x": -6740.39,
+      "z": 1367.87,
+      "rotation": 325.47,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff155_1",
+      "prefab": "CliffSide2Right",
+      "x": -6697.96,
+      "z": 1325.44,
+      "rotation": 135,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff672_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3231.8,
+      "z": -4789.11,
+      "rotation": 233.78,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff672_1",
+      "prefab": "CliffSide2Right",
+      "x": -3176.37,
+      "z": -4812.07,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff650_0",
+      "prefab": "CliffFreeStanding",
+      "x": 6656.24,
+      "z": -1165.53,
+      "rotation": 144.74,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff650_1",
+      "prefab": "CliffSide2Right",
+      "x": 6600.81,
+      "z": -1188.49,
+      "rotation": 247.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff677_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2907.33,
+      "z": -6037.64,
+      "rotation": 294.7,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff677_1",
+      "prefab": "CliffSide2Left",
+      "x": -2907.33,
+      "z": -6097.64,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff685_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2813.87,
+      "z": -5678.01,
+      "rotation": 59.8,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff685_1",
+      "prefab": "CliffSide2Left",
+      "x": -2753.87,
+      "z": -5678.01,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff661_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2793.23,
+      "z": -6119.41,
+      "rotation": 289.78,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff661_1",
+      "prefab": "CliffSide2Right",
+      "x": -2733.23,
+      "z": -6119.41,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff662_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2841.72,
+      "z": -6042.34,
+      "rotation": 288.42,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff662_1",
+      "prefab": "CliffSide2Right",
+      "x": -2786.29,
+      "z": -6019.38,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff665_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2996,
+      "z": -5298.75,
+      "rotation": 232.97,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff665_1",
+      "prefab": "CliffSide2Right",
+      "x": -2936,
+      "z": -5298.75,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff332_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3024.1,
+      "z": -5710.02,
+      "rotation": 79.76,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff332_1",
+      "prefab": "CliffSide2",
+      "x": -2968.67,
+      "z": -5732.98,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff670_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3342.36,
+      "z": -4835.55,
+      "rotation": 81.92,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff670_1",
+      "prefab": "CliffSide2Left",
+      "x": -3319.4,
+      "z": -4780.12,
+      "rotation": 22.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff335_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3108.91,
+      "z": -5772.36,
+      "rotation": 241.03,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff335_1",
+      "prefab": "CliffSide2",
+      "x": -3048.91,
+      "z": -5772.36,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff282_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2803.61,
+      "z": -6057.39,
+      "rotation": 270.08,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff282_1",
+      "prefab": "CliffSide2",
+      "x": -2748.18,
+      "z": -6034.43,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff72_0",
+      "prefab": "CliffFreeStanding",
+      "x": 398.72,
+      "z": 664.86,
+      "rotation": 330.69,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff72_1",
+      "prefab": "CliffSide2Right",
+      "x": 454.15,
+      "z": 641.9,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff681_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2796.03,
+      "z": -5773.88,
+      "rotation": 107.32,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff681_1",
+      "prefab": "CliffSide2Right",
+      "x": -2740.6,
+      "z": -5796.84,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff48_0",
+      "prefab": "CliffFreeStanding",
+      "x": 463.7,
+      "z": 828.18,
+      "rotation": 123.84,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff48_1",
+      "prefab": "CliffSide2",
+      "x": 403.7,
+      "z": 828.18,
+      "rotation": 270,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff60_0",
+      "prefab": "CliffFreeStanding",
+      "x": 347.86,
+      "z": 1576.57,
+      "rotation": 199.34,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff60_1",
+      "prefab": "CliffSide2Right",
+      "x": 403.29,
+      "z": 1599.53,
+      "rotation": 67.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff59_0",
+      "prefab": "CliffFreeStanding",
+      "x": 249.35,
+      "z": 896.51,
+      "rotation": 335.84,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff59_1",
+      "prefab": "CliffSide2",
+      "x": 309.35,
+      "z": 896.51,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff50_0",
+      "prefab": "CliffFreeStanding",
+      "x": 509.37,
+      "z": 1188.51,
+      "rotation": 333.34,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff50_1",
+      "prefab": "CliffSide2Left",
+      "x": 449.37,
+      "z": 1188.51,
+      "rotation": 270,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff47_0",
+      "prefab": "CliffFreeStanding",
+      "x": 554.51,
+      "z": 829.81,
+      "rotation": 351.59,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff47_1",
+      "prefab": "CliffSide2",
+      "x": 596.94,
+      "z": 787.38,
+      "rotation": 135,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff62_0",
+      "prefab": "CliffFreeStanding",
+      "x": 1017.76,
+      "z": 3251.56,
+      "rotation": 3.09,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff62_1",
+      "prefab": "CliffSide2Right",
+      "x": 1017.76,
+      "z": 3191.56,
+      "rotation": 180,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff61_0",
+      "prefab": "CliffFreeStanding",
+      "x": 1341.87,
+      "z": 3867.76,
+      "rotation": 145.59,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff61_1",
+      "prefab": "CliffSide2Left",
+      "x": 1281.87,
+      "z": 3867.76,
+      "rotation": 270,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff416_0",
+      "prefab": "CliffFreeStanding",
+      "x": -4418.06,
+      "z": 184.21,
+      "rotation": 255.82,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff416_1",
+      "prefab": "CliffSide2Right",
+      "x": -4362.63,
+      "z": 161.25,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff49_0",
+      "prefab": "CliffFreeStanding",
+      "x": 453.15,
+      "z": 1254.93,
+      "rotation": 168.59,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff49_1",
+      "prefab": "CliffSide2Right",
+      "x": 430.19,
+      "z": 1199.5,
+      "rotation": 202.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff389_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3518.37,
+      "z": -4072.57,
+      "rotation": 264.28,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff389_1",
+      "prefab": "CliffSide2",
+      "x": -3462.94,
+      "z": -4095.53,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff311_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3585.66,
+      "z": -4273.63,
+      "rotation": 264.28,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff311_1",
+      "prefab": "CliffSide2Left",
+      "x": -3530.23,
+      "z": -4296.59,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff334_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3607.26,
+      "z": -4255.05,
+      "rotation": 264.28,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff334_1",
+      "prefab": "CliffSide2",
+      "x": -3630.22,
+      "z": -4199.62,
+      "rotation": 337.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff331_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3519.18,
+      "z": -4276.54,
+      "rotation": 264.28,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff331_1",
+      "prefab": "CliffSide2",
+      "x": -3463.75,
+      "z": -4299.5,
+      "rotation": 112.5,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff310_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3620.66,
+      "z": -4233.02,
+      "rotation": 264.28,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff310_1",
+      "prefab": "CliffSide2Right",
+      "x": -3620.66,
+      "z": -4173.02,
+      "rotation": 0,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff333_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3161.52,
+      "z": -4904.94,
+      "rotation": 257.52,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff333_1",
+      "prefab": "CliffSide2Right",
+      "x": -3101.52,
+      "z": -4904.94,
+      "rotation": 90,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff71_0",
+      "prefab": "CliffSide2Left",
+      "x": 662.96,
+      "z": 637.22,
+      "rotation": 174.36,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff682_0",
+      "prefab": "CliffSideTall",
+      "x": -3427.88,
+      "z": -4025.88,
+      "rotation": 266.95,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff640_0",
+      "prefab": "CliffSide2Right",
+      "x": 5706.74,
+      "z": 5033.84,
+      "rotation": 154.53,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff64_0",
+      "prefab": "CliffSide2Right",
+      "x": 1050.98,
+      "z": 3413.8,
+      "rotation": 165.47,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff52_0",
+      "prefab": "CliffSide2Right",
+      "x": 703.16,
+      "z": 684.92,
+      "rotation": 8.47,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff412_0",
+      "prefab": "CliffSide2Left",
+      "x": -6825.3,
+      "z": 1413.49,
+      "rotation": 331.5,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff53_0",
+      "prefab": "CliffSide2Right",
+      "x": 593.47,
+      "z": 1536.02,
+      "rotation": 350.72,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff413_0",
+      "prefab": "CliffSide2Left",
+      "x": -6864.58,
+      "z": 1436.66,
+      "rotation": 350.72,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff410_0",
+      "prefab": "CliffSide2Left",
+      "x": -6650.77,
+      "z": 1315.08,
+      "rotation": 326.22,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff411_0",
+      "prefab": "CliffSide2Left",
+      "x": -6628.83,
+      "z": 1282.28,
+      "rotation": 326.22,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff409_0",
+      "prefab": "CliffSide2Left",
+      "x": -6677.44,
+      "z": 1354.94,
+      "rotation": 326.22,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff63_0",
+      "prefab": "CliffSide2Left",
+      "x": 1039.67,
+      "z": 3421.02,
+      "rotation": 359.97,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff54_0",
+      "prefab": "CliffSide2Left",
+      "x": 401.61,
+      "z": 1667.43,
+      "rotation": 22.22,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff51_0",
+      "prefab": "CliffSide2Left",
+      "x": 441.01,
+      "z": 923.92,
+      "rotation": 355.22,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff55_0",
+      "prefab": "CliffSide2Right",
+      "x": 569.01,
+      "z": 887.78,
+      "rotation": 13.97,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff414_0",
+      "prefab": "CliffSide2Right",
+      "x": -6077.52,
+      "z": 177.59,
+      "rotation": 157.86,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff683_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3550.63,
+      "z": -3811.86,
+      "rotation": 244.64,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff684_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3364.23,
+      "z": -4967.01,
+      "rotation": 258.61,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff687_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3345.27,
+      "z": -4896.28,
+      "rotation": 258.61,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff679_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3342.35,
+      "z": -4203.12,
+      "rotation": 243.37,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff649_0",
+      "prefab": "CliffSide2",
+      "x": 6775.26,
+      "z": -1248.84,
+      "rotation": 270.1,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff659_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3261.59,
+      "z": -5048.23,
+      "rotation": 66.83,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff392_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3120.92,
+      "z": -5176.55,
+      "rotation": 66.83,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff657_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3287.17,
+      "z": -5017.85,
+      "rotation": 66.83,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff658_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3235.28,
+      "z": -5077.1,
+      "rotation": 66.83,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff656_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3168.68,
+      "z": -5129.62,
+      "rotation": 66.83,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff660_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3273.92,
+      "z": -5032.54,
+      "rotation": 66.83,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff391_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3212.36,
+      "z": -5103.24,
+      "rotation": 66.83,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff352_0",
+      "prefab": "CliffSide2",
+      "x": 517.36,
+      "z": -3100.78,
+      "rotation": 250.95,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff613_0",
+      "prefab": "CliffSide2",
+      "x": 412.2,
+      "z": -3151.11,
+      "rotation": 0,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff673_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3012.07,
+      "z": -5035.94,
+      "rotation": 286.6,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff614_0",
+      "prefab": "CliffSide2",
+      "x": 475.78,
+      "z": -3151.11,
+      "rotation": 58.1,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff643_0",
+      "prefab": "CliffSide2Left",
+      "x": 5518.98,
+      "z": 4856.96,
+      "rotation": 11.49,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff637_0",
+      "prefab": "CliffSide2Right",
+      "x": 5519.62,
+      "z": 4866.68,
+      "rotation": 102,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff388_0",
+      "prefab": "CliffSlim",
+      "x": -3457.34,
+      "z": -4063.06,
+      "rotation": 265.69,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff280_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2852.44,
+      "z": -6064.78,
+      "rotation": 237.19,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff651_0",
+      "prefab": "CliffSide2",
+      "x": 6651.11,
+      "z": -1280.83,
+      "rotation": 139.97,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff686_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2899.78,
+      "z": -5164.44,
+      "rotation": 65.08,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff632_0",
+      "prefab": "CliffSide2Left",
+      "x": 5603.49,
+      "z": 4784.4,
+      "rotation": 214.41,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff633_0",
+      "prefab": "CliffSide2Left",
+      "x": 5634.59,
+      "z": 4734.39,
+      "rotation": 185.54,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff671_0",
+      "prefab": "CliffFreeStanding",
+      "x": -2865.56,
+      "z": -5247.71,
+      "rotation": 98.68,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff652_0",
+      "prefab": "CliffSide2",
+      "x": 6679.85,
+      "z": -1152.52,
+      "rotation": 326.87,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff654_0",
+      "prefab": "CliffSide2",
+      "x": 6591.63,
+      "z": -1156.5,
+      "rotation": 346.87,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff655_0",
+      "prefab": "CliffSide2",
+      "x": 6695.39,
+      "z": -1236.13,
+      "rotation": 225.12,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff653_0",
+      "prefab": "CliffSide2",
+      "x": 6602.2,
+      "z": -1161.16,
+      "rotation": 152.12,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff688_0",
+      "prefab": "CliffFreeStanding",
+      "x": -3345.02,
+      "z": -4537.26,
+      "rotation": 76.73,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff339_0",
+      "prefab": "CliffSide2Right",
+      "x": 1839.57,
+      "z": -4171.82,
+      "rotation": 254.75,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff636_0",
+      "prefab": "CliffSide2Left",
+      "x": 5716.92,
+      "z": 4888.53,
+      "rotation": 215.74,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff642_0",
+      "prefab": "CliffSide2Right",
+      "x": 5711.12,
+      "z": 4864.58,
+      "rotation": 41,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff641_0",
+      "prefab": "CliffSide2Left",
+      "x": 5281.04,
+      "z": 5021.89,
+      "rotation": 62.05,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff630_0",
+      "prefab": "CliffSide2Right",
+      "x": 5231.81,
+      "z": 5059.54,
+      "rotation": 177.77,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff127_0",
+      "prefab": "CliffSide2Left",
+      "x": -6607.39,
+      "z": 1120.39,
+      "rotation": 62.24,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff129_0",
+      "prefab": "CliffSide2Left",
+      "x": -6605.06,
+      "z": 1093.6,
+      "rotation": 282.75,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff130_0",
+      "prefab": "CliffSide2Right",
+      "x": -6586.87,
+      "z": 1173.88,
+      "rotation": 282.75,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff138_0",
+      "prefab": "CliffSide2Right",
+      "x": -6629.38,
+      "z": 1187.33,
+      "rotation": 44.99,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff616_0",
+      "prefab": "CliffSide2Left",
+      "x": -2266.05,
+      "z": -6291.89,
+      "rotation": 321.66,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff635_0",
+      "prefab": "CliffSide2Left",
+      "x": 5671.48,
+      "z": 4856.5,
+      "rotation": 31,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff41_0",
+      "prefab": "CliffSide2",
+      "x": 489.54,
+      "z": 1615.93,
+      "rotation": 86.93,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff42_0",
+      "prefab": "CliffSide2",
+      "x": 589.61,
+      "z": 1925.86,
+      "rotation": 81.93,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff46_0",
+      "prefab": "CliffSide2",
+      "x": 709.42,
+      "z": 2302.85,
+      "rotation": 190.18,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff38_0",
+      "prefab": "CliffSide2",
+      "x": 549.51,
+      "z": 1827.5,
+      "rotation": 54.93,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff43_0",
+      "prefab": "CliffSide2",
+      "x": 655.66,
+      "z": 2034.01,
+      "rotation": 66.18,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff45_0",
+      "prefab": "CliffSide2",
+      "x": 670.92,
+      "z": 2131.89,
+      "rotation": 105.68,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff39_0",
+      "prefab": "CliffSide2",
+      "x": 560.99,
+      "z": 1760.05,
+      "rotation": 189.18,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff44_0",
+      "prefab": "CliffSide2",
+      "x": 583.32,
+      "z": 1982.51,
+      "rotation": 118.68,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff40_0",
+      "prefab": "CliffSide2",
+      "x": 474.69,
+      "z": 1744.7,
+      "rotation": 100.18,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff617_0",
+      "prefab": "CliffSide2",
+      "x": -2324.25,
+      "z": -6289.35,
+      "rotation": 223.43,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff530_0",
+      "prefab": "CliffSide2Left",
+      "x": 67.56,
+      "z": -2558.6,
+      "rotation": 107.5,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff615_0",
+      "prefab": "CliffSide2",
+      "x": 380.73,
+      "z": -3116.28,
+      "rotation": 230.26,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff611_0",
+      "prefab": "CliffSide2Left",
+      "x": 1470.96,
+      "z": 6971.97,
+      "rotation": 216.44,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff612_0",
+      "prefab": "CliffSide2Right",
+      "x": 1451.03,
+      "z": 6935.97,
+      "rotation": 238.19,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff610_0",
+      "prefab": "CliffSide2Right",
+      "x": 1457.98,
+      "z": 6940.24,
+      "rotation": 75.44,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff350_0",
+      "prefab": "CliffSide2",
+      "x": 1728.79,
+      "z": -4170.44,
+      "rotation": 233.75,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff351_0",
+      "prefab": "CliffSide2",
+      "x": 1748.59,
+      "z": -4183.08,
+      "rotation": 99.75,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff340_0",
+      "prefab": "CliffSide2",
+      "x": 1754.76,
+      "z": -4130.22,
+      "rotation": 111,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff622_0",
+      "prefab": "CliffRock6",
+      "x": -2312.53,
+      "z": -6339.15,
+      "rotation": 38,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff128_0",
+      "prefab": "CliffRock5",
+      "x": -6584.82,
+      "z": 1148.49,
+      "rotation": 251.88,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff583_0",
+      "prefab": "CliffStack",
+      "x": -6443.99,
+      "z": 1116.23,
+      "rotation": 334.67,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff579_0",
+      "prefab": "CliffStack",
+      "x": -6420.53,
+      "z": 1069.98,
+      "rotation": 323.5,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff519_0",
+      "prefab": "CliffRock5",
+      "x": 85.9,
+      "z": -2630.27,
+      "rotation": 200.65,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff119_0",
+      "prefab": "CliffRock5",
+      "x": 461.46,
+      "z": 634.55,
+      "rotation": 152.97,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff582_0",
+      "prefab": "CliffRock6",
+      "x": -6462.26,
+      "z": 1150.18,
+      "rotation": 154.22,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff120_0",
+      "prefab": "CliffStack",
+      "x": 476.95,
+      "z": 629.38,
+      "rotation": 2.82,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff585_0",
+      "prefab": "CliffRock5",
+      "x": -6455.4,
+      "z": 1160.53,
+      "rotation": 15.98,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff584_0",
+      "prefab": "CliffRock5",
+      "x": -6434.91,
+      "z": 1100.61,
+      "rotation": 132.17,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff542_0",
+      "prefab": "CliffRock6",
+      "x": -29.83,
+      "z": -2671.54,
+      "rotation": 321.88,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff536_0",
+      "prefab": "CliffRock6",
+      "x": -61.91,
+      "z": -2627.74,
+      "rotation": 156.91,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff520_0",
+      "prefab": "CliffRock6",
+      "x": 80.23,
+      "z": -2628.16,
+      "rotation": 42.53,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff539_0",
+      "prefab": "CliffRock5",
+      "x": 30.08,
+      "z": -2717.01,
+      "rotation": 78.07,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff531_0",
+      "prefab": "CliffStack",
+      "x": 80.08,
+      "z": -2530.18,
+      "rotation": 10.94,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff550_0",
+      "prefab": "CliffStack",
+      "x": -6209.82,
+      "z": 675.99,
+      "rotation": 311.29,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff554_0",
+      "prefab": "CliffStack",
+      "x": -6171.55,
+      "z": 664.83,
+      "rotation": 73.86,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff558_0",
+      "prefab": "CliffRock6",
+      "x": -6238.93,
+      "z": 716.1,
+      "rotation": 128.77,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff581_0",
+      "prefab": "CliffStack",
+      "x": -6447.98,
+      "z": 1132.91,
+      "rotation": 181.4,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff532_0",
+      "prefab": "CliffRock6",
+      "x": 76.45,
+      "z": -2494.69,
+      "rotation": 171.86,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff86_0",
+      "prefab": "CliffRock5",
+      "x": 390.37,
+      "z": 622.33,
+      "rotation": 337.44,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff87_0",
+      "prefab": "CliffRock6",
+      "x": 373.68,
+      "z": 667.92,
+      "rotation": 137.19,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff528_0",
+      "prefab": "CliffRock5",
+      "x": 82.28,
+      "z": -2601.97,
+      "rotation": 216.85,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff65_0",
+      "prefab": "CliffStack",
+      "x": 449.77,
+      "z": 672.88,
+      "rotation": 330.69,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff527_0",
+      "prefab": "CliffStack",
+      "x": 93.57,
+      "z": -2569.26,
+      "rotation": 163.39,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff603_0",
+      "prefab": "CliffRock5",
+      "x": 1604.68,
+      "z": 6450.55,
+      "rotation": 353.5,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff597_0",
+      "prefab": "CliffRock6",
+      "x": 1240.09,
+      "z": 6036.1,
+      "rotation": 194.5,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff604_0",
+      "prefab": "CliffStack",
+      "x": 1645.08,
+      "z": 6573.93,
+      "rotation": 278.5,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff605_0",
+      "prefab": "CliffRock5",
+      "x": 1653.74,
+      "z": 6655.88,
+      "rotation": 276.75,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff596_0",
+      "prefab": "CliffRock6",
+      "x": 1376.68,
+      "z": 6067.44,
+      "rotation": 214.75,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff602_0",
+      "prefab": "CliffStack",
+      "x": 1668.04,
+      "z": 6607.64,
+      "rotation": 214.75,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff601_0",
+      "prefab": "CliffStack",
+      "x": 1613.75,
+      "z": 6540.94,
+      "rotation": 214.75,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff598_0",
+      "prefab": "CliffRock5",
+      "x": 1316.76,
+      "z": 6264.7,
+      "rotation": 214.75,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff600_0",
+      "prefab": "CliffRock6",
+      "x": 1616.83,
+      "z": 6414.46,
+      "rotation": 214.75,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff599_0",
+      "prefab": "CliffStack",
+      "x": 1413.23,
+      "z": 6211.31,
+      "rotation": 214.75,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff645_0",
+      "prefab": "CliffRock6",
+      "x": 5471.91,
+      "z": 5146.22,
+      "rotation": 25.4,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff644_0",
+      "prefab": "CliffRock6",
+      "x": 5456.16,
+      "z": 5153.71,
+      "rotation": 221.29,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff32_0",
+      "prefab": "CliffRock5",
+      "x": 502.98,
+      "z": 807.75,
+      "rotation": 359.75,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff33_0",
+      "prefab": "CliffRock5",
+      "x": 579.23,
+      "z": 822.45,
+      "rotation": 59.69,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff639_0",
+      "prefab": "CliffStack",
+      "x": 5705.93,
+      "z": 5052.89,
+      "rotation": 77,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff638_0",
+      "prefab": "CliffRock5",
+      "x": 5456.38,
+      "z": 5116.52,
+      "rotation": 150.12,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff338_0",
+      "prefab": "CliffRock5",
+      "x": 1756.13,
+      "z": -4100.04,
+      "rotation": 41.91,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff348_0",
+      "prefab": "CliffRock5",
+      "x": 1797.78,
+      "z": -4152.95,
+      "rotation": 308,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff634_0",
+      "prefab": "CliffStack",
+      "x": 5579.13,
+      "z": 4934.82,
+      "rotation": 93.3,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff631_0",
+      "prefab": "CliffRock6",
+      "x": 5658.5,
+      "z": 4942.81,
+      "rotation": 196.79,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff577_0",
+      "prefab": "CliffRock5",
+      "x": -6386.25,
+      "z": 1009.21,
+      "rotation": 323.83,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff575_0",
+      "prefab": "CliffRock6",
+      "x": -6375.21,
+      "z": 978.07,
+      "rotation": 165.52,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff563_0",
+      "prefab": "CliffRock6",
+      "x": -6278.9,
+      "z": 782.73,
+      "rotation": 212.39,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff136_0",
+      "prefab": "CliffStack",
+      "x": -6540.43,
+      "z": 1163.34,
+      "rotation": 177.23,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff578_0",
+      "prefab": "CliffStack",
+      "x": -6376.36,
+      "z": 975.31,
+      "rotation": 234.52,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff576_0",
+      "prefab": "CliffRock5",
+      "x": -6395.27,
+      "z": 1016.08,
+      "rotation": 240.74,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff568_0",
+      "prefab": "CliffRock5",
+      "x": -6333.27,
+      "z": 878.19,
+      "rotation": 61.19,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff561_0",
+      "prefab": "CliffRock6",
+      "x": -6292.75,
+      "z": 807.96,
+      "rotation": 61.19,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff562_0",
+      "prefab": "CliffStack",
+      "x": -6274.25,
+      "z": 770.25,
+      "rotation": 283.4,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff573_0",
+      "prefab": "CliffStack",
+      "x": -6340.1,
+      "z": 899.52,
+      "rotation": 228.32,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff567_0",
+      "prefab": "CliffStack",
+      "x": -6311.51,
+      "z": 838.31,
+      "rotation": 251.63,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff122_0",
+      "prefab": "CliffRock5",
+      "x": 568.51,
+      "z": 635.84,
+      "rotation": 17.59,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff564_0",
+      "prefab": "CliffRock5",
+      "x": -6337.1,
+      "z": 874.81,
+      "rotation": 153.09,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff570_0",
+      "prefab": "CliffRock6",
+      "x": -6353.08,
+      "z": 912.4,
+      "rotation": 155.52,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff121_0",
+      "prefab": "CliffRock6",
+      "x": 585.15,
+      "z": 618.57,
+      "rotation": 70.79,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff547_0",
+      "prefab": "CliffRock6",
+      "x": 20.95,
+      "z": -2675.95,
+      "rotation": 186.07,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff549_0",
+      "prefab": "CliffStack",
+      "x": -6626.91,
+      "z": 1107.34,
+      "rotation": 181.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff609_0",
+      "prefab": "CliffRock6",
+      "x": 1436.73,
+      "z": 6307.81,
+      "rotation": 63,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff559_0",
+      "prefab": "CliffStack",
+      "x": -6246,
+      "z": 720.58,
+      "rotation": 157.39,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff555_0",
+      "prefab": "CliffRock6",
+      "x": -6195.62,
+      "z": 671.81,
+      "rotation": 245.14,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff523_0",
+      "prefab": "CliffStack",
+      "x": 69.73,
+      "z": -2670.28,
+      "rotation": 220.07,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff67_0",
+      "prefab": "CliffRock5",
+      "x": 463.18,
+      "z": 661.03,
+      "rotation": 294.75,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff580_0",
+      "prefab": "CliffStack",
+      "x": -6405.33,
+      "z": 1045.64,
+      "rotation": 159.53,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff84_0",
+      "prefab": "CliffStack",
+      "x": 406.6,
+      "z": 538.03,
+      "rotation": 286.15,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff552_0",
+      "prefab": "CliffStack",
+      "x": -6178.7,
+      "z": 655.73,
+      "rotation": 73.32,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff69_0",
+      "prefab": "CliffRock6",
+      "x": 593.99,
+      "z": 655.82,
+      "rotation": 28.89,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff83_0",
+      "prefab": "CliffRock5",
+      "x": 408.34,
+      "z": 567.92,
+      "rotation": 190.65,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff556_0",
+      "prefab": "CliffStack",
+      "x": -6200.15,
+      "z": 667.3,
+      "rotation": 333.33,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff553_0",
+      "prefab": "CliffRock6",
+      "x": -6173.76,
+      "z": 652.17,
+      "rotation": 92.67,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff546_0",
+      "prefab": "CliffRock6",
+      "x": 33.93,
+      "z": -2690.21,
+      "rotation": 106.4,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff551_0",
+      "prefab": "CliffStack",
+      "x": -6219.9,
+      "z": 685.97,
+      "rotation": 346.29,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff137_0",
+      "prefab": "CliffStack",
+      "x": -6527.77,
+      "z": 1146.26,
+      "rotation": 130.99,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff624_0",
+      "prefab": "CliffRock6",
+      "x": -2269.69,
+      "z": -6340.65,
+      "rotation": 261,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff140_0",
+      "prefab": "CliffRock6",
+      "x": -6643.94,
+      "z": 1168.77,
+      "rotation": 242.12,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff82_0",
+      "prefab": "CliffRock6",
+      "x": 657.98,
+      "z": 528.8,
+      "rotation": 81.75,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff85_0",
+      "prefab": "CliffRock5",
+      "x": 646.59,
+      "z": 515.31,
+      "rotation": 159.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff566_0",
+      "prefab": "CliffStack",
+      "x": -6309.65,
+      "z": 836.01,
+      "rotation": 279.08,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff139_0",
+      "prefab": "CliffStack",
+      "x": -6668.79,
+      "z": 1193.82,
+      "rotation": 349.91,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff569_0",
+      "prefab": "CliffRock5",
+      "x": -6321.98,
+      "z": 866.29,
+      "rotation": 93.86,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff618_0",
+      "prefab": "CliffRock6",
+      "x": -2352.59,
+      "z": -6319.72,
+      "rotation": 220.43,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff565_0",
+      "prefab": "CliffRock5",
+      "x": -6337.37,
+      "z": 895.02,
+      "rotation": 223.74,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff548_0",
+      "prefab": "CliffRock6",
+      "x": -6632.9,
+      "z": 1139.38,
+      "rotation": 45.23,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff81_0",
+      "prefab": "CliffRock5",
+      "x": 665.93,
+      "z": 531.09,
+      "rotation": 124.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff572_0",
+      "prefab": "CliffStack",
+      "x": -6348.95,
+      "z": 911.37,
+      "rotation": 316.08,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff574_0",
+      "prefab": "CliffRock6",
+      "x": -6364.38,
+      "z": 944.1,
+      "rotation": 162.72,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff571_0",
+      "prefab": "CliffRock6",
+      "x": -6370.62,
+      "z": 954.5,
+      "rotation": 154.35,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff534_0",
+      "prefab": "CliffRock6",
+      "x": -76.24,
+      "z": -2640.35,
+      "rotation": 344.36,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff518_0",
+      "prefab": "CliffStack",
+      "x": 62.05,
+      "z": -2693.42,
+      "rotation": 355.26,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff75_0",
+      "prefab": "CliffRock6",
+      "x": 403.53,
+      "z": 600.25,
+      "rotation": 45.36,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff557_0",
+      "prefab": "CliffRock5",
+      "x": -6254.21,
+      "z": 740.34,
+      "rotation": 36.08,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff537_0",
+      "prefab": "CliffStack",
+      "x": -43.14,
+      "z": -2678.83,
+      "rotation": 221.88,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff68_0",
+      "prefab": "CliffStack",
+      "x": 465.85,
+      "z": 652.06,
+      "rotation": 224.11,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff545_0",
+      "prefab": "CliffStack",
+      "x": 32.06,
+      "z": -2710.79,
+      "rotation": 273.45,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff529_0",
+      "prefab": "CliffStack",
+      "x": 103.83,
+      "z": -2580.42,
+      "rotation": 161.85,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff538_0",
+      "prefab": "CliffStack",
+      "x": -59.29,
+      "z": -2656.03,
+      "rotation": 261.03,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff535_0",
+      "prefab": "CliffRock6",
+      "x": -88.5,
+      "z": -2627.13,
+      "rotation": 95.06,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff541_0",
+      "prefab": "CliffStack",
+      "x": 3.21,
+      "z": -2704.03,
+      "rotation": 248.71,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff522_0",
+      "prefab": "CliffRock6",
+      "x": 88.31,
+      "z": -2629.52,
+      "rotation": 255.54,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff560_0",
+      "prefab": "CliffRock5",
+      "x": -6257.85,
+      "z": 756.36,
+      "rotation": 287,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff540_0",
+      "prefab": "CliffStack",
+      "x": 47.63,
+      "z": -2710.62,
+      "rotation": 13.89,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff526_0",
+      "prefab": "CliffRock6",
+      "x": 93.13,
+      "z": -2602.88,
+      "rotation": 195.33,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff74_0",
+      "prefab": "CliffStack",
+      "x": 581.65,
+      "z": 655.22,
+      "rotation": 163.61,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff543_0",
+      "prefab": "CliffStack",
+      "x": 23.26,
+      "z": -2711.65,
+      "rotation": 293.97,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff533_0",
+      "prefab": "CliffRock5",
+      "x": -18.08,
+      "z": -2698.42,
+      "rotation": 334.3,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff524_0",
+      "prefab": "CliffStack",
+      "x": 68.76,
+      "z": -2682.68,
+      "rotation": 349.05,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff521_0",
+      "prefab": "CliffRock5",
+      "x": 85.17,
+      "z": -2662.22,
+      "rotation": 301.71,
+      "kind": "prop",
+      "cs1": "PO mountain"
+    },
+    {
+      "id": "pocliff80_0",
+      "prefab": "CliffStack",
+      "x": 597.93,
+      "z": 636.72,
+      "rotation": 355.61,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff79_0",
+      "prefab": "CliffRock6",
+      "x": 679.22,
+      "z": 553.74,
+      "rotation": 0.86,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff135_0",
+      "prefab": "CliffRock5",
+      "x": -6614.33,
+      "z": 1046.36,
+      "rotation": 264.43,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff88_0",
+      "prefab": "CliffStack",
+      "x": 529.01,
+      "z": 661.94,
+      "rotation": 71.76,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff134_0",
+      "prefab": "CliffStack",
+      "x": -6585.46,
+      "z": 1041.54,
+      "rotation": 33.9,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff608_0",
+      "prefab": "CliffRock6",
+      "x": 1304.3,
+      "z": 6211.02,
+      "rotation": 89.04,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff628_0",
+      "prefab": "CliffStack",
+      "x": -2335.22,
+      "z": -6311.45,
+      "rotation": 259.25,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff627_0",
+      "prefab": "CliffRock5",
+      "x": -2284.51,
+      "z": -6329.44,
+      "rotation": 90.5,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff629_0",
+      "prefab": "CliffRock5",
+      "x": -2316.58,
+      "z": -6305.53,
+      "rotation": 282,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff625_0",
+      "prefab": "rzrock6",
+      "x": -2281.53,
+      "z": -6342.59,
+      "rotation": 351.5,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff626_0",
+      "prefab": "rzrock7",
+      "x": -2343.25,
+      "z": -6325.6,
+      "rotation": 227,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff623_0",
+      "prefab": "rzrock1",
+      "x": -2339.9,
+      "z": -6338.49,
+      "rotation": 240.5,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff132_0",
+      "prefab": "rzrock2",
+      "x": -6572.47,
+      "z": 1141.78,
+      "rotation": 257.23,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff133_0",
+      "prefab": "rzrock4",
+      "x": -6580.56,
+      "z": 1093.56,
+      "rotation": 146.43,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff141_0",
+      "prefab": "rzrock1",
+      "x": -6619.48,
+      "z": 1067.2,
+      "rotation": 291.08,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff131_0",
+      "prefab": "rzrock3",
+      "x": -6576.54,
+      "z": 1091.33,
+      "rotation": 253.56,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff151_0",
+      "prefab": "rzrock6",
+      "x": -6598.99,
+      "z": 1163.83,
+      "rotation": 239.34,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff147_0",
+      "prefab": "rzrock1",
+      "x": -6606.07,
+      "z": 1208.92,
+      "rotation": 138.09,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff111_0",
+      "prefab": "rzrock3",
+      "x": 510.75,
+      "z": 725.21,
+      "rotation": 107.75,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff110_0",
+      "prefab": "rzrock7",
+      "x": 503.09,
+      "z": 727.66,
+      "rotation": 175.08,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff109_0",
+      "prefab": "rzrock3",
+      "x": 457.92,
+      "z": 716.21,
+      "rotation": 59.5,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff108_0",
+      "prefab": "rzrock8",
+      "x": 472.84,
+      "z": 717.65,
+      "rotation": 270.16,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff606_0",
+      "prefab": "rzrock6",
+      "x": 1291.75,
+      "z": 6151.82,
+      "rotation": 80.43,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    },
+    {
+      "id": "pocliff107_0",
+      "prefab": "rzrock1",
+      "x": 575.68,
+      "z": 750.9,
+      "rotation": 117,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff106_0",
+      "prefab": "rzrock3",
+      "x": 581.09,
+      "z": 746.32,
+      "rotation": 302.16,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff105_0",
+      "prefab": "rzrock2",
+      "x": 627.7,
+      "z": 732.57,
+      "rotation": 292.58,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff150_0",
+      "prefab": "rzrock2",
+      "x": -6607.94,
+      "z": 1207.79,
+      "rotation": 235.03,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff148_0",
+      "prefab": "rzrock7",
+      "x": -6629.3,
+      "z": 1206.14,
+      "rotation": 18.03,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff149_0",
+      "prefab": "rzrock5",
+      "x": -6606.59,
+      "z": 1154.28,
+      "rotation": 121.78,
+      "kind": "prop",
+      "cs1": "PO falls steps"
+    },
+    {
+      "id": "pocliff607_0",
+      "prefab": "RZaridrock1",
+      "x": 1294.51,
+      "z": 6147.13,
+      "rotation": 352.35,
+      "kind": "prop",
+      "cs1": "PO rock work"
+    }
+  ]
+}

@@ -247,3 +247,20 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   wall-flagged edge).
 - Pavement Path dead ends within 20 m (Δy ≤ 3 m) of a ground road, gravel road or path get `snapToSegment` {radius, prefabContains} (`PathSnap`, stats in stats.md).
   Run A: 3 of the 4 reported stubs; the 4th, at (295, −3026), is the end of an isolated three-piece path whose "neighbour" is its own chain.
+
+## Round 8: owner review of Run A (`Round8.cs`; each its own import file, both scales)
+
+- Object y: compared with the playable CS2 heightmap (`--cs2-heightmap`, default LocalLow `10190615-dktflls-1to1.png`, value/32 = true metres). y only where the
+  object is > 3 m above it; buildings never get y. 556 objects lose y against the old CS1-terrain rule, none gain it (2 857 → 2 301).
+- `import-substation.json`: CS1 b39573 (SEC Extra Large Substation) → `Transformer Station` (PLACEHOLDER until the bridge reports the prefab), kind building, no y.
+- `import-dam.json` (variant A, yaw 261.7 = −CS1 angle) and `import-dam-B.json` (B, 98.3): `Hydroelectric Power Plant` (placeholder) at the centre of the four CS1
+  Dam Electricity pieces (1549.5, 4690). Import one of them.
+- `import-power-ends.json`: both 345 kV dead ends sit near the substation (45 / 57 m; no CS1 line reaches the dam). The nearer circuit is rerouted to the substation,
+  the other to the dam: each new course runs from the existing pylon node (snapToSegment radius 2) to the building centre moved 8 m toward the line (fallback
+  until the bridge reports the connection point). `replaces` lists the edges to undo first (e5094_0, e32855_0).
+- `import-po-rocks.json`: pack cliffs at the PO mountains / rock work / falls steps of cs1-offline po-offline.json, by footprint in the object frame (3–12 m Arid rocks /
+  Boulders, 12–36 m rzrock, 36–80 m CliffRock5/6/Stack, 80–160 m by height and aspect, > 160 m a CliffFreeStanding at the summit plus CliffSide pieces every 60 m
+  down the steepest flank), PO yaw, no y, largest first, cap 2 500.
+- `import-rock-scatter.json`: Rock01–10 (70 %), Rock11–30 (25 %), Boulder01–08 (5 %), one dart per 10 m cell with p = 100/500 within 60 m of every rock/cliff object
+  and inside the rock surfaces, ≥ 6 m apart and from a course's edge, none in CS1 water. Boulder02–07 are not in our name lists yet (orchestrator's list).
+- `node tools/run-all.mjs` writes `out/ROUND8.md` (= ROUND.md); ROUND7.md stays as the Run A record.

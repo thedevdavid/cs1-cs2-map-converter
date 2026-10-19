@@ -1,6 +1,6 @@
 {
   "name": "objects",
-  "_comment": "rotation = yaw in degrees about \u002By, 0 = \u002Bz, clockwise from above, from CS1 m_angle as \u2212angle\u00B7180/\u03C0 (UNVERIFIED sign). y only where the CS1 object is \u003E 2 m off the terrain (CS1 y \u00D7 height factor).",
+  "_comment": "rotation = yaw in degrees about \u002By, 0 = \u002Bz, clockwise from above, from CS1 m_angle as \u2212angle\u00B7180/\u03C0 (UNVERIFIED sign). y only where the object is clearly on a structure: \u003E 3 m above the CS2 playable heightmap (else \u003E 2 m off the CS1 terrain); never for buildings (CS1 y \u00D7 height factor).",
   "options": {
     "dryRun": false,
     "batchSize": 500,
@@ -83,7 +83,6 @@
       "prefab": "CliffRock6",
       "x": -7091.42,
       "z": 7068.52,
-      "y": 1643.34,
       "rotation": 176,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -133,7 +132,6 @@
       "prefab": "Rock03",
       "x": 2813.26,
       "z": 6649.9,
-      "y": 396.14,
       "rotation": 222.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -183,7 +181,6 @@
       "prefab": "Rock12",
       "x": -3584.69,
       "z": -3403.28,
-      "y": 523.58,
       "rotation": 145,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -233,7 +230,6 @@
       "prefab": "CliffRock5",
       "x": -6788.13,
       "z": -3781.81,
-      "y": 1591.38,
       "rotation": 28,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -283,7 +279,6 @@
       "prefab": "RZaridrock3",
       "x": -6800.06,
       "z": 761.46,
-      "y": 565.01,
       "rotation": 174.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -303,7 +298,6 @@
       "prefab": "Rock15",
       "x": 6798.04,
       "z": 2472.1,
-      "y": 279.14,
       "rotation": 296,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -431,7 +425,6 @@
       "prefab": "CliffRock5",
       "x": -6745.38,
       "z": -3919.89,
-      "y": 1570.14,
       "rotation": 119.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -441,7 +434,6 @@
       "prefab": "CliffStack",
       "x": -6844.86,
       "z": -3714.64,
-      "y": 1610.16,
       "rotation": 12.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -461,7 +453,6 @@
       "prefab": "rzrock7",
       "x": 1872.29,
       "z": -4169.59,
-      "y": 225.62,
       "rotation": 0.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -551,7 +542,6 @@
       "prefab": "RuinsCastle01",
       "x": -34.84,
       "z": -2653.85,
-      "y": 328.02,
       "rotation": 251.91,
       "kind": "building",
       "cs1": "Castle Ruins 02"
@@ -601,7 +591,6 @@
       "prefab": "CliffRock6",
       "x": -6802.13,
       "z": -3825.86,
-      "y": 1594.37,
       "rotation": 70,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -848,7 +837,6 @@
       "prefab": "RZaridrock3",
       "x": 2873.32,
       "z": 6704,
-      "y": 389.38,
       "rotation": 290.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -888,7 +876,6 @@
       "prefab": "Rock03",
       "x": -1028.83,
       "z": 4505.93,
-      "y": 437.77,
       "rotation": 170.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -898,7 +885,6 @@
       "prefab": "Rock04",
       "x": 6773.39,
       "z": -1242.52,
-      "y": 342.57,
       "rotation": 187,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -938,7 +924,6 @@
       "prefab": "CliffStack",
       "x": -7150.56,
       "z": 6160.63,
-      "y": 1808.31,
       "rotation": 181.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -967,7 +952,6 @@
       "prefab": "RZaridrock1",
       "x": -1163.7,
       "z": 4781.89,
-      "y": 457.4,
       "rotation": 339,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -997,7 +981,6 @@
       "prefab": "CliffStack",
       "x": -7101.03,
       "z": -5890.76,
-      "y": 1808.84,
       "rotation": 102,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -1075,7 +1058,6 @@
       "prefab": "rzrock7",
       "x": -1371.47,
       "z": 4943.47,
-      "y": 465.73,
       "rotation": 113.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -1115,7 +1097,6 @@
       "prefab": "rzrock1",
       "x": -1453.68,
       "z": 1381.15,
-      "y": 418.31,
       "rotation": 243,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -1145,7 +1126,6 @@
       "prefab": "rzrock7",
       "x": -2074.08,
       "z": -3113.16,
-      "y": 328.6,
       "rotation": 198.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -1373,7 +1353,6 @@
       "prefab": "rzrock7",
       "x": -1087.69,
       "z": 4526.68,
-      "y": 427.17,
       "rotation": 77,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -1383,7 +1362,6 @@
       "prefab": "CliffRock6",
       "x": -6327.87,
       "z": -4848.43,
-      "y": 1996.88,
       "rotation": 6,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -1521,7 +1499,6 @@
       "prefab": "CliffRock6",
       "x": -5827.95,
       "z": 6676.14,
-      "y": 1444.27,
       "rotation": 221.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -1541,7 +1518,6 @@
       "prefab": "CliffRock6",
       "x": -6208.93,
       "z": -5473.77,
-      "y": 1736.65,
       "rotation": 81.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -1690,7 +1666,6 @@
       "prefab": "CliffRock5",
       "x": -5429.31,
       "z": 7088.71,
-      "y": 1461.13,
       "rotation": 286.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -1769,7 +1744,6 @@
       "prefab": "CliffRock6",
       "x": -6468.94,
       "z": -4121.69,
-      "y": 1551.91,
       "rotation": 353,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -1779,7 +1753,6 @@
       "prefab": "Rock02",
       "x": 570.81,
       "z": 982.92,
-      "y": 282.03,
       "rotation": 332,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -1789,7 +1762,6 @@
       "prefab": "RZaridrock4",
       "x": 782.72,
       "z": 5501.99,
-      "y": 354.29,
       "rotation": 69.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -2084,7 +2056,6 @@
       "prefab": "CliffRock5",
       "x": -6337.59,
       "z": -4747.11,
-      "y": 1961.14,
       "rotation": 261,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -2114,7 +2085,6 @@
       "prefab": "Rock09",
       "x": -1200.48,
       "z": 4778.57,
-      "y": 438.02,
       "rotation": 187,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -2154,7 +2124,6 @@
       "prefab": "Rock01",
       "x": 1163.54,
       "z": 5257.88,
-      "y": 324.44,
       "rotation": 267,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -2164,7 +2133,6 @@
       "prefab": "CliffRock5",
       "x": -5950.6,
       "z": -5440.35,
-      "y": 1400.14,
       "rotation": 20.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -2359,7 +2327,6 @@
       "prefab": "CliffStack",
       "x": -6367.1,
       "z": -5583.64,
-      "y": 1926.23,
       "rotation": 21,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -2399,7 +2366,6 @@
       "prefab": "Rock04",
       "x": -4371.03,
       "z": 146.49,
-      "y": 291.22,
       "rotation": 225,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -2419,7 +2385,6 @@
       "prefab": "Rock12",
       "x": 2546.48,
       "z": 5625.09,
-      "y": 393.27,
       "rotation": 85,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -2439,7 +2404,6 @@
       "prefab": "Rock19",
       "x": 6657.86,
       "z": -1343.93,
-      "y": 327.67,
       "rotation": 354.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -2449,7 +2413,6 @@
       "prefab": "RZaridrock3",
       "x": -6500,
       "z": -4014.44,
-      "y": 1576.42,
       "rotation": 226,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -2519,7 +2482,6 @@
       "prefab": "RZaridrock3",
       "x": -6449.94,
       "z": 7131.28,
-      "y": 1482.65,
       "rotation": 204,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -2717,7 +2679,6 @@
       "prefab": "CliffStack",
       "x": -6832,
       "z": 5930.5,
-      "y": 1610.4,
       "rotation": 127.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -2797,7 +2758,6 @@
       "prefab": "RZaridrock4",
       "x": 6864.97,
       "z": -1285.86,
-      "y": 294.81,
       "rotation": 299.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -2944,7 +2904,6 @@
       "prefab": "CliffStack",
       "x": -6373.87,
       "z": -4860.81,
-      "y": 2017.84,
       "rotation": 353,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -3042,7 +3001,6 @@
       "prefab": "RZaridrock4",
       "x": -1255.09,
       "z": 1746.01,
-      "y": 416.5,
       "rotation": 9.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -3072,7 +3030,6 @@
       "prefab": "RZaridrock4",
       "x": 2194.19,
       "z": 5703.31,
-      "y": 371.43,
       "rotation": 173.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -3091,7 +3048,6 @@
       "prefab": "RZaridrock4",
       "x": 6733.73,
       "z": -1126.68,
-      "y": 335.03,
       "rotation": 102,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -3211,7 +3167,6 @@
       "prefab": "Rock08",
       "x": 6769,
       "z": 2323.37,
-      "y": 280.77,
       "rotation": 329.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -3260,7 +3215,6 @@
       "prefab": "CliffRock6",
       "x": -6725.4,
       "z": -4276.2,
-      "y": 1793.48,
       "rotation": 42.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -3308,7 +3262,6 @@
       "prefab": "rzrock1",
       "x": -4.94,
       "z": -2776.14,
-      "y": 215.58,
       "rotation": 43,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -3572,7 +3525,6 @@
       "prefab": "RZaridrock4",
       "x": -1251.26,
       "z": 1743.83,
-      "y": 417.18,
       "rotation": 3.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -3631,7 +3583,6 @@
       "prefab": "CliffStack",
       "x": -5351.71,
       "z": 7120.7,
-      "y": 1396.93,
       "rotation": 313.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -3731,7 +3682,6 @@
       "prefab": "CliffRock5",
       "x": -6671.17,
       "z": -4300.96,
-      "y": 1772.63,
       "rotation": 76,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -3781,7 +3731,6 @@
       "prefab": "CliffRock5",
       "x": -6255.41,
       "z": -5011.54,
-      "y": 1950.19,
       "rotation": 316,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -3801,7 +3750,6 @@
       "prefab": "Rock10",
       "x": 577.57,
       "z": 1985.7,
-      "y": 283.16,
       "rotation": 79,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -3811,7 +3759,6 @@
       "prefab": "CliffStack",
       "x": -6049.8,
       "z": -5469.33,
-      "y": 1563.25,
       "rotation": 346.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -3821,7 +3768,6 @@
       "prefab": "RZaridrock2",
       "x": 1665.55,
       "z": -4189.93,
-      "y": 217.21,
       "rotation": 130.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -3871,7 +3817,6 @@
       "prefab": "RZaridrock1",
       "x": 1714.03,
       "z": -4134.74,
-      "y": 253.17,
       "rotation": 124.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -3921,7 +3866,6 @@
       "prefab": "RZaridrock2",
       "x": 3792.94,
       "z": 6590.38,
-      "y": 427.01,
       "rotation": 102.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -3951,7 +3895,6 @@
       "prefab": "Rock05",
       "x": 6673.96,
       "z": -1367.68,
-      "y": 312.89,
       "rotation": 135.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -3981,7 +3924,6 @@
       "prefab": "rzrock7",
       "x": 6674.76,
       "z": -1083.72,
-      "y": 351.39,
       "rotation": 158,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -4001,7 +3943,6 @@
       "prefab": "Rock25",
       "x": 1809.09,
       "z": -4116.19,
-      "y": 237.86,
       "rotation": 315.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -4131,7 +4072,6 @@
       "prefab": "CliffStack",
       "x": -6368.71,
       "z": -4799.36,
-      "y": 1994.09,
       "rotation": 295.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -4191,7 +4131,6 @@
       "prefab": "CliffRock5",
       "x": -5906.49,
       "z": 6705.93,
-      "y": 1484.33,
       "rotation": 215,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -4261,7 +4200,6 @@
       "prefab": "RZaridrock1",
       "x": -1216.55,
       "z": 4812.5,
-      "y": 458.56,
       "rotation": 77,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -4281,7 +4219,6 @@
       "prefab": "rzrock8",
       "x": 1031.67,
       "z": 4852.87,
-      "y": 324.19,
       "rotation": 357.5,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -4341,7 +4278,6 @@
       "prefab": "CliffStack",
       "x": -6350.57,
       "z": -4887.09,
-      "y": 1997.67,
       "rotation": 27.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -4548,7 +4484,6 @@
       "prefab": "CliffRock5",
       "x": -7117.97,
       "z": -3407.28,
-      "y": 1602.89,
       "rotation": 229,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -4578,7 +4513,6 @@
       "prefab": "Rock05",
       "x": -6472.25,
       "z": -3943.81,
-      "y": 1557.13,
       "rotation": 200,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -4617,7 +4551,6 @@
       "prefab": "Rock10",
       "x": 2950.39,
       "z": 6715.41,
-      "y": 404.67,
       "rotation": 294,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -4637,7 +4570,6 @@
       "prefab": "CliffRock6",
       "x": -6257.67,
       "z": 7040.57,
-      "y": 1601.68,
       "rotation": 22,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -4707,7 +4639,6 @@
       "prefab": "RZaridrock3",
       "x": -6781.09,
       "z": -3348.91,
-      "y": 1421.59,
       "rotation": 142.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -4737,7 +4668,6 @@
       "prefab": "RZaridrock4",
       "x": 1357.93,
       "z": 4891.77,
-      "y": 321.91,
       "rotation": 208,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -4807,7 +4737,6 @@
       "prefab": "CliffRock5",
       "x": -6882.68,
       "z": -3736,
-      "y": 1629.49,
       "rotation": 358.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -4876,7 +4805,6 @@
       "prefab": "CliffRock6",
       "x": -6436.96,
       "z": -4225.98,
-      "y": 1515.5,
       "rotation": 66,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -4935,7 +4863,6 @@
       "prefab": "RZaridrock3",
       "x": 6544.1,
       "z": -1167.11,
-      "y": 329.66,
       "rotation": 148.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -5054,7 +4981,6 @@
       "prefab": "RZaridrock3",
       "x": -3524.85,
       "z": -3299.61,
-      "y": 506.49,
       "rotation": 92,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -5074,7 +5000,6 @@
       "prefab": "Rock05",
       "x": 2790.31,
       "z": 6654.55,
-      "y": 390.77,
       "rotation": 235,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -5114,7 +5039,6 @@
       "prefab": "Rock11",
       "x": 1271.22,
       "z": 6265.29,
-      "y": 323.83,
       "rotation": 319,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -5162,7 +5086,6 @@
       "prefab": "CliffRock6",
       "x": -6367.64,
       "z": -5624.57,
-      "y": 1923.16,
       "rotation": 63.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -5202,7 +5125,6 @@
       "prefab": "rzrock4",
       "x": 1484.8,
       "z": 4795.7,
-      "y": 320.01,
       "rotation": 25,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -5222,7 +5144,6 @@
       "prefab": "RZaridrock2",
       "x": 3590.47,
       "z": 6841.74,
-      "y": 430.95,
       "rotation": 175.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -5232,7 +5153,6 @@
       "prefab": "Rock10",
       "x": 1282.13,
       "z": 6178.59,
-      "y": 320.5,
       "rotation": 311,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -5490,7 +5410,6 @@
       "prefab": "CliffRock6",
       "x": -5809.04,
       "z": 6726.44,
-      "y": 1539.24,
       "rotation": 284,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -5559,7 +5478,6 @@
       "prefab": "CliffStack",
       "x": -6808.08,
       "z": 5900.18,
-      "y": 1580.57,
       "rotation": 159.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -5589,7 +5507,6 @@
       "prefab": "rzrock4",
       "x": 1516.49,
       "z": 4996.32,
-      "y": 320.09,
       "rotation": 94.5,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -5629,7 +5546,6 @@
       "prefab": "RZaridrock1",
       "x": -1122.56,
       "z": 4637.96,
-      "y": 433.57,
       "rotation": 352,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -5649,7 +5565,6 @@
       "prefab": "Rock09",
       "x": -1277.5,
       "z": 1750.69,
-      "y": 415.3,
       "rotation": 348,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -5678,7 +5593,6 @@
       "prefab": "rzrock5",
       "x": 1051.29,
       "z": 4854.12,
-      "y": 324.63,
       "rotation": 357.5,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -5838,7 +5752,6 @@
       "prefab": "RZaridrock4",
       "x": 6729.27,
       "z": 2258.46,
-      "y": 276.81,
       "rotation": 8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -5997,7 +5910,6 @@
       "prefab": "Rock17",
       "x": 1843.41,
       "z": -4207.48,
-      "y": 223.22,
       "rotation": 122,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -6047,7 +5959,6 @@
       "prefab": "rzrock8",
       "x": 1034.26,
       "z": 4973.67,
-      "y": 320.9,
       "rotation": 248.5,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -6057,7 +5968,6 @@
       "prefab": "RZaridrock3",
       "x": 6792.4,
       "z": -1261.75,
-      "y": 327.75,
       "rotation": 212.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -6205,7 +6115,6 @@
       "prefab": "RZaridrock4",
       "x": -3410.68,
       "z": 6564.5,
-      "y": 678.76,
       "rotation": 55.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -6313,7 +6222,6 @@
       "prefab": "Rock01",
       "x": 6705.21,
       "z": -1123.96,
-      "y": 347.92,
       "rotation": 79,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -6382,7 +6290,6 @@
       "prefab": "CliffRock6",
       "x": -6332.5,
       "z": -5435.06,
-      "y": 1879.19,
       "rotation": 232.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -6600,7 +6507,6 @@
       "prefab": "CliffStack",
       "x": -6079.92,
       "z": 6840.78,
-      "y": 1657.33,
       "rotation": 219.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -6629,7 +6535,6 @@
       "prefab": "RZaridrock4",
       "x": 5649.41,
       "z": 4997.98,
-      "y": 371.22,
       "rotation": 300.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -6679,7 +6584,6 @@
       "prefab": "CliffRock5",
       "x": -7146.42,
       "z": -5767.43,
-      "y": 1921.42,
       "rotation": 80,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -6719,7 +6623,6 @@
       "prefab": "Rock09",
       "x": 6813.94,
       "z": -1246.39,
-      "y": 327.71,
       "rotation": 180.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -6729,7 +6632,6 @@
       "prefab": "RZaridrock5",
       "x": -491.92,
       "z": 4446.61,
-      "y": 442.91,
       "rotation": 62.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -6769,7 +6671,6 @@
       "prefab": "RZaridrock3",
       "x": -6803.88,
       "z": -3340.79,
-      "y": 1428.11,
       "rotation": 122,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -6789,7 +6690,6 @@
       "prefab": "CliffStack",
       "x": -6352.49,
       "z": -4757.29,
-      "y": 1969.57,
       "rotation": 263,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -6799,7 +6699,6 @@
       "prefab": "Rock28",
       "x": -1020.01,
       "z": -3605.54,
-      "y": 255.29,
       "rotation": 233,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -6839,7 +6738,6 @@
       "prefab": "CliffRock6",
       "x": -6059.67,
       "z": -5321.29,
-      "y": 1636.76,
       "rotation": 15,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -6878,7 +6776,6 @@
       "prefab": "CliffRock6",
       "x": -6849.54,
       "z": -3755.72,
-      "y": 1630.15,
       "rotation": 26,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -6898,7 +6795,6 @@
       "prefab": "RZaridrock2",
       "x": -1523.29,
       "z": -3222.76,
-      "y": 285.84,
       "rotation": 229,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -6927,7 +6823,6 @@
       "prefab": "Rock10",
       "x": 1362.05,
       "z": 3909.96,
-      "y": 292.98,
       "rotation": 221.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -6997,7 +6892,6 @@
       "prefab": "CliffStack",
       "x": -5993.4,
       "z": -5285.23,
-      "y": 1577.05,
       "rotation": 349.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -7097,7 +6991,6 @@
       "prefab": "CliffRock5",
       "x": -7144.02,
       "z": -3413.81,
-      "y": 1621.13,
       "rotation": 215,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -7197,7 +7090,6 @@
       "prefab": "RZaridrock3",
       "x": 570.68,
       "z": 2025.8,
-      "y": 283.28,
       "rotation": 112,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -7207,7 +7099,6 @@
       "prefab": "Rock20",
       "x": 827.09,
       "z": -2318.36,
-      "y": 217.44,
       "rotation": 205,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -7365,7 +7256,6 @@
       "prefab": "CliffRock6",
       "x": -6161.95,
       "z": -5511.82,
-      "y": 1706.85,
       "rotation": 48,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -7463,7 +7353,6 @@
       "prefab": "CliffRock6",
       "x": -6779.82,
       "z": 5598.09,
-      "y": 1433.23,
       "rotation": 45,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -7641,7 +7530,6 @@
       "prefab": "CliffRock6",
       "x": -6695.98,
       "z": -5797.75,
-      "y": 1910.25,
       "rotation": 326,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -7700,7 +7588,6 @@
       "prefab": "CliffRock5",
       "x": -6173.3,
       "z": -5094.51,
-      "y": 1838.94,
       "rotation": 34,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -7796,7 +7683,6 @@
       "prefab": "CliffRock5",
       "x": -6229.8,
       "z": -5115.5,
-      "y": 1880.26,
       "rotation": 40.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -7856,7 +7742,6 @@
       "prefab": "CliffRock5",
       "x": -6199.11,
       "z": -5142.07,
-      "y": 1834.38,
       "rotation": 67.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -7866,7 +7751,6 @@
       "prefab": "CliffRock5",
       "x": -6231.38,
       "z": 7019.04,
-      "y": 1616.25,
       "rotation": 349.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -8034,7 +7918,6 @@
       "prefab": "CliffRock6",
       "x": -6095.27,
       "z": -5449.78,
-      "y": 1608.57,
       "rotation": 331,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -8063,7 +7946,6 @@
       "prefab": "Rock03",
       "x": -6488.69,
       "z": -4014.07,
-      "y": 1573.21,
       "rotation": 225,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -8083,7 +7965,6 @@
       "prefab": "rzrock7",
       "x": -7019.09,
       "z": -3458.62,
-      "y": 1580.35,
       "rotation": 64,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -8093,7 +7974,6 @@
       "prefab": "Rock05",
       "x": -6465.16,
       "z": -3968.84,
-      "y": 1561.62,
       "rotation": 236,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -8153,7 +8033,6 @@
       "prefab": "CliffRock5",
       "x": -5766.5,
       "z": 6794.97,
-      "y": 1605.39,
       "rotation": 193,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -8183,7 +8062,6 @@
       "prefab": "rzrock3",
       "x": 1514.84,
       "z": 4976.4,
-      "y": 320.75,
       "rotation": 4,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -8253,7 +8131,6 @@
       "prefab": "CliffRock5",
       "x": -6481.66,
       "z": -4191.47,
-      "y": 1539.93,
       "rotation": 31,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -8428,7 +8305,6 @@
       "prefab": "CliffStack",
       "x": -6966.78,
       "z": -3599.24,
-      "y": 1569.75,
       "rotation": 31,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -8468,7 +8344,6 @@
       "prefab": "RZaridrock4",
       "x": 86.88,
       "z": -3689.46,
-      "y": 194.39,
       "rotation": 310,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -8478,7 +8353,6 @@
       "prefab": "Rock10",
       "x": 7111.94,
       "z": 2884.43,
-      "y": 280.54,
       "rotation": 339.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -8518,7 +8392,6 @@
       "prefab": "CliffRock6",
       "x": -7046.81,
       "z": -3487.02,
-      "y": 1579.76,
       "rotation": 295.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -8548,7 +8421,6 @@
       "prefab": "CliffStack",
       "x": -6694.22,
       "z": -4178.91,
-      "y": 1716.57,
       "rotation": 34.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -8617,7 +8489,6 @@
       "prefab": "RZaridrock3",
       "x": -998.56,
       "z": 4540.34,
-      "y": 443.13,
       "rotation": 154.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -8706,7 +8577,6 @@
       "prefab": "Rock15",
       "x": 6415.35,
       "z": 1158.07,
-      "y": 286.05,
       "rotation": 95,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -8912,7 +8782,6 @@
       "prefab": "RZaridrock2",
       "x": 424.37,
       "z": 1008.19,
-      "y": 282,
       "rotation": 225,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -8952,7 +8821,6 @@
       "prefab": "CliffStack",
       "x": -6801.98,
       "z": -3888.14,
-      "y": 1608.54,
       "rotation": 79.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -8992,7 +8860,6 @@
       "prefab": "RZaridrock4",
       "x": -1228.05,
       "z": 1746.83,
-      "y": 423.51,
       "rotation": 35.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -9051,7 +8918,6 @@
       "prefab": "CliffRock5",
       "x": -6714.2,
       "z": -4222.26,
-      "y": 1748.73,
       "rotation": 35,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -9061,7 +8927,6 @@
       "prefab": "CliffRock5",
       "x": -6219.04,
       "z": -5431.94,
-      "y": 1685.52,
       "rotation": 55.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -9237,7 +9102,6 @@
       "prefab": "RZaridrock3",
       "x": 6798.51,
       "z": -1271.84,
-      "y": 320.16,
       "rotation": 228,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -9247,7 +9111,6 @@
       "prefab": "rzrock7",
       "x": -1112.02,
       "z": 4609.72,
-      "y": 435.58,
       "rotation": 292,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -9386,7 +9249,6 @@
       "prefab": "CliffStack",
       "x": -6861.85,
       "z": -3691.89,
-      "y": 1597.39,
       "rotation": 6,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -9456,7 +9318,6 @@
       "prefab": "RZaridrock3",
       "x": -3259.11,
       "z": -729.39,
-      "y": 344.44,
       "rotation": 43.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -9556,7 +9417,6 @@
       "prefab": "Rock20",
       "x": 7002.12,
       "z": 2780.15,
-      "y": 279.09,
       "rotation": 140.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -9645,7 +9505,6 @@
       "prefab": "CliffRock5",
       "x": -5996.63,
       "z": -5468.55,
-      "y": 1498.28,
       "rotation": 334,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -9665,7 +9524,6 @@
       "prefab": "Rock16",
       "x": 1444.35,
       "z": 6904.97,
-      "y": 377.62,
       "rotation": 40,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -9685,7 +9543,6 @@
       "prefab": "RZaridrock1",
       "x": -965.75,
       "z": 4215.84,
-      "y": 391.86,
       "rotation": 37,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -9825,7 +9682,6 @@
       "prefab": "CliffRock6",
       "x": -7083.24,
       "z": -5805.38,
-      "y": 1857.65,
       "rotation": 110,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -9874,7 +9730,6 @@
       "prefab": "CliffStack",
       "x": -6917.93,
       "z": -3668.2,
-      "y": 1604.64,
       "rotation": 335,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -9884,7 +9739,6 @@
       "prefab": "RZaridrock1",
       "x": 2382.08,
       "z": 5620.67,
-      "y": 378.76,
       "rotation": 78.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -9903,7 +9757,6 @@
       "prefab": "Rock27",
       "x": 224.63,
       "z": 988.64,
-      "y": 281.75,
       "rotation": 158,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -9972,7 +9825,6 @@
       "prefab": "rzrock7",
       "x": 3829.23,
       "z": 6572.35,
-      "y": 434.18,
       "rotation": 66,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -10050,7 +9902,6 @@
       "prefab": "RZaridrock5",
       "x": 1049.54,
       "z": 3354.9,
-      "y": 288.24,
       "rotation": 43.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -10089,7 +9940,6 @@
       "prefab": "rzrock5",
       "x": 1030.11,
       "z": 4989.4,
-      "y": 321.23,
       "rotation": 274.5,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -10209,7 +10059,6 @@
       "prefab": "RZaridrock1",
       "x": 3480.89,
       "z": 6810.69,
-      "y": 434.79,
       "rotation": 167,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -10337,7 +10186,6 @@
       "prefab": "Rock12",
       "x": -1121.48,
       "z": 4675.37,
-      "y": 439.41,
       "rotation": 43.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -10377,7 +10225,6 @@
       "prefab": "RZaridrock5",
       "x": 6562.07,
       "z": -1204.16,
-      "y": 346.27,
       "rotation": 184.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -10475,7 +10322,6 @@
       "prefab": "rzrock7",
       "x": -7022.84,
       "z": -3454.84,
-      "y": 1579.94,
       "rotation": 57,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -10515,7 +10361,6 @@
       "prefab": "CliffStack",
       "x": -6196.71,
       "z": 6973.23,
-      "y": 1627.17,
       "rotation": 290.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -10624,7 +10469,6 @@
       "prefab": "CliffRock6",
       "x": -6627.78,
       "z": -4257.84,
-      "y": 1709.47,
       "rotation": 88.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -10634,7 +10478,6 @@
       "prefab": "RZaridrock5",
       "x": 6596.36,
       "z": -1279.29,
-      "y": 349.2,
       "rotation": 134.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -10683,7 +10526,6 @@
       "prefab": "CliffRock5",
       "x": -5437.07,
       "z": 7045.68,
-      "y": 1494.41,
       "rotation": 313,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -10743,7 +10585,6 @@
       "prefab": "CliffRock5",
       "x": -6414.7,
       "z": -4842.95,
-      "y": 2029.12,
       "rotation": 319,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -10773,7 +10614,6 @@
       "prefab": "rzrock1",
       "x": -1330.86,
       "z": 6375.91,
-      "y": 489.71,
       "rotation": 297.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -10842,7 +10682,6 @@
       "prefab": "CliffStack",
       "x": -6072.22,
       "z": 6789.78,
-      "y": 1662.25,
       "rotation": 223.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -10882,7 +10721,6 @@
       "prefab": "RZaridrock4",
       "x": 4237.85,
       "z": 5737.82,
-      "y": 434.5,
       "rotation": 44,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -10942,7 +10780,6 @@
       "prefab": "RZaridrock5",
       "x": -571.95,
       "z": 4349.72,
-      "y": 440.01,
       "rotation": 195.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -10992,7 +10829,6 @@
       "prefab": "RZaridrock1",
       "x": 6758.05,
       "z": -1121.33,
-      "y": 336.39,
       "rotation": 3,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -11072,7 +10908,6 @@
       "prefab": "CliffRock5",
       "x": -6527.3,
       "z": -5794.54,
-      "y": 1924.82,
       "rotation": 53.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -11082,7 +10917,6 @@
       "prefab": "CliffRock6",
       "x": -6158.48,
       "z": -5476.41,
-      "y": 1670.29,
       "rotation": 46.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -11252,7 +11086,6 @@
       "prefab": "RZaridrock3",
       "x": 178.98,
       "z": 5815.75,
-      "y": 389.41,
       "rotation": 35.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -11262,7 +11095,6 @@
       "prefab": "Rock01",
       "x": 6907.65,
       "z": -1302.79,
-      "y": 287.89,
       "rotation": 253.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -11272,7 +11104,6 @@
       "prefab": "RZaridrock3",
       "x": 6539.65,
       "z": -1234.25,
-      "y": 330.15,
       "rotation": 184.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -11322,7 +11153,6 @@
       "prefab": "Rock24",
       "x": -1088.04,
       "z": 4675.55,
-      "y": 483.02,
       "rotation": 41,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -11421,7 +11251,6 @@
       "prefab": "Rock30",
       "x": 1844.52,
       "z": 5651.84,
-      "y": 347.87,
       "rotation": 294,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -11540,7 +11369,6 @@
       "prefab": "Rock20",
       "x": -3453.84,
       "z": 6530.41,
-      "y": 682.87,
       "rotation": 99.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -11550,7 +11378,6 @@
       "prefab": "CliffRock6",
       "x": -6177.27,
       "z": -5541.03,
-      "y": 1766.5,
       "rotation": 87.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -11560,7 +11387,6 @@
       "prefab": "Rock26",
       "x": -1361.68,
       "z": 4915.44,
-      "y": 459.22,
       "rotation": 87.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -11580,7 +11406,6 @@
       "prefab": "CliffStack",
       "x": -5551.91,
       "z": 7000.65,
-      "y": 1573.52,
       "rotation": 1.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -11590,7 +11415,6 @@
       "prefab": "CliffRock5",
       "x": -6599.42,
       "z": 5694.46,
-      "y": 1376.88,
       "rotation": 27.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -11707,7 +11531,6 @@
       "prefab": "Rock06",
       "x": -1248.91,
       "z": 1724.58,
-      "y": 418.41,
       "rotation": 334,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -11816,7 +11639,6 @@
       "prefab": "CliffRock6",
       "x": -6514.48,
       "z": -4194.08,
-      "y": 1566.59,
       "rotation": 18.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -12005,7 +11827,6 @@
       "prefab": "Rock01",
       "x": 6999.25,
       "z": 3122.67,
-      "y": 276.19,
       "rotation": 69.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -12015,7 +11836,6 @@
       "prefab": "RZaridrock4",
       "x": -5477.43,
       "z": 5114.78,
-      "y": 1017.49,
       "rotation": 117,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -12025,7 +11845,6 @@
       "prefab": "CliffStack",
       "x": -6118.21,
       "z": -5527.74,
-      "y": 1671.05,
       "rotation": 28.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -12084,7 +11903,6 @@
       "prefab": "CliffStack",
       "x": -6573.52,
       "z": -5757.1,
-      "y": 1916.46,
       "rotation": 170.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -12241,7 +12059,6 @@
       "prefab": "rzrock1",
       "x": 6556.24,
       "z": -1248.29,
-      "y": 347.16,
       "rotation": 213,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -12251,7 +12068,6 @@
       "prefab": "rzrock1",
       "x": -7022.84,
       "z": -3454.84,
-      "y": 1579.94,
       "rotation": 57,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -12291,7 +12107,6 @@
       "prefab": "Rock01",
       "x": 6515.05,
       "z": -1171.13,
-      "y": 300.93,
       "rotation": 140.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -12301,7 +12116,6 @@
       "prefab": "Rock08",
       "x": 2640.38,
       "z": 6703.62,
-      "y": 396.32,
       "rotation": 97.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -12311,7 +12125,6 @@
       "prefab": "CliffRock5",
       "x": -6063.18,
       "z": 6822.89,
-      "y": 1676.67,
       "rotation": 203.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -12321,7 +12134,6 @@
       "prefab": "RZaridrock3",
       "x": 6710.1,
       "z": -1358.25,
-      "y": 317.89,
       "rotation": 88.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -12401,7 +12213,6 @@
       "prefab": "CliffStack",
       "x": -6679.08,
       "z": -4099.94,
-      "y": 1645.54,
       "rotation": 22,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -12579,7 +12390,6 @@
       "prefab": "CliffRock6",
       "x": -6597.83,
       "z": -5767.76,
-      "y": 1923.37,
       "rotation": 203,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -12589,7 +12399,6 @@
       "prefab": "CliffRock5",
       "x": -6756.81,
       "z": 5841.29,
-      "y": 1534.79,
       "rotation": 220.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -12658,7 +12467,6 @@
       "prefab": "CliffRock5",
       "x": -6490.33,
       "z": -5790.64,
-      "y": 1910.38,
       "rotation": 24.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -12668,7 +12476,6 @@
       "prefab": "RZaridrock3",
       "x": 5239.87,
       "z": 5197.84,
-      "y": 383.89,
       "rotation": 20.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -12728,7 +12535,6 @@
       "prefab": "RZaridrock4",
       "x": 2923.89,
       "z": 6711.34,
-      "y": 399.75,
       "rotation": 283,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -12927,7 +12733,6 @@
       "prefab": "Rock10",
       "x": -6469.83,
       "z": -3999.06,
-      "y": 1566.36,
       "rotation": 279,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -12967,7 +12772,6 @@
       "prefab": "RZaridrock1",
       "x": 1933.39,
       "z": 5735.28,
-      "y": 363.55,
       "rotation": 141,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -13142,7 +12946,6 @@
       "prefab": "CliffRock6",
       "x": -7129.49,
       "z": 6147.19,
-      "y": 1800.04,
       "rotation": 203.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -13370,7 +13173,6 @@
       "prefab": "Rock10",
       "x": 6823.43,
       "z": -1196.37,
-      "y": 341.48,
       "rotation": 287,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -13380,7 +13182,6 @@
       "prefab": "RZaridrock3",
       "x": 110.18,
       "z": -3667.2,
-      "y": 192.12,
       "rotation": 341,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -13420,7 +13221,6 @@
       "prefab": "CliffRock6",
       "x": -6999.62,
       "z": -3565.58,
-      "y": 1562.52,
       "rotation": 359,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -13518,7 +13318,6 @@
       "prefab": "CliffRock6",
       "x": -6298.03,
       "z": -4882.94,
-      "y": 1964.19,
       "rotation": 50.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -13528,7 +13327,6 @@
       "prefab": "CliffStack",
       "x": -6684.75,
       "z": 5610.29,
-      "y": 1386.04,
       "rotation": 24,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -13558,7 +13356,6 @@
       "prefab": "CliffRock5",
       "x": -6681.3,
       "z": -3929.69,
-      "y": 1521.76,
       "rotation": 97.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -13618,7 +13415,6 @@
       "prefab": "CliffRock6",
       "x": -6435.49,
       "z": -4170.92,
-      "y": 1507.71,
       "rotation": 42,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -13638,7 +13434,6 @@
       "prefab": "CliffStack",
       "x": -6230.68,
       "z": -5166.86,
-      "y": 1813.08,
       "rotation": 93.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -13658,7 +13453,6 @@
       "prefab": "CliffRock6",
       "x": -6859.03,
       "z": -3782.25,
-      "y": 1634.03,
       "rotation": 29,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -13678,7 +13472,6 @@
       "prefab": "Rock06",
       "x": 5640.11,
       "z": 4968.75,
-      "y": 363.65,
       "rotation": 191,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -13688,7 +13481,6 @@
       "prefab": "CliffRock6",
       "x": -5792.8,
       "z": 6762.8,
-      "y": 1566.45,
       "rotation": 241,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -13856,7 +13648,6 @@
       "prefab": "rzrock7",
       "x": -1405.04,
       "z": 4931.75,
-      "y": 445.39,
       "rotation": 140.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -13935,7 +13726,6 @@
       "prefab": "RZaridrock4",
       "x": -5411.74,
       "z": 5163.79,
-      "y": 993.34,
       "rotation": 120,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -13965,7 +13755,6 @@
       "prefab": "Rock27",
       "x": 415.48,
       "z": -3067.91,
-      "y": 231.08,
       "rotation": 258.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -13975,7 +13764,6 @@
       "prefab": "CliffStack",
       "x": -6705.24,
       "z": -4259.01,
-      "y": 1772.26,
       "rotation": 51,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -14045,7 +13833,6 @@
       "prefab": "CliffStack",
       "x": -7016.23,
       "z": -3529.47,
-      "y": 1576.87,
       "rotation": 331,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -14125,7 +13912,6 @@
       "prefab": "Rock15",
       "x": -936.97,
       "z": 4357.36,
-      "y": 473.44,
       "rotation": 200.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -14294,7 +14080,6 @@
       "prefab": "Rock02",
       "x": 5275.34,
       "z": 5094.5,
-      "y": 384.34,
       "rotation": 341,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -14314,7 +14099,6 @@
       "prefab": "RZaridrock3",
       "x": 2172.53,
       "z": 6626.63,
-      "y": 375.42,
       "rotation": 176,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -14324,7 +14108,6 @@
       "prefab": "Rock01",
       "x": 1354.46,
       "z": 3832.49,
-      "y": 291.75,
       "rotation": 144,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -14354,7 +14137,6 @@
       "prefab": "rzrock8",
       "x": 1477.15,
       "z": 4780.04,
-      "y": 320.87,
       "rotation": 37.5,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -14424,7 +14206,6 @@
       "prefab": "CliffRock6",
       "x": -6930.85,
       "z": -3630.05,
-      "y": 1591.91,
       "rotation": 61,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -14474,7 +14255,6 @@
       "prefab": "CliffRock6",
       "x": -6397.45,
       "z": -5652.77,
-      "y": 1942.02,
       "rotation": 291.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -14534,7 +14314,6 @@
       "prefab": "RZaridrock2",
       "x": 6556.04,
       "z": -1065.58,
-      "y": 336.46,
       "rotation": 107.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -14554,7 +14333,6 @@
       "prefab": "CliffRock5",
       "x": -5668.18,
       "z": 6845.71,
-      "y": 1624.26,
       "rotation": 62,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -14682,7 +14460,6 @@
       "prefab": "CliffStack",
       "x": -7042.17,
       "z": -5826.5,
-      "y": 1869.51,
       "rotation": 35.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -14890,7 +14667,6 @@
       "prefab": "RZaridrock4",
       "x": 6839.65,
       "z": -1233.12,
-      "y": 323.08,
       "rotation": 226.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -14969,7 +14745,6 @@
       "prefab": "CliffRock6",
       "x": -6768.63,
       "z": -3815.4,
-      "y": 1569.42,
       "rotation": 84.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -15048,7 +14823,6 @@
       "prefab": "CliffRock5",
       "x": -6836.34,
       "z": -3903.1,
-      "y": 1636,
       "rotation": 65,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -15157,7 +14931,6 @@
       "prefab": "CliffStack",
       "x": -6740.78,
       "z": -5809.64,
-      "y": 1893.68,
       "rotation": 17,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -15197,7 +14970,6 @@
       "prefab": "RZaridrock4",
       "x": 6842.82,
       "z": -1190.63,
-      "y": 333.33,
       "rotation": 273,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -15256,7 +15028,6 @@
       "prefab": "rzrock7",
       "x": 6579.19,
       "z": -1321.76,
-      "y": 340.97,
       "rotation": 239.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -15266,7 +15037,6 @@
       "prefab": "RZaridrock4",
       "x": 6789.39,
       "z": -1242.96,
-      "y": 336.82,
       "rotation": 180.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -15276,7 +15046,6 @@
       "prefab": "Rock22",
       "x": -6752.2,
       "z": -5847.33,
-      "y": 1893.15,
       "rotation": 50.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -15296,7 +15065,6 @@
       "prefab": "Rock10",
       "x": -1039.71,
       "z": 4570.07,
-      "y": 438.37,
       "rotation": 243,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -15444,7 +15212,6 @@
       "prefab": "CliffRock5",
       "x": -5653.8,
       "z": 6872.47,
-      "y": 1665.41,
       "rotation": 336.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -15584,7 +15351,6 @@
       "prefab": "CliffRock6",
       "x": -6432.34,
       "z": -5692.09,
-      "y": 1941,
       "rotation": 345,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -15614,7 +15380,6 @@
       "prefab": "Rock22",
       "x": 495.4,
       "z": 2232.9,
-      "y": 287.03,
       "rotation": 67,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -15674,7 +15439,6 @@
       "prefab": "CliffStack",
       "x": -6119.94,
       "z": 6831.78,
-      "y": 1598.81,
       "rotation": 282,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -15734,7 +15498,6 @@
       "prefab": "Rock08",
       "x": -6480.29,
       "z": -3958.36,
-      "y": 1561.47,
       "rotation": 159,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -15854,7 +15617,6 @@
       "prefab": "RZaridrock4",
       "x": -3225.59,
       "z": 6570.6,
-      "y": 645.99,
       "rotation": 82.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -15904,7 +15666,6 @@
       "prefab": "Rock05",
       "x": -5509.82,
       "z": 5110.09,
-      "y": 1022.47,
       "rotation": 117,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -16054,7 +15815,6 @@
       "prefab": "CliffRock6",
       "x": -5612.54,
       "z": 6900.09,
-      "y": 1634.43,
       "rotation": 348.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -16172,7 +15932,6 @@
       "prefab": "Rock10",
       "x": 6762.07,
       "z": 2375.52,
-      "y": 280.14,
       "rotation": 281.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -16212,7 +15971,6 @@
       "prefab": "CliffRock6",
       "x": -6747.69,
       "z": -3866.01,
-      "y": 1563.51,
       "rotation": 90.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -16222,7 +15980,6 @@
       "prefab": "CliffStack",
       "x": -6203.05,
       "z": 6943.34,
-      "y": 1606.26,
       "rotation": 268.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -16252,7 +16009,6 @@
       "prefab": "Rock28",
       "x": 6728.65,
       "z": -1317.68,
-      "y": 335.87,
       "rotation": 228,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -16282,7 +16038,6 @@
       "prefab": "CliffRock5",
       "x": -6686.34,
       "z": 5660.73,
-      "y": 1389.02,
       "rotation": 359.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -16322,7 +16077,6 @@
       "prefab": "RZaridrock3",
       "x": 61.04,
       "z": -3687.26,
-      "y": 193.95,
       "rotation": 260.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -16332,7 +16086,6 @@
       "prefab": "CliffRock6",
       "x": -5440.75,
       "z": 7121.87,
-      "y": 1454.93,
       "rotation": 256,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -16362,7 +16115,6 @@
       "prefab": "Rock10",
       "x": 2889.42,
       "z": 6713.22,
-      "y": 394.68,
       "rotation": 305.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -16517,7 +16269,6 @@
       "prefab": "CliffRock6",
       "x": -6946.4,
       "z": 6036.91,
-      "y": 1680.01,
       "rotation": 28.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -16596,7 +16347,6 @@
       "prefab": "rzrock1",
       "x": -6834.56,
       "z": -5888.81,
-      "y": 1866.16,
       "rotation": 117.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -16665,7 +16415,6 @@
       "prefab": "Rock18",
       "x": -2084.72,
       "z": -2984.59,
-      "y": 320.26,
       "rotation": 83.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -16841,7 +16590,6 @@
       "prefab": "Rock06",
       "x": 2242.2,
       "z": 5695.01,
-      "y": 367.57,
       "rotation": 168,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -16881,7 +16629,6 @@
       "prefab": "CliffRock6",
       "x": -7120.76,
       "z": -5941.05,
-      "y": 1803.68,
       "rotation": 98,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -16940,7 +16687,6 @@
       "prefab": "RZaridrock4",
       "x": 6816.69,
       "z": -1226.22,
-      "y": 333.8,
       "rotation": 222.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -17199,7 +16945,6 @@
       "prefab": "rzrock4",
       "x": 1489.4,
       "z": 4811.7,
-      "y": 319.69,
       "rotation": 13.5,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -17209,7 +16954,6 @@
       "prefab": "CliffStack",
       "x": -6786.16,
       "z": -3755.11,
-      "y": 1588.47,
       "rotation": 59,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -17229,7 +16973,6 @@
       "prefab": "CliffStack",
       "x": -6642.41,
       "z": 5634.41,
-      "y": 1367.73,
       "rotation": 19.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -17239,7 +16982,6 @@
       "prefab": "Rock24",
       "x": -1148.55,
       "z": 4696.16,
-      "y": 432.92,
       "rotation": 142,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -17269,7 +17011,6 @@
       "prefab": "RZaridrock4",
       "x": 1524.66,
       "z": 6983.23,
-      "y": 338.69,
       "rotation": 88.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -17317,7 +17058,6 @@
       "prefab": "rzrock5",
       "x": 1494.56,
       "z": 4848.34,
-      "y": 319.4,
       "rotation": 10,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -17414,7 +17154,6 @@
       "prefab": "RuinsCastle01",
       "x": -34.34,
       "z": -2536.57,
-      "y": 330.7,
       "rotation": 153.36,
       "kind": "building",
       "cs1": "Castle Ruins 02"
@@ -17474,7 +17213,6 @@
       "prefab": "CliffStack",
       "x": -5326.61,
       "z": 7163.95,
-      "y": 1351.81,
       "rotation": 35.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -17514,7 +17252,6 @@
       "prefab": "Rock15",
       "x": 2842.12,
       "z": 6643.65,
-      "y": 401.02,
       "rotation": 347.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -17544,7 +17281,6 @@
       "prefab": "Rock08",
       "x": 205.11,
       "z": 5817.9,
-      "y": 383.13,
       "rotation": 284.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -17574,7 +17310,6 @@
       "prefab": "RZaridrock3",
       "x": 1418.74,
       "z": 6730.36,
-      "y": 378.59,
       "rotation": 40,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -17920,7 +17655,6 @@
       "prefab": "CliffRock5",
       "x": -6978.2,
       "z": 6038.83,
-      "y": 1681.84,
       "rotation": 10,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -17930,7 +17664,6 @@
       "prefab": "CliffStack",
       "x": -6920.62,
       "z": 6022.16,
-      "y": 1670.8,
       "rotation": 53,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -17950,7 +17683,6 @@
       "prefab": "RZaridrock4",
       "x": 6746.75,
       "z": 2316.89,
-      "y": 276.08,
       "rotation": 9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -18008,7 +17740,6 @@
       "prefab": "CliffStack",
       "x": -5510.79,
       "z": 7003.33,
-      "y": 1560.61,
       "rotation": 48,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -18027,7 +17758,6 @@
       "prefab": "Rock05",
       "x": 2865.99,
       "z": 6732.77,
-      "y": 398.69,
       "rotation": 342,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -18067,7 +17797,6 @@
       "prefab": "RZaridrock4",
       "x": -5465.99,
       "z": 5142.45,
-      "y": 1010.2,
       "rotation": 117,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -18126,7 +17855,6 @@
       "prefab": "rzrock1",
       "x": -2768.22,
       "z": -2824.7,
-      "y": 365.37,
       "rotation": 166.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -18216,7 +17944,6 @@
       "prefab": "CliffRock6",
       "x": -7143.93,
       "z": 5337.53,
-      "y": 1554.72,
       "rotation": 345,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -18246,7 +17973,6 @@
       "prefab": "rzrock7",
       "x": -475.57,
       "z": 4410.99,
-      "y": 431.22,
       "rotation": 118.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -18486,7 +18212,6 @@
       "prefab": "CliffStack",
       "x": -5712.08,
       "z": 6840.14,
-      "y": 1659.35,
       "rotation": 52,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -18556,7 +18281,6 @@
       "prefab": "Rock02",
       "x": 6544.05,
       "z": -1189.62,
-      "y": 328.8,
       "rotation": 110.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -18585,7 +18309,6 @@
       "prefab": "Rock03",
       "x": 6580.85,
       "z": -1026.51,
-      "y": 314.85,
       "rotation": 103,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -18972,7 +18695,6 @@
       "prefab": "Rock21",
       "x": -7053.7,
       "z": -3424.57,
-      "y": 1569.78,
       "rotation": 109,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -18982,7 +18704,6 @@
       "prefab": "RZaridrock3",
       "x": -1204,
       "z": 4792.43,
-      "y": 443.2,
       "rotation": 212.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -19181,7 +18902,6 @@
       "prefab": "CliffStack",
       "x": -6849.26,
       "z": 5960.32,
-      "y": 1646.8,
       "rotation": 99,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -19231,7 +18951,6 @@
       "prefab": "CliffRock5",
       "x": -6841.74,
       "z": -3845.65,
-      "y": 1628.96,
       "rotation": 54,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -19281,7 +19000,6 @@
       "prefab": "CliffStack",
       "x": -6814.69,
       "z": 5590.84,
-      "y": 1479.91,
       "rotation": 79,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -19409,7 +19127,6 @@
       "prefab": "Rock23",
       "x": -984.1,
       "z": 4411.63,
-      "y": 466.89,
       "rotation": 276.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -19488,7 +19205,6 @@
       "prefab": "Rock12",
       "x": -603.42,
       "z": 4328.6,
-      "y": 459.21,
       "rotation": 244.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -19678,7 +19394,6 @@
       "prefab": "CliffRock6",
       "x": -7101.8,
       "z": 7146.55,
-      "y": 1707.08,
       "rotation": 124.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -19698,7 +19413,6 @@
       "prefab": "CliffStack",
       "x": -5718.59,
       "z": 6791.64,
-      "y": 1611.49,
       "rotation": 81,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -19717,7 +19431,6 @@
       "prefab": "rzrock2",
       "x": 1044.23,
       "z": 4960.26,
-      "y": 321.58,
       "rotation": 228,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -19747,7 +19460,6 @@
       "prefab": "RZaridrock4",
       "x": 3646.02,
       "z": 6585.06,
-      "y": 429.3,
       "rotation": 80.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -19805,7 +19517,6 @@
       "prefab": "rzrock1",
       "x": -2988.95,
       "z": 2942.59,
-      "y": 434.07,
       "rotation": 153,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -19885,7 +19596,6 @@
       "prefab": "Rock12",
       "x": 7056.03,
       "z": 2908.52,
-      "y": 280.28,
       "rotation": 98,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -19925,7 +19635,6 @@
       "prefab": "Rock09",
       "x": 7051.68,
       "z": 2839.19,
-      "y": 279.34,
       "rotation": 260,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -19945,7 +19654,6 @@
       "prefab": "CliffRock5",
       "x": -6993.2,
       "z": 6036.47,
-      "y": 1683.48,
       "rotation": 5.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -20023,7 +19731,6 @@
       "prefab": "RZaridrock3",
       "x": 6722.3,
       "z": -1143.97,
-      "y": 346.86,
       "rotation": 115,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -20052,7 +19759,6 @@
       "prefab": "Rock28",
       "x": 1515.65,
       "z": 6950.23,
-      "y": 353.89,
       "rotation": 260.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
@@ -20142,7 +19848,6 @@
       "prefab": "rzrock1",
       "x": -1086.52,
       "z": 4557.36,
-      "y": 430.01,
       "rotation": 107.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -20161,7 +19866,6 @@
       "prefab": "Rock19",
       "x": -2102.63,
       "z": -2971.22,
-      "y": 322.11,
       "rotation": 86.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -20191,7 +19895,6 @@
       "prefab": "CliffRock5",
       "x": -6685.66,
       "z": -4061.88,
-      "y": 1595.99,
       "rotation": 6.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -20201,7 +19904,6 @@
       "prefab": "CliffStack",
       "x": -5475.22,
       "z": 7015.8,
-      "y": 1531.85,
       "rotation": 7.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -20228,12 +19930,11 @@
     },
     {
       "id": "b39573",
-      "prefab": "ElectricalSubstation01",
+      "prefab": "Transformer Station",
       "x": 1594.28,
       "z": 4549.11,
-      "y": 327.79,
       "rotation": 318.04,
-      "kind": "object",
+      "kind": "building",
       "cs1": "SEC Extra Large Substation_Data"
     },
     {
@@ -20241,7 +19942,6 @@
       "prefab": "CliffStack",
       "x": -6622.92,
       "z": 5644.03,
-      "y": 1362.29,
       "rotation": 18,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -20251,7 +19951,6 @@
       "prefab": "CliffStack",
       "x": -6344.8,
       "z": -5513.18,
-      "y": 1938.07,
       "rotation": 285.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -20271,7 +19970,6 @@
       "prefab": "Rock07",
       "x": 1294.07,
       "z": 6190.5,
-      "y": 320.22,
       "rotation": 289.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -20281,7 +19979,6 @@
       "prefab": "CliffRock6",
       "x": -6007.52,
       "z": -5304.73,
-      "y": 1581.95,
       "rotation": 8.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -20331,7 +20028,6 @@
       "prefab": "RZaridrock2",
       "x": 3444.09,
       "z": 6839.66,
-      "y": 428.76,
       "rotation": 227,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -20499,7 +20195,6 @@
       "prefab": "CliffRock5",
       "x": -7093.92,
       "z": -5842.9,
-      "y": 1833.79,
       "rotation": 115.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -20756,7 +20451,6 @@
       "prefab": "CliffStack",
       "x": -6330.66,
       "z": -5482.86,
-      "y": 1907.66,
       "rotation": 271,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -20806,7 +20500,6 @@
       "prefab": "RZaridrock5",
       "x": 5851.64,
       "z": 4342.44,
-      "y": 311.48,
       "rotation": 154.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -20945,7 +20638,6 @@
       "prefab": "CliffRock6",
       "x": -6783.96,
       "z": 5869.24,
-      "y": 1554.53,
       "rotation": 189.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -20975,7 +20667,6 @@
       "prefab": "CliffStack",
       "x": -6020.03,
       "z": -5473.87,
-      "y": 1522.48,
       "rotation": 351,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -21004,7 +20695,6 @@
       "prefab": "CliffStack",
       "x": -6444.35,
       "z": -5740.3,
-      "y": 1927.17,
       "rotation": 316,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -21211,7 +20901,6 @@
       "prefab": "Rock10",
       "x": 6775.13,
       "z": -1265.6,
-      "y": 332.05,
       "rotation": 222.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -21379,7 +21068,6 @@
       "prefab": "RZaridrock4",
       "x": 6538.54,
       "z": -1205.63,
-      "y": 325.54,
       "rotation": 184.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -21429,7 +21117,6 @@
       "prefab": "RZaridrock4",
       "x": 5485.7,
       "z": 5102.82,
-      "y": 380.92,
       "rotation": 277.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -21449,7 +21136,6 @@
       "prefab": "Rock22",
       "x": 6619.79,
       "z": -1351.02,
-      "y": 333.52,
       "rotation": 359.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -21766,7 +21452,6 @@
       "prefab": "CliffRock6",
       "x": -6856.58,
       "z": 5985.88,
-      "y": 1675.69,
       "rotation": 78.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -21795,7 +21480,6 @@
       "prefab": "CliffRock6",
       "x": -7100.73,
       "z": 5622.91,
-      "y": 1695.68,
       "rotation": 207.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -21815,7 +21499,6 @@
       "prefab": "RZaridrock3",
       "x": -3247.96,
       "z": -1076.86,
-      "y": 357.08,
       "rotation": 111.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -21865,7 +21548,6 @@
       "prefab": "Rock23",
       "x": -986.3,
       "z": 4442.14,
-      "y": 484.22,
       "rotation": 217,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
@@ -21915,7 +21597,6 @@
       "prefab": "Rock09",
       "x": -6595.2,
       "z": -3714.95,
-      "y": 1434.86,
       "rotation": 145.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -22083,7 +21764,6 @@
       "prefab": "Rock04",
       "x": 1704.29,
       "z": -4206.88,
-      "y": 212.16,
       "rotation": 171.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -22112,7 +21792,6 @@
       "prefab": "CliffStack",
       "x": -5740.31,
       "z": 6767.92,
-      "y": 1578.8,
       "rotation": 122,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -22232,7 +21911,6 @@
       "prefab": "Rock10",
       "x": -1007.39,
       "z": 4489.29,
-      "y": 459.23,
       "rotation": 127.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -22361,7 +22039,6 @@
       "prefab": "Rock19",
       "x": 2620.5,
       "z": 6709.16,
-      "y": 397.43,
       "rotation": 213.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -22471,7 +22148,6 @@
       "prefab": "rzrock4",
       "x": 1491.95,
       "z": 4829.07,
-      "y": 319.09,
       "rotation": 10,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -22531,7 +22207,6 @@
       "prefab": "Rock06",
       "x": -6762.67,
       "z": -3347.09,
-      "y": 1415.66,
       "rotation": 152.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -22608,7 +22283,6 @@
       "prefab": "RZaridrock3",
       "x": -1020.55,
       "z": 4526.65,
-      "y": 436.82,
       "rotation": 184.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -22666,7 +22340,6 @@
       "prefab": "RZaridrock3",
       "x": -5510.57,
       "z": 5113.61,
-      "y": 1021.62,
       "rotation": 117,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -22676,7 +22349,6 @@
       "prefab": "CliffStack",
       "x": -7137.24,
       "z": 7034.78,
-      "y": 1657.55,
       "rotation": 149.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -22929,7 +22601,6 @@
       "prefab": "CliffRock5",
       "x": -5777.78,
       "z": 6722.27,
-      "y": 1518.82,
       "rotation": 173.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -22959,7 +22630,6 @@
       "prefab": "RZaridrock4",
       "x": -6376.3,
       "z": 6994.65,
-      "y": 1517.29,
       "rotation": 177,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -23067,7 +22737,6 @@
       "prefab": "Rock09",
       "x": -2266.63,
       "z": -6253.78,
-      "y": 405.73,
       "rotation": 254.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -23185,7 +22854,6 @@
       "prefab": "CliffStack",
       "x": -7078.82,
       "z": 7125.11,
-      "y": 1687.44,
       "rotation": 161,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -23195,7 +22863,6 @@
       "prefab": "RZaridrock3",
       "x": -6461.46,
       "z": -3940.46,
-      "y": 1555.42,
       "rotation": 137,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -23245,7 +22912,6 @@
       "prefab": "Rock15",
       "x": -2558.37,
       "z": 6682.81,
-      "y": 570.35,
       "rotation": 356,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -23265,7 +22931,6 @@
       "prefab": "RZaridrock3",
       "x": 211.96,
       "z": 5852.68,
-      "y": 395.41,
       "rotation": 253.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -23275,7 +22940,6 @@
       "prefab": "CliffRock5",
       "x": -7163.36,
       "z": 5550.81,
-      "y": 1660.5,
       "rotation": 282,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -23335,7 +22999,6 @@
       "prefab": "CliffRock6",
       "x": -7124.98,
       "z": 5592.39,
-      "y": 1685.03,
       "rotation": 241.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -23384,7 +23047,6 @@
       "prefab": "CliffRock6",
       "x": -6690.68,
       "z": 5792.65,
-      "y": 1471.53,
       "rotation": 147.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -23474,7 +23136,6 @@
       "prefab": "RZaridrock3",
       "x": -990.25,
       "z": 4482.15,
-      "y": 473.62,
       "rotation": 92.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -23663,7 +23324,6 @@
       "prefab": "CliffStack",
       "x": -6098.93,
       "z": -5489.94,
-      "y": 1632.93,
       "rotation": 330.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -23753,7 +23413,6 @@
       "prefab": "RZaridrock2",
       "x": -507.8,
       "z": 4398.86,
-      "y": 436.5,
       "rotation": 103.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
@@ -23772,7 +23431,6 @@
       "prefab": "RZaridrock4",
       "x": 4720.8,
       "z": 5588.24,
-      "y": 428.39,
       "rotation": 229.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -23792,7 +23450,6 @@
       "prefab": "Rock02",
       "x": 3659.65,
       "z": 6699.3,
-      "y": 433.74,
       "rotation": 193,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -23812,7 +23469,6 @@
       "prefab": "rzrock2",
       "x": 1497.14,
       "z": 4866.87,
-      "y": 319.57,
       "rotation": 10,
       "kind": "prop",
       "cs1": "Grey Breakwater Rocks 01_Data"
@@ -23822,7 +23478,6 @@
       "prefab": "Rock08",
       "x": 62.32,
       "z": 6130.17,
-      "y": 381.65,
       "rotation": 298,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -23842,7 +23497,6 @@
       "prefab": "CliffRock5",
       "x": -6705.82,
       "z": -4135.74,
-      "y": 1669.15,
       "rotation": 15,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -23972,7 +23626,6 @@
       "prefab": "RZaridrock3",
       "x": 6845.77,
       "z": -1209.68,
-      "y": 327.37,
       "rotation": 303.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -23992,7 +23645,6 @@
       "prefab": "Rock02",
       "x": -3884.43,
       "z": -3516.51,
-      "y": 519.34,
       "rotation": 131.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -24091,7 +23743,6 @@
       "prefab": "CliffStack",
       "x": -6409.46,
       "z": -4194.02,
-      "y": 1491.98,
       "rotation": 64,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -24201,7 +23852,6 @@
       "prefab": "Rock06",
       "x": -1008.35,
       "z": 4550.35,
-      "y": 437.5,
       "rotation": 181.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -24251,7 +23901,6 @@
       "prefab": "RZaridrock3",
       "x": 6760.09,
       "z": -1247.33,
-      "y": 346.79,
       "rotation": 199,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -24330,7 +23979,6 @@
       "prefab": "CliffStack",
       "x": -5691.04,
       "z": 6872.43,
-      "y": 1688.28,
       "rotation": 353,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -24380,7 +24028,6 @@
       "prefab": "CliffRock5",
       "x": -6484.01,
       "z": -5726.56,
-      "y": 1923.1,
       "rotation": 59,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -24409,7 +24056,6 @@
       "prefab": "RZaridrock3",
       "x": 6657.88,
       "z": -1380.88,
-      "y": 312.53,
       "rotation": 187.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -24509,7 +24155,6 @@
       "prefab": "CliffStack",
       "x": -6714.2,
       "z": -3974.84,
-      "y": 1551.88,
       "rotation": 92.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -24549,7 +24194,6 @@
       "prefab": "CliffRock3",
       "x": -3191.64,
       "z": -750.42,
-      "y": 343.4,
       "rotation": 35.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 01_Data"
@@ -24589,7 +24233,6 @@
       "prefab": "CliffRock5",
       "x": -7104.56,
       "z": 6126.32,
-      "y": 1785.01,
       "rotation": 233.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -24599,7 +24242,6 @@
       "prefab": "Rock09",
       "x": 66.23,
       "z": 6151.62,
-      "y": 379.7,
       "rotation": 305,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -24669,7 +24311,6 @@
       "prefab": "RZaridrock4",
       "x": 3353.2,
       "z": 6985.84,
-      "y": 428.36,
       "rotation": 293.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
@@ -24679,7 +24320,6 @@
       "prefab": "RZaridrock3",
       "x": -5455.22,
       "z": 5143.31,
-      "y": 1006.88,
       "rotation": 117,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -24738,7 +24378,6 @@
       "prefab": "Rock04",
       "x": 6712.33,
       "z": -1078.6,
-      "y": 337.81,
       "rotation": 31,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
@@ -24797,7 +24436,6 @@
       "prefab": "CliffStack",
       "x": -1593.99,
       "z": -6201.79,
-      "y": 407.05,
       "rotation": 246.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 02_Data"
@@ -24807,7 +24445,6 @@
       "prefab": "Rock15",
       "x": 6690.85,
       "z": -1340.8,
-      "y": 332.49,
       "rotation": 314.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
@@ -24896,7 +24533,6 @@
       "prefab": "CliffRock6",
       "x": -6714.99,
       "z": 5616.82,
-      "y": 1388.64,
       "rotation": 21.5,
       "kind": "prop",
       "cs1": "Brown Modular C Formation 04_Data"
@@ -25075,7 +24711,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 662.85,
       "z": -4739.61,
-      "y": 245.66,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -25214,7 +24849,6 @@
       "prefab": "Grass01 (Styx\u0027s)",
       "x": -1277.32,
       "z": -2008.71,
-      "y": 222,
       "rotation": 253,
       "kind": "plant",
       "age": "adult",
@@ -25546,7 +25180,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": -1712.58,
       "z": -1831.09,
-      "y": 246.12,
       "rotation": 86.5,
       "kind": "plant",
       "age": "adult",
@@ -25904,7 +25537,6 @@
       "prefab": "Log03",
       "x": 470.84,
       "z": 1183.65,
-      "y": 282.41,
       "rotation": 287.5,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -26065,7 +25697,6 @@
       "prefab": "PD-YellowFlower",
       "x": -4004.07,
       "z": -108.34,
-      "y": 323.59,
       "rotation": 19,
       "kind": "plant",
       "age": "adult",
@@ -26302,7 +25933,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 76.1,
       "z": 85.78,
-      "y": 282.19,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -26333,7 +25963,6 @@
       "prefab": "LogRandom01",
       "x": 1300.05,
       "z": 6147.29,
-      "y": 315.25,
       "rotation": 341.33,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -26443,7 +26072,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 195.17,
       "z": 3569.73,
-      "y": 329.03,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -26465,7 +26093,6 @@
       "prefab": "Log01",
       "x": 478.52,
       "z": 1182.89,
-      "y": 285.03,
       "rotation": 324,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -26606,7 +26233,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 197.91,
       "z": 3559.85,
-      "y": 328.38,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -26646,7 +26272,6 @@
       "prefab": "Grass04 (Styx\u0027s)",
       "x": -1891.67,
       "z": -1779.83,
-      "y": 260.31,
       "rotation": 131,
       "kind": "plant",
       "age": "adult",
@@ -27043,7 +26668,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 193.84,
       "z": 82.29,
-      "y": 282.03,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -27294,7 +26918,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 588.25,
       "z": -4525.43,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -27325,7 +26948,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 678.76,
       "z": -4894.26,
-      "y": 244.22,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -27648,7 +27270,6 @@
       "prefab": "LogRandom01",
       "x": 1299.52,
       "z": 6152.73,
-      "y": 315.31,
       "rotation": 280.33,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -28135,7 +27756,6 @@
       "prefab": "LogRandom01",
       "x": 1295.75,
       "z": 6153.85,
-      "y": 315.25,
       "rotation": 190.4,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -28256,7 +27876,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 568.26,
       "z": -4621.41,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -28364,7 +27983,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 302.65,
       "z": 114.91,
-      "y": 245.84,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -29158,7 +28776,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 745.27,
       "z": -4845.16,
-      "y": 246.56,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -29338,7 +28955,6 @@
       "prefab": "gaga - Fern 1",
       "x": -677.35,
       "z": -1438.87,
-      "y": 269.09,
       "rotation": 230.5,
       "kind": "plant",
       "age": "adult",
@@ -29488,7 +29104,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 582,
       "z": -4633.98,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -29529,7 +29144,6 @@
       "prefab": "Log02",
       "x": 478.94,
       "z": 1185.01,
-      "y": 285.09,
       "rotation": 286.5,
       "kind": "prop",
       "cs1": "Fallen Pine 02_Data"
@@ -29767,7 +29381,6 @@
       "prefab": "LogRandom01",
       "x": 1299.7,
       "z": 6154.84,
-      "y": 313.88,
       "rotation": 214.9,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -30277,7 +29890,6 @@
       "prefab": "Log01",
       "x": 482.7,
       "z": 1186.08,
-      "y": 285.75,
       "rotation": 330,
       "kind": "prop",
       "cs1": "Fallen Pine 02_Data"
@@ -30307,7 +29919,6 @@
       "prefab": "LogRandom01",
       "x": 1300.29,
       "z": 6157.64,
-      "y": 315.38,
       "rotation": 0.02,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -30499,7 +30110,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 206.66,
       "z": 3522.26,
-      "y": 326.31,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -31071,7 +30681,6 @@
       "prefab": "TrashbagRandom01",
       "x": 1296.06,
       "z": 6141.63,
-      "y": 313.72,
       "rotation": 301.77,
       "kind": "prop",
       "cs1": "Trashpile"
@@ -31241,7 +30850,6 @@
       "prefab": "Log04",
       "x": 1299.72,
       "z": 6151.77,
-      "y": 315.34,
       "rotation": 219.33,
       "kind": "prop",
       "cs1": "Fallen Pine 02 TC_Data"
@@ -31382,7 +30990,6 @@
       "prefab": "PD-YellowFlower",
       "x": 775.77,
       "z": -4824.63,
-      "y": 246.09,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -31831,7 +31438,6 @@
       "prefab": "Log01",
       "x": 1295.01,
       "z": 6149.68,
-      "y": 314.84,
       "rotation": 113.4,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -31901,7 +31507,6 @@
       "prefab": "LogRandom01",
       "x": 1431.62,
       "z": 6174.8,
-      "y": 314.06,
       "rotation": 9.76,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -32138,7 +31743,6 @@
       "prefab": "gaga - Fern 1",
       "x": 620.54,
       "z": -4924.58,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -32491,7 +32095,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": -28.29,
       "z": 3822.02,
-      "y": 345.84,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -32875,7 +32478,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 165.4,
       "z": 3572.87,
-      "y": 346.91,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -32975,7 +32577,6 @@
       "prefab": "ReikUndergrowth01Trimmed",
       "x": -605.61,
       "z": -1391.01,
-      "y": 270.41,
       "rotation": 230,
       "kind": "plant",
       "age": "adult",
@@ -33025,7 +32626,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 58.76,
       "z": -175.02,
-      "y": 270.94,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -33116,7 +32716,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": -4147.54,
       "z": 13.43,
-      "y": 308.91,
       "rotation": 19,
       "kind": "plant",
       "age": "adult",
@@ -33518,7 +33117,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 149.02,
       "z": 17.34,
-      "y": 278.5,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -33639,7 +33237,6 @@
       "prefab": "Log01",
       "x": 476.15,
       "z": 1179.56,
-      "y": 284.5,
       "rotation": 294.5,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -33689,7 +33286,6 @@
       "prefab": "Log04",
       "x": 479.42,
       "z": 1185.46,
-      "y": 285.19,
       "rotation": 290,
       "kind": "prop",
       "cs1": "Fallen Pine 02_Data"
@@ -33819,7 +33415,6 @@
       "prefab": "TrashbagRandom01",
       "x": 1299.1,
       "z": 6141.78,
-      "y": 313.97,
       "rotation": 238.86,
       "kind": "prop",
       "cs1": "Trashpile"
@@ -33889,7 +33484,6 @@
       "prefab": "Grass04 (Styx\u0027s)",
       "x": -2126.5,
       "z": -1355.83,
-      "y": 259.91,
       "rotation": 196.5,
       "kind": "plant",
       "age": "adult",
@@ -34385,7 +33979,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 507.06,
       "z": -4796.92,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -34544,7 +34137,6 @@
       "prefab": "LogRandom01",
       "x": 1293.57,
       "z": 6148.84,
-      "y": 315.31,
       "rotation": 129.4,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -34575,7 +34167,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 495.36,
       "z": -4507.46,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -35005,7 +34596,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 618.26,
       "z": -4695.98,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -35016,7 +34606,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 39.46,
       "z": 106.61,
-      "y": 284.22,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -35402,7 +34991,6 @@
       "prefab": "Grass04 (Styx\u0027s)",
       "x": -2167.33,
       "z": -1449.13,
-      "y": 259.91,
       "rotation": 196.5,
       "kind": "plant",
       "age": "adult",
@@ -35654,7 +35242,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 75.25,
       "z": 83.03,
-      "y": 283.34,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -35706,7 +35293,6 @@
       "prefab": "Log02",
       "x": 483.2,
       "z": 1186.21,
-      "y": 285.84,
       "rotation": 341.5,
       "kind": "prop",
       "cs1": "Fallen Pine 02_Data"
@@ -36136,7 +35722,6 @@
       "prefab": "Log01",
       "x": 472,
       "z": 1176.25,
-      "y": 283.19,
       "rotation": 248,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -36236,7 +35821,6 @@
       "prefab": "Log01",
       "x": 1298.7,
       "z": 6152.05,
-      "y": 313.72,
       "rotation": 137.9,
       "kind": "prop",
       "cs1": "Fallen Pine 02 TC_Data"
@@ -36266,7 +35850,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 196.08,
       "z": 181.51,
-      "y": 282.69,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -36659,7 +36242,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 615.73,
       "z": -4611.57,
-      "y": 242.97,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -36829,7 +36411,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 263.07,
       "z": 177.7,
-      "y": 269.84,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -37041,7 +36622,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 484.19,
       "z": -4498.65,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -37062,7 +36642,6 @@
       "prefab": "gaga - Fern 1",
       "x": -661.26,
       "z": -1436.45,
-      "y": 269.84,
       "rotation": 281,
       "kind": "plant",
       "age": "adult",
@@ -37219,7 +36798,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 214.85,
       "z": 3493.31,
-      "y": 323,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -37561,7 +37139,6 @@
       "prefab": "Log03",
       "x": 1432.44,
       "z": 6175.27,
-      "y": 314.91,
       "rotation": 266.76,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -37660,7 +37237,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 588.15,
       "z": -4889.94,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -38004,7 +37580,6 @@
       "prefab": "pd Long Grass",
       "x": -539.5,
       "z": -1277.49,
-      "y": 270.16,
       "rotation": 117.5,
       "kind": "plant",
       "age": "adult",
@@ -38035,7 +37610,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": -4202.4,
       "z": 40.86,
-      "y": 310.31,
       "rotation": 19,
       "kind": "plant",
       "age": "adult",
@@ -38154,7 +37728,6 @@
       "prefab": "Log02",
       "x": 475.95,
       "z": 1177.32,
-      "y": 284.56,
       "rotation": 292.5,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -38243,7 +37816,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 712.45,
       "z": -4851.42,
-      "y": 246.06,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -38912,7 +38484,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 514.3,
       "z": -4698.13,
-      "y": 243,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -39021,7 +38592,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 616.2,
       "z": -4695.28,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -39331,7 +38901,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": -4221.51,
       "z": 53.02,
-      "y": 307.78,
       "rotation": 19,
       "kind": "plant",
       "age": "adult",
@@ -39533,7 +39102,6 @@
       "prefab": "Log01",
       "x": 478.16,
       "z": 1185.47,
-      "y": 284.88,
       "rotation": 319,
       "kind": "prop",
       "cs1": "Fallen Pine 02_Data"
@@ -39683,7 +39251,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 199.91,
       "z": 179.74,
-      "y": 282.5,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -40013,7 +39580,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 489.12,
       "z": -4778.75,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -40074,7 +39640,6 @@
       "prefab": "Grass04 (Styx\u0027s)",
       "x": -2048.2,
       "z": -1569.4,
-      "y": 255.88,
       "rotation": 33,
       "kind": "plant",
       "age": "adult",
@@ -40165,7 +39730,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": -32.07,
       "z": 3789.8,
-      "y": 348.53,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -40305,7 +39869,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 596.05,
       "z": -4643.58,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -40486,7 +40049,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 621.48,
       "z": -4614.04,
-      "y": 243.16,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -40624,7 +40186,6 @@
       "prefab": "Log04",
       "x": 1298.67,
       "z": 6151.3,
-      "y": 314.84,
       "rotation": 264.33,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -41082,7 +40643,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 709.39,
       "z": -4592.19,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -41353,7 +40913,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 592.44,
       "z": -4640.74,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -41451,7 +41010,6 @@
       "prefab": "pd Long Grass",
       "x": -579.95,
       "z": -1384.15,
-      "y": 266.62,
       "rotation": 316,
       "kind": "plant",
       "age": "adult",
@@ -41541,7 +41099,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 549.59,
       "z": -4608.74,
-      "y": 239.94,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -41552,7 +41109,6 @@
       "prefab": "TrashbagRandom01",
       "x": 1300.33,
       "z": 6140.28,
-      "y": 313.97,
       "rotation": 301.77,
       "kind": "prop",
       "cs1": "Trashpile"
@@ -41792,7 +41348,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 196.91,
       "z": 85.06,
-      "y": 282.34,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -41833,7 +41388,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": -3959.19,
       "z": -115.56,
-      "y": 321.56,
       "rotation": 19,
       "kind": "plant",
       "age": "adult",
@@ -41892,7 +41446,6 @@
       "prefab": "StreetlightSingle01",
       "x": -25.83,
       "z": -2592.58,
-      "y": 328.84,
       "rotation": 333,
       "kind": "prop",
       "cs1": "Park Streetlight 01"
@@ -42023,7 +41576,6 @@
       "prefab": "gaga - Fern 1",
       "x": 613.37,
       "z": -4526.83,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -42376,7 +41928,6 @@
       "prefab": "LogRandom01",
       "x": 1298.45,
       "z": 6153.46,
-      "y": 314.88,
       "rotation": 294.83,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -42495,7 +42046,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 598.78,
       "z": -4635.4,
-      "y": 240.41,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -42677,7 +42227,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 846.12,
       "z": -4803.78,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -42697,7 +42246,6 @@
       "prefab": "Log04",
       "x": 1029.81,
       "z": 3503.05,
-      "y": 288.44,
       "rotation": 138.5,
       "kind": "prop",
       "cs1": "Fallen Pine 01 TC_Data"
@@ -42958,7 +42506,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": -4198.08,
       "z": 36.41,
-      "y": 309.84,
       "rotation": 19,
       "kind": "plant",
       "age": "adult",
@@ -43118,7 +42665,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 501.85,
       "z": -4641.25,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -43189,7 +42735,6 @@
       "prefab": "ReikUndergrowth02Trimmed",
       "x": -609.04,
       "z": -1320.04,
-      "y": 267.03,
       "rotation": 321,
       "kind": "plant",
       "age": "adult",
@@ -43333,7 +42878,6 @@
       "prefab": "ReikUndergrowth01Trimmed",
       "x": -600.71,
       "z": -1316.38,
-      "y": 266.88,
       "rotation": 323.5,
       "kind": "plant",
       "age": "adult",
@@ -43476,7 +43020,6 @@
       "prefab": "TrashbagRandom01",
       "x": 1296.69,
       "z": 6144.21,
-      "y": 314.22,
       "rotation": 218.35,
       "kind": "prop",
       "cs1": "Trashpile"
@@ -43668,7 +43211,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": -653.73,
       "z": -1441.84,
-      "y": 267.84,
       "rotation": 107.5,
       "kind": "plant",
       "age": "adult",
@@ -43699,7 +43241,6 @@
       "prefab": "gaga - Fern 1",
       "x": 29.16,
       "z": 99.37,
-      "y": 283.88,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -44029,7 +43570,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 585.63,
       "z": -4636.45,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -44363,7 +43903,6 @@
       "prefab": "PD-YellowFlower",
       "x": 795.91,
       "z": -4790.53,
-      "y": 244.62,
       "rotation": 48.5,
       "kind": "plant",
       "age": "adult",
@@ -44432,7 +43971,6 @@
       "prefab": "LogRandom01",
       "x": 1432.5,
       "z": 6177.99,
-      "y": 314.91,
       "rotation": 328.26,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -44462,7 +44000,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 661.72,
       "z": -4934.95,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -44513,7 +44050,6 @@
       "prefab": "Log04",
       "x": 472.21,
       "z": 1181.15,
-      "y": 283,
       "rotation": 316,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -44543,7 +44079,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 591.56,
       "z": -4631.94,
-      "y": 240.09,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -44702,7 +44237,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 472.02,
       "z": -4488.94,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -44772,7 +44306,6 @@
       "prefab": "StreetlightSingle01",
       "x": 27.02,
       "z": -2693.27,
-      "y": 321.75,
       "rotation": 333,
       "kind": "prop",
       "cs1": "Park Streetlight 01"
@@ -44812,7 +44345,6 @@
       "prefab": "StreetlightSingle01",
       "x": -25.7,
       "z": -2649.19,
-      "y": 327.56,
       "rotation": 333,
       "kind": "prop",
       "cs1": "Park Streetlight 01"
@@ -45737,7 +45269,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 563.76,
       "z": -4618.9,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -45981,7 +45512,6 @@
       "prefab": "gaga - Fern 1",
       "x": -897.52,
       "z": -1451.88,
-      "y": 259.69,
       "rotation": 222,
       "kind": "plant",
       "age": "adult",
@@ -46122,7 +45652,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 613.64,
       "z": -4572.06,
-      "y": 241.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -46162,7 +45691,6 @@
       "prefab": "LogRandom01",
       "x": 1294.27,
       "z": 6160.32,
-      "y": 315.25,
       "rotation": 277.52,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -46234,7 +45762,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": -4350.13,
       "z": 49.05,
-      "y": 328.09,
       "rotation": 19,
       "kind": "plant",
       "age": "adult",
@@ -46413,7 +45940,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": -19.24,
       "z": 3819.05,
-      "y": 345.38,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -46743,7 +46269,6 @@
       "prefab": "Grass01 (Styx\u0027s)",
       "x": -2118.88,
       "z": -1365.55,
-      "y": 259.91,
       "rotation": 196.5,
       "kind": "plant",
       "age": "adult",
@@ -46792,7 +46317,6 @@
       "prefab": "gaga - Fern 1",
       "x": -852.31,
       "z": -1457.11,
-      "y": 261.69,
       "rotation": 328,
       "kind": "plant",
       "age": "adult",
@@ -46905,7 +46429,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": -1708.69,
       "z": -1836.48,
-      "y": 246.16,
       "rotation": 107.5,
       "kind": "plant",
       "age": "adult",
@@ -47118,7 +46641,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 193.01,
       "z": 3579.57,
-      "y": 329.31,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -47368,7 +46890,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 576.3,
       "z": -4629.94,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -47508,7 +47029,6 @@
       "prefab": "gaga - Fern 1",
       "x": 503.06,
       "z": -4513.71,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -47767,7 +47287,6 @@
       "prefab": "Log02",
       "x": 1296.6,
       "z": 6147.44,
-      "y": 313.72,
       "rotation": 288.83,
       "kind": "prop",
       "cs1": "Fallen Pine 02 TC_Data"
@@ -47797,7 +47316,6 @@
       "prefab": "gaga - Fern 2",
       "x": -678.66,
       "z": -1442.6,
-      "y": 267.53,
       "rotation": 153.5,
       "kind": "plant",
       "age": "adult",
@@ -47876,7 +47394,6 @@
       "prefab": "Grass01 (Styx\u0027s)",
       "x": -2061.69,
       "z": -1550.15,
-      "y": 256.53,
       "rotation": 311.5,
       "kind": "plant",
       "age": "adult",
@@ -47916,7 +47433,6 @@
       "prefab": "StreetlightSingle01",
       "x": -25.47,
       "z": -2624.52,
-      "y": 327.56,
       "rotation": 333,
       "kind": "prop",
       "cs1": "Park Streetlight 01"
@@ -47986,7 +47502,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 552.95,
       "z": -4611.78,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -48168,7 +47683,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 212.03,
       "z": 3503.93,
-      "y": 323.75,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -48248,7 +47762,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 596.17,
       "z": -4634.02,
-      "y": 240.44,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -48289,7 +47802,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 589.67,
       "z": -4638.97,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -48359,7 +47871,6 @@
       "prefab": "LogRandom01",
       "x": 1299.58,
       "z": 6155.26,
-      "y": 315.5,
       "rotation": 250.83,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -48691,7 +48202,6 @@
       "prefab": "LogRandom01",
       "x": 1297.32,
       "z": 6153.65,
-      "y": 314.59,
       "rotation": 197.9,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -48782,7 +48292,6 @@
       "prefab": "Grass01 (Styx\u0027s)",
       "x": -2059.22,
       "z": -1553.62,
-      "y": 256.09,
       "rotation": 292,
       "kind": "plant",
       "age": "adult",
@@ -48833,7 +48342,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 623.18,
       "z": -4615.08,
-      "y": 243.19,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -49202,7 +48710,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 546.71,
       "z": -4838.73,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -49417,7 +48924,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 694.57,
       "z": -4679.96,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -49428,7 +48934,6 @@
       "prefab": "gaga - Fern 2",
       "x": -683.55,
       "z": -1438.12,
-      "y": 268.62,
       "rotation": 213,
       "kind": "plant",
       "age": "adult",
@@ -49820,7 +49325,6 @@
       "prefab": "StreetlightSingle01",
       "x": 24.81,
       "z": -2557.88,
-      "y": 327.81,
       "rotation": 333,
       "kind": "prop",
       "cs1": "Park Streetlight 01"
@@ -50261,7 +49765,6 @@
       "prefab": "pd Long Grass",
       "x": -579.21,
       "z": -1383.26,
-      "y": 267.16,
       "rotation": 350.5,
       "kind": "plant",
       "age": "adult",
@@ -50362,7 +49865,6 @@
       "prefab": "gaga - Fern 1",
       "x": 638.96,
       "z": -4932.6,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -50656,7 +50158,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 546.02,
       "z": -4606.18,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -50677,7 +50178,6 @@
       "prefab": "gaga - Fern 1",
       "x": -650.63,
       "z": -1440.58,
-      "y": 267.25,
       "rotation": 116.5,
       "kind": "plant",
       "age": "adult",
@@ -50857,7 +50357,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 620.99,
       "z": -4530.34,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -51086,7 +50585,6 @@
       "prefab": "Grass04 (Styx\u0027s)",
       "x": -2049.6,
       "z": -1562.25,
-      "y": 256.03,
       "rotation": 348.5,
       "kind": "plant",
       "age": "adult",
@@ -51117,7 +50615,6 @@
       "prefab": "pd Long Grass",
       "x": -600.53,
       "z": -1316.14,
-      "y": 266.69,
       "rotation": 322,
       "kind": "plant",
       "age": "adult",
@@ -51388,7 +50885,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 209.03,
       "z": 109.08,
-      "y": 279.28,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -51438,7 +50934,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 208.33,
       "z": 3515.13,
-      "y": 324.53,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -51469,7 +50964,6 @@
       "prefab": "gaga - Fern 2",
       "x": -651.88,
       "z": -1435.26,
-      "y": 268.69,
       "rotation": 310.5,
       "kind": "plant",
       "age": "adult",
@@ -52001,7 +51495,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 622,
       "z": -4708.82,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -52092,7 +51585,6 @@
       "prefab": "LogRandom01",
       "x": 1300.3,
       "z": 6140.7,
-      "y": 315.38,
       "rotation": 63.83,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -52738,7 +52230,6 @@
       "prefab": "StreetlightSingle01",
       "x": -1.21,
       "z": -2573.58,
-      "y": 328.28,
       "rotation": 333,
       "kind": "prop",
       "cs1": "Park Streetlight 01"
@@ -52758,7 +52249,6 @@
       "prefab": "LogRandom01",
       "x": 1299.6,
       "z": 6155.88,
-      "y": 315.38,
       "rotation": 324.65,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -52857,7 +52347,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 169.47,
       "z": 3559.09,
-      "y": 345.19,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -52868,7 +52357,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 190.53,
       "z": 3581.12,
-      "y": 331.12,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -53386,7 +52874,6 @@
       "prefab": "LogRandom01",
       "x": 1298.58,
       "z": 6146.71,
-      "y": 314.59,
       "rotation": 348.83,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -53456,7 +52943,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 687.89,
       "z": -4592.4,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -53855,7 +53341,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 572.88,
       "z": -4628.04,
-      "y": 239.94,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -54006,7 +53491,6 @@
       "prefab": "RubblePileMixedRandom01",
       "x": 1450.78,
       "z": 6174.2,
-      "y": 322.69,
       "rotation": 199,
       "kind": "prop",
       "cs1": "Dirt Pile 01"
@@ -54036,7 +53520,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 477.89,
       "z": -4716.42,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -54155,7 +53638,6 @@
       "prefab": "LogRandom01",
       "x": 1298.74,
       "z": 6159.73,
-      "y": 315.38,
       "rotation": 272.9,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -54186,7 +53668,6 @@
       "prefab": "LogRandom01",
       "x": 1300.61,
       "z": 6150.11,
-      "y": 312.5,
       "rotation": 176.9,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -54216,7 +53697,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 494.66,
       "z": -4634.61,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -54267,7 +53747,6 @@
       "prefab": "Log02",
       "x": 1433.67,
       "z": 6176.49,
-      "y": 316.16,
       "rotation": 280.76,
       "kind": "prop",
       "cs1": "Fallen Pine 02_Data"
@@ -54357,7 +53836,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 705.72,
       "z": -4735.86,
-      "y": 245.25,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -54516,7 +53994,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 622.39,
       "z": -4610.66,
-      "y": 243.81,
       "rotation": 298.5,
       "kind": "plant",
       "age": "adult",
@@ -54588,7 +54065,6 @@
       "prefab": "LogRandom01",
       "x": 1297.08,
       "z": 6144.51,
-      "y": 313.88,
       "rotation": 5.83,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -54618,7 +54094,6 @@
       "prefab": "StreetlightSingle01",
       "x": -12.19,
       "z": -2667.3,
-      "y": 325.31,
       "rotation": 333,
       "kind": "prop",
       "cs1": "Park Streetlight 01"
@@ -54689,7 +54164,6 @@
       "prefab": "ReikUndergrowth01Trimmed",
       "x": -547.49,
       "z": -1282.89,
-      "y": 268.09,
       "rotation": 67.5,
       "kind": "plant",
       "age": "adult",
@@ -54940,7 +54414,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": -3997.55,
       "z": -105.49,
-      "y": 320.62,
       "rotation": 19,
       "kind": "plant",
       "age": "adult",
@@ -55179,7 +54652,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": -4076.69,
       "z": -95.96,
-      "y": 325.41,
       "rotation": 19,
       "kind": "plant",
       "age": "adult",
@@ -55699,7 +55171,6 @@
       "prefab": "Log03",
       "x": 1293.87,
       "z": 6149.77,
-      "y": 315.34,
       "rotation": 68.4,
       "kind": "prop",
       "cs1": "Fallen Pine 02 TC_Data"
@@ -55810,7 +55281,6 @@
       "prefab": "ReikUndergrowth01Trimmed",
       "x": -519.72,
       "z": -1351.08,
-      "y": 267.22,
       "rotation": 335.5,
       "kind": "plant",
       "age": "adult",
@@ -55880,7 +55350,6 @@
       "prefab": "LogRandom01",
       "x": 1434.07,
       "z": 6177.27,
-      "y": 316.56,
       "rotation": 334.76,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -55989,7 +55458,6 @@
       "prefab": "LogRandom01",
       "x": 1431.28,
       "z": 6177.87,
-      "y": 313.66,
       "rotation": 328.26,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -56168,7 +55636,6 @@
       "prefab": "Grass04 (Styx\u0027s)",
       "x": -1183.88,
       "z": -2058.15,
-      "y": 220.28,
       "rotation": 146,
       "kind": "plant",
       "age": "adult",
@@ -56647,7 +56114,6 @@
       "prefab": "PD-YellowFlower",
       "x": 663.74,
       "z": -4545.37,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -56748,7 +56214,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 663.81,
       "z": -4551.66,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -56848,7 +56313,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 74.16,
       "z": 89.58,
-      "y": 282.59,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -57148,7 +56612,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": 210.23,
       "z": 3509.81,
-      "y": 324.16,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -57271,7 +56734,6 @@
       "prefab": "StreetlightSingle01",
       "x": 14.74,
       "z": -2571.46,
-      "y": 327.69,
       "rotation": 333,
       "kind": "prop",
       "cs1": "Park Streetlight 01"
@@ -57351,7 +56813,6 @@
       "prefab": "Log02",
       "x": 473.01,
       "z": 1186.53,
-      "y": 283.19,
       "rotation": 269.5,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -57410,7 +56871,6 @@
       "prefab": "Log02",
       "x": 473.04,
       "z": 1182.19,
-      "y": 283.28,
       "rotation": 326,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -57558,7 +57018,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 695.99,
       "z": -4582.99,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -58266,7 +57725,6 @@
       "prefab": "LogRandom01",
       "x": 1431.61,
       "z": 6173.53,
-      "y": 314.06,
       "rotation": 27.26,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -58325,7 +57783,6 @@
       "prefab": "Grass06 (Styx\u0027s)",
       "x": 217.25,
       "z": 56.45,
-      "y": 274.94,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -58526,7 +57983,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 508.12,
       "z": -4728.26,
-      "y": 244.25,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -58707,7 +58163,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 685.11,
       "z": -4841.42,
-      "y": 249.75,
       "rotation": -0,
       "kind": "plant",
       "age": "adult",
@@ -58788,7 +58243,6 @@
       "prefab": "Grass03 (Styx\u0027s)",
       "x": -4224.17,
       "z": 41.31,
-      "y": 312.22,
       "rotation": 19,
       "kind": "plant",
       "age": "adult",
@@ -58970,7 +58424,6 @@
       "prefab": "LogRandom01",
       "x": 1294.15,
       "z": 6147.68,
-      "y": 314.88,
       "rotation": 143.9,
       "kind": "prop",
       "cs1": "Fallen Pine Stump 02_Data"
@@ -59468,7 +58921,6 @@
       "prefab": "GardenBench01",
       "x": -769.72,
       "z": 4362.01,
-      "y": 538.09,
       "rotation": 118,
       "kind": "prop",
       "cs1": "Bench 01"
@@ -59617,7 +59069,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 709.63,
       "z": -4916.82,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -59747,7 +59198,6 @@
       "prefab": "gaga - Fern 2",
       "x": 264.56,
       "z": 97.46,
-      "y": 263.34,
       "rotation": 329.5,
       "kind": "plant",
       "age": "adult",
@@ -60043,7 +59493,6 @@
       "prefab": "Log02",
       "x": 1431.74,
       "z": 6179.55,
-      "y": 314.09,
       "rotation": 246.76,
       "kind": "prop",
       "cs1": "Fallen Pine 07 LP_Data"
@@ -60124,7 +59573,6 @@
       "prefab": "gaga - Fern 2",
       "x": -778,
       "z": -1359.77,
-      "y": 263.38,
       "rotation": 230,
       "kind": "plant",
       "age": "adult",
@@ -60155,7 +59603,6 @@
       "prefab": "Grass05 (Styx\u0027s)",
       "x": 799.6,
       "z": -4767.17,
-      "y": 245.41,
       "rotation": 91,
       "kind": "plant",
       "age": "adult",
@@ -60344,7 +59791,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": -668.5,
       "z": -1437.05,
-      "y": 269.56,
       "rotation": 258.5,
       "kind": "plant",
       "age": "adult",
@@ -60607,7 +60053,6 @@
       "prefab": "Grass02 (Styx\u0027s)",
       "x": 629.69,
       "z": -4542.92,
-      "y": 235.44,
       "rotation": 24.63,
       "kind": "plant",
       "age": "adult",
@@ -60897,7 +60342,6 @@
       "prefab": "TrashbagRandom01",
       "x": 1297.27,
       "z": 6137.94,
-      "y": 313.47,
       "rotation": 67.86,
       "kind": "prop",
       "cs1": "Trashpile"

@@ -282,7 +282,8 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 
 - Power: 60 courses of High-voltage Line in import-power.json (nodes on the ground).
 - Trees: 496,318 objects in 10 chunks under out\trees (points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale)); outside ±7168 m 158,877; dropped 73,855 (see trees/README.md).
-- Objects: 6130 of 8408 CS1 buildings/props got a CS2 target (72.9 %); SKIP 247, MANUAL 7, unmapped 0, outside ±7168 m 2024; 2857 carry y.
+- Object y policy: y only > 3 m above the CS2 playable heightmap (10190615-dktflls-1to1.png), never for buildings: 2301 with y; against the old CS1-terrain rule 556 lose y, 0 gain it.
+- Objects: 6130 of 8408 CS1 buildings/props got a CS2 target (72.9 %); SKIP 247, MANUAL 7, unmapped 0, outside ±7168 m 2024; 2301 carry y.
 
 | CS1 prefab | count | decision |
 |---|---:|---|
@@ -347,7 +348,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | 2926036331.R2USA W TrWo 1x2 TRH Girder 02_Data_bridgePillar | 1 | SKIP: CS2 places pillars for its own bridges |
 | Castle Ruins 01 | 1 | RuinsCastle01 |
 | Abandoned Factory 01 | 1 | RuinsOldMill01 |
-| 2916095473.SEC Extra Large Substation_Data | 1 | ElectricalSubstation01 |
+| 2916095473.SEC Extra Large Substation_Data | 1 | Transformer Station |
 | Ship Wreck 01 | 1 | RubblePileWood02 |
 | StreetLamp02 | 1 | StreetlightSingle02 |
 | Park Sign 02 | 1 | ParkSign02 |
@@ -368,6 +369,11 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Field surfaces (import-surfaces-fields.json): 56 polygons, 3.130 km², max 163 points; footprints also raise fertility to ≥ 220.
 - Grass surfaces from 3076 Landscape Grass props (import-surfaces-grass.json, optional): 51 polygons, 0.026 km², max 130 points.
 - Rock surfaces (import-surfaces-rock.json): DakotaFalls-1to1-4096.png (|err| vs CS1 nodes 0.01 m), steep area 0.63 km² in 145 patches >= 400 m²; 151 polygons kept (0.60 km²), 0 smallest dropped.
+- Round 8 substation: 1 (b39573 Transformer Station at (1594, 4549), rotation 318.04, no y) -> import-substation.json.
+- Round 8 dam: Hydroelectric Power Plant (placeholder) at (1549.5, 4690) from 4 CS1 Dam Electricity pieces; variant A rotation 261.7 -> import-dam.json, variant B 98.3 -> import-dam-B.json.
+- Round 8 power ends: substation: CS1 end n12755 (1633, 4526), replaces e5094_0, new course n26177 -> (1600.5, 4544.0), 85 m; dam: CS1 end n16152 (1651, 4542), replaces e32855_0, new course n2881 -> (1554.2, 4683.5), 221 m -> import-power-ends.json.
+- Round 8 PO cliffs: 594 objects from 399 PO pieces (mountain 239, rock work 92, falls steps 68); bands > 160 m flank 267, > 160 m summit 111, 36–80 m 120, 80–160 m 75, 12–36 m 20, 3–12 m 1; 0 over the cap of 2500 dropped -> import-po-rocks.json.
+- Round 8 rock scatter: 19020 (small 13238, medium 4868, boulders 914) around 3108 rock/cliff objects (r 60 m) and in 151 rock polygons; rejected road 377, spacing 955, water 3941, border 38 -> import-rock-scatter.json.
 - Decal surfaces (import-surfaces-decals.json; PDO23 Dirty Surface 01 / PDO23 Soil Surface 01): 41 polygons, 0.022 km², max 298 points.
 - Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
 - Resources: import-resources.json from the dump's naturalResources.

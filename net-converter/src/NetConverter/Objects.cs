@@ -360,6 +360,8 @@ public sealed class ObjectResult
     public List<ManualObject> Manual { get; } = new();
     public Dictionary<string, (int Count, string Decision)> PerCs1 { get; } = new();
     public int Total, Targeted, Skipped, ManualCount, Unmapped, WithY, Outside;
+    /// <summary>y under the old CS1-terrain rule (> 2 m off the CS1 terrain) but not under the CS2-terrain rule, and the reverse.</summary>
+    public int LostY, GainedY;
 }
 
 public static class Objects
@@ -377,10 +379,12 @@ public static class Objects
     }
 
     /// <summary>
-    /// Buildings (except outside connections) and prop points from the dump. y is written only where the CS1 object sits more than
-    /// 2 m off the CS1 terrain (CS1 heightmap), as CS1 y × heightFactor; otherwise the game samples terrain.
+    /// Buildings (except outside connections) and prop points from the dump. y (CS1 y × heightFactor) is written only where the object
+    /// is clearly on a structure: with the CS2 playable heightmap (true metres) more than 3 m above it; without it, more than 2 m off
+    /// the CS1 terrain. Buildings never get y (the game levels their lot; CS1 y put the substation below ground). Otherwise the game samples terrain.
     /// </summary>
-    public static ObjectResult Build(JsonElement root, TargetMapping map, Func<double, double, double>? cs1Terrain, double heightFactor, double half, ulong seed)
+    public static ObjectResult Build(JsonElement root, TargetMapping map, Func<double, double, double>? cs1Terrain, double heightFactor, double half, ulong seed,
+        Func<double, double, double>? cs2Terrain = null)
     {
         var res = new ObjectResult();
         var rng = new Rng(seed);
@@ -408,9 +412,14 @@ public static class Objects
             }
             if (Math.Abs(p[0]) > half || Math.Abs(p[2]) > half) { res.Outside++; return; }
             double? y = null;
-            if (cs1Terrain != null && Math.Abs(p[1] - cs1Terrain(p[0], p[2])) > 2) { y = Json.R2(p[1] * heightFactor); res.WithY++; }
+            string kind = string.IsNullOrEmpty(t.Extra) ? fallbackKind ?? "prop" : t.Extra;
+            bool old = cs1Terrain != null && Math.Abs(p[1] - cs1Terrain(p[0], p[2])) > 2;
+            bool keep = kind != "building" && (cs2Terrain != null ? p[1] - cs2Terrain(p[0], p[2]) > 3 : old);
+            if (old && !keep) res.LostY++;
+            if (keep && !old) res.GainedY++;
+            if (keep) { y = Json.R2(p[1] * heightFactor); res.WithY++; }
             res.Targeted++;
-            res.Objects.Add(new PlacedObject($"{source[0]}{id}", t.Prefab, string.IsNullOrEmpty(t.Extra) ? fallbackKind ?? "prop" : t.Extra,
+            res.Objects.Add(new PlacedObject($"{source[0]}{id}", t.Prefab, kind,
                 p[0], p[2], y, yaw, prefab, $"{source} {id}"));
         }
 
@@ -433,7 +442,7 @@ public static class Objects
         using var w = new Utf8JsonWriter(fs, Json.Indented);
         w.WriteStartObject();
         w.WriteString("name", name);
-        w.WriteString("_comment", "rotation = yaw in degrees about +y, 0 = +z, clockwise from above, from CS1 m_angle as −angle·180/π (UNVERIFIED sign). y only where the CS1 object is > 2 m off the terrain (CS1 y × height factor).");
+        w.WriteString("_comment", "rotation = yaw in degrees about +y, 0 = +z, clockwise from above, from CS1 m_angle as −angle·180/π (UNVERIFIED sign). y only where the object is clearly on a structure: > 3 m above the CS2 playable heightmap (else > 2 m off the CS1 terrain); never for buildings (CS1 y × height factor).");
         w.WriteStartObject("options");
         w.WriteBoolean("dryRun", false); w.WriteNumber("batchSize", 500); w.WriteBoolean("bypassValidation", true); w.WriteString("report", "compact");
         w.WriteEndObject();
