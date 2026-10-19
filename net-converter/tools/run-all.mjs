@@ -57,7 +57,7 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
   // Round 9.
   for (const [f, order, what] of [["import-gaps.json", 1, "ROUND 9 network gaps (snapToSegment onto the live network)"], ["import-gaps-e15883-taper.json", 1, "ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane"],
     ["import-po-walls.json", 2, "ROUND 9 QuaySmall01 sides of the PO paved blocks"], ["import-water-lakes.json", 3, "ROUND 9 lake sources for unexplained wet bodies (after the water file)"],
-    ["import-fort.json", 5, "ROUND 9 fort wall props (UNVERIFIED names / lengths)"]])
+    ["import-fort.json", 5, "ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED)"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : j.sources ? `${j.sources.length} sources` : `${j.edges.length} edges`); }
   for (const [f, what] of [["import-surfaces-po-rock.json", "ROUND 9 rock texture on the PO terrain-like footprints"], ["import-po-structures.json", "ROUND 9 pavement tops of the PO paved blocks"]])
     if (existsSync(p(f))) add(8, p(f), `${what} (${scale})`, `${J(p(f)).surfaces.length} polygons`);

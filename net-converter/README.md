@@ -307,3 +307,6 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   Live A-v3 map: undo v1 first with `POST /import/objects/undo?id=obj-20261019-165834-6`.
 - `import-power-ends.json`: a course that passes another target closer than 77 m (TransformerStation01 half-diagonal 37 m + 40 m) bends through an extra pylon
   on the far side. The dam course now runs n2881 → dam_via (87 m from the station) → dam_end, both legs ≥ 79 m clear; the station course is unchanged.
+- Fort (round 11b): EU_Wall01/03 are 0.9 m garden walls (live measurement), so `import-fort.json` places RuinsStoneFormation01/02 every 12 m along each
+  Castle Wall Bézier (curve heading), StandingStone01–08 at the segment ends, RuinsStoneCairns01–03 every 25 m 3–6 m inside the line (towards the centroid
+  of the walls within 300 m) and OldCastle01 at the largest group's centroid (unverified as placeable). `fort-walls.tsv` is gone.

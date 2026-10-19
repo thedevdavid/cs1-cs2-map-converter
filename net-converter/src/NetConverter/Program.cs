@@ -515,6 +515,10 @@ void WriteLayers()
                 man.AppendLine(string.Create(System.Globalization.CultureInfo.InvariantCulture, $"| {id} | {Json.Short(sg.Prefab)} | {mp.X:F0} | {mp.Z:F0} | {(fl.Pillars ? "yes" : "")} | {(fl.Lights ? "yes" : "")} |"));
             }
     }
+    man.AppendLine().AppendLine("## Fort (CS1 Castle Wall 1 / 3, 12 segments)").AppendLine();
+    man.AppendLine("import-fort.json marks the wall line with ruins (RuinsStoneFormation01/02 every 12 m, StandingStone01–08 at the ends, RuinsStoneCairns01–03 inside the line) " +
+        "and puts OldCastle01 at the fort's centroid as the keep (unverified as a placeable object); RuinsCastle01 stands at the CS1 Castle Ruins positions (import-objects.json). " +
+        "A true rampart needs a wall asset pack from PDX Mods: CS2 has no vanilla stone fort wall (EU_Wall01–09 are 0.9 m garden walls) and none is in the playset.");
     File.WriteAllText(Path.Combine(outDir, "manual-objects.md"), man.ToString());
 
     // Water surface (v3): check the sources against it and refine their heights.
@@ -671,9 +675,9 @@ void WriteLayers()
                 $"Rock texture on every PO mountain / rock work / falls steps footprint ({Path.GetFileName(raster)}, cells > 0, 3.5 m), hole-free, simplified to 4 m, patches >= 100 m². The 40° slope layer is import-surfaces-rock.json.");
             r9.Add(ci($"PO rock surfaces: {poRock.Count} polygons ({poRock.Sum(p => Math.Abs(Surfaces.Area(p.Ring))) / 1e6:F2} km² of {area / 1e6:F2} km² footprint, {patches} patches, {dropped} dropped), {prefab} -> import-surfaces-po-rock.json"));
         }
-        var fort = Round9.Fort(dump, Round9.LoadWallRules(Find("fort-walls.tsv")), 7168);
-        Objects.Write(Path.Combine(outDir, "import-fort.json"), "fort walls (round 9, UNVERIFIED prop names and lengths)", fort);
-        r9.Add(ci($"fort: {fort.Count} wall props on {fort.Select(o => o.Source).Distinct().Count()} CS1 Castle Wall segments ({Round8.Counts(fort)}) -> import-fort.json; RuinsCastle01 stays in import-objects.json"));
+        var (fort, keep) = Round9.Fort(dump, new System.Text.RegularExpressions.Regex("(?i)Castle Wall"), 7168, treeSeed + 11);
+        Objects.Write(Path.Combine(outDir, "import-fort.json"), "fort ruins (round 11b)", fort);
+        r9.Add(ci($"fort: {fort.Count} objects along the 12 CS1 Castle Wall segments ({Round8.Counts(fort)}), keep OldCastle01 at ({keep?.X:F0}, {keep?.Z:F0}) (UNVERIFIED placeable) -> import-fort.json; RuinsCastle01 stays in import-objects.json"));
         var blocks = Round9.LoadPavedBlocks(poOfflinePath);
         string pave = smap.Resolve("pavement")?.FirstOrDefault()?.Prefab ?? "Pavement Surface 01";
         var (ps, pn, pe, tall) = Round9.PavedStructures(blocks, pave, heightFactor, 7168);

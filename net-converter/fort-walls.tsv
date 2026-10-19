@@ -1,6 +1,0 @@
-# CS1 Castle Wall -> CS2 wall props along the segment Bezier (Round9.Fort). Tab-separated:
-#   regex (CS1 net prefab)  prefab  short variant (half length)  extra-short variant (quarter)  piece length m  rotation offset deg (prop forward vs the wall tangent)
-# UNVERIFIED: names from the orchestrator (EU_Wall01..09 with Short/ExtraShort variants), lengths and the rotation offset are guesses until the bridge reports them
-# (cs2_prefab_info); a dry run rejects unknown names with counts.
-(?i)Castle Wall 1	EU_Wall01	EU_Wall01Short	EU_Wall01ExtraShort	8	90
-(?i)Castle Wall 3	EU_Wall03	EU_Wall03Short	EU_Wall03ExtraShort	8	90

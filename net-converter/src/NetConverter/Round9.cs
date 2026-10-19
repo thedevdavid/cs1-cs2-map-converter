@@ -75,44 +75,70 @@ public static class Round9
 
     // ---------- 3. The fort ----------
 
-    public sealed record WallRule(Regex Match, string Prefab, string Short, string ExtraShort, double Length, double RotationOffset);
-
-    public static List<WallRule> LoadWallRules(string path) =>
-        File.ReadAllLines(path).Where(l => l.Length > 0 && !l.StartsWith('#')).Select(l => l.Split('\t'))
-            .Select(c => new WallRule(new Regex(c[0], RegexOptions.CultureInvariant), c[1], c[2], c[3], double.Parse(c[4], Ci), double.Parse(c[5], Ci))).ToList();
-
     /// <summary>
-    /// CS1 Castle Wall segments → wall props along the Bézier: full pieces, then the Short (½) and ExtraShort (¼) variants for the
-    /// rest (a piece is used when ≥ 75 % of it fits), each centred on its stretch and turned along the tangent (+ the rule's offset).
+    /// The CS1 Castle Wall as a ruined stone line (round 11b; the EU_Wall pieces are 0.9 m garden walls, and no vanilla rampart exists):
+    /// RuinsStoneFormation01/02 alternating every 12 m along each Bézier with the curve's heading, StandingStone01–08 at the segment ends
+    /// (one per shared end), RuinsStoneCairns01–03 every 25 m, 3–6 m inside the wall line (towards the centroid of the walls within 300 m),
+    /// and OldCastle01 at the centroid of the largest wall group as the keep (UNVERIFIED as a placeable object; drop it if a dry run
+    /// rejects it). RuinsCastle01 stays in import-objects.json at the CS1 Castle Ruins positions.
     /// </summary>
-    public static List<PlacedObject> Fort(Dump dump, List<WallRule> rules, double half)
+    public static (List<PlacedObject> Objects, (double X, double Z)? Keep) Fort(Dump dump, Regex wall, double half, ulong seed)
     {
+        var segs = dump.Segments.Where(s => wall.IsMatch(s.Prefab)).OrderBy(s => s.Id).ToList();
         var res = new List<PlacedObject>();
-        foreach (var s in dump.Segments.OrderBy(s => s.Id))
+        if (segs.Count == 0) return (res, null);
+        var mids = segs.Select(s => s.Bezier.Eval(0.5)).ToList();
+        // Groups of walls within 300 m of each other (single link).
+        var group = Enumerable.Range(0, segs.Count).ToArray();
+        int Find(int i) => group[i] == i ? i : group[i] = Find(group[i]);
+        for (int i = 0; i < segs.Count; i++)
+            for (int j = i + 1; j < segs.Count; j++)
+                if (Len(mids[i].X, mids[i].Z, mids[j].X, mids[j].Z) <= 300) group[Find(i)] = Find(j);
+        var centroid = Enumerable.Range(0, segs.Count).GroupBy(Find).ToDictionary(g => g.Key, g => (X: g.Average(i => mids[i].X), Z: g.Average(i => mids[i].Z), N: g.Count()));
+        var rng = new Rng(seed);
+        var ends = new HashSet<(long, long)>();
+        int k = 0;
+        void Add(string prefab, double x, double z, double yaw, string cs1, string src)
         {
-            var rule = rules.FirstOrDefault(r => r.Match.IsMatch(s.Prefab));
-            if (rule == null) continue;
-            // Arc-length table.
+            if (Math.Abs(x) > half || Math.Abs(z) > half) return;
+            res.Add(new PlacedObject($"fort{++k}", prefab, "prop", Math.Round(x, 2), Math.Round(z, 2), null, Math.Round((yaw % 360 + 360) % 360, 1), cs1, src));
+        }
+        for (int si = 0; si < segs.Count; si++)
+        {
+            var s = segs[si];
+            var c = centroid[Find(si)];
             const int K = 64;
             var cum = new double[K + 1]; var pts = new Vec3[K + 1];
-            for (int k = 0; k <= K; k++) { pts[k] = s.Bezier.Eval(k / (double)K); if (k > 0) cum[k] = cum[k - 1] + Len(pts[k].X, pts[k].Z, pts[k - 1].X, pts[k - 1].Z); }
-            double total = cum[K], pos = 0;
-            var pieces = new List<(string Prefab, double L)>();
-            foreach (var (p, l) in new[] { (rule.Prefab, rule.Length), (rule.Short, rule.Length / 2), (rule.ExtraShort, rule.Length / 4) })
-                while (total - pos >= 0.75 * l) { pieces.Add((p, l)); pos += l; }
-            double start = Math.Max(0, (total - pos) / 2), at = start; int idx = 0;
-            foreach (var (p, l) in pieces)
+            for (int q = 0; q <= K; q++) { pts[q] = s.Bezier.Eval(q / (double)K); if (q > 0) cum[q] = cum[q - 1] + Len(pts[q].X, pts[q].Z, pts[q - 1].X, pts[q - 1].Z); }
+            (double X, double Z, double Yaw, double Nx, double Nz) At(double d)
             {
-                double mid = at + l / 2; at += l;
-                int k = Array.FindIndex(cum, c => c >= mid); if (k <= 0) k = 1;
-                double f = (mid - cum[k - 1]) / Math.Max(1e-9, cum[k] - cum[k - 1]);
-                double x = pts[k - 1].X + f * (pts[k].X - pts[k - 1].X), z = pts[k - 1].Z + f * (pts[k].Z - pts[k - 1].Z);
-                double yaw = Math.Atan2(pts[k].X - pts[k - 1].X, pts[k].Z - pts[k - 1].Z) * 180 / Math.PI + rule.RotationOffset;
-                if (Math.Abs(x) > half || Math.Abs(z) > half) continue;
-                res.Add(new PlacedObject($"fort{s.Id}_{idx++}", p, "prop", Math.Round(x, 2), Math.Round(z, 2), null, Math.Round((yaw % 360 + 360) % 360, 2), s.Prefab, $"segment {s.Id}"));
+                int q = Array.FindIndex(cum, v => v >= d); if (q <= 0) q = 1;
+                double f = (d - cum[q - 1]) / Math.Max(1e-9, cum[q] - cum[q - 1]);
+                double x = pts[q - 1].X + f * (pts[q].X - pts[q - 1].X), z = pts[q - 1].Z + f * (pts[q].Z - pts[q - 1].Z);
+                double dx = pts[q].X - pts[q - 1].X, dz = pts[q].Z - pts[q - 1].Z, l = Math.Max(1e-9, Math.Sqrt(dx * dx + dz * dz));
+                double nx = -dz / l, nz = dx / l;   // left normal; flipped towards the group centroid (inside)
+                if ((c.X - x) * nx + (c.Z - z) * nz < 0) { nx = -nx; nz = -nz; }
+                return (x, z, Math.Atan2(dx, dz) * 180 / Math.PI, nx, nz);
             }
+            double total = cum[K];
+            int n = Math.Max(1, (int)Math.Round(total / 12));
+            for (int i = 0; i < n; i++)
+            {
+                var p = At((i + 0.5) * total / n);
+                Add(i % 2 == 0 ? "RuinsStoneFormation01" : "RuinsStoneFormation02", p.X, p.Z, p.Yaw, s.Prefab, $"segment {s.Id}");
+            }
+            for (double d = 12.5; d < total; d += 25)
+            {
+                var p = At(d); double off = 3 + 3 * rng.NextDouble();
+                Add($"RuinsStoneCairns0{1 + rng.Next(3)}", p.X + p.Nx * off, p.Z + p.Nz * off, rng.NextDouble() * 360, s.Prefab, $"segment {s.Id}");
+            }
+            foreach (var e in new[] { s.Bezier.A, s.Bezier.D })
+                if (ends.Add(((long)Math.Round(e.X), (long)Math.Round(e.Z))))
+                    Add($"StandingStone0{1 + rng.Next(8)}", e.X, e.Z, rng.NextDouble() * 360, s.Prefab, $"segment {s.Id} end");
         }
-        return res;
+        var main = centroid.Values.MaxBy(v => v.N);
+        Add("OldCastle01", main.X, main.Z, 0, "Castle Wall (keep)", "fort centroid");
+        return (res, (main.X, main.Z));
     }
 
     // ---------- 4. PO paved blocks ----------

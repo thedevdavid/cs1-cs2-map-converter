@@ -37,7 +37,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\import-dam.json` | ROUND 8 dam HydroelectricPowerPlant01, rotation 261.7 (2×) | 1 | 0.0 MB |
 | 5 | `out\import-po-rocks.json` | ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps (2×) | 626 | 0.1 MB |
 | 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 18994 | 3.5 MB |
-| 5 | `out\import-fort.json` | ROUND 9 fort wall props (UNVERIFIED names / lengths) (2×) | 97 | 0.0 MB |
+| 5 | `out\import-fort.json` | ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED) (2×) | 112 | 0.0 MB |
 | 5 | `out\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (2×) | 2 | 0.0 MB |
 | 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
 | 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3038, building 5, object 2, plant 3076, tree 9; 2301 with y) | 1.3 MB |
@@ -45,7 +45,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-dam.json` | ROUND 8 dam HydroelectricPowerPlant01, rotation 261.7 (1×) | 1 | 0.0 MB |
 | 5 | `out\x1\import-po-rocks.json` | ROUND 8 pack cliff objects at the PO mountains / rock work / falls steps (1×) | 626 | 0.1 MB |
 | 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 18994 | 3.5 MB |
-| 5 | `out\x1\import-fort.json` | ROUND 9 fort wall props (UNVERIFIED names / lengths) (1×) | 97 | 0.0 MB |
+| 5 | `out\x1\import-fort.json` | ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED) (1×) | 112 | 0.0 MB |
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
 | 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |
 | 6 | `out\x1\import-trees-fixed-01.json` | trees at fixed height, with y (1×) | 50 | 0.0 MB |
@@ -119,3 +119,7 @@ Failures, classified (round 10 fixes in brackets):
 Owner review of A-v3 (round 11): the v1 PO cliffs (CliffFreeStanding / CliffSide, 140–195 m) stood exposed above the stamped terrain → `po-rocks-v2`
 (626 pieces: 239 sunk, 387 on the terrain). The dam's high-voltage course ran through the station's connector → it now bends round the station
 through an extra pylon. Undo on the live A-v3 map: `POST /import/objects/undo?id=obj-20261019-165834-6` (v1 po-rocks); the next build is a fresh map.
+
+Fort (round 11b): the EU_Wall pieces measured 3 × 0.9 m (garden walls), so import-fort.json is now a ruined stone line: 112 objects
+(RuinsStoneFormation01/02 63 every 12 m, RuinsStoneCairns01–03 29 inside the line, StandingStone01–08 19 at the ends, OldCastle01 keep at (5, −2619), unverified).
+fort-walls.tsv is retired. RuinsCastle01 stays in import-objects.json. A real rampart needs a PDX Mods wall pack (none in the playset).
