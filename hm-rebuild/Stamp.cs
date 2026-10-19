@@ -22,7 +22,7 @@ public static class Stamp
     /// <param name="MaxSlope">slope limit in m/m; 0 = off (default)</param>
     public sealed record Options(double MinRiseM = 0.5, int FalloffPx = 16, double StepM = 6, double SmoothSigmaPx = 1.5,
         double MaxSlope = 0, Kernel Kernel = Kernel.Lanczos3, double Po1081UnitsPerM = 64, double Po4096UnitsPerM = 32, HashSet<string>? Ids = null,
-        Soften? Soft = null);
+        Soften? Soft = null, double[]? SurfaceCap = null);
 
     /// <summary>Softened variant for low-poly meshes: Gaussian over the whole stamped area, raw surface kept near ridgelines,
     /// slope-scaled value noise so flanks read as rock.</summary>
@@ -276,7 +276,7 @@ public static class Stamp
     public sealed record KeyStat(string Key, int SourceCells, int StampedPx, double MaxAddedM, double MaxTopM, int X0, int Y0, int X1, int Y1);
 
     public sealed record Result(ushort[] Output, bool[] Zone, int ChangedPixels, int MaxChangedDistPx, List<KeyStat> Keys,
-        List<(int x0, int y0, int x1, int y1, int px)> Regions, int FootprintPx, int StampPx, int SmoothedPx, int SlopeLimitedPx);
+        List<(int x0, int y0, int x1, int y1, int px)> Regions, int FootprintPx, int StampPx, int SmoothedPx, int SlopeLimitedPx, int SurfaceCappedPx = 0);
 
     public static Result Run(ushort[] terrain, PoField po, Options o)
     {
@@ -391,6 +391,17 @@ public static class Stamp
 
         int limited = o.MaxSlope > 0 ? SlopeLimit(surf, tM, zone, o.MaxSlope) : 0;
 
+        // Final surface cap (water): where SurfaceCap is set, the stamped surface (falloff and smoothing included) may not
+        // rise above max(terrain, cap), so no skirt or blur pushes height into the CS1 channel. The terrain is never lowered.
+        int surfCapped = 0;
+        if (o.SurfaceCap is { } sc)
+            for (int i = 0; i < surf.Length; i++)
+            {
+                if (!zone[i] || double.IsNaN(sc[i])) continue;
+                double lim = Math.Max(tM[i], sc[i]);
+                if (surf[i] > lim) { surf[i] = lim; surfCapped++; }
+            }
+
         var output = (ushort[])terrain.Clone();
         int changed = 0, maxDist = 0;
         var added = new double[N * N];
@@ -417,7 +428,7 @@ public static class Stamp
             .Select(k => { var s = st.GetValueOrDefault(k); return new KeyStat(k, po.SourceCells.GetValueOrDefault(k), s.px, s.add, s.top, s.x0, s.y0, s.x1, s.y1); })
             .OrderByDescending(s => s.MaxAddedM).ThenByDescending(s => s.SourceCells).ToList();
 
-        return new Result(output, zone, changed, maxDist, keys, Regions(output, terrain), footprint, stampPx, smoothed + softened, limited);
+        return new Result(output, zone, changed, maxDist, keys, Regions(output, terrain), footprint, stampPx, smoothed + softened, limited, surfCapped);
     }
 
     /// <summary>Softening: s = Gaussian(surf) over stamped pixels (weight 1 inside, fading to 0 across the falloff margin);
@@ -622,6 +633,7 @@ public static class Stamp
         "         or  --po-json FILE [--ids FILE] | --po-raster FILE              (1081 CS1 grid)\n" +
         "  options:   [--falloff 16] [--step 6] [--smooth-sigma 1.5] [--max-slope 0] [--soften [--soften-sigma 4] [--soften-noise 2,6]] [--min-rise 0.5] [--kernel lanczos3|bicubic]\n" +
         "             [--po4096-units-per-m 32] [--po-units-per-m 64] [--out-dir DIR] [--name BASE] [--install DIR]\n" +
+        "             [--water-cap water.png --po-mesh po-offline.json --ids layer-ids.txt [--cap-offset 0.5] [--min-add 1]]\n" +
         "             [--world-tag .placeholder-hm-rebuild] [--max-previews 12] [--preview-at x,z,label[,sizeM]]...";
 
     public static int Cli(string[] args)
@@ -629,6 +641,7 @@ public static class Stamp
         if (args.Length < 3) { Console.Error.WriteLine(Usage); return 2; }
         string inPath = args[1], worldPath = args[2], worldTag = ".placeholder-hm-rebuild";
         string? poJson = null, poRaster = null, poDir = null, idsPath = null, outDir = null, outName = null, installDir = null; int maxPrev = 12;
+        string? waterCap = null, poMesh = null; double capOffset = 0.5, minAdd = 1;
         var layers = new List<string> { "mountain", "rock work" };
         var at = new List<(double x, double z, string label, double size)>();
         var o = new Options(); var inv = CultureInfo.InvariantCulture;
@@ -656,6 +669,10 @@ public static class Stamp
                 case "--out-dir": outDir = Next(); break;
                 case "--name": outName = Next(); break;
                 case "--install": installDir = Next(); break;
+                case "--water-cap": waterCap = Next(); break;
+                case "--po-mesh": poMesh = Next(); break;
+                case "--cap-offset": capOffset = double.Parse(Next(), inv); break;
+                case "--min-add": minAdd = double.Parse(Next(), inv); break;
                 case "--world-tag": worldTag = Next(); break;
                 case "--max-previews": maxPrev = int.Parse(Next(), inv); break;
                 case "--preview-at":
@@ -687,6 +704,18 @@ public static class Stamp
             var src = poJson != null && File.Exists(poJson) ? $"JSON {Path.GetFileName(poJson)}" : $"raster {Path.GetFileName(poRaster)}";
             po = From1081(g, o.Kernel, o.StepM, src + (o.Ids != null ? $", {o.Ids.Count} ids from {Path.GetFileName(idsPath)}" : ", all objects"));
             srcLog.Add(po.Sources[0]);
+        }
+
+        FallsCap.CapResult? cap = null;
+        if (waterCap != null)
+        {
+            if (poMesh == null || idsPath == null) throw new InputException("--water-cap needs --po-mesh po-offline.json and --ids <object ids of the layer>");
+            var idList = File.ReadAllLines(idsPath).Select(l => l.Split('#')[0].Trim()).Where(l => l.Length > 0).Distinct().ToList();
+            var tMcap = terrain.Select(v => Peaks.ToM(v)).ToArray();
+            cap = FallsCap.Apply(po, FallsCap.Owners(poMesh, idList), idList, FallsCap.LoadWater(waterCap), tMcap, capOffset, minAdd);
+            po = cap.Field;
+            o = o with { SurfaceCap = cap.WaterCap };
+            srcLog.Add(po.Sources[^1] + $" (water {Path.GetFileName(waterCap)}, owners from {Path.GetFileName(poMesh)}, {idList.Count} ids)");
         }
 
         var res = Run(terrain, po, o);
@@ -739,7 +768,7 @@ public static class Stamp
             $"Gaussian σ {o.SmoothSigmaPx} px near PO steps > {o.StepM} m; slope limit {(o.MaxSlope > 0 ? $"{o.MaxSlope} m/m" : "off")}." +
             (o.Soft is { } so ? $" Softened: Gaussian σ {so.SigmaPx} px over the stamped area (fading across the falloff), {(1 - so.RidgeRaw) * 100:F0}/{so.RidgeRaw * 100:F0} smoothed/raw within {so.RidgeDistPx} px of raw ridges, value noise {so.NoiseMinM}–{so.NoiseMaxM} m scaled by slope at {string.Join("/", so.Wavelengths)} m wavelengths." : "") + "\n");
         if (po.Saturated > 0) sb.AppendLine($"- WARNING: {po.Saturated} PO raster values at 65535 (saturated; check the units per metre).");
-        sb.AppendLine($"- footprint px: {res.FootprintPx}; stamped px (> {o.MinRiseM} m above terrain): {res.StampPx}; smoothed px: {res.SmoothedPx}; slope-limited px: {res.SlopeLimitedPx}; pixels changed: {res.ChangedPixels}");
+        sb.AppendLine($"- footprint px: {res.FootprintPx}; stamped px (> {o.MinRiseM} m above terrain): {res.StampPx}; smoothed px: {res.SmoothedPx}; slope-limited px: {res.SlopeLimitedPx}; held under the water cap (falloff/smoothing): {res.SurfaceCappedPx}; pixels changed: {res.ChangedPixels}");
         sb.AppendLine($"- farthest changed pixel from a stamped pixel: {res.MaxChangedDistPx} px; changed outside footprints + margin: {outside} (asserted 0)");
         sb.AppendLine($"- output max: {Peaks.ToM(res.Output.Max(v => (int)v)):F1} m; regions: {res.Regions.Count}");
         sb.AppendLine($"- world map: existing inner vs box_down4(input) mismatches: {innerMismatch}; seam ring before max {seamBefore.maxM:F2} m mean {seamBefore.meanM:F3} m, after max {seamAfter.maxM:F2} m mean {seamAfter.meanM:F3} m\n");
@@ -751,6 +780,16 @@ public static class Stamp
         foreach (var (r, k) in res.Regions.Take(maxPrev).Select((r, k) => (r, k + 1)))
             sb.AppendLine($"- stamp{k}: {r.px} px, bbox ({r.x0},{r.y0})-({r.x1},{r.y1}), world x {r.x0 * CellM - 7168:F0}..{(r.x1 + 1) * CellM - 7168:F0}, z {7168 - (r.y1 + 1) * CellM:F0}..{7168 - r.y0 * CellM:F0}");
         foreach (var (wx, wz, label, size) in at) sb.AppendLine($"- {label}: crop {size:F0} m around world ({wx:F0}, {wz:F0})");
+        if (cap != null)
+        {
+            sb.AppendLine($"\nWater cap: {cap.CapPx} px / {cap.CapCells} CS1 cells where the cap bit; {cap.SkippedObjects} objects skipped (< {minAdd} m after the cap); {cap.UnownedPx} layer px with no object mesh within 4 px (dropped).\n");
+            sb.AppendLine("| object id | layer px | wet px | capped px | capped cells | max added raw (m) | max added capped (m) | stamped |");
+            sb.AppendLine("|---|---|---|---|---|---|---|---|");
+            foreach (var c in cap.Objects.Where(c => c.Px > 0))
+                sb.AppendLine(string.Format(inv, "| {0} | {1} | {2} | {3} | {4} | {5:F1} | {6:F1} | {7} |", c.Id, c.Px, c.WetPx, c.CapPx, c.CapCells, c.MaxAddRawM, c.MaxAddCappedM, c.Skipped ? "skipped" : "yes"));
+            var none = cap.Objects.Where(c => c.Px == 0).Select(c => c.Id).ToList();
+            if (none.Count > 0) sb.AppendLine($"\nIds with no layer pixels (outside ±7168 m or removed by the extractor): {string.Join(", ", none)}");
+        }
         var statsPath = Path.Combine(outDir, outName == null ? "stats.md" : $"{outBase}_stats.md");
         File.WriteAllText(statsPath, sb.ToString());
         Console.Write(sb.ToString());

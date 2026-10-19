@@ -8,7 +8,7 @@ Both runs use the **same heightmap pair**. Only the Height Scale field and the i
 | | Run A | Run B |
 |---|---|---|
 | Height Scale on import | **2048** | **4096** |
-| Playable heightmap | **`10190615-dktflls-1to1.png`** (peaks v2 + Procedural Object mountains and rock work, max 1 457 m; optional `10190615-dktflls-1to1-falls.png` adds the falls steps, which may dam the river; `10190618-dktflls-1to1-soft.png` is the softened variant to compare: blurred facets plus rock noise); fallbacks `10190442` (peaks only), `10181339` (v1) | same |
+| Playable heightmap | **`10190843-dktflls-1to1.png`** (A-v3: peaks + PO mountains/rock work + falls steps capped at the CS1 water line); comparison `10190843-dktflls-1to1-soft.png` (softened mountains); no-falls bases `10190615` / `10190618` | same |
 | World map | **`10190722-dktflls-1to1_worldmap.png`** (hmap-ext redesign, tickets 01–23, built from 10190615: west range 1 540–1 998 m seeded from the PO peaks, plains relief 47–81 m, river continuation with 7 oxbows; fallback `10190616`, the pre-redesign map). Can be re-imported on the live map via Terrain → Import World Map without touching the playable area. | same |
 | Import file set | `net-converter/out/x1/` | `net-converter/out/` |
 | Sea Level (Water tab) | **93 m** first (measured CS1 lower river 92.8 m); 97.5 m if banks look dry | **186 m** first; 195 m fallback |
@@ -29,6 +29,8 @@ Both runs use the **same heightmap pair**. Only the Height Scale field and the i
 4. Say "Run A ready" or "Run B ready" in the orchestrator session.
 
 ## Per run (orchestrator, through the bridge)
+
+**One command (round 9):** `node net-converter/tools/import-run.mjs --scale x1 --sea 93 --climate ContinentalGreatHighlandsClimate` (run B: `--scale x2 --sea 186`). It runs every layer below in order, prints one line per layer, stops on a body error and writes `out/<scale>/run-<timestamp>.md` with every importId. The numbered list stays as the reference and for manual re-runs of single layers.
 
 Order (converter `out/ROUND6.md`): network → power, walls, ship paths → water → connections → objects and barrier props → trees → resources → surfaces (fields, decals; grass surfaces only if the grass plants are rejected). Each layer is a separate import name so it can be undone alone. Every layer: dry run first, then real, then the live-graph defect scan where it applies.
 

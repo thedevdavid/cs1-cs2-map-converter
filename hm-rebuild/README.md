@@ -134,3 +134,16 @@ dotnet run -c Release -- stamp "$H\<prefix>-dktflls-1to1.png" "$H\<prefix>-dktfl
 - **Slope limit:** off by default; `--max-slope` is still available.
 - **`--install DIR`:** copies the playable map and its placeholder world map and refuses to overwrite an existing file.
 - **Stats file:** a run with `--name` writes `<prefix>-<name>_stats.md`, so two runs in the same minute don't overwrite each other's stats.
+
+### Falls steps capped at the CS1 water line (`--water-cap`)
+
+```powershell
+$W = "$env:LOCALAPPDATA\DakotaExport\2972879554_Dakota_Falls-20261019-063123-water.png"
+dotnet run -c Release -- stamp "$H\10190615-dktflls-1to1.png" out\10190615\10190615-dktflls-1to1_worldmap.placeholder-hm-rebuild.png --po-dir $V2 --layer falls --water-cap $W --po-mesh ..\cs1-offline\out\po-offline.json --ids $V2\ids-falls-steps.txt --name dktflls-1to1 --install $H
+```
+
+- **Heights:** taken from the v2 falls-steps layer (full-resolution mesh).
+- **Object ownership:** each layer pixel belongs to the object whose decimated mesh from `po-offline.json` is highest there; pixels no mesh covers take the nearest owned pixel within 4 px.
+- **Per-object cap:** top' = min(top, CS1 water − 0.5 m) on wet pixels. A pixel is wet if its nearest CS1 cell is wet; its water height is bilinear over the wet cells of the surrounding 2×2. Objects whose largest rise after the cap is under 1 m (`--min-add`) are skipped.
+- **Final surface cap:** after the falloff and smoothing, wet pixels are held at max(terrain, water − 0.5 m), so skirts from bank rocks can't build a wall across the channel.
+- **Stats:** `<prefix>-<name>_stats.md` lists per object the layer, wet and capped pixels, the capped CS1 cells, and the maximum added height raw and capped.

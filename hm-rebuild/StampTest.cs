@@ -95,6 +95,49 @@ public static class StampTest
         for (int c = Px(-3000 + 100); c < Px(-3000 + 400); c++) maxDev = Math.Max(maxDev, Math.Abs(Peaks.ToM(resS.Output[rimRow * N + c]) - Peaks.ToM(res.Output[rimRow * N + c])));
         check("soften: flank noise present and bounded", maxDev > 0.5 && maxDev < 9, $"max |soft - plain| on dome A flank {maxDev:F2} m");
 
+        // Water cap. River strip |x - 3000| < 200 (wet in CS1) with the surface 3 m above the terrain, except a shallow reach
+        // (z > 5000) where it is 1.2 m above. Objects (flat top quads): A in the channel +10 m (capped to +2.5), B on the dry
+        // bank +8 m (kept), D in the shallow reach +6 m (capped to +0.7 < 1 m: skipped).
+        {
+            var water = new ushort[S * S];
+            for (int r = 0; r < S; r++) for (int c = 0; c < S; c++)
+                {
+                    double x = -8640 + 16.0 * c, z = 8640 - 16.0 * r;
+                    if (Math.Abs(x - 3000) < 200) water[r * S + c] = (ushort)Math.Round((Terrain(x, z) + (z > 5000 ? 1.2 : 3)) * 64);
+                }
+            var waterPath = Path.Combine(dir, "water.png"); Program.SaveL16(waterPath, water, S, S);
+            (string id, double cx, double cz, double half, double rise)[] objs = [("A", 3000, 2000, 60, 10), ("B", 3260, 2000, 50, 8), ("D", 3000, 5600, 60, 6)];
+            double ObjTop(double x, double z) { foreach (var ob in objs) if (Math.Abs(x - ob.cx) < ob.half && Math.Abs(z - ob.cz) < ob.half) return Terrain(x, z) + ob.rise; return double.NaN; }
+            var vcap = Path.Combine(dir, "vcap"); Directory.CreateDirectory(vcap);
+            Write4096(Path.Combine(vcap, "po-falls-steps-cs2-4096.png"), ObjTop);
+            var mesh = new StringBuilder("{\"schema\":\"test\",\n\"objects\":[\n");
+            foreach (var ob in objs)
+            {
+                double y = Terrain(ob.cx, ob.cz) + ob.rise;
+                var v = new[] { ob.cx - ob.half, y, ob.cz - ob.half, ob.cx + ob.half, y, ob.cz - ob.half, ob.cx + ob.half, y, ob.cz + ob.half, ob.cx - ob.half, y, ob.cz + ob.half };
+                mesh.Append(FormattableString.Invariant($"{{\"id\":\"{ob.id}\",\"vertices\":[{string.Join(",", v.Select(d => d.ToString(System.Globalization.CultureInfo.InvariantCulture)))}],\"triangles\":[0,1,2,0,2,3]}},\n"));
+            }
+            mesh.Append("]}\n");
+            var meshPath = Path.Combine(dir, "po-test.json"); File.WriteAllText(meshPath, mesh.ToString());
+            var ids = new List<string> { "A", "B", "D" };
+            var layer = Stamp.FromLayers(vcap, ["falls"], o, []);
+            var tMc = terrain.Select(v => Peaks.ToM(v)).ToArray();
+            var cap = FallsCap.Apply(layer, FallsCap.Owners(meshPath, ids), ids, FallsCap.LoadWater(waterPath), tMc, 0.5, 1);
+            var resC = Stamp.Run(terrain, cap.Field, o with { SurfaceCap = cap.WaterCap });
+            var resNoCap = Stamp.Run(terrain, cap.Field, o);
+            int WetAbove(ushort[] img) { int k = 0; for (int i = 0; i < img.Length; i++) { double c = cap.WaterCap[i]; if (double.IsNaN(c) || img[i] == terrain[i]) continue; if (Peaks.ToM(img[i]) > Math.Max(Peaks.ToM(terrain[i]), c) + 0.05) k++; } return k; }
+            int wa = WetAbove(resC.Output), waNo = WetAbove(resNoCap.Output);
+            check("cap: no wet pixel above the water cap (bank-rock skirt held back)", wa == 0 && waNo > 0, $"{wa} wet px above cap (without the final cap: {waNo})");
+            double aC = TopAt(resC.Output, 3000, 2000) - Terrain(3000, 2000), bC = TopAt(resC.Output, 3270, 2000) - Terrain(3270, 2000);
+            bool dUnchanged = resC.Output[Row(5600) * N + Px(3000)] == terrain[Row(5600) * N + Px(3000)];
+            var cA = cap.Objects.First(c => c.Id == "A"); var cD = cap.Objects.First(c => c.Id == "D");
+            check("cap: channel rock capped at water - 0.5 m", Math.Abs(aC - 2.5) < 0.3 && cA.CapPx > 0, $"A adds {aC:F2} m (expected 2.5), {cA.CapPx} px / {cA.CapCells} cells capped");
+            check("cap: dry bank rock kept", Math.Abs(bC - 8) < 0.3, $"B adds {bC:F2} m (expected 8)");
+            check("cap: object under 1 m after cap skipped", dUnchanged && cD.Skipped && cap.SkippedObjects == 1, $"D skipped={cD.Skipped}, capped rise {cD.MaxAddCappedM:F2} m");
+            long outC = 0; for (int i = 0; i < terrain.Length; i++) if (!resC.Zone[i] && resC.Output[i] != terrain[i]) outC++;
+            check("cap: bit-identical outside footprints + falloff", outC == 0, $"{outC} differ outside");
+        }
+
         // Falls as its own layer.
         var poF = Stamp.FromLayers(v2, ["falls"], o, []);
         var resF = Stamp.Run(terrain, poF, o);
