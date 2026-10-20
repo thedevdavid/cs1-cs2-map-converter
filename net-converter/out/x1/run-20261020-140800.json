@@ -1,0 +1,97 @@
+{
+ "stamp": "20261020-140800",
+ "scale": "x1",
+ "sea": 93,
+ "netCountAfterNetwork": null,
+ "netCountEnd": null,
+ "guardStop": null,
+ "rows": [
+  {
+   "name": "surfaces",
+   "file": "out\\x1\\import-surfaces-fields.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "srf-20261020-140800-1",
+   "undo": "POST /import/objects/undo?id=srf-20261020-140800-1",
+   "text": "objects 56: created 56, failed 0; netGuard removed 0",
+   "fails": []
+  },
+  {
+   "name": "surfaces",
+   "file": "out\\x1\\import-po-structures.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "srf-20261020-140800-2",
+   "undo": "POST /import/objects/undo?id=srf-20261020-140800-2",
+   "text": "objects 79: created 79, failed 0; netGuard removed 0",
+   "fails": []
+  },
+  {
+   "name": "surfaces",
+   "file": "out\\x1\\import-surfaces-pavement.json",
+   "status": "missing"
+  },
+  {
+   "name": "surfaces",
+   "file": "out\\x1\\import-surfaces-sand.json",
+   "status": "ok",
+   "secs": 0.5,
+   "importId": "srf-20261020-140800-3",
+   "undo": "POST /import/objects/undo?id=srf-20261020-140800-3",
+   "text": "objects 420: created 420, failed 0; netGuard removed 0",
+   "fails": []
+  },
+  {
+   "name": "surfaces",
+   "file": "out\\x1\\import-surfaces-grass-dry.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "srf-20261020-140801-4",
+   "undo": "POST /import/objects/undo?id=srf-20261020-140801-4",
+   "text": "objects 160: created 160, failed 0; netGuard removed 0",
+   "fails": []
+  },
+  {
+   "name": "network",
+   "file": "out\\x1\\import-all.json",
+   "status": "ok",
+   "secs": 17.5,
+   "importId": "imp-20261020-140801-1",
+   "undo": "POST /import/undo?id=imp-20261020-140801-1",
+   "text": "edges 3827: created 2148, merged 1674, failed 5",
+   "fails": [
+    {
+     "id": "e23168_0",
+     "prefab": "Gravel Road",
+     "error": "the batch was applied but only 2 of 3 points along the course lie on a segment of this prefab"
+    },
+    {
+     "id": "e31265_0",
+     "prefab": "Gravel Road",
+     "error": "the batch was applied but only 2 of 3 points along the course lie on a segment of this prefab"
+    },
+    {
+     "id": "e31665_0",
+     "prefab": "Gravel Road",
+     "error": "the batch was applied but only 2 of 3 points along the course lie on a segment of this prefab"
+    },
+    {
+     "id": "e35131_0",
+     "prefab": "Gravel Road",
+     "error": "the batch was applied but only 1 of 3 points along the course lie on a segment of this prefab"
+    },
+    {
+     "id": "e36006_0",
+     "prefab": "Gravel Road",
+     "error": "the batch was applied but only 1 of 3 points along the course lie on a segment of this prefab"
+    }
+   ]
+  },
+  {
+   "name": "bridges",
+   "file": "out\\x1\\import-bridges.json",
+   "status": "HTTP 400 rejected",
+   "secs": 0.038
+  }
+ ]
+}

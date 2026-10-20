@@ -5,14 +5,14 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 
 | order | file | content | count | size |
 |---:|---|---|---|---:|
-| 1 | `out\import-all.json` | network (2×) | 3827 edges, 3696 nodes | 2.0 MB |
-| 1 | `out\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (2×) | 56 edges, replaces 152 | 0.0 MB |
+| 1 | `out\import-all.json` | network (2×) | 3832 edges, 3698 nodes | 2.0 MB |
+| 1 | `out\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (2×) | 51 edges, replaces 147 | 0.0 MB |
 | 1 | `out\import-bridges-fixed.json` | fixed-span bridges: BR001 merged suspension (one 976 m edge) + BR022 arches, right after import-bridges.json (2×) | 9 edges, replaces 151 | 0.0 MB |
 | 1 | `out\import-dam.json` | dam: one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant), after the bridges (2×) | 1 edges, replaces 0 | 0.0 MB |
 | 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 6 edges | 0.0 MB |
 | 1 | `out\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (2×) | 2 edges | 0.0 MB |
-| 1 | `out\x1\import-all.json` | network (1×) | 3827 edges, 3696 nodes | 2.0 MB |
-| 1 | `out\x1\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (1×) | 56 edges, replaces 152 | 0.0 MB |
+| 1 | `out\x1\import-all.json` | network (1×) | 3838 edges, 3703 nodes | 2.0 MB |
+| 1 | `out\x1\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (1×) | 47 edges, replaces 141 | 0.0 MB |
 | 1 | `out\x1\import-bridges-fixed.json` | fixed-span bridges: BR001 merged suspension (one 976 m edge) + BR022 arches, right after import-bridges.json (1×) | 9 edges, replaces 151 | 0.0 MB |
 | 1 | `out\x1\import-dam.json` | dam: one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant), after the bridges (1×) | 1 edges, replaces 0 | 0.0 MB |
 | 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 6 edges | 0.0 MB |
@@ -44,7 +44,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
 | 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 793 | 0.2 MB |
-| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17555 | 3.2 MB |
+| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17549 | 3.2 MB |
 | 5 | `out\x1\import-fort.json` | ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED) (1×) | 112 | 0.0 MB |
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
 | 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |
@@ -125,3 +125,29 @@ were live in Run A, the run reported 9 failures, and no imported object, network
 out/x1/live-defects.md ("A-v4 against the import set"). The runner now exports the graph after the network steps and at the end to pin the step down.
 Mid-air highway stubs: 44 of the 46 highway dead ends are such lost continuations; the other two are the CS1 dead-end 3-lane pair at (2293, 277) / (2302, 255), left out
 from this round. The 4-lane split with broken geometry needs a position from the screenshot (12 candidates listed).
+
+## Round 15: dam, look, vanilla paint plan; road-QA residual for the owner
+
+Dam: import-dam.json is one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant and the dam ends), level at the crest (172 m x1 / 344 m x2), flow auto; the east abutment moved 164 m out to where the terrain reaches the crest, the west one stays at the CS1 quay end 6.9 m above the terrain (dam.elevation warning: the terrain there never reaches 172 m within 250 m). Look: the runner's look step POSTs ../look/climate.json, water.json, terrain.json after the settings (fields not in /map/look/schema skipped).
+
+Road QA residual (out/x1/road-qa.md, check in game): every remaining dead end is a CS1 dead end too:
+
+| (-768, 4363) | dead end, Gravel Road | CS1 dead end too (CS1 degree 1) |
+| (373, -3031) | dead end, Pavement Path | CS1 dead end too (CS1 degree 1) |
+| (1104, 4897) | dead end, Gravel Road | CS1 dead end too (CS1 degree 1) |
+| (4787, -709) | dead end, Pavement Path | CS1 dead end too (CS1 degree 1) |
+| (295, -3026) | dead end, Pavement Path | CS1 dead end too (CS1 degree 1) |
+| (-3987, 334) | dead end, Gravel Road | CS1 dead end too (CS1 degree 1) |
+| (-480, -1481) | dead end, Medium Road | CS1 dead end too (CS1 degree 1) |
+| (-229, -2362) | dead end, Gravel Road | CS1 dead end too (CS1 degree 1) |
+| (-643, -1188) | dead end, Medium Road | CS1 dead end too (CS1 degree 1) |
+| (367, -3024) | isolated Pavement Path, 83 m (e7126_0,e28940_0,e18960_0) | isolated in CS1 too (kept) |
+
+## A-v5 (live, 2026-10-20; reports out/x1/run-20261020-140800.md and run-20261020-140845.md)
+
+Every bridge prefab name resolved in game; the surfaces-first order worked. The bridges body was rejected by the bridge's pre-checks (patched inline for that run):
+TrussArchBridge01 is a fixed-span prefab (bridge.fixed.chained on BR007 / BR010), and nine edges were below 8 m (bridge.lowElevation). The follow-up run stopped at
+the dam: bridge.lowElevation 6.9 m. Round 17 fixes: BR007 / BR010 one TrussArchBridge01 edge each (189 / 265 m, live rules 153.6–358.4 m); BR017, BR020, BR044
+decks lifted to 8.5 m; BR038 (approach would reach 6.9 %) and the gravel trestles BR045, BR049, BR050, BR053 (0–3 m) keep their base prefab; the dam edge is
+180 m (its fixed spans allow 179.2–204.8 m) with the crest at 175.5 m so its middle is 8.5 m above the terrain; the terrain along the dam axis is nearly flat
+(167–169 m), so both abutments stand 6.8–7.7 m above it (dam.elevation warning). A ground-level dam there needs a valley at least 8 m deep under it (heightmap).

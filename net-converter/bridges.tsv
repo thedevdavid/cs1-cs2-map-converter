@@ -6,7 +6,9 @@
 #   plan    fixed:<span,...> (exact spans, fixedIndex per edge) | count:<n> (n equal straight edges per chain) | span:<max m> (fewest equal edges ≤ max)
 #           ;merge = BR001 carriageway merge onto one two-way centreline; ;fixedfile = written to import-bridges-fixed.json; ;nopillars = noPillars on the deck
 #           (BR001: on the connectors and on its remaining over-water deck courses in import-all.json; PLAN.md item 4)
-#   seg     m_SegmentLength (m) for the 0.6–1.4 × seg rule; [U] = assumed (vanilla values are not readable offline; bridges/cs2-bridge-rules.json will replace them)
+#   seg     m_SegmentLength (m) for the 0.6–1.4 × seg rule (BXP: ../bridges/cs2-bridge-rules.json; vanilla: bridge-rules-live.json from tools/fetch-bridge-rules.mjs)
+#   Decks lower than 8 m above the terrain (bridge.lowElevation) are lifted to 8.5 m when that is ≤ 5 m and the approaches allow it, else the CS1 chain keeps its base prefab
+#   (the gravel trestles BR045, BR049, BR050, BR053 at 0–3 m: a covered bridge over a ditch is wrong anyway).
 #   notes
 #   alt     kept alternative (prefab | plan), not used; swap it into prefab/plan to try it
 #
@@ -15,9 +17,9 @@ BR001	(?i)3L Interstate B	BXP SuspensionBridge03 - Six Lane Highway	fixed:168,32
 BR022	.	BXP Arc Pedestrian Bridge Revised	count:1;fixedfile	32	white multi-arch below the dam: decor arches along the CS1 monorail arch line, one edge per arc chain (not a fixed-span prefab per cs2-bridge-rules.json; the game cuts it into ≤ 44.8 m pieces)	DIY Artdeco Bridge Kit objects (OlympicBridge, 4thStBridgePillar) by hand
 BR005	.	BXP Truss Arch Bridge - Highway Oneway - 2 Lanes	count:2	128	Hernando-Desoto: two ~150 m arches per carriageway ("M")	Truss Arch Bridge - Highway Twoway - 2 Lanes | count:2 (two-way, needs a merge)
 BR009	.	BXP Truss Arch Bridge - Highway Oneway - 2 Lanes	span:179.2	128	green truss arch over the gorge; the owner asked for one edge per carriageway, but the deck chain is 210 m straight (> 1.4 × 128 = 179 m), so two	plain deck + PittTrussBridge / TrussBridgeHollow objects
-BR006	.	Truss Arch Bridge - Small Road - 2 Lanes	span:179.2;nopillars	128 [U]	red deck arch over the dry valley (vanilla truss arch; BXP equivalent if this name fails)	plain elevated Small Road + StoneArchRailBridge / OlympicBridge objects
-BR007	(?i)Ourense SA B	TrussArchBridge01	span:179.2	128 [U]	Ourense: truss arch over the main span; approaches stay Double Train Track	plain elevated Double Train Track + StoneArchRailBridge objects
-BR010	(?i)Pedrido B	TrussArchBridge01	span:179.2	128 [U]	Pedrido: truss arch over the bow-string part	BXP Extradosed Bridge - Train - 2 Tracks | span:179.2
+BR006	.	Truss Arch Bridge - Small Road - 2 Lanes	span:179.2;nopillars	128	red deck arch over the dry valley (vanilla truss arch; BXP equivalent if this name fails)	plain elevated Small Road + StoneArchRailBridge / OlympicBridge objects
+BR007	(?i)Ourense SA B	TrussArchBridge01	fixed:128,128;count:1	256	Ourense: truss arch over the main span, ONE edge abutment to abutment (live rules: fixed 128 + 128 m, edge 153.6–358.4 m); approaches stay Double Train Track	plain elevated Double Train Track + StoneArchRailBridge objects
+BR010	(?i)Pedrido B	TrussArchBridge01	fixed:128,128;count:1	256	Pedrido: truss arch over the bow-string part, ONE edge abutment to abutment (fixed 128 + 128 m, edge 153.6–358.4 m)	BXP Extradosed Bridge - Train - 2 Tracks | span:179.2
 BR023	.	BXP Truss Viaduct - Train	span:89.6	64	TRH through girder (96 m: 2 edges)	plain elevated Double Train Track
 BR026	.	BXP Truss Viaduct - Train	span:89.6	64	TRH through girder (96 m: 2 edges)	plain elevated Double Train Track
 BR033	.	BXP Truss Viaduct - Train	span:89.6	64	TRH through girder	plain elevated Double Train Track
@@ -29,10 +31,10 @@ BR012	(?i)B0	BXP Truss Viaduct - Train	span:89.6	64	R2USA B0 rail viaduct	plain 
 BR015	(?i)B0	BXP Truss Viaduct - Train	span:89.6	64	R2USA B0 rail viaduct	plain elevated Double Train Track
 BR017	(?i)B0	BXP Truss Viaduct - Train	span:89.6	64	R2USA B0 rail viaduct	plain elevated Double Train Track
 BR028	(?i)B0	BXP Truss Viaduct - Train	span:89.6	64	R2USA B0 rail viaduct	plain elevated Double Train Track
-BR019	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
-BR020	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
-BR044	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
-BR045	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
-BR049	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
-BR050	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
-BR053	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
+BR019	.	Wooden Covered Bridge - 2 lanes	span:89.6	64	gravel trestle	plain elevated Gravel Road
+BR020	.	Wooden Covered Bridge - 2 lanes	span:89.6	64	gravel trestle	plain elevated Gravel Road
+BR044	.	Wooden Covered Bridge - 2 lanes	span:89.6	64	gravel trestle	plain elevated Gravel Road
+BR045	.	Wooden Covered Bridge - 2 lanes	span:89.6	64	gravel trestle	plain elevated Gravel Road
+BR049	.	Wooden Covered Bridge - 2 lanes	span:89.6	64	gravel trestle	plain elevated Gravel Road
+BR050	.	Wooden Covered Bridge - 2 lanes	span:89.6	64	gravel trestle	plain elevated Gravel Road
+BR053	.	Wooden Covered Bridge - 2 lanes	span:89.6	64	gravel trestle	plain elevated Gravel Road

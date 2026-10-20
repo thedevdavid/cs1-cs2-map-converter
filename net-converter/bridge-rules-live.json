@@ -1,0 +1,172 @@
+{
+ "generated": "2026-10-20T14:10:13.252Z",
+ "bridge": "http://127.0.0.1:8642",
+ "prefabs": [
+  {
+   "name": "Hydroelectric_Power_Plant_01 Dam",
+   "class": "RoadPrefab",
+   "segmentLength": 16,
+   "elevationOnWater": 10,
+   "canCurve": false,
+   "fixedSegments": [
+    {
+     "length": 64,
+     "canCurve": false,
+     "countRange": [
+      1,
+      1
+     ]
+    },
+    {
+     "length": 0,
+     "canCurve": true,
+     "countRange": [
+      1,
+      0
+     ]
+    },
+    {
+     "length": 32,
+     "canCurve": true,
+     "countRange": [
+      1,
+      1
+     ]
+    },
+    {
+     "length": 0,
+     "canCurve": true,
+     "countRange": [
+      1,
+      0
+     ]
+    },
+    {
+     "length": 64,
+     "canCurve": false,
+     "countRange": [
+      1,
+      1
+     ]
+    }
+   ],
+   "edgeLengthRange": {
+    "min": 9.6,
+    "max": 22.4
+   },
+   "minElevatedHeight": 8,
+   "importEdge": {
+    "edges": 1,
+    "lengthMin": 9.6,
+    "lengthMax": 22.4,
+    "nominal": 160
+   },
+   "source": "live /prefabs/info"
+  },
+  {
+   "name": "Suspension Bridge - Highway Oneway - 3 lanes",
+   "class": "RoadPrefab",
+   "segmentLength": 256,
+   "elevationOnWater": 10,
+   "canCurve": false,
+   "fixedSegments": [],
+   "edgeLengthRange": {
+    "min": 153.6,
+    "max": 358.4
+   },
+   "minElevatedHeight": 8,
+   "importEdge": {
+    "note": "any length >= min"
+   },
+   "source": "live /prefabs/info"
+  },
+  {
+   "name": "Truss Arch Bridge - Highway Twoway - 2 Lanes",
+   "class": "RoadPrefab",
+   "segmentLength": 128,
+   "elevationOnWater": 20,
+   "canCurve": false,
+   "fixedSegments": [],
+   "edgeLengthRange": {
+    "min": 76.8,
+    "max": 179.2
+   },
+   "minElevatedHeight": 8,
+   "importEdge": {
+    "note": "any length >= min"
+   },
+   "source": "live /prefabs/info"
+  },
+  {
+   "name": "Truss Arch Bridge - Small Road - 2 Lanes",
+   "class": "RoadPrefab",
+   "segmentLength": 128,
+   "elevationOnWater": 20,
+   "canCurve": false,
+   "fixedSegments": [],
+   "edgeLengthRange": {
+    "min": 76.8,
+    "max": 179.2
+   },
+   "minElevatedHeight": 8,
+   "importEdge": {
+    "note": "any length >= min"
+   },
+   "source": "live /prefabs/info"
+  },
+  {
+   "name": "TrussArchBridge01",
+   "class": "TrackPrefab",
+   "segmentLength": 256,
+   "elevationOnWater": 10,
+   "canCurve": false,
+   "fixedSegments": [
+    {
+     "length": 128,
+     "canCurve": false,
+     "countRange": [
+      1,
+      1
+     ]
+    },
+    {
+     "length": 128,
+     "canCurve": false,
+     "countRange": [
+      1,
+      1
+     ]
+    }
+   ],
+   "edgeLengthRange": {
+    "min": 153.6,
+    "max": 358.4
+   },
+   "minElevatedHeight": 8,
+   "importEdge": {
+    "edges": 1,
+    "lengthMin": 153.6,
+    "lengthMax": 358.4,
+    "nominal": 256
+   },
+   "source": "live /prefabs/info"
+  },
+  {
+   "name": "Wooden Covered Bridge - 2 lanes",
+   "class": "RoadPrefab",
+   "segmentLength": 64,
+   "elevationOnWater": 10,
+   "canCurve": false,
+   "fixedSegments": [],
+   "edgeLengthRange": {
+    "min": 38.4,
+    "max": 89.6
+   },
+   "minElevatedHeight": 8,
+   "importEdge": {
+    "note": "any length >= min"
+   },
+   "source": "live /prefabs/info"
+  }
+ ]
+}

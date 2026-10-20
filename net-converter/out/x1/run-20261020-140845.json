@@ -1,0 +1,42 @@
+{
+ "stamp": "20261020-140845",
+ "scale": "x1",
+ "sea": 93,
+ "netCountAfterNetwork": null,
+ "netCountEnd": null,
+ "guardStop": null,
+ "rows": [
+  {
+   "name": "bridges",
+   "file": "out\\x1\\import-bridges.json",
+   "status": "ok",
+   "secs": 0.3,
+   "importId": "imp-20261020-140845-3",
+   "undo": "POST /import/undo?id=imp-20261020-140845-3",
+   "text": "edges 56: created 44, merged 11, failed 1",
+   "fails": [
+    {
+     "id": "br049_c1_e0",
+     "prefab": "Gravel Road",
+     "error": "the batch was applied but only 1 of 3 points along the course lie on a segment of this prefab"
+    }
+   ]
+  },
+  {
+   "name": "bridges-fixed",
+   "file": "out\\x1\\import-bridges-fixed.json",
+   "status": "ok",
+   "secs": 0.4,
+   "importId": "imp-20261020-140845-4",
+   "undo": "POST /import/undo?id=imp-20261020-140845-4",
+   "text": "edges 9: created 0, merged 9, failed 0",
+   "fails": []
+  },
+  {
+   "name": "dam",
+   "file": "out\\x1\\import-dam.json",
+   "status": "HTTP 400 rejected",
+   "secs": 0.006
+  }
+ ]
+}

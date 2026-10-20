@@ -32,11 +32,11 @@ Live graph `out\live-graph.json` (2973 nodes).
 | Gravel Road | 1383 | 6161 | CS1 dead end (genuine) | Gravel Road Bridge [roads, bridge override (import-bridges*.json)] |
 | Gravel Road | 1462 | 6173 | neighbour collapsed (< 4 m) | Gravel Road [roads, collapsed (< 4 m)]; Gravel Road [roads, imported] |
 
-## Predicted for the regenerated import-all.json (fresh map): 61
+## Predicted for the regenerated import-all.json (fresh map): 55
 
 | reason | ends | stub prefabs |
 |---|---:|---|
-| connected in the data, not joined in the game | 43 | Double Train Track 18, Gravel Road 15, Highway Oneway - 2 lanes 5, Small Road 2, Highway Oneway - 3 lanes 2, Highway Oneway - 4 lanes 1 |
+| connected in the data, not joined in the game | 37 | Double Train Track 18, Gravel Road 9, Highway Oneway - 2 lanes 5, Small Road 2, Highway Oneway - 3 lanes 2, Highway Oneway - 4 lanes 1 |
 | CS1 dead end (genuine) | 12 | Pavement Path 6, Gravel Road 4, Medium Road 2 |
 | no CS1 node here (game split, or merged/moved by the converter) | 5 | Highway Oneway - 3 lanes 5 |
 | neighbour collapsed (< 4 m) | 1 | Gravel Road 1 |

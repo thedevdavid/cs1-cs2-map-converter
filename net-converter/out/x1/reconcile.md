@@ -12,14 +12,14 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | highways | Highway Oneway - 2 lanes | 914 | 868 | 0 | 26 | 20 | 41 |
 | highways | Highway Oneway - 3 lanes | 509 | 509 | 0 | 0 | 0 | 0 |
 | highways | Highway Oneway - 4 lanes | 31 | 31 | 0 | 0 | 0 | 0 |
-| rail | Double Train Track | 430 | 429 | 0 | 1 | 0 | 0 |
-| roads | Gravel Road | 1262 | 1041 | 0 | 114 | 107 | 209 |
+| rail | Double Train Track | 432 | 431 | 0 | 1 | 0 | 0 |
+| roads | Gravel Road | 1271 | 1047 | 0 | 115 | 109 | 212 |
 | roads | Medium Road | 42 | 35 | 0 | 2 | 5 | 7 |
 | roads | Pavement Path | 48 | 36 | 0 | 7 | 5 | 10 |
 | roads | Small Road | 308 | 297 | 0 | 6 | 5 | 8 |
 | **highways** | **all** | 1737 | 1688 | 0 | 29 | 20 | 44 |
-| **rail** | **all** | 430 | 429 | 0 | 1 | 0 | 0 |
-| **roads** | **all** | 1660 | 1409 | 0 | 129 | 122 | 234 |
+| **rail** | **all** | 432 | 431 | 0 | 1 | 0 | 0 |
+| **roads** | **all** | 1669 | 1415 | 0 | 130 | 124 | 237 |
 
 ### Edges not fully covered
 
@@ -128,6 +128,7 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | roads | e5167_0 | Gravel Road | Partial | 1/1 | 4136 | -3233 |
 | roads | e5501_0 | Gravel Road | Missing | 0/0 | -1294 | 5269 |
 | roads | e5706_0 | Gravel Road | Partial | 1/1 | 6591 | 3240 |
+| roads | e5779_0 | Gravel Road | Missing | 0/0 | 6846 | 2586 |
 | roads | e5861_0 | Gravel Road | Missing | 0/0 | 6161 | 1204 |
 | roads | e5934_0 | Small Road | Partial | 1/1 | 6658 | 2462 |
 | roads | e5995_0 | Gravel Road | Partial | 1/1 | 6332 | 1168 |
@@ -319,6 +320,8 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | roads | e34422_0 | Gravel Road | Missing | 0/0 | 2623 | -2505 |
 | roads | e34922_0 | Gravel Road | Partial | 1/1 | 3701 | -1877 |
 | roads | e34946_0 | Gravel Road | Partial | 1/1 | 5232 | -3828 |
+| roads | e35264_0a | Gravel Road | Missing | 0/0 | 6432 | 1715 |
+| roads | e35264_0b | Gravel Road | Partial | 1/1 | 6467 | 1715 |
 | roads | e35592_0 | Gravel Road | Partial | 3/3 | 6588 | 1439 |
 | roads | e36006_0 | Gravel Road | Missing | 0/0 | 6335 | 3313 |
 | roads | e36406_0 | Gravel Road | Partial | 1/1 | 3227 | -1957 |
@@ -335,7 +338,7 @@ Not written (pass --retry; entity ids are only valid for the running game sessio
 
 - Hairpins (Bézier length > 1.6 × chord, self-intersection, or a control point behind its end), checked on every imported CS1 segment: **0** found, 0 rebuilt.
 - Exact duplicate edges dropped: **0**.
-- Structure now from node elevation (not the B/E/S/T prefab suffix): 368 imported edges differ from the suffix-based class (Ground→Elevated 352, Ground→Tunnel 13, Elevated→Ground 3).
+- Structure now from node elevation (not the B/E/S/T prefab suffix): 371 imported edges differ from the suffix-based class (Ground→Elevated 352, Ground→Tunnel 13, Elevated→Ground 6).
 - Elevation ramps (Δelevation > 6 m over < 60 m) smoothed to ≤ 8 %: **44** ramps, 266 nodes raised/lowered, 5 still steeper than 12 % (blocked by a junction or the border).
 
 - Node merges refused because the nodes are stacked (height difference ≥ 2 m): **9**.

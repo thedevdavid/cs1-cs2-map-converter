@@ -273,13 +273,14 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
     var specs = Bridges.Load(FindB("bridges.tsv"));
     var segIdsB = Bridges.LoadSegIds(FindB(Path.Combine("..", "bridges", "data", "cs1-bridges.json")));
     Func<double, double, double?>? waterOut = surfaceEarly == null ? null : (x, z) => surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.5 ? c.Surface * heightFactor : null;
-    var (bMain, bFixed, bRep) = Bridges.Apply(result, dump, rootDoc.RootElement, specs, segIdsB, bridgesOn, bridgesFixedOn, waterOut, topologyFactor);
+    Func<double, double, double>? terrOutB = cs2Terrain == null ? null : (x, z) => cs2Terrain.Sample(x, z) * heightFactor;
+    var (bMain, bFixed, bRep) = Bridges.Apply(result, dump, rootDoc.RootElement, specs, segIdsB, bridgesOn, bridgesFixedOn, waterOut, topologyFactor, terrOutB);
     foreach (var name in new[] { "import-bridges.json", "import-bridges-fixed.json" }) File.Delete(Path.Combine(outDir, name));
     // BR001's deck courses outside the merged span: noPillars (PLAN.md item 4), through the skin-flag writer.
     foreach (var seg in Bridges.NoPillarSegments) Outputs.SkinFlags[seg] = (true, Outputs.SkinFlags.TryGetValue(seg, out var sf) && sf.Lights);
-    var rules = Bridges.LoadRules(FindB(Path.Combine("..", "bridges", "cs2-bridge-rules.json")));
-    var checks = Bridges.Validate(bMain, rules, waterOut);
-    foreach (var kv in Bridges.Validate(bFixed, rules, waterOut)) checks[kv.Key] = kv.Value;
+    var rules = Bridges.LoadRules(FindB(Path.Combine("..", "bridges", "cs2-bridge-rules.json")), FindB("bridge-rules-live.json"));
+    var checks = Bridges.Validate(bMain, rules, waterOut, terrOutB);
+    foreach (var kv in Bridges.Validate(bFixed, rules, waterOut, terrOutB)) checks[kv.Key] = kv.Value;
     if (bMain.Edges.Count > 0)
         Round9.WriteNet(Path.Combine(outDir, "import-bridges.json"), "Dakota Falls bridges",
             "Bridge overrides (bridges.tsv): straight, constant-grade bridge-prefab edges between the CS1 deck chains' end nodes; ends shared with the network import join it through snapToSegment (radius 2). Import right after import-all.json, which leaves these decks out. Prefab names UNVERIFIED.", bMain.Nodes, bMain.Edges, bMain.Replaces);

@@ -190,19 +190,20 @@ public static class Round8
         var log = new List<string>();
         double ax = DamDeckA.X, az = DamDeckA.Z, bx = DamDeckB.X, bz = DamDeckB.Z, len = Math.Sqrt((bx - ax) * (bx - ax) + (bz - az) * (bz - az));
         double ux = (bx - ax) / len, uz = (bz - az) / len, mx = (ax + bx) / 2, mz = (az + bz) / 2;
-        (double X, double Z, double T) End(int sign)
-        {
-            double sMax = len / 2 + 250;
-            for (double s = 0; s <= sMax; s += 1)
+        // Live rules (bridge-rules-live.json): fixed spans 64 + (9.6–22.4) + 32 + (9.6–22.4) + 64 m, so the one dam edge is 179.2–204.8 m; bridge.lowElevation
+        // needs ≥ 8 m above the terrain at an end or the middle. Search the length and a shift along the CS1 axis for the abutments nearest the ground,
+        // with the crest = max(172 m, middle terrain + 8.5 m).
+        double T(double x, double z) => terrainTrue?.Invoke(x, z) ?? DamCrestTrue;
+        (double X, double Z, double T) w = default, e = default; double crest = DamCrestTrue, bestScore = double.MaxValue, bestL = 192;
+        for (double LL = 180; LL <= 204; LL += 1)
+            for (double sh = -60; sh <= 60; sh += 2)
             {
-                double x = mx + sign * ux * s, z = mz + sign * uz * s, t = terrainTrue?.Invoke(x, z) ?? DamCrestTrue;
-                if (t >= DamCrestTrue - 1 && s >= len / 2 - 60) return (x, z, t);   // not inside the valley floor near the middle
+                double cx = mx + ux * sh, cz = mz + uz * sh, c = Math.Max(DamCrestTrue, T(cx, cz) + 8.5);
+                var pw = (cx - ux * LL / 2, cz - uz * LL / 2); var pe = (cx + ux * LL / 2, cz + uz * LL / 2);
+                double tw = T(pw.Item1, pw.Item2), te = T(pe.Item1, pe.Item2), score = Math.Abs(c - tw) + Math.Abs(c - te);
+                if (score < bestScore) { bestScore = score; w = (pw.Item1, pw.Item2, tw); e = (pe.Item1, pe.Item2, te); crest = c; bestL = LL; }
             }
-            double xe = mx + sign * ux * len / 2, ze = mz + sign * uz * len / 2;
-            return (xe, ze, terrainTrue?.Invoke(xe, ze) ?? DamCrestTrue);
-        }
-        var w = End(-1); var e = End(+1);
-        double y = Math.Round(DamCrestTrue * heightFactor, 2);
+        double y = Math.Round(crest * heightFactor, 2);
         using (var fs = File.Create(path))
         using (var wr = new Utf8JsonWriter(fs, Json.Indented))
         {
@@ -224,8 +225,8 @@ public static class Round8
             wr.WriteEndObject();
         }
         double L = Math.Sqrt((e.X - w.X) * (e.X - w.X) + (e.Z - w.Z) * (e.Z - w.Z));
-        log.Add(FormattableString.Invariant($"dam edge {L:F0} m (CS1 quays {len:F0} m), crest {DamCrestTrue} m × {heightFactor}; west abutment ({w.X:F0}, {w.Z:F0}) terrain {w.T:F1} m (elevation {DamCrestTrue - w.T:F1}), east ({e.X:F0}, {e.Z:F0}) terrain {e.T:F1} m (elevation {DamCrestTrue - e.T:F1})"));
-        if (Math.Abs(DamCrestTrue - w.T) > 1 || Math.Abs(DamCrestTrue - e.T) > 1) log.Add("an abutment is more than 1 m off the terrain (dam.elevation warning): the terrain does not reach the crest within 250 m");
+        log.Add(FormattableString.Invariant($"dam edge {L:F0} m (fixed spans 179.2–204.8 m; CS1 quays {len:F0} m), crest {crest:F1} m × {heightFactor} (CS1 172; ≥ middle terrain + 8.5 for bridge.lowElevation); west abutment ({w.X:F0}, {w.Z:F0}) terrain {w.T:F1} m (elevation {crest - w.T:F1}), east ({e.X:F0}, {e.Z:F0}) terrain {e.T:F1} m (elevation {crest - e.T:F1})"));
+        if (Math.Abs(crest - w.T) > 1 || Math.Abs(crest - e.T) > 1) log.Add("an abutment is more than 1 m off the terrain (dam.elevation warning only)");
         return log;
     }
 

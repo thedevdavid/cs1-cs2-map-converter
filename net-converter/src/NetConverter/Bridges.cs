@@ -54,9 +54,10 @@ public static class Bridges
     /// <summary>Bridge rules per prefab from ../bridges/cs2-bridge-rules.json (offline parse of the BXP packs; vanilla prefabs are not in it).</summary>
     public sealed record Rule(string Name, double Seg, bool CanCurve, double ElevationOnWater, double Min, double Max, double[]? FixedLengths, double FixedMin, double FixedMax);
 
-    public static Dictionary<string, Rule> LoadRules(string path)
+    public static Dictionary<string, Rule> LoadRules(string path, string? livePath = null)
     {
         var res = new Dictionary<string, Rule>(StringComparer.OrdinalIgnoreCase);
+        if (livePath != null && File.Exists(livePath) && livePath != path) foreach (var kv in LoadRules(livePath)) res[kv.Key] = kv.Value;
         if (!File.Exists(path)) return res;
         using var doc = JsonDocument.Parse(File.ReadAllBytes(path));
         foreach (var p in doc.RootElement.GetProperty("prefabs").EnumerateArray())
@@ -78,7 +79,7 @@ public static class Bridges
     /// bridge.fixed.repeat / .short / .chained, bridge.straight (all edges here are straight), bridge.waterClearance (9 points). lowElevation needs the
     /// net's elevation limit, which is not in the offline rules, so the runner's dry run checks it. Returns bridge id → findings.
     /// </summary>
-    public static Dictionary<string, List<string>> Validate(Output o, Dictionary<string, Rule> rules, Func<double, double, double?>? waterOut)
+    public static Dictionary<string, List<string>> Validate(Output o, Dictionary<string, Rule> rules, Func<double, double, double?>? waterOut, Func<double, double, double>? terrOut = null)
     {
         var res = new Dictionary<string, List<string>>();
         var nodes = o.Nodes.GroupBy(n => n.Id).ToDictionary(g => g.Key, g => g.First());
@@ -114,6 +115,11 @@ public static class Bridges
                     double t = k / 10.0, x = a.X + t * (b.X - a.X), z = a.Z + t * (b.Z - a.Z);
                     if (waterOut(x, z) is { } w && a.Y + t * (b.Y - a.Y) - w < r.ElevationOnWater) { list.Add(F($"bridge.waterClearance (warning) {e.Id}: {a.Y + t * (b.Y - a.Y) - w:F1} m < {r.ElevationOnWater:F0} m over the water")); break; }
                 }
+            if (terrOut != null && !e.Prefab.Contains("Pedestrian"))
+            {
+                double h = new[] { 0.0, 0.5, 1.0 }.Max(t => a.Y + t * (b.Y - a.Y) - terrOut(a.X + t * (b.X - a.X), a.Z + t * (b.Z - a.Z)));
+                if (h < MinElevated) list.Add(F($"bridge.lowElevation {e.Id}: {h:F1} m < {MinElevated:F0} m above the terrain"));
+            }
         }
         return res;
     }
@@ -166,13 +172,59 @@ public static class Bridges
 
     static double Y(OutNode n) => Round9.Y(n);
 
-    /// <summary>Straight, constant-grade edges between a chain's end nodes (flow direction of the chain's first edge kept).</summary>
-    static List<double> Resegment(Spec s, string tag, List<OutEdge> chain, OutNode start, OutNode end, Dictionary<OutNode, int> deg, Output o, List<string> problems, Func<double, double, double?>? waterOut)
+    /// <summary>Bridge prefabs require ≥ 2 × the net's elevation limit above the terrain at an end or the middle (rule bridge.lowElevation, RequireElevated).</summary>
+    public const double MinElevated = 8.0, RaiseTarget = 8.5, MaxRaise = 5.0;
+
+    /// <summary>
+    /// Straight, constant-grade edges between a chain's end nodes (flow direction of the chain's first edge kept). An edge lower than 8 m above the
+    /// terrain at its ends and middle (bridge.lowElevation) lifts the whole deck to 8.5 m, end nodes included, when that is at most 5 m and the
+    /// approaches stay within their grade; otherwise the chain keeps its base prefab (returns null, nothing written).
+    /// </summary>
+    static List<double>? Resegment(Spec s, string tag, List<OutEdge> chain, OutNode start, OutNode end, Dictionary<OutNode, int> deg, Output o, List<string> problems,
+        Func<double, double, double?>? waterOut, Func<double, double, double>? terrOut, IReadOnlyList<OutEdge> network)
     {
         bool forward = chain[0].A == start;
         var (a, b) = forward ? (start, end) : (end, start);
         double chord = Len(a.Position, b.Position), curve = chain.Sum(e => e.Curve.LengthXZ());
         int n = s.Count ?? (s.Span is { } sp ? Math.Max(1, (int)Math.Ceiling(chord / sp - 1e-9)) : 1);
+        // bridge.lowElevation: the highest of ends / middle per edge must reach 8 m.
+        double raise = 0;
+        if (terrOut != null && !s.FixedFile)
+        {
+            for (int k = 0; k < n; k++)
+            {
+                double h = double.MinValue;
+                foreach (var t in new[] { k / (double)n, (k + 0.5) / n, (k + 1) / (double)n })
+                {
+                    double x = a.Position.X + t * (b.Position.X - a.Position.X), z = a.Position.Z + t * (b.Position.Z - a.Position.Z);
+                    h = Math.Max(h, Y(a) + t * (Y(b) - Y(a)) - terrOut(x, z));
+                }
+                if (h < MinElevated) raise = Math.Max(raise, RaiseTarget - h);
+            }
+            if (raise > MaxRaise)
+            {
+                problems.Add(F($"{tag}: kept the base prefab: the deck is {RaiseTarget - raise:F1} m above the terrain and would need +{raise:F1} m for bridge.lowElevation (≥ 8 m); a bridge prefab is wrong this low"));
+                return null;
+            }
+            if (raise > 0)
+            {
+                // Approaches: every other network course at the end nodes gets the extra height at that end; its grade must stay within the limit.
+                double limit = chain[0].Layer == Layers.Rail ? 0.05 : 0.10;
+                foreach (var node in new[] { a, b })
+                    foreach (var e in network.Where(e => !chain.Contains(e) && (e.A == node || e.B == node)))
+                    {
+                        var other = e.A == node ? e.B : e.A; double l = Math.Max(1, e.Curve.LengthXZ());
+                        double g = Math.Abs(Y(node) + raise - Y(other)) / l;
+                        if (g > limit)
+                        {
+                            problems.Add(F($"{tag}: kept the base prefab: lifting the deck +{raise:F1} m makes the approach {e.Id} {g * 100:F1} % (> {limit * 100:F0} %)"));
+                            return null;
+                        }
+                    }
+                foreach (var node in new[] { a, b }) { double dTop = raise / Outputs.YScale; node.Elevation += dTop; node.Position = node.Position with { Y = node.Position.Y + dTop }; }
+                problems.Add(F($"{tag}: deck lifted +{raise:F1} m to reach 8.5 m above the terrain (bridge.lowElevation); approaches re-graded"));
+            }
+        }
         // Curvature: the largest offset of the CS1 chain from the straight line it becomes.
         double maxOff = 0;
         foreach (var e in chain) for (int k = 0; k <= 8; k++)
@@ -223,7 +275,7 @@ public static class Bridges
     /// <paramref name="fixedOn"/> (until the bridge supports fixedIndex they stay plain elevated highway / dropped decor).
     /// </summary>
     public static (Output Main, Output Fixed, List<Report> Reports) Apply(ConvertResult res, Dump dump, JsonElement root, List<Spec> specs, Dictionary<string, int[]> segIds,
-        bool enabled, bool fixedOn, Func<double, double, double?>? waterOut, double topologyFactor)
+        bool enabled, bool fixedOn, Func<double, double, double?>? waterOut, double topologyFactor, Func<double, double, double>? terrOut = null)
     {
         var main = new Output(); var fix = new Output(); var reports = new List<Report>();
         if (!enabled) return (main, fix, reports);
@@ -254,7 +306,13 @@ public static class Bridges
                     decorDeg = new Dictionary<OutNode, int>(ReferenceEqualityComparer.Instance);
                     foreach (var e in sel) foreach (var n in new[] { e.A, e.B }) decorDeg[n] = decorDeg.GetValueOrDefault(n) + 1;
                 }
-                foreach (var (chain, a, b) in Chains(sel, decorDeg)) lengths.AddRange(Resegment(s, $"{s.Id.ToLowerInvariant()}_c{++chains}", chain, a, b, decorDeg, target, problems, waterOut));
+                var kept = new List<OutEdge>();
+                foreach (var (chain, a, b) in Chains(sel, decorDeg))
+                {
+                    var l = Resegment(s, $"{s.Id.ToLowerInvariant()}_c{++chains}", chain, a, b, decorDeg, target, problems, waterOut, terrOut, res.Edges);
+                    if (l == null) kept.AddRange(chain); else lengths.AddRange(l);
+                }
+                sel.RemoveAll(kept.Contains);   // chains that keep their base prefab stay in the network
             }
             if (!s.FixedFile || fixedOn) foreach (var e in sel) remove.Add(e);
             if (s.SegAssumed) problems.Add(F($"segment length {s.Seg:F0} m assumed [U]"));

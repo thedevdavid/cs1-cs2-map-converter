@@ -384,3 +384,12 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   non-zero value and prints the batch items; at the end a second count with the per-prefab difference. Both counts and any guard stop go into
   `run-<stamp>.md` and its `run-<stamp>.json` twin.
 - `--verify-only`: prints `/net/count` and its difference from the last run's network count (for the 2-minute-idle and save + reload checks).
+
+## Round 17: A-v5 bridge pre-check fixes
+
+- `tools/fetch-bridge-rules.mjs` → `bridge-rules-live.json`: live bridge rules (GET /prefabs/info) for the vanilla prefabs in bridges.tsv and the dam net;
+  `Bridges.LoadRules` merges them with ../bridges/cs2-bridge-rules.json.
+- TrussArchBridge01 is fixed-span (128 + 128 m): BR007 / BR010 are one edge each. bridge.lowElevation (≥ 8 m above the terrain at an end or the middle): a lower
+  deck is lifted to 8.5 m when that is ≤ 5 m and the approaches stay ≤ 5 % (rail) / 10 % (road), else the CS1 chain keeps its base prefab. The validator checks it.
+- The dam edge follows its fixed spans (179.2–204.8 m) with the crest ≥ the middle terrain + 8.5 m; length and position along the CS1 axis bring the
+  abutments as close to the ground as the terrain allows.
