@@ -1,0 +1,26 @@
+{
+ "topLevelSegments": 3255,
+ "ownedSegments": 15,
+ "perPrefab": {
+  "BXP Arc Pedestrian Bridge Revised": 47,
+  "BXP SuspensionBridge03 - Six Lane Highway": 4,
+  "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes": 8,
+  "BXP Truss Viaduct - Train": 27,
+  "Double Train Track": 279,
+  "Gravel Road": 839,
+  "High-voltage Line": 114,
+  "Highway Oneway - 1 lane": 274,
+  "Highway Oneway - 2 lanes": 768,
+  "Highway Oneway - 3 lanes": 438,
+  "Highway Oneway - 4 lanes": 27,
+  "Medium Road": 39,
+  "Medium Seaway": 78,
+  "Narrow Boatway": 7,
+  "Pavement Path": 48,
+  "Small Road": 248,
+  "Sound Barrier": 2,
+  "Truss Arch Bridge - Small Road - 2 Lanes": 4,
+  "Wooden Covered Bridge - 2 lanes": 4
+ },
+ "at": "2026-10-20T14:47:47.2797643Z"
+}
