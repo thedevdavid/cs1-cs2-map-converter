@@ -16,7 +16,11 @@ public class BridgesTests
         Assert.False(br005.FixedFile);
         var br019 = specs.Single(s => s.Id == "BR019");
         Assert.Equal(89.6, br019.Span);
-        Assert.True(br019.SegAssumed);
+        Assert.False(br019.SegAssumed);   // confirmed by the live rules (bridge-rules-live.json)
+        var br007 = specs.Single(s => s.Id == "BR007");
+        Assert.Equal(new[] { 128.0, 128 }, br007.Fixed);
+        Assert.Equal(1, br007.Count);
+        Assert.Equal(256, br007.Seg);
         Assert.Equal(64, br019.Seg);
         Assert.All(specs, s => Assert.InRange(s.Span ?? 1.4 * s.Seg, 0, 1.4 * s.Seg + 0.01));   // span plans stay inside 1.4 × seg
     }
