@@ -97,7 +97,7 @@ Upward/downward road diffuse, building floor/base/base normal/burnt/abandoned di
 | `GrandTetonsWaterRenderSettingsFinal` | PDX mod 148529, not vanilla | 0.152, 0.430, 0.516 | 0.070, 0.258, 0.324 | 8.6 | 2.7 | 0.709 | 0.76 / 0.38 | 0.41 |
 | **target for Dakota Falls** | | ≈ 0.15–0.25, 0.35–0.45, 0.42–0.50 (slate blue, little green) | dark, ≈ 0.07–0.10, 0.25, 0.30 | **6–10** (river murk; CS1 hides the bed after a few metres) | ≤ 3 | 0.5–0.7 (white foam at the falls) | ≤ 1 / ≤ 0.4 (inland, no swell) | ≤ 0.6 |
 
-Barrier Island water is tropical turquoise and clear (16 m): wrong for this river. Since `waterEdit` can set every field on an editable copy that is saved in the map, the base set no longer matters: §6 gives a value for each of the 21 fields. The target row above is superseded by §6.
+Barrier Island water is tropical turquoise and clear (16 m): wrong for this river. Since `waterEdit` can set every field on an editable copy that is saved in the map, the base set no longer matters: §6 gives a value for each of the 22 fields. The target row above is superseded by §6.
 
 ### Cannot be reproduced without mods
 
@@ -252,7 +252,7 @@ Bridge request (season indices assume the base order Spring 0, Summer 1, Autumn 
 
 ## 6. Water rendering: every field, per water body and the single compromise
 
-### What exists (`Game.Prefabs.Water.WaterRenderSettingsPrefab`, 21 fields) and what can vary per water body
+### What exists (`Game.Prefabs.Water.WaterRenderSettingsPrefab`, 22 fields) and what can vary per water body
 
 There is **one prefab per map**: no field is per water body. The only per-body differences come from the shader itself:
 - **Depth.** Absorption, refraction, caustics and the wave threshold all act on depth. A 0.5 m mountain creek and a 6 m river channel look different under the same values.
