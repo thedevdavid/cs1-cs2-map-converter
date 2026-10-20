@@ -530,7 +530,7 @@ void WriteLayers()
         {
             Directory.CreateDirectory(d);
         }
-        File.WriteAllText(Path.Combine(d, "README.md"), "# Optional pack surfaces\n\nNot imported by default: the owner chose vanilla surfaces only (2026-10-20). Terrain Textures Pack rock (40° slopes, PO terrain-like footprints), Dirty Surfaces Pack decals and the pack sand variant. Re-enable with tools/import-run.mjs --with rock,po-rock,decals,sand-pack.\n");
+        File.WriteAllText(Path.Combine(d, "README.md"), "# Optional pack surfaces\n\nNot imported by default: the owner chose vanilla surfaces only (2026-10-20). Terrain Textures Pack rock (40° slopes, PO terrain-like footprints), Dirty Surfaces Pack decals and the pack sand variant. Re-enable with tools/import-run.mjs --with rock,po-rock,decals,sand-pack. import-surfaces-sand-smooth.json is the earlier vanilla sand (smoothed CS1 sand blobs, Sand Surface 01), replaced by the paint plan (import-surfaces-sand.json); --with sand-smooth.\n");
         return d;
     }
     foreach (var old in new[] { "import-surfaces-rock.json", "import-surfaces-po-rock.json", "import-surfaces-decals.json", "import-surfaces-decals-unmerged.json" }) File.Delete(Path.Combine(outDir, old));
@@ -690,8 +690,8 @@ void WriteLayers()
             }
     }
     if (Round8.Dam(Round8.Buildings(root, "(?i)Dam Electricity")) is { } damM)
-        man.AppendLine().AppendLine("## Dam (place by hand)").AppendLine().AppendLine(FormattableString.Invariant(
-            $"{Round8.DamPrefab} at ({damM.A.X}, {damM.A.Z}), rotation {damM.A.Rotation} (aligns with the CS1 dam axis, bridge live test). Deck: {Round8.DamDeckPrefab} from ({Round8.DamDeckA.X}, {Round8.DamDeckA.Z}) to ({Round8.DamDeckB.X}, {Round8.DamDeckB.Z}) at crest y {Round8.DamCrestTrue * heightFactor} (level). The power line ends at the plant through import-power-ends.json (connectTo high voltage)."));
+        man.AppendLine().AppendLine("## Dam (automatic: import-dam.json, bridge 0.9.23)").AppendLine().AppendLine(FormattableString.Invariant(
+            $"The game builds the plant and the dam from the one dam edge in import-dam.json. Fallback by hand: {Round8.DamPrefab} at ({damM.A.X}, {damM.A.Z}), rotation {damM.A.Rotation} (aligns with the CS1 dam axis, bridge live test). Deck: {Round8.DamDeckPrefab} from ({Round8.DamDeckA.X}, {Round8.DamDeckA.Z}) to ({Round8.DamDeckB.X}, {Round8.DamDeckB.Z}) at crest y {Round8.DamCrestTrue * heightFactor} (level). The power line ends at the plant through import-power-ends.json (connectTo high voltage)."));
     man.AppendLine().AppendLine("## Fort (CS1 Castle Wall 1 / 3, 12 segments)").AppendLine();
     man.AppendLine("import-fort.json marks the wall line with ruins (RuinsStoneFormation01/02 every 12 m, StandingStone01–08 at the ends, RuinsStoneCairns01–03 inside the line) " +
         "and puts OldCastle01 at the fort's centroid as the keep (unverified as a placeable object); RuinsCastle01 stands at the CS1 Castle Ruins positions (import-objects.json). " +
@@ -801,11 +801,13 @@ void WriteLayers()
         var subB = Round8.Buildings(root, "(?i)Substation");
         var dams = Round8.Buildings(root, "(?i)Dam Electricity");
         var dam = Round8.Dam(dams);
+        var damLog = new List<string>();
         if (dam is { } dv)
         {
             // Bridge live test: yaw 261.7 (−CS1 angle) aligns the plant with the CS1 dam axis; the mirrored variant is gone.
-            // Owner review of A-v4: the deck came out as a pedestrian-type bridge; the dam is placed by hand (manual-objects.md).
-            foreach (var dropped in new[] { "import-dam.json", "import-dam-B.json", "import-dam-deck.json" }) File.Delete(Path.Combine(outDir, dropped));
+            // Bridge 0.9.23 builds the plant, the dam and its ends from one network edge (IMPORT_SCHEMA.md "Dams"); no plant object file.
+            foreach (var dropped in new[] { "import-dam-B.json", "import-dam-deck.json" }) File.Delete(Path.Combine(outDir, dropped));
+            damLog = Round8.WriteDam(Path.Combine(outDir, "import-dam.json"), cs2True, heightFactor);
         }
         var targets = new List<(string, double, double)>();
         if (subB.Count > 0) targets.Add(("substation", subB[0].X, subB[0].Z));
@@ -847,7 +849,7 @@ void WriteLayers()
         var r8 = new List<string>
         {
             ci($"substation: {sub.Count} ({string.Join(", ", sub.Select(o => $"{o.Id} {o.Prefab} at ({o.X:F0}, {o.Z:F0}), rotation {o.Rotation}, no y"))}) -> import-substation.json"),
-            dam is { } d3 ? ci($"dam: hand-placed (manual-objects.md): {Round8.DamPrefab} at ({d3.A.X}, {d3.A.Z}), rotation {d3.A.Rotation}; deck {Round8.DamDeckPrefab} ({Round8.DamDeckA.X}, {Round8.DamDeckA.Z}) -> ({Round8.DamDeckB.X}, {Round8.DamDeckB.Z}) at crest y {Round8.DamCrestTrue * heightFactor}") : "dam: no CS1 Dam Electricity building",
+            dam is { } d3 ? "dam (network, bridge 0.9.23): " + string.Join("; ", damLog) + " -> import-dam.json" : "dam: no CS1 Dam Electricity building",
             "power ends: " + string.Join("; ", ends.Select(e => ci($"{e.Target}: CS1 end {e.OldEnd.Id} ({e.OldEnd.Position.X:F0}, {e.OldEnd.Position.Z:F0}), replaces {e.Replaces.Id}, new course {e.Anchor.Id} -> ({e.X:F1}, {e.Z:F1}), {Math.Sqrt((e.X - e.Anchor.Position.X) * (e.X - e.Anchor.Position.X) + (e.Z - e.Anchor.Position.Z) * (e.Z - e.Anchor.Position.Z)):F0} m"))) + " -> import-power-ends.json",
             ci($"PO rocks v3: {v2.Count} objects ({Round8.Counts(v2.Select(p => p.O))}) from {pieces.Count} PO pieces, {v2capped} over the cap of 1500 dropped, {v2big} PO objects > 60 m above their surroundings with CliffSide pieces down the steepest flank, {v2renamed} re-picked for the 80 m prefab/heading rule; with y {v2.Count(p => p.O.Y != null)}; sink depth (mesh bottom below terrain): {PoRocksV2.SinkHistogram(v2)} -> import-po-rocks.json (import name po-rocks-v3)"),
             ci($"PO cliffs v1 (not written; their positions feed the rock scatter): {cliffs.Count} objects from {pieces.Count} PO pieces (mountain {pieces.Count(p => p.SubClass == "mountain")}, rock work {pieces.Count(p => p.SubClass == "rock work")}, falls steps {pieces.Count(p => p.SubClass == "falls steps")}); bands {string.Join(", ", bands.Select(b => $"{b.Key} {b.Value}"))}; {capped} over the cap of 2500 dropped -> import-po-rocks.json"),
@@ -948,6 +950,46 @@ void WriteLayers()
             else Surfaces.Write(Path.Combine(outDir, $"import-surfaces-{g.Key}.json"), $"surfaces-{g.Key}", g.ToList(), $"CS1 terrainSurfaces class {g.Key} mapped through surface-mapping.tsv (audit/theme.md table): rasterised per class on the 16 m grid, union, hole-free pieces, simplified to 2 m.");
         Console.WriteLine(Surfaces.Stats("terrain surfaces", ts) + "; " + string.Join(", ", tsDecisions.Select(d => $"{d.Key} -> {d.Value}")));
         extra.AppendLine($"- {Surfaces.Stats("Terrain surfaces (import-surfaces.json)", ts)}: {string.Join("; ", tsDecisions.Select(d => $"{d.Key} → {d.Value}"))}.");
+    }
+
+    // Vanilla paint plan (audit/theme-remake.md §4): sand, bare earth, dry grass, stand-in pavement; the default surface files.
+    {
+        int[]? fert = null; GridSpec? fertGrid = null;
+        if (root.TryGetProperty("naturalResources", out var nrP) && nrP.ValueKind == JsonValueKind.Object && nrP.TryGetProperty("layers", out var lyP) && lyP.TryGetProperty("fertility", out var fl) && fl.ValueKind == JsonValueKind.Array)
+        {
+            fert = fl.EnumerateArray().Select(v => v.GetInt32()).ToArray();
+            fertGrid = GridSpec.FromJson(nrP.TryGetProperty("grid", out var gg) ? gg : null, Resources.GridSize, Resources.CellSize);
+        }
+        // PO pavement blocks (import-po-structures.json) and stand-in buildings: objects that replace a CS1 building but bring no lot.
+        var poBlocks = new List<List<(double X, double Z)>>();
+        var psPath = Path.Combine(outDir, "import-po-structures.json");
+        if (File.Exists(psPath))
+            using (var pd = JsonDocument.Parse(File.ReadAllBytes(psPath)))
+                foreach (var sp in pd.RootElement.GetProperty("surfaces").EnumerateArray())
+                    poBlocks.Add(sp.GetProperty("polygon").EnumerateArray().Select(v => (v[0].GetDouble(), v[1].GetDouble())).ToList());
+        var natural = new System.Text.RegularExpressions.Regex("(?i)rock|cliff|boulder|stone|log|rubble|ruins|grass|fern|flower|bush|tree|pier");
+        var bById = root.GetProperty("buildings").EnumerateArray().ToDictionary(b => b.GetProperty("id").GetInt32(), b => b);
+        var standIns = new List<List<(double X, double Z)>>();
+        foreach (var o in objs.Objects.Where(o => o.Source.StartsWith("building ") && o.Kind != "building" && !natural.IsMatch(o.Prefab)))
+        {
+            if (!int.TryParse(o.Source[9..], out var bid) || !bById.TryGetValue(bid, out var b)) continue;
+            double w = (b.TryGetProperty("width", out var bw) ? bw.GetDouble() : 1) * 8, l = (b.TryGetProperty("length", out var bl) ? bl.GetDouble() : 1) * 8;
+            double r = o.Rotation * Math.PI / 180, fx = Math.Sin(r), fz = Math.Cos(r);
+            (double, double) Pt(double u, double v) => (o.X + u * fz + v * fx, o.Z - u * fx + v * fz);
+            standIns.Add(new List<(double, double)> { Pt(-w / 2, -l / 2), Pt(w / 2, -l / 2), Pt(w / 2, l / 2), Pt(-w / 2, l / 2) });
+        }
+        var plan = PaintPlan.Build(new PaintPlan.Inputs(surfaces, surfaceEarly, cs2Terrain == null ? null : cs2Terrain.Sample, fert, fertGrid,
+            trees.Objects.Select(t => (t.X, t.Z)), fields.Select(p => p.Ring), poBlocks, decals.Select(p => p.Ring), standIns));
+        Surfaces.Write(Path.Combine(outDir, "import-surfaces-sand.json"), "surfaces-sand", plan.Sand,
+            "Paint plan S1/S3/S4 (audit/theme-remake.md §4): Sand Surface 01 on CS1 sand within 25 m of the water or ≤ 2 m above it; Sand Surface 02 on the other CS1 sand and on the CS1 dirt decals; none under water deeper than 1.5 m. 16 m grid, open/close one cell, simplified 4 m.");
+        Surfaces.Write(Path.Combine(outDir, "import-surfaces-grass-dry.json"), "surfaces-grass-dry", plan.Grass,
+            $"Paint plan G1/G2: {PaintPlan.DryGrass} [variant to confirm with the swatch test] on fertile open flats (fertility ≥ 0.5, slope < 8°, no forest) and on the dry eastern plains (x ≥ 0, ≤ start-area mean {plan.StartMean:F0} + 60 m, no tree within 48 m, slope < 12°).");
+        File.Delete(Path.Combine(outDir, "import-surfaces-pavement.json"));
+        if (plan.PavementStandIns.Count > 0) Surfaces.Write(Path.Combine(outDir, "import-surfaces-pavement.json"), "surfaces-pavement", plan.PavementStandIns,
+            "Paint plan P1: Pavement Surface 01 under stand-in buildings that bring no lot (CS1 lot width × length, rotated).");
+        File.Move(Path.Combine(outDir, "import-surfaces-sand-smooth.json"), Path.Combine(OptDir(), "import-surfaces-sand-smooth.json"), true);
+        foreach (var (k, v) in plan.PerRule) extra.AppendLine(FormattableString.Invariant($"- Paint plan {k}: {v.Cells} cells, {v.Polygons} polygons, {v.Km2:F2} km²."));
+        Console.WriteLine("paint plan: " + string.Join("; ", plan.PerRule.Select(kv => FormattableString.Invariant($"{kv.Key} {kv.Value.Polygons} polygons {kv.Value.Km2:F2} km²"))));
     }
 
     // Natural resources.

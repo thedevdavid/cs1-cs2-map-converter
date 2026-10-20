@@ -363,3 +363,15 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   within 25 m or drops stubs < 40 m and drops isolated pieces < 100 m that CS1 connected (none left in this map; reported in stats.md).
 - Surfaces are vanilla only: fields (Agriculture Surface 01), sand as Sand Surface 01 (smoothed blobs, on by default), PO pavement (Pavement Surface 01); grass
   optional. Terrain Textures rock (40° and PO footprints), Dirty Surfaces decals and the pack sand moved to `out/optional/` (runner `--with rock,po-rock,decals,sand-pack`).
+
+## Round 15: dam from one edge, look step, vanilla paint plan
+
+- `import-dam.json` (network, bridge 0.9.23 "Dams"): one `Hydroelectric_Power_Plant_01 Dam` edge abutment to abutment, no control, both nodes at the crest
+  (absolute y, 172 × scale), each abutment where the CS2 terrain reaches the crest − 1 m along the CS1 axis (≤ 250 m beyond the quays), `flow: auto`. The old
+  plant object file is gone; the dam power end's connectTo radius is 120 m (the plant spawns at one end of the course).
+- Runner `look` step after `settings`: POSTs `../look/climate.json`, `water.json`, `terrain.json` (the theme session's; fallback `look/` here, lifted from
+  audit/theme-remake.md §5–6), after `GET /map/look/schema`, dropping fields the schema does not list; `--climate` overrides the climate prefab.
+- `PaintPlan.cs` (audit/theme-remake.md §4) writes the default surfaces: `import-surfaces-sand.json` (S1 Sand Surface 01 on banks, S3/S4 Sand Surface 02 on
+  the other CS1 sand and the old decal spots, nothing under water deeper than 1.5 m), `import-surfaces-grass-dry.json` (G1/G2 Grass Surface 02, the variant to
+  confirm with the swatch test), `import-surfaces-pavement.json` (P1 under stand-in buildings without a lot; none in this map). Priority A1 > P1 > S1 > S4 > S3 >
+  G1 > G2 on a 16 m grid, close + open one cell (S1 close only), small patches dropped, simplified 4 m. The earlier smoothed sand is in optional/.

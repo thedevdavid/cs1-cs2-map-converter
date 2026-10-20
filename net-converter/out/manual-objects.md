@@ -1286,9 +1286,9 @@ The import edges of these CS1 segments carry "noPillars" / "noStreetLights" (ign
 | 36808 | USRP 1L Interstate Ramp E | 3470 | 2018 |  | yes |
 | 36861 | USRP 1L Interstate Ramp E | 3711 | 2246 | yes |  |
 
-## Dam (place by hand)
+## Dam (automatic: import-dam.json, bridge 0.9.23)
 
-HydroelectricPowerPlant01 at (1549.5, 4690), rotation 261.7 (aligns with the CS1 dam axis, bridge live test). Deck: Hydroelectric_Power_Plant_01 Dam from (1440, 4673) to (1576, 4694) at crest y 344 (level). The power line ends at the plant through import-power-ends.json (connectTo high voltage).
+The game builds the plant and the dam from the one dam edge in import-dam.json. Fallback by hand: HydroelectricPowerPlant01 at (1549.5, 4690), rotation 261.7 (aligns with the CS1 dam axis, bridge live test). Deck: Hydroelectric_Power_Plant_01 Dam from (1440, 4673) to (1576, 4694) at crest y 344 (level). The power line ends at the plant through import-power-ends.json (connectTo high voltage).
 
 ## Fort (CS1 Castle Wall 1 / 3, 12 segments)
 

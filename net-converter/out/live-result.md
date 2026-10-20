@@ -55,3 +55,20 @@ were live in Run A, the run reported 9 failures, and no imported object, network
 out/x1/live-defects.md ("A-v4 against the import set"). The runner now exports the graph after the network steps and at the end to pin the step down.
 Mid-air highway stubs: 44 of the 46 highway dead ends are such lost continuations; the other two are the CS1 dead-end 3-lane pair at (2293, 277) / (2302, 255), left out
 from this round. The 4-lane split with broken geometry needs a position from the screenshot (12 candidates listed).
+
+## Round 15: dam, look, vanilla paint plan; road-QA residual for the owner
+
+Dam: import-dam.json is one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant and the dam ends), level at the crest (172 m x1 / 344 m x2), flow auto; the east abutment moved 164 m out to where the terrain reaches the crest, the west one stays at the CS1 quay end 6.9 m above the terrain (dam.elevation warning: the terrain there never reaches 172 m within 250 m). Look: the runner's look step POSTs ../look/climate.json, water.json, terrain.json after the settings (fields not in /map/look/schema skipped).
+
+Road QA residual (out/x1/road-qa.md, check in game): every remaining dead end is a CS1 dead end too:
+
+| (-768, 4363) | dead end, Gravel Road | CS1 dead end too (CS1 degree 1) |
+| (373, -3031) | dead end, Pavement Path | CS1 dead end too (CS1 degree 1) |
+| (1104, 4897) | dead end, Gravel Road | CS1 dead end too (CS1 degree 1) |
+| (4787, -709) | dead end, Pavement Path | CS1 dead end too (CS1 degree 1) |
+| (295, -3026) | dead end, Pavement Path | CS1 dead end too (CS1 degree 1) |
+| (-3987, 334) | dead end, Gravel Road | CS1 dead end too (CS1 degree 1) |
+| (-480, -1481) | dead end, Medium Road | CS1 dead end too (CS1 degree 1) |
+| (-229, -2362) | dead end, Gravel Road | CS1 dead end too (CS1 degree 1) |
+| (-643, -1188) | dead end, Medium Road | CS1 dead end too (CS1 degree 1) |
+| (367, -3024) | isolated Pavement Path, 83 m (e7126_0,e28940_0,e18960_0) | isolated in CS1 too (kept) |

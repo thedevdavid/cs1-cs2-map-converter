@@ -1,8 +1,8 @@
 // Whole fresh-map import against the CS2MCP bridge, in the ROUND order, one command.
 // node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run]
 //   [--no-verify] [--bridge http://127.0.0.1:8642] [--out out]
-// Steps: network bridges bridges-fixed gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
-//   resources surfaces power-ends settings. Optional (only with --with or --only): grass, and the pack surfaces in optional/: rock, po-rock, decals, sand-pack (sand-pack paints the same sand as the default sand file with the Dirty Surfaces prefab: use one of the two).
+// Steps: network bridges bridges-fixed dam gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
+//   resources surfaces power-ends settings look. Optional (only with --with or --only): grass, sand-smooth (the earlier smoothed sand), and the pack surfaces in optional/: rock, po-rock, decals, sand-pack (sand-pack paints the same sand as the default sand file with the Dirty Surfaces prefab: use one of the two).
 // After the network steps and at the end the bridge's graph export is compared per prefab with the import files (--no-verify skips it).
 // Each step POSTs its file(s) and prints one line (created / merged / failed, seconds). A body error (HTTP 400 with problems)
 // stops the run and prints the problems; per-item failures are counted and the run goes on. The run report with every
@@ -57,6 +57,8 @@ const steps = [
   ["network", "/import/network", [p("import-all.json")]],
   ["bridges", "/import/network", [p("import-bridges.json")]],
   ["bridges-fixed", "/import/network", [p("import-bridges-fixed.json")]],
+  // Bridge 0.9.23: one dam edge; the game builds the plant and the dam ends from it.
+  ["dam", "/import/network", [p("import-dam.json")]],
   ["gaps", "/import/network", [p("import-gaps.json")]],
   ["power", "/import/network", [p("import-power.json")]],
   ["canals", "/import/network", [p("import-canals.json")]],
@@ -73,8 +75,10 @@ const steps = [
   ["fort", "/import/objects", [p("import-fort.json")]],
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
   ["resources", "/import/resources", [p("import-resources.json")]],
-  // Vanilla surfaces only (owner, 2026-10-20): fields (Agriculture Surface 01), sand (Sand Surface 01), PO pavement (Pavement Surface 01).
-  ["surfaces", "/import/surfaces", ["import-surfaces-fields.json", "import-surfaces-sand-smooth.json", "import-po-structures.json"].map(p)],
+  // Vanilla paint plan (audit/theme-remake.md §4): fields (Agriculture Surface 01), PO pavement and stand-in pavement (Pavement Surface 01),
+  // sand (Sand Surface 01 banks, Sand Surface 02 bare earth and old decal spots), dry grass (Grass Surface 02).
+  ["surfaces", "/import/surfaces", ["import-surfaces-fields.json", "import-po-structures.json", "import-surfaces-pavement.json", "import-surfaces-sand.json", "import-surfaces-grass-dry.json"].map(p)],
+  ["sand-smooth", "/import/surfaces", [p(join("optional", "import-surfaces-sand-smooth.json"))], true],
   ["grass", "/import/surfaces", [p("import-surfaces-grass.json")], true],
   // Pack surfaces kept in optional/ (Terrain Textures, Dirty Surfaces): only with --with.
   ["rock", "/import/surfaces", [p(join("optional", "import-surfaces-rock.json"))], true],
@@ -87,7 +91,7 @@ const steps = [
 const optional = new Set(steps.filter(s => s[3]).map(s => s[0]));
 const wanted = name => (only.size === 0 ? (!optional.has(name) || withOpt.has(name)) : only.has(name)) && !skip.has(name)
   && (!name.startsWith("verify") || (verify && !dryRun));
-for (const n of [...skip, ...only, ...withOpt]) if (![...steps.map(s => s[0]), "settings"].includes(n)) { console.error(`unknown step: ${n}`); process.exit(2); }
+for (const n of [...skip, ...only, ...withOpt]) if (![...steps.map(s => s[0]), "settings", "look"].includes(n)) { console.error(`unknown step: ${n}`); process.exit(2); }
 
 // Graph check: the bridge's export per prefab against the network import files run so far (A-v4 lost 297 built segments after the import).
 const imported = {};
@@ -168,6 +172,39 @@ if (!stopped && wanted("settings")) {
   const line = `settings ${JSON.stringify(set)}: HTTP ${r.status}, applied ${JSON.stringify(r.json.applied ?? [])}${r.json.problems?.length ? `, problems ${JSON.stringify(r.json.problems)}` : ""}`;
   console.log(`${r.status === 200 && !r.json.problems?.length ? "✓" : "!"} ${line}`);
   rows.push({ name: "settings", file: "POST /map/settings", status: `HTTP ${r.status}`, secs, text: line });
+}
+
+if (!stopped && wanted("look")) {
+  // Look: climate, water rendering, terrain rendering (audit/theme-remake.md §5–6; ../look/*.json from the theme session, else net-converter/look/).
+  // GET /map/look/schema first; edit fields the schema does not list are dropped with a warning. --climate overrides the climate prefab.
+  const t0 = Date.now();
+  const schema = await request("GET", "/map/look/schema").catch(() => ({ status: 0, json: {} }));
+  const known = new Set();
+  const walk = v => { if (Array.isArray(v)) v.forEach(walk); else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) { if ((k === "name" || k === "field") && typeof x === "string") known.add(x.replace(/^m_/, "").toLowerCase()); walk(x); } };
+  walk(schema.json);
+  const norm = k => k.replace(/^m_/, "").toLowerCase();
+  const sources = [];
+  for (const name of ["climate", "water", "terrain"]) {
+    const file = [join("..", "look", `${name}.json`), join("look", `${name}.json`)].find(existsSync);
+    if (file) sources.push([name, file]);
+  }
+  const lines = [];
+  for (const [name, file] of sources) {
+    const body = JSON.parse(readFileSync(file, "utf8")); delete body._source;
+    if (name === "climate" && climate) body.climate = climate;
+    const dropped = [];
+    for (const editKey of ["climateEdit", "waterEdit", "terrainEdit"])
+      if (body[editKey] && known.size > 0)
+        for (const k of Object.keys(body[editKey])) if (!known.has(norm(k))) { dropped.push(`${editKey}.${k}`); delete body[editKey][k]; }
+    if (dryRun) { lines.push(`${name}: ${file} (dry run, not sent)${dropped.length ? `; unknown: ${dropped.join(", ")}` : ""}`); continue; }
+    const r = await request("POST", "/map/settings", body);
+    const line = `${name}: ${file} HTTP ${r.status}, applied ${(r.json.applied ?? []).length}${r.json.problems?.length ? `, problems ${JSON.stringify(r.json.problems).slice(0, 300)}` : ""}${dropped.length ? `; skipped (not in /map/look/schema): ${dropped.join(", ")}` : ""}`;
+    console.log(`${r.status === 200 && !r.json.problems?.length ? "✓" : "!"} look ${line}`);
+    lines.push(line);
+  }
+  if (schema.status !== 200) lines.push(`/map/look/schema HTTP ${schema.status}: fields not pre-checked`);
+  if (sources.length === 0) lines.push("no look/*.json found");
+  rows.push({ name: "look", file: "POST /map/settings (look)", status: "ok", secs: (Date.now() - t0) / 1000, text: lines.join(" | ") });
 }
 
 const total = rows.reduce((s, r) => s + (r.secs ?? 0), 0);

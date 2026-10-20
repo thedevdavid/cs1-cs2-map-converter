@@ -371,7 +371,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Grass surfaces from 3076 Landscape Grass props (import-surfaces-grass.json, optional): 51 polygons, 0.026 km², max 130 points.
 - Rock surfaces (import-surfaces-rock.json): DakotaFalls-1to1-4096.png (|err| vs CS1 nodes 0.01 m), steep area 0.63 km² in 145 patches >= 400 m²; 151 polygons kept (0.60 km²), 0 smallest dropped.
 - Round 8 substation: 1 (b39573 TransformerStation01 at (1594, 4549), rotation 318.04, no y) -> import-substation.json.
-- Round 8 dam: hand-placed (manual-objects.md): HydroelectricPowerPlant01 at (1549.5, 4690), rotation 261.7; deck Hydroelectric_Power_Plant_01 Dam (1440, 4673) -> (1576, 4694) at crest y 172.
+- Round 8 dam (network, bridge 0.9.23): dam edge 304 m (CS1 quays 138 m), crest 172 m × 1; west abutment (1440, 4673) terrain 165.1 m (elevation 6.9), east (1740, 4719) terrain 171.0 m (elevation 1.0); an abutment is more than 1 m off the terrain (dam.elevation warning): the terrain does not reach the crest within 250 m -> import-dam.json.
 - Round 8 power ends: substation: CS1 end n12755 (1633, 4526), replaces e5094_0, new course n26177 -> (1600.5, 4544.0), 85 m; dam: CS1 end n16152 (1651, 4542), replaces e32855_0, new course n2881 -> (1555.8, 4685.1), 222 m -> import-power-ends.json.
 - Round 8 PO rocks v3: 793 objects (CliffRock6 88, CliffStack 81, CliffRock5 75, CliffSideTall 49, CliffSide2 47, CliffSide2Right 46, CliffSlim 45, CliffSide2Left 42, rzrock7 34, rzrock6 32, rzrock8 31, rzrock1 29, rzrock5 27, rzrock4 26, rzrock2 24, rzrock3 22, Boulder08 17, Boulder01 14, Boulder03 14, Boulder05 14, Boulder02 10, Boulder04 10, Boulder07 10, Boulder06 6) from 399 PO pieces, 0 over the cap of 1500 dropped, 64 PO objects > 60 m above their surroundings with CliffSide pieces down the steepest flank, 83 re-picked for the 80 m prefab/heading rule; with y 793; sink depth (mesh bottom below terrain): < 1 m 32, 1–5 m 451, 20–50 m 128, 50–100 m 133, > 100 m 49 -> import-po-rocks.json (import name po-rocks-v3).
 - Round 8 PO cliffs v1 (not written; their positions feed the rock scatter): 594 objects from 399 PO pieces (mountain 239, rock work 92, falls steps 68); bands > 160 m flank 267, > 160 m summit 111, 36–80 m 120, 80–160 m 75, 12–36 m 20, 3–12 m 1; 0 over the cap of 2500 dropped -> import-po-rocks.json.
@@ -388,6 +388,11 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Decal surfaces (import-surfaces-decals.json; PDO23 Dirty Surface 01 / PDO23 Soil Surface 01): 41 polygons, 0.022 km², max 298 points.
 - Sand: the 16 m-cell surfaces are dropped (owner review of A-v4); optional import-surfaces-sand-smooth.json: 387 blobs from 610 of 905 patches >= 2000 m² (21.54 km²).
 - Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
+- Paint plan S1 bank sand: 3279 cells, 330 polygons, 0.80 km².
+- Paint plan S3 bare earth + S4 dirt decals: 13359 cells, 90 polygons, 2.58 km².
+- Paint plan G1 fertile + G2 dry plains: 62264 cells, 160 polygons, 15.28 km².
+- Paint plan S2 submerged sand (none): 48363 cells, 0 polygons, 0.00 km².
+- Paint plan P1 stand-in pavement: 0 cells, 0 polygons, 0.00 km².
 - Resources: import-resources.json from the dump's naturalResources.
 
 ## Skip review (rounds 10-12)

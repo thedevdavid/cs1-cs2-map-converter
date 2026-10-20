@@ -142,7 +142,8 @@ public static class Round8
             double ground = cs2TerrainTrue != null ? cs2TerrainTrue(e.X, e.Z) * heightFactor : e.OldEnd.Terrain * Outputs.YScale;
             w.WriteNumber("y", Json.R2(ground)); w.WriteNumber("elevation", 0);
             // Bridge 0.9.13: attach to the nearest building's high-voltage marker node; the x/z only picks the marker.
-            w.WriteStartObject("connectTo"); w.WriteString("voltage", "high"); w.WriteNumber("radius", 60); w.WriteEndObject();
+            // The dam plant spawns at one end of the dam course (up to ~80 m from the centre): a wider radius there, still short of the station (141 m).
+            w.WriteStartObject("connectTo"); w.WriteString("voltage", "high"); w.WriteNumber("radius", e.Target == "dam" ? 120 : 60); w.WriteEndObject();
             w.WriteEndObject();
             if (e.Via is { } v)
             {
@@ -175,6 +176,57 @@ public static class Round8
         w.WriteNumber("batchSize", 64); w.WriteBoolean("nodesFirst", true); w.WriteString("heightMode", absolute ? "absolute" : "elevation"); w.WriteBoolean("dryRun", false);
         w.WriteEndObject();
         w.WriteEndObject();
+    }
+
+    /// <summary>
+    /// The dam per the bridge's 0.9.23 contract (IMPORT_SCHEMA.md "Dams"): ONE straight edge of the dam net from abutment to abutment, no control,
+    /// both nodes at the crest (absolute y, level), abutments on the ground: from the dam's midpoint outward along the CS1 axis, each end sits at the
+    /// first point where the CS2 terrain reaches the crest − 1 m (at most 250 m beyond the CS1 quay ends). flow "auto" (the game flips the course
+    /// by the river's flow; the plant goes to the side the prefab's FlowLeft/FlowRight decides). The plant and the dam end objects are spawned by
+    /// the game from the course; no object file.
+    /// </summary>
+    public static List<string> WriteDam(string path, Func<double, double, double>? terrainTrue, double heightFactor)
+    {
+        var log = new List<string>();
+        double ax = DamDeckA.X, az = DamDeckA.Z, bx = DamDeckB.X, bz = DamDeckB.Z, len = Math.Sqrt((bx - ax) * (bx - ax) + (bz - az) * (bz - az));
+        double ux = (bx - ax) / len, uz = (bz - az) / len, mx = (ax + bx) / 2, mz = (az + bz) / 2;
+        (double X, double Z, double T) End(int sign)
+        {
+            double sMax = len / 2 + 250;
+            for (double s = 0; s <= sMax; s += 1)
+            {
+                double x = mx + sign * ux * s, z = mz + sign * uz * s, t = terrainTrue?.Invoke(x, z) ?? DamCrestTrue;
+                if (t >= DamCrestTrue - 1 && s >= len / 2 - 60) return (x, z, t);   // not inside the valley floor near the middle
+            }
+            double xe = mx + sign * ux * len / 2, ze = mz + sign * uz * len / 2;
+            return (xe, ze, terrainTrue?.Invoke(xe, ze) ?? DamCrestTrue);
+        }
+        var w = End(-1); var e = End(+1);
+        double y = Math.Round(DamCrestTrue * heightFactor, 2);
+        using (var fs = File.Create(path))
+        using (var wr = new Utf8JsonWriter(fs, Json.Indented))
+        {
+            wr.WriteStartObject();
+            wr.WriteString("name", "Dakota Falls dam");
+            wr.WriteString("_comment", "Hydro dam per bridge 0.9.23 (IMPORT_SCHEMA.md 'Dams'): one level edge abutment to abutment, no control, abutments on the ground at the crest height; the game builds the plant and the dam end objects from the course. River flows north to south, reservoir north; flow auto.");
+            wr.WriteStartArray("nodes");
+            foreach (var (id, p) in new[] { ("damW", w), ("damE", e) })
+            { wr.WriteStartObject(); wr.WriteString("id", id); wr.WriteNumber("x", Json.R2(p.X)); wr.WriteNumber("y", y); wr.WriteNumber("z", Json.R2(p.Z)); wr.WriteEndObject(); }
+            wr.WriteEndArray();
+            wr.WriteStartArray("edges");
+            wr.WriteStartObject();
+            wr.WriteString("id", "dam"); wr.WriteString("a", "damW"); wr.WriteString("b", "damE"); wr.WriteString("prefab", DamDeckPrefab); wr.WriteString("flow", "auto");
+            wr.WriteEndObject();
+            wr.WriteEndArray();
+            wr.WriteStartObject("options");
+            wr.WriteNumber("batchSize", 1); wr.WriteBoolean("nodesFirst", true); wr.WriteString("heightMode", "absolute"); wr.WriteBoolean("bypassValidation", true); wr.WriteBoolean("dryRun", false);
+            wr.WriteEndObject();
+            wr.WriteEndObject();
+        }
+        double L = Math.Sqrt((e.X - w.X) * (e.X - w.X) + (e.Z - w.Z) * (e.Z - w.Z));
+        log.Add(FormattableString.Invariant($"dam edge {L:F0} m (CS1 quays {len:F0} m), crest {DamCrestTrue} m × {heightFactor}; west abutment ({w.X:F0}, {w.Z:F0}) terrain {w.T:F1} m (elevation {DamCrestTrue - w.T:F1}), east ({e.X:F0}, {e.Z:F0}) terrain {e.T:F1} m (elevation {DamCrestTrue - e.T:F1})"));
+        if (Math.Abs(DamCrestTrue - w.T) > 1 || Math.Abs(DamCrestTrue - e.T) > 1) log.Add("an abutment is more than 1 m off the terrain (dam.elevation warning): the terrain does not reach the crest within 250 m");
+        return log;
     }
 
     /// <summary>One level deck edge in absolute heights: crest y = 172 m true × heightFactor at both ends.</summary>

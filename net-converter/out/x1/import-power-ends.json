@@ -47,7 +47,7 @@
       "elevation": 0,
       "connectTo": {
         "voltage": "high",
-        "radius": 60
+        "radius": 120
       }
     },
     {
