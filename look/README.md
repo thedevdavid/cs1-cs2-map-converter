@@ -5,7 +5,8 @@ Ready request bodies for `POST /map/settings` (bridge 0.9.23 or later; MCP `cs2_
 | File | What it sets |
 |---|---|
 | [climate.json](climate.json) | Base climate `TemperateWaterwayPassClimate`, then an edited copy (saved in the map): sun at 40.0 / −105.3, the four seasons, plus theme, starting month/time and natural disasters |
-| [water.json](water.json) | All 22 `WaterRenderSettingsPrefab` fields on an edited copy of whatever water settings the map has |
+| [water.json](water.json) | All 22 `WaterRenderSettingsPrefab` fields on an edited copy of whatever water settings the map has (= water-v1) |
+| [water-v1.json](water-v1.json), [water-v2a.json](water-v2a.json), [water-v2b.json](water-v2b.json) | Water A/B after the A-v7 review (below): v1 as applied, v2a clearly siltier, v2b the midpoint. Each has all 22 fields plus a `_rationale` key per changed field, which the bridge ignores |
 | [terrain.json](terrain.json) | Selects `DefaultTerrainRenderSettings`, no edits (see below) |
 | [swatch.mjs](swatch.mjs) | Writes the surface swatch-test body |
 
@@ -60,6 +61,55 @@ Run on the open map in the editor, after terrain, water sources and sea level.
    Expected tweaks: `absorptionDistance` ±2 if the creeks look muddy or the river looks glassy, and `waterScatteringColor` toward blue if it reads swampy.
 
 **Why terrain.json makes no edits:** the terrain textures cannot be written from code (asset references; the panel's image picker only), so the CS1 textures cannot come back. The numeric fields (tiling, blur, splat, triplanar) have no CS1 counterpart worth guessing blind. The only candidate is the rock tiling: CS1 stretched its cliff texture to a ≈220 m repeat, while CS2's near rock tiling is 1600 (≈9 m repeat on a 14 km map). If the cliffs look busy in the screenshots, try `{"terrainEdit": {"terrainRockTiling": {"nearTiling": 800}}}`, judge, and undo by posting 1600.
+
+## Water A/B (owner review of A-v7, 2026-10-20)
+
+Owner: "water coloring not correct". In `next-run/shots-a7/22-fort-ruins.png` the main river reads dark slate blue, near black in the deep channel.
+
+**Cause:**
+- **Body colour too dark.** v1's `waterScatteringColor` (0.18, 0.25, 0.20) is darker than the vanilla default (0.19, 0.33, 0.39). In deep water the body colour comes almost entirely from that scattering colour times the ambient/sun scattering terms (ambient only 0.5), so the channel goes near black.
+- **Sky reflection.** The high smoothness reflects the blue sky at the oblique camera angle, which adds the slate-blue cast.
+- **Wrong lever.** The "60 % silty" blend moved the hue but not the brightness, so the silt never shows.
+
+| Field | v1 (applied) | v2b (midpoint) | v2a (siltier) |
+|---|---|---|---|
+| `waterColor` (refraction tint) | 0.28, 0.48, 0.36 | 0.40, 0.475, 0.33 | 0.52, 0.47, 0.30 |
+| `waterScatteringColor` | 0.18, 0.25, 0.20 | 0.30, 0.325, 0.23 | **0.42, 0.40, 0.26** |
+| `absorptionDistance` m | 3.8 | 3.0 | 2.2 |
+| `maxRefractionDistance` m | 2 | 1.75 | 1.5 |
+| `ambientScattering` | 0.5 | 0.675 | **0.85** |
+| `heightScattering` | 0.2 | 0.25 | 0.3 |
+| `displacementScattering` | 0.1 | 0.15 | 0.2 |
+| `directLightTipScattering` | 0.4 | 0.45 | 0.5 |
+| `directLightBodyScattering` | 0.35 | 0.475 | 0.6 |
+| `foamAmount` | 0.9 | 1.05 | 1.2 |
+| `causticsIntensity` | 0.6 | 0.45 | 0.3 |
+| `smoothnessClose` | 0.92 | 0.9 | 0.88 |
+| `smoothnessDistant` | 0.78 | 0.74 | 0.7 |
+
+The other 9 fields are unchanged (waves, lake waves, minimum depth for waves, sea wind, foam fade range, caustics depth, ripples, smoothness range). The clear-creek rule still holds at v2a: a 0.5 m creek transmits about 80 % at 2.2 m absorption.
+
+**How to A/B:** post v2b, then v2a (each edits the same map copy, no new clone). Screenshot the same camera and time as `22-fort-ruins.png` (17:56, June) plus one noon shot. If v2a is too muddy, the next step is v2b's scattering colour with v2a's ambient 0.85, since brightness, not hue, was the main problem. Keep the winner as `water.json`.
+
+## Terrain material slots (Dry / Lush / Dirt / Sand) and "DesertTerrainRenderingSettings"
+
+From decompiled `Game.dll` (`TerrainMaterialSystem`, `TerrainMaterialProperties`, `TerrainMaterialType`, `TerrainRenderSettingsPrefab`):
+
+- **What the brushes paint.** The editor's terrain material brushes are terraforming prefabs with a `TerrainMaterialProperties.m_Type` of `Extra1`…`Extra4`. Painting writes only a weight into one channel of the map's user splatmap. The brush itself carries **no texture**.
+- **Where the textures come from.** `TerrainMaterialSystem.ApplyRenderSettings` binds the shader's `colossal_TerrainExtra1…4Diffuse/Normal` from the **current `TerrainRenderSettingsPrefab`'s `m_Extra1…4Diffuse/Normal`**, with its `m_ExtraNDirtOverride`, `SplatRange`, `BlurDepth` and `HeightOffset`. Rock, dirt and grass base textures come from the same prefab.
+- **Fallback.** If a slot's texture is missing, the code falls back to the new-map default prefab (`NewMapSettingsData.m_DefaultTerrainRenderSettings`) for that slot, logging "Terrain texture missing. Setting fallback texture."
+- **So yes: the selected terrain render settings decide what "Dry" looks like.** If the map's current set is (or was) `DesertTerrainRenderingSettings`, its Extra slots carry desert textures, and the slot behind "Dry" can well be a grey gravel/scree texture.
+- **The Packages entry.** The Workspace "Packages" list shows the asset packages the open map uses. `DesertTerrainRenderingSettings` there means the map references or embeds that set (possibly from the map it was created from, or an earlier pick). terrain.json selects `DefaultTerrainRenderSettings`, but the runner's "1 applied" only says the pick ran; whether the package is still the *current* one, or just a leftover dependency, has to be read live.
+- **Not possible offline:** I could not read the Extra textures of either set, because the vanilla prefabs sit in compressed bundles and the bridge was offline. A save-embedded `DefaultTerrainRenderSettings` from October 2023 had **all four Extra slots empty** (zero asset ids, an older prefab format). The current game's Default may differ.
+
+**Checks to run live (read-only):**
+1. `GET /map/settings?detail=1` → `look.terrainRenderSettings`: which prefab is current, and its `m_Extra1…4Diffuse` asset ids.
+2. `GET /prefabs?category=terrainRenderSettings&detail=1`: every terrain set with its Extra slot ids. Compare `DefaultTerrainRenderSettings` and `DesertTerrainRenderingSettings`.
+3. In the editor's terrain material tool, note which brush is Extra1–4 (the brush order or tooltip). Then pick the terrain set whose slot behind "Dry" is a dry-grass/earth texture, not scree.
+
+**Choosing a set:**
+- If no vanilla set has a good dry slot, the textures can only be changed in the panel's image picker (texture references are not writable from code).
+- The numeric slot settings *are* writable through `terrainEdit`, e.g. `extra1DirtOverride` (0–1, how much the slot replaces dirt) and `extra1HeightOffset` (−0.4…0.4, height blend), but they change blending, not the texture.
 
 ## Apply status (first live run, 2026-10-20, dakota-A5-2048)
 
