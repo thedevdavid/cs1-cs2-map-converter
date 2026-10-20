@@ -1,201 +1,146 @@
 {
  "scale": "x1",
- "started": "2026-10-20T21:10:01.482Z",
+ "started": "2026-10-20T22:45:20.575Z",
  "files": {
   "x1/import-surfaces-fields.json": {
    "step": "surfaces",
-   "importId": "srf-20261020-211001-1",
-   "at": "2026-10-20T21:10:01.701Z"
+   "importId": "srf-20261020-224520-1",
+   "at": "2026-10-20T22:45:20.806Z"
   },
   "x1/import-po-structures.json": {
    "step": "surfaces",
-   "importId": "srf-20261020-211001-2",
-   "at": "2026-10-20T21:10:01.835Z"
+   "importId": "srf-20261020-224520-2",
+   "at": "2026-10-20T22:45:20.962Z"
   },
   "x1/import-surfaces-sand.json": {
    "step": "surfaces",
-   "importId": "srf-20261020-211001-3",
-   "at": "2026-10-20T21:10:02.096Z"
+   "importId": "srf-20261020-224521-3",
+   "at": "2026-10-20T22:45:21.260Z"
   },
   "x1/import-terrain-paint-sand.json": {
    "step": "terrain-paint",
    "importId": null,
-   "at": "2026-10-20T21:12:14.040Z"
+   "at": "2026-10-20T22:48:47.265Z"
   },
   "x1/import-terrain-paint-dry-grass.json": {
    "step": "terrain-paint",
    "importId": null,
-   "at": "2026-10-20T21:12:38.984Z"
+   "at": "2026-10-20T22:49:46.402Z"
   },
   "x1/import-terrain-paint-bare-earth.json": {
    "step": "terrain-paint",
    "importId": null,
-   "at": "2026-10-20T21:12:39.095Z"
+   "at": "2026-10-20T22:49:46.443Z"
+  },
+  "x1/import-terrain-paint-n1-riparian-lush.json": {
+   "step": "paint-n1",
+   "importId": null,
+   "at": "2026-10-20T22:49:54.131Z"
+  },
+  "x1/import-terrain-paint-n12-fertile-dry.json": {
+   "step": "paint-n12",
+   "importId": null,
+   "at": "2026-10-20T22:51:45.318Z"
+  },
+  "x1/import-terrain-paint-n13-high-ground-dry.json": {
+   "step": "paint-n13",
+   "importId": null,
+   "at": "2026-10-20T22:53:18.011Z"
+  },
+  "x1/import-terrain-paint-n6-savanna-dry.json": {
+   "step": "paint-n6",
+   "importId": null,
+   "at": "2026-10-20T23:00:59.966Z"
+  },
+  "x1/import-terrain-paint-n6-savanna-dirt.json": {
+   "step": "paint-n6",
+   "importId": null,
+   "at": "2026-10-20T23:01:00.821Z"
+  },
+  "x1/import-terrain-paint-n4-hogback-sand.json": {
+   "step": "paint-n4",
+   "importId": null,
+   "at": "2026-10-20T23:01:01.483Z"
+  },
+  "x1/import-terrain-paint-n5-scree-dirt.json": {
+   "step": "paint-n5",
+   "importId": null,
+   "at": "2026-10-20T23:01:10.576Z"
+  },
+  "x1/import-terrain-paint-n3-drawdown-dirt.json": {
+   "step": "paint-n3",
+   "importId": null,
+   "at": "2026-10-20T23:01:10.618Z"
+  },
+  "x1/import-terrain-paint-n2-pit-banks-dirt.json": {
+   "step": "paint-n2",
+   "importId": null,
+   "at": "2026-10-20T23:01:10.666Z"
+  },
+  "x1/import-terrain-paint-n2-pit-banks-sand.json": {
+   "step": "paint-n2",
+   "importId": null,
+   "at": "2026-10-20T23:01:10.710Z"
+  },
+  "x1/import-terrain-paint-n8-playa-rim-lush.json": {
+   "step": "paint-n8",
+   "importId": null,
+   "at": "2026-10-20T23:01:17.058Z"
+  },
+  "x1/import-terrain-paint-n8-playa-centre-dirt.json": {
+   "step": "paint-n8",
+   "importId": null,
+   "at": "2026-10-20T23:01:20.670Z"
+  },
+  "x1/import-terrain-paint-n7-prairie-dog-dry.json": {
+   "step": "paint-n7",
+   "importId": null,
+   "at": "2026-10-20T23:01:20.844Z"
+  },
+  "x1/import-terrain-paint-n7-prairie-dog-dirt.json": {
+   "step": "paint-n7",
+   "importId": null,
+   "at": "2026-10-20T23:01:20.871Z"
+  },
+  "x1/import-terrain-paint-n11-ore-dirt.json": {
+   "step": "paint-n11",
+   "importId": null,
+   "at": "2026-10-20T23:02:42.316Z"
+  },
+  "x1/import-terrain-paint-n11-oil-dirt.json": {
+   "step": "paint-n11",
+   "importId": null,
+   "at": "2026-10-20T23:10:47.973Z"
+  },
+  "x1/import-terrain-paint-n9-dirt-roads-dirt.json": {
+   "step": "paint-n9",
+   "importId": null,
+   "at": "2026-10-20T23:10:48.292Z"
+  },
+  "x1/import-terrain-paint-n10-rail-ballast-dirt.json": {
+   "step": "paint-n10",
+   "importId": null,
+   "at": "2026-10-20T23:10:48.423Z"
   },
   "x1/import-all.json": {
    "step": "network",
-   "importId": "imp-20261020-211239-1",
-   "at": "2026-10-20T21:12:56.089Z"
+   "importId": "imp-20261020-231048-1",
+   "at": "2026-10-20T23:11:06.384Z"
   },
   "x1/import-bridges.json": {
    "step": "bridges",
-   "importId": "imp-20261020-211256-2",
-   "at": "2026-10-20T21:12:56.544Z"
+   "importId": "imp-20261020-231106-2",
+   "at": "2026-10-20T23:11:06.873Z"
   },
   "x1/import-bridges-fixed.json": {
    "step": "bridges-fixed",
-   "importId": "imp-20261020-211256-3",
-   "at": "2026-10-20T21:12:56.863Z"
+   "importId": "imp-20261020-231106-3",
+   "at": "2026-10-20T23:11:07.312Z"
   },
   "x1/import-dam.json": {
    "step": "dam",
-   "importId": "imp-20261020-211256-4",
-   "at": "2026-10-20T21:12:57.106Z"
-  },
-  "x1/import-gaps.json": {
-   "step": "gaps",
-   "importId": "imp-20261020-211257-5",
-   "at": "2026-10-20T21:12:57.274Z"
-  },
-  "x1/import-power.json": {
-   "step": "power",
-   "importId": "imp-20261020-211257-6",
-   "at": "2026-10-20T21:12:57.523Z"
-  },
-  "x1/import-canals.json": {
-   "step": "canals",
-   "importId": "imp-20261020-211257-7",
-   "at": "2026-10-20T21:12:57.764Z"
-  },
-  "x1/import-shippaths.json": {
-   "step": "shippaths",
-   "importId": "imp-20261020-211257-8",
-   "at": "2026-10-20T21:12:58.145Z"
-  },
-  "x1/import-substation.json": {
-   "step": "substation",
-   "importId": "obj-20261020-211258-1",
-   "at": "2026-10-20T21:12:58.354Z"
-  },
-  "x1/import-power-ends.json": {
-   "step": "power-ends",
-   "importId": "imp-20261020-211258-9",
-   "at": "2026-10-20T21:12:58.577Z"
-  },
-  "x1/import-water-sea93.json": {
-   "step": "water",
-   "importId": "wat-20261020-211258-1",
-   "at": "2026-10-20T21:12:58.773Z"
-  },
-  "x1/import-water-lakes.json": {
-   "step": "lakes",
-   "importId": "wat-20261020-211258-2",
-   "at": "2026-10-20T21:12:58.879Z"
-  },
-  "x1/import-connections.json": {
-   "step": "connections",
-   "importId": "obj-20261020-211258-2",
-   "at": "2026-10-20T21:12:59.081Z"
-  },
-  "x1/import-objects.json": {
-   "step": "objects",
-   "importId": "obj-20261020-211259-3",
-   "at": "2026-10-20T21:13:00.306Z"
-  },
-  "x1/import-walls-props.json": {
-   "step": "barriers",
-   "importId": "obj-20261020-211300-4",
-   "at": "2026-10-20T21:13:00.562Z"
-  },
-  "x1/import-po-rocks.json": {
-   "step": "po-rocks",
-   "importId": "obj-20261020-211300-5",
-   "at": "2026-10-20T21:13:00.834Z"
-  },
-  "x1/import-po-structure-objects.json": {
-   "step": "po-structures",
-   "importId": "obj-20261020-211300-6",
-   "at": "2026-10-20T21:13:01.029Z"
-  },
-  "optional/import-po-structure-gantry.json": {
-   "step": "po-gantry",
-   "importId": "obj-20261020-211301-7",
-   "at": "2026-10-20T21:13:01.219Z"
-  },
-  "x1/import-po-structure-piers.json": {
-   "step": "po-piers",
-   "importId": "obj-20261020-211301-8",
-   "at": "2026-10-20T21:13:01.589Z"
-  },
-  "x1/import-rock-scatter.json": {
-   "step": "rock-scatter",
-   "importId": "obj-20261020-211301-9",
-   "at": "2026-10-20T21:13:04.311Z"
-  },
-  "x1/import-fort.json": {
-   "step": "fort",
-   "importId": "obj-20261020-211304-10",
-   "at": "2026-10-20T21:13:04.558Z"
-  },
-  "trees/import-trees-01.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211304-11",
-   "at": "2026-10-20T21:13:13.237Z"
-  },
-  "trees/import-trees-02.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211313-12",
-   "at": "2026-10-20T21:13:26.648Z"
-  },
-  "trees/import-trees-03.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211326-13",
-   "at": "2026-10-20T21:13:45.798Z"
-  },
-  "trees/import-trees-04.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211346-14",
-   "at": "2026-10-20T21:14:10.537Z"
-  },
-  "trees/import-trees-05.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211410-15",
-   "at": "2026-10-20T21:14:40.783Z"
-  },
-  "trees/import-trees-06.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211441-16",
-   "at": "2026-10-20T21:15:17.722Z"
-  },
-  "trees/import-trees-07.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211517-17",
-   "at": "2026-10-20T21:15:58.544Z"
-  },
-  "trees/import-trees-08.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211558-18",
-   "at": "2026-10-20T21:16:45.627Z"
-  },
-  "trees/import-trees-09.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211645-19",
-   "at": "2026-10-20T21:17:37.902Z"
-  },
-  "trees/import-trees-10.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211738-20",
-   "at": "2026-10-20T21:18:31.877Z"
-  },
-  "x1/import-trees-fixed-01.json": {
-   "step": "trees",
-   "importId": "obj-20261020-211831-21",
-   "at": "2026-10-20T21:18:32.588Z"
-  },
-  "x1/import-resources.json": {
-   "step": "resources",
-   "importId": null,
-   "at": "2026-10-20T21:18:32.775Z"
+   "importId": "imp-20261020-231107-4",
+   "at": "2026-10-20T23:11:07.620Z"
   }
  }
 }

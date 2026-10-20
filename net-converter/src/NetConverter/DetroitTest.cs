@@ -20,7 +20,7 @@ public static class DetroitTest
     /// <summary>TODO (live): the lower deck's offset below the upper one is a guess until /prefabs/info gives the double-deck geometry.</summary>
     public const double LowerDeckDrop = 8;
 
-    public static List<string> Write(string path, double deckY, Func<double, double, double>? terrainOut, Func<double, double, double?>? waterOut, double heightFactor)
+    public static List<string> Write(string outDir, double deckY, Func<double, double, double>? terrainOut, Func<double, double, double?>? waterOut, double heightFactor)
     {
         var log = new List<string>();
         double ux = T2.X - T1.X, uz = T2.Z - T1.Z, ul = Math.Sqrt(ux * ux + uz * uz); ux /= ul; uz /= ul;
@@ -68,21 +68,26 @@ public static class DetroitTest
         edges.Add(("dt3_lower_stub_w", "dt3_l2", "dt3_l3", "Highway Oneway - 3 lanes", "plain stub"));
         log.Add(string.Create(CultureInfo.InvariantCulture, $"option 3 at {o3} m NW: upper {RiverPart:F0} m + lower {RiverPart:F0} m ({LowerDeckDrop:F1} m lower, guess) + 4 × {Stub} m stubs; {Check(o3)}"));
 
-        using var fs = File.Create(path);
-        using var w = new Utf8JsonWriter(fs, Json.Indented);
-        w.WriteStartObject();
-        w.WriteString("name", "detroit-test");
-        w.WriteString("_comment", "A-v8 TEST ONLY (owner: options 2 and 3 next to the current BR001, then decide). Standalone decks, not connected; undo with POST /import/undo?id=<importId>.");
-        w.WriteStartArray("nodes");
-        foreach (var (id, x, y, z) in nodes) { w.WriteStartObject(); w.WriteString("id", id); w.WriteNumber("x", x); w.WriteNumber("y", y); w.WriteNumber("z", z); w.WriteEndObject(); }
-        w.WriteEndArray();
-        w.WriteStartArray("edges");
-        foreach (var (id, a, b, prefab, note) in edges) { w.WriteStartObject(); w.WriteString("id", id); w.WriteString("a", a); w.WriteString("b", b); w.WriteString("prefab", prefab); w.WriteString("note", note); w.WriteEndObject(); }
-        w.WriteEndArray();
-        w.WriteStartObject("options");
-        w.WriteNumber("batchSize", 1); w.WriteBoolean("nodesFirst", true); w.WriteString("heightMode", "absolute"); w.WriteBoolean("dryRun", false); w.WriteBoolean("bypassValidation", true);
-        w.WriteEndObject();
-        w.WriteEndObject();
+        // Round 28 (A-v8 crashed natively during the combined step): one file per option, so each can be tried on its own after verify-end.
+        File.Delete(Path.Combine(outDir, "import-detroit-test.json"));
+        foreach (var (file, tag, what) in new[] { ("import-detroit-opt2.json", "dt2_", "option 2, BXP Suspension Bridge - Highway Twoway - 6 Lanes"), ("import-detroit-opt3.json", "dt3_", "option 3, BXP Double Deck Suspension Bridge - Highway + Lower Highway") })
+        {
+            using var fs = File.Create(Path.Combine(outDir, file));
+            using var w = new Utf8JsonWriter(fs, Json.Indented);
+            w.WriteStartObject();
+            w.WriteString("name", Path.GetFileNameWithoutExtension(file).Replace("import-", ""));
+            w.WriteString("_comment", $"TEST ONLY, {what}, next to the current BR001 (owner decides after seeing it). Standalone decks, not connected; undo with POST /import/undo?id=<importId>. A-v8: the combined test crashed the game natively; run this after verify-end.");
+            w.WriteStartArray("nodes");
+            foreach (var (id, x, y, z) in nodes.Where(nd => nd.Id.StartsWith(tag))) { w.WriteStartObject(); w.WriteString("id", id); w.WriteNumber("x", x); w.WriteNumber("y", y); w.WriteNumber("z", z); w.WriteEndObject(); }
+            w.WriteEndArray();
+            w.WriteStartArray("edges");
+            foreach (var (id, a, b, prefab, note) in edges.Where(e => e.Id.StartsWith(tag))) { w.WriteStartObject(); w.WriteString("id", id); w.WriteString("a", a); w.WriteString("b", b); w.WriteString("prefab", prefab); w.WriteString("note", note); w.WriteEndObject(); }
+            w.WriteEndArray();
+            w.WriteStartObject("options");
+            w.WriteNumber("batchSize", 1); w.WriteBoolean("nodesFirst", true); w.WriteString("heightMode", "absolute"); w.WriteBoolean("dryRun", false); w.WriteBoolean("bypassValidation", true);
+            w.WriteEndObject();
+            w.WriteEndObject();
+        }
         return log;
     }
 }

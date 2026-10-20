@@ -117,8 +117,6 @@ const steps = [
   ["bridges-fixed", "/import/network", [p("import-bridges-fixed.json")]],
   // Bridge 0.9.23: one dam edge; the game builds the plant and the dam ends from it.
   ["dam", "/import/network", [p("import-dam.json")]],
-  // Round 26: A-v8 Detroit test decks (options 2 and 3 next to BR001; standalone, undoable). On for this run only; --skip detroit-test after the decision.
-  ["detroit-test", "/import/network", [p("import-detroit-test.json")]],
   // Round 26: Gravel Road access to the dam plant and the substation (RequireRoad).
   ["access", "/import/network", [p("import-access-roads.json")]],
   ["gaps", "/import/network", [p("import-gaps.json")]],
@@ -148,6 +146,10 @@ const steps = [
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
   ["resources", "/import/resources", [p("import-resources.json")]],
   ["verify-end", "verify", []],
+  // Round 28: the Detroit test decks, opt-in only (--with detroit-opt2 / detroit-opt3), after the final check, so a crash (A-v8: native crash in the
+  // combined test step) never costs the map. Save the map before trying them.
+  ["detroit-opt2", "/import/network", [p("import-detroit-opt2.json")], true],
+  ["detroit-opt3", "/import/network", [p("import-detroit-opt3.json")], true],
 ];
 const optional = new Set(steps.filter(s => s[3]).map(s => s[0]));
 const wanted = name => (only.size === 0 ? (!optional.has(name) || withOpt.has(name)) : only.has(name)) && !skip.has(name)

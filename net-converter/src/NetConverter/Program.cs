@@ -364,7 +364,7 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
     bridgeNodes = bMain.Nodes.Concat(bFixed.Nodes).ToList();
     // Round 26: A-v8 Detroit test decks (options 2 and 3) next to BR001, their own import (runner step detroit-test).
     if (bFixed.Nodes.FirstOrDefault(nn => nn.Id == "br001_a") is { } d0)
-        foreach (var l in DetroitTest.Write(Path.Combine(outDir, "import-detroit-test.json"), d0.Y, terrOutB, waterOut, heightFactor)) { Console.WriteLine("detroit test: " + l); auditLog.AppendLine($"- Detroit test: {l}."); }
+        foreach (var l in DetroitTest.Write(outDir, d0.Y, terrOutB, waterOut, heightFactor)) { Console.WriteLine("detroit test: " + l); auditLog.AppendLine($"- Detroit test: {l}."); }
 }
 // Round 26 (A-v7 diagnosis C1): off. The split node was clamped back onto the terrain (Math.Max(y, terr)), so it restored nothing and left a node stacked
 // under the upper course; same-layer crossings now go through the grade-separation pass instead (upper course raised).

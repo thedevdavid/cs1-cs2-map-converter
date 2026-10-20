@@ -265,3 +265,10 @@ seeded per feature. `--paint` overrides any layer: brush (sand / dry / dirt / lu
 - **N11 oil:** the CS1 oil layer covers 57 km² at ≥ 0.4. At strength 0.3 that is a big tint; `--skip paint-n11` or `--paint n11.strength=0.15` to tone it.
 - **Policy:** no area Grass Surface of any kind. import-surfaces-grass.json is no longer written and its runner step is gone. The sand area surfaces stay for the comparison.
 - **Canyon road:** waiting for hm-rebuild's new inner heightmap. The road-terrain check re-runs against it when it is reported (`--cs2-heightmap <png>`).
+
+## Round 28: Detroit test split (A-v8 crashed natively during the combined `detroit-test` step)
+
+- import-detroit-test.json is gone. It is replaced by import-detroit-opt2.json (option 2: 2 × 362 m BXP twoway 6-lane spans + 2 plain stubs, 5 nodes) and
+  import-detroit-opt3.json (option 3: the double-deck upper and lower decks + 4 stubs, 8 nodes), at both scales.
+- Runner: `detroit-opt2` / `detroit-opt3` are opt-in only (`--with detroit-opt2` or `--with detroit-opt3`) and come after `verify-end`, so a crash there never costs
+  the map. Save the map first, and try opt2 alone before opt3 (opt3 holds the Lower Highway net the crash is suspected on).

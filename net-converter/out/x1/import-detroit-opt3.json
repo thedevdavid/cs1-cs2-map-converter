@@ -1,37 +1,7 @@
 {
-  "name": "detroit-test",
-  "_comment": "A-v8 TEST ONLY (owner: options 2 and 3 next to the current BR001, then decide). Standalone decks, not connected; undo with POST /import/undo?id=\u003CimportId\u003E.",
+  "name": "detroit-opt3",
+  "_comment": "TEST ONLY, option 3, BXP Double Deck Suspension Bridge - Highway \u002B Lower Highway, next to the current BR001 (owner decides after seeing it). Standalone decks, not connected; undo with POST /import/undo?id=\u003CimportId\u003E. A-v8: the combined test crashed the game natively; run this after verify-end.",
   "nodes": [
-    {
-      "id": "dt2_s0",
-      "x": 1064,
-      "y": 148.11,
-      "z": -3784.62
-    },
-    {
-      "id": "dt2_t1",
-      "x": 1154.67,
-      "y": 148.11,
-      "z": -3665.12
-    },
-    {
-      "id": "dt2_m",
-      "x": 1373.17,
-      "y": 148.11,
-      "z": -3377.12
-    },
-    {
-      "id": "dt2_t2",
-      "x": 1591.67,
-      "y": 148.11,
-      "z": -3089.12
-    },
-    {
-      "id": "dt2_s3",
-      "x": 1682.33,
-      "y": 148.11,
-      "z": -2969.62
-    },
     {
       "id": "dt3_u0",
       "x": 828.21,
@@ -82,34 +52,6 @@
     }
   ],
   "edges": [
-    {
-      "id": "dt2_stub_w",
-      "a": "dt2_s0",
-      "b": "dt2_t1",
-      "prefab": "Highway Twoway - 4 lanes",
-      "note": "plain stub (no vanilla 6-lane two-way highway known)"
-    },
-    {
-      "id": "dt2_span_1",
-      "a": "dt2_t1",
-      "b": "dt2_m",
-      "prefab": "BXP Suspension Bridge - Highway Twoway - 6 Lanes",
-      "note": "362 m, CS1 tower T1 \u2192 mid"
-    },
-    {
-      "id": "dt2_span_2",
-      "a": "dt2_m",
-      "b": "dt2_t2",
-      "prefab": "BXP Suspension Bridge - Highway Twoway - 6 Lanes",
-      "note": "362 m, mid \u2192 CS1 tower T2"
-    },
-    {
-      "id": "dt2_stub_e",
-      "a": "dt2_t2",
-      "b": "dt2_s3",
-      "prefab": "Highway Twoway - 4 lanes",
-      "note": "plain stub"
-    },
     {
       "id": "dt3_upper_stub_w",
       "a": "dt3_u0",
