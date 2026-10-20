@@ -1,6 +1,6 @@
 # Trees for POST /import/objects
 
-Source: points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale). 496,318 trees in 10 files of ≤ 50,000 (import-trees-01.json, import-trees-02.json, import-trees-03.json, import-trees-04.json, import-trees-05.json, import-trees-06.json, import-trees-07.json, import-trees-08.json, import-trees-09.json, import-trees-10.json).
+Source: points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale). 496,321 trees in 10 files of ≤ 50,000 (import-trees-01.json, import-trees-02.json, import-trees-03.json, import-trees-04.json, import-trees-05.json, import-trees-06.json, import-trees-07.json, import-trees-08.json, import-trees-09.json, import-trees-10.json).
 No y: the game samples terrain, so the same files serve the 2× (out/) and the 1× (out/x1/) map.
 
 - Outside ±7168 m (dropped): 158,877
@@ -11,18 +11,18 @@ No y: the game samples terrain, so the same files serve the 2× (out/) and the 1
 - Tree Control scale → age (trees with scale ≠ 1; the rest use the mapping age profile): elderly 70,104 (scale < 0.6 seedling, < 0.85 sapling, ≤ 1.2 adult, else elderly)
 - Masked, terrain below sea level: 10,093
 - Masked, inside the CS1 water surface: 1,133
-- Masked, on a ground-level net corridor (half width + 2 m): 641
+- Masked, on a ground-level net corridor (half width + 2 m): 638
 
 ## Per CS2 prefab
 
 | CS2 prefab | trees |
 |---|---:|
 | PineTree01 | 199,087 |
-| SpruceTree01 | 90,091 |
+| SpruceTree01 | 90,093 |
 | EuropeanSpruce01 | 75,322 |
 | BirchTree01 | 48,746 |
 | OakTree01 | 29,990 |
-| GreenBushWild01 | 19,944 |
+| GreenBushWild01 | 19,945 |
 | GreenBushWild02 | 11,724 |
 | NA_HickoryTree01 | 9,806 |
 | NA_LindenTree01 | 6,594 |
@@ -68,16 +68,16 @@ No y: the game samples terrain, so the same files serve the 2× (out/) and the 1
 
 ## Exact points vs rasters
 
-Exact: 496,318 placed (outside 158,877). Raster-based: 508,458 placed (outside 158,906). Difference -12,140.
+Exact: 496,321 placed (outside 158,877). Raster-based: 508,458 placed (outside 158,906). Difference -12,137.
 
 | CS2 prefab | exact | rasters |
 |---|---:|---:|
 | PineTree01 | 199,087 | 200,828 |
-| SpruceTree01 | 90,091 | 91,460 |
+| SpruceTree01 | 90,093 | 91,460 |
 | EuropeanSpruce01 | 75,322 | 76,910 |
 | BirchTree01 | 48,746 | 50,370 |
 | OakTree01 | 29,990 | 31,114 |
-| GreenBushWild01 | 19,944 | 21,868 |
+| GreenBushWild01 | 19,945 | 21,868 |
 | GreenBushWild02 | 11,724 | 13,962 |
 | NA_HickoryTree01 | 9,806 | 10,020 |
 | NA_LindenTree01 | 6,594 | 6,731 |

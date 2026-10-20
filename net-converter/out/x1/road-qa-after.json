@@ -10,7 +10,7 @@
   "duplicates": 0,
   "isolatedShort": 1,
   "rampEndsNearMainline": 0,
-  "liveDeadEnds": 288
+  "liveDeadEnds": 46
  },
  "pipeline": [],
  "genuine": [
@@ -91,7 +91,7 @@
  ],
  "rampEnds": [],
  "live": {
-  "pulled": "2026-10-20T12:08:26.849Z",
-  "deadEnds": 288
+  "pulled": "2026-10-20T15:32:49.685Z",
+  "deadEnds": 46
  }
 }

@@ -288,7 +288,7 @@ public static class Round9
     /// (A-v4: e15883_0 and gap_e15883_3lane tore the 4-lane / 3-lane split at (463, −4520)).
     /// </summary>
     public static (List<NetNode> Nodes, List<NetEdge> Edges, List<NetNode> TaperNodes, List<NetEdge> TaperEdges, List<string> Log) Gaps(ConvertResult res, double topologyFactor,
-        IReadOnlyList<NetNode>? extraNodes, out List<string> replaces)
+        IReadOnlyList<NetNode>? extraNodes, out List<string> replaces, bool rebuildE20430 = false)
     {
         var log = new List<string>();
         replaces = new List<string>();
@@ -323,7 +323,8 @@ public static class Round9
         }
         // e20430_0b (3-lane, OverlapExisting / InvalidShape): 15.5 m from the parallel carriageway, inside the two half-widths;
         // control points moved 1 m away from the nearest other highway course.
-        if (byId.TryGetValue("e20430_0b", out var e3))
+        // e20430_0b is moved clear of the parallel carriageway in the network itself now (A-v5: its separate rebuild never built); no gap edge.
+        if (rebuildE20430 && byId.TryGetValue("e20430_0b", out var e3))
         {
             var mid = e3.Curve.Eval(0.5);
             var other = res.Layer(Layers.Highways).Where(x => x != e3 && x.A != e3.A && x.B != e3.A && x.A != e3.B && x.B != e3.B)

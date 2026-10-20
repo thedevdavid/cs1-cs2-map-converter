@@ -148,7 +148,12 @@
     "e35264_0a",
     "e35264_0b",
     "e24890_0a",
-    "e24890_0b"
+    "e24890_0b",
+    "e4936_0a",
+    "e4936_0b",
+    "e24516_0a",
+    "e24516_0b",
+    "e5779_0"
   ],
   "nodes": [
     {
@@ -675,6 +680,60 @@
       "x": 6546.56,
       "y": 281.06,
       "z": 1715.07,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n14808",
+      "x": 6846.89,
+      "y": 284.91,
+      "z": 3346.38,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n2819",
+      "x": 6846.78,
+      "y": 284.87,
+      "z": 3260.35,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n23052",
+      "x": 6745.35,
+      "y": 285.1,
+      "z": 3456.75,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n22827",
+      "x": 6825.99,
+      "y": 284.33,
+      "z": 3456.65,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n26724",
+      "x": 6845.96,
+      "y": 286.68,
+      "z": 2619.36,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n2577",
+      "x": 6845.87,
+      "y": 286.97,
+      "z": 2552.53,
       "snapToSegment": {
         "radius": 2
       }
@@ -1653,6 +1712,63 @@
         ]
       ],
       "note": "BR045 bridge edge 2/2; CS1 segments 35264,24890"
+    },
+    {
+      "id": "br049_c1_e0",
+      "a": "n14808",
+      "b": "n2819",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          6846.86,
+          284.89,
+          3317.71
+        ],
+        [
+          6846.82,
+          284.88,
+          3289.03
+        ]
+      ],
+      "note": "BR049 bridge edge 1/1; CS1 segments 4936"
+    },
+    {
+      "id": "br050_c1_e0",
+      "a": "n23052",
+      "b": "n22827",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          6772.23,
+          284.85,
+          3456.72
+        ],
+        [
+          6799.11,
+          284.59,
+          3456.68
+        ]
+      ],
+      "note": "BR050 bridge edge 1/1; CS1 segments 24516"
+    },
+    {
+      "id": "br053_c1_e0",
+      "a": "n26724",
+      "b": "n2577",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          6845.93,
+          286.77,
+          2597.08
+        ],
+        [
+          6845.9,
+          286.87,
+          2574.81
+        ]
+      ],
+      "note": "BR053 bridge edge 1/1; CS1 segments 5779"
     }
   ],
   "options": {

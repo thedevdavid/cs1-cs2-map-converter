@@ -173,6 +173,25 @@ public static class Bridges
 
     static double Y(OutNode n) => Round9.Y(n);
 
+    static (double D, double T) PointLine(Vec3 p, Vec3 a, Vec3 b)
+    {
+        double dx = b.X - a.X, dz = b.Z - a.Z, l2 = dx * dx + dz * dz;
+        double t = l2 > 0 ? Math.Clamp(((p.X - a.X) * dx + (p.Z - a.Z) * dz) / l2, 0, 1) : 0;
+        return (Math.Sqrt((a.X + t * dx - p.X) * (a.X + t * dx - p.X) + (a.Z + t * dz - p.Z) * (a.Z + t * dz - p.Z)), t);
+    }
+
+    static double LineDistance(Vec3 a1, Vec3 b1, Vec3 a2, Vec3 b2)
+    {
+        double m = double.MaxValue;
+        for (int k = 0; k <= 8; k++)
+        {
+            var p = new Vec3(a1.X + k / 8.0 * (b1.X - a1.X), 0, a1.Z + k / 8.0 * (b1.Z - a1.Z));
+            var q = new Vec3(a2.X + k / 8.0 * (b2.X - a2.X), 0, a2.Z + k / 8.0 * (b2.Z - a2.Z));
+            m = Math.Min(m, Math.Min(PointLine(p, a2, b2).D, PointLine(q, a1, b1).D));
+        }
+        return m;
+    }
+
     /// <summary>Bridge prefabs require ≥ 2 × the net's elevation limit above the terrain at an end or the middle (rule bridge.lowElevation, RequireElevated).</summary>
     public const double MinElevated = 8.0, RaiseTarget = 8.5, MaxRaise = 5.0;
 
@@ -202,28 +221,47 @@ public static class Bridges
                 }
                 if (h < MinElevated) raise = Math.Max(raise, RaiseTarget - h);
             }
-            if (raise > MaxRaise)
-            {
-                problems.Add(F($"{tag}: kept the base prefab: the deck is {RaiseTarget - raise:F1} m above the terrain and would need +{raise:F1} m for bridge.lowElevation (≥ 8 m); a bridge prefab is wrong this low"));
-                return null;
-            }
             if (raise > 0)
             {
-                // Approaches: every other network course at the end nodes gets the extra height at that end; its grade must stay within the limit.
-                double limit = chain[0].Layer == Layers.Rail ? 0.05 : 0.10;
+                // Owner (A-v5): raise the road before the bridge. From each end node walk outward along the approach (through nodes of degree 2),
+                // lifting every node to at least deck − 6 % × distance, until the original profile is met. Fails (base prefab kept) when that is not
+                // reached within 150 m or a junction comes first.
+                var lift = new Dictionary<OutNode, double>(ReferenceEqualityComparer.Instance);
+                var adjN = new Dictionary<OutNode, List<OutEdge>>(ReferenceEqualityComparer.Instance);
+                foreach (var e in network.Where(e => e.Map.Imported && !chain.Contains(e))) foreach (var nn in new[] { e.A, e.B }) (adjN.TryGetValue(nn, out var l) ? l : adjN[nn] = new()).Add(e);
+                string? fail = null;
+                // Breadth-first from both deck ends through every branch (junctions included): each node is lifted to deck − 6 % × distance
+                // until that falls below its own height; past 150 m with a lift still needed, the bridge keeps its base prefab.
                 foreach (var node in new[] { a, b })
-                    foreach (var e in network.Where(e => !chain.Contains(e) && (e.A == node || e.B == node)))
+                {
+                    lift[node] = Math.Max(lift.GetValueOrDefault(node), raise);
+                    double deckY = Y(node) + raise;
+                    var best = new Dictionary<OutNode, double>(ReferenceEqualityComparer.Instance) { [node] = 0 };
+                    var q = new Queue<OutNode>(); q.Enqueue(node);
+                    while (q.Count > 0 && fail == null)
                     {
-                        var other = e.A == node ? e.B : e.A; double l = Math.Max(1, e.Curve.LengthXZ());
-                        double g = Math.Abs(Y(node) + raise - Y(other)) / l;
-                        if (g > limit)
+                        var cn = q.Dequeue(); double dist0 = best[cn];
+                        foreach (var e in adjN.GetValueOrDefault(cn) ?? new())
                         {
-                            problems.Add(F($"{tag}: kept the base prefab: lifting the deck +{raise:F1} m makes the approach {e.Id} {g * 100:F1} % (> {limit * 100:F0} %)"));
-                            return null;
+                            var nx = e.A == cn ? e.B : e.A; if (nx == a || nx == b) continue;
+                            double dist = dist0 + e.Curve.LengthXZ();
+                            if (best.TryGetValue(nx, out var dd) && dd <= dist) continue;
+                            double need = deckY - 0.06 * dist - Y(nx);
+                            if (need <= 0) continue;                                    // this branch meets its original profile
+                            if (dist > 150) { fail = F($"the approach via {e.Id} would stay above 6 % for more than 150 m"); break; }
+                            best[nx] = dist; lift[nx] = Math.Max(lift.GetValueOrDefault(nx), need); q.Enqueue(nx);
                         }
                     }
-                foreach (var node in new[] { a, b }) { double dTop = raise / Outputs.YScale; node.Elevation += dTop; node.Position = node.Position with { Y = node.Position.Y + dTop }; }
-                problems.Add(F($"{tag}: deck lifted +{raise:F1} m to reach 8.5 m above the terrain (bridge.lowElevation); approaches re-graded"));
+                    if (fail != null) break;
+                }
+                if (fail != null)
+                {
+                    problems.Add(F($"{tag}: kept the base prefab: the deck needs +{raise:F1} m for bridge.lowElevation (≥ 8 m) and {fail}"));
+                    return null;
+                }
+                foreach (var (node, up) in lift) { double dTop = up / Outputs.YScale; node.Elevation += dTop; node.Position = node.Position with { Y = node.Position.Y + dTop }; }
+                foreach (var e in network.Where(e => lift.ContainsKey(e.A) || lift.ContainsKey(e.B))) e.Curve = e.Curve.WithEnds(e.A.Position, e.B.Position);
+                problems.Add(F($"{tag}: deck lifted +{raise:F1} m to 8.5 m above the terrain; {lift.Count - 2} approach nodes re-graded at ≤ 6 %"));
             }
         }
         // Curvature: the largest offset of the CS1 chain from the straight line it becomes.
@@ -296,7 +334,18 @@ public static class Bridges
             {
                 // The segments leave the network; nothing replaces them (BR004 dam-crest walkway).
                 foreach (var e in sel) remove.Add(e);
-                reports.Add(new Report(s.Id, "(dropped)", "drop", 0, lengths, new() { F($"{sel.Count} courses dropped, {sel.Sum(e => e.Curve.LengthXZ()):F0} m") }, false, s.Notes));
+                // Footpaths that only led onto the dropped walkway: removed up to their first junction (owner: no path by the dam).
+                var ends = new Queue<OutNode>(sel.SelectMany(e => new[] { e.A, e.B }));
+                var tail = new List<OutEdge>();
+                while (ends.Count > 0)
+                {
+                    var n = ends.Dequeue();
+                    var rest = res.Edges.Where(e => e.Map.Imported && !remove.Contains(e) && (e.A == n || e.B == n)).ToList();
+                    if (rest.Count != 1 || rest[0].Map.Cs2Prefab != "Pavement Path") continue;
+                    remove.Add(rest[0]); tail.Add(rest[0]);
+                    ends.Enqueue(rest[0].A == n ? rest[0].B : rest[0].A);
+                }
+                reports.Add(new Report(s.Id, "(dropped)", "drop", 0, lengths, new() { F($"{sel.Count} courses dropped, {sel.Sum(e => e.Curve.LengthXZ()):F0} m; footpaths that only led onto it: {tail.Count} ({tail.Sum(e => e.Curve.LengthXZ()):F0} m)") }, false, s.Notes));
                 continue;
             }
             if (s.Merge && s.Fixed != null)
@@ -315,10 +364,57 @@ public static class Bridges
                     foreach (var e in sel) foreach (var n in new[] { e.A, e.B }) decorDeg[n] = decorDeg.GetValueOrDefault(n) + 1;
                 }
                 var kept = new List<OutEdge>();
-                foreach (var (chain, a, b) in Chains(sel, decorDeg))
+                var cl = Chains(sel, decorDeg).ToList();
+                var bad = new Dictionary<int, string>();
+                // (b) twin carriageways: the two straight bridge lines closer than 1.2 × the road width overlap.
+                for (int i = 0; i < cl.Count; i++)
+                    for (int j = i + 1; j < cl.Count; j++)
+                    {
+                        double w = 2 * FootprintShift.Cs2Half(cl[i].Edges[0]);
+                        double dmin = LineDistance(cl[i].Start.Position, cl[i].End.Position, cl[j].Start.Position, cl[j].End.Position);
+                        if (dmin < 1.2 * w) { bad.TryAdd(i, F($"carriageways overlap: {dmin:F1} m apart < 1.2 × {w:F0} m")); bad.TryAdd(j, F($"carriageways overlap: {dmin:F1} m apart < 1.2 × {w:F0} m")); }
+                    }
+                // (c) another course within 12 m of the deck in plan and within 6 m in height (a ramp through the deck; courses well below pass).
+                for (int i = 0; i < cl.Count; i++)
                 {
-                    var l = Resegment(s, $"{s.Id.ToLowerInvariant()}_c{++chains}", chain, a, b, decorDeg, target, problems, waterOut, terrOut, res.Edges);
-                    if (l == null) kept.AddRange(chain); else lengths.AddRange(l);
+                    var (ch, ca, cb) = cl[i];
+                    foreach (var e in res.Edges)
+                    {
+                        if (!e.Map.Imported || sel.Contains(e) || e.A == ca || e.B == ca || e.A == cb || e.B == cb) continue;
+                        bool hit = false;
+                        for (int k = 0; k <= 8 && !hit; k++)
+                        {
+                            var p = e.Curve.Eval(k / 8.0);
+                            var (d, t) = PointLine(p, ca.Position, cb.Position);
+                            if (d < 12 && t > 0.02 && t < 0.98 && Math.Abs(p.Y * Outputs.YScale - (Y(ca) + t * (Y(cb) - Y(ca)))) < 6) hit = true;
+                        }
+                        if (hit) { bad.TryAdd(i, F($"{e.Id} {e.Map.Cs2Prefab} runs within 12 m of the deck at the same height")); break; }
+                    }
+                }
+                for (int i = 0; i < cl.Count; i++)
+                {
+                    var (chain, a, b) = cl[i]; string tag = $"{s.Id.ToLowerInvariant()}_c{++chains}";
+                    if (bad.TryGetValue(i, out var why)) { problems.Add($"{tag}: kept the plain elevated base road: {why}"); kept.AddRange(chain); continue; }
+                    var l = Resegment(s, tag, chain, a, b, decorDeg, target, problems, waterOut, terrOut, res.Edges);
+                    if (l == null) { kept.AddRange(chain); continue; }
+                    lengths.AddRange(l);
+                    // (a) approach tangents: an approach meeting the straight deck at more than 4° gets its end control point on the deck line.
+                    foreach (var node in new[] { a, b })
+                    {
+                        var other = node == a ? b : a;
+                        double ux = node.Position.X - other.Position.X, uz = node.Position.Z - other.Position.Z, ul = Math.Sqrt(ux * ux + uz * uz); ux /= ul; uz /= ul;   // out of the deck
+                        foreach (var e in res.Edges.Where(e => !chain.Contains(e) && (e.A == node || e.B == node)))
+                        {
+                            var c = e.A == node ? e.Curve.B : e.Curve.C;
+                            double cx = c.X - node.Position.X, cz = c.Z - node.Position.Z, cl2 = Math.Sqrt(cx * cx + cz * cz);
+                            if (cl2 < 1e-6) continue;
+                            double ang = Math.Acos(Math.Clamp((cx * ux + cz * uz) / cl2, -1, 1)) * 180 / Math.PI;
+                            if (ang <= 4) continue;
+                            var np = new Vec3(node.Position.X + ux * cl2, c.Y, node.Position.Z + uz * cl2);
+                            e.Curve = e.A == node ? e.Curve with { B = np } : e.Curve with { C = np };
+                            problems.Add(F($"{tag}: approach {e.Id} met the deck at {ang:F0}°, its end now runs straight onto the deck"));
+                        }
+                    }
                 }
                 sel.RemoveAll(kept.Contains);   // chains that keep their base prefab stay in the network
             }

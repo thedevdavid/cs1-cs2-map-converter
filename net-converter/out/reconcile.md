@@ -8,51 +8,34 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 
 | layer | prefab | edges | covered | wrong prefab | partial | missing | → retry |
 |---|---|---:|---:|---:|---:|---:|---:|
-| highways | Highway Oneway - 1 lane | 283 | 282 | 1 | 0 | 0 | 0 |
-| highways | Highway Oneway - 2 lanes | 914 | 911 | 3 | 0 | 0 | 0 |
-| highways | Highway Oneway - 3 lanes | 509 | 509 | 0 | 0 | 0 | 0 |
+| highways | Highway Oneway - 1 lane | 244 | 244 | 0 | 0 | 0 | 0 |
+| highways | Highway Oneway - 2 lanes | 889 | 887 | 2 | 0 | 0 | 0 |
+| highways | Highway Oneway - 3 lanes | 508 | 508 | 0 | 0 | 0 | 0 |
 | highways | Highway Oneway - 4 lanes | 31 | 31 | 0 | 0 | 0 | 0 |
 | rail | Double Train Track | 430 | 429 | 0 | 1 | 0 | 0 |
-| roads | Gravel Road | 1267 | 1267 | 0 | 0 | 0 | 0 |
-| roads | Medium Road | 42 | 42 | 0 | 0 | 0 | 0 |
-| roads | Pavement Path | 48 | 0 | 0 | 1 | 47 | 48 |
+| roads | Gravel Road | 1262 | 1262 | 0 | 0 | 0 | 0 |
+| roads | Medium Road | 43 | 43 | 0 | 0 | 0 | 0 |
+| roads | Pavement Path | 15 | 0 | 0 | 1 | 14 | 15 |
 | roads | Small Road | 308 | 308 | 0 | 0 | 0 | 0 |
-| **highways** | **all** | 1737 | 1733 | 4 | 0 | 0 | 0 |
+| **highways** | **all** | 1672 | 1670 | 2 | 0 | 0 | 0 |
 | **rail** | **all** | 430 | 429 | 0 | 1 | 0 | 0 |
-| **roads** | **all** | 1665 | 1617 | 0 | 1 | 47 | 48 |
+| **roads** | **all** | 1628 | 1613 | 0 | 1 | 14 | 15 |
 
 ### Edges not fully covered
 
 | layer | edge | prefab | status | points mapped/any | x | z |
 |---|---|---|---|---|---:|---:|
 | highways | e3183_0 | Highway Oneway - 2 lanes | WrongPrefab | 3/5 | 2969 | 1097 |
-| highways | e19786_0a | Highway Oneway - 2 lanes | WrongPrefab | 2/5 | 3388 | 1972 |
-| highways | e32650_0 | Highway Oneway - 1 lane | WrongPrefab | 3/5 | 3671 | 2153 |
 | highways | e34504_0 | Highway Oneway - 2 lanes | WrongPrefab | 3/5 | 3785 | 2295 |
 | rail | e25368_0 | Double Train Track | Partial | 4/4 | -182 | 2388 |
 | roads | e512_0 | Pavement Path | Partial | 0/1 | 32 | -2425 |
-| roads | e632_0aa | Pavement Path | Missing | 0/0 | 1372 | 4663 |
-| roads | e632_0ab | Pavement Path | Missing | 0/0 | 1395 | 4666 |
-| roads | e632_0ba | Pavement Path | Missing | 0/0 | 1418 | 4670 |
-| roads | e632_0bb | Pavement Path | Missing | 0/0 | 1437 | 4673 |
-| roads | e2367_0aa | Pavement Path | Missing | 0/0 | 1283 | 4649 |
-| roads | e2367_0ab | Pavement Path | Missing | 0/0 | 1306 | 4652 |
-| roads | e2367_0ba | Pavement Path | Missing | 0/0 | 1329 | 4656 |
-| roads | e2367_0bb | Pavement Path | Missing | 0/0 | 1352 | 4659 |
 | roads | e4485_0 | Pavement Path | Missing | 0/0 | 33 | -2679 |
 | roads | e6055_0 | Pavement Path | Missing | 0/0 | 16 | -2686 |
 | roads | e7126_0 | Pavement Path | Missing | 0/0 | 367 | -3024 |
 | roads | e9800_0 | Pavement Path | Missing | 0/0 | 37 | -2642 |
 | roads | e14627_0 | Pavement Path | Missing | 0/0 | 16 | -2563 |
-| roads | e17367_0a | Pavement Path | Missing | 0/0 | 1205 | 4637 |
-| roads | e17367_0ba | Pavement Path | Missing | 0/0 | 1240 | 4642 |
-| roads | e17367_0bb | Pavement Path | Missing | 0/0 | 1263 | 4646 |
 | roads | e18414_0 | Pavement Path | Missing | 0/0 | 4785 | -696 |
-| roads | e18842_0a | Pavement Path | Missing | 0/0 | 891 | 4751 |
-| roads | e18842_0b | Pavement Path | Missing | 0/0 | 826 | 4794 |
 | roads | e18960_0 | Pavement Path | Missing | 0/0 | 302 | -3028 |
-| roads | e19284_0 | Pavement Path | Missing | 0/0 | 771 | 4830 |
-| roads | e23951_0 | Pavement Path | Missing | 0/0 | 1559 | 4692 |
 | roads | e24853_0 | Pavement Path | Missing | 0/0 | -9 | -2665 |
 | roads | e25471_0 | Pavement Path | Missing | 0/0 | 19 | -2600 |
 | roads | e25631_0 | Pavement Path | Missing | 0/0 | 40 | -2472 |
@@ -60,24 +43,6 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | roads | e28940_0 | Pavement Path | Missing | 0/0 | 335 | -3032 |
 | roads | e29443_0 | Pavement Path | Missing | 0/0 | -10 | -2572 |
 | roads | e31425_0 | Pavement Path | Missing | 0/0 | 43 | -2515 |
-| roads | e33772_0aaa | Pavement Path | Missing | 0/0 | 1085 | 4623 |
-| roads | e33772_0aab | Pavement Path | Missing | 0/0 | 1067 | 4635 |
-| roads | e33772_0abaa | Pavement Path | Missing | 0/0 | 1049 | 4646 |
-| roads | e33772_0abab | Pavement Path | Missing | 0/0 | 1037 | 4655 |
-| roads | e33772_0abba | Pavement Path | Missing | 0/0 | 1023 | 4664 |
-| roads | e33772_0abbb | Pavement Path | Missing | 0/0 | 1009 | 4673 |
-| roads | e33772_0baaa | Pavement Path | Missing | 0/0 | 995 | 4682 |
-| roads | e33772_0baab | Pavement Path | Missing | 0/0 | 981 | 4692 |
-| roads | e33772_0bab | Pavement Path | Missing | 0/0 | 960 | 4705 |
-| roads | e33772_0bba | Pavement Path | Missing | 0/0 | 937 | 4721 |
-| roads | e33772_0bbb | Pavement Path | Missing | 0/0 | 919 | 4733 |
-| roads | e34199_0aa | Pavement Path | Missing | 0/0 | 1098 | 4620 |
-| roads | e34199_0ab | Pavement Path | Missing | 0/0 | 1119 | 4623 |
-| roads | e34199_0ba | Pavement Path | Missing | 0/0 | 1146 | 4627 |
-| roads | e34199_0bb | Pavement Path | Missing | 0/0 | 1172 | 4632 |
-| roads | e34528_0aa | Pavement Path | Missing | 0/0 | 1451 | 4675 |
-| roads | e34528_0ab | Pavement Path | Missing | 0/0 | 1476 | 4679 |
-| roads | e34528_0b | Pavement Path | Missing | 0/0 | 1521 | 4686 |
 
 ### Retry files
 
@@ -87,7 +52,7 @@ Not written (pass --retry; entity ids are only valid for the running game sessio
 
 - Hairpins (Bézier length > 1.6 × chord, self-intersection, or a control point behind its end), checked on every imported CS1 segment: **0** found, 0 rebuilt.
 - Exact duplicate edges dropped: **0**.
-- Structure now from node elevation (not the B/E/S/T prefab suffix): 369 imported edges differ from the suffix-based class (Ground→Elevated 352, Ground→Tunnel 13, Elevated→Ground 4).
+- Structure now from node elevation (not the B/E/S/T prefab suffix): 358 imported edges differ from the suffix-based class (Ground→Elevated 342, Ground→Tunnel 13, Elevated→Ground 3).
 - Elevation ramps (Δelevation > 6 m over < 60 m) smoothed to ≤ 8 %: **44** ramps, 266 nodes raised/lowered, 5 still steeper than 12 % (blocked by a junction or the border).
 
 - Node merges refused because the nodes are stacked (height difference ≥ 2 m): **9**.

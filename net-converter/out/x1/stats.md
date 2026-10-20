@@ -6,9 +6,9 @@ Dump `C:\Users\dleva\AppData\Local/DakotaExport/2972879554_Dakota_Falls-20261019
 
 | layer | edges | nodes | border nodes | length km | ground | elevated | tunnel |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| highways | 1737 | 1720 | 10 | 116.1 | 1013 | 684 | 40 |
-| rail | 432 | 441 | 4 | 33.8 | 297 | 112 | 23 |
-| roads | 1669 | 1553 | 6 | 125.6 | 1590 | 79 | 0 |
+| highways | 1672 | 1658 | 10 | 112.0 | 977 | 655 | 40 |
+| rail | 430 | 439 | 4 | 33.7 | 297 | 110 | 23 |
+| roads | 1628 | 1515 | 6 | 124.4 | 1585 | 43 | 0 |
 | power | 60 | 62 | 1 | 12.8 | 60 | 0 | 0 |
 | skip | 722 | 797 | 12 | 63.8 | 722 | 0 | 0 |
 
@@ -23,14 +23,14 @@ Only highways, rail and roads are written as import files. power, skip and unmap
 
 | layer | CS2 prefab | edges | length km | from CS1 prefabs |
 |---|---|---:|---:|---|
-| highways | Highway Oneway - 1 lane | 283 | 15.9 | 2452038713.USRP 1L Interstate Ramp_Data, 2452038713.USRP 1L Interstate Ramp E |
-| highways | Highway Oneway - 2 lanes | 914 | 59.7 | 2452038713.USRP 2L Interstate E, 2452038713.USRP 2L Interstate_Data, 2452038713.USRP 2L Interstate B, 2452038713.USRP 2L Interstate T, 2452038713.USRP 2L Interstate S |
-| highways | Highway Oneway - 3 lanes | 509 | 38.8 | 2452038713.USRP 3L Interstate_Data, 2452038713.USRP 3L Interstate E, 2452038713.USRP 3L Interstate B, 2452038713.USRP 3L Interstate S |
+| highways | Highway Oneway - 1 lane | 244 | 13.7 | 2452038713.USRP 1L Interstate Ramp_Data, 2452038713.USRP 1L Interstate Ramp E |
+| highways | Highway Oneway - 2 lanes | 889 | 57.8 | 2452038713.USRP 2L Interstate E, 2452038713.USRP 2L Interstate_Data, 2452038713.USRP 2L Interstate B, 2452038713.USRP 2L Interstate T, 2452038713.USRP 2L Interstate S |
+| highways | Highway Oneway - 3 lanes | 508 | 38.7 | 2452038713.USRP 3L Interstate_Data, 2452038713.USRP 3L Interstate E, 2452038713.USRP 3L Interstate B, 2452038713.USRP 3L Interstate S |
 | highways | Highway Oneway - 4 lanes | 31 | 1.8 | 2452038713.USRP 4L Interstate_Data, 2452038713.USRP 4L Interstate E |
-| rail | Double Train Track | 432 | 33.8 | 2610252544.R2USA W GrWo 2x2_Data, 2610252544.R2USA W GrWo 2x2 T0, 2932555116.R2EUR W GrCo 2x2 Pedrido E, 2610252544.R2USA W GrWo 2x2 S0, 2836620152.R2EUR W GrCo 2x2 Ourense SA E, 2610252544.R2USA W GrWo 2x2 E0, 2926036331.R2USA W TrWo 2x2 TRH Girder 02_Data |
-| roads | Gravel Road | 1271 | 97.5 | Gravel Road, Gravel Road Elevated |
-| roads | Medium Road | 42 | 2.5 | 2097539846.USRP 4-Lane National Road_Data, 2098643957.USRP 3-Lane National Road_Data, 2098643957.USRP 3-Lane National Road E |
-| roads | Pavement Path | 48 | 1.5 | Pedestrian Gravel, Pedestrian Elevated |
+| rail | Double Train Track | 430 | 33.7 | 2610252544.R2USA W GrWo 2x2_Data, 2610252544.R2USA W GrWo 2x2 T0, 2932555116.R2EUR W GrCo 2x2 Pedrido E, 2610252544.R2USA W GrWo 2x2 S0, 2836620152.R2EUR W GrCo 2x2 Ourense SA E, 2610252544.R2USA W GrWo 2x2 E0 |
+| roads | Gravel Road | 1262 | 97.1 | Gravel Road, Gravel Road Elevated |
+| roads | Medium Road | 43 | 2.5 | 2097539846.USRP 4-Lane National Road_Data, 2098643957.USRP 3-Lane National Road_Data, 2098643957.USRP 3-Lane National Road E |
+| roads | Pavement Path | 15 | 0.6 | Pedestrian Gravel |
 | roads | Small Road | 308 | 24.1 | 2097530472.USRP 2-Lane National Road_Data, 2097530472.USRP 2-Lane National Road B |
 
 ## Unmapped CS1 prefabs (need a human decision)
@@ -215,7 +215,7 @@ Underground nodes 51; nodes with Outside flag 24; nodes beyond ±7168 m 778.
 
 - Hairpins (Bézier length > 1.6 × chord, self-intersection, or a control point behind its end), checked on every imported CS1 segment: **0** found, 0 rebuilt.
 - Exact duplicate edges dropped: **0**.
-- Structure now from node elevation (not the B/E/S/T prefab suffix): 371 imported edges differ from the suffix-based class (Ground→Elevated 352, Ground→Tunnel 13, Elevated→Ground 6).
+- Structure now from node elevation (not the B/E/S/T prefab suffix): 358 imported edges differ from the suffix-based class (Ground→Elevated 342, Ground→Tunnel 13, Elevated→Ground 3).
 - Elevation ramps (Δelevation > 6 m over < 60 m) smoothed to ≤ 8 %: **44** ramps, 266 nodes raised/lowered, 5 still steeper than 12 % (blocked by a junction or the border).
 
 - Node merges refused because the nodes are stacked (height difference ≥ 2 m): **9**.
@@ -281,7 +281,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 ## Other layers
 
 - Power: 60 courses of High-voltage Line in import-power.json (nodes on the ground).
-- Trees: 496,318 objects in 10 chunks under out\trees (points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale)); outside ±7168 m 158,877; dropped 73,855 (see trees/README.md).
+- Trees: 496,321 objects in 10 chunks under out\trees (points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale)); outside ±7168 m 158,877; dropped 73,855 (see trees/README.md).
 - Pack rocks: no y (their y was dropped on 1112); options.grounding {mode boundsMin, sink 0.15, slopeSink} grounds every object without y from its prefab bounds (bridge 0.9.19).
 - Object y policy: y only > 3 m above the CS2 playable heightmap (10190843-dktflls-1to1.png), never for buildings: 2301 with y; against the old CS1-terrain rule 556 lose y, 0 gain it.
 - Objects: 6130 of 8408 CS1 buildings/props got a CS2 target (72.9 %); SKIP 247, MANUAL 7, unmapped 0, outside ±7168 m 2024; 2301 carry y.
@@ -367,7 +367,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Water surface: 83,194 wet cells (waterSurface in the dump); source levels refined in import-water.json (water-check.md).
 - Terrain surfaces: 85,890 cells, 1 classes (surfaces-summary.md, surfaces.geojson).
 - Barrier props (import-walls-props.json): 621 ConcreteBarrier01 / SafetyBarrier01 pieces every 3 m along 62 CS1 barrier segments (piece length unverified).
-- Field surfaces (import-surfaces-fields.json): 56 polygons, 3.130 km², max 163 points; footprints also raise fertility to ≥ 220.
+- Field surfaces (import-surfaces-fields.json): 55 polygons, 3.153 km², max 48 points; footprints also raise fertility to ≥ 220.
 - Grass surfaces from 3076 Landscape Grass props (import-surfaces-grass.json, optional): 51 polygons, 0.026 km², max 130 points.
 - Rock surfaces (import-surfaces-rock.json): DakotaFalls-1to1-4096.png (|err| vs CS1 nodes 0.01 m), steep area 0.63 km² in 145 patches >= 400 m²; 151 polygons kept (0.60 km²), 0 smallest dropped.
 - Round 8 substation: 1 (b39573 TransformerStation01 at (1594, 4549), rotation 318.04, no y) -> import-substation.json.
@@ -375,7 +375,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Round 8 power ends: substation: CS1 end n12755 (1633, 4526), replaces e5094_0, new course n26177 -> (1600.5, 4544.0), 85 m; dam: CS1 end n16152 (1651, 4542), replaces e32855_0, new course n2881 -> (1555.8, 4685.1), 222 m -> import-power-ends.json.
 - Round 8 PO rocks v3: 793 objects (CliffRock6 88, CliffStack 81, CliffRock5 75, CliffSideTall 49, CliffSide2 47, CliffSide2Right 46, CliffSlim 45, CliffSide2Left 42, rzrock7 34, rzrock6 32, rzrock8 31, rzrock1 29, rzrock5 27, rzrock4 26, rzrock2 24, rzrock3 22, Boulder08 17, Boulder01 14, Boulder03 14, Boulder05 14, Boulder02 10, Boulder04 10, Boulder07 10, Boulder06 6) from 399 PO pieces, 0 over the cap of 1500 dropped, 64 PO objects > 60 m above their surroundings with CliffSide pieces down the steepest flank, 83 re-picked for the 80 m prefab/heading rule; with y 793; sink depth (mesh bottom below terrain): < 1 m 32, 1–5 m 451, 20–50 m 128, 50–100 m 133, > 100 m 49 -> import-po-rocks.json (import name po-rocks-v3).
 - Round 8 PO cliffs v1 (not written; their positions feed the rock scatter): 594 objects from 399 PO pieces (mountain 239, rock work 92, falls steps 68); bands > 160 m flank 267, > 160 m summit 111, 36–80 m 120, 80–160 m 75, 12–36 m 20, 3–12 m 1; 0 over the cap of 2500 dropped -> import-po-rocks.json.
-- Round 8 rock scatter: in water left out 75, slopes > 45° left out 1462, slopes 25–45° (lowered by the bridge's slopeSink) 5163; 17549 (small 12246, medium 4451, boulders 852) around 3110 rock/cliff objects (r 60 m) and in 151 rock polygons; rejected road 310, spacing 934, water 3970, border 35 -> import-rock-scatter.json.
+- Round 8 rock scatter: in water left out 75, slopes > 45° left out 1462, slopes 25–45° (lowered by the bridge's slopeSink) 5164; 17562 (small 12254, medium 4455, boulders 853) around 3110 rock/cliff objects (r 60 m) and in 151 rock polygons; rejected road 296, spacing 935, water 3970, border 35 -> import-rock-scatter.json.
 - Round 9 PO rock surfaces: 63 polygons (4.79 km² of 4.79 km² footprint, 48 patches, 0 dropped), gaga TTP - Pebbles 2L -> import-surfaces-po-rock.json.
 - Round 9 fort: 112 objects along the 12 CS1 Castle Wall segments (RuinsStoneFormation01 34, RuinsStoneFormation02 29, RuinsStoneCairns01 11, RuinsStoneCairns03 10, RuinsStoneCairns02 8, StandingStone05 4, StandingStone06 3, StandingStone07 3, StandingStone08 3, StandingStone01 2, StandingStone04 2, OldCastle01 1, StandingStone02 1, StandingStone03 1), keep OldCastle01 at (5, -2619) (UNVERIFIED placeable) -> import-fort.json; RuinsCastle01 stays in import-objects.json.
 - Round 9 PO walls left out (dropped by the game inside a highway in the run reports): pb273_side23, pb275_side23, pb646_side23.
@@ -384,13 +384,13 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Round 9 lake lake11: centre terrain 135.55 m vs level 135.84 m, moved to (6944, 2640) terrain 134.79 m.
 - Round 9 lake lake16: centre terrain 138.44 m vs level 138.91 m, moved to (640, 1008) terrain 136.86 m.
 - Round 9 lakes: 26 wet bodies above sea level 97.5 + 1 m with no CS1 source within 400 m; 18 sources (outside the map 4, single cells 4) -> import-water-lakes.json (append after import-water*.json).
-- Round 9 gaps: 6 edges -> import-gaps.json, written before the network (e15883_0; bowed 4.5 m away from e1403_0 Highway Oneway - 4 lanes (15.6 m, needs 18.0); e15883_0: 3-lane course 68 m (alternative: 4-lane taper 12 m + 3-lane, import-gaps-e15883-taper.json); e20430_0b: course moved 1 m away from e16466_0a (15.6 m at mid); gravel gap n895–n26596: 80 m; e25579_0: rebuilt, junction end snaps radius 6; e36563_0: rebuilt, junction end snaps radius 6; path stub n13342: 9.6 m, inside the road footprint; left to its snapToSegment in import-all.json; path stub n21342: connector 12.8 m to Gravel Road; path stub n7811: 9.3 m, inside the road footprint; left to its snapToSegment in import-all.json; 4 originals left out of import-all.json (e15883_0, e20430_0b, e25579_0, e36563_0)).
+- Round 9 gaps: 4 edges -> import-gaps.json, written before the network (e15883_0; bowed 4.5 m away from e1403_0 Highway Oneway - 4 lanes (15.6 m, needs 18.0); e15883_0: 3-lane course 68 m (alternative: 4-lane taper 12 m + 3-lane, import-gaps-e15883-taper.json); gravel gap n895–n26596: 80 m; e25579_0: rebuilt, junction end snaps radius 6; e36563_0: rebuilt, junction end snaps radius 6; path stub n7811: 9.3 m, inside the road footprint; left to its snapToSegment in import-all.json; 3 originals left out of import-all.json (e15883_0, e25579_0, e36563_0)).
 - Decal surfaces (import-surfaces-decals.json; PDO23 Dirty Surface 01 / PDO23 Soil Surface 01): 41 polygons, 0.022 km², max 298 points.
 - Sand: the 16 m-cell surfaces are dropped (owner review of A-v4); optional import-surfaces-sand-smooth.json: 387 blobs from 610 of 905 patches >= 2000 m² (21.54 km²).
 - Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
-- Paint plan S1 bank sand: 3279 cells, 330 polygons, 0.80 km².
-- Paint plan S3 bare earth + S4 dirt decals: 13359 cells, 90 polygons, 2.58 km².
-- Paint plan G1 fertile + G2 dry plains: 62264 cells, 160 polygons, 15.28 km².
+- Paint plan S1 bank sand: 376 cells, 22 polygons, 0.07 km².
+- Paint plan S3 bare earth + S4 dirt decals: 13359 cells, 90 polygons, 2.56 km².
+- Paint plan G1 fertile + G2 dry plains: 62204 cells, 159 polygons, 15.20 km².
 - Paint plan S2 submerged sand (none): 48363 cells, 0 polygons, 0.00 km².
 - Paint plan P1 stand-in pavement: 0 cells, 0 polygons, 0.00 km².
 - Resources: import-resources.json from the dump's naturalResources.
@@ -399,11 +399,11 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 
 | class | CS1 source | count | mapped | kept skipped | decision |
 |---|---|---:|---:|---:|---|
-| Field networks | network segments | 269 | 210 as surfaces | 59 (outside ±7168) | → 56 Agriculture Surface 01 polygons (import-surfaces-fields.json) + fertility; not imported as networks |
+| Field networks | network segments | 269 | 210 as surfaces | 59 (outside ±7168) | → 55 Agriculture Surface 01 polygons (import-surfaces-fields.json) + fertility; not imported as networks |
 | Landscape Grass | props | 3076 | 3076 | 0 | → 1:1 pack grass plants (Styx tufts, ferns, pd Long Grass, undergrowth, flowers; kind plant, age adult) in import-objects.json; 51 Grass Surface 01 clusters remain as the optional alternative |
 | Rocks (Surface Rock / Modular C / Breakwater) | buildings | 4538 | 4538 | 0 | → pack rocks (Arid, RZ, Cliffs and Rocks) mixed with vanilla Rock01-30, per class in object-mapping.tsv |
 | Decals (R69 dirt/mud) | props | 128 | 41 as surfaces | 87 (outside ±7168) | → 16 m squares of PDO23 Dirty Surface 01 (dirt) / PDO23 Soil Surface 01 (mud), import-surfaces-decals.json |
-| Pedestrian Gravel / Elevated | network segments | 24 | 24 | 0 | → Pavement Path (roads layer, elevations kept); CS2 has no gravel path |
+| Pedestrian Gravel / Elevated | network segments | 24 | 15 | 9 | → Pavement Path (roads layer, elevations kept); CS2 has no gravel path |
 | Quay | network segments | 7 | 7 | 0 | → QuayMedium01 (walls layer, import-walls.json) |
 | Canal | network segments | 14 | 14 | 0 | → Narrow Boatway (walls layer); CS2 boatways are canals |
 | Flood Wall | network segments | 2 | 2 | 0 | → Sound Barrier (walls layer), the only wall network by name |
@@ -427,21 +427,23 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - One-way highway stubs to CS1 dead ends left out: 34 courses.
   - n8637 (2293, 277) Highway Oneway - 3 lanes: 18 courses, 978 m (e11041_0b, e11041_0a, e10196_0, e28200_0g1b, e28200_0g1ab, e28200_0g1aa, e28200_0g0b, e28200_0g0a, e14126_0b, e14126_0a, e20175_0, e32957_0, e32111_0, e36051_0, e24272_0, e3851_0, e1819_0, e3304_0)
   - n23124 (2302, 255) Highway Oneway - 3 lanes: 16 courses, 883 m (e12979_0a, e12979_0b, e33179_0, e7805_0g0a, e7805_0g0b, e7805_0g1aa, e7805_0g1ab, e7805_0g1b, e15830_0a, e15830_0b, e15401_0, e36113_0, e12550_0, e34925_0, e20290_0, e12516_0)
+- One-way courses pruned after the stub removal (they met head-on at a node with no exit or no entry): 66: e8119_0 Highway Oneway - 1 lane (into n30535 (2993, 886)); e25129_0 Highway Oneway - 2 lanes (into n30535 (2993, 886)); e25373_0 Highway Oneway - 1 lane (out of n3386 (2998, 755)); e26404_0 Highway Oneway - 2 lanes (out of n3386 (2998, 755)); e27292_0 Highway Oneway - 1 lane (into n13759 (2981, 940)); e2766_0 Highway Oneway - 2 lanes (into n26885 (3002, 949)); e27661_0 Highway Oneway - 1 lane (out of n27194 (3013, 843)); e17757_0 Highway Oneway - 2 lanes (out of n29378 (3026, 829)); e14997_0 Highway Oneway - 1 lane (into n17987 (2938, 974)); e313_0 Highway Oneway - 2 lanes (into n17293 (3005, 1003)); e13208_0 Highway Oneway - 1 lane (out of n7564 (3020, 889)); e13445_0 Highway Oneway - 2 lanes (out of n25390 (3044, 905)); e28976_0 Highway Oneway - 1 lane (into n30878 (2883, 989)); e4709_0 Highway Oneway - 2 lanes (into n8312 (3006, 1081)); e8896_0 Highway Oneway - 1 lane (out of n19455 (3026, 934)); e36147_0 Highway Oneway - 2 lanes (out of n24875 (3051, 984)); e27740_0 Highway Oneway - 2 lanes (into n6711 (3008, 1177)); e22116_0 Highway Oneway - 1 lane (out of n24396 (3031, 980)); e27990_0 Highway Oneway - 2 lanes (out of n5968 (3053, 1080)); e36763_0 Highway Oneway - 2 lanes (into n24423 (3010, 1273)); e33693_0 Highway Oneway - 1 lane (out of n18425 (3035, 1026)); e16214_0 Highway Oneway - 2 lanes (out of n16258 (3055, 1176)); e29355_0 Highway Oneway - 2 lanes (into n6557 (3012, 1353)); e27364_0 Highway Oneway - 1 lane (out of n19888 (3037, 1072)); e21398_0 Highway Oneway - 2 lanes (out of n20953 (3057, 1272)); e28889_0 Highway Oneway - 2 lanes (into n14481 (3013, 1425)); e20380_0 Highway Oneway - 1 lane (out of n18998 (3014, 1111)); e9851_0 Highway Oneway - 2 lanes (out of n20413 (3059, 1352)); e31840_0 Highway Oneway - 1 lane (out of n6842 (2969, 1108)); e23999_0 Highway Oneway - 2 lanes (out of n27649 (3060, 1424)); e15972_0 Highway Oneway - 1 lane (out of n30225 (2922, 1074)); e36555_0 Highway Oneway - 2 lanes (out of n5652 (3062, 1504)); e33514_0 Highway Oneway - 1 lane (out of n25119 (2870, 1042)); e29380_0 Highway Oneway - 2 lanes (out of n7315 (3069, 1575)); e31521_0 Highway Oneway - 1 lane (out of n10145 (2814, 1016)); e23614_0 Highway Oneway - 2 lanes (out of n20435 (3087, 1645)); e1163_0 Highway Oneway - 2 lanes (out of n7633 (3114, 1713)); e22179_0 Highway Oneway - 2 lanes (out of n1085 (3151, 1776)); e15200_0 Highway Oneway - 2 lanes (out of n28026 (3196, 1833)); e24006_0 Highway Oneway - 3 lanes (out of n2687 (3249, 1882)); e24404_0 Highway Oneway - 3 lanes (out of n30919 (3307, 1923)); e19786_0a Highway Oneway - 2 lanes (out of n6721 (3369, 1960)); e29495_0 Highway Oneway - 1 lane (out of n6721 (3369, 1960)); e19786_0b Highway Oneway - 2 lanes (out of e19786_0d0 (3411, 1985)); e5138_0 Highway Oneway - 1 lane (out of n9858 (3440, 1973)); e843_0a Highway Oneway - 1 lane (out of n16924 (3446, 2003)); e36808_0a Highway Oneway - 1 lane (out of n16924 (3446, 2003)); e18529_0 Highway Oneway - 1 lane (out of n5520 (3495, 1972)); e843_0b Highway Oneway - 1 lane (out of e843_0d0 (3489, 2003)); e36808_0b Highway Oneway - 1 lane (out of e36808_0d0 (3470, 2018)); e21043_0 Highway Oneway - 1 lane (out of n21261 (3548, 1983)); e1223_0 Highway Oneway - 1 lane (out of n12338 (3527, 1983)); e26285_0 Highway Oneway - 1 lane (out of n3564 (3501, 2037)); e19546_0 Highway Oneway - 1 lane (out of n24558 (3594, 2010)); e32995_0 Highway Oneway - 1 lane (out of n13645 (3561, 1942)); e10276_0 Highway Oneway - 1 lane (out of n21433 (3549, 2066)); e34570_0 Highway Oneway - 1 lane (out of n10124 (3623, 2055)); e13835_0 Highway Oneway - 1 lane (out of n23073 (3591, 1904)); e6041_0a Highway Oneway - 1 lane (out of n9640 (3595, 2096)); e15892_0 Highway Oneway - 1 lane (out of n1402 (3632, 2108)); e20045_0 Highway Oneway - 1 lane (out of n16707 (3630, 1875)); e6041_0b Highway Oneway - 1 lane (out of e6041_0d0 (3625, 2115)); e5294_0 Highway Oneway - 1 lane (out of n2258 (3620, 2182)); e32650_0 Highway Oneway - 1 lane (out of n31191 (3648, 2132)); e32567_0 Highway Oneway - 1 lane (out of n4688 (3599, 2254)); e35790_0 Highway Oneway - 1 lane (out of n5521 (3587, 2317)).
 - Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md (33 dropped courses).
+- e20430_0b clear of its parallel carriageway: e20430_0b Highway Oneway - 3 lanes beside e16466_0a Highway Oneway - 3 lanes (15.5 m; run report: move 0.9 m): moved 1.9 m
 - Courses inside a highway footprint (walls, decor) moved sideways by the two CS2 half-widths + 1 m: 0; impossible (between carriageways) 0.
 - Seaways stay at the riverbed (pass --seaway-at-water to write them at the water surface once the dig test shows digging).
 - Pavement Path dead ends snapped onto the segment beside them (snapToSegment, ≤ 20 m, Δy ≤ 3 m): 3: n7811 (4783, -683) → e17505_0 Small Road, 9.3 m, Δy 0.0 m, radius 11; n21342 (737, 4853) → e36560_0 Gravel Road, 12.8 m, Δy 0.0 m, radius 15; n13342 (1577, 4694) → e21878_0 Gravel Road, 9.6 m, Δy 0.1 m, radius 12.
 
 ## Bridges (bridges.tsv)
 
-25 bridge overrides; 47 edges in import-bridges.json, 9 in import-bridges-fixed.json (on). No prefab name is verified in game yet; --bridges off keeps every CS1 bridge as the plain mapped road. Rule checks: the bridge's 0.9.22 pre-checks computed offline against ../bridges/cs2-bridge-rules.json (bridge.lowElevation and vanilla prefabs are left to the runner's dry run). noPillars: BR006 deck, BR001 connectors and 4 BR001 deck segments outside the merged span.
+25 bridge overrides; 54 edges in import-bridges.json, 5 in import-bridges-fixed.json (on). No prefab name is verified in game yet; --bridges off keeps every CS1 bridge as the plain mapped road. Rule checks: the bridge's 0.9.22 pre-checks computed offline against ../bridges/cs2-bridge-rules.json (bridge.lowElevation and vanilla prefabs are left to the runner's dry run). noPillars: BR006 deck, BR001 connectors and 4 BR001 deck segments outside the merged span.
 
 | bridge | prefab | plan | chains | edges | lengths m | file | notes | rule checks (cs2-bridge-rules.json) |
 |---|---|---|---:|---:|---|---|---|---|
 | BR001 | BXP SuspensionBridge03 - Six Lane Highway | fixed:168,320,320,168;merge | 2 | 1 | 976 | fixed | Detroit: two 3-lane carriageways merged onto the 6-lane two-way suspension, towers 640 m apart (CS1 723 m); tower spacing 640 m vs CS1 724 m; carriageway n27934: 26 courses between e29898_0d0 and e11895_0d0 replaced; connectors 141 / 140 m; carriageway n14554: 29 courses between e33845_0d0 and e36148_0d0 replaced; connectors 140 / 141 m; clearance over e3593_0 Medium Seaway: 124.1 m (deck − course, output metres); deck over the water: min 58.1 m | fixed br001_deck: 976 m within 586–1366 m (nominal 976) |
-| BR022 | BXP Arc Pedestrian Bridge Revised | count:1 | 4 | 4 | 4×446 | fixed | white multi-arch below the dam: decor arches along the CS1 monorail arch line, one edge per arc chain (not a fixed-span prefab per cs2-bridge-rules.json; the game cuts it into ≤ 44.8 m pieces); br022_c1: edge 446 m outside 0.6–1.4 × 32 m (19–45); br022_c2: edge 446 m outside 0.6–1.4 × 32 m (19–45); br022_c3: edge 446 m outside 0.6–1.4 × 32 m (19–45); br022_c4: edge 446 m outside 0.6–1.4 × 32 m (19–45) | br022_c1_e0: 446 m > 44.8 m, the game cuts it into 10 pieces; br022_c2_e0: 446 m > 44.8 m, the game cuts it into 10 pieces; br022_c3_e0: 446 m > 44.8 m, the game cuts it into 10 pieces; br022_c4_e0: 446 m > 44.8 m, the game cuts it into 10 pieces |
-| BR005 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | count:2 | 2 | 4 | 4×164 | bridges | Hernando-Desoto: two ~150 m arches per carriageway ("M") | ok |
-| BR009 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | span:179.2 | 2 | 4 | 4×105 | bridges | green truss arch over the gorge; the owner asked for one edge per carriageway, but the deck chain is 210 m straight (> 1.4 × 128 = 179 m), so two | ok |
+| BR004 | (dropped) | drop | 0 | 0 |  | bridges | dam-crest walkway (Pedestrian Elevated, 799 m): dropped (owner review of A-v5: an unwanted footpath along the dam); 31 courses dropped, 798 m; footpaths that only led onto it: 2 (118 m) | ok |
+| BR005 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | count:2 | 2 | 4 | 4×164 | bridges | Hernando-Desoto: two ~150 m arches per carriageway ("M"); br005_c1: approach e3338_0 met the deck at 6°, its end now runs straight onto the deck; br005_c1: approach e36804_0 met the deck at 6°, its end now runs straight onto the deck; br005_c2: approach e32991_0 met the deck at 15°, its end now runs straight onto the deck | ok |
+| BR009 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | span:179.2 | 2 | 4 | 4×105 | bridges | green truss arch over the gorge; the owner asked for one edge per carriageway, but the deck chain is 210 m straight (> 1.4 × 128 = 179 m), so two; br009_c1: approach e18373_0 met the deck at 42°, its end now runs straight onto the deck | ok |
 | BR006 | Truss Arch Bridge - Small Road - 2 Lanes | span:179.2 | 1 | 4 | 4×146 | bridges | red deck arch over the dry valley (vanilla truss arch; BXP equivalent if this name fails) | ok |
 | BR007 | TrussArchBridge01 | fixed:128,128;count:1 | 1 | 1 | 189 | bridges | Ourense: truss arch over the main span, ONE edge abutment to abutment (live rules: fixed 128 + 128 m, edge 153.6–358.4 m); approaches stay Double Train Track | fixed br007_c1_e0: 189 m within 154–358 m (nominal 256) |
 | BR010 | TrussArchBridge01 | fixed:128,128;count:1 | 1 | 1 | 265 | bridges | Pedrido: truss arch over the bow-string part, ONE edge abutment to abutment (fixed 128 + 128 m, edge 153.6–358.4 m) | fixed br010_c1_e0: 265 m within 154–358 m (nominal 256) |
@@ -449,26 +451,28 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | BR026 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder (96 m: 2 edges) | ok |
 | BR033 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder | ok |
 | BR035 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×59 | bridges | TRH through girder | ok |
-| BR038 | BXP Truss Viaduct - Train | span:89.6 | 1 | 0 |  | bridges | TRH through girder; br038_c1: kept the base prefab: lifting the deck +2.6 m makes the approach e23392_0a 6.9 % (> 5 %) | ok |
+| BR038 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder; br038_c1: deck lifted +2.6 m to 8.5 m above the terrain; 1 approach nodes re-graded at ≤ 6 % | ok |
 | BR042 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×64 | bridges | TRH through girder | ok |
 | BR011 | BXP Truss Viaduct - Train |  | 0 | 0 |  | bridges | R2USA B0 rail viaduct, one edge per span; no converted edges (outside the map or skipped) | ok |
 | BR012 | BXP Truss Viaduct - Train | span:89.6 | 1 | 5 | 5×74 | bridges | R2USA B0 rail viaduct | ok |
 | BR015 | BXP Truss Viaduct - Train | span:89.6 | 1 | 5 | 5×75 | bridges | R2USA B0 rail viaduct | ok |
-| BR017 | BXP Truss Viaduct - Train | span:89.6 | 1 | 4 | 4×68 | bridges | R2USA B0 rail viaduct; br017_c1: deck lifted +1.0 m to reach 8.5 m above the terrain (bridge.lowElevation); approaches re-graded | ok |
+| BR017 | BXP Truss Viaduct - Train | span:89.6 | 1 | 4 | 4×68 | bridges | R2USA B0 rail viaduct; br017_c1: deck lifted +1.0 m to 8.5 m above the terrain; 0 approach nodes re-graded at ≤ 6 % | ok |
 | BR028 | BXP Truss Viaduct - Train | span:89.6 | 1 | 3 | 3×63 | bridges | R2USA B0 rail viaduct | ok |
 | BR019 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 3 | 3×64 | bridges | gravel trestle | ok |
-| BR020 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 2 | 2×84 | bridges | gravel trestle; br020_c1: deck lifted +1.2 m to reach 8.5 m above the terrain (bridge.lowElevation); approaches re-graded; br020_c1: CS1 chain curves up to 7 m off the straight line (171 m along, 168 m straight); br020_c1: deck 9.3 m over the water at (1258, 6142) (< 10 m, m_ElevationOnWater [U]) | bridge.waterClearance (warning) br020_c1_e0: 9.9 m < 10 m over the water; bridge.waterClearance (warning) br020_c1_e1: 7.2 m < 10 m over the water |
-| BR044 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 78 | bridges | gravel trestle; br044_c1: deck lifted +0.8 m to reach 8.5 m above the terrain (bridge.lowElevation); approaches re-graded | ok |
-| BR045 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 0 |  | bridges | gravel trestle; br045_c1: kept the base prefab: the deck is 3.1 m above the terrain and would need +5.4 m for bridge.lowElevation (≥ 8 m); a bridge prefab is wrong this low | ok |
-| BR049 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 0 |  | bridges | gravel trestle; br049_c1: kept the base prefab: the deck is 1.2 m above the terrain and would need +7.3 m for bridge.lowElevation (≥ 8 m); a bridge prefab is wrong this low | ok |
-| BR050 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 0 |  | bridges | gravel trestle; br050_c1: kept the base prefab: the deck is 1.1 m above the terrain and would need +7.4 m for bridge.lowElevation (≥ 8 m); a bridge prefab is wrong this low | ok |
-| BR053 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 0 |  | bridges | gravel trestle; br053_c1: kept the base prefab: the deck is 0.2 m above the terrain and would need +8.3 m for bridge.lowElevation (≥ 8 m); a bridge prefab is wrong this low | ok |
-- Gaps: 6 edges in import-gaps.json; originals left out of import-all.json: e15883_0, e20430_0b, e25579_0, e36563_0.
+| BR020 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 2 | 2×84 | bridges | gravel trestle; br020_c1: deck lifted +1.2 m to 8.5 m above the terrain; 1 approach nodes re-graded at ≤ 6 %; br020_c1: CS1 chain curves up to 7 m off the straight line (171 m along, 168 m straight); br020_c1: deck 9.3 m over the water at (1258, 6142) (< 10 m, m_ElevationOnWater [U]) | bridge.waterClearance (warning) br020_c1_e0: 9.9 m < 10 m over the water; bridge.waterClearance (warning) br020_c1_e1: 7.2 m < 10 m over the water |
+| BR044 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 78 | bridges | gravel trestle; br044_c1: deck lifted +0.8 m to 8.5 m above the terrain; 0 approach nodes re-graded at ≤ 6 % | ok |
+| BR045 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 2 | 2×63 | bridges | gravel trestle; br045_c1: deck lifted +5.4 m to 8.5 m above the terrain; 1 approach nodes re-graded at ≤ 6 % | ok |
+| BR049 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 86 | bridges | gravel trestle; br049_c1: deck lifted +7.3 m to 8.5 m above the terrain; 3 approach nodes re-graded at ≤ 6 % | ok |
+| BR050 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 81 | bridges | gravel trestle; br050_c1: deck lifted +7.4 m to 8.5 m above the terrain; 5 approach nodes re-graded at ≤ 6 % | ok |
+| BR053 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 67 | bridges | gravel trestle; br053_c1: deck lifted +8.3 m to 8.5 m above the terrain; 3 approach nodes re-graded at ≤ 6 % | ok |
+- Grade separation restored: (-4224, -60) e3118_0g1 Highway Oneway - 1 lane / e29315_0a Medium Road: 3.7 m apart, CS1 6.7 m; e29315_0a gets a node at its CS1 height.
+- Gaps: 4 edges in import-gaps.json; originals left out of import-all.json: e15883_0, e25579_0, e36563_0.
 - Road QA fixes: pipeline dead ends snapped 0, stubs < 40 m left out 0, residual 0; isolated pieces < 100 m left out 0, kept (isolated in CS1 too) 1.
   - isolated, kept: (367, -3024) Pavement Path, 83 m (e7126_0, e28940_0, e18960_0): isolated in CS1 too
 - Water sources: 65 → 41 (12 changes, water-check.md).
-- EXPERIMENT trees: the 641 net-corridor trees are in experiment-trees-net-corridor-01.json (import after the main tree files to try them; undo by its name).
-- Trees masked (same set for both scales): terrain below sea level 10,093; inside the CS1 water surface 1,133; on a ground-level net corridor (half width + 2 m) 641; total 11,867, 496,368 remain.
+- EXPERIMENT trees: the 638 net-corridor trees are in experiment-trees-net-corridor-01.json (import after the main tree files to try them; undo by its name).
+- Trees masked (same set for both scales): terrain below sea level 10,093; inside the CS1 water surface 1,133; on a ground-level net corridor (half width + 2 m) 638; total 11,864, 496,371 remain.
 - Field circles: 7 overlapping pairs shrunk to touch (0.5 m gap) instead of a union, so they stay circles.
+- Fields: 55 circles (closed CS1 rings, and open arcs fitted by least squares, RMS < 6 m), 0 swept arcs left (smoothed).
 - Grass surfaces: 2 overlapping pairs merged in 2 groups (53 → 51).
 - Decal surfaces: 227 overlapping pairs merged in 11 groups (128 → 41).

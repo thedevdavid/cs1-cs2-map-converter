@@ -205,6 +205,40 @@ auditLog.AppendLine($"- Short border edges folded into their neighbour (< 10 m):
     auditLog.AppendLine($"- One-way highway stubs to CS1 dead ends left out: {gone.Count} courses.");
     foreach (var l in stubLog) auditLog.AppendLine($"  - {l}");
     Console.WriteLine($"highway stubs: {gone.Count} courses left out ({stubLog.Count} ends)");
+
+    // Owner review of A-v5: removing a stub can leave its feeders meeting head-on (two one-way courses both into, or both out of, a node: the 3-lane
+    // stub was the outflow of a merge at (2993, 886) and (2998, 755)). Prune one-way courses into a node they cannot leave (a sink) or out of a node
+    // nothing feeds (a source), repeatedly, border nodes excepted, so the unfinished branch goes as a whole. Only after a stub removal, so a CS1
+    // one-way dead end elsewhere is untouched.
+    var pruned = new List<string>();
+    if (gone.Count > 0)
+    {
+        var seeds = gone.SelectMany(e => new[] { e.A, e.B }).ToHashSet(ReferenceEqualityComparer.Instance);
+        bool changed = true; int guardIt = 0;
+        while (changed && guardIt++ < 200)
+        {
+            changed = false;
+            var net = result.Edges.Where(e => e.Map.Imported).ToList();
+            var at = new Dictionary<OutNode, List<OutEdge>>(ReferenceEqualityComparer.Instance);
+            foreach (var e in net) foreach (var n in new[] { e.A, e.B }) (at.TryGetValue(n, out var l) ? l : at[n] = new()).Add(e);
+            foreach (var n in seeds.Cast<OutNode>().ToList())
+            {
+                if (n.Border || !at.TryGetValue(n, out var es) || es.Count == 0) continue;
+                if (!es.All(e => e.Info.OneWay)) continue;
+                bool allIn = es.All(e => e.B == n), allOut = es.All(e => e.A == n);
+                if (!allIn && !allOut) continue;
+                foreach (var e in es)
+                {
+                    result.Edges.Remove(e); result.Fate[e.Cs1Segment] = "left out: one-way feeder of a removed CS1 dead-end stub";
+                    pruned.Add(FormattableString.Invariant($"{e.Id} {e.Map.Cs2Prefab} ({(allIn ? "into" : "out of")} {n.Id} ({n.Position.X:F0}, {n.Position.Z:F0}))"));
+                    seeds.Add(e.A == n ? e.B : e.A);
+                }
+                changed = true;
+            }
+        }
+    }
+    auditLog.AppendLine($"- One-way courses pruned after the stub removal (they met head-on at a node with no exit or no entry): {pruned.Count}{(pruned.Count > 0 ? ": " + string.Join("; ", pruned) : "")}.");
+    Console.WriteLine($"one-way prune: {pruned.Count} courses");
 }
 {
     // Run A-v3: walls and decor that run inside a highway's footprint are dropped by the game; move them sideways.
@@ -212,6 +246,10 @@ auditLog.AppendLine($"- Short border edges folded into their neighbour (< 10 m):
     var reports = Directory.Exists(runReportsDir) ? Directory.GetFiles(runReportsDir, "run-*.md").OrderBy(p => p, StringComparer.Ordinal).ToList() : new List<string>();
     var drops = reports.Count > 0 ? FootprintShift.ParseDrops(reports) : null;
     if (drops != null) auditLog.AppendLine($"- Run reports read for game drops: {string.Join(", ", reports.Select(Path.GetFileName))} ({drops.Count} dropped courses).");
+    // A-v5: e20430_0b (3-lane) runs 15.6 m beside the parallel 3-lane carriageway, inside the two half-widths (16 m); the game never built it, as
+    // original or as a separate rebuild. Move it (and its end nodes) 1.9 m away in the network itself.
+    var e204 = FootprintShift.Apply(result, result.Edges.Where(e => e.Id == "e20430_0b"), topologyFactor, new Dictionary<string, (string Prefab, double Move)> { ["e20430_0b"] = ("Highway Oneway - 3 lanes", 0.9) });
+    foreach (var l in e204.Shifted.Concat(e204.Impossible)) auditLog.AppendLine($"- e20430_0b clear of its parallel carriageway: {l}");
     // Only the courses still written (canals, flood walls): moving a dropped quay's node would bend the road it shares.
     var fs8 = FootprintShift.Apply(result, result.Layer(Layers.Walls).Where(e => e.Map.Cs2Prefab is not ("QuaySmall01" or "QuayMedium01")), topologyFactor, drops);
     auditLog.AppendLine($"- Courses inside a highway footprint (walls, decor) moved sideways by the two CS2 half-widths + 1 m: {fs8.Shifted.Count}; impossible (between carriageways) {fs8.Impossible.Count}.");
@@ -295,6 +333,65 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
         auditLog.AppendLine(FormattableString.Invariant($"| {r.Id} | {r.Prefab} | {r.Plan} | {r.Chains} | {r.Lengths.Count} | {string.Join(", ", r.Lengths.Select(l => l.ToString("F0", System.Globalization.CultureInfo.InvariantCulture)).GroupBy(l => l).Select(g => g.Count() > 1 ? $"{g.Count()}×{g.Key}" : g.Key))} | {(r.InFixedFile ? "fixed" : "bridges")} | {r.Notes}{(r.Problems.Count > 0 ? "; " + string.Join("; ", r.Problems) : "")} | {(checks.TryGetValue(r.Id, out var ck) && ck.Count > 0 ? string.Join("; ", ck) : "ok")} |"));
     Console.WriteLine($"bridges: {bRep.Count} overrides, {bMain.Edges.Count} edges -> import-bridges.json, {bFixed.Edges.Count} -> import-bridges-fixed.json ({(bridgesFixedOn ? "on" : "off")})");
     bridgeNodes = bMain.Nodes.Concat(bFixed.Nodes).ToList();
+}
+{
+    // Owner review of A-v5: crossings that CS1 separated (> 5 m) but our courses do not (< 4 m), because a course follows only its end heights while
+    // the CS1 Bézier dipped (or rose) in between: the course that was lower in CS1 gets a node at the crossing at its CS1 height.
+    var ci = System.Globalization.CultureInfo.InvariantCulture;
+    var net = result.Edges.Where(e => e.Map.Imported && e.Map.Cs2Prefab != "Pavement Path").ToList();
+    var segMap = dump.Segments.ToDictionary(sg => sg.Id);
+    double YAt(OutEdge e, double t) => e.A.Position.Y + t * (e.B.Position.Y - e.A.Position.Y);
+    double? Cs1Y(OutEdge e, double x, double z)
+    {
+        if (!segMap.TryGetValue(e.Cs1Segment, out var sg)) return null;
+        double best = double.MaxValue, y = 0;
+        for (int k = 0; k <= 48; k++) { var p = sg.Bezier.Eval(k / 48.0); double d = (p.X - x) * (p.X - x) + (p.Z - z) * (p.Z - z); if (d < best) { best = d; y = p.Y; } }
+        return best < 15 * 15 ? y : null;
+    }
+    var samples = net.ToDictionary(e => e, e => Enumerable.Range(0, 17).Select(k => e.Curve.Eval(k / 16.0)).ToArray(), ReferenceEqualityComparer.Instance);
+    var cells = new Dictionary<(int, int), List<OutEdge>>();
+    foreach (var e in net) foreach (var p in samples[e]) { var k = ((int)Math.Floor(p.X / 100), (int)Math.Floor(p.Z / 100)); if (!cells.TryGetValue(k, out var l)) cells[k] = l = new(); if (!l.Contains(e)) l.Add(e); }
+    var fixes = new List<(OutEdge Lower, double T, double Y, string Note)>();
+    var seenPairs = new HashSet<(OutEdge, OutEdge)>();
+    foreach (var l in cells.Values)
+        for (int i = 0; i < l.Count; i++)
+            for (int j = i + 1; j < l.Count; j++)
+            {
+                var (e1, e2) = (l[i], l[j]);
+                if (!e1.Map.Cs2Prefab!.StartsWith("Highway") && !e2.Map.Cs2Prefab!.StartsWith("Highway")) continue;
+                if (e1.A == e2.A || e1.A == e2.B || e1.B == e2.A || e1.B == e2.B || !seenPairs.Add((e1, e2))) continue;
+                var p1 = samples[e1]; var p2 = samples[e2];
+                for (int a = 0; a < 16; a++)
+                    for (int b = 0; b < 16; b++)
+                    {
+                        double d1x = p1[a + 1].X - p1[a].X, d1z = p1[a + 1].Z - p1[a].Z, d2x = p2[b + 1].X - p2[b].X, d2z = p2[b + 1].Z - p2[b].Z, den = d1x * d2z - d1z * d2x;
+                        if (Math.Abs(den) < 1e-9) continue;
+                        double tt = ((p2[b].X - p1[a].X) * d2z - (p2[b].Z - p1[a].Z) * d2x) / den, uu = ((p2[b].X - p1[a].X) * d1z - (p2[b].Z - p1[a].Z) * d1x) / den;
+                        if (tt < 0 || tt > 1 || uu < 0 || uu > 1) continue;
+                        double t1 = (a + tt) / 16, t2 = (b + uu) / 16, x = p1[a].X + tt * d1x, z = p1[a].Z + tt * d1z;
+                        double our = Math.Abs(YAt(e1, t1) - YAt(e2, t2)) / topologyFactor;
+                        if (Cs1Y(e1, x, z) is not { } c1 || Cs1Y(e2, x, z) is not { } c2) continue;
+                        double cs1 = Math.Abs(c1 - c2) / topologyFactor;
+                        if (our >= 4 || cs1 <= 5) continue;
+                        var (lower, tl, yl) = c1 < c2 ? (e1, t1, c1) : (e2, t2, c2);
+                        if (tl < 0.05 || tl > 0.95) continue;   // the split course needs the crossing away from its ends
+                        fixes.Add((lower, tl, yl, FormattableString.Invariant($"({x:F0}, {z:F0}) {e1.Id} {e1.Map.Cs2Prefab} / {e2.Id} {e2.Map.Cs2Prefab}: {our:F1} m apart, CS1 {cs1:F1} m; {lower.Id} gets a node at its CS1 height")));
+                    }
+            }
+    foreach (var g in fixes.GroupBy(x => x.Lower, ReferenceEqualityComparer.Instance))
+    {
+        var (e, t, y, note) = g.First();   // one split per course
+        if (t < 0.05 || t > 0.95) continue;
+        var (left, right) = e.Curve.Split(t);
+        var m = left.D;
+        double terr = e.A.Terrain + t * (e.B.Terrain - e.A.Terrain);
+        var mid = new OutNode { Id = e.Id + "x", Position = m with { Y = Math.Max(y, terr) }, Terrain = terr, Elevation = Math.Max(0, y - terr), Pinned = true };
+        var e1n = new OutEdge { Id = e.Id + "x0", Cs1Segment = e.Cs1Segment, Map = e.Map, Info = e.Info, AiStructure = e.AiStructure, Structure = e.Structure, A = e.A, B = mid, Curve = left with { D = mid.Position }, Wall = e.Wall };
+        var e2n = new OutEdge { Id = e.Id + "x1", Cs1Segment = e.Cs1Segment, Map = e.Map, Info = e.Info, AiStructure = e.AiStructure, Structure = e.Structure, A = mid, B = e.B, Curve = right with { A = mid.Position }, Wall = e.Wall };
+        int idx = result.Edges.IndexOf(e); result.Edges[idx] = e1n; result.Edges.Insert(idx + 1, e2n);
+        auditLog.AppendLine($"- Grade separation restored: {note}.");
+    }
+    Console.WriteLine($"grade separations restored: {fixes.Select(x => x.Lower).Distinct(ReferenceEqualityComparer.Instance).Count()}");
 }
 {
     // Network gaps (Run A): the rebuilt courses replace their originals in import-all.json (fresh-map runs; the original and its rebuild
@@ -748,8 +845,9 @@ void WriteLayers()
     int shrunk = Surfaces.SeparateCircles(circles);
     auditLog.AppendLine($"- Field circles: {shrunk} overlapping pairs shrunk to touch (0.5 m gap) instead of a union, so they stay circles.");
     var fields = circles.Select((c, k) => new SurfacePolygon($"field{k + 1}", "Agriculture Surface 01", c.Ring, string.Create(System.Globalization.CultureInfo.InvariantCulture, $"centre-pivot field, centre ({c.Cx:F0}, {c.Cz:F0}), radius {c.R:F0} m")))
-        .Concat(Surfaces.Polygonize(fieldCells, fine).Select((r, k) => new SurfacePolygon($"fieldarc{k + 1}", "Agriculture Surface 01", r, "open field-network arc (swept footprint)"))).ToList();
-    if (fields.Count > 0) Surfaces.Write(Path.Combine(outDir, "import-surfaces-fields.json"), "surfaces-fields", fields, "CS1 centre-pivot fields: one circle per closed field-network ring (radius = ring radius + network half-width), 48 points; open arcs swept on a 4 m grid. Circles may overlap their neighbours slightly.");
+        .Concat(SmoothRings.Smooth(Surfaces.Polygonize(fieldCells, fine), 20261020).Select((r, k) => new SurfacePolygon($"fieldarc{k + 1}", "Agriculture Surface 01", r, "open field-network arc that fits no circle (swept footprint, smoothed)"))).ToList();
+    auditLog.AppendLine($"- Fields: {circles.Count} circles (closed CS1 rings, and open arcs fitted by least squares, RMS < 6 m), {fields.Count - circles.Count} swept arcs left (smoothed).");
+    if (fields.Count > 0) Surfaces.Write(Path.Combine(outDir, "import-surfaces-fields.json"), "surfaces-fields", fields, "CS1 centre-pivot fields: one circle per closed field-network ring and per open arc that fits a circle (least squares on the CS1 segments; radius + network half-width), 48 points; arcs that fit no circle are swept and smoothed. Circles may overlap their neighbours slightly.");
     Func<double, double, bool>? fieldMask = fields.Count == 0 ? null : (x, z) =>
     {
         foreach (var c in circles) if ((x - c.Cx) * (x - c.Cx) + (z - c.Cz) * (z - c.Cz) <= c.R * c.R) return true;

@@ -3,7 +3,6 @@
   "_comment": "Rebuilt Run A gaps; the courses in \u0027replaces\u0027 are left out of import-all.json. Ends join the network import through snapToSegment.",
   "replaces": [
     "e15883_0",
-    "e20430_0b",
     "e25579_0",
     "e36563_0"
   ],
@@ -23,26 +22,6 @@
       "x": 412.35,
       "y": 227.55,
       "z": -4473.97,
-      "snapToSegment": {
-        "radius": 3,
-        "prefabContains": "Highway Oneway"
-      }
-    },
-    {
-      "id": "e20430_0d0",
-      "x": 837.05,
-      "y": 334.78,
-      "z": 4022.43,
-      "snapToSegment": {
-        "radius": 3,
-        "prefabContains": "Highway Oneway"
-      }
-    },
-    {
-      "id": "n7849",
-      "x": 798.9,
-      "y": 334.78,
-      "z": 4000.34,
       "snapToSegment": {
         "radius": 3,
         "prefabContains": "Highway Oneway"
@@ -106,26 +85,6 @@
         "radius": 3,
         "prefabContains": "Gravel"
       }
-    },
-    {
-      "id": "n21342",
-      "x": 736.56,
-      "y": 342.78,
-      "z": 4852.67,
-      "snapToSegment": {
-        "radius": 2,
-        "prefabContains": "Pavement Path"
-      }
-    },
-    {
-      "id": "n21342_join",
-      "x": 724.12,
-      "y": 341.69,
-      "z": 4849.8,
-      "snapToSegment": {
-        "radius": 20,
-        "prefabContains": "Gravel Road"
-      }
     }
   ],
   "edges": [
@@ -147,25 +106,6 @@
         ]
       ],
       "note": "e15883_0 as a 3-lane course; bowed 4.5 m away from e1403_0 Highway Oneway - 4 lanes (15.6 m, needs 18.0)"
-    },
-    {
-      "id": "gap_e20430_offset",
-      "a": "e20430_0d0",
-      "b": "n7849",
-      "prefab": "Highway Oneway - 3 lanes",
-      "control": [
-        [
-          823.23,
-          334.78,
-          4015.66
-        ],
-        [
-          808.65,
-          334.78,
-          4007.23
-        ]
-      ],
-      "note": "e20430_0b with its course bowed 1 m away from e16466_0a (15.6 m off)"
     },
     {
       "id": "gap_n895_n26596",
@@ -223,25 +163,6 @@
         ]
       ],
       "note": "Run A: T-junction node absorbed"
-    },
-    {
-      "id": "gap_n21342_path",
-      "a": "n21342",
-      "b": "n21342_join",
-      "prefab": "Pavement Path",
-      "control": [
-        [
-          732.41,
-          342.41,
-          4851.71
-        ],
-        [
-          728.27,
-          342.05,
-          4850.75
-        ]
-      ],
-      "note": "path stub joined to Gravel Road, 12.8 m"
     }
   ],
   "options": {

@@ -403,3 +403,12 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   terrain and the CS1 water 40 m north (reservoir ≈ 157.8 m) and south (≈ 154–156 m) of each point.
 - `tools/import-run.mjs`: `run-state.json` per scale folder records every imported file with its importId; `--skip`, `--only` or `--resume` skip what is there,
   a plain run or `--fresh` starts a new map state.
+
+## Round 19: owner review of A-v5
+
+- bridges.tsv: BR022 dropped, BR004 `drop` (segments and the footpaths that only led onto them leave the network).
+- `SmoothRings.cs`: raster surfaces close/open 2 cells, simplify half a cell, 3 Chaikin passes, 6–10 m edge noise, ≥ 1 500 m²; fields: least-squares circles for open arcs.
+- Bridges: twin-overlap and course-through-deck checks fall back to the base road; approaches meeting the deck at > 4° get their end control point on the
+  deck line; low decks are lifted to 8.5 m with a breadth-first ≤ 6 % regrade of every approach branch (fallback only past 150 m).
+- Network: e20430_0b moved clear of its parallel carriageway; one-way courses left without exit or entry after the stub removal are pruned; crossings that CS1
+  separated but our straight height profile did not get a node at the lower course's CS1 height.
