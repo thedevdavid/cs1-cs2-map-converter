@@ -1,0 +1,26 @@
+{
+  "waterEdit": {
+    "waterColor": [0.26, 0.52, 0.46],
+    "scatteringColor": [0.16, 0.25, 0.23],
+    "absorptionDistance": 5,
+    "maxRefractionDistance": 2,
+    "ambientScattering": 0.4,
+    "heightScattering": 0.2,
+    "displacementScattering": 0.1,
+    "directLightTipScattering": 0.4,
+    "directLightBodyScattering": 0.35,
+    "foamAmount": 0.9,
+    "foamFadeRange": [600, 1500],
+    "wavesMultiplier": 0.3,
+    "lakeWavesMultiplier": 0.2,
+    "minWaterAmountForWaves": 15,
+    "seaWindAffectWavesDirection": false,
+    "causticsPlaneDistance": 3,
+    "causticsIntensity": 0.7,
+    "ripplesWindSpeed": 4,
+    "ripplesChaos": 0.6,
+    "smoothnessClose": 0.92,
+    "smoothnessDistant": 0.78,
+    "smoothnessRange": [150, 600]
+  }
+}
