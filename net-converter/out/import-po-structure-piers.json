@@ -1,0 +1,2027 @@
+{
+  "name": "po-structure-piers",
+  "_comment": "rotation = yaw in degrees about \u002By, 0 = \u002Bz, clockwise from above, from CS1 m_angle as \u2212angle\u00B7180/\u03C0 (UNVERIFIED sign). y only where the object is clearly on a structure: \u003E 3 m above the CS2 playable heightmap (else \u003E 2 m off the CS1 terrain); never for buildings (CS1 y \u00D7 height factor).",
+  "options": {
+    "dryRun": false,
+    "batchSize": 500,
+    "bypassValidation": true,
+    "report": "compact",
+    "grounding": {
+      "mode": "boundsMin",
+      "sink": 0,
+      "slopeSink": false
+    }
+  },
+  "objects": [
+    {
+      "id": "pos465",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 1975.9,
+      "z": -2902.5,
+      "y": 276.59,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos465_s0",
+      "prefab": "Pillar4x16",
+      "x": 1975.9,
+      "z": -2902.5,
+      "y": 260.59,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos465_s1",
+      "prefab": "Pillar4x16",
+      "x": 1975.9,
+      "z": -2902.5,
+      "y": 244.59,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos465_s2",
+      "prefab": "Pillar4x16",
+      "x": 1975.9,
+      "z": -2902.5,
+      "y": 228.59,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos465_s3",
+      "prefab": "Pillar4x16",
+      "x": 1975.9,
+      "z": -2902.5,
+      "y": 212.59,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos467",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2000.3,
+      "z": -2870.4,
+      "y": 275.2,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos467_s0",
+      "prefab": "Pillar4x16",
+      "x": 2000.3,
+      "z": -2870.4,
+      "y": 259.2,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos467_s1",
+      "prefab": "Pillar4x16",
+      "x": 2000.3,
+      "z": -2870.4,
+      "y": 243.2,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos467_s2",
+      "prefab": "Pillar4x16",
+      "x": 2000.3,
+      "z": -2870.4,
+      "y": 227.2,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos467_s3",
+      "prefab": "Pillar4x16",
+      "x": 2000.3,
+      "z": -2870.4,
+      "y": 211.2,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos469",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2024.7,
+      "z": -2838.2,
+      "y": 273.81,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos469_s0",
+      "prefab": "Pillar4x16",
+      "x": 2024.7,
+      "z": -2838.2,
+      "y": 257.81,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos469_s1",
+      "prefab": "Pillar4x16",
+      "x": 2024.7,
+      "z": -2838.2,
+      "y": 241.81,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos469_s2",
+      "prefab": "Pillar4x16",
+      "x": 2024.7,
+      "z": -2838.2,
+      "y": 225.81,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos469_s3",
+      "prefab": "Pillar4x16",
+      "x": 2024.7,
+      "z": -2838.2,
+      "y": 209.81,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos471",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2049.1,
+      "z": -2806.1,
+      "y": 272.45,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos471_s0",
+      "prefab": "Pillar4x16",
+      "x": 2049.1,
+      "z": -2806.1,
+      "y": 256.45,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos471_s1",
+      "prefab": "Pillar4x16",
+      "x": 2049.1,
+      "z": -2806.1,
+      "y": 240.45,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos471_s2",
+      "prefab": "Pillar4x16",
+      "x": 2049.1,
+      "z": -2806.1,
+      "y": 224.45,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos473",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2073.4,
+      "z": -2773.9,
+      "y": 271.04,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos473_s0",
+      "prefab": "Pillar4x16",
+      "x": 2073.4,
+      "z": -2773.9,
+      "y": 255.04,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos473_s1",
+      "prefab": "Pillar4x16",
+      "x": 2073.4,
+      "z": -2773.9,
+      "y": 239.04,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos473_s2",
+      "prefab": "Pillar4x16",
+      "x": 2073.4,
+      "z": -2773.9,
+      "y": 223.04,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos475",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2097.8,
+      "z": -2741.8,
+      "y": 269.69,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos475_s0",
+      "prefab": "Pillar4x16",
+      "x": 2097.8,
+      "z": -2741.8,
+      "y": 253.69,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos475_s1",
+      "prefab": "Pillar4x16",
+      "x": 2097.8,
+      "z": -2741.8,
+      "y": 237.69,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos475_s2",
+      "prefab": "Pillar4x16",
+      "x": 2097.8,
+      "z": -2741.8,
+      "y": 221.69,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos477",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2122.2,
+      "z": -2709.6,
+      "y": 268.19,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos477_s0",
+      "prefab": "Pillar4x16",
+      "x": 2122.2,
+      "z": -2709.6,
+      "y": 252.19,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos477_s1",
+      "prefab": "Pillar4x16",
+      "x": 2122.2,
+      "z": -2709.6,
+      "y": 236.19,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos477_s2",
+      "prefab": "Pillar4x16",
+      "x": 2122.2,
+      "z": -2709.6,
+      "y": 220.19,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos479",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2146.6,
+      "z": -2677.4,
+      "y": 266.87,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos479_s0",
+      "prefab": "Pillar4x16",
+      "x": 2146.6,
+      "z": -2677.4,
+      "y": 250.87,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos479_s1",
+      "prefab": "Pillar4x16",
+      "x": 2146.6,
+      "z": -2677.4,
+      "y": 234.87,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos479_s2",
+      "prefab": "Pillar4x16",
+      "x": 2146.6,
+      "z": -2677.4,
+      "y": 218.87,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos481",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2170.9,
+      "z": -2645.3,
+      "y": 265.74,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos481_s0",
+      "prefab": "Pillar4x16",
+      "x": 2170.9,
+      "z": -2645.3,
+      "y": 249.74,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos481_s1",
+      "prefab": "Pillar4x16",
+      "x": 2170.9,
+      "z": -2645.3,
+      "y": 233.74,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos481_s2",
+      "prefab": "Pillar4x16",
+      "x": 2170.9,
+      "z": -2645.3,
+      "y": 217.74,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos483",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2195.3,
+      "z": -2613.1,
+      "y": 264.83,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos483_s0",
+      "prefab": "Pillar4x16",
+      "x": 2195.3,
+      "z": -2613.1,
+      "y": 248.83,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos483_s1",
+      "prefab": "Pillar4x16",
+      "x": 2195.3,
+      "z": -2613.1,
+      "y": 232.83,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos483_s2",
+      "prefab": "Pillar4x16",
+      "x": 2195.3,
+      "z": -2613.1,
+      "y": 216.83,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos485",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2219.7,
+      "z": -2581,
+      "y": 263.84,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos485_s0",
+      "prefab": "Pillar4x16",
+      "x": 2219.7,
+      "z": -2581,
+      "y": 247.84,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos485_s1",
+      "prefab": "Pillar4x16",
+      "x": 2219.7,
+      "z": -2581,
+      "y": 231.84,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos487",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2244.1,
+      "z": -2548.8,
+      "y": 262.93,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos487_s0",
+      "prefab": "Pillar4x16",
+      "x": 2244.1,
+      "z": -2548.8,
+      "y": 246.93,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos487_s1",
+      "prefab": "Pillar4x16",
+      "x": 2244.1,
+      "z": -2548.8,
+      "y": 230.93,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos489",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2268.5,
+      "z": -2516.6,
+      "y": 261.82,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos489_s0",
+      "prefab": "Pillar4x16",
+      "x": 2268.5,
+      "z": -2516.6,
+      "y": 245.82,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos489_s1",
+      "prefab": "Pillar4x16",
+      "x": 2268.5,
+      "z": -2516.6,
+      "y": 229.82,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos491",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2292.9,
+      "z": -2484.5,
+      "y": 260.57,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos491_s0",
+      "prefab": "Pillar4x16",
+      "x": 2292.9,
+      "z": -2484.5,
+      "y": 244.57,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos267",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 1987.2,
+      "z": -2911.1,
+      "y": 276.61,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos267_s0",
+      "prefab": "Pillar4x16",
+      "x": 1987.2,
+      "z": -2911.1,
+      "y": 260.61,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos267_s1",
+      "prefab": "Pillar4x16",
+      "x": 1987.2,
+      "z": -2911.1,
+      "y": 244.61,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos267_s2",
+      "prefab": "Pillar4x16",
+      "x": 1987.2,
+      "z": -2911.1,
+      "y": 228.61,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos267_s3",
+      "prefab": "Pillar4x16",
+      "x": 1987.2,
+      "z": -2911.1,
+      "y": 212.61,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos466",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2011.6,
+      "z": -2879,
+      "y": 275.23,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos466_s0",
+      "prefab": "Pillar4x16",
+      "x": 2011.6,
+      "z": -2879,
+      "y": 259.23,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos466_s1",
+      "prefab": "Pillar4x16",
+      "x": 2011.6,
+      "z": -2879,
+      "y": 243.23,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos466_s2",
+      "prefab": "Pillar4x16",
+      "x": 2011.6,
+      "z": -2879,
+      "y": 227.23,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos466_s3",
+      "prefab": "Pillar4x16",
+      "x": 2011.6,
+      "z": -2879,
+      "y": 211.23,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos468",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2036,
+      "z": -2846.8,
+      "y": 273.86,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos468_s0",
+      "prefab": "Pillar4x16",
+      "x": 2036,
+      "z": -2846.8,
+      "y": 257.86,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos468_s1",
+      "prefab": "Pillar4x16",
+      "x": 2036,
+      "z": -2846.8,
+      "y": 241.86,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos468_s2",
+      "prefab": "Pillar4x16",
+      "x": 2036,
+      "z": -2846.8,
+      "y": 225.86,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos470",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2060.4,
+      "z": -2814.6,
+      "y": 272.5,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos470_s0",
+      "prefab": "Pillar4x16",
+      "x": 2060.4,
+      "z": -2814.6,
+      "y": 256.5,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos470_s1",
+      "prefab": "Pillar4x16",
+      "x": 2060.4,
+      "z": -2814.6,
+      "y": 240.5,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos470_s2",
+      "prefab": "Pillar4x16",
+      "x": 2060.4,
+      "z": -2814.6,
+      "y": 224.5,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos472",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2084.8,
+      "z": -2782.5,
+      "y": 271.1,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos472_s0",
+      "prefab": "Pillar4x16",
+      "x": 2084.8,
+      "z": -2782.5,
+      "y": 255.1,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos472_s1",
+      "prefab": "Pillar4x16",
+      "x": 2084.8,
+      "z": -2782.5,
+      "y": 239.1,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos472_s2",
+      "prefab": "Pillar4x16",
+      "x": 2084.8,
+      "z": -2782.5,
+      "y": 223.1,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos474",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2109.1,
+      "z": -2750.3,
+      "y": 269.76,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos474_s0",
+      "prefab": "Pillar4x16",
+      "x": 2109.1,
+      "z": -2750.3,
+      "y": 253.76,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos474_s1",
+      "prefab": "Pillar4x16",
+      "x": 2109.1,
+      "z": -2750.3,
+      "y": 237.76,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos474_s2",
+      "prefab": "Pillar4x16",
+      "x": 2109.1,
+      "z": -2750.3,
+      "y": 221.76,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos476",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2133.5,
+      "z": -2718.2,
+      "y": 268.29,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos476_s0",
+      "prefab": "Pillar4x16",
+      "x": 2133.5,
+      "z": -2718.2,
+      "y": 252.29,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos476_s1",
+      "prefab": "Pillar4x16",
+      "x": 2133.5,
+      "z": -2718.2,
+      "y": 236.29,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos476_s2",
+      "prefab": "Pillar4x16",
+      "x": 2133.5,
+      "z": -2718.2,
+      "y": 220.29,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos478",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2157.9,
+      "z": -2686,
+      "y": 266.99,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos478_s0",
+      "prefab": "Pillar4x16",
+      "x": 2157.9,
+      "z": -2686,
+      "y": 250.99,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos478_s1",
+      "prefab": "Pillar4x16",
+      "x": 2157.9,
+      "z": -2686,
+      "y": 234.99,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos478_s2",
+      "prefab": "Pillar4x16",
+      "x": 2157.9,
+      "z": -2686,
+      "y": 218.99,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos480",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2182.3,
+      "z": -2653.9,
+      "y": 265.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos480_s0",
+      "prefab": "Pillar4x16",
+      "x": 2182.3,
+      "z": -2653.9,
+      "y": 249.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos480_s1",
+      "prefab": "Pillar4x16",
+      "x": 2182.3,
+      "z": -2653.9,
+      "y": 233.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos480_s2",
+      "prefab": "Pillar4x16",
+      "x": 2182.3,
+      "z": -2653.9,
+      "y": 217.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos482",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2206.7,
+      "z": -2621.7,
+      "y": 264.76,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos482_s0",
+      "prefab": "Pillar4x16",
+      "x": 2206.7,
+      "z": -2621.7,
+      "y": 248.76,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos482_s1",
+      "prefab": "Pillar4x16",
+      "x": 2206.7,
+      "z": -2621.7,
+      "y": 232.76,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos482_s2",
+      "prefab": "Pillar4x16",
+      "x": 2206.7,
+      "z": -2621.7,
+      "y": 216.76,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos484",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2231,
+      "z": -2589.5,
+      "y": 263.66,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos484_s0",
+      "prefab": "Pillar4x16",
+      "x": 2231,
+      "z": -2589.5,
+      "y": 247.66,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos484_s1",
+      "prefab": "Pillar4x16",
+      "x": 2231,
+      "z": -2589.5,
+      "y": 231.66,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos486",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2255.4,
+      "z": -2557.4,
+      "y": 262.64,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos486_s0",
+      "prefab": "Pillar4x16",
+      "x": 2255.4,
+      "z": -2557.4,
+      "y": 246.64,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos486_s1",
+      "prefab": "Pillar4x16",
+      "x": 2255.4,
+      "z": -2557.4,
+      "y": 230.64,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos488",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2279.8,
+      "z": -2525.2,
+      "y": 261.49,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos488_s0",
+      "prefab": "Pillar4x16",
+      "x": 2279.8,
+      "z": -2525.2,
+      "y": 245.49,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos488_s1",
+      "prefab": "Pillar4x16",
+      "x": 2279.8,
+      "z": -2525.2,
+      "y": 229.49,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos490",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 2304.2,
+      "z": -2493.1,
+      "y": 260.39,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos490_s0",
+      "prefab": "Pillar4x16",
+      "x": 2304.2,
+      "z": -2493.1,
+      "y": 244.39,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos492",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 857.4,
+      "z": -4400.3,
+      "y": 270.23,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos492_s0",
+      "prefab": "Pillar4x16",
+      "x": 857.4,
+      "z": -4400.3,
+      "y": 254.23,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos492_s1",
+      "prefab": "Pillar4x16",
+      "x": 857.4,
+      "z": -4400.3,
+      "y": 238.23,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos492_s2",
+      "prefab": "Pillar4x16",
+      "x": 857.4,
+      "z": -4400.3,
+      "y": 222.23,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos492_s3",
+      "prefab": "Pillar4x16",
+      "x": 857.4,
+      "z": -4400.3,
+      "y": 206.23,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos493",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 1080.2,
+      "z": -4106.6,
+      "y": 276.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos493_s0",
+      "prefab": "Pillar4x16",
+      "x": 1080.2,
+      "z": -4106.6,
+      "y": 260.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos493_s1",
+      "prefab": "Pillar4x16",
+      "x": 1080.2,
+      "z": -4106.6,
+      "y": 244.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos493_s2",
+      "prefab": "Pillar4x16",
+      "x": 1080.2,
+      "z": -4106.6,
+      "y": 228.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos493_s3",
+      "prefab": "Pillar4x16",
+      "x": 1080.2,
+      "z": -4106.6,
+      "y": 212.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos493_s4",
+      "prefab": "Pillar4x16",
+      "x": 1080.2,
+      "z": -4106.6,
+      "y": 196.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos493_s5",
+      "prefab": "Pillar4x16",
+      "x": 1080.2,
+      "z": -4106.6,
+      "y": 180.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos494",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 945.8,
+      "z": -4283.9,
+      "y": 272.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos494_s0",
+      "prefab": "Pillar4x16",
+      "x": 945.8,
+      "z": -4283.9,
+      "y": 256.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos494_s1",
+      "prefab": "Pillar4x16",
+      "x": 945.8,
+      "z": -4283.9,
+      "y": 240.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos494_s2",
+      "prefab": "Pillar4x16",
+      "x": 945.8,
+      "z": -4283.9,
+      "y": 224.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos494_s3",
+      "prefab": "Pillar4x16",
+      "x": 945.8,
+      "z": -4283.9,
+      "y": 208.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos494_s4",
+      "prefab": "Pillar4x16",
+      "x": 945.8,
+      "z": -4283.9,
+      "y": 192.77,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos495",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 916.4,
+      "z": -4322.6,
+      "y": 271.94,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos495_s0",
+      "prefab": "Pillar4x16",
+      "x": 916.4,
+      "z": -4322.6,
+      "y": 255.94,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos495_s1",
+      "prefab": "Pillar4x16",
+      "x": 916.4,
+      "z": -4322.6,
+      "y": 239.94,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos495_s2",
+      "prefab": "Pillar4x16",
+      "x": 916.4,
+      "z": -4322.6,
+      "y": 223.94,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos495_s3",
+      "prefab": "Pillar4x16",
+      "x": 916.4,
+      "z": -4322.6,
+      "y": 207.94,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos496",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 886.9,
+      "z": -4361.4,
+      "y": 271.12,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos496_s0",
+      "prefab": "Pillar4x16",
+      "x": 886.9,
+      "z": -4361.4,
+      "y": 255.12,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos496_s1",
+      "prefab": "Pillar4x16",
+      "x": 886.9,
+      "z": -4361.4,
+      "y": 239.12,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos496_s2",
+      "prefab": "Pillar4x16",
+      "x": 886.9,
+      "z": -4361.4,
+      "y": 223.12,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos496_s3",
+      "prefab": "Pillar4x16",
+      "x": 886.9,
+      "z": -4361.4,
+      "y": 207.12,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos497",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 1068.6,
+      "z": -4097.9,
+      "y": 276.75,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos497_s0",
+      "prefab": "Pillar4x16",
+      "x": 1068.6,
+      "z": -4097.9,
+      "y": 260.75,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos497_s1",
+      "prefab": "Pillar4x16",
+      "x": 1068.6,
+      "z": -4097.9,
+      "y": 244.75,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos497_s2",
+      "prefab": "Pillar4x16",
+      "x": 1068.6,
+      "z": -4097.9,
+      "y": 228.75,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos497_s3",
+      "prefab": "Pillar4x16",
+      "x": 1068.6,
+      "z": -4097.9,
+      "y": 212.75,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos497_s4",
+      "prefab": "Pillar4x16",
+      "x": 1068.6,
+      "z": -4097.9,
+      "y": 196.75,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos497_s5",
+      "prefab": "Pillar4x16",
+      "x": 1068.6,
+      "z": -4097.9,
+      "y": 180.75,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos498",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 934.3,
+      "z": -4275.1,
+      "y": 272.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos498_s0",
+      "prefab": "Pillar4x16",
+      "x": 934.3,
+      "z": -4275.1,
+      "y": 256.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos498_s1",
+      "prefab": "Pillar4x16",
+      "x": 934.3,
+      "z": -4275.1,
+      "y": 240.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos498_s2",
+      "prefab": "Pillar4x16",
+      "x": 934.3,
+      "z": -4275.1,
+      "y": 224.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos498_s3",
+      "prefab": "Pillar4x16",
+      "x": 934.3,
+      "z": -4275.1,
+      "y": 208.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos498_s4",
+      "prefab": "Pillar4x16",
+      "x": 934.3,
+      "z": -4275.1,
+      "y": 192.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos498_s5",
+      "prefab": "Pillar4x16",
+      "x": 934.3,
+      "z": -4275.1,
+      "y": 176.78,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos499",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 904.8,
+      "z": -4313.8,
+      "y": 271.85,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos499_s0",
+      "prefab": "Pillar4x16",
+      "x": 904.8,
+      "z": -4313.8,
+      "y": 255.85,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos499_s1",
+      "prefab": "Pillar4x16",
+      "x": 904.8,
+      "z": -4313.8,
+      "y": 239.85,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos499_s2",
+      "prefab": "Pillar4x16",
+      "x": 904.8,
+      "z": -4313.8,
+      "y": 223.85,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos499_s3",
+      "prefab": "Pillar4x16",
+      "x": 904.8,
+      "z": -4313.8,
+      "y": 207.85,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos500",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 875.4,
+      "z": -4352.6,
+      "y": 271.12,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos500_s0",
+      "prefab": "Pillar4x16",
+      "x": 875.4,
+      "z": -4352.6,
+      "y": 255.12,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos500_s1",
+      "prefab": "Pillar4x16",
+      "x": 875.4,
+      "z": -4352.6,
+      "y": 239.12,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos500_s2",
+      "prefab": "Pillar4x16",
+      "x": 875.4,
+      "z": -4352.6,
+      "y": 223.12,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos500_s3",
+      "prefab": "Pillar4x16",
+      "x": 875.4,
+      "z": -4352.6,
+      "y": 207.12,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos501",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": 845.8,
+      "z": -4391.6,
+      "y": 270.18,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos501_s0",
+      "prefab": "Pillar4x16",
+      "x": 845.8,
+      "z": -4391.6,
+      "y": 254.18,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos501_s1",
+      "prefab": "Pillar4x16",
+      "x": 845.8,
+      "z": -4391.6,
+      "y": 238.18,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos501_s2",
+      "prefab": "Pillar4x16",
+      "x": 845.8,
+      "z": -4391.6,
+      "y": 222.18,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos501_s3",
+      "prefab": "Pillar4x16",
+      "x": 845.8,
+      "z": -4391.6,
+      "y": 206.18,
+      "rotation": 37.2,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos507",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1620,
+      "z": -1672.4,
+      "y": 244.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos507_s0",
+      "prefab": "Pillar4x16",
+      "x": -1620,
+      "z": -1672.4,
+      "y": 228.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos507_s1",
+      "prefab": "Pillar4x16",
+      "x": -1620,
+      "z": -1672.4,
+      "y": 212.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos506",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1531.3,
+      "z": -1542.8,
+      "y": 244.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos506_s0",
+      "prefab": "Pillar4x16",
+      "x": -1531.3,
+      "z": -1542.8,
+      "y": 228.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos508",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1639.8,
+      "z": -1695.9,
+      "y": 244.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos508_s0",
+      "prefab": "Pillar4x16",
+      "x": -1639.8,
+      "z": -1695.9,
+      "y": 228.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos508_s1",
+      "prefab": "Pillar4x16",
+      "x": -1639.8,
+      "z": -1695.9,
+      "y": 212.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos509",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1547.4,
+      "z": -1562.1,
+      "y": 244.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos509_s0",
+      "prefab": "Pillar4x16",
+      "x": -1547.4,
+      "z": -1562.1,
+      "y": 228.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos509_s1",
+      "prefab": "Pillar4x16",
+      "x": -1547.4,
+      "z": -1562.1,
+      "y": 212.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos510",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1651.4,
+      "z": -1686.1,
+      "y": 244.85,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos510_s0",
+      "prefab": "Pillar4x16",
+      "x": -1651.4,
+      "z": -1686.1,
+      "y": 228.85,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos510_s1",
+      "prefab": "Pillar4x16",
+      "x": -1651.4,
+      "z": -1686.1,
+      "y": 212.85,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos511",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1631.8,
+      "z": -1662.7,
+      "y": 244.85,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos511_s0",
+      "prefab": "Pillar4x16",
+      "x": -1631.8,
+      "z": -1662.7,
+      "y": 228.85,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos511_s1",
+      "prefab": "Pillar4x16",
+      "x": -1631.8,
+      "z": -1662.7,
+      "y": 212.85,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos512",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1519.6,
+      "z": -1552.7,
+      "y": 244.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos512_s0",
+      "prefab": "Pillar4x16",
+      "x": -1519.6,
+      "z": -1552.7,
+      "y": 228.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos513",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1535.7,
+      "z": -1571.9,
+      "y": 244.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos513_s0",
+      "prefab": "Pillar4x16",
+      "x": -1535.7,
+      "z": -1571.9,
+      "y": 228.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos513_s1",
+      "prefab": "Pillar4x16",
+      "x": -1535.7,
+      "z": -1571.9,
+      "y": 212.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos514",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1615.7,
+      "z": -1643.6,
+      "y": 244.85,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos514_s0",
+      "prefab": "Pillar4x16",
+      "x": -1615.7,
+      "z": -1643.6,
+      "y": 228.85,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos514_s1",
+      "prefab": "Pillar4x16",
+      "x": -1615.7,
+      "z": -1643.6,
+      "y": 212.85,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos514_s2",
+      "prefab": "Pillar4x16",
+      "x": -1615.7,
+      "z": -1643.6,
+      "y": 196.85,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos515",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1604,
+      "z": -1653.4,
+      "y": 244.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos515_s0",
+      "prefab": "Pillar4x16",
+      "x": -1604,
+      "z": -1653.4,
+      "y": 228.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos515_s1",
+      "prefab": "Pillar4x16",
+      "x": -1604,
+      "z": -1653.4,
+      "y": 212.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos515_s2",
+      "prefab": "Pillar4x16",
+      "x": -1604,
+      "z": -1653.4,
+      "y": 196.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos516",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1551.7,
+      "z": -1591,
+      "y": 244.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos516_s0",
+      "prefab": "Pillar4x16",
+      "x": -1551.7,
+      "z": -1591,
+      "y": 228.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos516_s1",
+      "prefab": "Pillar4x16",
+      "x": -1551.7,
+      "z": -1591,
+      "y": 212.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos516_s2",
+      "prefab": "Pillar4x16",
+      "x": -1551.7,
+      "z": -1591,
+      "y": 196.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos517",
+      "prefab": "ITBP_Pillar Piers 01",
+      "x": -1563.5,
+      "z": -1581.2,
+      "y": 244.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos517_s0",
+      "prefab": "Pillar4x16",
+      "x": -1563.5,
+      "z": -1581.2,
+      "y": 228.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos517_s1",
+      "prefab": "Pillar4x16",
+      "x": -1563.5,
+      "z": -1581.2,
+      "y": 212.86,
+      "rotation": 40,
+      "kind": "object",
+      "cs1": "PO structure"
+    }
+  ]
+}

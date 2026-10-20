@@ -23,11 +23,43 @@
   },
   {
    "name": "Pillar1x16",
-   "missing": "no building, network or object prefab named 'Pillar1x16'"
+   "type": "StaticObjectPrefab",
+   "boundsMin": {
+    "x": -0.5,
+    "y": 0,
+    "z": -0.5
+   },
+   "boundsMax": {
+    "x": 0.5,
+    "y": 16,
+    "z": 0.5
+   },
+   "size": {
+    "x": 1,
+    "y": 16,
+    "z": 1
+   },
+   "source": "measured in game on A-v6 (orchestrator, round 22)"
   },
   {
    "name": "Pillar4x16",
-   "missing": "no building, network or object prefab named 'Pillar4x16'"
+   "type": "StaticObjectPrefab",
+   "boundsMin": {
+    "x": -2,
+    "y": 0,
+    "z": -2
+   },
+   "boundsMax": {
+    "x": 2,
+    "y": 16,
+    "z": 2
+   },
+   "size": {
+    "x": 4,
+    "y": 16,
+    "z": 4
+   },
+   "source": "measured in game on A-v6 (orchestrator, round 22)"
   },
   {
    "name": "BasePlateConcrete32",

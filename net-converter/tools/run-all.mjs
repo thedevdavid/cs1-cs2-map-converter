@@ -37,7 +37,7 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
   for (const [f, what] of [["import-canals.json", "canals and flood walls"], ["import-shippaths.json", "ship paths"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(2, p(f), `${what} (${scale})`, `${j.edges.length} edges: ${byPrefab(j.edges)}`); }
   if (existsSync(p("import-walls-props.json"))) add(5, p("import-walls-props.json"), `barrier props (${scale})`, `${J(p("import-walls-props.json")).objects.length}`);
-  for (const [f, what] of [["import-surfaces-fields.json", "field surfaces"], ["import-surfaces-sand.json", "paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots"], ["import-surfaces-grass-dry.json", "paint plan dry grass (Grass Surface 02)"], ["import-surfaces-pavement.json", "paint plan pavement under stand-in buildings"], ["import-surfaces-grass.json", "grass surfaces (optional alternative to the grass plants)"]])
+  for (const [f, what] of [["import-surfaces-fields.json", "field surfaces"], ["import-surfaces-sand.json", "paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots"], ["import-surfaces-grass.json", "grass surfaces (optional alternative to the grass plants)"]])
     if (existsSync(p(f))) add(8, p(f), what, `${J(p(f)).surfaces.length} polygons`);
   if (existsSync(p("import-water.json"))) { const w = J(p("import-water.json")); add(3, p("import-water.json"), `water (${scale}), seaLevel ${w.seaLevel}`, `${w.sources.length} sources, ${w.sources.filter(s => s.refinedFrom).length} refined`); }
   for (const vf of existsSync(dir) ? readdirSync(dir).filter(x => /^import-water-sea[\d.]+\.json$/.test(x)) : []) { const w = J(p(vf)); add(3, p(vf), `water VARIANT (${scale}), seaLevel ${w.seaLevel}: import instead of import-water.json to try the measured level`, `${w.sources.length} sources`); }
@@ -53,9 +53,10 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
   for (const [f, order, what] of [["import-power-ends.json", 2, "ROUND 8 power-line ends at the substation and the dam (A-v6: dam end on the plant marker, extra pylon), connectTo high voltage radius 60"], ["import-dam-deck.json", 2, "ROUND 8 dam deck network, absolute heights (after import-dam.json)"],
     ["import-substation.json", 5, "ROUND 8 substation building TransformerStation01"], ["import-po-rocks.json", 5, "po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds"],
     ["import-rock-scatter.json", 5, "ROUND 8 vanilla rock scatter"],
-    ["import-po-structure-objects.json", 5, "ROUND 20 PO structures: BR006 arch (StoneArchRailBridge), ConcreteSet01 columns / piers, BR022 pads; runner --po-structures (mods 154132, 135944)"],
-    [join("optional", "import-po-structure-gantry.json"), 5, "ROUND 20 optional gantry HWY Truss Gantry 2L  A (132188), runner --with po-gantry"],
-    [join("optional", "import-po-structure-piers.json"), 5, "ROUND 20 optional ITBP piers BR001 / BR003 (140978), only with noPillars, runner --with po-piers"]])
+    ["import-po-structure-objects.json", 5, "ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132)"],
+    ["import-po-structure-piers.json", 5, "ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default"],
+    [join("optional", "import-po-structure-br006-arches.json"), 5, "ROUND 22 BR006 variant b: 7 StoneArchRailBridge (135944) under the deck, runner --with po-br006-arches"],
+    [join("optional", "import-po-structure-gantry.json"), 5, "ROUND 20 optional gantry HWY Truss Gantry 2L  A (132188), runner --with po-gantry"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : `${j.edges.length} edges${j.replaces ? `, replaces ${j.replaces.join(", ")}` : ""}`); }
   // Bridges (bridges.tsv).
   for (const [f, order, what] of [["import-bridges.json", 1, "bridge overrides (right after import-all.json, which leaves these decks out)"], ["import-bridges-fixed.json", 1, "fixed-span bridges: BR001 Detroit suspension (one edge) + its 3-lane connectors, right after import-bridges.json"], ["import-dam.json", 1, "dam: one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant), after the bridges"]])

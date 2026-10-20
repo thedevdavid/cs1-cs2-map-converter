@@ -316,6 +316,13 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
     foreach (var name in new[] { "import-bridges.json", "import-bridges-fixed.json" }) File.Delete(Path.Combine(outDir, name));
     // BR001's deck courses outside the merged span: noPillars (PLAN.md item 4), through the skin-flag writer.
     foreach (var seg in Bridges.NoPillarSegments) Outputs.SkinFlags[seg] = (true, Outputs.SkinFlags.TryGetValue(seg, out var sf) && sf.Lights);
+    // Round 22: the courses above the BR001 / BR003 PO piers get noPillars too; the ConcreteSet01 stacks under ITBP caps stand in for the game's pillars.
+    {
+        var pierRows = PoStructures.Load(FindB(Path.Combine("..", "bridges", "data", "po-structures-proposal.json")));
+        var pierSegs = PoStructures.PierSegments(pierRows, new PoStructures.DeckSampler(result.Edges));
+        foreach (var seg in pierSegs) Outputs.SkinFlags[seg] = (true, Outputs.SkinFlags.TryGetValue(seg, out var sf2) && sf2.Lights);
+        Console.WriteLine($"PO piers: noPillars on {pierSegs.Count} CS1 segments under the BR001 / BR003 piers");
+    }
     var rules = Bridges.LoadRules(FindB(Path.Combine("..", "bridges", "cs2-bridge-rules.json")), FindB("bridge-rules-live.json"));
     var checks = Bridges.Validate(bMain, rules, waterOut, terrOutB);
     foreach (var kv in Bridges.Validate(bFixed, rules, waterOut, terrOutB)) checks[kv.Key] = kv.Value;
@@ -999,13 +1006,16 @@ void WriteLayers()
         r9.Add(ci($"PO paved blocks: {blocks.Count} blocks (group roots {string.Join(", ", Round9.BridgeGroupRoots)} left out: BR006 and BR005 bridge parts, see PO structures) -> {ps.Count} pavement polygons (import-po-structures.json); PO walls dropped (owner review of A-v4)"));
         // Round 20: PO structure objects (bridges/PLAN-structures.md); the runner imports them only with --po-structures.
         var poRows = PoStructures.Load(Find(Path.Combine("..", "bridges", "data", "po-structures-proposal.json")));
-        var (poMain, poGantry, poPiers, poLog) = PoStructures.Build(poRows, cs2True, heightFactor, PoStructures.LoadBounds(Find("po-structure-bounds.json")));
+        var poS = PoStructures.Build(poRows, cs2True, heightFactor, PoStructures.LoadBounds(Find("po-structure-bounds.json")), new PoStructures.DeckSampler(result.Edges));
         var poGround = new Objects.Grounding(Sink: 0, SlopeSink: false);
-        Objects.Write(Path.Combine(outDir, "import-po-structure-objects.json"), "po-structure-objects", poMain, poGround);
-        Objects.Write(Path.Combine(OptDir(), "import-po-structure-gantry.json"), "po-structure-gantry", poGantry, poGround);
-        Objects.Write(Path.Combine(OptDir(), "import-po-structure-piers.json"), "po-structure-piers", poPiers, poGround);
-        foreach (var l in poLog) r9.Add("PO structures: " + l);
-        r9.Add($"PO structures: {poRows.Count} proposal rows -> import-po-structure-objects.json {poMain.Count}, optional/import-po-structure-gantry.json {poGantry.Count}, optional/import-po-structure-piers.json {poPiers.Count}");
+        // Round 22: main = BR006 variant (a) (no kit objects at BR006) + BR022 pads; variant (b) and the gantry in optional/; piers by default.
+        Objects.Write(Path.Combine(outDir, "import-po-structure-objects.json"), "po-structure-objects", poS.Main, poGround);
+        Objects.Write(Path.Combine(OptDir(), "import-po-structure-br006-arches.json"), "po-structure-br006-arches", poS.Br006Arches, poGround);
+        Objects.Write(Path.Combine(OptDir(), "import-po-structure-gantry.json"), "po-structure-gantry", poS.Gantries, poGround);
+        File.Delete(Path.Combine(OptDir(), "import-po-structure-piers.json"));
+        Objects.Write(Path.Combine(outDir, "import-po-structure-piers.json"), "po-structure-piers", poS.Piers, poGround);
+        foreach (var l in poS.Log) r9.Add("PO structures: " + l);
+        r9.Add($"PO structures: {poRows.Count} proposal rows -> import-po-structure-objects.json {poS.Main.Count}, import-po-structure-piers.json {poS.Piers.Count}, optional/import-po-structure-br006-arches.json {poS.Br006Arches.Count}, optional/import-po-structure-gantry.json {poS.Gantries.Count}");
         if (surfaceEarly != null)
         {
             var (lakes, bodies, outside, tiny) = Round9.Lakes(surfaceEarly, dump, seaLevel, 7168, cs2True, out var lakeLog);
@@ -1100,7 +1110,9 @@ void WriteLayers()
             trees.Objects.Select(t => (t.X, t.Z)), fields.Select(p => p.Ring), poBlocks, decals.Select(p => p.Ring), standIns));
         Surfaces.Write(Path.Combine(outDir, "import-surfaces-sand.json"), "surfaces-sand", plan.Sand,
             "Paint plan S1/S3/S4 (audit/theme-remake.md §4): Sand Surface 01 on CS1 sand within 25 m of the water or ≤ 2 m above it; Sand Surface 02 on the other CS1 sand and on the CS1 dirt decals; none under water deeper than 1.5 m. 16 m grid, open/close one cell, simplified 4 m.");
-        Surfaces.Write(Path.Combine(outDir, "import-surfaces-grass-dry.json"), "surfaces-grass-dry", plan.Grass,
+        // Round 22 (owner, A-v6): no dry-grass paint; the swatch test rejected Grass Surface 01/02 as mown lawn (look/README.md).
+        File.Delete(Path.Combine(outDir, "import-surfaces-grass-dry.json"));
+        if (false) Surfaces.Write(Path.Combine(outDir, "import-surfaces-grass-dry.json"), "surfaces-grass-dry", plan.Grass,
             $"Paint plan G1/G2: {PaintPlan.DryGrass} [variant to confirm with the swatch test] on fertile open flats (fertility ≥ 0.5, slope < 8°, no forest) and on the dry eastern plains (x ≥ 0, ≤ start-area mean {plan.StartMean:F0} + 60 m, no tree within 48 m, slope < 12°).");
         File.Delete(Path.Combine(outDir, "import-surfaces-pavement.json"));
         if (plan.PavementStandIns.Count > 0) Surfaces.Write(Path.Combine(outDir, "import-surfaces-pavement.json"), "surfaces-pavement", plan.PavementStandIns,

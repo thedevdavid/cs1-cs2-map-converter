@@ -1,9 +1,9 @@
 // Whole fresh-map import against the CS2MCP bridge, in the ROUND order, one command.
 // node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run]
 //   [--no-verify] [--resume | --fresh] [--verify-only] [--po-structures] [--bridge http://127.0.0.1:8642] [--out out]
-// --po-structures (round 20): the PO structure objects (BR006 arch, columns and piers, BR022 pads; ConcreteSet01 154132 and DIY Stone Arch 135944
-//   must be in the playset) after po-rocks; same as --with po-structures. The gantry (Truss Gantry 132188) and the ITBP piers (140978, only with
-//   noPillars) are separate optional steps: --with po-gantry,po-piers.
+// --po-structures (round 20/22): the BR022 pads (ConcreteSet01 154132; BR006 variant a = no kit objects there) after po-rocks; same as --with po-structures.
+//   Optional: --with po-br006-arches (BR006 variant b, DIY Stone Arch 135944), po-gantry (Truss Gantry 132188).
+//   Default: pillars-off + po-piers (BR001 / BR003 ITBP caps 140978 on Pillar4x16 stacks 154132).
 // run-state.json (per scale folder) lists the files imported on this map; --skip / --only / --resume skip those, a plain run (or --fresh) starts over.
 // Steps (in order): surfaces network bridges bridges-fixed dam gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
 //   resources surfaces power-ends settings look. Optional (only with --with or --only): grass, sand-smooth (the earlier smoothed sand), and the pack surfaces in optional/: rock, po-rock, decals, sand-pack (sand-pack paints the same sand as the default sand file with the Dirty Surfaces prefab: use one of the two).
@@ -67,7 +67,7 @@ const p = f => join(dir, f);
 const steps = [
   // Vanilla paint plan (audit/theme-remake.md §4): fields (Agriculture Surface 01), PO pavement and stand-in pavement (Pavement Surface 01),
   // sand (Sand Surface 01 banks, Sand Surface 02 bare earth and old decal spots), dry grass (Grass Surface 02).
-  ["surfaces", "/import/surfaces", ["import-surfaces-fields.json", "import-po-structures.json", "import-surfaces-pavement.json", "import-surfaces-sand.json", "import-surfaces-grass-dry.json"].map(p)],
+  ["surfaces", "/import/surfaces", ["import-surfaces-fields.json", "import-po-structures.json", "import-surfaces-sand.json"].map(p)],
   ["sand-smooth", "/import/surfaces", [p(join("optional", "import-surfaces-sand-smooth.json"))], true],
   ["grass", "/import/surfaces", [p("import-surfaces-grass.json")], true],
   // Pack surfaces kept in optional/ (Terrain Textures, Dirty Surfaces): only with --with.
@@ -96,8 +96,12 @@ const steps = [
   ["po-rocks", "/import/objects", [p("import-po-rocks.json")]],
   // Round 20 (bridges/PLAN-structures.md): off by default until the owner confirms the kit mods are in the playset (--po-structures).
   ["po-structures", "/import/objects", [p("import-po-structure-objects.json")], true],
+  ["po-br006-arches", "/import/objects", [p(join("optional", "import-po-structure-br006-arches.json"))], true],
   ["po-gantry", "/import/objects", [p(join("optional", "import-po-structure-gantry.json"))], true],
-  ["po-piers", "/import/objects", [p(join("optional", "import-po-structure-piers.json"))], true],
+  // Round 22: BR001 / BR003 piers by default. The game's pillars on the courses above come back whenever a segment updates, so they are removed
+  // again right before the piers go in (POST /net/pillars/remove on the live segments within 3 m of a cap).
+  ["pillars-off", "pillarsoff", [p("import-po-structure-piers.json")]],
+  ["po-piers", "/import/objects", [p("import-po-structure-piers.json")]],
   ["rock-scatter", "/import/objects", [p("import-rock-scatter.json")]],
   ["fort", "/import/objects", [p("import-fort.json")]],
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
@@ -118,7 +122,59 @@ async function verifyGraph(tag) {
   const lines = Object.entries(imported).map(([k, v]) => `${k} ${live[k] ?? 0}/${v}`);
   const text = `graph ${r.json?.counts?.segments ?? "?"} segments; live/imported edges: ${lines.join(", ")} (${path.split(/[\\/]/).pop()})`;
   console.log(`  ${text}`);
-  return text;
+  const re = recheckCoverage(path);
+  if (re) console.log(`  ${re}`);
+  return text + (re ? `; ${re}` : "");
+}
+
+// Pillars off under the PO piers: export the live graph, take the segments that pass within 3 m of an ITBP cap, POST /net/pillars/remove.
+async function pillarsOff(file) {
+  if (!existsSync(file)) return `${file} missing`;
+  const caps = JSON.parse(readFileSync(file, "utf8")).objects.filter(o => o.prefab === "ITBP_Pillar Piers 01");
+  const path = join(process.cwd(), dir, `live-graph-${stamp}-pillars.json`);
+  await request("GET", `/graph/export?path=${encodeURIComponent(path)}&curves=true`);
+  if (!existsSync(path)) return "graph export failed";
+  const g = JSON.parse(readFileSync(path, "utf8"));
+  const bz = (P, t) => { const u = 1 - t; return [0, 2].map(i => u * u * u * P[0][i] + 3 * u * u * t * P[1][i] + 3 * u * t * t * P[2][i] + t * t * t * P[3][i]); };
+  const ids = new Set();
+  for (const sg of g.segments ?? []) {
+    if (!sg.curve || !/Highway/.test(sg.prefab)) continue;
+    const pts = Array.from({ length: 33 }, (_, k) => bz(sg.curve, k / 32));
+    if (caps.some(c => pts.some((p, k) => k > 0 && Math.hypot((p[0] + pts[k - 1][0]) / 2 - c.x, (p[1] + pts[k - 1][1]) / 2 - c.z) < 3 + Math.hypot(p[0] - pts[k - 1][0], p[1] - pts[k - 1][1]) / 2))) ids.add(sg.id);
+  }
+  const r = await request("POST", "/net/pillars/remove", { segments: [...ids] });
+  return `${caps.length} caps, ${ids.size} segments: HTTP ${r.status} ${JSON.stringify(r.json).slice(0, 200)}`;
+}
+
+// A-v6 (Gravel Road e23168_0, e31265_0, e31665_0, e36006_0): the bridge's point check counts only segments created or recorded in the batch.
+// When the game folds a straight course into its straight same-prefab neighbours, it splits the whole run again into equal pieces on the 8 m grid,
+// keeping the neighbour's older segment entity. The road is there, but the check misses it. Here every "points along the course" failure is checked
+// again against the live graph: all three points (t 0.2 / 0.5 / 0.8) within 2 m of a live segment of the same prefab = present.
+function recheckCoverage(path) {
+  if (!existsSync(path)) return "";
+  const pointFails = rows.flatMap(r => (r.fails ?? []).filter(x => /points along the course/.test(x.error ?? "") && !x.liveCovered).map(x => [r, x]));
+  if (pointFails.length === 0) return "";
+  const g = JSON.parse(readFileSync(path, "utf8"));
+  const bz = (P, t) => { const u = 1 - t; return [0, 2].map(i => u * u * u * P[0][i] + 3 * u * u * t * P[1][i] + 3 * u * t * t * P[2][i] + t * t * t * P[3][i]); };
+  const byPrefab = new Map();
+  for (const sg of g.segments ?? []) if (sg.curve) (byPrefab.get(sg.prefab) ?? byPrefab.set(sg.prefab, []).get(sg.prefab)).push(Array.from({ length: 65 }, (_, k) => bz(sg.curve, k / 64)));
+  const near = (pts, x, z) => pts.some((p, k) => k > 0 && segDist(x, z, pts[k - 1], p) < 2);
+  const segDist = (x, z, a, b) => { const dx = b[0] - a[0], dz = b[1] - a[1], l2 = dx * dx + dz * dz, t = l2 > 0 ? Math.max(0, Math.min(1, ((x - a[0]) * dx + (z - a[1]) * dz) / l2)) : 0; return Math.hypot(a[0] + t * dx - x, a[1] + t * dz - z); };
+  const bodies = new Map();
+  let ok = 0; const still = [];
+  for (const [r, x] of pointFails) {
+    const body = bodies.get(r.file) ?? bodies.set(r.file, JSON.parse(readFileSync(r.file, "utf8"))).get(r.file);
+    const e = (body.edges ?? []).find(y => y.id === x.id); const N = new Map((body.nodes ?? []).map(n => [n.id, n]));
+    const a = e && N.get(e.a), b = e && N.get(e.b);
+    if (!a || !b) { still.push(x.id); continue; }
+    const c = e.control ?? [[a.x, 0, a.z], [b.x, 0, b.z]];
+    const P = [[a.x, 0, a.z], [c[0][0], 0, c[0][2]], [c[1][0], 0, c[1][2]], [b.x, 0, b.z]];
+    const live = byPrefab.get(x.prefab) ?? [];
+    if ([0.2, 0.5, 0.8].every(t => { const [px, pz] = bz(P, t); return live.some(pts => near(pts, px, pz)); })) {
+      x.liveCovered = true; x.error += " — present in the live graph (folded into its straight neighbours, re-split by the game): not a failure"; ok++;
+    } else still.push(x.id);
+  }
+  return `point-check failures re-checked on the live graph: ${ok} present, ${still.length} missing${still.length ? ` (${still.join(", ")})` : ""}`;
 }
 
 const summary = (endpoint, r) => {
@@ -185,6 +241,7 @@ outer: for (const [name, endpoint, files] of steps) {
     const text = `net count after the network steps: ${countLine(netBaseline)}`; console.log(`  ${text}`);
     rows.push({ name, file: "GET /net/count", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue;
   }
+  if (endpoint === "pillarsoff") { const t0 = Date.now(); const text = dryRun ? "dry run: not sent" : await pillarsOff(files[0]); console.log(`  ${text}`); rows.push({ name, file: "POST /net/pillars/remove", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue; }
   if (endpoint === "verify") { const t0 = Date.now(); const text = await verifyGraph(name.replace("verify-", "")); rows.push({ name, file: "GET /graph/export", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue; }
   for (const file of files) {
     if (!existsSync(file)) { console.log(`- ${name}: ${file} missing, skipped`); rows.push({ name, file, status: "missing" }); continue; }

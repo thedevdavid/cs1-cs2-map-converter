@@ -1,0 +1,87 @@
+{
+  "name": "po-structure-br006-arches",
+  "_comment": "rotation = yaw in degrees about \u002By, 0 = \u002Bz, clockwise from above, from CS1 m_angle as \u2212angle\u00B7180/\u03C0 (UNVERIFIED sign). y only where the object is clearly on a structure: \u003E 3 m above the CS2 playable heightmap (else \u003E 2 m off the CS1 terrain); never for buildings (CS1 y \u00D7 height factor).",
+  "options": {
+    "dryRun": false,
+    "batchSize": 500,
+    "bypassValidation": true,
+    "report": "compact",
+    "grounding": {
+      "mode": "boundsMin",
+      "sink": 0,
+      "slopeSink": false
+    }
+  },
+  "objects": [
+    {
+      "id": "pos27_0",
+      "prefab": "StoneArchRailBridge",
+      "x": -3479.13,
+      "z": -3243.71,
+      "y": 482.2,
+      "rotation": 234,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos27_1",
+      "prefab": "StoneArchRailBridge",
+      "x": -3495.58,
+      "z": -3221.05,
+      "y": 482.2,
+      "rotation": 234,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos27_2",
+      "prefab": "StoneArchRailBridge",
+      "x": -3512.04,
+      "z": -3198.4,
+      "y": 482.2,
+      "rotation": 234,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos27_3",
+      "prefab": "StoneArchRailBridge",
+      "x": -3528.5,
+      "z": -3175.75,
+      "y": 482.2,
+      "rotation": 234,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos27_4",
+      "prefab": "StoneArchRailBridge",
+      "x": -3544.96,
+      "z": -3153.1,
+      "y": 482.2,
+      "rotation": 234,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos27_5",
+      "prefab": "StoneArchRailBridge",
+      "x": -3561.42,
+      "z": -3130.45,
+      "y": 482.2,
+      "rotation": 234,
+      "kind": "object",
+      "cs1": "PO structure"
+    },
+    {
+      "id": "pos27_6",
+      "prefab": "StoneArchRailBridge",
+      "x": -3577.87,
+      "z": -3107.79,
+      "y": 482.2,
+      "rotation": 234,
+      "kind": "object",
+      "cs1": "PO structure"
+    }
+  ]
+}
