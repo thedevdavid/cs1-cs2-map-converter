@@ -30,7 +30,9 @@ Both runs use the **same heightmap pair**. Only the Height Scale field and the i
 
 ## Per run (orchestrator, through the bridge)
 
-**One command (round 9):** `node net-converter/tools/import-run.mjs --scale x1 --sea 93 --climate ContinentalGreatHighlandsClimate` (run B: `--scale x2 --sea 186`). It runs every layer below in order, prints one line per layer, stops on a body error and writes `out/<scale>/run-<timestamp>.md` with every importId. The numbered list stays as the reference and for manual re-runs of single layers.
+**One command:** `node net-converter/tools/import-run.mjs --scale x1 --sea 93` (run B: `--scale x2 --sea 186`; climate comes from `look/climate.json`, override with `--climate`). Order since A-v5: surfaces first, then nets (network, gaps, bridges, dam, power, canals, ship paths), then water, connections, objects, barriers, station, cliffs, scatter, fort, trees, resources, power ends, settings, look. The runner stops at the first step whose `netGuard.segmentsRemoved` is not 0 and prints `/net/count` after the nets and at the end.
+
+**A-v5 acceptance (bridge round 24):** segment counts per prefab must match (a) right after the net steps, (b) after 2 minutes of idle editor time, (c) after save + reload (`node net-converter/tools/import-run.mjs --verify-only`). Save under a name with no leading or trailing space. It runs every layer below in order, prints one line per layer, stops on a body error and writes `out/<scale>/run-<timestamp>.md` with every importId. The numbered list stays as the reference and for manual re-runs of single layers.
 
 Order (converter `out/ROUND6.md`): network → power, walls, ship paths → water → connections → objects and barrier props → trees → resources → surfaces (fields, decals; grass surfaces only if the grass plants are rejected). Each layer is a separate import name so it can be undone alone. Every layer: dry run first, then real, then the live-graph defect scan where it applies.
 
