@@ -15,7 +15,7 @@ public static class Bridges
     static readonly CultureInfo Ci = CultureInfo.InvariantCulture;
     static string F(FormattableString f) => f.ToString(Ci);
 
-    public sealed record Spec(string Id, Regex Select, string Prefab, double[]? Fixed, int? Count, double? Span, bool Merge, bool FixedFile, double Seg, bool SegAssumed, string Notes, string Alt, bool NoPillars = false);
+    public sealed record Spec(string Id, Regex Select, string Prefab, double[]? Fixed, int? Count, double? Span, bool Merge, bool FixedFile, double Seg, bool SegAssumed, string Notes, string Alt, bool NoPillars = false, bool Drop = false);
 
     public static List<Spec> Load(string path)
     {
@@ -24,7 +24,7 @@ public static class Bridges
         foreach (var line in File.ReadAllLines(path).Where(l => l.Length > 0 && !l.StartsWith('#')))
         {
             var c = line.Split('\t');
-            double[]? fx = null; int? count = null; double? span = null; bool merge = false, ff = false, np = false;
+            double[]? fx = null; int? count = null; double? span = null; bool merge = false, ff = false, np = false, drop = false;
             foreach (var part in c[3].Split(';'))
             {
                 if (part.StartsWith("fixed:")) fx = part[6..].Split(',').Select(v => double.Parse(v, Ci)).ToArray();
@@ -33,10 +33,11 @@ public static class Bridges
                 else if (part == "merge") merge = true;
                 else if (part == "fixedfile") ff = true;
                 else if (part == "nopillars") np = true;
+                else if (part == "drop") drop = true;
             }
             var segTxt = c[4].Trim();
             res.Add(new Spec(c[0], new Regex(c[1], RegexOptions.CultureInvariant), c[2], fx, count, span, merge, ff,
-                double.Parse(segTxt.Split(' ')[0], Ci), segTxt.Contains("[U]"), c.Length > 5 ? c[5] : "", c.Length > 6 ? c[6] : "", np));
+                double.Parse(segTxt.Split(' ')[0], Ci), segTxt.Contains("[U]"), c.Length > 5 ? c[5] : "", c.Length > 6 ? c[6] : "", np, drop));
         }
         return res;
     }
@@ -291,6 +292,13 @@ public static class Bridges
             var target = s.FixedFile ? fix : main;
             if (sel.Count == 0) { reports.Add(new Report(s.Id, s.Prefab, "", 0, lengths, new() { "no converted edges (outside the map or skipped)" }, s.FixedFile, s.Notes)); continue; }
             int chains = 0;
+            if (s.Drop)
+            {
+                // The segments leave the network; nothing replaces them (BR004 dam-crest walkway).
+                foreach (var e in sel) remove.Add(e);
+                reports.Add(new Report(s.Id, "(dropped)", "drop", 0, lengths, new() { F($"{sel.Count} courses dropped, {sel.Sum(e => e.Curve.LengthXZ()):F0} m") }, false, s.Notes));
+                continue;
+            }
             if (s.Merge && s.Fixed != null)
             {
                 var all = sel.ToList();

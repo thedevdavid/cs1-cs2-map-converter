@@ -4,6 +4,7 @@
 #   select  regex on the CS1 net prefab of those segments ("." = all of them): which part is the bridge deck
 #   prefab  CS2 bridge prefab (UNVERIFIED names until the next game run; the runner's dry run reports unknown ones)
 #   plan    fixed:<span,...> (exact spans, fixedIndex per edge) | count:<n> (n equal straight edges per chain) | span:<max m> (fewest equal edges ≤ max)
+#           drop = the segments leave the network and nothing replaces them
 #           ;merge = BR001 carriageway merge onto one two-way centreline; ;fixedfile = written to import-bridges-fixed.json; ;nopillars = noPillars on the deck
 #           (BR001: on the connectors and on its remaining over-water deck courses in import-all.json; PLAN.md item 4)
 #   seg     m_SegmentLength (m) for the 0.6–1.4 × seg rule (BXP: ../bridges/cs2-bridge-rules.json; vanilla: bridge-rules-live.json from tools/fetch-bridge-rules.mjs)
@@ -14,7 +15,8 @@
 #
 # id	select	prefab	plan	seg	notes	alt
 BR001	(?i)3L Interstate B	BXP SuspensionBridge03 - Six Lane Highway	fixed:168,320,320,168;merge;fixedfile;nopillars	320	Detroit: two 3-lane carriageways merged onto the 6-lane two-way suspension, towers 640 m apart (CS1 723 m)	Suspension Bridge - Highway Oneway - 3 lanes | span:448 (per carriageway, vanilla, no merge)
-BR022	.	BXP Arc Pedestrian Bridge Revised	count:1;fixedfile	32	white multi-arch below the dam: decor arches along the CS1 monorail arch line, one edge per arc chain (not a fixed-span prefab per cs2-bridge-rules.json; the game cuts it into ≤ 44.8 m pieces)	DIY Artdeco Bridge Kit objects (OlympicBridge, 4thStBridgePillar) by hand
+# BR022 dropped (owner review of A-v5: the arches read as unwanted footpaths over the highway bridge and by the dam). Was: BR022 | . | BXP Arc Pedestrian Bridge Revised | count:1;fixedfile | 32 | white multi-arch below the dam: decor arches along the CS1 monorail arch line, one edge per arc chain (not a fixed-span prefab per cs2-bridge-rules.json; the game cuts it into ≤ 44.8 m pieces) | DIY Artdeco Bridge Kit objects (OlympicBridge, 4thStBridgePillar) by hand
+BR004	.	-	drop	0	dam-crest walkway (Pedestrian Elevated, 799 m): dropped (owner review of A-v5: an unwanted footpath along the dam)	Pavement Path elevated (as before)
 BR005	.	BXP Truss Arch Bridge - Highway Oneway - 2 Lanes	count:2	128	Hernando-Desoto: two ~150 m arches per carriageway ("M")	Truss Arch Bridge - Highway Twoway - 2 Lanes | count:2 (two-way, needs a merge)
 BR009	.	BXP Truss Arch Bridge - Highway Oneway - 2 Lanes	span:179.2	128	green truss arch over the gorge; the owner asked for one edge per carriageway, but the deck chain is 210 m straight (> 1.4 × 128 = 179 m), so two	plain deck + PittTrussBridge / TrussBridgeHollow objects
 BR006	.	Truss Arch Bridge - Small Road - 2 Lanes	span:179.2;nopillars	128	red deck arch over the dry valley (vanilla truss arch; BXP equivalent if this name fails)	plain elevated Small Road + StoneArchRailBridge / OlympicBridge objects

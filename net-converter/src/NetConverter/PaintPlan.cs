@@ -9,7 +9,7 @@ namespace NetConverter;
 /// </summary>
 public static class PaintPlan
 {
-    public const string BankSand = "Sand Surface 01", BareEarth = "Sand Surface 02", DryGrass = "Grass Surface 02", Pavement = "Pavement Surface 01";
+    public const string BankSand = "Sand Surface 01", BareEarth = "Sand Surface 02", DryGrass = "Grass Surface 01", Pavement = "Pavement Surface 01";
     const int A1 = 1, P1 = 2, S1 = 3, S4 = 4, S3 = 5, G1 = 6, G2 = 7, S2 = -1;
 
     public sealed record Inputs(TerrainSurfaces? Sand, WaterSurface? Water, Func<double, double, double>? TerrainTrue, int[]? Fertility, GridSpec? FertilityGrid,
@@ -102,14 +102,16 @@ public static class PaintPlan
         List<List<(double X, double Z)>> Polys(int[] classes, double minArea, string name, bool open = true)
         {
             var m = new bool[n * n]; for (int k = 0; k < n * n; k++) m[k] = classes.Contains(cls[k]);
-            m = Close(m, n); if (open) m = Open(m, n);
+            // Owner review of A-v5: close and open by two cells, simplify to half a cell, then organic outlines (SmoothRings).
+            m = Close(Close(m, n), n); m = Open(Open(m, n), n);
             var set = new HashSet<int>(); for (int k = 0; k < n * n; k++) if (m[k]) set.Add(k);
-            var (polys, _, _) = Surfaces.MaskPolygons(set, g, minArea, 4, 3000);
-            perRule[name] = (set.Count, polys.Count, polys.Sum(p => Math.Abs(Surfaces.Area(p))) / 1e6);
-            return polys.Select(p => Surfaces.ClipSquare(p, half)).Where(p => p.Count >= 3).ToList();
+            var (polys, _, _) = Surfaces.MaskPolygons(set, g, Math.Max(minArea, SmoothRings.MinArea), cs / 2, 3000);
+            var smooth = SmoothRings.Smooth(polys, name.Aggregate(1469598103934665603UL, (h, ch) => (h ^ ch) * 1099511628211UL), half);
+            perRule[name] = (set.Count, smooth.Count, smooth.Sum(p => Math.Abs(Surfaces.Area(p))) / 1e6);
+            return smooth;
         }
         var sand = new List<SurfacePolygon>();
-        sand.AddRange(Polys([S1], 400, "S1 bank sand", open: false).Select((p, i) => new SurfacePolygon($"s1_{i + 1}", BankSand, p, "S1 bank sand")));
+        sand.AddRange(Polys([S1], 1500, "S1 bank sand").Select((p, i) => new SurfacePolygon($"s1_{i + 1}", BankSand, p, "S1 bank sand")));
         sand.AddRange(Polys([S3, S4], 10000, "S3 bare earth + S4 dirt decals").Select((p, i) => new SurfacePolygon($"s3_{i + 1}", BareEarth, p, "S3/S4 bare earth")));
         var grass = Polys([G1, G2], 10000, "G1 fertile + G2 dry plains").Select((p, i) => new SurfacePolygon($"g_{i + 1}", DryGrass, p, "G1/G2 dry grass")).ToList();
         var standIn = inp.StandIns.Where(p => p.Count >= 3).Select((p, i) => new SurfacePolygon($"p1_{i + 1}", Pavement, Surfaces.ClipSquare(p, half), "P1 under a stand-in building without a lot")).Where(s => s.Ring.Count >= 3).ToList();

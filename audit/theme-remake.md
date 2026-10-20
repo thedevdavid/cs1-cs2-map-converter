@@ -151,27 +151,50 @@ Superseded by §5. Every editable climate field gets a deliberate value there, s
 
 ## 4. Paint plan with vanilla surfaces (converter rules, no hand work)
 
-What the CS1 data contains: the v3 export's `terrainSurfaces` has **only the Sand class** (85 890 cells, 22.0 km², 16.8 km² inside ±7168 m). No pavement, gravel, ruined or field cells were painted. The rest of the CS1 look came from the slope cliff texture, the grass tints, 128 dirt decals, cornfield props and buildings. CS1 "sand" is Owl's brown sand: on this map it is the brown bare-earth colour used on banks **and** hillsides (the 9.2 km² south patch spans hills), not beach sand.
+**Revised 2026-10-20 after the live swatch test and the owner's A-v5 review.** The owner's rules:
+- paint surfaces **only where CS2's own terrain shading cannot do the job**;
+- **no rectangles:** every shape organic, as a brush with blending would leave it.
 
-Inputs the converter already has: true heights (run A file; compute every slope and height rule on true heights so runs A and B paint the same cells), `<base>-water.png` (surface and depth), `<base>-surfaces.png`, tree count rasters, `naturalResources` (fertility), field polygons, decal list, buildings.
+What the CS1 data contains: the v3 export's `terrainSurfaces` has **only the Sand class** (85 890 cells, 22.0 km², 16.8 km² inside ±7168 m). No pavement, gravel, ruined or field cells were painted. The rest of the CS1 look came from the slope cliff texture, the grass tints, 128 dirt decals, cornfield props and buildings. On this map CS1 "sand" is Owl's brown sand: banks, sand bars and some bare hillsides.
 
-The sand and grass variants are now chosen from the game's own surface icons (`UI/Media/Game/Icons/Surface*.svg`; see `look/README.md`). The sand call is clear; the grass call is marginal. The **swatch test** stays as a later in-game confirmation: import a 60 × 60 m square of each vanilla surface (`Grass Surface 01/02`, `Sand Surface 01/02`, `Pavement Surface 01/02`, `Concrete Surface 01/02`, `Agriculture Surface 01`, `Landfill Surface 01`) side by side on flat ground, take one `cs2_screenshot`, and fix the "lighter/darker/browner" choices below. Undo afterwards. The rules name the expected variant; the swatch decides.
+### Swatch test result (dakota-A5-2048, at (5500, 2500))
+
+Front row, west to east: Grass 01, Grass 02, Sand 01, Sand 02, Agriculture 01. Back row: Landfill 01, Pavement 01/02, Concrete 01/02. Judged from the three oblique screenshots and the owner's review:
+
+| Prefab | Reads as | Verdict |
+|---|---|---|
+| `Grass Surface 01` | mown lawn, dark green, faint mowing stripes | **do not use** for natural ground (a park/garden lawn) |
+| `Grass Surface 02` | mown lawn, a little lighter, with **visible mowing stripes** (the owner's "striped, mown-lawn texture") | **do not use.** The icon-based "dry grass" guess was wrong |
+| `Sand Surface 01` | pale tan-beige sand with faint raking lines | **bank sand and sand bars** (CS1's pale shores) |
+| `Sand Surface 02` | grey-brown ground with fine parallel furrows | grey, not CS1's warm brown, and the furrows give a ploughed look; at most small patches, not large hillsides |
+| `Agriculture Surface 01` | ploughed field | **field circles** |
+| `Landfill Surface 01` | rubble heap texture | do not use |
+| `Pavement Surface 01/02` | dark / lighter grey asphalt | **01 under stand-in buildings** |
+| `Concrete Surface 01/02` | near-white concrete | dam crest and plant pad only |
+
+**Dry grass:** no vanilla surface reads as dry prairie grass. **Paint nothing.** CS2's terrain grass layer and the season/climate shading already give the plains their tone, and the yellow-olive CS1 tint is not worth a lawn texture. The CS1 fertility and forest tints (G1–G3) are dropped.
+
+### Rules
 
 | Rule | Where (from data) | Surface | Notes |
 |---|---|---|---|
-| S1 bank sand | CS1 Sand cells within 25 m of the water edge, or ≤ 2 m above the water surface (water.png) | `Sand Surface 01` (icon `#7f745f`, light tan) | CS1 sand bars and gravel shores |
-| S2 submerged | CS1 Sand cells under water deeper than 1.5 m | **none** | invisible under CS2 water, saves polygons |
-| S3 bare earth | other CS1 Sand cells (hillsides, foothill erosion) | `Sand Surface 02` (icon `#5e5a50`, darker grey-brown) | the brown eroded slopes of screenshot 19 |
-| S4 dirt decals | the 128 CS1 dirt/mud decal footprints (`import-surfaces-decals.json` polygons) | `Sand Surface 02`; `Landfill Surface 01` only if the swatch shows a plain dark soil | replaces `PDO23 Dirty/Soil Surface 01` |
-| A1 fields | the 67 field polygons (`import-surfaces-fields.json`) | `Agriculture Surface 01` | unchanged; centre-pivot circles |
-| G1 fertile, yellower | CS1 fertility ≥ 0.5 (naturalResources), not field, not forest, slope < 8° | `Grass Surface 02` (icon `#424c25`, lighter and yellower than 01's `#353f1f`; marginal, confirm in the swatch) | the mix's fertility offset (+R, +G) |
-| G2 dry plains | east of the range: height below the plains threshold (true height ≤ start-area mean + 60 m), tree count 0 within 48 m, slope < 12°, fertility < 0.5 | `Grass Surface 02`, in large merged patches | the olive/yellow plains in the screenshots |
-| G3 forest floor | none | — | CS2 has no darker grass under trees and the tree cover hides the ground; the CS1 forest offset is not worth thousands of polygons |
-| P1 pavement | CS1 has no painted pavement. Only under imported stand-in buildings with no lot of their own, and under Procedural Object platforms flagged flat and paved (`<base>-po.json`) | `Pavement Surface 01`; `Concrete Surface 01` at the dam crest and the power-station pad | buildings with lots already draw their own ground |
-| R1 rock | none | — | no vanilla rock surface; CS2's own slope rock and the imported rock props cover cliffs. `Ore Surface 01` is an industry yard look, do not use |
-| O1 oil / ore / forestry / tiles | none | — | industry and plaza looks with no CS1 counterpart |
+| S1 bank sand | CS1 Sand cells within 25 m of the water edge, or ≤ 2 m above the water surface (`water.png`), and not under water deeper than 1.5 m | `Sand Surface 01` | CS1 sand bars and shores; CS2 has no automatic shore sand |
+| S3 bare earth | other CS1 Sand cells **with slope < 20°** | `Sand Surface 02`, only patches ≤ 0.05 km² after smoothing; larger ones are skipped | on steeper slopes CS2's own rock/dirt shading already shows bare ground. Large Sand 02 areas read as ploughed grey fields |
+| A1 fields | the 67 field polygons (`import-surfaces-fields.json`) | `Agriculture Surface 01` | centre-pivot circles stay circles (real fields have crisp edges); other fields get the organic treatment |
+| P1 pavement | only under imported stand-in buildings without a lot of their own, and under Procedural Object platforms flagged flat and paved | `Pavement Surface 01`; `Concrete Surface 01` at the dam crest and the power-station pad | footprint plus a 3–6 m apron; the only rule where straight edges are right (it sits under a building) |
+| dropped | grass G1/G2/G3, dirt decals S4, rock, oil, ore, forestry, tiles, landfill | — | CS2 terrain shading does it, or no vanilla surface looks right. S4: 128 small dirt decals as Sand 02 would be 128 grey blotches |
 
-Merge and size limits (from `cs2mcp/SURFACES.md`): rasterise each rule on the 16 m grid, open/close by one cell to drop single-cell speckle, drop patches under 0.01 km² (S3, G1, G2) or under 400 m² (S1), simplify to 4 m, keep rings ≤ 500 nodes and hole-free. Priority where rules overlap: A1 > P1 > S1 > S4 > S3 > G1 > G2.
+### Organic shapes (all rules except the centre-pivot circles and P1)
+
+1. **Mask:** rasterise the rule at 4 m (resample the 16 m CS1 grid with bilinear interpolation, not nearest neighbour, so no 16 m staircase).
+2. **Smooth:** Gaussian blur σ = 12 m (S1) or 20 m (S3), then threshold at 0.5. This rounds corners and removes the grid.
+3. **Edge noise:** displace the contour along its normal by 2-octave value noise, amplitude ±6 m (S1) or ±10 m (S3), wavelengths 40 m and 15 m, seeded per patch. No straight run longer than 25 m should survive; check by measuring the longest segment after simplification.
+4. **Feathered look without alpha:** CS2 surfaces have hard edges (visible in the swatch). Fake a brush falloff by breaking each patch edge into a fringe: along the outer 10–15 m, drop 30–50 % of the area as irregular bites (the noise threshold rising toward the edge), so the edge reads as dabs.
+5. **Clean-up:** remove patches under 400 m² (S1) or 1 500 m² (S3); fill holes under 400 m² (areas cannot have holes; split larger holes into hole-free pieces per `cs2mcp/SURFACES.md`).
+6. **Simplify:** Douglas-Peucker at 1.5 m (not 4 m, which re-straightens the noise), rings ≤ 500 nodes, no self-intersections.
+7. **Priority** where rules overlap: A1 > P1 > S1 > S3.
+
+The previous rectangular/grid-aligned outputs (`import-surfaces-grass*.json`, the decal squares) should not be imported again.
 
 ## 5. Climate: every editable field, with a value
 
@@ -274,7 +297,7 @@ Not available at all: a pollution tint (the shader takes pollution from the simu
 | Field (bridge key) | Range | Default | **Value** | Reasoning |
 |---|---|---|---|---|
 | `waterColor` | colour | (0.14, 0.62, 0.62) | **[0.28, 0.48, 0.36]** | refraction tint, owner blend 60 % lowland river (0.30, 0.45, 0.30) + 40 % CS1-slate compromise (0.26, 0.52, 0.46): olive-green through shallow water, still green-blue in clear creeks |
-| `scatteringColor` | colour | (0.19, 0.33, 0.39) | **[0.18, 0.25, 0.20]** | deep-water body colour, 60 % silty Mississippi (0.20, 0.25, 0.18) + 40 % CS1 slate (0.16, 0.25, 0.23): grey-green with a hint of brown |
+| `waterScatteringColor` (field `m_WaterScatteringColor`) | colour | (0.19, 0.33, 0.39) | **[0.18, 0.25, 0.20]** | deep-water body colour, 60 % silty Mississippi (0.20, 0.25, 0.18) + 40 % CS1 slate (0.16, 0.25, 0.23): grey-green with a hint of brown |
 | `absorptionDistance` m | 0–100 | 8 | **3.8** | 60 % real (3 m) + 40 % CS1 compromise (5 m). The depth rule still holds: a 0.5 m creek transmits ≈ 88 % (bed visible), a 6 m channel ≈ 21 % (opaque). Real upper Mississippi Secchi depth is about 0.5–1.5 m |
 | `maxRefractionDistance` m | 0–4 | 3 | **2** | less bed distortion; silty water refracts less visibly; creeks still shimmer |
 | `ambientScattering` | 0–1 | 0.2 | **0.5** | more suspended silt (60 % toward the real river's 0.55) lights the body of the wide river; the shallow clear creeks show little of it anyway |
@@ -306,6 +329,6 @@ Check after applying (one screenshot each): the falls (foam), the reservoir from
 2. All four seasons use the summer season prefab (the bridge supports references by name).
 3. Water: in between, closer to real: 60 % silty Mississippi, 40 % CS1 slate, keeping the depth rule for clear creeks (§6).
 4. Lumina may be recommended in the map description as an optional companion.
-5. Sand/grass variants: chosen offline from the game's surface icons (§4); the in-game swatch test confirms later.
+5. Surfaces: after the live swatch test, only bank sand, small bare-earth patches, agriculture and pavement under stand-ins, all with organic outlines; no grass surfaces (§4).
 
 All of these are encoded in [`look/`](../look/README.md).

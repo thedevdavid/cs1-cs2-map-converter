@@ -189,7 +189,19 @@ public static class Surfaces
                 var clipped = ClipSquare(circle, Half);
                 if (clipped.Count >= 3 && Math.Abs(Area(clipped)) >= 1) res.Add((cx, cz, r, clipped.Select(p => (Math.Round(p.X, 2), Math.Round(p.Z, 2))).ToList()));
             }
-            else foreach (var sg in ring) Sweep(openCells, g, sg.Bezier, hw);
+            else
+            {
+                // Open arcs (part of a pivot circle): fit a circle to the CS1 field segments (owner review of A-v5: true circles, not cell blobs).
+                var fit = SmoothRings.FitCircle(pts.Select(p => (p.X, p.Z)).ToList());
+                if (fit.Rms < 6 && fit.R >= 40 && fit.R <= 800)
+                {
+                    double r = fit.R + hw;
+                    var circle = Enumerable.Range(0, 48).Select(k => (fit.Cx + r * Math.Cos(k * Math.PI / 24), fit.Cz + r * Math.Sin(k * Math.PI / 24))).ToList();
+                    var clipped = ClipSquare(circle, Half);
+                    if (clipped.Count >= 3 && Math.Abs(Area(clipped)) >= 1) res.Add((fit.Cx, fit.Cz, r, clipped.Select(p => (Math.Round(p.X, 2), Math.Round(p.Z, 2))).ToList()));
+                }
+                else foreach (var sg in ring) Sweep(openCells, g, sg.Bezier, hw);
+            }
         }
         return res;
     }
