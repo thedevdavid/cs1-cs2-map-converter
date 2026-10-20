@@ -9,16 +9,26 @@ Ready request bodies for `POST /map/settings` (bridge 0.9.23 or later; MCP `cs2_
 | [terrain.json](terrain.json) | Selects `DefaultTerrainRenderSettings`, no edits (see below) |
 | [swatch.mjs](swatch.mjs) | Writes the surface swatch-test body |
 
-## Defaults pending the owner's answers
+## Owner decisions (2026-10-20), encoded in the files
 
-These are encoded now. Each can be changed in one place.
-
-| Open question (theme-remake.md) | Default in the files | To change |
+| Question (theme-remake.md) | Decision | In the files |
 |---|---|---|
-| 1. Dry cold season or Colorado spring snow | **Dry cold season, no snow (CS1 endless summer wins).** Spring, autumn and winter have `precipitationChance` 0, so nothing falls when it is cold | climate.json, the entry with `startTime` 0.0833: `precipitationChance` 25, `precipitationAmount` 30, `precipitationAmountDeviation` 25 |
-| 2. All four seasons on the summer season prefab | **Yes:** every season entry has `"prefab": "SeasonSummer"` (the bridge sets prefab references by name since 0.9.23). Foliage stays green all year | delete the four `"prefab"` keys to keep the base's own seasons |
-| 3. Water: CS1 slate or real Mississippi brown-green | **CS1 slate** (`scatteringColor` [0.16, 0.25, 0.23], `absorptionDistance` 5) | Mississippi: `scatteringColor` [0.20, 0.25, 0.18], `absorptionDistance` 3 |
-| 4. Lumina in the map description | **Mentioned as optional** (text below) | edit the description by hand |
+| 1. Cold season | **In between:** a short cold season with occasional light snow, at about a third of Colorado's cold-season precipitation chance. No persistent white months | climate.json precipitation (chance / amount / deviation, %): spring **9 / 20 / 15**, autumn **5 / 15 / 10**, winter **6 / 15 / 10**; summer unchanged at 25 / 35 / 30 |
+| 2. All four seasons on the summer season prefab | **Yes, since the bridge supports it:** every season entry has `"prefab": "SeasonSummer"`. Foliage stays green all year; snow can still fall | delete the four `"prefab"` keys to keep the base's own seasons |
+| 3. Water | **In between, closer to real:** 60 % silty Mississippi, 40 % CS1 slate. The depth rule still keeps the shallow mountain creeks clear | water.json: `waterColor` **[0.28, 0.48, 0.36]**, `scatteringColor` **[0.18, 0.25, 0.20]**, `absorptionDistance` **3.8**, `ambientScattering` **0.5**, `causticsIntensity` **0.6**; the other 17 fields are unchanged |
+| 4. Lumina in the map description | **Yes,** recommended as optional (text below) | set the description by hand |
+| 5. Sand/grass swatch | **Decided offline** from the game's surface icons (below). The in-game swatch test stays as a later confirmation | — |
+
+**Sand and grass, from the game's own surface icons** (`Cities2_Data/Content/Game/UI/Media/Game/Icons/Surface*.svg`; the swatch colour of each icon, with `#606060` as the frame):
+
+| Prefab | Icon colour | Reads as | Use (theme-remake.md §4) |
+|---|---|---|---|
+| `Sand Surface 01` | `#7f745f` | light warm tan | **S1 bank sand** (sand bars, shores) |
+| `Sand Surface 02` | `#5e5a50` | darker grey-brown | **S3 bare earth** on hillsides, **S4** dirt patches |
+| `Grass Surface 01` | `#353f1f` | dark lush olive | not painted (the base terrain is already dark grass) |
+| `Grass Surface 02` | `#424c25` / `#394221` | lighter, slightly yellower | **G1/G2** fertile land and dry plains |
+
+The icons are UI art, not the textures themselves. The sand pair differs clearly (light tan vs darker grey-brown); the grass pair only slightly (Grass 02 is about 25 % lighter and a little yellower). Sand is therefore reliable, grass is a **likely but marginal** call: confirm both with the swatch test.
 
 ## Apply order
 

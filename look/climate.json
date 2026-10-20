@@ -1,16 +1,16 @@
 {
   "climate": "TemperateWaterwayPassClimate",
   "climateEdit": {
-    "latitude": 40.0,
+    "latitude": 40,
     "longitude": -105.3,
     "maxSunElevationAngle": 73.5,
     "sunElevationClampStart": 60,
     "freezingTemperature": 0,
     "seasons": [
-      { "index": 0, "prefab": "SeasonSummer", "startTime": 0.0833, "tempNightDay": [0, 13], "tempDeviationNightDay": [4, 5], "cloudChance": 45, "cloudAmount": 35, "cloudAmountDeviation": 25, "precipitationChance": 0, "precipitationAmount": 0, "precipitationAmountDeviation": 1, "turbulence": 0.25, "auroraAmount": 0, "auroraChance": 0 },
-      { "index": 1, "prefab": "SeasonSummer", "startTime": 0.25, "tempNightDay": [12, 28], "tempDeviationNightDay": [3, 4], "cloudChance": 40, "cloudAmount": 25, "cloudAmountDeviation": 25, "precipitationChance": 25, "precipitationAmount": 35, "precipitationAmountDeviation": 30, "turbulence": 0.5, "auroraAmount": 0, "auroraChance": 0 },
-      { "index": 2, "prefab": "SeasonSummer", "startTime": 0.8333, "tempNightDay": [0, 13], "tempDeviationNightDay": [4, 5], "cloudChance": 30, "cloudAmount": 25, "cloudAmountDeviation": 20, "precipitationChance": 0, "precipitationAmount": 0, "precipitationAmountDeviation": 1, "turbulence": 0.15, "auroraAmount": 0, "auroraChance": 0 },
-      { "index": 3, "prefab": "SeasonSummer", "startTime": 0.9167, "tempNightDay": [-5, 8], "tempDeviationNightDay": [4, 5], "cloudChance": 35, "cloudAmount": 30, "cloudAmountDeviation": 20, "precipitationChance": 0, "precipitationAmount": 0, "precipitationAmountDeviation": 1, "turbulence": 0.15, "auroraAmount": 0, "auroraChance": 0 }
+      { "index": 0, "prefab": "SeasonSummer", "startTime": 0.0833, "tempNightDay": [0,13], "tempDeviationNightDay": [4,5], "cloudChance": 45, "cloudAmount": 35, "cloudAmountDeviation": 25, "precipitationChance": 9, "precipitationAmount": 20, "precipitationAmountDeviation": 15, "turbulence": 0.25, "auroraAmount": 0, "auroraChance": 0 },
+      { "index": 1, "prefab": "SeasonSummer", "startTime": 0.25, "tempNightDay": [12,28], "tempDeviationNightDay": [3,4], "cloudChance": 40, "cloudAmount": 25, "cloudAmountDeviation": 25, "precipitationChance": 25, "precipitationAmount": 35, "precipitationAmountDeviation": 30, "turbulence": 0.5, "auroraAmount": 0, "auroraChance": 0 },
+      { "index": 2, "prefab": "SeasonSummer", "startTime": 0.8333, "tempNightDay": [0,13], "tempDeviationNightDay": [4,5], "cloudChance": 30, "cloudAmount": 25, "cloudAmountDeviation": 20, "precipitationChance": 5, "precipitationAmount": 15, "precipitationAmountDeviation": 10, "turbulence": 0.15, "auroraAmount": 0, "auroraChance": 0 },
+      { "index": 3, "prefab": "SeasonSummer", "startTime": 0.9167, "tempNightDay": [-5,8], "tempDeviationNightDay": [4,5], "cloudChance": 35, "cloudAmount": 30, "cloudAmountDeviation": 20, "precipitationChance": 6, "precipitationAmount": 15, "precipitationAmountDeviation": 10, "turbulence": 0.15, "auroraAmount": 0, "auroraChance": 0 }
     ]
   },
   "theme": "North American",

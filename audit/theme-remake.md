@@ -155,17 +155,17 @@ What the CS1 data contains: the v3 export's `terrainSurfaces` has **only the San
 
 Inputs the converter already has: true heights (run A file; compute every slope and height rule on true heights so runs A and B paint the same cells), `<base>-water.png` (surface and depth), `<base>-surfaces.png`, tree count rasters, `naturalResources` (fertility), field polygons, decal list, buildings.
 
-Before the full run, one **swatch test**: import a 60 × 60 m square of each vanilla surface (`Grass Surface 01/02`, `Sand Surface 01/02`, `Pavement Surface 01/02`, `Concrete Surface 01/02`, `Agriculture Surface 01`, `Landfill Surface 01`) side by side on flat ground, take one `cs2_screenshot`, and fix the "lighter/darker/browner" choices below. Undo afterwards. The rules name the expected variant; the swatch decides.
+The sand and grass variants are now chosen from the game's own surface icons (`UI/Media/Game/Icons/Surface*.svg`; see `look/README.md`). The sand call is clear; the grass call is marginal. The **swatch test** stays as a later in-game confirmation: import a 60 × 60 m square of each vanilla surface (`Grass Surface 01/02`, `Sand Surface 01/02`, `Pavement Surface 01/02`, `Concrete Surface 01/02`, `Agriculture Surface 01`, `Landfill Surface 01`) side by side on flat ground, take one `cs2_screenshot`, and fix the "lighter/darker/browner" choices below. Undo afterwards. The rules name the expected variant; the swatch decides.
 
 | Rule | Where (from data) | Surface | Notes |
 |---|---|---|---|
-| S1 bank sand | CS1 Sand cells within 25 m of the water edge, or ≤ 2 m above the water surface (water.png) | `Sand Surface 01` (the lighter sand) | CS1 sand bars and gravel shores |
+| S1 bank sand | CS1 Sand cells within 25 m of the water edge, or ≤ 2 m above the water surface (water.png) | `Sand Surface 01` (icon `#7f745f`, light tan) | CS1 sand bars and gravel shores |
 | S2 submerged | CS1 Sand cells under water deeper than 1.5 m | **none** | invisible under CS2 water, saves polygons |
-| S3 bare earth | other CS1 Sand cells (hillsides, foothill erosion) | `Sand Surface 02` (expected darker/browner) | the brown eroded slopes of screenshot 19 |
+| S3 bare earth | other CS1 Sand cells (hillsides, foothill erosion) | `Sand Surface 02` (icon `#5e5a50`, darker grey-brown) | the brown eroded slopes of screenshot 19 |
 | S4 dirt decals | the 128 CS1 dirt/mud decal footprints (`import-surfaces-decals.json` polygons) | `Sand Surface 02`; `Landfill Surface 01` only if the swatch shows a plain dark soil | replaces `PDO23 Dirty/Soil Surface 01` |
 | A1 fields | the 67 field polygons (`import-surfaces-fields.json`) | `Agriculture Surface 01` | unchanged; centre-pivot circles |
-| G1 fertile, yellower | CS1 fertility ≥ 0.5 (naturalResources), not field, not forest, slope < 8° | the yellower/drier of `Grass Surface 01/02` | the mix's fertility offset (+R, +G) |
-| G2 dry plains | east of the range: height below the plains threshold (true height ≤ start-area mean + 60 m), tree count 0 within 48 m, slope < 12°, fertility < 0.5 | the same dry grass variant, in large merged patches | the olive/yellow plains in the screenshots |
+| G1 fertile, yellower | CS1 fertility ≥ 0.5 (naturalResources), not field, not forest, slope < 8° | `Grass Surface 02` (icon `#424c25`, lighter and yellower than 01's `#353f1f`; marginal, confirm in the swatch) | the mix's fertility offset (+R, +G) |
+| G2 dry plains | east of the range: height below the plains threshold (true height ≤ start-area mean + 60 m), tree count 0 within 48 m, slope < 12°, fertility < 0.5 | `Grass Surface 02`, in large merged patches | the olive/yellow plains in the screenshots |
 | G3 forest floor | none | — | CS2 has no darker grass under trees and the tree cover hides the ground; the CS1 forest offset is not worth thousands of polygons |
 | P1 pavement | CS1 has no painted pavement. Only under imported stand-in buildings with no lot of their own, and under Procedural Object platforms flagged flat and paved (`<base>-po.json`) | `Pavement Surface 01`; `Concrete Surface 01` at the dam crest and the power-station pad | buildings with lots already draw their own ground |
 | R1 rock | none | — | no vanilla rock surface; CS2's own slope rock and the imported rock props cover cliffs. `Ore Surface 01` is an industry yard look, do not use |
@@ -191,9 +191,9 @@ Merge and size limits (from `cs2mcp/SURFACES.md`): rasterise each rule on the 16
 The reference is the Colorado Front Range at 40° N: semi-arid, sunny and dry in winter. Precipitation peaks with spring storms and July–August thunderstorms. Days are warm with cool nights (a 15–17 °C swing), and the plains are windier and drier. CS1 is Sunny with Springwood weather: days 15–30 °C, nights 1–16 °C, fog 15–20 %, no snow ever, endless green summer.
 
 The compromise:
-- **Real Front Range temperatures and sun, but a long summer and a dry cold season.**
-- **Long summer:** summer runs April–October (7 months), so the foliage stays green most of the year.
-- **Dry cold season:** all precipitation falls in the warm months. **That keeps the whole map snow-free in run A** without warming the winters artificially: winter nights can be real (−5 °C), because snow needs precipitation.
+- **Real Front Range temperatures and sun, but a long summer and a short, nearly dry cold season.**
+- **Long summer:** summer runs April–October (7 months), the warm months; with all four seasons on the summer prefab the foliage stays green all year.
+- **Nearly dry cold season (owner decision 2026-10-20):** most precipitation falls in the warm months. The cold season keeps about a third of Colorado's precipitation days, light, so snow comes as occasional dustings that melt next day, never as white months. Winter nights can stay real (−5 °C), because snow needs precipitation.
 - **Evening fog from the dry-air swing:** the summer day–night swing is 16 °C, which gives CS1-like evening fog through the game's own rule.
 
 ### Climate fields (apply to the edited copy of `TemperateWaterwayPassClimate`)
@@ -205,10 +205,10 @@ The compromise:
 | `longitude` | **−105.3** | Boulder. Affects sunrise/sunset timing only |
 | `maxSunElevationAngle` | **73.5** | the real summer-solstice noon height at 40° N (90 − 40 + 23.44 = 73.44). A lower cap would fake longer shadows; not needed |
 | `sunElevationClampStart` | **60** | inactive in practice (the real sun never exceeds the cap); set so that a later cap reduction bends smoothly |
-| `freezingTemperature` | **0** | keep physical. Snow accumulation uses a hard-coded 0 °C, so lowering this would only show "rain" at −5 °C while snow still forms. The dry cold season, not this field, removes snow |
+| `freezingTemperature` | **0** | keep physical. Snow accumulation uses a hard-coded 0 °C, so lowering this would only show "rain" at −5 °C while snow still forms. The low cold-season precipitation, not this field, limits snow |
 | `randomSeed` | keep the base value | changes only the day-to-day draw. If the first in-game summer looks stormy, try another seed (any int) and compare |
 | `defaultWeather`, `defaultWeathers` | keep the base | prefab references; the bridge cannot set references by name |
-| `seasons[*].prefab` | keep the base | same: references. **Bridge gap:** setting every season to the summer prefab (truly endless green) would need reference assignment by name |
+| `seasons[*].prefab` | **`SeasonSummer`** for all four | the bridge sets prefab references by name (0.9.23): foliage green all year, CS1's endless summer. The name is inferred from `Climate.SEASON[SeasonSummer]`; if wrong, the bridge reply lists the real names |
 
 Seasons (four entries; `index` = position in the base's `seasons` array. Read the order with `GET /prefabs?category=climate&detail=1&query=WaterwayPass` and map by the `season` name):
 
@@ -220,35 +220,22 @@ Seasons (four entries; `index` = position in the base's `seasons` array. Read th
 | `cloudChance` % | **45** | **40** | **30** | **35** | sunny region; spring is the cloudiest, autumn the clearest |
 | `cloudAmount` % | **35** | **25** | **25** | **30** | broken cloud, never overcast for long; summer afternoon cumulus |
 | `cloudAmountDeviation` % | **25** | **25** | **20** | **20** | summer convection varies the most |
-| `precipitationChance` % | **0** | **25** | **0** | **0** | **the snow switch:** only the warm season rains. Real Front Range winters are the driest months; the spring snowstorms are left out on purpose (CS1 never snows) |
-| `precipitationAmount` % | **0** | **35** | **0** | **0** | July–August thunderstorms: short and moderate |
-| `precipitationAmountDeviation` % | **1** (minimum) | **30** | **1** | **1** | storms vary a lot; elsewhere nothing to vary |
+| `precipitationChance` % | **9** | **25** | **5** | **6** | owner decision 2026-10-20: a short cold season with **occasional light snow**, at about a third of Colorado's cold-season precipitation days (spring ≈ 27 %, winter ≈ 17 %, November ≈ 15 %). Summer thunderstorms stay at full strength |
+| `precipitationAmount` % | **20** | **35** | **15** | **15** | light: around the game's 0.1 snow threshold, so many cold-season events are flurries that lay nothing. Summer thunderstorms are short and moderate |
+| `precipitationAmountDeviation` % | **15** | **30** | **10** | **10** | summer storms vary a lot; cold-season events stay light |
 | `turbulence` (0–1) | **0.25** | **0.5** | **0.15** | **0.15** | convective summer weather changes hour to hour; the cold season is calm |
 | `auroraAmount` (0–1) | **0** | **0** | **0** | **0** | 40° N: practically never; CS1 northern lights 0 |
 | `auroraChance` % | **0** | **0** | **0** | **0** | as above |
 
 What this produces, checked against the game's rules:
-- **Snow, run A:** none on the plains. On the peaks, rare light snow on the coldest summer storm nights (10th-percentile summer night ≈ 8 °C − 7.7 ≈ 0 °C at the summits). In April–May and October, while the rain chance ramps in from the dry seasons, summits can get a dusting that melts. Real, and slight.
+- **Snow, run A:** on the plains, an occasional light dusting on cold-season nights (nights 0 to −5 °C, about one event in 6–11 days with precipitation chance 5–9 %). It melts on the next day (days 8–13 °C), so there are no white months. The summits are ≈ 7.7 °C colder (winter days ≈ 0 °C), so they can keep a light cover through December–January: snow-capped peaks, realistic. Rare light snow on the summits on the coldest summer storm nights.
 - **Snow, run B:** summits ≈ 15 °C colder, so summer storm nights will whiten the highest peaks for a day at a time. This is acceptable as "snow-capped"; if not, lower the summer `precipitationChance` to 10.
 - **Fog:** summer evenings with cloud > 0.15 and the 16 °C swing: occasional evening/night fog, CS1's 15–20 % feel. None in the cold season (swing 13 °C).
-- **Foliage:** green April–October, autumn colour in November, winter look December–January, spring February–March (assuming the season prefabs drive foliage, as in vanilla).
+- **Foliage:** green all year, because all four seasons use the summer prefab (assuming, as in vanilla, that the season prefabs drive foliage).
 
 Map-level fields (not in the climate) that go with it: `startingMonth` **6** (June: early summer, everything green), `startingTime` **0.5** (midday, as in the screenshots), `theme` **North American**, `naturalDisasters` **false**.
 
-Bridge request (season indices assume the base order Spring 0, Summer 1, Autumn 2, Winter 3; check the GET first):
-
-```json
-{ "climate": "TemperateWaterwayPassClimate",
-  "climateEdit": {
-    "latitude": 40.0, "longitude": -105.3,
-    "maxSunElevationAngle": 73.5, "sunElevationClampStart": 60, "freezingTemperature": 0,
-    "seasons": [
-      { "index": 0, "startTime": 0.0833, "tempNightDay": [0, 13],  "tempDeviationNightDay": [4, 5], "cloudChance": 45, "cloudAmount": 35, "cloudAmountDeviation": 25, "precipitationChance": 0,  "precipitationAmount": 0,  "precipitationAmountDeviation": 1,  "turbulence": 0.25, "auroraAmount": 0, "auroraChance": 0 },
-      { "index": 1, "startTime": 0.25,   "tempNightDay": [12, 28], "tempDeviationNightDay": [3, 4], "cloudChance": 40, "cloudAmount": 25, "cloudAmountDeviation": 25, "precipitationChance": 25, "precipitationAmount": 35, "precipitationAmountDeviation": 30, "turbulence": 0.5,  "auroraAmount": 0, "auroraChance": 0 },
-      { "index": 2, "startTime": 0.8333, "tempNightDay": [0, 13],  "tempDeviationNightDay": [4, 5], "cloudChance": 30, "cloudAmount": 25, "cloudAmountDeviation": 20, "precipitationChance": 0,  "precipitationAmount": 0,  "precipitationAmountDeviation": 1,  "turbulence": 0.15, "auroraAmount": 0, "auroraChance": 0 },
-      { "index": 3, "startTime": 0.9167, "tempNightDay": [-5, 8],  "tempDeviationNightDay": [4, 5], "cloudChance": 35, "cloudAmount": 30, "cloudAmountDeviation": 20, "precipitationChance": 0,  "precipitationAmount": 0,  "precipitationAmountDeviation": 1,  "turbulence": 0.15, "auroraAmount": 0, "auroraChance": 0 } ] },
-  "startingMonth": 6, "startingTime": 0.5, "theme": "North American", "naturalDisasters": false }
-```
+Bridge request: [`look/climate.json`](../look/climate.json) (apply order in [`look/README.md`](../look/README.md)).
 
 ## 6. Water rendering: every field, per water body and the single compromise
 
@@ -286,11 +273,11 @@ Not available at all: a pollution tint (the shader takes pollution from the simu
 
 | Field (bridge key) | Range | Default | **Value** | Reasoning |
 |---|---|---|---|---|
-| `waterColor` | colour | (0.14, 0.62, 0.62) | **[0.26, 0.52, 0.46]** | refraction tint: what the bed looks like through shallow water. Greener and less saturated than the default teal; blue-green in creeks, between mountain and lowland |
-| `scatteringColor` | colour | (0.19, 0.33, 0.39) | **[0.16, 0.25, 0.23]** | deep-water body colour: CS1 slate grey-blue moved toward silty green; darker than the default |
-| `absorptionDistance` m | 0–100 | 8 | **5** | the depth split (rule 2): creeks clear, river and reservoir opaque below ≈ 5 m. Real upper Mississippi Secchi depth is about 0.5–1.5 m; 5 m keeps the CS1 look slightly clearer than reality |
+| `waterColor` | colour | (0.14, 0.62, 0.62) | **[0.28, 0.48, 0.36]** | refraction tint, owner blend 60 % lowland river (0.30, 0.45, 0.30) + 40 % CS1-slate compromise (0.26, 0.52, 0.46): olive-green through shallow water, still green-blue in clear creeks |
+| `scatteringColor` | colour | (0.19, 0.33, 0.39) | **[0.18, 0.25, 0.20]** | deep-water body colour, 60 % silty Mississippi (0.20, 0.25, 0.18) + 40 % CS1 slate (0.16, 0.25, 0.23): grey-green with a hint of brown |
+| `absorptionDistance` m | 0–100 | 8 | **3.8** | 60 % real (3 m) + 40 % CS1 compromise (5 m). The depth rule still holds: a 0.5 m creek transmits ≈ 88 % (bed visible), a 6 m channel ≈ 21 % (opaque). Real upper Mississippi Secchi depth is about 0.5–1.5 m |
 | `maxRefractionDistance` m | 0–4 | 3 | **2** | less bed distortion; silty water refracts less visibly; creeks still shimmer |
-| `ambientScattering` | 0–1 | 0.2 | **0.4** | suspended silt lights the body of the wide river; the shallow clear creeks show little of it anyway |
+| `ambientScattering` | 0–1 | 0.2 | **0.5** | more suspended silt (60 % toward the real river's 0.55) lights the body of the wide river; the shallow clear creeks show little of it anyway |
 | `heightScattering` | 0–1 | 0.2 | **0.2** | wave-crest brightening; waves are small, so the default |
 | `displacementScattering` | 0–1 | 0.1 | **0.1** | as above |
 | `directLightTipScattering` | 0–1 | 0.6 | **0.4** | less sunlit glow in crests: an inland river, not surf |
@@ -302,32 +289,23 @@ Not available at all: a pollution tint (the shader takes pollution from the simu
 | `minWaterAmountForWaves` m | 5–200 | 10 | **15** | no waves in water shallower than 15 m: creeks, shallows and most of the river surface stay flat; only the deep reservoir and main channel move |
 | `seaWindAffectWavesDirection` | bool | false | **false** | inland map, no sea wind |
 | `causticsPlaneDistance` m | 0–10 | 4 | **3** | caustics only in the top 3 m: creeks and shallows, never on the deep silty river |
-| `causticsIntensity` | 0–3 | 1 | **0.7** | visible on clear creek beds, not glittery |
+| `causticsIntensity` | 0–3 | 1 | **0.6** | visible on clear creek beds, slightly weaker for the siltier water |
 | `ripplesWindSpeed` | 0–15 | 5 | **4** | the plains are windy, but CS1's water reads calm; a moderate value |
 | `ripplesChaos` | 0–1 | 1 | **0.6** | flowing water, less random than open sea |
 | `smoothnessClose` | 0–0.99 | 0.95 | **0.92** | slightly softer highlights (CS1's soft look) |
 | `smoothnessDistant` | 0–0.99 | 0.85 | **0.78** | wind-roughened distance, matches the hazy horizon |
 | `smoothnessRange` [start, distance] m | 0–1000 / 500–1500 | [100, 500] | **[150, 600]** | the blend to distant roughness starts a little further out |
 
-```json
-{ "waterEdit": {
-    "waterColor": [0.26, 0.52, 0.46], "scatteringColor": [0.16, 0.25, 0.23],
-    "absorptionDistance": 5, "maxRefractionDistance": 2,
-    "ambientScattering": 0.4, "heightScattering": 0.2, "displacementScattering": 0.1,
-    "directLightTipScattering": 0.4, "directLightBodyScattering": 0.35,
-    "foamAmount": 0.9, "foamFadeRange": [600, 1500],
-    "wavesMultiplier": 0.3, "lakeWavesMultiplier": 0.2, "minWaterAmountForWaves": 15, "seaWindAffectWavesDirection": false,
-    "causticsPlaneDistance": 3, "causticsIntensity": 0.7,
-    "ripplesWindSpeed": 4, "ripplesChaos": 0.6,
-    "smoothnessClose": 0.92, "smoothnessDistant": 0.78, "smoothnessRange": [150, 600] } }
-```
+Bridge request: [`look/water.json`](../look/water.json).
 
 Check after applying (one screenshot each): the falls (foam), the reservoir from the dam (calm, green-grey, opaque), a western creek (bed visible, blue-green), the lower river at overview height (slate, small chop). Expected adjustments: `absorptionDistance` ±2 if the creeks look muddy or the river looks glassy; `scatteringColor` toward blue if it reads too swampy against CS1.
 
-## Open questions for the owner
+## Owner decisions (2026-10-20)
 
-1. Climate (§5): accept the dry cold season (no snow in run A, real winter temperatures), or keep Colorado's spring snowstorms (set spring `precipitationChance` to 25 and accept white Februaries and Marches)?
-2. Should the bridge learn to set prefab references by name, so that all four seasons can use the summer season prefab (true endless green)?
-3. Water (§6): compromise toward CS1's slate look (as set) or toward the real silty Mississippi green-brown (`scatteringColor` ≈ [0.20, 0.25, 0.18], `absorptionDistance` 3)?
-4. Is Lumina (LUT, AO) acceptable as a recommended companion mod, or should the map description not mention mods at all?
-5. Run the swatch test and confirm which of `Sand Surface 01/02` and `Grass Surface 01/02` reads as brown earth and dry grass.
+1. Cold season: in between. Occasional light snow at about a third of Colorado's cold-season precipitation chance, no persistent white months (§5).
+2. All four seasons use the summer season prefab (the bridge supports references by name).
+3. Water: in between, closer to real: 60 % silty Mississippi, 40 % CS1 slate, keeping the depth rule for clear creeks (§6).
+4. Lumina may be recommended in the map description as an optional companion.
+5. Sand/grass variants: chosen offline from the game's surface icons (§4); the in-game swatch test confirms later.
+
+All of these are encoded in [`look/`](../look/README.md).
