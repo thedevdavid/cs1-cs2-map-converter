@@ -1,0 +1,65 @@
+{
+  "name": "Dakota Falls access roads",
+  "_comment": "Round 26: Gravel Road access to the dam plant and TransformerStation01 (both RequireRoad). The start node attaches to the nearest CS1 road through snapToSegment; the end sits at the building front. Ground level, absolute heights.",
+  "nodes": [
+    {
+      "id": "substation_road_a",
+      "x": 1554.04,
+      "y": 163.72,
+      "z": 4594.59,
+      "elevation": 0,
+      "snapToSegment": {
+        "radius": 3,
+        "prefabContains": "Gravel Road"
+      }
+    },
+    {
+      "id": "substation_road_b",
+      "x": 1580.91,
+      "y": 168.05,
+      "z": 4563.98,
+      "elevation": 0
+    },
+    {
+      "id": "plant_road_a",
+      "x": 1568.63,
+      "y": 166.02,
+      "z": 4741.02,
+      "elevation": 0,
+      "snapToSegment": {
+        "radius": 3,
+        "prefabContains": "Gravel Road"
+      }
+    },
+    {
+      "id": "plant_road_b",
+      "x": 1431.21,
+      "y": 165.6,
+      "z": 4697.04,
+      "elevation": 0
+    }
+  ],
+  "edges": [
+    {
+      "id": "substation_access",
+      "a": "substation_road_a",
+      "b": "substation_road_b",
+      "prefab": "Gravel Road",
+      "note": "from e1619_0 (Gravel Road) 41 m to the substation"
+    },
+    {
+      "id": "plant_access",
+      "a": "plant_road_a",
+      "b": "plant_road_b",
+      "prefab": "Gravel Road",
+      "note": "from e33625_0 (Gravel Road) 144 m to the plant"
+    }
+  ],
+  "options": {
+    "batchSize": 8,
+    "nodesFirst": true,
+    "heightMode": "absolute",
+    "dryRun": false,
+    "bypassValidation": true
+  }
+}

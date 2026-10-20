@@ -17,8 +17,8 @@ Live graph `out\live-graph.json` (2973 nodes).
 
 | stub prefab | x | z | reason | CS1 segments here [layer, converter decision] |
 |---|---:|---:|---|---|
-| Highway Oneway - 3 lanes | 2302 | 255 | CS1 dead end (genuine) | USRP 3L Interstate_Data [highways, left out: one-way highway stub to a CS1 dead end] |
-| Highway Oneway - 3 lanes | 2293 | 277 | CS1 dead end (genuine) | USRP 3L Interstate_Data [highways, left out: one-way highway stub to a CS1 dead end] |
+| Highway Oneway - 3 lanes | 2302 | 255 | CS1 dead end (genuine) | USRP 3L Interstate_Data [highways, imported] |
+| Highway Oneway - 3 lanes | 2293 | 277 | CS1 dead end (genuine) | USRP 3L Interstate_Data [highways, imported] |
 | Highway Oneway - 3 lanes | 412 | -4474 | connected in the data, not joined in the game | USRP 3L Interstate_Data [highways, imported]; USRP 4L Interstate_Data [highways, imported] |
 | Highway Oneway - 4 lanes | 463 | -4520 | connected in the data, not joined in the game | USRP 4L Interstate_Data [highways, imported]; USRP 4L Interstate_Data [highways, imported] |
 | Highway Oneway - 1 lane | 3671 | 2153 | no CS1 node here (game split, or merged/moved by the converter) |  |
@@ -32,12 +32,12 @@ Live graph `out\live-graph.json` (2973 nodes).
 | Gravel Road | 1383 | 6161 | CS1 dead end (genuine) | Gravel Road Bridge [roads, bridge override (import-bridges*.json)] |
 | Gravel Road | 1462 | 6173 | neighbour collapsed (< 4 m) | Gravel Road [roads, collapsed (< 4 m)]; Gravel Road [roads, imported] |
 
-## Predicted for the regenerated import-all.json (fresh map): 57
+## Predicted for the regenerated import-all.json (fresh map): 59
 
 | reason | ends | stub prefabs |
 |---|---:|---|
 | connected in the data, not joined in the game | 42 | Double Train Track 18, Gravel Road 15, Highway Oneway - 2 lanes 5, Small Road 2, Highway Oneway - 4 lanes 1, Highway Oneway - 3 lanes 1 |
-| CS1 dead end (genuine) | 10 | Gravel Road 4, Pavement Path 4, Medium Road 2 |
+| CS1 dead end (genuine) | 12 | Gravel Road 4, Pavement Path 4, Highway Oneway - 3 lanes 2, Medium Road 2 |
 | no CS1 node here (game split, or merged/moved by the converter) | 4 | Highway Oneway - 3 lanes 4 |
 | neighbour collapsed (< 4 m) | 1 | Gravel Road 1 |
 

@@ -68,7 +68,7 @@ public static partial class Converter
                 for (int j = i + 1; j < list.Count; j++)
                 {
                     var e1 = list[i]; var e2 = list[j];
-                    if (e1.Layer == e2.Layer) continue;
+                    // Round 26: same-layer crossings too (a highway over a ramp, a road over a road: A-v7 B3 / C1); only those that share a node are joins.
                     if (e1.A == e2.A || e1.A == e2.B || e1.B == e2.A || e1.B == e2.B) continue;
                     if (!seen.Add((e1, e2)) || !seen.Add((e2, e1))) continue;
                     var t1 = tracks[e1]; var t2 = tracks[e2];
@@ -100,7 +100,8 @@ public static partial class Converter
                         continue;
                     }
                     double target = Math.Max(Math.Max(o.MinBridgeElevation, yu - terrain), el + o.MinBridgeElevation);
-                    if (eu >= target - 0.5)
+                    // Round 26: CS1's own clearance is enough (the lower course passes under with ≥ MinBridgeElevation): nothing to raise.
+                    if (eu >= target - 0.5 || (yu - yl >= o.MinBridgeElevation && eu - el >= o.MinBridgeElevation - 0.5))
                     {
                         r4.CrossingsAlreadySeparated++;
                         r4.CrossingList.Add(new(up.Id, up.Map.Cs2Prefab!, lo.Id, lo.Map.Cs2Prefab!, p.X, p.Z, yu - yl, eu - el, eu, "separated"));

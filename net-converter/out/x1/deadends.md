@@ -38,12 +38,12 @@ Live graph `out\x1\live-graph.json` (3106 nodes).
 | Sound Barrier | 1212 | 4222 | CS1 dead end (genuine) | Flood Wall [walls, walls] |
 | Pavement Path | 4787 | -709 | CS1 dead end (genuine) | Pedestrian Gravel [roads, imported] |
 
-## Predicted for the regenerated import-all.json (fresh map): 57
+## Predicted for the regenerated import-all.json (fresh map): 55
 
 | reason | ends | stub prefabs |
 |---|---:|---|
-| connected in the data, not joined in the game | 42 | Double Train Track 18, Gravel Road 15, Highway Oneway - 2 lanes 5, Small Road 2, Highway Oneway - 4 lanes 1, Highway Oneway - 3 lanes 1 |
-| CS1 dead end (genuine) | 10 | Gravel Road 4, Pavement Path 4, Medium Road 2 |
+| connected in the data, not joined in the game | 38 | Double Train Track 16, Gravel Road 13, Highway Oneway - 2 lanes 5, Small Road 2, Highway Oneway - 4 lanes 1, Highway Oneway - 3 lanes 1 |
+| CS1 dead end (genuine) | 12 | Gravel Road 4, Pavement Path 4, Highway Oneway - 3 lanes 2, Medium Road 2 |
 | no CS1 node here (game split, or merged/moved by the converter) | 4 | Highway Oneway - 3 lanes 4 |
 | neighbour collapsed (< 4 m) | 1 | Gravel Road 1 |
 
@@ -63,13 +63,11 @@ Live graph `out\x1\live-graph.json` (3106 nodes).
 | Double Train Track | -250 | -6805 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W GrWo 2x2 B0 [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | -398 | -5800 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W GrWo 2x2 B0 [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | -423 | -3356 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W GrWo 2x2 B0 [rail, bridge override (import-bridges*.json)] |
-| Double Train Track | -1470 | 4404 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W GrWo 2x2 B0 [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | 685 | 2683 | connected in the data, not joined in the game | R2EUR W GrCo 2x2 Ourense SA E [rail, imported]; R2EUR W GrCo 2x2 Ourense SA B [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | 166 | 2777 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W TrWo 2x2 TRH Girder 02_Data [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | 3679 | 2853 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W TrWo 2x2 TRH Girder 02_Data [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | 6492 | 2407 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W TrWo 2x2 TRH Girder 02_Data [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | -345 | -2864 | connected in the data, not joined in the game | R2EUR W GrCo 2x2 Pedrido B [rail, bridge override (import-bridges*.json)]; R2EUR W GrCo 2x2 Pedrido E [rail, imported] |
-| Double Train Track | -1399 | 4230 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W GrWo 2x2 B0 [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | 3806 | 2833 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W TrWo 2x2 TRH Girder 02_Data [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | -305 | -6433 | connected in the data, not joined in the game | R2USA W GrWo 2x2 B0 [rail, bridge override (import-bridges*.json)]; R2USA W GrWo 2x2_Data [rail, imported] |
 | Double Train Track | 283 | 2756 | connected in the data, not joined in the game | R2USA W TrWo 2x2 TRH Girder 02_Data [rail, bridge override (import-bridges*.json)]; R2USA W GrWo 2x2_Data [rail, imported] |
@@ -79,4 +77,6 @@ Live graph `out\x1\live-graph.json` (3106 nodes).
 | Double Train Track | -452 | -5436 | connected in the data, not joined in the game | R2USA W GrWo 2x2 B0 [rail, bridge override (import-bridges*.json)]; R2USA W GrWo 2x2_Data [rail, imported] |
 | Double Train Track | 871 | 2649 | connected in the data, not joined in the game | R2EUR W GrCo 2x2 Ourense SA B [rail, bridge override (import-bridges*.json)]; R2EUR W GrCo 2x2 Ourense SA E [rail, imported] |
 | Small Road | -3696 | -2945 | connected in the data, not joined in the game | USRP 2-Lane National Road_Data [roads, imported]; USRP 2-Lane National Road B [roads, bridge override (import-bridges*.json)] |
+| Small Road | -3353 | -3417 | connected in the data, not joined in the game | USRP 2-Lane National Road B [roads, bridge override (import-bridges*.json)]; USRP 2-Lane National Road_Data [roads, imported] |
+| Gravel Road | -1536 | 4298 | connected in the data, not joined in the game | Gravel Road [roads, imported]; Gravel Road Elevated [roads, bridge override (import-bridges*.json)] |
 

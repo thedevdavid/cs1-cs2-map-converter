@@ -3,7 +3,7 @@
   "_comment": "Terrain material paint (editor Terrain \u2192 Materials, POST /import/terrain-paint, bridge 0.9.29): CS1 dirt / mud decals. CS2 x/z metres, the same at both scales.",
   "options": {
     "dryRun": false,
-    "strength": 1,
+    "strength": 0.45,
     "softEdge": 0,
     "minStamp": 4,
     "maxStamps": 250000
@@ -11,12 +11,1036 @@
   "polygons": [],
   "strokes": [
     {
+      "id": "tp_earth_1_f",
+      "material": "Dirt",
+      "x": -34.35,
+      "z": -2346.28,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_2_f",
+      "material": "Dirt",
+      "x": -733.91,
+      "z": 4477.79,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_3_f",
+      "material": "Dirt",
+      "x": 35.6,
+      "z": -2453.17,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_4_f",
+      "material": "Dirt",
+      "x": -16.96,
+      "z": -2368.22,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_5_f",
+      "material": "Dirt",
+      "x": 1002.77,
+      "z": 4890.45,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_6_f",
+      "material": "Dirt",
+      "x": 1050.53,
+      "z": 4899.4,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_7_f",
+      "material": "Dirt",
+      "x": 929.59,
+      "z": 4889.57,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_8_f",
+      "material": "Dirt",
+      "x": 1098.58,
+      "z": 4904.74,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_9_f",
+      "material": "Dirt",
+      "x": 44,
+      "z": -2462.35,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_10_f",
+      "material": "Dirt",
+      "x": 79.29,
+      "z": -2404.8,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_11_f",
+      "material": "Dirt",
+      "x": 37.88,
+      "z": -2414.58,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_12_f",
+      "material": "Dirt",
+      "x": -760.55,
+      "z": 4527.82,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_13_f",
+      "material": "Dirt",
+      "x": 5.82,
+      "z": -2371.29,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_14_f",
+      "material": "Dirt",
+      "x": 4749.7,
+      "z": -677.29,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_15_f",
+      "material": "Dirt",
+      "x": 55.13,
+      "z": -2405.86,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_16_f",
+      "material": "Dirt",
+      "x": 4788.4,
+      "z": -688.8,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_17_f",
+      "material": "Dirt",
+      "x": -763.13,
+      "z": 4413.02,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_18_f",
+      "material": "Dirt",
+      "x": 1003.91,
+      "z": 4894.42,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_19_f",
+      "material": "Dirt",
+      "x": 4740.17,
+      "z": -695.54,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_20_f",
+      "material": "Dirt",
+      "x": 991.01,
+      "z": 4885.3,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_21_f",
+      "material": "Dirt",
+      "x": 32.53,
+      "z": -2402.89,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_22_f",
+      "material": "Dirt",
+      "x": 2.84,
+      "z": -2358.63,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_23_f",
+      "material": "Dirt",
+      "x": 47.63,
+      "z": -2497.63,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_24_f",
+      "material": "Dirt",
+      "x": 42.41,
+      "z": -2520.86,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_25_f",
+      "material": "Dirt",
+      "x": -745.2,
+      "z": 4430.19,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_26_f",
+      "material": "Dirt",
+      "x": -775.21,
+      "z": 4397.61,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_27_f",
+      "material": "Dirt",
+      "x": 42.33,
+      "z": -2481.81,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_28_f",
+      "material": "Dirt",
+      "x": 4790.84,
+      "z": -666.04,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_29_f",
+      "material": "Dirt",
+      "x": -767.11,
+      "z": 4371.16,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_30_f",
+      "material": "Dirt",
+      "x": -13.75,
+      "z": -2366.84,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_31_f",
+      "material": "Dirt",
+      "x": 4800.84,
+      "z": -661.41,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_32_f",
+      "material": "Dirt",
+      "x": -37.09,
+      "z": -2352.77,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_33_f",
+      "material": "Dirt",
+      "x": 4781.3,
+      "z": -684.01,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_34_f",
+      "material": "Dirt",
+      "x": -30.74,
+      "z": -2363.52,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_35_f",
+      "material": "Dirt",
+      "x": 2.22,
+      "z": -2367.37,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_36_f",
+      "material": "Dirt",
+      "x": 18.2,
+      "z": -2563.47,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_37_f",
+      "material": "Dirt",
+      "x": 306.62,
+      "z": -3030.69,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_38_f",
+      "material": "Dirt",
+      "x": 906.29,
+      "z": 4892.72,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_39_f",
+      "material": "Dirt",
+      "x": -772.68,
+      "z": 4544.09,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_40_f",
+      "material": "Dirt",
+      "x": -782.57,
+      "z": 4392.65,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_41_f",
+      "material": "Dirt",
+      "x": -773.08,
+      "z": 4402.29,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_42_f",
+      "material": "Dirt",
+      "x": 4768.19,
+      "z": -663.27,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_43_f",
+      "material": "Dirt",
+      "x": -10.39,
+      "z": -2357.52,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_44_f",
+      "material": "Dirt",
+      "x": -776.73,
+      "z": 4369.62,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_45_f",
+      "material": "Dirt",
+      "x": -23.2,
+      "z": -2352.29,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_46_f",
+      "material": "Dirt",
+      "x": 39.18,
+      "z": -2411.51,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_47_f",
+      "material": "Dirt",
+      "x": 997.18,
+      "z": 4901.76,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_48_f",
+      "material": "Dirt",
+      "x": 331.67,
+      "z": -3031.96,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_49_f",
+      "material": "Dirt",
+      "x": -729.47,
+      "z": 4445.49,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_50_f",
+      "material": "Dirt",
+      "x": 887.4,
+      "z": 4892.94,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_51_f",
+      "material": "Dirt",
+      "x": 1081.59,
+      "z": 4896.24,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_52_f",
+      "material": "Dirt",
+      "x": 4785.04,
+      "z": -658.82,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_53_f",
+      "material": "Dirt",
+      "x": 3.78,
+      "z": -2350.74,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_54_f",
+      "material": "Dirt",
+      "x": -762.22,
+      "z": 4404.5,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_55_f",
+      "material": "Dirt",
+      "x": 4784.94,
+      "z": -702.05,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_56_f",
+      "material": "Dirt",
+      "x": 21.89,
+      "z": -2384.91,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_57_f",
+      "material": "Dirt",
+      "x": 4743.94,
+      "z": -699.19,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_58_f",
+      "material": "Dirt",
+      "x": 27.33,
+      "z": -2550.74,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_59_f",
+      "material": "Dirt",
+      "x": 4767.86,
+      "z": -664.74,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_60_f",
+      "material": "Dirt",
+      "x": 4757.68,
+      "z": -685.23,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_61_f",
+      "material": "Dirt",
+      "x": 76.6,
+      "z": -2416.06,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_62_f",
+      "material": "Dirt",
+      "x": 81.13,
+      "z": -2418.05,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_63_f",
+      "material": "Dirt",
+      "x": 1093.58,
+      "z": 4891.06,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_64_f",
+      "material": "Dirt",
+      "x": -748.12,
+      "z": 4517.05,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_65_f",
+      "material": "Dirt",
+      "x": 948.66,
+      "z": 4893.16,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_66_f",
+      "material": "Dirt",
+      "x": 1067.78,
+      "z": 4896.38,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_67_f",
+      "material": "Dirt",
+      "x": 30.93,
+      "z": -2545.55,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_68_f",
+      "material": "Dirt",
+      "x": 1033.83,
+      "z": 4894.8,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_69_f",
+      "material": "Dirt",
+      "x": -763.46,
+      "z": 4362.68,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_70_f",
+      "material": "Dirt",
+      "x": 372.15,
+      "z": -3028.29,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_71_f",
+      "material": "Dirt",
+      "x": 4797.91,
+      "z": -667.46,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_72_f",
+      "material": "Dirt",
+      "x": 299.04,
+      "z": -3026.71,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_73_f",
+      "material": "Dirt",
+      "x": 21.54,
+      "z": -2390.52,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_74_f",
+      "material": "Dirt",
+      "x": 10.6,
+      "z": -2377.25,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_75_f",
+      "material": "Dirt",
+      "x": 21.15,
+      "z": -2558.77,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_76_f",
+      "material": "Dirt",
+      "x": 4750.45,
+      "z": -689.98,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_77_f",
+      "material": "Dirt",
+      "x": -770.52,
+      "z": 4520.07,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_78_f",
+      "material": "Dirt",
+      "x": 35.06,
+      "z": -2424.1,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_79_f",
+      "material": "Dirt",
+      "x": 4774.48,
+      "z": -689.66,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_80_f",
+      "material": "Dirt",
+      "x": -750.4,
+      "z": 4504.84,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_81_f",
+      "material": "Dirt",
+      "x": -13.42,
+      "z": -2351.59,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_82_f",
+      "material": "Dirt",
+      "x": -757.49,
+      "z": 4520.31,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_83_f",
+      "material": "Dirt",
+      "x": 49.54,
+      "z": -2401.85,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_84_f",
+      "material": "Dirt",
+      "x": 45.87,
+      "z": -2511.81,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_85_f",
+      "material": "Dirt",
+      "x": -744.61,
+      "z": 4494.12,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_86_f",
+      "material": "Dirt",
+      "x": -739.05,
+      "z": 4443.59,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_87_f",
+      "material": "Dirt",
+      "x": 4791.73,
+      "z": -681.93,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_88_f",
+      "material": "Dirt",
+      "x": 4769.32,
+      "z": -692.79,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_89_f",
+      "material": "Dirt",
+      "x": 924.26,
+      "z": 4878.04,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_90_f",
+      "material": "Dirt",
+      "x": 354.92,
+      "z": -3028.94,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_91_f",
+      "material": "Dirt",
+      "x": 61.72,
+      "z": -2410.23,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_92_f",
+      "material": "Dirt",
+      "x": 4817.48,
+      "z": -667.64,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_93_f",
+      "material": "Dirt",
+      "x": -726.54,
+      "z": 4474.98,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_94_f",
+      "material": "Dirt",
+      "x": 4794.9,
+      "z": -662.08,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_95_f",
+      "material": "Dirt",
+      "x": -764.25,
+      "z": 4535.51,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_96_f",
+      "material": "Dirt",
+      "x": 1017.87,
+      "z": 4893.72,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_97_f",
+      "material": "Dirt",
+      "x": 39.04,
+      "z": -2531.15,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_98_f",
+      "material": "Dirt",
+      "x": 4798.71,
+      "z": -700.6,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_99_f",
+      "material": "Dirt",
+      "x": 4779.42,
+      "z": -694.69,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_100_f",
+      "material": "Dirt",
+      "x": 35.08,
+      "z": -2441.01,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_101_f",
+      "material": "Dirt",
+      "x": 4812.63,
+      "z": -654.25,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_102_f",
+      "material": "Dirt",
+      "x": 18.37,
+      "z": -2392.83,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_103_f",
+      "material": "Dirt",
+      "x": -761.24,
+      "z": 4416.35,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_104_f",
+      "material": "Dirt",
+      "x": 4822.85,
+      "z": -662.99,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_105_f",
+      "material": "Dirt",
+      "x": 42.24,
+      "z": -2475.71,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_106_f",
+      "material": "Dirt",
+      "x": -773.07,
+      "z": 4378.39,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_107_f",
+      "material": "Dirt",
+      "x": 967.3,
+      "z": 4895.23,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_108_f",
+      "material": "Dirt",
+      "x": 37.66,
+      "z": -2406.92,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_109_f",
+      "material": "Dirt",
+      "x": 33.63,
+      "z": -2414.68,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_110_f",
+      "material": "Dirt",
+      "x": 341.52,
+      "z": -3030.36,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_111_f",
+      "material": "Dirt",
+      "x": 4805.64,
+      "z": -660.91,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_112_f",
+      "material": "Dirt",
+      "x": 981.32,
+      "z": 4893.21,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_113_f",
+      "material": "Dirt",
+      "x": 4770.22,
+      "z": -693.76,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_114_f",
+      "material": "Dirt",
+      "x": -32.58,
+      "z": -2354.19,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_115_f",
+      "material": "Dirt",
+      "x": -726.97,
+      "z": 4455.1,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_116_f",
+      "material": "Dirt",
+      "x": -742.64,
+      "z": 4489.41,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_117_f",
+      "material": "Dirt",
+      "x": 322.51,
+      "z": -3032.54,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_118_f",
+      "material": "Dirt",
+      "x": 923.78,
+      "z": 4903.78,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_119_f",
+      "material": "Dirt",
+      "x": 4777.35,
+      "z": -693.37,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_120_f",
+      "material": "Dirt",
+      "x": -770.16,
+      "z": 4358.89,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_121_f",
+      "material": "Dirt",
+      "x": 4803.52,
+      "z": -680.53,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_122_f",
+      "material": "Dirt",
+      "x": 4757.41,
+      "z": -693.46,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_123_f",
+      "material": "Dirt",
+      "x": -725.95,
+      "z": 4465.01,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_124_f",
+      "material": "Dirt",
+      "x": 37.56,
+      "z": -2465.38,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_125_f",
+      "material": "Dirt",
+      "x": 4808.34,
+      "z": -661.12,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_126_f",
+      "material": "Dirt",
+      "x": 4778.86,
+      "z": -672.66,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_127_f",
+      "material": "Dirt",
+      "x": -750.75,
+      "z": 4422.44,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
+      "id": "tp_earth_128_f",
+      "material": "Dirt",
+      "x": 4802.39,
+      "z": -678.42,
+      "radius": 21,
+      "strength": 0.2
+    },
+    {
       "id": "tp_earth_1",
       "material": "Dirt",
       "x": -34.35,
       "z": -2346.28,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_2",
@@ -24,7 +1048,7 @@
       "x": -733.91,
       "z": 4477.79,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_3",
@@ -32,7 +1056,7 @@
       "x": 35.6,
       "z": -2453.17,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_4",
@@ -40,7 +1064,7 @@
       "x": -16.96,
       "z": -2368.22,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_5",
@@ -48,7 +1072,7 @@
       "x": 1002.77,
       "z": 4890.45,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_6",
@@ -56,7 +1080,7 @@
       "x": 1050.53,
       "z": 4899.4,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_7",
@@ -64,7 +1088,7 @@
       "x": 929.59,
       "z": 4889.57,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_8",
@@ -72,7 +1096,7 @@
       "x": 1098.58,
       "z": 4904.74,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_9",
@@ -80,7 +1104,7 @@
       "x": 44,
       "z": -2462.35,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_10",
@@ -88,7 +1112,7 @@
       "x": 79.29,
       "z": -2404.8,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_11",
@@ -96,7 +1120,7 @@
       "x": 37.88,
       "z": -2414.58,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_12",
@@ -104,7 +1128,7 @@
       "x": -760.55,
       "z": 4527.82,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_13",
@@ -112,7 +1136,7 @@
       "x": 5.82,
       "z": -2371.29,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_14",
@@ -120,7 +1144,7 @@
       "x": 4749.7,
       "z": -677.29,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_15",
@@ -128,7 +1152,7 @@
       "x": 55.13,
       "z": -2405.86,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_16",
@@ -136,7 +1160,7 @@
       "x": 4788.4,
       "z": -688.8,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_17",
@@ -144,7 +1168,7 @@
       "x": -763.13,
       "z": 4413.02,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_18",
@@ -152,7 +1176,7 @@
       "x": 1003.91,
       "z": 4894.42,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_19",
@@ -160,7 +1184,7 @@
       "x": 4740.17,
       "z": -695.54,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_20",
@@ -168,7 +1192,7 @@
       "x": 991.01,
       "z": 4885.3,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_21",
@@ -176,7 +1200,7 @@
       "x": 32.53,
       "z": -2402.89,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_22",
@@ -184,7 +1208,7 @@
       "x": 2.84,
       "z": -2358.63,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_23",
@@ -192,7 +1216,7 @@
       "x": 47.63,
       "z": -2497.63,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_24",
@@ -200,7 +1224,7 @@
       "x": 42.41,
       "z": -2520.86,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_25",
@@ -208,7 +1232,7 @@
       "x": -745.2,
       "z": 4430.19,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_26",
@@ -216,7 +1240,7 @@
       "x": -775.21,
       "z": 4397.61,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_27",
@@ -224,7 +1248,7 @@
       "x": 42.33,
       "z": -2481.81,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_28",
@@ -232,7 +1256,7 @@
       "x": 4790.84,
       "z": -666.04,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_29",
@@ -240,7 +1264,7 @@
       "x": -767.11,
       "z": 4371.16,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_30",
@@ -248,7 +1272,7 @@
       "x": -13.75,
       "z": -2366.84,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_31",
@@ -256,7 +1280,7 @@
       "x": 4800.84,
       "z": -661.41,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_32",
@@ -264,7 +1288,7 @@
       "x": -37.09,
       "z": -2352.77,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_33",
@@ -272,7 +1296,7 @@
       "x": 4781.3,
       "z": -684.01,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_34",
@@ -280,7 +1304,7 @@
       "x": -30.74,
       "z": -2363.52,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_35",
@@ -288,7 +1312,7 @@
       "x": 2.22,
       "z": -2367.37,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_36",
@@ -296,7 +1320,7 @@
       "x": 18.2,
       "z": -2563.47,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_37",
@@ -304,7 +1328,7 @@
       "x": 306.62,
       "z": -3030.69,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_38",
@@ -312,7 +1336,7 @@
       "x": 906.29,
       "z": 4892.72,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_39",
@@ -320,7 +1344,7 @@
       "x": -772.68,
       "z": 4544.09,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_40",
@@ -328,7 +1352,7 @@
       "x": -782.57,
       "z": 4392.65,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_41",
@@ -336,7 +1360,7 @@
       "x": -773.08,
       "z": 4402.29,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_42",
@@ -344,7 +1368,7 @@
       "x": 4768.19,
       "z": -663.27,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_43",
@@ -352,7 +1376,7 @@
       "x": -10.39,
       "z": -2357.52,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_44",
@@ -360,7 +1384,7 @@
       "x": -776.73,
       "z": 4369.62,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_45",
@@ -368,7 +1392,7 @@
       "x": -23.2,
       "z": -2352.29,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_46",
@@ -376,7 +1400,7 @@
       "x": 39.18,
       "z": -2411.51,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_47",
@@ -384,7 +1408,7 @@
       "x": 997.18,
       "z": 4901.76,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_48",
@@ -392,7 +1416,7 @@
       "x": 331.67,
       "z": -3031.96,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_49",
@@ -400,7 +1424,7 @@
       "x": -729.47,
       "z": 4445.49,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_50",
@@ -408,7 +1432,7 @@
       "x": 887.4,
       "z": 4892.94,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_51",
@@ -416,7 +1440,7 @@
       "x": 1081.59,
       "z": 4896.24,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_52",
@@ -424,7 +1448,7 @@
       "x": 4785.04,
       "z": -658.82,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_53",
@@ -432,7 +1456,7 @@
       "x": 3.78,
       "z": -2350.74,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_54",
@@ -440,7 +1464,7 @@
       "x": -762.22,
       "z": 4404.5,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_55",
@@ -448,7 +1472,7 @@
       "x": 4784.94,
       "z": -702.05,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_56",
@@ -456,7 +1480,7 @@
       "x": 21.89,
       "z": -2384.91,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_57",
@@ -464,7 +1488,7 @@
       "x": 4743.94,
       "z": -699.19,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_58",
@@ -472,7 +1496,7 @@
       "x": 27.33,
       "z": -2550.74,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_59",
@@ -480,7 +1504,7 @@
       "x": 4767.86,
       "z": -664.74,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_60",
@@ -488,7 +1512,7 @@
       "x": 4757.68,
       "z": -685.23,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_61",
@@ -496,7 +1520,7 @@
       "x": 76.6,
       "z": -2416.06,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_62",
@@ -504,7 +1528,7 @@
       "x": 81.13,
       "z": -2418.05,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_63",
@@ -512,7 +1536,7 @@
       "x": 1093.58,
       "z": 4891.06,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_64",
@@ -520,7 +1544,7 @@
       "x": -748.12,
       "z": 4517.05,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_65",
@@ -528,7 +1552,7 @@
       "x": 948.66,
       "z": 4893.16,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_66",
@@ -536,7 +1560,7 @@
       "x": 1067.78,
       "z": 4896.38,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_67",
@@ -544,7 +1568,7 @@
       "x": 30.93,
       "z": -2545.55,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_68",
@@ -552,7 +1576,7 @@
       "x": 1033.83,
       "z": 4894.8,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_69",
@@ -560,7 +1584,7 @@
       "x": -763.46,
       "z": 4362.68,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_70",
@@ -568,7 +1592,7 @@
       "x": 372.15,
       "z": -3028.29,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_71",
@@ -576,7 +1600,7 @@
       "x": 4797.91,
       "z": -667.46,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_72",
@@ -584,7 +1608,7 @@
       "x": 299.04,
       "z": -3026.71,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_73",
@@ -592,7 +1616,7 @@
       "x": 21.54,
       "z": -2390.52,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_74",
@@ -600,7 +1624,7 @@
       "x": 10.6,
       "z": -2377.25,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_75",
@@ -608,7 +1632,7 @@
       "x": 21.15,
       "z": -2558.77,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_76",
@@ -616,7 +1640,7 @@
       "x": 4750.45,
       "z": -689.98,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_77",
@@ -624,7 +1648,7 @@
       "x": -770.52,
       "z": 4520.07,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_78",
@@ -632,7 +1656,7 @@
       "x": 35.06,
       "z": -2424.1,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_79",
@@ -640,7 +1664,7 @@
       "x": 4774.48,
       "z": -689.66,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_80",
@@ -648,7 +1672,7 @@
       "x": -750.4,
       "z": 4504.84,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_81",
@@ -656,7 +1680,7 @@
       "x": -13.42,
       "z": -2351.59,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_82",
@@ -664,7 +1688,7 @@
       "x": -757.49,
       "z": 4520.31,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_83",
@@ -672,7 +1696,7 @@
       "x": 49.54,
       "z": -2401.85,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_84",
@@ -680,7 +1704,7 @@
       "x": 45.87,
       "z": -2511.81,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_85",
@@ -688,7 +1712,7 @@
       "x": -744.61,
       "z": 4494.12,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_86",
@@ -696,7 +1720,7 @@
       "x": -739.05,
       "z": 4443.59,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_87",
@@ -704,7 +1728,7 @@
       "x": 4791.73,
       "z": -681.93,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_88",
@@ -712,7 +1736,7 @@
       "x": 4769.32,
       "z": -692.79,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_89",
@@ -720,7 +1744,7 @@
       "x": 924.26,
       "z": 4878.04,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_90",
@@ -728,7 +1752,7 @@
       "x": 354.92,
       "z": -3028.94,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_91",
@@ -736,7 +1760,7 @@
       "x": 61.72,
       "z": -2410.23,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_92",
@@ -744,7 +1768,7 @@
       "x": 4817.48,
       "z": -667.64,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_93",
@@ -752,7 +1776,7 @@
       "x": -726.54,
       "z": 4474.98,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_94",
@@ -760,7 +1784,7 @@
       "x": 4794.9,
       "z": -662.08,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_95",
@@ -768,7 +1792,7 @@
       "x": -764.25,
       "z": 4535.51,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_96",
@@ -776,7 +1800,7 @@
       "x": 1017.87,
       "z": 4893.72,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_97",
@@ -784,7 +1808,7 @@
       "x": 39.04,
       "z": -2531.15,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_98",
@@ -792,7 +1816,7 @@
       "x": 4798.71,
       "z": -700.6,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_99",
@@ -800,7 +1824,7 @@
       "x": 4779.42,
       "z": -694.69,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_100",
@@ -808,7 +1832,7 @@
       "x": 35.08,
       "z": -2441.01,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_101",
@@ -816,7 +1840,7 @@
       "x": 4812.63,
       "z": -654.25,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_102",
@@ -824,7 +1848,7 @@
       "x": 18.37,
       "z": -2392.83,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_103",
@@ -832,7 +1856,7 @@
       "x": -761.24,
       "z": 4416.35,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_104",
@@ -840,7 +1864,7 @@
       "x": 4822.85,
       "z": -662.99,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_105",
@@ -848,7 +1872,7 @@
       "x": 42.24,
       "z": -2475.71,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_106",
@@ -856,7 +1880,7 @@
       "x": -773.07,
       "z": 4378.39,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_107",
@@ -864,7 +1888,7 @@
       "x": 967.3,
       "z": 4895.23,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_108",
@@ -872,7 +1896,7 @@
       "x": 37.66,
       "z": -2406.92,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_109",
@@ -880,7 +1904,7 @@
       "x": 33.63,
       "z": -2414.68,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_110",
@@ -888,7 +1912,7 @@
       "x": 341.52,
       "z": -3030.36,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_111",
@@ -896,7 +1920,7 @@
       "x": 4805.64,
       "z": -660.91,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_112",
@@ -904,7 +1928,7 @@
       "x": 981.32,
       "z": 4893.21,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_113",
@@ -912,7 +1936,7 @@
       "x": 4770.22,
       "z": -693.76,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_114",
@@ -920,7 +1944,7 @@
       "x": -32.58,
       "z": -2354.19,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_115",
@@ -928,7 +1952,7 @@
       "x": -726.97,
       "z": 4455.1,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_116",
@@ -936,7 +1960,7 @@
       "x": -742.64,
       "z": 4489.41,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_117",
@@ -944,7 +1968,7 @@
       "x": 322.51,
       "z": -3032.54,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_118",
@@ -952,7 +1976,7 @@
       "x": 923.78,
       "z": 4903.78,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_119",
@@ -960,7 +1984,7 @@
       "x": 4777.35,
       "z": -693.37,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_120",
@@ -968,7 +1992,7 @@
       "x": -770.16,
       "z": 4358.89,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_121",
@@ -976,7 +2000,7 @@
       "x": 4803.52,
       "z": -680.53,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_122",
@@ -984,7 +2008,7 @@
       "x": 4757.41,
       "z": -693.46,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_123",
@@ -992,7 +2016,7 @@
       "x": -725.95,
       "z": 4465.01,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_124",
@@ -1000,7 +2024,7 @@
       "x": 37.56,
       "z": -2465.38,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_125",
@@ -1008,7 +2032,7 @@
       "x": 4808.34,
       "z": -661.12,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_126",
@@ -1016,7 +2040,7 @@
       "x": 4778.86,
       "z": -672.66,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_127",
@@ -1024,7 +2048,7 @@
       "x": -750.75,
       "z": 4422.44,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     },
     {
       "id": "tp_earth_128",
@@ -1032,7 +2056,7 @@
       "x": 4802.39,
       "z": -678.42,
       "radius": 11,
-      "strength": 1
+      "strength": 0.45
     }
   ]
 }

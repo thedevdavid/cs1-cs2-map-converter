@@ -13,19 +13,20 @@ namespace NetConverter;
 ///   (8°–35°, downhill within 60° of south). CS1 painted no grass class; the CS1 theme tinted fertile land yellower and forest floor darker
 ///   (audit/theme-remake.md §1), so dry = low fertility, open; south-facing as the sunny, drier side.
 /// - bare earth: the 128 CS1 R69 dirt / mud decals, one 11 m stroke at each.
-/// Sand and dry grass: polygons, softEdge 6 m, strength 1.
+/// Round 26 (owner, A-v7: hard edges): editor-like soft paint. Main pass strength 0.45, softEdge 20 m; a feather pass (items "…_f") 10 m outside the
+/// outline (the mask grown by one 16 m cell, smoothed separately) at strength 0.2. Dirt: 11 m strokes at 0.45 plus a 21 m feather stroke at 0.2. The runner can override all of it per layer (--paint).
 /// </summary>
 public static class TerrainPaint
 {
     public sealed record Layer(string File, string Material, string Role, List<(string Id, List<(double X, double Z)> Ring, string Note)> Polygons,
-        List<(string Id, double X, double Z, double Radius)>? Strokes = null, double SoftEdge = 0, bool Optional = false);
+        List<(string Id, double X, double Z, double Radius)>? Strokes = null, double SoftEdge = 0, bool Optional = false, List<List<(double X, double Z)>>? Feather = null);
 
     /// <summary>Editor material names (bridge 0.9.29). "Rock" has no material; that layer is written to optional/ and not imported.</summary>
     public static readonly Dictionary<string, string> Materials = new()
     {
         ["sand"] = "Sand", ["rock"] = "(none: rock is automatic on steep slopes)", ["dry-grass"] = "Dry", ["bare-earth"] = "Dirt",
     };
-    public const double SoftEdgeM = 6, DecalRadius = 11, MaxStamps = 250000;
+    public const double SoftEdgeM = 20, Strength = 0.45, FeatherOut = 10, FeatherStrength = 0.2, DecalRadius = 11, MaxStamps = 250000;
 
     public static List<Layer> Build(PaintPlan.Inputs inp, IEnumerable<List<(double X, double Z)>> rock40, IEnumerable<List<(double X, double Z)>> poRock,
         IEnumerable<(double X, double Z)> decalCentres, IEnumerable<OutEdge> roads, double half = 7168)
@@ -79,21 +80,22 @@ public static class TerrainPaint
             double gl = Math.Sqrt(gx * gx + gz * gz);
             if (slope >= 8 && slope <= 35 && gl > 0 && gz / gl >= 0.5) { dry[k] = true; southSlopes++; }
         }
-        List<List<(double X, double Z)>> Smooth(bool[] m, string name)
+        List<List<(double X, double Z)>> Smooth(bool[] m, string name, bool grow = false)
         {
             m = PaintPlan.CloseOpen(m, n);
+            if (grow) m = PaintPlan.Grow(m, n);   // feather: one 16 m cell further out, smoothed on its own (no offset folds)
             var set = new HashSet<int>(); for (int k = 0; k < n * n; k++) if (m[k]) set.Add(k);
             var (polys, _, _) = Surfaces.MaskPolygons(set, g, SmoothRings.MinArea, cs / 2, 3000);
             return SmoothRings.Smooth(polys, name.Aggregate(1469598103934665603UL, (h, ch) => (h ^ ch) * 1099511628211UL), half);
         }
         var layers = new List<Layer>();
         layers.Add(new("import-terrain-paint-sand.json", Materials["sand"], "CS1 painted sand (all Sand cells)",
-            Smooth(sand, "tp sand").Select((r, i) => ($"tp_sand_{i + 1}", r, "CS1 sand")).ToList(), SoftEdge: SoftEdgeM));
+            Smooth(sand, "tp sand").Select((r, i) => ($"tp_sand_{i + 1}", r, "CS1 sand")).ToList(), SoftEdge: SoftEdgeM, Feather: Smooth(sand, "tp sand feather", true)));
         layers.Add(new("import-terrain-paint-rock.json", Materials["rock"], "slope ≥ 40° and the PO rock / cliff footprints",
             rock40.Where(r => r.Count >= 3).Select((r, i) => ($"tp_rock40_{i + 1}", r, "slope ≥ 40°"))
                 .Concat(poRock.Where(r => r.Count >= 3).Select((r, i) => ($"tp_porock_{i + 1}", r, "PO rock / cliff footprint"))).ToList(), Optional: true));
         layers.Add(new("import-terrain-paint-dry-grass.json", Materials["dry-grass"], $"dry open ground: east / south-east plains ({plains} cells) and south-facing slopes ({southSlopes} cells)",
-            Smooth(dry, "tp dry grass").Select((r, i) => ($"tp_dry_{i + 1}", r, "dry grass")).ToList(), SoftEdge: SoftEdgeM));
+            Smooth(dry, "tp dry grass").Select((r, i) => ($"tp_dry_{i + 1}", r, "dry grass")).ToList(), SoftEdge: SoftEdgeM, Feather: Smooth(dry, "tp dry grass feather", true)));
         layers.Add(new("import-terrain-paint-bare-earth.json", Materials["bare-earth"], "CS1 dirt / mud decals", new(),
             decalCentres.Select((c, i) => ($"tp_earth_{i + 1}", Math.Round(c.X, 2), Math.Round(c.Z, 2), DecalRadius)).ToList()));
         return layers;
@@ -109,10 +111,9 @@ public static class TerrainPaint
             ? $"NOT IMPORTED: {l.Role}. The game has no rock material (the terrain shader puts rock on steep slopes itself); kept as a mask only."
             : $"Terrain material paint (editor Terrain → Materials, POST /import/terrain-paint, bridge 0.9.29): {l.Role}. CS2 x/z metres, the same at both scales.");
         w.WriteStartObject("options");
-        w.WriteBoolean("dryRun", false); w.WriteNumber("strength", 1); w.WriteNumber("softEdge", l.SoftEdge); w.WriteNumber("minStamp", 4); w.WriteNumber("maxStamps", MaxStamps);
+        w.WriteBoolean("dryRun", false); w.WriteNumber("strength", Strength); w.WriteNumber("softEdge", l.SoftEdge); w.WriteNumber("minStamp", 4); w.WriteNumber("maxStamps", MaxStamps);
         w.WriteEndObject();
-        w.WriteStartArray("polygons");
-        foreach (var (id, ring, note) in l.Polygons)
+        void Poly(string id, List<(double X, double Z)> ring, double strength, string note)
         {
             w.WriteStartObject();
             w.WriteString("id", id);
@@ -120,20 +121,28 @@ public static class TerrainPaint
             w.WriteStartArray("polygon");
             foreach (var (x, z) in ring) { w.WriteStartArray(); w.WriteNumberValue(Json.R2(x)); w.WriteNumberValue(Json.R2(z)); w.WriteEndArray(); }
             w.WriteEndArray();
-            w.WriteNumber("strength", 1);
+            w.WriteNumber("strength", strength);
             w.WriteNumber("softEdge", l.SoftEdge);
             w.WriteString("note", note);
             w.WriteEndObject();
         }
+        w.WriteStartArray("polygons");
+        // Feather pass first (lighter, 10 m outside), then the main pass.
+        int fk = 0;
+        string ftag = l.Polygons.Count > 0 ? string.Join("_", l.Polygons[0].Id.Split('_')[..2]) : "tp";
+        if (!l.Optional) foreach (var ring in l.Feather ?? new()) Poly($"{ftag}_{++fk}_f", ring, FeatherStrength, "feather pass, one 16 m cell outside");
+        foreach (var (id, ring, note) in l.Polygons) Poly(id, ring, Strength, note);
         w.WriteEndArray();
         w.WriteStartArray("strokes");
-        foreach (var (id, x, z, r) in l.Strokes ?? new())
+        void Stroke(string id, double x, double z, double r, double strength)
         {
             w.WriteStartObject();
             w.WriteString("id", id); w.WriteString("material", l.Material);
-            w.WriteNumber("x", x); w.WriteNumber("z", z); w.WriteNumber("radius", r); w.WriteNumber("strength", 1);
+            w.WriteNumber("x", x); w.WriteNumber("z", z); w.WriteNumber("radius", r); w.WriteNumber("strength", strength);
             w.WriteEndObject();
         }
+        foreach (var (id, x, z, r) in l.Strokes ?? new()) Stroke(id + "_f", x, z, r + FeatherOut, FeatherStrength);
+        foreach (var (id, x, z, r) in l.Strokes ?? new()) Stroke(id, x, z, r, Strength);
         w.WriteEndArray();
         w.WriteEndObject();
     }

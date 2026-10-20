@@ -482,19 +482,25 @@ public static partial class Converter
     /// </summary>
     static bool RampWalk(OutEdge e, OutNode hi, Dictionary<OutNode, List<OutEdge>> adj, ConvertOptions o, ConvertStats st)
     {
-        double sign = Math.Sign(hi.Elevation), top = Math.Abs(hi.Elevation);
+        // Round 26 (A-v7 diagnosis R2): the ramp also runs in absolute height, y(s) = y_hi ∓ grade·s: on rising terrain a falling elevation alone is a
+        // rising road (the BR002 hump). A junction is never rewritten: the walk stops before it.
+        double sign = Math.Sign(hi.Elevation), topY = hi.Terrain + hi.Elevation;
         double s = 0;
         var edge = e; var from = hi; var to = e.A == hi ? e.B : e.A;
         if (to.Elevation * sign < 0) return false; // passes from bridge to tunnel; leave it
         for (int guard = 0; guard < 200; guard++)
         {
             s += edge.Curve.LengthXZ();
-            double need = top - (e.Layer == Layers.Rail ? o.RailMaxGrade : o.MaxGrade) * s;
-            if (need <= Math.Abs(to.Elevation) + 0.01) return true;
-            to.Elevation = Math.Round(sign * need, 2);
+            double g = (e.Layer == Layers.Rail ? o.RailMaxGrade : o.MaxGrade) * s;
+            // The lower of the absolute ramp (no hump where the terrain rises) and the above-terrain ramp (ends where the terrain falls away).
+            double need = sign * Math.Min(sign * (topY - sign * g - to.Terrain), sign * (hi.Elevation - sign * g));
+            if (sign * need <= sign * to.Elevation + 0.01) return true;
+            adj.TryGetValue(to, out var next);
+            if (next is { Count: > 2 }) return false;                 // a junction: left as it is
+            to.Elevation = Math.Round(need, 2);
             st.RampNodesRaised++;
             edge.RampSmoothed = true;
-            if (to.Border || !adj.TryGetValue(to, out var next) || next.Count != 2) return false;
+            if (to.Border || next is not { Count: 2 }) return false;
             var nextEdge = next[0] == edge ? next[1] : next[0];
             from = to;
             to = nextEdge.A == from ? nextEdge.B : nextEdge.A;

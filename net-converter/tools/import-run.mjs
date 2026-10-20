@@ -37,6 +37,35 @@ const dryRun = flag("--dry-run");
 const list = s => (s ? s.split(",").map(x => x.trim()).filter(Boolean) : []);
 const skip = new Set(list(opt("--skip", ""))), only = new Set(list(opt("--only", ""))), withOpt = new Set(list(opt("--with", "")));
 if (args.includes("--po-structures")) withOpt.add("po-structures");
+// Round 26: terrain-paint overrides without regenerating, e.g. --paint sand.strength=0.4,all.softEdge=25,dry.feather=0,dirt.radius=14
+//   layers: sand, dry (dry-grass), dirt (bare-earth), all; keys: strength (main pass), softEdge, feather (feather-pass strength, 0 = no feather pass),
+//   radius (dirt strokes, main pass; the feather stroke stays 10 m larger).
+const paintOpt = {};
+for (const kv of list(opt("--paint", ""))) {
+  const m = kv.match(/^(sand|dry|dry-grass|dirt|bare-earth|all)\.(strength|softEdge|feather|radius)=([\d.]+)$/);
+  if (!m) { console.error(`--paint: cannot read "${kv}"`); process.exit(2); }
+  const layer = { "dry-grass": "dry", "bare-earth": "dirt" }[m[1]] ?? m[1];
+  (paintOpt[layer] ??= {})[m[2]] = +m[3];
+}
+const paintLayer = file => /sand/.test(file) ? "sand" : /dry/.test(file) ? "dry" : /earth|dirt/.test(file) ? "dirt" : "other";
+function applyPaint(body, file) {
+  const o = { ...(paintOpt.all ?? {}), ...(paintOpt[paintLayer(file)] ?? {}) };
+  if (Object.keys(o).length === 0) return "";
+  const feather = x => /_f$/.test(x.id);
+  for (const k of ["polygons", "strokes"]) {
+    if (!body[k]) continue;
+    if (o.feather === 0) body[k] = body[k].filter(x => !feather(x));
+    for (const x of body[k]) {
+      if (feather(x)) { if (o.feather != null) x.strength = o.feather; }
+      else if (o.strength != null) x.strength = o.strength;
+      if (o.softEdge != null && k === "polygons") x.softEdge = o.softEdge;
+      if (o.radius != null && k === "strokes") x.radius = feather(x) ? o.radius + 10 : o.radius;
+    }
+  }
+  if (o.strength != null) body.options.strength = o.strength;
+  if (o.softEdge != null) body.options.softEdge = o.softEdge;
+  return ` (paint overrides ${JSON.stringify(o)})`;
+}
 const verify = !flag("--no-verify");
 
 function request(method, path, body) {
@@ -83,6 +112,10 @@ const steps = [
   ["bridges-fixed", "/import/network", [p("import-bridges-fixed.json")]],
   // Bridge 0.9.23: one dam edge; the game builds the plant and the dam ends from it.
   ["dam", "/import/network", [p("import-dam.json")]],
+  // Round 26: A-v8 Detroit test decks (options 2 and 3 next to BR001; standalone, undoable). On for this run only; --skip detroit-test after the decision.
+  ["detroit-test", "/import/network", [p("import-detroit-test.json")]],
+  // Round 26: Gravel Road access to the dam plant and the substation (RequireRoad).
+  ["access", "/import/network", [p("import-access-roads.json")]],
   ["gaps", "/import/network", [p("import-gaps.json")]],
   ["power", "/import/network", [p("import-power.json")]],
   ["canals", "/import/network", [p("import-canals.json")]],
@@ -260,6 +293,8 @@ outer: for (const [name, endpoint, files] of steps) {
     body.name ??= file.split(/[\\/]/).pop().replace(/\.json$/, "");
     if (endpoint === "/import/terrain-paint") {
       // Dry run with the cap lifted to get every item's stamp count, then chunks of at most maxStamps (stops on a rejected body or netGuard like any step).
+      const overrides = applyPaint(body, file);
+      if (overrides) console.log(`  ${name} ${file.split(/[\\/]/).pop()}${overrides}`);
       const cap = body.options.maxStamps ?? 250000;
       const dr = await request("POST", endpoint, { ...body, options: { ...body.options, dryRun: true, maxStamps: 1e9 } });
       if (dr.status !== 200) {

@@ -197,3 +197,43 @@ audit/theme-remake.md §1), the fertility raster, tree density and the heightmap
 - x1 files against A-v7: geometry unchanged (no node or edge added, removed or moved). Only the `noPillars` field differs: import-all.json 145 edges,
   import-bridges.json 4 (br006_c1_e0…e3), import-bridges-fixed.json 4 (br001_in/out connectors). A re-import onto A7b merges the same geometry, and dropping a flag
   removes nothing. Pillars that noPillars already deleted come back only when the game updates those segments.
+
+## Round 26: owner's A-v7 review (shots next-run/shots-a7) + Detroit test layer
+
+Diagnosis: A against live-graph-20261020-211001-end.json and the run report; B, C, D, E and F-ii per edge against the CS1 dump, the import files and the live graph.
+
+- **A (2995, 820), "completely missing interchange":** the game dropped nothing. Every import-all edge in the 600 m box was live (0.00–0.07 m) and the run had 0 failures.
+  - **Cause:** the converter had left out 36 CS1 segments: 11 in the round-12 highway-stub removal and 25 in the round-19 one-way prune.
+  - **Fix:** stubs and branch are kept by default now (`--drop-highway-stubs` restores the old removal). The box has 48 edges, A-v7 had 13. Dead ends 9 → 11; the 2 new ones are CS1's own stub ends at (2293, 277) / (2302, 255).
+  - **Map-wide:** only 4 edges have no live segment within 2 m.
+    - The dam: expected, owned segments.
+    - e25368_0 at (−182, 2388): rail, fused with its twin 2.9 m away.
+    - gap_e25579_0 and gap_e36563_0: their T-ends sit 56 m and 64 m along the through road. The game re-splits the straight run after snapToSegment (bridge-side, same in A-v6).
+- **Systemic causes, all fixed:**
+  - **R1:** game-rule limits ran at half strength at x1 (crossing raise 4 m, ramp 4 %). They are now output metres: limits ÷ YScale in ConvertOptions.
+  - **R2:** the ramp walk spread raises in height above terrain, so on rising terrain a falling elevation became a rising road. It now takes the lower of the absolute and above-terrain ramps, and never rewrites a junction.
+  - **R3:** same-layer crossings were never separated. They now go through the grade-separation pass. A crossing CS1 already cleared by ≥ 8 m is not raised. The round-19 restore pass is off (its split node was clamped back onto the terrain).
+- **B (608, −4721):** fixed by R1–R3; ramps are graded at 8 % in output metres.
+  - **Not fixed:** B5, curved 3/4-lane elevated pieces sagging 5–9 m mid-span. The cause is in the game or bridge (heights from live terrain); it doesn't depend on our file.
+  - **Not fixed:** B4, ramps CS1 itself had at 3–7 m (hand-placed walls). They stay in the wall band.
+- **C (−4224, −60):** the ramps over the Medium Road now stand 8.4 m above it (A-v7: 0.7 m), and the stacked restore node is gone.
+- **D (BR005):** with two approaches at one deck end, only the through approach is straightened, so the side ramp keeps its tangent and no stub forms. The same applies to BR009.
+  - **Unverified:** the carriageway centres are 15.7 m apart (decks 3.7 m apart). Whether the two BXP arches clip needs a live look.
+- **E (BR001):** each connector is a curve that leaves the deck end 12° off the axis and arrives parallel to its carriageway. Leg centres are 7 / 12 / 15 / 16.5 m apart at 20 / 40 / 60 / 100 m (A-v7: 16 m only at 140 m). Same elevations.
+- **F:**
+  - **(i) Access roads:** import-access-roads.json (runner step `access` after the dam) adds Gravel Roads from e1619_0 to the substation front (41 m) and from e33625_0 to 6 m past the dam's east end (144 m). Whether the plant picks up that road is unverified.
+  - **(ii) BR002 hump:** this is the bridge south of the dam, and its deck had no lift. The hump came from an unneeded crossing raise spread by the old ramp walk (R2/R3); it is fixed.
+  - **(ii) Raised bridges:**
+    - BR017, BR033 and BR038 go as one edge: the middle already stands ≥ 8 m, so no lift.
+    - BR020 +3.9, BR044 +2.2, BR049 +7.3, BR050 +4.7 and BR053 +8.3 m are lifted, with one climb at ≤ 3 % from up to 300 m back.
+    - BR028 and BR045 keep their base prefab: a 3 % climb would need more than 300 m.
+- **G:** every PO piece is terrain-like and already baked into the heightmap.
+  - **PO rocks:** po-rocks v4 keeps only the boulder class (Boulder01–08 and rzrock). 473 cliff pieces are dropped, 72 in water are dropped, 0 sat on a net corridor; 248 are left.
+  - **Canyon road:** the west canyon road problem is the heightmap. road-terrain-mismatch.json and .md list 62 ground courses more than 2 m off the playable heightmap (up to 34.5 m at (−6500, 1000)) for hm-rebuild to carve or fill.
+  - **(−3000, −5500):** no roads there, only rocks.
+- **H (terrain paint):** main pass strength 0.45, softEdge 20 m. A feather pass at strength 0.2 uses the mask grown by one 16 m cell, smoothed on its own (0 self-intersections). Per-layer overrides without regenerating: `--paint sand.strength=0.4,all.softEdge=25,dry.feather=0,dirt.radius=14`.
+- **Detroit test** (import-detroit-test.json, runner step `detroit-test` after the dam, standalone, bypassValidation, undoable):
+  - **Option 2:** 200 m NW, 2 × 362 m `BXP Suspension Bridge - Highway Twoway - 6 Lanes` between the CS1 tower positions, plus 150 m `Highway Twoway - 4 lanes` stubs. No vanilla 6-lane two-way highway is known.
+  - **Option 3:** 400 m NW, one 976 m `BXP Double Deck Suspension Bridge - Highway` (the game cuts 3 × 325 m), with `… - Lower Highway` 8 m below running the other way. The 8 m is a guess; TODO: measure live. Plus 150 m 3-lane one-way stubs.
+  - **Deck height:** as BR001.
+  - **Land:** the 976 m river part includes the banks. BR001's own line is about a third over land, the test lines about the same (41 / 46 of 123), so there is no island.

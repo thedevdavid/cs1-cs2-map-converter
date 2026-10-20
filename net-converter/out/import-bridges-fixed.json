@@ -135,17 +135,17 @@
       "prefab": "Highway Oneway - 3 lanes",
       "control": [
         [
-          1185.07,
-          290.06,
-          -3965.1
+          1187.38,
+          0,
+          -3966.74
         ],
         [
-          1211.24,
-          293.06,
-          -3925.94
+          1217.35,
+          0,
+          -3929.39
         ]
       ],
-      "note": "BR001 approach onto the merged deck"
+      "note": "BR001 approach onto the merged deck, 12\u00B0 fork"
     },
     {
       "id": "br001_out_e11895_0d0",
@@ -154,17 +154,17 @@
       "prefab": "Highway Oneway - 3 lanes",
       "control": [
         [
-          1857.85,
-          293.13,
-          -3073.92
+          1862.8,
+          0,
+          -3078.85
         ],
         [
-          1888.23,
-          290.18,
-          -3038.49
+          1890.4,
+          0,
+          -3040.25
         ]
       ],
-      "note": "BR001 approach off the merged deck"
+      "note": "BR001 approach off the merged deck, 12\u00B0 fork"
     },
     {
       "id": "br001_in_e33845_0d0",
@@ -173,17 +173,17 @@
       "prefab": "Highway Oneway - 3 lanes",
       "control": [
         [
-          1879.53,
-          290.17,
-          -3032.01
+          1877.39,
+          0,
+          -3030.48
         ],
         [
-          1853.5,
-          293.13,
-          -3070.68
+          1847.32,
+          0,
+          -3067.17
         ]
       ],
-      "note": "BR001 approach onto the merged deck"
+      "note": "BR001 approach onto the merged deck, 12\u00B0 fork"
     },
     {
       "id": "br001_out_e36148_0d0",
@@ -192,17 +192,17 @@
       "prefab": "Highway Oneway - 3 lanes",
       "control": [
         [
-          1206.91,
-          293.05,
-          -3922.66
+          1201.75,
+          0,
+          -3917.55
         ],
         [
-          1176.43,
-          290.05,
-          -3958.55
+          1174.4,
+          0,
+          -3956.93
         ]
       ],
-      "note": "BR001 approach off the merged deck"
+      "note": "BR001 approach off the merged deck, 12\u00B0 fork"
     }
   ],
   "options": {

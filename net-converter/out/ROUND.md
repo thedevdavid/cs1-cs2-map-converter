@@ -5,22 +5,22 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 
 | order | file | content | count | size |
 |---:|---|---|---|---:|
-| 0 | `out\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (2×) | 400 polygons, 0 strokes | 3.2 MB |
-| 0 | `out\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (2×) | 433 polygons, 0 strokes | 2.2 MB |
-| 0 | `out\import-terrain-paint-bare-earth.json` | ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals) (2×) | 0 polygons, 128 strokes | 0.0 MB |
+| 0 | `out\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (2×) | 743 polygons, 0 strokes | 7.1 MB |
+| 0 | `out\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (2×) | 956 polygons, 0 strokes | 5.0 MB |
+| 0 | `out\import-terrain-paint-bare-earth.json` | ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals) (2×) | 0 polygons, 256 strokes | 0.0 MB |
 | 0 | `out\optional\import-terrain-paint-rock.json` | rock mask, NOT imported (no rock material) (2×) | 214 polygons, 0 strokes | 0.2 MB |
-| 0 | `out\x1\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (1×) | 400 polygons, 0 strokes | 3.2 MB |
-| 0 | `out\x1\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (1×) | 433 polygons, 0 strokes | 2.2 MB |
-| 0 | `out\x1\import-terrain-paint-bare-earth.json` | ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals) (1×) | 0 polygons, 128 strokes | 0.0 MB |
+| 0 | `out\x1\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (1×) | 743 polygons, 0 strokes | 7.1 MB |
+| 0 | `out\x1\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (1×) | 956 polygons, 0 strokes | 5.0 MB |
+| 0 | `out\x1\import-terrain-paint-bare-earth.json` | ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals) (1×) | 0 polygons, 256 strokes | 0.0 MB |
 | 0 | `out\x1\optional\import-terrain-paint-rock.json` | rock mask, NOT imported (no rock material) (1×) | 214 polygons, 0 strokes | 0.2 MB |
-| 1 | `out\import-all.json` | network (2×) | 3730 edges, 3601 nodes | 1.9 MB |
-| 1 | `out\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (2×) | 54 edges, replaces 152 | 0.0 MB |
+| 1 | `out\import-all.json` | network (2×) | 3781 edges, 3648 nodes | 1.9 MB |
+| 1 | `out\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (2×) | 54 edges, replaces 150 | 0.0 MB |
 | 1 | `out\import-bridges-fixed.json` | fixed-span bridges: BR001 Detroit suspension (one edge) + its 3-lane connectors, right after import-bridges.json (2×) | 5 edges, replaces 55 | 0.0 MB |
 | 1 | `out\import-dam.json` | dam: one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant), after the bridges (2×) | 1 edges, replaces 0 | 0.0 MB |
 | 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 4 edges | 0.0 MB |
 | 1 | `out\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (2×) | 2 edges | 0.0 MB |
-| 1 | `out\x1\import-all.json` | network (1×) | 3730 edges, 3601 nodes | 1.9 MB |
-| 1 | `out\x1\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (1×) | 54 edges, replaces 152 | 0.0 MB |
+| 1 | `out\x1\import-all.json` | network (1×) | 3793 edges, 3658 nodes | 1.9 MB |
+| 1 | `out\x1\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (1×) | 44 edges, replaces 139 | 0.0 MB |
 | 1 | `out\x1\import-bridges-fixed.json` | fixed-span bridges: BR001 Detroit suspension (one edge) + its 3-lane connectors, right after import-bridges.json (1×) | 5 edges, replaces 55 | 0.0 MB |
 | 1 | `out\x1\import-dam.json` | dam: one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant), after the bridges (1×) | 1 edges, replaces 0 | 0.0 MB |
 | 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 4 edges | 0.0 MB |
@@ -44,7 +44,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\import-walls-props.json` | barrier props (2×) | 621 | 0.1 MB |
 | 5 | `out\import-objects.json` | objects (2×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
 | 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
-| 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 793 | 0.2 MB |
+| 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 248 | 0.1 MB |
 | 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17562 | 3.2 MB |
 | 5 | `out\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (2×) | 3 | 0.0 MB |
 | 5 | `out\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (2×) | 201 | 0.0 MB |
@@ -55,8 +55,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
 | 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
-| 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 793 | 0.2 MB |
-| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17562 | 3.2 MB |
+| 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 248 | 0.1 MB |
+| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17558 | 3.2 MB |
 | 5 | `out\x1\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (1×) | 3 | 0.0 MB |
 | 5 | `out\x1\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (1×) | 131 | 0.0 MB |
 | 5 | `out\x1\optional\import-po-structure-br006-arches.json` | ROUND 22 BR006 variant b: 7 StoneArchRailBridge (135944) under the deck, runner --with po-br006-arches (1×) | 7 | 0.0 MB |
@@ -65,7 +65,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
 | 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |
 | 6 | `out\x1\import-trees-fixed-01.json` | trees at fixed height, with y (1×) | 50 | 0.0 MB |
-| 6 | `out\trees/import-trees-01.json` … `import-trees-10.json` | trees (both scales) | 496,321 in 10 files | |
+| 6 | `out\trees/import-trees-01.json` … `import-trees-10.json` | trees (both scales) | 496,303 in 10 files | |
 | 7 | `out\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 7 | `out\x1\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 8 | `out\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
@@ -78,7 +78,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 8 | `out\x1\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (1×) | 11 polygons | 0.0 MB |
 | 9 | `out\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
 | 9 | `out\x1\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
-| 9 | `out\trees/experiment-trees-net-corridor-01.json` | EXPERIMENT: trees on ground-net corridors (both scales) | 638 | |
+| 9 | `out\trees/experiment-trees-net-corridor-01.json` | EXPERIMENT: trees on ground-net corridors (both scales) | 656 | |
 
 Reports (both folders): `water-check.md`, `surfaces-summary.md`, `surfaces.geojson`, `manual-objects.md`, `connections-check.md`, `stats.md`.
 
@@ -269,3 +269,15 @@ audit/theme-remake.md §1), the fertility raster, tree density and the heightmap
 - Runner: the terrain-paint step is on by default, right after surfaces. Each file is dry-run first with the cap lifted (stamps per item), then posted in
   chunks of at most options.maxStamps. A rejected body or a netGuard removal stops the run. Undo: POST /import/terrain-paint/undo (newest first, last 3 kept).
 - Runner note: bridge 0.9.29 reports folded courses as merged; the live-graph re-check of point-check failures is now a fallback.
+
+## Round 25: noPillars only where a pier object set stands (A-v7: BR006 without pylons)
+
+- BR006: `nopillars` is gone from bridges.tsv, so variant (a) gets the game's pillars. Variant (b) (`--with po-br006-arches`) clears them through the runner's
+  pillars-off step, which now also takes the arch pieces and Bridge prefab segments.
+- Every other noPillars without a pier set behind it is dropped too (`--keep-cs1-nopillars` keeps them): 138 CS1 segments, from the CS1 Network Skins pillar
+  flags and the BR001 approach flags. 135 of their courses stand 8–114 m high in A-v6 with nothing under them: the BR001 south approach
+  (x 590–1110, z −5250…−4060, up to 114 m near the blue-arch site) and the interchange at x 3430–3690, z 1870–2320. The 4 BR001 3-lane connectors lose the flag.
+- noPillars stays on the 26 CS1 segments above the BR001 / BR003 ITBP + Pillar4x16 stacks (48 edges) and on the BR001 suspension deck.
+- x1 files against A-v7: geometry unchanged (no node or edge added, removed or moved). Only the `noPillars` field differs: import-all.json 145 edges,
+  import-bridges.json 4 (br006_c1_e0…e3), import-bridges-fixed.json 4 (br001_in/out connectors). A re-import onto A7b merges the same geometry, and dropping a flag
+  removes nothing. Pillars that noPillars already deleted come back only when the game updates those segments.

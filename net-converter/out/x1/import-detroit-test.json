@@ -1,0 +1,163 @@
+{
+  "name": "detroit-test",
+  "_comment": "A-v8 TEST ONLY (owner: options 2 and 3 next to the current BR001, then decide). Standalone decks, not connected; undo with POST /import/undo?id=\u003CimportId\u003E.",
+  "nodes": [
+    {
+      "id": "dt2_s0",
+      "x": 1064,
+      "y": 148.11,
+      "z": -3784.62
+    },
+    {
+      "id": "dt2_t1",
+      "x": 1154.67,
+      "y": 148.11,
+      "z": -3665.12
+    },
+    {
+      "id": "dt2_m",
+      "x": 1373.17,
+      "y": 148.11,
+      "z": -3377.12
+    },
+    {
+      "id": "dt2_t2",
+      "x": 1591.67,
+      "y": 148.11,
+      "z": -3089.12
+    },
+    {
+      "id": "dt2_s3",
+      "x": 1682.33,
+      "y": 148.11,
+      "z": -2969.62
+    },
+    {
+      "id": "dt3_u0",
+      "x": 828.21,
+      "y": 148.11,
+      "z": -3764.51
+    },
+    {
+      "id": "dt3_u1",
+      "x": 918.88,
+      "y": 148.11,
+      "z": -3645.01
+    },
+    {
+      "id": "dt3_u2",
+      "x": 1508.79,
+      "y": 148.11,
+      "z": -2867.46
+    },
+    {
+      "id": "dt3_u3",
+      "x": 1599.45,
+      "y": 148.11,
+      "z": -2747.96
+    },
+    {
+      "id": "dt3_l0",
+      "x": 1599.45,
+      "y": 140.11,
+      "z": -2747.96
+    },
+    {
+      "id": "dt3_l1",
+      "x": 1508.79,
+      "y": 140.11,
+      "z": -2867.46
+    },
+    {
+      "id": "dt3_l2",
+      "x": 918.88,
+      "y": 140.11,
+      "z": -3645.01
+    },
+    {
+      "id": "dt3_l3",
+      "x": 828.21,
+      "y": 140.11,
+      "z": -3764.51
+    }
+  ],
+  "edges": [
+    {
+      "id": "dt2_stub_w",
+      "a": "dt2_s0",
+      "b": "dt2_t1",
+      "prefab": "Highway Twoway - 4 lanes",
+      "note": "plain stub (no vanilla 6-lane two-way highway known)"
+    },
+    {
+      "id": "dt2_span_1",
+      "a": "dt2_t1",
+      "b": "dt2_m",
+      "prefab": "BXP Suspension Bridge - Highway Twoway - 6 Lanes",
+      "note": "362 m, CS1 tower T1 \u2192 mid"
+    },
+    {
+      "id": "dt2_span_2",
+      "a": "dt2_m",
+      "b": "dt2_t2",
+      "prefab": "BXP Suspension Bridge - Highway Twoway - 6 Lanes",
+      "note": "362 m, mid \u2192 CS1 tower T2"
+    },
+    {
+      "id": "dt2_stub_e",
+      "a": "dt2_t2",
+      "b": "dt2_s3",
+      "prefab": "Highway Twoway - 4 lanes",
+      "note": "plain stub"
+    },
+    {
+      "id": "dt3_upper_stub_w",
+      "a": "dt3_u0",
+      "b": "dt3_u1",
+      "prefab": "Highway Oneway - 3 lanes",
+      "note": "plain stub"
+    },
+    {
+      "id": "dt3_upper",
+      "a": "dt3_u1",
+      "b": "dt3_u2",
+      "prefab": "BXP Double Deck Suspension Bridge - Highway",
+      "note": "976 m, fixed 320 repeated (the game cuts 3 \u00D7 325 m), level (max slope 5 %)"
+    },
+    {
+      "id": "dt3_upper_stub_e",
+      "a": "dt3_u2",
+      "b": "dt3_u3",
+      "prefab": "Highway Oneway - 3 lanes",
+      "note": "plain stub"
+    },
+    {
+      "id": "dt3_lower_stub_e",
+      "a": "dt3_l0",
+      "b": "dt3_l1",
+      "prefab": "Highway Oneway - 3 lanes",
+      "note": "plain stub"
+    },
+    {
+      "id": "dt3_lower",
+      "a": "dt3_l1",
+      "b": "dt3_l2",
+      "prefab": "BXP Double Deck Suspension Bridge - Lower Highway",
+      "note": "976 m, 8 m below the upper deck (TODO: measure live)"
+    },
+    {
+      "id": "dt3_lower_stub_w",
+      "a": "dt3_l2",
+      "b": "dt3_l3",
+      "prefab": "Highway Oneway - 3 lanes",
+      "note": "plain stub"
+    }
+  ],
+  "options": {
+    "batchSize": 1,
+    "nodesFirst": true,
+    "heightMode": "absolute",
+    "dryRun": false,
+    "bypassValidation": true
+  }
+}

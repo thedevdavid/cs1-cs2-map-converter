@@ -208,19 +208,28 @@ public static class Bridges
         double chord = Len(a.Position, b.Position), curve = chain.Sum(e => e.Curve.LengthXZ());
         int n = s.Count ?? (s.Span is { } sp ? Math.Max(1, (int)Math.Ceiling(chord / sp - 1e-9)) : 1);
         // bridge.lowElevation: the highest of ends / middle per edge must reach 8 m.
+        double Raise(int pieces)
+        {
+            double r = 0;
+            for (int k = 0; k < pieces; k++)
+            {
+                double h = double.MinValue;
+                foreach (var t in new[] { k / (double)pieces, (k + 0.5) / pieces, (k + 1) / (double)pieces })
+                {
+                    double x = a.Position.X + t * (b.Position.X - a.Position.X), z = a.Position.Z + t * (b.Position.Z - a.Position.Z);
+                    h = Math.Max(h, Y(a) + t * (Y(b) - Y(a)) - terrOut!(x, z));
+                }
+                if (h < MinElevated) r = Math.Max(r, RaiseTarget - h);
+            }
+            return r;
+        }
         double raise = 0;
         if (terrOut != null && !s.FixedFile)
         {
-            for (int k = 0; k < n; k++)
-            {
-                double h = double.MinValue;
-                foreach (var t in new[] { k / (double)n, (k + 0.5) / n, (k + 1) / (double)n })
-                {
-                    double x = a.Position.X + t * (b.Position.X - a.Position.X), z = a.Position.Z + t * (b.Position.Z - a.Position.Z);
-                    h = Math.Max(h, Y(a) + t * (Y(b) - Y(a)) - terrOut(x, z));
-                }
-                if (h < MinElevated) raise = Math.Max(raise, RaiseTarget - h);
-            }
+            raise = Raise(n);
+            // Round 26 (A-v7 review F-ii): a non-fixed prefab may go as one edge (the game cuts it into equal spans); when that one edge already meets the
+            // rule at its middle (BR017, BR038), no lift at all.
+            if (raise > 0 && s.Fixed == null && n > 1 && Raise(1) == 0) { problems.Add(F($"{tag}: one edge instead of {n}: its middle stands ≥ 8 m above the terrain, no lift")); n = 1; raise = 0; }
             if (raise > 0)
             {
                 // Owner (A-v5): raise the road before the bridge. From each end node walk outward along the approach (through nodes of degree 2),
@@ -246,9 +255,11 @@ public static class Bridges
                             var nx = e.A == cn ? e.B : e.A; if (nx == a || nx == b) continue;
                             double dist = dist0 + e.Curve.LengthXZ();
                             if (best.TryGetValue(nx, out var dd) && dd <= dist) continue;
-                            double need = deckY - 0.06 * dist - Y(nx);
+                            // Round 26 (owner, A-v7: "no reason to raise from land then lower"): one climb at ≤ 3 % (2 % for track) from up to 300 m back.
+                            double grade = e.Layer == Layers.Rail ? 0.02 : 0.03;
+                            double need = deckY - grade * dist - Y(nx);   // output metres, as the game measures it
                             if (need <= 0) continue;                                    // this branch meets its original profile
-                            if (dist > 150) { fail = F($"the approach via {e.Id} would stay above 6 % for more than 150 m"); break; }
+                            if (dist > 300) { fail = F($"the approach via {e.Id} would need more than 300 m at {grade:P0}"); break; }
                             best[nx] = dist; lift[nx] = Math.Max(lift.GetValueOrDefault(nx), need); q.Enqueue(nx);
                         }
                     }
@@ -261,7 +272,7 @@ public static class Bridges
                 }
                 foreach (var (node, up) in lift) { double dTop = up / Outputs.YScale; node.Elevation += dTop; node.Position = node.Position with { Y = node.Position.Y + dTop }; }
                 foreach (var e in network.Where(e => lift.ContainsKey(e.A) || lift.ContainsKey(e.B))) e.Curve = e.Curve.WithEnds(e.A.Position, e.B.Position);
-                problems.Add(F($"{tag}: deck lifted +{raise:F1} m to 8.5 m above the terrain; {lift.Count - 2} approach nodes re-graded at ≤ 6 %"));
+                problems.Add(F($"{tag}: deck lifted +{raise:F1} m to 8.5 m above the terrain; {lift.Count - 2} approach nodes re-graded at ≤ 3 % (track 2 %)"));
             }
         }
         // Curvature: the largest offset of the CS1 chain from the straight line it becomes.
@@ -403,7 +414,13 @@ public static class Bridges
                     {
                         var other = node == a ? b : a;
                         double ux = node.Position.X - other.Position.X, uz = node.Position.Z - other.Position.Z, ul = Math.Sqrt(ux * ux + uz * uz); ux /= ul; uz /= ul;   // out of the deck
-                        foreach (var e in res.Edges.Where(e => !chain.Contains(e) && (e.A == node || e.B == node)))
+                        var approaches = res.Edges.Where(e => !chain.Contains(e) && e.Map.Imported && (e.A == node || e.B == node)).ToList();
+                        // Round 26 (A-v7, BR005): with two or more approaches at one deck end (a merge or diverge at the abutment), straightening all of them onto
+                        // the deck line made them overlap for 10–20 m and the game built a 4 m one-lane stub.
+                        double Ang(OutEdge e) { var c = e.A == node ? e.Curve.B : e.Curve.C; double dx = c.X - node.Position.X, dz = c.Z - node.Position.Z, l = Math.Sqrt(dx * dx + dz * dz); return l < 1e-6 ? 0 : Math.Acos(Math.Clamp((dx * ux + dz * uz) / l, -1, 1)); }
+                        // Only the through approach (the one closest to the deck line) is straightened; side ramps keep their own tangent.
+                        if (approaches.Count > 1) { problems.Add(F($"{tag}: {approaches.Count} approaches meet at {node.Id}: only the through one is straightened")); approaches = approaches.OrderBy(Ang).Take(1).ToList(); }
+                        foreach (var e in approaches)
                         {
                             var c = e.A == node ? e.Curve.B : e.Curve.C;
                             double cx = c.X - node.Position.X, cz = c.Z - node.Position.Z, cl2 = Math.Sqrt(cx * cx + cz * cz);
@@ -490,8 +507,26 @@ public static class Bridges
             foreach (var sn in new[] { sLo, sHi }) o.Nodes.Add(new Round9.NetNode(sn.Id, sn.Position.X, Y(sn), sn.Position.Z, 2, null));
             // Flow along the chain from start to end if forward, so lo → deck → hi (or reversed).
             var prefab = edges[0].Map.Cs2Prefab!;
-            if (forward) { o.Edges.Add(new Round9.NetEdge($"br001_in_{sLo.Id}", sLo.Id, endLo, prefab, Note: "BR001 approach onto the merged deck")); o.Edges.Add(new Round9.NetEdge($"br001_out_{sHi.Id}", endHi, sHi.Id, prefab, Note: "BR001 approach off the merged deck")); }
-            else { o.Edges.Add(new Round9.NetEdge($"br001_in_{sHi.Id}", sHi.Id, endHi, prefab, Note: "BR001 approach onto the merged deck")); o.Edges.Add(new Round9.NetEdge($"br001_out_{sLo.Id}", endLo, sLo.Id, prefab, Note: "BR001 approach off the merged deck")); }
+            // Round 26 (A-v7, shot 05): straight connectors converged at 3.3° and the two 16 m carriageways overlapped over all 140 m. Each connector is now a
+            // curve that leaves the deck end 12° off the axis towards its own side and arrives parallel to its carriageway, so the legs clear each other
+            // about 40 m from the deck end.
+            (Vec3 C1, Vec3 C2) Fork(OutNode split, int splitIdx, string deckId, int outward)
+            {
+                var dn = o.Nodes.First(x => x.Id == deckId);
+                double ox = outward * ux, oz = outward * uz;                                         // out of the deck, along its axis
+                double side = Math.Sign((split.Position.X - dn.X) * oz - (split.Position.Z - dn.Z) * ox);   // which side of the axis the carriageway lies
+                double a = -side * 12 * Math.PI / 180, fx = ox * Math.Cos(a) - oz * Math.Sin(a), fz = ox * Math.Sin(a) + oz * Math.Cos(a);
+                var far = nodes[Math.Clamp(splitIdx + (splitIdx == lo ? -1 : 1), 0, nodes.Count - 1)];
+                double tx = far.Position.X - split.Position.X, tz = far.Position.Z - split.Position.Z, tl = Math.Sqrt(tx * tx + tz * tz);
+                if (tl < 1e-6) { tx = ox; tz = oz; tl = 1; }
+                double L = Math.Sqrt((split.Position.X - dn.X) * (split.Position.X - dn.X) + (split.Position.Z - dn.Z) * (split.Position.Z - dn.Z)) / 3;
+                return (new Vec3(dn.X + fx * L, 0, dn.Z + fz * L), new Vec3(split.Position.X - tx / tl * L, 0, split.Position.Z - tz / tl * L));
+            }
+            int outLo = increasing ? -1 : 1;   // the lo split lies beyond the deck end on the −axis side when the chain runs along +axis
+            var (loDeck, loSplit) = Fork(sLo, lo, endLo, outLo);
+            var (hiDeck, hiSplit) = Fork(sHi, hi, endHi, -outLo);
+            if (forward) { o.Edges.Add(new Round9.NetEdge($"br001_in_{sLo.Id}", sLo.Id, endLo, prefab, C1: loSplit, C2: loDeck, Note: "BR001 approach onto the merged deck, 12° fork")); o.Edges.Add(new Round9.NetEdge($"br001_out_{sHi.Id}", endHi, sHi.Id, prefab, C1: hiDeck, C2: hiSplit, Note: "BR001 approach off the merged deck, 12° fork")); }
+            else { o.Edges.Add(new Round9.NetEdge($"br001_in_{sHi.Id}", sHi.Id, endHi, prefab, C1: hiSplit, C2: hiDeck, Note: "BR001 approach onto the merged deck, 12° fork")); o.Edges.Add(new Round9.NetEdge($"br001_out_{sLo.Id}", endLo, sLo.Id, prefab, C1: loDeck, C2: loSplit, Note: "BR001 approach off the merged deck, 12° fork")); }
             var replaced = edges.Skip(lo).Take(hi - lo).ToList();
             o.Replaces.AddRange(replaced.Select(e => e.Id));
             problems.Add(F($"carriageway {start.Id}: {replaced.Count} courses between {sLo.Id} and {sHi.Id} replaced; connectors {Len(sLo.Position, new Vec3(o.Nodes.First(x => x.Id == endLo).X, 0, o.Nodes.First(x => x.Id == endLo).Z)):F0} / {Len(sHi.Position, new Vec3(o.Nodes.First(x => x.Id == endHi).X, 0, o.Nodes.First(x => x.Id == endHi).Z)):F0} m"));

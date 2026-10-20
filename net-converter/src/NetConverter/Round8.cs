@@ -134,6 +134,44 @@ public static class Round8
         return (d.Ex + o.Along * ux - o.Left * uz, d.Ez + o.Along * uz + o.Left * ux);
     }
 
+    /// <summary>Gravel Road access courses: from the nearest point of an imported road (Gravel / Small / local, no highway or path) to each target.</summary>
+    public static void WriteAccessRoads(string path, List<(string Name, double X, double Z)> targets, IEnumerable<OutEdge> edges, Func<double, double, double>? terrainTrue, double heightFactor, double? crestOut)
+    {
+        var roads = edges.Where(e => e.Map.Imported && e.Map.Cs2Prefab is { } p && (p.Contains("Gravel") || p.Contains("Small Road") || p.Contains("Alley")) && e.Structure == Structure.Ground).ToList();
+        using var fs = File.Create(path);
+        using var w = new Utf8JsonWriter(fs, Json.Indented);
+        w.WriteStartObject();
+        w.WriteString("name", "Dakota Falls access roads");
+        w.WriteString("_comment", "Round 26: Gravel Road access to the dam plant and TransformerStation01 (both RequireRoad). The start node attaches to the nearest CS1 road through snapToSegment; the end sits at the building front. Ground level, absolute heights.");
+        w.WriteStartArray("nodes");
+        var edgesOut = new List<(string Id, string A, string B, string Note)>();
+        foreach (var (name, tx, tz) in targets)
+        {
+            (OutEdge E, Vec3 P, double D)? best = null;
+            foreach (var e in roads)
+                for (int k = 0; k <= 32; k++) { var p = e.Curve.Eval(k / 32.0); double d = Math.Sqrt((p.X - tx) * (p.X - tx) + (p.Z - tz) * (p.Z - tz)); if (best is not { } b || d < b.D) best = (e, p, d); }
+            if (best is not { } bb) continue;
+            double T(double x, double z) => terrainTrue != null ? terrainTrue(x, z) * heightFactor : bb.P.Y * Outputs.YScale;
+            w.WriteStartObject();
+            w.WriteString("id", $"{name}_road_a"); w.WriteNumber("x", Json.R2(bb.P.X)); w.WriteNumber("y", Json.R2(T(bb.P.X, bb.P.Z))); w.WriteNumber("z", Json.R2(bb.P.Z)); w.WriteNumber("elevation", 0);
+            w.WriteStartObject("snapToSegment"); w.WriteNumber("radius", 3); w.WriteString("prefabContains", bb.E.Map.Cs2Prefab); w.WriteEndObject();
+            w.WriteEndObject();
+            w.WriteStartObject();
+            w.WriteString("id", $"{name}_road_b"); w.WriteNumber("x", Json.R2(tx)); w.WriteNumber("y", Json.R2(name == "plant" && crestOut is { } c ? c : T(tx, tz))); w.WriteNumber("z", Json.R2(tz)); w.WriteNumber("elevation", 0);
+            w.WriteEndObject();
+            edgesOut.Add(($"{name}_access", $"{name}_road_a", $"{name}_road_b", string.Create(CultureInfo.InvariantCulture, $"from {bb.E.Id} ({bb.E.Map.Cs2Prefab}) {bb.D:F0} m to the {name}")));
+        }
+        w.WriteEndArray();
+        w.WriteStartArray("edges");
+        foreach (var (id, a, b, note) in edgesOut) { w.WriteStartObject(); w.WriteString("id", id); w.WriteString("a", a); w.WriteString("b", b); w.WriteString("prefab", "Gravel Road"); w.WriteString("note", note); w.WriteEndObject(); }
+        w.WriteEndArray();
+        w.WriteStartObject("options");
+        w.WriteNumber("batchSize", 8); w.WriteBoolean("nodesFirst", true); w.WriteString("heightMode", "absolute"); w.WriteBoolean("dryRun", false); w.WriteBoolean("bypassValidation", true);
+        w.WriteEndObject();
+        w.WriteEndObject();
+        foreach (var (id, _, _, note) in edgesOut) Console.WriteLine($"access road {id}: {note}");
+    }
+
     public static void WritePowerEnds(string path, List<PowerEnd> ends, Func<double, double, double>? cs2TerrainTrue, double heightFactor, bool absolute, DamFrame? dam = null)
     {
         using var fs = File.Create(path);
