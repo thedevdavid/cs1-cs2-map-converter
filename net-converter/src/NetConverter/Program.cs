@@ -488,17 +488,17 @@ void WriteLayers()
     Func<double, double, double>? terr = cs1Terrain == null ? null : cs1Terrain.Sample;
     var objs = Objects.Build(root, TargetMapping.Load(Find("object-mapping.tsv")), terr, heightFactor, 7168, treeSeed + 1, cs2Terrain == null ? null : cs2Terrain.Sample);
     var bounds = PrefabBound.Load(Find("prefab-bounds.json"));
+    // Bridge 0.9.19 grounding (options.grounding): pack rocks carry no y, the bridge sets their bottom from the prefab bounds, sunk 15 %.
     int grounded = 0;
-    if (cs2Terrain != null)
-        for (int i = 0; i < objs.Objects.Count; i++)
-        {
-            var o = objs.Objects[i];
-            if (!System.Text.RegularExpressions.Regex.IsMatch(o.Prefab, "^(rzrock|RZaridrock|Cliff)", System.Text.RegularExpressions.RegexOptions.IgnoreCase) || !bounds.TryGetValue(o.Prefab, out var pb)) continue;
-            objs.Objects[i] = o with { Y = pb.Y(cs2Terrain.Sample(o.X, o.Z) * heightFactor, 0.15 * pb.Height) };
-            grounded++;
-        }
-    extra.AppendLine($"- Pack rocks grounded by their live mesh bounds (y = terrain − bounds.min.y − 15 % of the height): {grounded}.");
-    Objects.Write(Path.Combine(outDir, "import-objects.json"), "objects", objs.Objects);
+    for (int i = 0; i < objs.Objects.Count; i++)
+    {
+        var o = objs.Objects[i];
+        if (!System.Text.RegularExpressions.Regex.IsMatch(o.Prefab, "^(rzrock|RZaridrock|Cliff)", System.Text.RegularExpressions.RegexOptions.IgnoreCase)) continue;
+        if (o.Y != null) { objs.Objects[i] = o with { Y = null }; grounded++; }
+    }
+    var grounding = new Objects.Grounding();
+    extra.AppendLine($"- Pack rocks: no y (their y was dropped on {grounded}); options.grounding {{mode boundsMin, sink 0.15, slopeSink}} grounds every object without y from its prefab bounds (bridge 0.9.19).");
+    Objects.Write(Path.Combine(outDir, "import-objects.json"), "objects", objs.Objects, grounding);
     Console.WriteLine($"objects: {objs.Targeted} placed of {objs.Total} (skip {objs.Skipped}, manual {objs.ManualCount}, unmapped {objs.Unmapped}, outside {objs.Outside}, with y {objs.WithY}; vs the CS1-terrain rule: lost y {objs.LostY}, gained y {objs.GainedY})");
     extra.AppendLine($"- Object y policy: {(cs2Terrain != null ? $"y only > 3 m above the CS2 playable heightmap ({Path.GetFileName(cs2HeightmapPath)})" : "y where > 2 m off the CS1 terrain (no CS2 heightmap)")}, never for buildings: {objs.WithY} with y; against the old CS1-terrain rule {objs.LostY} lose y, {objs.GainedY} gain it.");
     extra.AppendLine($"- Objects: {objs.Targeted} of {objs.Total} CS1 buildings/props got a CS2 target ({100.0 * objs.Targeted / Math.Max(1, objs.Total):F1} %); SKIP {objs.Skipped}, MANUAL {objs.ManualCount}, unmapped {objs.Unmapped}, outside ±7168 m {objs.Outside}; {objs.WithY} carry y.");
@@ -690,7 +690,10 @@ void WriteLayers()
         var (cliffs, capped, bands) = Round8.Cliffs(pieces, cs2True, 7168, treeSeed + 8);
         var heightsH = PoRocksV2.LoadHeights(Find(Path.Combine("..", "cs2-playset", "ASSET_PACKS.md")));
         var (v2, v2capped, v2big, v2renamed) = PoRocksV2.Build(pieces, bounds, heightsH, cs2True, heightFactor, 7168, treeSeed + 10);
-        Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "po-rocks-v3", v2.Select(p => p.O));
+        // No y: the bridge grounds each piece from its bounds; the per-object "sink" (fraction of the height, (H − v) / H) keeps the v3 visible-height rule.
+        var poSinks = new Dictionary<string, double>();
+        foreach (var p in v2) if (bounds.TryGetValue(p.O.Prefab, out var pbb) && pbb.Height > 0) poSinks[p.O.Id] = p.Sink / pbb.Height;
+        Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "po-rocks-v3", v2.Select(p => p.O with { Y = null }), grounding, poSinks);
         var sources = objs.Objects.Where(o => Round8.IsRockLike(o.Prefab)).Concat(cliffs).Select(o => (o.X, o.Z)).ToList();
         Func<double, double, bool>? wet = surfaceEarly == null ? null : (x, z) => surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.5;
         var (scatter, rejected) = Round8.Scatter(sources, rockPolys.Select(p => p.Ring), result.Edges.Where(e => e.Map.Imported), wet, 7168, treeSeed + 9);
@@ -707,16 +710,12 @@ void WriteLayers()
                 double gx = (cs2Terrain.Sample(o.X + 3.5, o.Z) - cs2Terrain.Sample(o.X - 3.5, o.Z)) / 7, gz = (cs2Terrain.Sample(o.X, o.Z + 3.5) - cs2Terrain.Sample(o.X, o.Z - 3.5)) / 7;
                 double slope = Math.Atan(Math.Sqrt(gx * gx + gz * gz)) * 180 / Math.PI;
                 if (slope > 45) { sSteep++; continue; }
-                if (slope > 25 && bounds.TryGetValue(o.Prefab, out var sb))
-                {
-                    keptS.Add(o with { Y = Math.Round(t0 * heightFactor - Math.Tan(slope * Math.PI / 180) * sb.HalfFootprint, 2) });   // vanilla rocks: pivot at the mesh centre
-                    sSunk++;
-                }
-                else keptS.Add(o);
+                if (slope > 25) sSunk++;   // the bridge's slopeSink lowers these
+                keptS.Add(o with { Y = null });
             }
             scatter = keptS;
         }
-        Objects.Write(Path.Combine(outDir, "import-rock-scatter.json"), "rock scatter", scatter);
+        Objects.Write(Path.Combine(outDir, "import-rock-scatter.json"), "rock scatter", scatter, grounding);
         string ci(FormattableString f) => FormattableString.Invariant(f);
         var r8 = new List<string>
         {
@@ -725,7 +724,7 @@ void WriteLayers()
             "power ends: " + string.Join("; ", ends.Select(e => ci($"{e.Target}: CS1 end {e.OldEnd.Id} ({e.OldEnd.Position.X:F0}, {e.OldEnd.Position.Z:F0}), replaces {e.Replaces.Id}, new course {e.Anchor.Id} -> ({e.X:F1}, {e.Z:F1}), {Math.Sqrt((e.X - e.Anchor.Position.X) * (e.X - e.Anchor.Position.X) + (e.Z - e.Anchor.Position.Z) * (e.Z - e.Anchor.Position.Z)):F0} m"))) + " -> import-power-ends.json",
             ci($"PO rocks v3: {v2.Count} objects ({Round8.Counts(v2.Select(p => p.O))}) from {pieces.Count} PO pieces, {v2capped} over the cap of 1500 dropped, {v2big} PO objects > 60 m above their surroundings with CliffSide pieces down the steepest flank, {v2renamed} re-picked for the 80 m prefab/heading rule; with y {v2.Count(p => p.O.Y != null)}; sink depth (mesh bottom below terrain): {PoRocksV2.SinkHistogram(v2)} -> import-po-rocks.json (import name po-rocks-v3)"),
             ci($"PO cliffs v1 (not written; their positions feed the rock scatter): {cliffs.Count} objects from {pieces.Count} PO pieces (mountain {pieces.Count(p => p.SubClass == "mountain")}, rock work {pieces.Count(p => p.SubClass == "rock work")}, falls steps {pieces.Count(p => p.SubClass == "falls steps")}); bands {string.Join(", ", bands.Select(b => $"{b.Key} {b.Value}"))}; {capped} over the cap of 2500 dropped -> import-po-rocks.json"),
-            ci($"rock scatter: in water left out {sWater}, slopes > 45° left out {sSteep}, slopes 25–45° lowered {sSunk}; {scatter.Count} (small {scatter.Count(o => Round8.SmallRocks.Contains(o.Prefab))}, medium {scatter.Count(o => Round8.MediumRocks.Contains(o.Prefab))}, boulders {scatter.Count(o => Round8.Boulders.Contains(o.Prefab))}) around {sources.Count} rock/cliff objects (r 60 m) and in {rockPolys.Count} rock polygons; rejected road {rejected["road"]}, spacing {rejected["spacing"]}, water {rejected["water"]}, border {rejected["border"]} -> import-rock-scatter.json"),
+            ci($"rock scatter: in water left out {sWater}, slopes > 45° left out {sSteep}, slopes 25–45° (lowered by the bridge's slopeSink) {sSunk}; {scatter.Count} (small {scatter.Count(o => Round8.SmallRocks.Contains(o.Prefab))}, medium {scatter.Count(o => Round8.MediumRocks.Contains(o.Prefab))}, boulders {scatter.Count(o => Round8.Boulders.Contains(o.Prefab))}) around {sources.Count} rock/cliff objects (r 60 m) and in {rockPolys.Count} rock polygons; rejected road {rejected["road"]}, spacing {rejected["spacing"]}, water {rejected["water"]}, border {rejected["border"]} -> import-rock-scatter.json"),
         };
         foreach (var l in r8) { Console.WriteLine("round 8 " + l); extra.AppendLine($"- Round 8 {l}."); }
     }
@@ -747,7 +746,7 @@ void WriteLayers()
             r9.Add(ci($"PO rock surfaces: {poRock.Count} polygons ({poRock.Sum(p => Math.Abs(Surfaces.Area(p.Ring))) / 1e6:F2} km² of {area / 1e6:F2} km² footprint, {patches} patches, {dropped} dropped), {prefab} -> import-surfaces-po-rock.json"));
         }
         var (fort, keep) = Round9.Fort(dump, new System.Text.RegularExpressions.Regex("(?i)Castle Wall"), 7168, treeSeed + 11);
-        Objects.Write(Path.Combine(outDir, "import-fort.json"), "fort ruins (round 11b)", fort);
+        Objects.Write(Path.Combine(outDir, "import-fort.json"), "fort ruins (round 11b)", fort, new Objects.Grounding());
         r9.Add(ci($"fort: {fort.Count} objects along the 12 CS1 Castle Wall segments ({Round8.Counts(fort)}), keep OldCastle01 at ({keep?.X:F0}, {keep?.Z:F0}) (UNVERIFIED placeable) -> import-fort.json; RuinsCastle01 stays in import-objects.json"));
         var blocks = Round9.LoadPavedBlocks(poOfflinePath);
         string pave = smap.Resolve("pavement")?.FirstOrDefault()?.Prefab ?? "Pavement Surface 01";

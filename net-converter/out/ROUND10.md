@@ -28,17 +28,17 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 4 | `out\import-connections.json` | outside connections | 25 | 0.0 MB |
 | 4 | `out\x1\import-connections.json` | outside connections | 25 | 0.0 MB |
 | 5 | `out\import-walls-props.json` | barrier props (2×) | 621 | 0.1 MB |
-| 5 | `out\import-objects.json` | objects (2×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 2712 with y) | 1.3 MB |
+| 5 | `out\import-objects.json` | objects (2×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
 | 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
 | 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 793 | 0.2 MB |
-| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17511 | 3.3 MB |
+| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17511 | 3.2 MB |
 | 5 | `out\import-fort.json` | ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED) (2×) | 112 | 0.0 MB |
 | 5 | `out\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (2×) | 2 | 0.0 MB |
 | 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
-| 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 2712 with y) | 1.3 MB |
+| 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
 | 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 793 | 0.2 MB |
-| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17511 | 3.3 MB |
+| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17511 | 3.2 MB |
 | 5 | `out\x1\import-fort.json` | ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED) (1×) | 112 | 0.0 MB |
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
 | 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |

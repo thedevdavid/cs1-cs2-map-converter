@@ -5,7 +5,12 @@
     "dryRun": false,
     "batchSize": 500,
     "bypassValidation": true,
-    "report": "compact"
+    "report": "compact",
+    "grounding": {
+      "mode": "boundsMin",
+      "sink": 0.15,
+      "slopeSink": true
+    }
   },
   "objects": [
     {

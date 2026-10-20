@@ -436,7 +436,19 @@ public static class Objects
         return res;
     }
 
-    public static void Write(string path, string name, IEnumerable<PlacedObject> objects)
+    /// <summary>
+    /// Bridge 0.9.19 object option: each object without y is grounded from its prefab's real mesh bounds at placement (bottom at the
+    /// terrain, then sunk by <c>Sink</c> × height; <c>SlopeSink</c> lowers it on slopes so the downhill side does not float). A per-object
+    /// "sink" (same unit, a fraction of the height) overrides the file value.
+    /// </summary>
+    public sealed record Grounding(string Mode = "boundsMin", double Sink = 0.15, bool SlopeSink = true);
+
+    public static void Write(string path, string name, IEnumerable<PlacedObject> objects, Grounding? grounding, IReadOnlyDictionary<string, double>? sinks = null)
+        => Write(path, name, objects, grounding, sinks, true);
+
+    public static void Write(string path, string name, IEnumerable<PlacedObject> objects) => Write(path, name, objects, null, null, true);
+
+    static void Write(string path, string name, IEnumerable<PlacedObject> objects, Grounding? grounding, IReadOnlyDictionary<string, double>? sinks, bool _)
     {
         using var fs = File.Create(path);
         using var w = new Utf8JsonWriter(fs, Json.Indented);
@@ -445,6 +457,12 @@ public static class Objects
         w.WriteString("_comment", "rotation = yaw in degrees about +y, 0 = +z, clockwise from above, from CS1 m_angle as −angle·180/π (UNVERIFIED sign). y only where the object is clearly on a structure: > 3 m above the CS2 playable heightmap (else > 2 m off the CS1 terrain); never for buildings (CS1 y × height factor).");
         w.WriteStartObject("options");
         w.WriteBoolean("dryRun", false); w.WriteNumber("batchSize", 500); w.WriteBoolean("bypassValidation", true); w.WriteString("report", "compact");
+        if (grounding != null)
+        {
+            w.WriteStartObject("grounding");
+            w.WriteString("mode", grounding.Mode); w.WriteNumber("sink", grounding.Sink); w.WriteBoolean("slopeSink", grounding.SlopeSink);
+            w.WriteEndObject();
+        }
         w.WriteEndObject();
         w.WriteStartArray("objects");
         foreach (var o in objects)
@@ -454,6 +472,7 @@ public static class Objects
             w.WriteString("prefab", o.Prefab);
             w.WriteNumber("x", Json.R2(o.X)); w.WriteNumber("z", Json.R2(o.Z));
             if (o.Y is double y) w.WriteNumber("y", y);
+            if (sinks != null && sinks.TryGetValue(o.Id, out var sk)) w.WriteNumber("sink", Math.Round(sk, 3));
             w.WriteNumber("rotation", o.Rotation);
             w.WriteString("kind", o.Kind);
             if (o.Kind is "plant" or "tree") w.WriteString("age", "adult");

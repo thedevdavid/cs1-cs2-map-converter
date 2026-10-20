@@ -327,3 +327,7 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
 - One-way highway chains that end in a CS1 dead end are left out up to the first junction (two 3-lane stubs at (2293, 277) / (2302, 255), 34 courses); `--keep-highway-stubs` keeps them.
 - `tools/import-run.mjs`: `--with` for optional steps, a graph export compared per prefab with the imported edges after the network steps and at the end (`--no-verify` skips).
 - `tools/live-analysis.mjs`: lost segments, highway dead ends and 4-lane splits of a live map against the import set, appended to live-defects.md.
+- Round 12b: the converter no longer computes y for pack rocks, po-rocks, scatter or fort pieces. Those files carry `options.grounding`
+  {mode boundsMin, sink 0.15, slopeSink true} (bridge 0.9.19 grounds each object without y from its prefab bounds); po-rocks pieces carry a per-object
+  `sink` (fraction of the height, (H − v) / H: median 0.40, max 0.59) for the v3 visible-height rule. import-objects.json keeps y on the 1 189 objects that
+  stand on structures (> 3 m above the CS2 terrain), assuming the bridge grounds only objects without y. prefab-bounds.json stays for the v3 sink fractions.
