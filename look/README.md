@@ -7,8 +7,11 @@ Ready request bodies for `POST /map/settings` (bridge 0.9.23 or later; MCP `cs2_
 | [climate.json](climate.json) | Base climate `TemperateWaterwayPassClimate`, then an edited copy (saved in the map): sun at 40.0 / −105.3, the four seasons, plus theme, starting month/time and natural disasters |
 | [water.json](water.json) | All 22 `WaterRenderSettingsPrefab` fields on an edited copy of whatever water settings the map has (= water-v1) |
 | [water-v1.json](water-v1.json), [water-v2a.json](water-v2a.json), [water-v2b.json](water-v2b.json) | Water A/B after the A-v7 review (below): v1 as applied, v2a clearly siltier, v2b the midpoint. Each has all 22 fields plus a `_rationale` key per changed field, which the bridge ignores |
-| [terrain.json](terrain.json) | Selects `DefaultTerrainRenderSettings`, no edits (see below) |
+| [terrain.json](terrain.json) | Selects `DefaultTerrainRenderSettings`, no edits (superseded by terrain-cs1.json) |
+| [terrain-cs1.json](terrain-cs1.json) | Edited copy of `DefaultTerrainRenderSettings` for the **CS1 theme-mix textures**: legacy texture format on, CS1 tiling. The textures themselves are set in the panel (below) |
 | [swatch.mjs](swatch.mjs) | Writes the surface swatch-test body |
+| [season-test.md](season-test.md) | Every season with screenshots: dates, camera spots, expected values, pass/fail |
+| [tools/export-theme.mjs](tools/export-theme.mjs) | Extracts the CS1 theme-mix textures from the theme `.crp` files into `textures/` (regenerable, gitignored; `textures/manifest.json` is kept) |
 
 ## Owner decisions (2026-10-20), encoded in the files
 
@@ -26,7 +29,8 @@ Ready request bodies for `POST /map/settings` (bridge 0.9.23 or later; MCP `cs2_
 |---|---|---|
 | `Sand Surface 01` | pale tan-beige sand, faint raking lines | **bank sand and sand bars** (rule S1) |
 | `Sand Surface 02` | grey-brown ground with fine furrows | small bare-earth patches on gentle slopes only (rule S3, ≤ 0.05 km²) |
-| `Grass Surface 01` / `02` | mown lawn with mowing stripes; 02 slightly lighter | **not used.** No vanilla surface reads as dry prairie grass; the plains keep CS2's own terrain grass |
+| `Grass Surface 02` | mown-lawn grass, a little lighter, faint stripes | **used:** the owner judged it good dry grass in the swatch (the A-v5 complaint was the rectangles). Organic outlines only, as a coarse layer under the Dry material |
+| `Grass Surface 01` | darker lawn | not used |
 | `Agriculture Surface 01` | ploughed field | field circles (rule A1) |
 | `Pavement Surface 01` | dark grey asphalt | under stand-in buildings (rule P1) |
 | `Concrete Surface 01` | near-white | dam crest and plant pad only |
@@ -60,7 +64,7 @@ Run on the open map in the editor, after terrain, water sources and sea level.
 
    Expected tweaks: `absorptionDistance` ±2 if the creeks look muddy or the river looks glassy, and `waterScatteringColor` toward blue if it reads swampy.
 
-**Why terrain.json makes no edits:** the terrain textures cannot be written from code (asset references; the panel's image picker only), so the CS1 textures cannot come back. The numeric fields (tiling, blur, splat, triplanar) have no CS1 counterpart worth guessing blind. The only candidate is the rock tiling: CS1 stretched its cliff texture to a ≈220 m repeat, while CS2's near rock tiling is 1600 (≈9 m repeat on a 14 km map). If the cliffs look busy in the screenshots, try `{"terrainEdit": {"terrainRockTiling": {"nearTiling": 800}}}`, judge, and undo by posting 1600.
+**terrain.json vs terrain-cs1.json:** terrain.json only picks the vanilla set. terrain-cs1.json makes an editable copy for the CS1 textures (next section). The texture fields cannot be written from code (asset references), so they are assigned once by hand in the panel; the numeric fields come from the file.
 
 ## Water A/B (owner review of A-v7, 2026-10-20)
 
@@ -90,6 +94,42 @@ Owner: "water coloring not correct". In `next-run/shots-a7/22-fort-ruins.png` th
 The other 9 fields are unchanged (waves, lake waves, minimum depth for waves, sea wind, foam fade range, caustics depth, ripples, smoothness range). The clear-creek rule still holds at v2a: a 0.5 m creek transmits about 80 % at 2.2 m absorption.
 
 **How to A/B:** post v2b, then v2a (each edits the same map copy, no new clone). Screenshot the same camera and time as `22-fort-ruins.png` (17:56, June) plus one noon shot. If v2a is too muddy, the next step is v2b's scattering colour with v2a's ambient 0.85, since brightness, not hue, was the main problem. Keep the winner as `water.json`.
+
+## CS1 theme-mix textures in the terrain render settings
+
+The textures the CS1 map really used (theme mix `2972881605`, audit/theme-remake.md §1), extracted and decoded from the theme `.crp` files:
+
+```bash
+node look/tools/export-theme.mjs
+```
+
+This writes `look/textures/raw/` (as stored in CS1) and `look/textures/gain16/` (RGB ×1.6). CS1's terrain shader brightens its textures, so stored as-is they are dark; try gain16 first. Each set has 14 PNGs named like a Map Texture Replacer pack (`<Slot>_BaseColor.png`, `<Slot>_Normal.png`).
+
+| Slot (panel field) | Editor brush | CS1 source | Normal |
+|---|---|---|---|
+| Grass (`m_GrassDiffuse` / `m_GrassNormal`) | base ground | Seychelles grass (mix grass) | generated from luminance |
+| Cliff → Rock (`m_RockDiffuse` / `m_RockNormal`) | slopes (automatic) | Springwood cliff (mix cliff) | Owl's `CliffSandNormal` RG (the mix's cliff normal) |
+| Dirt (`m_DirtDiffuse` / `m_DirtNormal`) | base dirt | Springwood ruined (mix ruined) | generated |
+| Extra1 | **Dry** | r69 Coastal grass (olive-brown; the driest grass among the mix's themes) | generated |
+| Extra2 | **Lush** | Springwood grass | generated |
+| Extra3 | **Dirt** | Seychelles gravel (mix gravel) | generated |
+| Extra4 | **Sand** | Owl's Albedo sand (mix sand) | Owl's `CliffSandNormal` BA (the mix's sand normal) |
+
+The brush ↔ slot mapping is from the game's locale (`Assets.DESCRIPTION[Terrain Material Extra 1..4]`: Dry, Lush, Dirt, Sand) and `TerrainMaterialType` Extra1–4.
+
+**Apply (in the editor, once per map):**
+1. `POST /map/settings` with **terrain-cs1.json**. This creates the editable copy "DefaultTerrainRenderSettings (copy)", sets `m_UseLegacyTextureFormat` and the CS1 tiling. The legacy format means plain diffuse PNGs and standard normal maps for grass/dirt/rock; it is what Map Texture Replacer sets for user PNGs.
+2. Editor → Environment → Terrain Rendering Settings. For each of the 14 texture fields, use the image picker and choose the matching file from `look/textures/gain16/`. The import is BC7-compressed and embedded in the map, so no mod is needed.
+3. Save, reload, check: cliffs warm grey-brown, grass dark olive, the brushes show CS1 textures. Paint one stroke of each brush to see it.
+4. If a brush looks wrongly lit (the Extra slots' normals may expect the new packed format), clear that slot's normal; the game then uses its flat fallback normal.
+5. Alternative without touching the map: Map Texture Replacer (installed) can load the same folder as a pack, but only per player.
+
+**Tiling in terrain-cs1.json** (repeats per layer; starting values, judge in game):
+- **mid** = 14 336 m ÷ the CS1 repeat (grass 100 m → 143; dirt 83 m → 172; rock 222 m → 65);
+- **near** = 4 × mid (CS1's textures hold 5 cm/px, enough up close);
+- **far** = the default 40.
+
+The Extra slots reuse the grass tiling (`TerrainMaterialSystem` binds `_TerrainExtraTextureTiling` from `m_TerrainGrassTiling`). If the playable area is not the tiling unit, all three scale together.
 
 ## Terrain material slots (Dry / Lush / Dirt / Sand) and "DesertTerrainRenderingSettings"
 

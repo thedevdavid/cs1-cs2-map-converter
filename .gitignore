@@ -11,3 +11,5 @@ cs1-offline/out/po-offline.json
 net-converter/out/trees/*.json
 *.log
 next-run/shots-a7/
+look/textures/*
+!look/textures/manifest.json

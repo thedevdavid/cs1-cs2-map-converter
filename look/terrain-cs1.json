@@ -1,0 +1,9 @@
+{
+  "terrainRenderSettings": "DefaultTerrainRenderSettings",
+  "terrainEdit": {
+    "useLegacyTextureFormat": true,
+    "terrainGrassTiling": { "farTiling": 40, "midTiling": 143, "nearTiling": 572 },
+    "terrainDirtTiling": { "farTiling": 40, "midTiling": 172, "nearTiling": 688 },
+    "terrainRockTiling": { "farTiling": 40, "midTiling": 65, "nearTiling": 260 }
+  }
+}

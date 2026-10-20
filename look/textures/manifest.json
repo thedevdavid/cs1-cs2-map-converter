@@ -1,0 +1,93 @@
+[
+  {
+    "slot": "Grass",
+    "source": "Seychelles.crp::GrassDiffuseTexture",
+    "size": "2048x2048",
+    "meanRGBA": [
+      37.1,
+      43.3,
+      23.2,
+      255
+    ],
+    "normal": "gen",
+    "note": "mix grass (Seychelles)"
+  },
+  {
+    "slot": "Cliff",
+    "source": "Springwood.crp::CliffDiffuseTexture",
+    "size": "2048x2048",
+    "meanRGBA": [
+      64.3,
+      56.5,
+      49.4,
+      178.7
+    ],
+    "normal": "rg",
+    "note": "mix cliff (Springwood) + Owl's cliff normal"
+  },
+  {
+    "slot": "Dirt",
+    "source": "Springwood.crp::RuinedDiffuseTexture",
+    "size": "2048x2048",
+    "meanRGBA": [
+      60.2,
+      51.7,
+      42.7,
+      103.3
+    ],
+    "normal": "gen",
+    "note": "mix ruined (Springwood)"
+  },
+  {
+    "slot": "Extra1",
+    "source": "r69-coastal.crp::GrassDiffuseTexture",
+    "size": "4096x4096",
+    "meanRGBA": [
+      57.8,
+      54.7,
+      37.8,
+      98.1
+    ],
+    "normal": "gen",
+    "note": "brush \"Dry\": r69 Coastal grass (olive-brown, the driest grass among the mix themes)"
+  },
+  {
+    "slot": "Extra2",
+    "source": "Springwood.crp::GrassDiffuseTexture",
+    "size": "2048x2048",
+    "meanRGBA": [
+      41.8,
+      45.9,
+      26.7,
+      255
+    ],
+    "normal": "gen",
+    "note": "brush \"Lush\": Springwood grass"
+  },
+  {
+    "slot": "Extra3",
+    "source": "Seychelles.crp::GravelDiffuseTexture",
+    "size": "2048x2048",
+    "meanRGBA": [
+      48.4,
+      41.7,
+      36.5,
+      171
+    ],
+    "normal": "gen",
+    "note": "brush \"Dirt\": mix gravel (Seychelles)"
+  },
+  {
+    "slot": "Extra4",
+    "source": "Owl's Albedo.crp::SandDiffuseTexture",
+    "size": "4096x4096",
+    "meanRGBA": [
+      65.6,
+      57,
+      47.2,
+      189.9
+    ],
+    "normal": "ba",
+    "note": "brush \"Sand\": mix sand (Owl's Albedo) + Owl's sand normal"
+  }
+]
