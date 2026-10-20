@@ -6,7 +6,7 @@
 //   Default: pillars-off + po-piers (BR001 / BR003 ITBP caps 140978 on Pillar4x16 stacks 154132).
 // run-state.json (per scale folder) lists the files imported on this map; --skip / --only / --resume skip those, a plain run (or --fresh) starts over.
 // Steps (in order): surfaces network bridges bridges-fixed dam gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
-//   resources surfaces power-ends settings look. Optional (only with --with or --only): grass, sand-smooth (the earlier smoothed sand), and the pack surfaces in optional/: rock, po-rock, decals, sand-pack (sand-pack paints the same sand as the default sand file with the Dirty Surfaces prefab: use one of the two).
+//   resources surfaces power-ends settings look textures. Optional (only with --with or --only): grass, sand-smooth (the earlier smoothed sand), and the pack surfaces in optional/: rock, po-rock, decals, sand-pack (sand-pack paints the same sand as the default sand file with the Dirty Surfaces prefab: use one of the two).
 // After the network steps and at the end the bridge's graph export is compared per prefab with the import files (--no-verify skips it).
 // Each step POSTs its file(s) and prints one line (created / merged / failed, seconds). A body error (HTTP 400 with problems)
 // stops the run and prints the problems; per-item failures are counted and the run goes on. The run report with every
@@ -154,7 +154,7 @@ const steps = [
 const optional = new Set(steps.filter(s => s[3]).map(s => s[0]));
 const wanted = name => (only.size === 0 ? (!optional.has(name) || withOpt.has(name)) : only.has(name)) && !skip.has(name)
   && (!name.startsWith("verify") || (verify && !dryRun)) && (name !== "net-count" || !dryRun);
-for (const n of [...skip, ...only, ...withOpt]) if (![...steps.map(s => s[0]), "settings", "look"].includes(n)) { console.error(`unknown step: ${n}`); process.exit(2); }
+for (const n of [...skip, ...only, ...withOpt]) if (![...steps.map(s => s[0]), "settings", "look", "textures"].includes(n)) { console.error(`unknown step: ${n}`); process.exit(2); }
 
 // Graph check: the bridge's export per prefab against the network import files run so far (A-v4 lost 297 built segments after the import).
 const imported = {};
@@ -395,7 +395,9 @@ if (!stopped && wanted("look")) {
   walk(schema.json);
   const norm = k => k.replace(/^m_/, "").toLowerCase();
   const sources = [];
-  for (const name of ["climate", "water", "terrain"]) {
+  // Round 29 (A-v8): terrain-cs1.json, not terrain.json. terrain.json selects the read-only vanilla DefaultTerrainRenderSettings and so throws away the
+  // editable CS1 copy and its textures; terrain-cs1.json makes / edits the copy (legacy texture format, CS1 tiling).
+  for (const name of ["climate", "water", "terrain-cs1"]) {
     const file = [join(toolDir, "..", "..", "look", `${name}.json`), join(toolDir, "..", "look", `${name}.json`)].find(existsSync);
     if (file) sources.push([name, file]);
   }
@@ -417,6 +419,46 @@ if (!stopped && wanted("look")) {
   if (schema.status !== 200) lines.push(`/map/look/schema HTTP ${schema.status}: fields not pre-checked`);
   if (sources.length === 0) lines.push("no look/*.json found");
   rows.push({ name: "look", file: "POST /map/settings (look)", status: "ok", secs: (Date.now() - t0) / 1000, text: lines.join(" | ") });
+}
+
+if (!stopped && wanted("textures")) {
+  // Round 29: the 14 CS1 terrain textures (look/README.md "A-v8 file list") into the terrain render settings copy, right after the look step:
+  // POST /map/terrain-textures (bridge 0.9.32+, background job), then poll /map/terrain-textures/status until it is no longer running.
+  // --skip textures leaves the map's textures alone; --textures-dir <folder> picks another set (default look/textures/gain16, fallback look/textures/raw).
+  const t0 = Date.now();
+  const tdir = opt("--textures-dir", [join(toolDir, "..", "..", "look", "textures", "gain16"), join(toolDir, "..", "..", "look", "textures", "raw")].find(existsSync) ?? "");
+  const slots = [["Rock", "Cliff"], ["Dirt", "Dirt"], ["Grass", "Grass"], ["Extra1", "Extra1"], ["Extra2", "Extra2"], ["Extra3", "Extra3"], ["Extra4", "Extra4"]];
+  const textures = [], missing = [];
+  for (const [slot, base] of slots) {
+    const t = { slot };
+    for (const [key, suffix] of [["diffuse", "BaseColor"], ["normal", "Normal"]]) {
+      const file = join(tdir, `${base}_${suffix}.png`);
+      if (existsSync(file)) t[key] = file.replace(/\\/g, "/"); else missing.push(`${base}_${suffix}.png`);
+    }
+    if (t.diffuse || t.normal) textures.push(t);
+  }
+  let text;
+  if (!tdir || textures.length === 0) text = `no texture files (${tdir || "look/textures/gain16 missing"})`;
+  else if (dryRun) text = `${textures.length} slots from ${tdir} (dry run, not sent)${missing.length ? `; missing ${missing.join(", ")}` : ""}`;
+  else {
+    const r = await request("POST", "/map/terrain-textures", { textures });
+    if (r.status !== 200 && r.status !== 202) text = `POST HTTP ${r.status} ${JSON.stringify(r.json).slice(0, 300)}`;
+    else {
+      console.log(`  textures: job ${r.json.job ?? "?"}, ${r.json.queued ?? textures.length} files queued from ${tdir}`);
+      let st = null;
+      for (let i = 0; i < 300; i++) {                                    // up to 10 min, every 2 s
+        await new Promise(res => setTimeout(res, 2000));
+        const q = await request("GET", "/map/terrain-textures/status").catch(() => ({ status: 0, json: {} }));
+        st = q.json ?? {};
+        if (st.state && st.state !== "running" && st.state !== "queued") break;
+      }
+      const log = st?.log ?? st?.files ?? [];
+      for (const e of log) console.log(`  ${/ok|done|imported/i.test(e.result ?? "") ? "✓" : "✗"} texture ${e.field ?? e.slot ?? "?"} ${String(e.file ?? "").split(/[\\/]/).pop()}: ${e.result ?? ""}${e.error ? ` (${e.error})` : ""}`);
+      text = `${st?.state ?? "no status"}: done ${st?.done ?? "?"}, failed ${st?.failed ?? "?"} of ${log.length || textures.length} files from ${tdir}${missing.length ? `; missing ${missing.join(", ")}` : ""}`;
+    }
+  }
+  console.log(`${/failed [1-9]|HTTP|no texture/.test(text) ? "!" : "✓"} textures ${text}`);
+  rows.push({ name: "textures", file: "POST /map/terrain-textures", status: "ok", secs: (Date.now() - t0) / 1000, text });
 }
 
 if (!dryRun && netBaseline && wanted("net-count")) {

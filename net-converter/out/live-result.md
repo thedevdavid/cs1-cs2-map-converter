@@ -272,3 +272,22 @@ seeded per feature. `--paint` overrides any layer: brush (sand / dry / dirt / lu
   import-detroit-opt3.json (option 3: the double-deck upper and lower decks + 4 stubs, 8 nodes), at both scales.
 - Runner: `detroit-opt2` / `detroit-opt3` are opt-in only (`--with detroit-opt2` or `--with detroit-opt3`) and come after `verify-end`, so a crash there never costs
   the map. Save the map first, and try opt2 alone before opt3 (opt3 holds the Lower Highway net the crash is suspected on).
+
+## Round 29: look / textures steps; the 3 A-v8 network failures
+
+- Runner `look`: posts look/terrain-cs1.json, no longer terrain.json. terrain.json selected the read-only vanilla DefaultTerrainRenderSettings and dropped the
+  CS1 copy with its textures.
+- Runner `textures` (new, right after `look`; `--skip textures` leaves them alone; `--textures-dir` for another set, default look/textures/gain16, fallback
+  look/textures/raw): POST /map/terrain-textures with the 14 files, slots Rock (Cliff_*), Dirt, Grass, Extra1–4. It polls /map/terrain-textures/status every 2 s
+  (up to 10 min) until the job is no longer running, then prints done / failed and one line per file. Tested against a mock bridge only (14 queued, 14 done).
+- The look group stays last: settings → look → textures, then the final net count.
+- A-v8 failures (live-graph-20261020-231951-end.json). None is missing. All three run along live segments of their prefab; only the ends differ:
+  - e31685_0 Highway Oneway - 2 lanes, (3652, 1881) → (3695, 1841), a 4-way junction with two 1-lane ramps and a 4-lane road: t 0.2 / 0.5 lie 0.00 m on live
+    64346:35. That piece is only 29.7 m long (our course is 59 m); at t 0.8 the nearest pieces are the 1-lane ramp 3.5 m away and the 4-lane road. The game moved the
+    junction about 20 m along the carriageway (acute ramp joins).
+  - e34504_0 Highway Oneway - 2 lanes, (3810, 2322) → (3755, 2261), the same type of junction: t 0.5 / 0.8 lie 0.00 m on live 65990:19 (45.7 m of an 82 m course);
+    t 0.2 is 2.9 m off a 1-lane ramp.
+  - e35131_0 Gravel Road, (6910, 2817) → (6846, 2817), curved 64 m: live 97595:9 follows it within 0.45 m at t 0.2 but runs 6.2 m off the middle (the game
+    straightened the curve), and the far end now belongs to two 128 m pieces 8.5 m off (a straight run re-split at the junction).
+  These are game-side relocations at acute or folded junctions, not losses. The runner's 2 m re-check is strict on purpose and lists them as missing; bridge 0.9.33
+  marks the folds as merged.
