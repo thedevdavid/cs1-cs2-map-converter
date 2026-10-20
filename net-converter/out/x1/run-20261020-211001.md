@@ -1,0 +1,62 @@
+# Import run 20261020-211001 (x1, sea 93 → 93)
+
+Bridge http://127.0.0.1:8642; files from `out\x1` (trees from `out\trees`). Completed. Total 403.4 s.
+
+Undo in reverse order of the table (each import can only be undone while it is the newest of its kind).
+
+| step | file | result | seconds | importId | undo |
+|---|---|---|---:|---|---|
+| surfaces | `out\x1\import-surfaces-fields.json` | objects 55: created 55, failed 0; netGuard removed 0 | 0.2 | srf-20261020-211001-1 | POST /import/objects/undo?id=srf-20261020-211001-1 |
+| surfaces | `out\x1\import-po-structures.json` | objects 11: created 11, failed 0; netGuard removed 0 | 0.1 | srf-20261020-211001-2 | POST /import/objects/undo?id=srf-20261020-211001-2 |
+| surfaces | `out\x1\import-surfaces-sand.json` | objects 112: created 112, failed 0; netGuard removed 0 | 0.2 | srf-20261020-211001-3 | POST /import/objects/undo?id=srf-20261020-211001-3 |
+| terrain-paint | `out\x1\import-terrain-paint-sand.json` | part 1/1: items 400, stamps 230014; netGuard removed 0 | 41.1 | paint-20261020-211212-1 | POST /import/terrain-paint/undo (newest first, last 3 kept) |
+| terrain-paint | `out\x1\import-terrain-paint-dry-grass.json` | part 1/1: items 433, stamps 145905; netGuard removed 0 | 12.8 | paint-20261020-211238-2 | POST /import/terrain-paint/undo (newest first, last 3 kept) |
+| terrain-paint | `out\x1\import-terrain-paint-bare-earth.json` | part 1/1: items 128, stamps 128; netGuard removed 0 | 0.1 | paint-20261020-211239-3 | POST /import/terrain-paint/undo (newest first, last 3 kept) |
+| network | `out\x1\import-all.json` | edges 3730: created 2079, merged 1651, failed 0 | 16.8 | imp-20261020-211239-1 | POST /import/undo?id=imp-20261020-211239-1 |
+| bridges | `out\x1\import-bridges.json` | edges 54: created 52, merged 2, failed 0 | 0.4 | imp-20261020-211256-2 | POST /import/undo?id=imp-20261020-211256-2 |
+| bridges-fixed | `out\x1\import-bridges-fixed.json` | edges 5: created 0, merged 5, failed 0 | 0.3 | imp-20261020-211256-3 | POST /import/undo?id=imp-20261020-211256-3 |
+| dam | `out\x1\import-dam.json` | edges 1: created 0, merged 1, failed 0 | 0.2 | imp-20261020-211256-4 | POST /import/undo?id=imp-20261020-211256-4 |
+| gaps | `out\x1\import-gaps.json` | edges 4: created 3, merged 1, failed 0 | 0.1 | imp-20261020-211257-5 | POST /import/undo?id=imp-20261020-211257-5 |
+| power | `out\x1\import-power.json` | edges 58: created 7, merged 51, failed 0 | 0.2 | imp-20261020-211257-6 | POST /import/undo?id=imp-20261020-211257-6 |
+| canals | `out\x1\import-canals.json` | edges 16: created 2, merged 14, failed 0 | 0.2 | imp-20261020-211257-7 | POST /import/undo?id=imp-20261020-211257-7 |
+| shippaths | `out\x1\import-shippaths.json` | edges 100: created 71, merged 29, failed 0 | 0.4 | imp-20261020-211257-8 | POST /import/undo?id=imp-20261020-211257-8 |
+| substation | `out\x1\import-substation.json` | objects 1: created 1, failed 0; netGuard removed 0 | 0.2 | obj-20261020-211258-1 | POST /import/objects/undo?id=obj-20261020-211258-1 |
+| power-ends | `out\x1\import-power-ends.json` | edges 4: created 3, merged 1, failed 0 | 0.2 | imp-20261020-211258-9 | POST /import/undo?id=imp-20261020-211258-9 |
+| net-count | `GET /net/count` | net count after the network steps: 3116 segments: Gravel Road 843, Highway Oneway - 2 lanes 743, Highway Oneway - 3 lanes 439, Double Train Track 269, Small Road 248, Highway Oneway - 1 lane 231, High-voltage Line 114, Medium Seaway 78, Medium Road 39, BXP Truss Viaduct - Train 29, Highway Oneway - 4 lanes 27, Pavement Path 16, Wooden Covered Bridge - 2 lanes 11, BXP Truss Arch Bridge - Highway Oneway - 2 Lanes 8, Narrow Boatway 7, BXP SuspensionBridge03 - Six Lane Highway 4, Truss Arch Bridge - Small Road - 2 Lanes 4, TrussArchBridge01 4, Sound Barrier 2 | 0.0 |  |  |
+| verify-network | `GET /graph/export` | graph 3116 segments; live/imported edges: Highway Oneway - 2 lanes 743/889, Highway Oneway - 3 lanes 439/513, Highway Oneway - 1 lane 231/244, Highway Oneway - 4 lanes 27/31, Double Train Track 269/430, Gravel Road 843/1265, Small Road 248/308, Pavement Path 16/15, Medium Road 39/43, BXP Truss Arch Bridge - Highway Oneway - 2 Lanes 8/8, Truss Arch Bridge - Small Road - 2 Lanes 4/4, TrussArchBridge01 4/2, BXP Truss Viaduct - Train 29/29, Wooden Covered Bridge - 2 lanes 11/11, BXP SuspensionBridge03 - Six Lane Highway 4/1, Hydroelectric_Power_Plant_01 Dam 0/1, High-voltage Line 114/62, Narrow Boatway 7/14, Sound Barrier 2/2, Medium Seaway 78/100 (live-graph-20261020-211001-network.json) | 0.1 |  |  |
+| water | `out\x1\import-water-sea93.json` | sources 44 | 0.1 | wat-20261020-211258-1 | POST /import/water/undo?id=wat-20261020-211258-1 |
+| lakes | `out\x1\import-water-lakes.json` | sources 18 | 0.1 | wat-20261020-211258-2 | POST /import/water/undo?id=wat-20261020-211258-2 |
+| connections | `out\x1\import-connections.json` | objects 25: created 25, failed 0; netGuard removed 0 | 0.1 | obj-20261020-211258-2 | POST /import/objects/undo?id=obj-20261020-211258-2 |
+| objects | `out\x1\import-objects.json` | objects 6130: created 6130, failed 0; netGuard removed 0 | 1.1 | obj-20261020-211259-3 | POST /import/objects/undo?id=obj-20261020-211259-3 |
+| barriers | `out\x1\import-walls-props.json` | objects 621: created 621, failed 0; netGuard removed 0 | 0.2 | obj-20261020-211300-4 | POST /import/objects/undo?id=obj-20261020-211300-4 |
+| po-rocks | `out\x1\import-po-rocks.json` | objects 793: created 793, failed 0; netGuard removed 0 | 0.2 | obj-20261020-211300-5 | POST /import/objects/undo?id=obj-20261020-211300-5 |
+| po-structures | `out\x1\import-po-structure-objects.json` | objects 3: created 3, failed 0; netGuard removed 0 | 0.1 | obj-20261020-211300-6 | POST /import/objects/undo?id=obj-20261020-211300-6 |
+| po-gantry | `out\x1\optional\import-po-structure-gantry.json` | objects 1: created 1, failed 0; netGuard removed 0 | 0.1 | obj-20261020-211301-7 | POST /import/objects/undo?id=obj-20261020-211301-7 |
+| pillars-off | `POST /net/pillars/remove` | 50 caps, 40 segments: HTTP 200 {"segments":40,"innerNodes":27,"pillarsDeleted":10,"notFound":[],"note":"pillars come back when the game updates the segment (an edge or node there is changed)"} | 0.2 |  |  |
+| po-piers | `out\x1\import-po-structure-piers.json` | objects 131: created 131, failed 0; netGuard removed 0 | 0.1 | obj-20261020-211301-8 | POST /import/objects/undo?id=obj-20261020-211301-8 |
+| rock-scatter | `out\x1\import-rock-scatter.json` | objects 17562: created 17562, failed 0; netGuard removed 0 | 2.5 | obj-20261020-211301-9 | POST /import/objects/undo?id=obj-20261020-211301-9 |
+| fort | `out\x1\import-fort.json` | objects 112: created 112, failed 0; netGuard removed 0 | 0.2 | obj-20261020-211304-10 | POST /import/objects/undo?id=obj-20261020-211304-10 |
+| trees | `out\trees\import-trees-01.json` | objects 50000: created 50000, failed 0; netGuard removed 0 | 8.3 | obj-20261020-211304-11 | POST /import/objects/undo?id=obj-20261020-211304-11 |
+| trees | `out\trees\import-trees-02.json` | objects 50000: created 50000, failed 0; netGuard removed 0 | 13.0 | obj-20261020-211313-12 | POST /import/objects/undo?id=obj-20261020-211313-12 |
+| trees | `out\trees\import-trees-03.json` | objects 50000: created 50000, failed 0; netGuard removed 0 | 18.8 | obj-20261020-211326-13 | POST /import/objects/undo?id=obj-20261020-211326-13 |
+| trees | `out\trees\import-trees-04.json` | objects 50000: created 50000, failed 0; netGuard removed 0 | 24.4 | obj-20261020-211346-14 | POST /import/objects/undo?id=obj-20261020-211346-14 |
+| trees | `out\trees\import-trees-05.json` | objects 50000: created 50000, failed 0; netGuard removed 0 | 29.9 | obj-20261020-211410-15 | POST /import/objects/undo?id=obj-20261020-211410-15 |
+| trees | `out\trees\import-trees-06.json` | objects 50000: created 50000, failed 0; netGuard removed 0 | 36.5 | obj-20261020-211441-16 | POST /import/objects/undo?id=obj-20261020-211441-16 |
+| trees | `out\trees\import-trees-07.json` | objects 50000: created 50000, failed 0; netGuard removed 0 | 40.5 | obj-20261020-211517-17 | POST /import/objects/undo?id=obj-20261020-211517-17 |
+| trees | `out\trees\import-trees-08.json` | objects 50000: created 50000, failed 0; netGuard removed 0 | 46.8 | obj-20261020-211558-18 | POST /import/objects/undo?id=obj-20261020-211558-18 |
+| trees | `out\trees\import-trees-09.json` | objects 50000: created 50000, failed 0; netGuard removed 0 | 51.9 | obj-20261020-211645-19 | POST /import/objects/undo?id=obj-20261020-211645-19 |
+| trees | `out\trees\import-trees-10.json` | objects 46321: created 46321, failed 0; netGuard removed 0 | 53.6 | obj-20261020-211738-20 | POST /import/objects/undo?id=obj-20261020-211738-20 |
+| trees | `out\x1\import-trees-fixed-01.json` | objects 50: created 50, failed 0; netGuard removed 0 | 0.6 | obj-20261020-211831-21 | POST /import/objects/undo?id=obj-20261020-211831-21 |
+| resources | `out\x1\import-resources.json` | layers fertility 15156 non-zero, ore 10739 non-zero, oil 29466 non-zero, groundwater 6987 non-zero | 0.2 |  | (no undo: re-import the previous layers) |
+| verify-end | `GET /graph/export` | graph 3116 segments; live/imported edges: Highway Oneway - 2 lanes 743/889, Highway Oneway - 3 lanes 439/513, Highway Oneway - 1 lane 231/244, Highway Oneway - 4 lanes 27/31, Double Train Track 269/430, Gravel Road 843/1265, Small Road 248/308, Pavement Path 16/15, Medium Road 39/43, BXP Truss Arch Bridge - Highway Oneway - 2 Lanes 8/8, Truss Arch Bridge - Small Road - 2 Lanes 4/4, TrussArchBridge01 4/2, BXP Truss Viaduct - Train 29/29, Wooden Covered Bridge - 2 lanes 11/11, BXP SuspensionBridge03 - Six Lane Highway 4/1, Hydroelectric_Power_Plant_01 Dam 0/1, High-voltage Line 114/62, Narrow Boatway 7/14, Sound Barrier 2/2, Medium Seaway 78/100 (live-graph-20261020-211001-end.json) | 0.1 |  |  |
+| settings | `POST /map/settings` | settings {"latitude":40,"longitude":-105.3,"seaLevel":93,"theme":"North American"}: HTTP 200, applied ["theme","latitude (this session only: reset from the climate prefab on every load)","longitude (this session only: reset from the climate prefab on every load)","seaLevel"] | 0.0 |  |  |
+| look | `POST /map/settings (look)` | climate: D:\work\mods\csl2-editor\look\climate.json [sha1 bc7c9eab, 2026-10-20T13:58] HTTP 200, applied 62 | water: D:\work\mods\csl2-editor\look\water.json [sha1 5568945d, 2026-10-20T15:34] HTTP 200, applied 23 | terrain: D:\work\mods\csl2-editor\look\terrain.json [sha1 71ef654f, 2026-10-20T13:49] HTTP 200, applied 1 | 0.2 |  |  |
+| net-count-end | `GET /net/count` | net count at the end: 3116 segments: Gravel Road 843, Highway Oneway - 2 lanes 743, Highway Oneway - 3 lanes 439, Double Train Track 269, Small Road 248, Highway Oneway - 1 lane 231, High-voltage Line 114, Medium Seaway 78, Medium Road 39, BXP Truss Viaduct - Train 29, Highway Oneway - 4 lanes 27, Pavement Path 16, Wooden Covered Bridge - 2 lanes 11, BXP Truss Arch Bridge - Highway Oneway - 2 Lanes 8, Narrow Boatway 7, BXP SuspensionBridge03 - Six Lane Highway 4, Truss Arch Bridge - Small Road - 2 Lanes 4, TrussArchBridge01 4, Sound Barrier 2; vs after the network: no change | 0.0 |  |  |
+
+## Net counts (GET /net/count)
+
+- after the network steps: 3116 segments: Gravel Road 843, Highway Oneway - 2 lanes 743, Highway Oneway - 3 lanes 439, Double Train Track 269, Small Road 248, Highway Oneway - 1 lane 231, High-voltage Line 114, Medium Seaway 78, Medium Road 39, BXP Truss Viaduct - Train 29, Highway Oneway - 4 lanes 27, Pavement Path 16, Wooden Covered Bridge - 2 lanes 11, BXP Truss Arch Bridge - Highway Oneway - 2 Lanes 8, Narrow Boatway 7, BXP SuspensionBridge03 - Six Lane Highway 4, Truss Arch Bridge - Small Road - 2 Lanes 4, TrussArchBridge01 4, Sound Barrier 2
+- at the end: 3116 segments: Gravel Road 843, Highway Oneway - 2 lanes 743, Highway Oneway - 3 lanes 439, Double Train Track 269, Small Road 248, Highway Oneway - 1 lane 231, High-voltage Line 114, Medium Seaway 78, Medium Road 39, BXP Truss Viaduct - Train 29, Highway Oneway - 4 lanes 27, Pavement Path 16, Wooden Covered Bridge - 2 lanes 11, BXP Truss Arch Bridge - Highway Oneway - 2 Lanes 8, Narrow Boatway 7, BXP SuspensionBridge03 - Six Lane Highway 4, Truss Arch Bridge - Small Road - 2 Lanes 4, TrussArchBridge01 4, Sound Barrier 2
+- difference: no change
+
+Check again with `node tools/import-run.mjs --scale ${scale} --verify-only` after 2 minutes idle and after save + reload; both must equal the network count.
