@@ -9,7 +9,7 @@ Both runs use the **same heightmap pair**. Only the Height Scale field and the i
 |---|---|---|
 | Height Scale on import | **2048** | **4096** |
 | Playable heightmap | **`10190843-dktflls-1to1.png`** (A-v3: peaks + PO mountains/rock work + falls steps capped at the CS1 water line); comparison `10190843-dktflls-1to1-soft.png` (softened mountains, pair it with world map 10190910) | same |
-| World map | **ticket-28 successor from hmap-ext when it lands (flats + gullies); until then `10200633-dktflls-1to1_worldmap.png`** (Import World Map can be redone later on the same map without touching the playable area) (hmap-ext f2e2e35, tickets 01–27: massifs, 8 hill groups, creek network cutting ~21 m, 29–33 % flats; heavier north foothills); `10200636-dktflls-1to1_worldmap.png` is the same with the lighter north of 10191247; soft variant `10200635-dktflls-1to1-soft_worldmap.png` | same |
+| World map | **`10201010-dktflls-1to1_worldmap.png`** (hmap-ext 6cd72f3, tickets 01–28: flats as swells with creeks, erosion slope cap removes the radial gullies, north foothills 380 m; soft variant `10201012-dktflls-1to1-soft_worldmap.png` for the soft inner). Previous `10200633-dktflls-1to1_worldmap.png` (f2e2e35, tickets 01–27: massifs, 8 hill groups, creek network cutting ~21 m, 29–33 % flats; heavier north foothills); `10200636-dktflls-1to1_worldmap.png` is the same with the lighter north of 10191247; soft variant `10200635-dktflls-1to1-soft_worldmap.png` | same |
 | Import file set | `net-converter/out/x1/` | `net-converter/out/` |
 | Sea Level (Water tab) | **93 m** first (measured CS1 lower river 92.8 m); 97.5 m if banks look dry | **186 m** first; 195 m fallback |
 | Heights in game | true CS1 metres | 2 × CS1 |

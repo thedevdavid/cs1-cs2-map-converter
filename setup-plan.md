@@ -118,3 +118,5 @@ Decision stays with you, now with correct costs: keep the squeeze (no hmap-ext w
 - Bridge 0.9.26 (closed surface polygons; Traffic pre-validation) awaits the game restart.
 - Owner added ConcreteSet01 154132, DIY Stone Arch 135944, Truss Gantry 132188, ITBP 140978, Tigons 133250 and Art Deco 157964 to DakotaFalls-E2C; ticket 28 (flats + erosion gullies) is running in hmap-ext — its world map replaces 10200633 when it lands (world map can be re-imported on the same map).
 - Run: `node net-converter/tools/import-run.mjs --scale x1 --sea 93 --po-structures --with po-gantry`; piers stay off until `noPillars` is verified. Save `dakota-A6-2048`, then TM:PE, save `dakota-A6b-2048`. Details in next-run/RUNBOOK.md.
+
+- 2026-10-20 10:12: hmap-ext ticket 28 merged (6cd72f3); world map `10201010-dktflls-1to1_worldmap.png` (soft `10201012`) in the Heightmaps folder. East/south roughness down a third (8.4 → 5.5 m, 9.8 → 6.7 m), flats carry 20–40 m swells with creeks, north foothills 380 m. **A-v6 ready to build.**
