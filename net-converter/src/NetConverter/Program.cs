@@ -6,7 +6,7 @@ bool inventoryOnly = false, retry = false, layersOnly = false;
 string? treesDir = null, rockHeightmapPath = null, cs2HeightmapPath = null, runReportsDir = Path.Combine("out", "x1");
 string poOfflinePath = Path.Combine("..", "cs1-offline", "out", "po-offline.json");
 double rockDegrees = 40;
-bool seawayAtWater = false, mergeCanal = true;
+bool seawayAtWater = false, mergeCanal = true, keepHighwayStubs = false;
 const string RockSurface = "gaga TTP - Pebbles 1L dark";
 const string NetCorridorRule = "on a ground-level net corridor (half width + 2 m)";
 {
@@ -36,6 +36,7 @@ for (int i = 0; i < args.Length; i++)
         case "--rock-heightmap": rockHeightmapPath = args[++i]; break;
         case "--cs2-heightmap": cs2HeightmapPath = args[++i]; break;
         case "--run-reports": runReportsDir = args[++i]; break;
+        case "--keep-highway-stubs": keepHighwayStubs = true; break;
         case "--seaway-at-water": seawayAtWater = true; break;
         case "--no-merge-canal": mergeCanal = false; break;
         case "--po-offline": poOfflinePath = args[++i]; break;
@@ -171,12 +172,45 @@ auditLog.AppendLine($"- Short border edges folded into their neighbour (< 10 m):
     Console.WriteLine($"walls: boatways kept {boat.Count - dry.Count}/{boat.Count}; flat quays forced {flat}");
 }
 {
+    // Owner review of A-v4: one-way highway courses that end in a CS1 dead end (End flag, inside the map) stand as stubs with the
+    // game's dead-end warning. The chain from such an end back to its first junction is left out (up to 1 km).
+    var hw = result.Layer(Layers.Highways).ToList();
+    var deg = new Dictionary<OutNode, int>(ReferenceEqualityComparer.Instance);
+    foreach (var e in result.Edges.Where(e => e.Map.Imported)) foreach (var n in new[] { e.A, e.B }) deg[n] = deg.GetValueOrDefault(n) + 1;
+    var gone = new HashSet<OutEdge>(ReferenceEqualityComparer.Instance); var stubLog = new List<string>();
+    foreach (var end in keepHighwayStubs ? new List<OutNode>() : deg.Where(kv => kv.Value == 1).Select(kv => kv.Key).ToList())
+    {
+        if (end.Border || end.Cs1Node is not { } cn || !dump.Nodes.TryGetValue(cn, out var dn) || !dn.Flags.Contains("End")) continue;
+        var first = hw.FirstOrDefault(e => (e.A == end || e.B == end) && e.Map.Cs2Prefab!.StartsWith("Highway Oneway"));
+        if (first == null) continue;
+        var chain = new List<OutEdge>(); double len = 0; var (e0, n0) = (first, end);
+        while (true)
+        {
+            chain.Add(e0); len += e0.Curve.LengthXZ();
+            var next = e0.A == n0 ? e0.B : e0.A;
+            if (deg.GetValueOrDefault(next) != 2) break;
+            var o = hw.FirstOrDefault(x => x != e0 && (x.A == next || x.B == next));
+            if (o == null) break;
+            (e0, n0) = (o, next);
+            if (len > 1000) break;
+        }
+        if (len > 1000) { stubLog.Add(FormattableString.Invariant($"{end.Id} ({end.Position.X:F0}, {end.Position.Z:F0}): {len:F0}+ m to the first junction, kept")); continue; }
+        foreach (var c in chain) { gone.Add(c); result.Fate[c.Cs1Segment] = "left out: one-way highway stub to a CS1 dead end"; }
+        stubLog.Add(FormattableString.Invariant($"{end.Id} ({end.Position.X:F0}, {end.Position.Z:F0}) {first.Map.Cs2Prefab}: {chain.Count} courses, {len:F0} m ({string.Join(", ", chain.Select(c => c.Id))})"));
+    }
+    result.Edges.RemoveAll(gone.Contains);
+    auditLog.AppendLine($"- One-way highway stubs to CS1 dead ends left out: {gone.Count} courses.");
+    foreach (var l in stubLog) auditLog.AppendLine($"  - {l}");
+    Console.WriteLine($"highway stubs: {gone.Count} courses left out ({stubLog.Count} ends)");
+}
+{
     // Run A-v3: walls and decor that run inside a highway's footprint are dropped by the game; move them sideways.
     // Ground truth: the drop messages in the import runs (tools/import-run.mjs reports, --run-reports); without them, the geometric rule.
     var reports = Directory.Exists(runReportsDir) ? Directory.GetFiles(runReportsDir, "run-*.md").OrderBy(p => p, StringComparer.Ordinal).ToList() : new List<string>();
     var drops = reports.Count > 0 ? FootprintShift.ParseDrops(reports) : null;
     if (drops != null) auditLog.AppendLine($"- Run reports read for game drops: {string.Join(", ", reports.Select(Path.GetFileName))} ({drops.Count} dropped courses).");
-    var fs8 = FootprintShift.Apply(result, result.Layer(Layers.Walls).Concat(result.Layer(Layers.Decor)), topologyFactor, drops);
+    // Only the courses still written (canals, flood walls): moving a dropped quay's node would bend the road it shares.
+    var fs8 = FootprintShift.Apply(result, result.Layer(Layers.Walls).Where(e => e.Map.Cs2Prefab is not ("QuaySmall01" or "QuayMedium01")), topologyFactor, drops);
     auditLog.AppendLine($"- Courses inside a highway footprint (walls, decor) moved sideways by the two CS2 half-widths + 1 m: {fs8.Shifted.Count}; impossible (between carriageways) {fs8.Impossible.Count}.");
     foreach (var l in fs8.Shifted) auditLog.AppendLine($"  - shifted: {l}");
     foreach (var l in fs8.Impossible) auditLog.AppendLine($"  - IMPOSSIBLE: {l}");
@@ -247,9 +281,11 @@ var power = result.Layer(Layers.Power).Where(e => e.Map.Cs2Prefab != null).ToLis
         $"Left out (replaced by import-power-ends.json): {string.Join(", ", replaced.Cast<OutEdge>().Select(e => e.Id))}.");
 }
 Console.WriteLine($"power: {power.Count} courses -> {(power.Count > 0 ? "import-power.json" : "not written (power rule is SKIP in mapping.tsv)")}");
-foreach (var (layer, title, fileName) in new[] { (Layers.Walls, "walls (quays, retaining walls, canals, flood walls)", "import-walls.json"), (Layers.ShipPaths, "ship paths", "import-shippaths.json"), (Layers.Decor, "DECORATIVE monorail arch bridge (not transit)", "import-decor-monorail.json") })
+// Owner review of A-v4: quays / retaining walls (CS1 aesthetic only) and the monorail arch decor are dropped; canals and flood walls stay.
+foreach (var dropped in new[] { "import-walls.json", "import-decor-monorail.json" }) File.Delete(Path.Combine(outDir, dropped));
+foreach (var (layer, title, fileName) in new[] { (Layers.Walls, "canals and flood walls (Narrow Boatway, Sound Barrier)", "import-canals.json"), (Layers.ShipPaths, "ship paths", "import-shippaths.json") })
 {
-    var es = result.Layer(layer).Where(e => e.Map.Cs2Prefab != null).ToList();
+    var es = result.Layer(layer).Where(e => e.Map.Cs2Prefab != null && e.Map.Cs2Prefab is not ("QuaySmall01" or "QuayMedium01")).ToList();
     var file = Path.Combine(outDir, fileName);
     if (es.Count > 0) Outputs.WriteImport(file, $"Dakota Falls {title}", es, absolute); else File.Delete(file);
     Console.WriteLine($"{layer}: {es.Count} courses{(es.Count > 0 ? $" -> {fileName}" : "")} ({string.Join(", ", es.GroupBy(e => e.Map.Cs2Prefab).Select(g => $"{g.Key} {g.Count()}"))})");
@@ -451,6 +487,17 @@ void WriteLayers()
     // Buildings, props, decorations.
     Func<double, double, double>? terr = cs1Terrain == null ? null : cs1Terrain.Sample;
     var objs = Objects.Build(root, TargetMapping.Load(Find("object-mapping.tsv")), terr, heightFactor, 7168, treeSeed + 1, cs2Terrain == null ? null : cs2Terrain.Sample);
+    var bounds = PrefabBound.Load(Find("prefab-bounds.json"));
+    int grounded = 0;
+    if (cs2Terrain != null)
+        for (int i = 0; i < objs.Objects.Count; i++)
+        {
+            var o = objs.Objects[i];
+            if (!System.Text.RegularExpressions.Regex.IsMatch(o.Prefab, "^(rzrock|RZaridrock|Cliff)", System.Text.RegularExpressions.RegexOptions.IgnoreCase) || !bounds.TryGetValue(o.Prefab, out var pb)) continue;
+            objs.Objects[i] = o with { Y = pb.Y(cs2Terrain.Sample(o.X, o.Z) * heightFactor, 0.15 * pb.Height) };
+            grounded++;
+        }
+    extra.AppendLine($"- Pack rocks grounded by their live mesh bounds (y = terrain − bounds.min.y − 15 % of the height): {grounded}.");
     Objects.Write(Path.Combine(outDir, "import-objects.json"), "objects", objs.Objects);
     Console.WriteLine($"objects: {objs.Targeted} placed of {objs.Total} (skip {objs.Skipped}, manual {objs.ManualCount}, unmapped {objs.Unmapped}, outside {objs.Outside}, with y {objs.WithY}; vs the CS1-terrain rule: lost y {objs.LostY}, gained y {objs.GainedY})");
     extra.AppendLine($"- Object y policy: {(cs2Terrain != null ? $"y only > 3 m above the CS2 playable heightmap ({Path.GetFileName(cs2HeightmapPath)})" : "y where > 2 m off the CS1 terrain (no CS2 heightmap)")}, never for buildings: {objs.WithY} with y; against the old CS1-terrain rule {objs.LostY} lose y, {objs.GainedY} gain it.");
@@ -515,6 +562,9 @@ void WriteLayers()
                 man.AppendLine(string.Create(System.Globalization.CultureInfo.InvariantCulture, $"| {id} | {Json.Short(sg.Prefab)} | {mp.X:F0} | {mp.Z:F0} | {(fl.Pillars ? "yes" : "")} | {(fl.Lights ? "yes" : "")} |"));
             }
     }
+    if (Round8.Dam(Round8.Buildings(root, "(?i)Dam Electricity")) is { } damM)
+        man.AppendLine().AppendLine("## Dam (place by hand)").AppendLine().AppendLine(FormattableString.Invariant(
+            $"{Round8.DamPrefab} at ({damM.A.X}, {damM.A.Z}), rotation {damM.A.Rotation} (aligns with the CS1 dam axis, bridge live test). Deck: {Round8.DamDeckPrefab} from ({Round8.DamDeckA.X}, {Round8.DamDeckA.Z}) to ({Round8.DamDeckB.X}, {Round8.DamDeckB.Z}) at crest y {Round8.DamCrestTrue * heightFactor} (level). The power line ends at the plant through import-power-ends.json (connectTo high voltage)."));
     man.AppendLine().AppendLine("## Fort (CS1 Castle Wall 1 / 3, 12 segments)").AppendLine();
     man.AppendLine("import-fort.json marks the wall line with ruins (RuinsStoneFormation01/02 every 12 m, StandingStone01–08 at the ends, RuinsStoneCairns01–03 inside the line) " +
         "and puts OldCastle01 at the fort's centroid as the keep (unverified as a placeable object); RuinsCastle01 stands at the CS1 Castle Ruins positions (import-objects.json). " +
@@ -556,7 +606,7 @@ void WriteLayers()
             if (Math.Abs(pnt.X) > 7168 || Math.Abs(pnt.Z) > 7168) continue;
             double yCs1 = pnt.Y / dump.HeightFactor;   // the dump is scaled to the topology factor
             double? y = cs1Terrain != null && Math.Abs(yCs1 - cs1Terrain.Sample(pnt.X, pnt.Z)) > 2 ? Json.R2(yCs1 * heightFactor) : null;
-            barrierProps.Add(new PlacedObject($"bar{s.Id}_{k}", prefab, "prop", pnt.X, pnt.Z, y, Connections.Heading(d.X, d.Z), s.Prefab, $"segment {s.Id}"));
+            barrierProps.Add(new PlacedObject($"bar{s.Id}_{k}", prefab, "prop", pnt.X, pnt.Z, y, Math.Round((Connections.Heading(d.X, d.Z) + 90) % 360, 2), s.Prefab, $"segment {s.Id}"));
         }
     }
     if (barrierProps.Count > 0) Objects.Write(Path.Combine(outDir, "import-walls-props.json"), "walls-props", barrierProps);
@@ -627,9 +677,8 @@ void WriteLayers()
         if (dam is { } dv)
         {
             // Bridge live test: yaw 261.7 (−CS1 angle) aligns the plant with the CS1 dam axis; the mirrored variant is gone.
-            Objects.Write(Path.Combine(outDir, "import-dam.json"), "dam (round 8)", [dv.A]);
-            File.Delete(Path.Combine(outDir, "import-dam-B.json"));
-            Round8.WriteDamDeck(Path.Combine(outDir, "import-dam-deck.json"), heightFactor);
+            // Owner review of A-v4: the deck came out as a pedestrian-type bridge; the dam is placed by hand (manual-objects.md).
+            foreach (var dropped in new[] { "import-dam.json", "import-dam-B.json", "import-dam-deck.json" }) File.Delete(Path.Combine(outDir, dropped));
         }
         var targets = new List<(string, double, double)>();
         if (subB.Count > 0) targets.Add(("substation", subB[0].X, subB[0].Z));
@@ -640,21 +689,43 @@ void WriteLayers()
         // v1 cliff positions stay the rock scatter's sources (import-rock-scatter.json unchanged); import-po-rocks.json is v2.
         var (cliffs, capped, bands) = Round8.Cliffs(pieces, cs2True, 7168, treeSeed + 8);
         var heightsH = PoRocksV2.LoadHeights(Find(Path.Combine("..", "cs2-playset", "ASSET_PACKS.md")));
-        var (v2, v2capped, v2big, v2renamed) = PoRocksV2.Build(pieces, heightsH, cs2True, heightFactor, 7168, treeSeed + 10);
-        Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "po-rocks-v2", v2.Select(p => p.O));
+        var (v2, v2capped, v2big, v2renamed) = PoRocksV2.Build(pieces, bounds, heightsH, cs2True, heightFactor, 7168, treeSeed + 10);
+        Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "po-rocks-v3", v2.Select(p => p.O));
         var sources = objs.Objects.Where(o => Round8.IsRockLike(o.Prefab)).Concat(cliffs).Select(o => (o.X, o.Z)).ToList();
         Func<double, double, bool>? wet = surfaceEarly == null ? null : (x, z) => surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.5;
         var (scatter, rejected) = Round8.Scatter(sources, rockPolys.Select(p => p.Ring), result.Edges.Where(e => e.Map.Imported), wet, 7168, treeSeed + 9);
-        Objects.Write(Path.Combine(outDir, "import-rock-scatter.json"), "rock scatter (round 8)", scatter);
+        // Owner review of A-v4: no scatter rock in water (CS2 terrain below sea level); on slopes over 25° the rock is lowered by
+        // tan(slope) × half its footprint so the downhill side does not float; over 45° it is left out.
+        int sWater = 0, sSteep = 0, sSunk = 0;
+        if (cs2Terrain != null)
+        {
+            var keptS = new List<PlacedObject>();
+            foreach (var o in scatter)
+            {
+                double t0 = cs2Terrain.Sample(o.X, o.Z);
+                if (t0 < seaLevel) { sWater++; continue; }
+                double gx = (cs2Terrain.Sample(o.X + 3.5, o.Z) - cs2Terrain.Sample(o.X - 3.5, o.Z)) / 7, gz = (cs2Terrain.Sample(o.X, o.Z + 3.5) - cs2Terrain.Sample(o.X, o.Z - 3.5)) / 7;
+                double slope = Math.Atan(Math.Sqrt(gx * gx + gz * gz)) * 180 / Math.PI;
+                if (slope > 45) { sSteep++; continue; }
+                if (slope > 25 && bounds.TryGetValue(o.Prefab, out var sb))
+                {
+                    keptS.Add(o with { Y = Math.Round(t0 * heightFactor - Math.Tan(slope * Math.PI / 180) * sb.HalfFootprint, 2) });   // vanilla rocks: pivot at the mesh centre
+                    sSunk++;
+                }
+                else keptS.Add(o);
+            }
+            scatter = keptS;
+        }
+        Objects.Write(Path.Combine(outDir, "import-rock-scatter.json"), "rock scatter", scatter);
         string ci(FormattableString f) => FormattableString.Invariant(f);
         var r8 = new List<string>
         {
             ci($"substation: {sub.Count} ({string.Join(", ", sub.Select(o => $"{o.Id} {o.Prefab} at ({o.X:F0}, {o.Z:F0}), rotation {o.Rotation}, no y"))}) -> import-substation.json"),
-            dam is { } d3 ? ci($"dam: {Round8.DamPrefab} at ({d3.A.X}, {d3.A.Z}) from {dams.Count} CS1 Dam Electricity pieces, rotation {d3.A.Rotation} -> import-dam.json; deck {Round8.DamDeckPrefab} ({Round8.DamDeckA.X}, {Round8.DamDeckA.Z}) -> ({Round8.DamDeckB.X}, {Round8.DamDeckB.Z}) at crest y {Round8.DamCrestTrue * heightFactor} -> import-dam-deck.json") : "dam: no CS1 Dam Electricity building",
+            dam is { } d3 ? ci($"dam: hand-placed (manual-objects.md): {Round8.DamPrefab} at ({d3.A.X}, {d3.A.Z}), rotation {d3.A.Rotation}; deck {Round8.DamDeckPrefab} ({Round8.DamDeckA.X}, {Round8.DamDeckA.Z}) -> ({Round8.DamDeckB.X}, {Round8.DamDeckB.Z}) at crest y {Round8.DamCrestTrue * heightFactor}") : "dam: no CS1 Dam Electricity building",
             "power ends: " + string.Join("; ", ends.Select(e => ci($"{e.Target}: CS1 end {e.OldEnd.Id} ({e.OldEnd.Position.X:F0}, {e.OldEnd.Position.Z:F0}), replaces {e.Replaces.Id}, new course {e.Anchor.Id} -> ({e.X:F1}, {e.Z:F1}), {Math.Sqrt((e.X - e.Anchor.Position.X) * (e.X - e.Anchor.Position.X) + (e.Z - e.Anchor.Position.Z) * (e.Z - e.Anchor.Position.Z)):F0} m"))) + " -> import-power-ends.json",
-            ci($"PO rocks v2: {v2.Count} objects ({Round8.Counts(v2.Select(p => p.O))}) from {pieces.Count} PO pieces, {v2capped} over the cap of 700 dropped, {v2big} big cliffs (mountains > 120 m above their surroundings), {v2renamed} re-picked for the 80 m prefab/heading rule; with y (sunk) {v2.Count(p => p.O.Y != null)}; sink depth: {PoRocksV2.SinkHistogram(v2)} -> import-po-rocks.json (import name po-rocks-v2; undo the live v1 first: POST /import/objects/undo?id=obj-20261019-165834-6)"),
+            ci($"PO rocks v3: {v2.Count} objects ({Round8.Counts(v2.Select(p => p.O))}) from {pieces.Count} PO pieces, {v2capped} over the cap of 1500 dropped, {v2big} PO objects > 60 m above their surroundings with CliffSide pieces down the steepest flank, {v2renamed} re-picked for the 80 m prefab/heading rule; with y {v2.Count(p => p.O.Y != null)}; sink depth (mesh bottom below terrain): {PoRocksV2.SinkHistogram(v2)} -> import-po-rocks.json (import name po-rocks-v3)"),
             ci($"PO cliffs v1 (not written; their positions feed the rock scatter): {cliffs.Count} objects from {pieces.Count} PO pieces (mountain {pieces.Count(p => p.SubClass == "mountain")}, rock work {pieces.Count(p => p.SubClass == "rock work")}, falls steps {pieces.Count(p => p.SubClass == "falls steps")}); bands {string.Join(", ", bands.Select(b => $"{b.Key} {b.Value}"))}; {capped} over the cap of 2500 dropped -> import-po-rocks.json"),
-            ci($"rock scatter: {scatter.Count} (small {scatter.Count(o => Round8.SmallRocks.Contains(o.Prefab))}, medium {scatter.Count(o => Round8.MediumRocks.Contains(o.Prefab))}, boulders {scatter.Count(o => Round8.Boulders.Contains(o.Prefab))}) around {sources.Count} rock/cliff objects (r 60 m) and in {rockPolys.Count} rock polygons; rejected road {rejected["road"]}, spacing {rejected["spacing"]}, water {rejected["water"]}, border {rejected["border"]} -> import-rock-scatter.json"),
+            ci($"rock scatter: in water left out {sWater}, slopes > 45° left out {sSteep}, slopes 25–45° lowered {sSunk}; {scatter.Count} (small {scatter.Count(o => Round8.SmallRocks.Contains(o.Prefab))}, medium {scatter.Count(o => Round8.MediumRocks.Contains(o.Prefab))}, boulders {scatter.Count(o => Round8.Boulders.Contains(o.Prefab))}) around {sources.Count} rock/cliff objects (r 60 m) and in {rockPolys.Count} rock polygons; rejected road {rejected["road"]}, spacing {rejected["spacing"]}, water {rejected["water"]}, border {rejected["border"]} -> import-rock-scatter.json"),
         };
         foreach (var l in r8) { Console.WriteLine("round 8 " + l); extra.AppendLine($"- Round 8 {l}."); }
     }
@@ -687,9 +758,8 @@ void WriteLayers()
         pe.RemoveAll(e => pbDrops.ContainsKey(e.Id));
         if (pbOut.Count > 0) r9.Add($"PO walls left out (dropped by the game inside a highway in the run reports): {string.Join(", ", pbOut)}");
         Surfaces.Write(Path.Combine(outDir, "import-po-structures.json"), "po-structures", ps, $"Tops of the PO paved blocks (convex hull of the top vertices), {pave}, overlaps unioned.");
-        Round9.WriteNet(Path.Combine(outDir, "import-po-walls.json"), "Dakota Falls PO paved-block walls",
-            "QuaySmall01 along the long sides of the PO paved blocks taller than 4 m, at the block top (absolute heights); the game raises the lower side as a retaining wall.", pn, pe);
-        r9.Add(ci($"PO paved blocks: {blocks.Count} blocks -> {ps.Count} pavement polygons (import-po-structures.json); {tall} taller than 4 m -> {pe.Count} QuaySmall01 edges (import-po-walls.json); tunnel/shed and bridge/pillar PO stay in manual-objects.md"));
+        File.Delete(Path.Combine(outDir, "import-po-walls.json"));   // owner review of A-v4: not needed
+        r9.Add(ci($"PO paved blocks: {blocks.Count} blocks -> {ps.Count} pavement polygons (import-po-structures.json); PO walls dropped (owner review of A-v4); tunnel/shed and bridge/pillar PO stay in manual-objects.md"));
         if (surfaceEarly != null)
         {
             var (lakes, bodies, outside, tiny) = Round9.Lakes(surfaceEarly, dump, seaLevel, 7168, cs2True, out var lakeLog);
@@ -741,7 +811,17 @@ void WriteLayers()
         // One file per CS1 class (e.g. import-surfaces-sand.json), already unioned per class (rasterised), hole-free, simplified.
         File.Delete(Path.Combine(outDir, "import-surfaces.json"));
         foreach (var g in ts.GroupBy(t => t.Note.Replace("CS1 surface ", "").ToLowerInvariant()))
-            Surfaces.Write(Path.Combine(outDir, $"import-surfaces-{g.Key}.json"), $"surfaces-{g.Key}", g.ToList(), $"CS1 terrainSurfaces class {g.Key} mapped through surface-mapping.tsv (audit/theme.md table): rasterised per class on the 16 m grid, union, hole-free pieces, simplified to 2 m.");
+            if (g.Key == "sand")
+            {
+                File.Delete(Path.Combine(outDir, "import-surfaces-sand.json"));
+                var (blobs, sp, sk) = SmoothSurfaces.Blobs(surfaces, "Sand");
+                var sandPrefab = g.First().Prefab;
+                Surfaces.Write(Path.Combine(outDir, "import-surfaces-sand-smooth.json"), "surfaces-sand-smooth", blobs.Select((r, k) => new SurfacePolygon($"sand{k + 1}", sandPrefab, r, "CS1 sand blob")).ToList(),
+                    "OPTIONAL (off by default): CS1 sand patches >= 2000 m², 12 m round buffer, 2 majority-smoothing passes on a 4 m grid, hole-free, simplified to 4 m.");
+                extra.AppendLine(FormattableString.Invariant($"- Sand: the 16 m-cell surfaces are dropped (owner review of A-v4); optional import-surfaces-sand-smooth.json: {blobs.Count} blobs from {sk} of {sp} patches >= 2000 m² ({blobs.Sum(b => Math.Abs(Surfaces.Area(b))) / 1e6:F2} km²)."));
+                Console.WriteLine($"sand: {blobs.Count} smooth blobs (optional) from {sk} of {sp} patches");
+            }
+            else Surfaces.Write(Path.Combine(outDir, $"import-surfaces-{g.Key}.json"), $"surfaces-{g.Key}", g.ToList(), $"CS1 terrainSurfaces class {g.Key} mapped through surface-mapping.tsv (audit/theme.md table): rasterised per class on the 16 m grid, union, hole-free pieces, simplified to 2 m.");
         Console.WriteLine(Surfaces.Stats("terrain surfaces", ts) + "; " + string.Join(", ", tsDecisions.Select(d => $"{d.Key} -> {d.Value}")));
         extra.AppendLine($"- {Surfaces.Stats("Terrain surfaces (import-surfaces.json)", ts)}: {string.Join("; ", tsDecisions.Select(d => $"{d.Key} → {d.Value}"))}.");
     }

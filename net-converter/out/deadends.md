@@ -17,8 +17,8 @@ Live graph `out\live-graph.json` (2973 nodes).
 
 | stub prefab | x | z | reason | CS1 segments here [layer, converter decision] |
 |---|---:|---:|---|---|
-| Highway Oneway - 3 lanes | 2302 | 255 | CS1 dead end (genuine) | USRP 3L Interstate_Data [highways, imported] |
-| Highway Oneway - 3 lanes | 2293 | 277 | CS1 dead end (genuine) | USRP 3L Interstate_Data [highways, imported] |
+| Highway Oneway - 3 lanes | 2302 | 255 | CS1 dead end (genuine) | USRP 3L Interstate_Data [highways, left out: one-way highway stub to a CS1 dead end] |
+| Highway Oneway - 3 lanes | 2293 | 277 | CS1 dead end (genuine) | USRP 3L Interstate_Data [highways, left out: one-way highway stub to a CS1 dead end] |
 | Highway Oneway - 3 lanes | 412 | -4474 | connected in the data, not joined in the game | USRP 3L Interstate_Data [highways, imported]; USRP 4L Interstate_Data [highways, imported] |
 | Highway Oneway - 4 lanes | 463 | -4520 | connected in the data, not joined in the game | USRP 4L Interstate_Data [highways, imported]; USRP 4L Interstate_Data [highways, imported] |
 | Highway Oneway - 1 lane | 3671 | 2153 | no CS1 node here (game split, or merged/moved by the converter) |  |
@@ -32,11 +32,11 @@ Live graph `out\live-graph.json` (2973 nodes).
 | Gravel Road | 1383 | 6161 | CS1 dead end (genuine) | Gravel Road Bridge [roads, imported] |
 | Gravel Road | 1462 | 6173 | neighbour collapsed (< 4 m) | Gravel Road [roads, collapsed (< 4 m)]; Gravel Road [roads, imported] |
 
-## Predicted for the regenerated import-all.json (fresh map): 16
+## Predicted for the regenerated import-all.json (fresh map): 14
 
 | reason | ends | stub prefabs |
 |---|---:|---|
-| CS1 dead end (genuine) | 15 | Pavement Path 6, Gravel Road 5, Highway Oneway - 3 lanes 2, Medium Road 2 |
+| CS1 dead end (genuine) | 13 | Pavement Path 6, Gravel Road 5, Medium Road 2 |
 | neighbour collapsed (< 4 m) | 1 | Gravel Road 1 |
 
 | stub prefab | x | z | reason | CS1 segments here |

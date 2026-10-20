@@ -1,8 +1,9 @@
 // Whole fresh-map import against the CS2MCP bridge, in the ROUND order, one command.
-// node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--climate <name>] [--dry-run]
-//   [--bridge http://127.0.0.1:8642] [--out out]
-// Steps: network gaps power walls po-walls shippaths decor water lakes connections objects barriers substation dam po-rocks
-//   rock-scatter fort trees resources surfaces power-ends settings
+// node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run]
+//   [--no-verify] [--bridge http://127.0.0.1:8642] [--out out]
+// Steps: network gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
+//   resources surfaces power-ends settings. Optional (only with --with or --only): sand-smooth decals.
+// After the network steps and at the end the bridge's graph export is compared per prefab with the import files (--no-verify skips it).
 // Each step POSTs its file(s) and prints one line (created / merged / failed, seconds). A body error (HTTP 400 with problems)
 // stops the run and prints the problems; per-item failures are counted and the run goes on. The run report with every
 // importId (for undo) goes to <scale dir>/run-<timestamp>.md (x1 → out/x1, x2 → out).
@@ -15,7 +16,7 @@ const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args[
 const flag = name => args.includes(name);
 const scale = opt("--scale", null);
 if (!["x1", "x2"].includes(scale)) {
-  console.error("usage: node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--climate <name>] [--dry-run] [--bridge http://127.0.0.1:8642] [--out out]");
+  console.error("usage: node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run] [--no-verify] [--bridge http://127.0.0.1:8642] [--out out]");
   process.exit(2);
 }
 const sea = Number(opt("--sea", "93"));
@@ -27,7 +28,8 @@ const bridge = new URL(opt("--bridge", "http://127.0.0.1:8642"));
 const climate = opt("--climate", null);
 const dryRun = flag("--dry-run");
 const list = s => (s ? s.split(",").map(x => x.trim()).filter(Boolean) : []);
-const skip = new Set(list(opt("--skip", ""))), only = new Set(list(opt("--only", "")));
+const skip = new Set(list(opt("--skip", ""))), only = new Set(list(opt("--only", ""))), withOpt = new Set(list(opt("--with", "")));
+const verify = !flag("--no-verify");
 
 function request(method, path, body) {
   return new Promise((resolve, reject) => {
@@ -55,29 +57,42 @@ const steps = [
   ["network", "/import/network", [p("import-all.json")]],
   ["gaps", "/import/network", [p("import-gaps.json")]],
   ["power", "/import/network", [p("import-power.json")]],
-  ["walls", "/import/network", [p("import-walls.json")]],
-  ["po-walls", "/import/network", [p("import-po-walls.json")]],
+  ["canals", "/import/network", [p("import-canals.json")]],
   ["shippaths", "/import/network", [p("import-shippaths.json")]],
-  ["decor", "/import/network", [p("import-decor-monorail.json")]],
+  ["verify-network", "verify", []],
   ["water", "/import/water", [p(waterFile)]],
   ["lakes", "/import/water", [p("import-water-lakes.json")]],
   ["connections", "/import/objects", [p("import-connections.json")]],
   ["objects", "/import/objects", [p("import-objects.json")]],
   ["barriers", "/import/objects", [p("import-walls-props.json")]],
   ["substation", "/import/objects", [p("import-substation.json")]],
-  ["dam", "/import/objects", [p("import-dam.json")]],
-  ["dam", "/import/network", [p("import-dam-deck.json")]],
   ["po-rocks", "/import/objects", [p("import-po-rocks.json")]],
   ["rock-scatter", "/import/objects", [p("import-rock-scatter.json")]],
   ["fort", "/import/objects", [p("import-fort.json")]],
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
   ["resources", "/import/resources", [p("import-resources.json")]],
-  ["surfaces", "/import/surfaces", ["import-surfaces-sand.json", "import-surfaces-fields.json", "import-surfaces-decals.json", "import-surfaces-rock.json",
-    "import-surfaces-po-rock.json", "import-po-structures.json"].map(p)],
+  ["surfaces", "/import/surfaces", ["import-surfaces-fields.json", "import-surfaces-rock.json", "import-surfaces-po-rock.json", "import-po-structures.json"].map(p)],
+  ["sand-smooth", "/import/surfaces", [p("import-surfaces-sand-smooth.json")], true],
+  ["decals", "/import/surfaces", [p("import-surfaces-decals.json")], true],
   ["power-ends", "/import/network", [p("import-power-ends.json")]],
+  ["verify-end", "verify", []],
 ];
-const wanted = name => (only.size === 0 || only.has(name)) && !skip.has(name);
-for (const n of [...skip, ...only]) if (![...steps.map(s => s[0]), "settings"].includes(n)) { console.error(`unknown step: ${n}`); process.exit(2); }
+const optional = new Set(steps.filter(s => s[3]).map(s => s[0]));
+const wanted = name => (only.size === 0 ? (!optional.has(name) || withOpt.has(name)) : only.has(name)) && !skip.has(name)
+  && (!name.startsWith("verify") || (verify && !dryRun));
+for (const n of [...skip, ...only, ...withOpt]) if (![...steps.map(s => s[0]), "settings"].includes(n)) { console.error(`unknown step: ${n}`); process.exit(2); }
+
+// Graph check: the bridge's export per prefab against the network import files run so far (A-v4 lost 297 built segments after the import).
+const imported = {};
+async function verifyGraph(tag) {
+  const path = join(process.cwd(), dir, `live-graph-${stamp}-${tag}.json`);
+  const r = await request("GET", `/graph/export?path=${encodeURIComponent(path)}&curves=true`);
+  const live = r.json?.counts?.perPrefab ?? {};
+  const lines = Object.entries(imported).map(([k, v]) => `${k} ${live[k] ?? 0}/${v}`);
+  const text = `graph ${r.json?.counts?.segments ?? "?"} segments; live/imported edges: ${lines.join(", ")} (${path.split(/[\\/]/).pop()})`;
+  console.log(`  ${text}`);
+  return text;
+}
 
 const summary = (endpoint, r) => {
   if (endpoint === "/import/network") { const e = r.edges ?? {}; return { created: e.created ?? 0, merged: e.merged ?? 0, failed: e.failed ?? 0, text: `edges ${e.requested ?? "?"}: created ${e.created ?? 0}, merged ${e.merged ?? 0}, failed ${e.failed ?? 0}${e.notRun ? `, not run ${e.notRun}` : ""}` }; }
@@ -101,6 +116,7 @@ console.log(`scale ${scale} (${dir}), sea ${sea} → ${seaOut} (${waterFile})${d
 
 outer: for (const [name, endpoint, files] of steps) {
   if (!wanted(name)) continue;
+  if (endpoint === "verify") { const t0 = Date.now(); const text = await verifyGraph(name.replace("verify-", "")); rows.push({ name, file: "GET /graph/export", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue; }
   for (const file of files) {
     if (!existsSync(file)) { console.log(`- ${name}: ${file} missing, skipped`); rows.push({ name, file, status: "missing" }); continue; }
     const body = JSON.parse(readFileSync(file, "utf8"));
@@ -127,6 +143,7 @@ outer: for (const [name, endpoint, files] of steps) {
     }
     if (dryRun) { console.log(`✓ ${name} ${file}: dry run ${JSON.stringify(r.json).slice(0, 200)} (${fmt(secs)})`); rows.push({ name, file, status: "dry run ok", secs }); continue; }
     const s = summary(endpoint, r.json);
+    if (endpoint === "/import/network") for (const e of body.edges ?? []) imported[e.prefab] = (imported[e.prefab] ?? 0) + 1;
     const fails = (r.json.failedEdges ?? r.json.failedObjects ?? []).slice(0, 20);
     console.log(`${s.failed ? "!" : "✓"} ${name} ${file.split(/[\\/]/).pop()}: ${s.text} (${fmt(r.json.seconds ?? secs)})${r.json.completed === false ? ` ABORTED: ${r.json.abortReason}` : ""}`);
     rows.push({ name, file, status: r.json.completed === false ? `aborted: ${r.json.abortReason}` : "ok", secs: r.json.seconds ?? secs, importId: r.json.importId, undo: undoOf(endpoint, r.json, name), text: s.text, fails });

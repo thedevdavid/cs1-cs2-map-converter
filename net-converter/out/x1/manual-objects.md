@@ -1286,6 +1286,10 @@ The import edges of these CS1 segments carry "noPillars" / "noStreetLights" (ign
 | 36808 | USRP 1L Interstate Ramp E | 3470 | 2018 |  | yes |
 | 36861 | USRP 1L Interstate Ramp E | 3711 | 2246 | yes |  |
 
+## Dam (place by hand)
+
+HydroelectricPowerPlant01 at (1549.5, 4690), rotation 261.7 (aligns with the CS1 dam axis, bridge live test). Deck: Hydroelectric_Power_Plant_01 Dam from (1440, 4673) to (1576, 4694) at crest y 172 (level). The power line ends at the plant through import-power-ends.json (connectTo high voltage).
+
 ## Fort (CS1 Castle Wall 1 / 3, 12 segments)
 
 import-fort.json marks the wall line with ruins (RuinsStoneFormation01/02 every 12 m, StandingStone01–08 at the ends, RuinsStoneCairns01–03 inside the line) and puts OldCastle01 at the fort's centroid as the keep (unverified as a placeable object); RuinsCastle01 stands at the CS1 Castle Ruins positions (import-objects.json). A true rampart needs a wall asset pack from PDX Mods: CS2 has no vanilla stone fort wall (EU_Wall01–09 are 0.9 m garden walls) and none is in the playset.

@@ -10,14 +10,14 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 |---|---|---:|---:|---:|---:|---:|---:|
 | highways | Highway Oneway - 1 lane | 283 | 282 | 1 | 0 | 0 | 0 |
 | highways | Highway Oneway - 2 lanes | 956 | 953 | 3 | 0 | 0 | 0 |
-| highways | Highway Oneway - 3 lanes | 599 | 599 | 0 | 0 | 0 | 0 |
+| highways | Highway Oneway - 3 lanes | 565 | 565 | 0 | 0 | 0 | 0 |
 | highways | Highway Oneway - 4 lanes | 32 | 31 | 0 | 0 | 1 | 1 |
 | rail | Double Train Track | 496 | 495 | 0 | 1 | 0 | 0 |
 | roads | Gravel Road | 1291 | 1289 | 0 | 2 | 0 | 0 |
 | roads | Medium Road | 42 | 42 | 0 | 0 | 0 | 0 |
 | roads | Pavement Path | 48 | 0 | 0 | 1 | 47 | 48 |
 | roads | Small Road | 325 | 325 | 0 | 0 | 0 | 0 |
-| **highways** | **all** | 1870 | 1865 | 4 | 0 | 1 | 1 |
+| **highways** | **all** | 1836 | 1831 | 4 | 0 | 1 | 1 |
 | **rail** | **all** | 496 | 495 | 0 | 1 | 0 | 0 |
 | **roads** | **all** | 1706 | 1656 | 0 | 3 | 47 | 48 |
 
@@ -90,7 +90,7 @@ Not written (pass --retry; entity ids are only valid for the running game sessio
 
 - Hairpins (Bézier length > 1.6 × chord, self-intersection, or a control point behind its end), checked on every imported CS1 segment: **0** found, 0 rebuilt.
 - Exact duplicate edges dropped: **0**.
-- Structure now from node elevation (not the B/E/S/T prefab suffix): 383 imported edges differ from the suffix-based class (Ground→Elevated 364, Ground→Tunnel 13, Elevated→Ground 6).
+- Structure now from node elevation (not the B/E/S/T prefab suffix): 371 imported edges differ from the suffix-based class (Ground→Elevated 352, Ground→Tunnel 13, Elevated→Ground 6).
 - Elevation ramps (Δelevation > 6 m over < 60 m) smoothed to ≤ 8 %: **44** ramps, 266 nodes raised/lowered, 5 still steeper than 12 % (blocked by a junction or the border).
 
 - Node merges refused because the nodes are stacked (height difference ≥ 2 m): **9**.

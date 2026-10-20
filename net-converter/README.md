@@ -310,3 +310,20 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
 - Fort (round 11b): EU_Wall01/03 are 0.9 m garden walls (live measurement), so `import-fort.json` places RuinsStoneFormation01/02 every 12 m along each
   Castle Wall Bézier (curve heading), StandingStone01–08 at the segment ends, RuinsStoneCairns01–03 every 25 m 3–6 m inside the line (towards the centroid
   of the walls within 300 m) and OldCastle01 at the largest group's centroid (unverified as placeable). `fort-walls.tsv` is gone.
+
+## Round 12 (orchestrator round 10): owner review of A-v4
+
+- Dropped from the file set and the runner: quays and retaining walls (`import-walls.json` → `import-canals.json` with the 14 Narrow Boatway canals and the 2 Sound
+  Barrier flood walls), `import-po-walls.json`, `import-decor-monorail.json`, `import-dam.json` and `import-dam-deck.json` (dam by hand: manual-objects.md → Dam),
+  the 16 m-cell sand surfaces (optional `import-surfaces-sand-smooth.json`: patches ≥ 2 000 m², 12 m round buffer, 2 majority passes on 4 m; runner `--with sand-smooth`)
+  and the decal squares (runner `--with decals`).
+- `tools/fetch-bounds.mjs` writes `prefab-bounds.json` (live mesh bounds from the bridge). Pack rocks in import-objects.json sit at y = terrain − bounds.min.y − 15 % of the
+  height; po-rocks v3 (`PoRocksV2.cs`, import name `po-rocks-v3`): visible v = clamp(0.45 H, 15, 70) for pieces ≥ 12 m, 0.6 H below, y = terrain − bounds.min.y − (H − v)
+  (v2 ignored bounds.min.y, and the cliff pivots sit up to 130 m above the mesh bottom); PO objects > 60 m above their surroundings get CliffSide pieces every 50 m down the
+  steepest flank; cap 1 500.
+- Barriers: the piece's long axis is local x (bounds), so yaw = course heading + 90°.
+- Rock scatter: none where the CS2 terrain is below sea level; slopes 25–45° lowered by tan(slope) × half the footprint; over 45° left out.
+- Pier Ruins → StandingStone01 (LeisurePier01HeadSmall renders untextured in the editor).
+- One-way highway chains that end in a CS1 dead end are left out up to the first junction (two 3-lane stubs at (2293, 277) / (2302, 255), 34 courses); `--keep-highway-stubs` keeps them.
+- `tools/import-run.mjs`: `--with` for optional steps, a graph export compared per prefab with the imported edges after the network steps and at the end (`--no-verify` skips).
+- `tools/live-analysis.mjs`: lost segments, highway dead ends and 4-lane splits of a live map against the import set, appended to live-defects.md.

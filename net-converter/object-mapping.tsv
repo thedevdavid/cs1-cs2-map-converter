@@ -62,7 +62,7 @@
 (?i)Substation	TransformerStation01	1	building	usable CS2 transformer station, 48 x 56 m (bridge live test; TransformerStation02 is the small 24 x 32 one; ElectricalSubstation01 is a decorative object, Run A); no y (buildings never get y)
 (?i)Castle Ruins	RuinsCastle01	1	building	CS2 landmark ruin
 (?i)Abandoned Factory	RuinsOldMill01	1	building	no abandoned factory in CS2; the old-mill ruin is the only derelict industrial ruin (searched ruin/abandon/derelict/factory/mill)
-(?i)Pier Ruins	LeisurePier01HeadSmall	1	object	no pier ruin in CS2; nearest is a small leisure pier head (LeisurePier01Small01 does not exist in this build; bridge classifies it as an object, Run A)
+(?i)Pier Ruins	StandingStone01	1	prop	LeisurePier01HeadSmall rendered untextured in the editor (owner review of A-v4); a standing stone marks the CS1 pier ruin
 (?i)Ship Wreck	RubblePileWood02	1	prop	no wreck in CS2; wood rubble as a stand-in (searched wreck/ship/boat/derelict)
 # --- Props ------------------------------------------------------------------------------------------------
 # --- Landscape Grass 1:1 (round 12): pack grass/vegetation PlantObjects (ASSET_PACKS.md), kind plant, age adult; species vary per CS1 variant
