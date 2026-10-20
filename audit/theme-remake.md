@@ -162,7 +162,7 @@ Superseded by §5. Every editable climate field gets a deliberate value there, s
 | Mechanism | What it gives | Use for |
 |---|---|---|
 | **Terrain materials** (`/import/terrain-paint`, bridge 0.9.29+; editor brushes Extra1 **Dry**, Extra2 **Lush**, Extra3 **Dirt**, Extra4 **Sand**) | Soft, feathered weights in the map's splatmap (`feather`, `softEdge`); textures come from the terrain render settings slots, which can now carry the **CS1 theme-mix textures** (§2 and `look/README.md`) | **Everything natural:** sand, dry grass, bare earth, scree, green bottoms |
-| **Area surfaces** (`/import/surfaces`) | Prefab texture with a hard edge (organic outline only) | `Agriculture Surface 01` circles. `Grass Surface 02` dry-grass patches (the owner liked the swatch look) as a second, coarser layer where the Dry material alone reads too uniform. `Sand Surface 01` only if the Sand material is too faint at distance |
+| **Area surfaces** (`/import/surfaces`) | Prefab texture with a hard edge | **Owner policy 2026-10-20: not for ground painting.** Everything natural is painted with the brushes. Only the existing `Agriculture Surface 01` fields remain, pending the owner's call |
 
 **Dropped:**
 - pavement/concrete under buildings: CS2 building lots draw their own ground;
