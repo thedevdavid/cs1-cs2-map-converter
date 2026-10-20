@@ -490,8 +490,8 @@ public static class Bridges
             foreach (var sn in new[] { sLo, sHi }) o.Nodes.Add(new Round9.NetNode(sn.Id, sn.Position.X, Y(sn), sn.Position.Z, 2, null));
             // Flow along the chain from start to end if forward, so lo → deck → hi (or reversed).
             var prefab = edges[0].Map.Cs2Prefab!;
-            if (forward) { o.Edges.Add(new Round9.NetEdge($"br001_in_{sLo.Id}", sLo.Id, endLo, prefab, Note: "BR001 approach onto the merged deck", NoPillars: s.NoPillars)); o.Edges.Add(new Round9.NetEdge($"br001_out_{sHi.Id}", endHi, sHi.Id, prefab, Note: "BR001 approach off the merged deck", NoPillars: s.NoPillars)); }
-            else { o.Edges.Add(new Round9.NetEdge($"br001_in_{sHi.Id}", sHi.Id, endHi, prefab, Note: "BR001 approach onto the merged deck", NoPillars: s.NoPillars)); o.Edges.Add(new Round9.NetEdge($"br001_out_{sLo.Id}", endLo, sLo.Id, prefab, Note: "BR001 approach off the merged deck", NoPillars: s.NoPillars)); }
+            if (forward) { o.Edges.Add(new Round9.NetEdge($"br001_in_{sLo.Id}", sLo.Id, endLo, prefab, Note: "BR001 approach onto the merged deck")); o.Edges.Add(new Round9.NetEdge($"br001_out_{sHi.Id}", endHi, sHi.Id, prefab, Note: "BR001 approach off the merged deck")); }
+            else { o.Edges.Add(new Round9.NetEdge($"br001_in_{sHi.Id}", sHi.Id, endHi, prefab, Note: "BR001 approach onto the merged deck")); o.Edges.Add(new Round9.NetEdge($"br001_out_{sLo.Id}", endLo, sLo.Id, prefab, Note: "BR001 approach off the merged deck")); }
             var replaced = edges.Skip(lo).Take(hi - lo).ToList();
             o.Replaces.AddRange(replaced.Select(e => e.Id));
             problems.Add(F($"carriageway {start.Id}: {replaced.Count} courses between {sLo.Id} and {sHi.Id} replaced; connectors {Len(sLo.Position, new Vec3(o.Nodes.First(x => x.Id == endLo).X, 0, o.Nodes.First(x => x.Id == endLo).Z)):F0} / {Len(sHi.Position, new Vec3(o.Nodes.First(x => x.Id == endHi).X, 0, o.Nodes.First(x => x.Id == endHi).Z)):F0} m"));

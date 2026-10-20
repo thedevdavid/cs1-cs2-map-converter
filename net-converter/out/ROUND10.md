@@ -258,3 +258,14 @@ publishes `/import/terrain-paint`; then only `TerrainPaint.Write` changes (polyg
 
 The CS1 data has no grass class (only Sand was painted). The dry-grass mask therefore stands on the CS1 theme's tints (fertile = yellower, forest floor = darker,
 audit/theme-remake.md §1), the fertility raster, tree density and the heightmap aspect. Area surfaces (sand, PO pavement, fields) are unchanged.
+
+## Round 24: terrain paint in the bridge 0.9.29 format
+
+- import-terrain-paint-sand.json: material Sand, 400 polygons, softEdge 6 m, strength 1 (16.96 km²); offline stamp estimate (port of the bridge's
+  FillPolygon) ≈ 232 000, just under the 250 000 cap.
+- import-terrain-paint-dry-grass.json: material Dry, 433 polygons, softEdge 6 m (9.72 km²), ≈ 148 000 stamps.
+- import-terrain-paint-bare-earth.json: material Dirt, 128 strokes of radius 11 m at the CS1 dirt / mud decals.
+- optional/import-terrain-paint-rock.json: mask only, not imported (no rock material).
+- Runner: the terrain-paint step is on by default, right after surfaces. Each file is dry-run first with the cap lifted (stamps per item), then posted in
+  chunks of at most options.maxStamps. A rejected body or a netGuard removal stops the run. Undo: POST /import/terrain-paint/undo (newest first, last 3 kept).
+- Runner note: bridge 0.9.29 reports folded courses as merged; the live-graph re-check of point-check failures is now a fallback.

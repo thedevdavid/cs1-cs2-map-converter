@@ -7,7 +7,7 @@ string? treesDir = null, rockHeightmapPath = null, cs2HeightmapPath = null, runR
 string poOfflinePath = Path.Combine("..", "cs1-offline", "out", "po-offline.json");
 double rockDegrees = 40;
 List<Round9.NetNode> bridgeNodes = new(); int gapEdges = 0; string gapLog = ""; var externalNodes = new HashSet<string>();
-bool seawayAtWater = false, mergeCanal = true, keepHighwayStubs = false, bridgesOn = true, bridgesFixedOn = true;
+bool seawayAtWater = false, mergeCanal = true, keepHighwayStubs = false, bridgesOn = true, bridgesFixedOn = true, keepCs1NoPillars = false;
 const string RockSurface = "gaga TTP - Pebbles 1L dark";
 const string NetCorridorRule = "on a ground-level net corridor (half width + 2 m)";
 {
@@ -38,6 +38,7 @@ for (int i = 0; i < args.Length; i++)
         case "--cs2-heightmap": cs2HeightmapPath = args[++i]; break;
         case "--run-reports": runReportsDir = args[++i]; break;
         case "--keep-highway-stubs": keepHighwayStubs = true; break;
+        case "--keep-cs1-nopillars": keepCs1NoPillars = true; break;
         case "--bridges": bridgesOn = args[++i] != "off"; break;
         case "--bridges-fixed": bridgesFixedOn = args[++i] != "off"; break;
         case "--seaway-at-water": seawayAtWater = true; break;
@@ -322,6 +323,15 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
         var pierSegs = PoStructures.PierSegments(pierRows, new PoStructures.DeckSampler(result.Edges));
         foreach (var seg in pierSegs) Outputs.SkinFlags[seg] = (true, Outputs.SkinFlags.TryGetValue(seg, out var sf2) && sf2.Lights);
         Console.WriteLine($"PO piers: noPillars on {pierSegs.Count} CS1 segments under the BR001 / BR003 piers");
+        // Round 25 (A-v7: BR006 stood without pylons): noPillars only where a pier object set replaces the game's pillars. The CS1 Network Skins
+        // pillar flags and the BR001 approach flags without such a set go (the courses get the game's pillars); --keep-cs1-nopillars keeps them.
+        if (!keepCs1NoPillars)
+        {
+            var dropped = Outputs.SkinFlags.Where(kv => kv.Value.Pillars && !pierSegs.Contains(kv.Key)).Select(kv => kv.Key).ToList();
+            foreach (var seg in dropped) { var fl = Outputs.SkinFlags[seg]; if (fl.Lights) Outputs.SkinFlags[seg] = (false, true); else Outputs.SkinFlags.Remove(seg); }
+            Console.WriteLine($"noPillars: {dropped.Count} CS1 segments without a pier object set get the game's pillars back");
+            auditLog.AppendLine($"- noPillars dropped (no pier object set behind them; --keep-cs1-nopillars keeps them): {dropped.Count} CS1 segments: {string.Join(", ", dropped.OrderBy(x => x))}.");
+        }
     }
     var rules = Bridges.LoadRules(FindB(Path.Combine("..", "bridges", "cs2-bridge-rules.json")), FindB("bridge-rules-live.json"));
     var checks = Bridges.Validate(bMain, rules, waterOut, terrOutB);

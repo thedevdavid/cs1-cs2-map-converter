@@ -27992,7 +27992,6 @@
           54.16
         ]
       ],
-      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 18179
@@ -28014,7 +28013,6 @@
           83.46
         ]
       ],
-      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 18179
@@ -44227,7 +44225,6 @@
           100.93
         ]
       ],
-      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 36355
@@ -44249,7 +44246,6 @@
           132.01
         ]
       ],
-      "noPillars": true,
       "structure": "elevated",
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 36355

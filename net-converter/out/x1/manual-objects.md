@@ -1071,220 +1071,93 @@ The import edges of these CS1 segments carry "noPillars" / "noStreetLights" (ign
 | CS1 segment | prefab | x | z | no pillars | no street lights |
 |---:|---|---:|---:|---|---|
 | 59 | USRP 2L Interstate E | 244 | 3728 |  | yes |
-| 172 | USRP 2L Interstate E | 691 | -4564 | yes |  |
 | 630 | USRP 2L Interstate B | -1550 | -1589 | yes |  |
-| 779 | USRP 3L Interstate B | 1570 | -3462 | yes |  |
-| 1387 | USRP 2L Interstate E | 3666 | 2158 | yes | yes |
-| 1638 | USRP 1L Interstate Ramp E | 3440 | 2064 | yes |  |
-| 1677 | USRP 2L Interstate E | 626 | -4857 | yes |  |
+| 1387 | USRP 2L Interstate E | 3666 | 2158 |  | yes |
 | 1808 | USRP 1L Interstate Ramp E | -1722 | -1775 |  | yes |
-| 2029 | USRP 2L Interstate B | 485 | 203 | yes | yes |
-| 2653 | USRP 3L Interstate B | 1817 | -3137 | yes |  |
-| 2804 | USRP 2L Interstate E | 665 | -5003 | yes |  |
-| 2886 | USRP 3L Interstate B | 1614 | -3377 | yes |  |
-| 3139 | USRP 3L Interstate B | 1858 | -3083 | yes |  |
+| 2029 | USRP 2L Interstate B | 485 | 203 |  | yes |
 | 3183 | USRP 2L Interstate E | 2969 | 1097 |  | yes |
 | 3338 | USRP 1L Interstate Ramp_Data | 252 | 138 |  | yes |
-| 3389 | USRP 3L Interstate B | 1207 | -3913 | yes |  |
-| 3500 | USRP 2L Interstate E | 712 | -5060 | yes |  |
-| 3598 | USRP 2L Interstate E | 699 | -4583 | yes |  |
-| 3638 | USRP 1L Interstate Ramp E | 3663 | 2051 | yes |  |
-| 3944 | USRP 3L Interstate B | 1248 | -3859 | yes |  |
-| 4284 | USRP 1L Interstate Ramp E | 3519 | 2247 | yes |  |
 | 4510 | USRP 1L Interstate Ramp E | 3531 | 2186 |  | yes |
 | 4709 | USRP 2L Interstate_Data | 3007 | 1129 |  | yes |
-| 4813 | USRP 1L Interstate Ramp E | 3489 | 2082 | yes |  |
-| 4838 | USRP 2L Interstate E | 3987 | 4863 | yes |  |
-| 5188 | USRP 1L Interstate Ramp E | 3487 | 1985 | yes |  |
-| 5703 | USRP 2L Interstate E | 689 | -4643 | yes |  |
-| 6031 | USRP 3L Interstate B | 1764 | -3180 | yes |  |
-| 6041 | USRP 1L Interstate Ramp E | 3625 | 2115 | yes |  |
-| 6338 | USRP 3L Interstate E | 892 | -5230 | yes |  |
 | 6425 | USRP 3L Interstate E | 1986 | -2914 | yes |  |
-| 6801 | USRP 2L Interstate E | 3595 | 2130 | yes |  |
-| 7008 | USRP 2L Interstate E | 618 | -4965 | yes |  |
 | 7316 | USRP 3L Interstate E | 1973 | -2905 | yes |  |
 | 7621 | USRP 3L Interstate E | 2247 | -2570 | yes |  |
 | 8119 | USRP 1L Interstate Ramp_Data | 2992 | 914 |  | yes |
-| 8145 | USRP 3L Interstate B | 1777 | -3190 | yes |  |
-| 8322 | USRP 1L Interstate Ramp E | 3559 | 1901 | yes |  |
 | 8479 | USRP 3L Interstate E | 2234 | -2560 | yes |  |
-| 8562 | USRP 2L Interstate B | 567 | 226 | yes | yes |
+| 8562 | USRP 2L Interstate B | 567 | 226 |  | yes |
 | 8896 | USRP 1L Interstate Ramp E | 3029 | 957 |  | yes |
-| 9026 | USRP 1L Interstate Ramp E | 3659 | 2271 | yes |  |
-| 9203 | USRP 2L Interstate E | 3449 | 2043 | yes |  |
 | 9301 | USRP 1L Interstate Ramp E | 2995 | 1255 |  | yes |
-| 9467 | USRP 2L Interstate E | 766 | -4496 | yes |  |
-| 10176 | USRP 1L Interstate Ramp E | 3571 | 2161 | yes |  |
-| 10238 | USRP 3L Interstate B | 1301 | -3817 | yes |  |
-| 10276 | USRP 1L Interstate Ramp E | 3572 | 2081 | yes |  |
-| 10815 | USRP 2L Interstate E | 724 | -4550 | yes |  |
-| 10906 | USRP 2-Lane National Road B | -3502 | -3213 | yes |  |
 | 10926 | USRP 3L Interstate E | 897 | -4349 | yes |  |
 | 11059 | USRP 2L Interstate E | 2976 | 1082 |  | yes |
-| 11467 | USRP 4L Interstate E | 825 | -5172 | yes |  |
-| 11507 | USRP 1L Interstate Ramp E | 3666 | 1994 | yes |  |
-| 11661 | USRP 2L Interstate E | 644 | -4591 | yes |  |
-| 11735 | USRP 2L Interstate E | 595 | -4862 | yes |  |
-| 11895 | USRP 3L Interstate B | 1919 | -3003 | yes |  |
 | 12097 | USRP 1L Interstate Ramp E | 3633 | 2159 |  | yes |
-| 12548 | USRP 3L Interstate B | 1845 | -3074 | yes |  |
-| 12655 | USRP 2L Interstate E | 664 | -4633 | yes |  |
-| 12729 | USRP 2-Lane National Road B | -3380 | -3380 | yes |  |
-| 12774 | USRP 3L Interstate B | 1515 | -3535 | yes |  |
-| 12792 | USRP 2L Interstate E | 608 | -4861 | yes |  |
-| 13146 | USRP 3L Interstate B | 1220 | -3923 | yes |  |
 | 13208 | USRP 1L Interstate Ramp E | 3024 | 911 |  | yes |
-| 13697 | USRP 2L Interstate E | 3664 | 2180 | yes |  |
 | 14096 | USRP 1L Interstate Ramp E | 2999 | 1404 |  | yes |
-| 14182 | USRP 2L Interstate E | 659 | -4712 | yes |  |
-| 14225 | USRP 1L Interstate Ramp E | 3518 | 1937 | yes |  |
 | 14379 | USRP 3L Interstate E | 2303 | -2497 | yes |  |
-| 14397 | USRP 3L Interstate B | 1722 | -3235 | yes |  |
 | 14428 | USRP 1L Interstate Ramp E | 3654 | 2090 |  | yes |
-| 14527 | USRP 2L Interstate E | 651 | -4784 | yes |  |
-| 14574 | USRP 3L Interstate E | 1010 | -4174 | yes |  |
-| 14892 | USRP 2L Interstate E | 774 | -4462 | yes |  |
 | 14997 | USRP 1L Interstate Ramp_Data | 2911 | 984 |  | yes |
-| 15108 | USRP 2-Lane National Road B | -3554 | -3141 | yes |  |
-| 15344 | USRP 1L Interstate Ramp E | 3573 | 2173 | yes |  |
 | 15395 | USRP 2L Interstate E | 827 | -4415 | yes |  |
-| 15414 | USRP 2L Interstate E | 638 | -4932 | yes |  |
-| 15768 | USRP 2L Interstate B | 389 | 192 | yes | yes |
+| 15768 | USRP 2L Interstate B | 389 | 192 |  | yes |
 | 15892 | USRP 1L Interstate Ramp_Data | 3628 | 2146 |  | yes |
 | 15972 | USRP 1L Interstate Ramp E | 2897 | 1057 |  | yes |
-| 15986 | USRP 3L Interstate B | 1804 | -3127 | yes |  |
-| 16165 | USRP 3L Interstate B | 1390 | -3673 | yes |  |
-| 16410 | USRP 4L Interstate E | 723 | -4579 | yes |  |
-| 16506 | USRP 3L Interstate B | 1334 | -3747 | yes |  |
-| 16555 | USRP 3L Interstate B | 1460 | -3607 | yes |  |
 | 16607 | USRP 3L Interstate E | 2130 | -2698 | yes |  |
 | 16854 | USRP 1L Interstate Ramp E | 2998 | 1331 |  | yes |
-| 17085 | USRP 2L Interstate B | 480 | 218 | yes | yes |
-| 17314 | USRP 2L Interstate E | 598 | -4780 | yes |  |
-| 17372 | USRP 1L Interstate Ramp E | 3517 | 2169 | yes |  |
-| 17669 | USRP 2L Interstate E | 3526 | 2088 | yes | yes |
+| 17085 | USRP 2L Interstate B | 480 | 218 |  | yes |
+| 17669 | USRP 2L Interstate E | 3526 | 2088 |  | yes |
 | 17760 | USRP 2L Interstate_Data | 3630 | 2297 |  | yes |
-| 17800 | USRP 3L Interstate B | 1557 | -3452 | yes |  |
-| 17815 | USRP 2L Interstate B | 305 | 169 | yes | yes |
+| 17815 | USRP 2L Interstate B | 305 | 169 |  | yes |
 | 17897 | USRP 3L Interstate E | 944 | -4261 | yes |  |
 | 18004 | USRP 3L Interstate E | 1073 | -4091 | yes |  |
-| 18179 | USRP 3-Lane National Road E | -4149 | 64 | yes |  |
-| 18529 | USRP 1L Interstate Ramp E | 3522 | 1975 | yes |  |
-| 18755 | USRP 1L Interstate Ramp E | 3535 | 2320 | yes |  |
-| 18923 | USRP 2L Interstate B | 310 | 154 | yes | yes |
+| 18923 | USRP 2L Interstate B | 310 | 154 |  | yes |
 | 19107 | USRP 2L Interstate E | 662 | -4667 |  | yes |
-| 19546 | USRP 1L Interstate Ramp E | 3611 | 2031 | yes |  |
 | 19817 | USRP 2L Interstate_Data | 3570 | 1969 |  | yes |
 | 19926 | USRP 1L Interstate Ramp E | 3523 | 2112 |  | yes |
 | 20380 | USRP 1L Interstate Ramp E | 2991 | 1115 |  | yes |
-| 20401 | USRP 3L Interstate B | 1402 | -3683 | yes |  |
-| 20556 | USRP 3L Interstate B | 1261 | -3869 | yes |  |
-| 20616 | USRP 1L Interstate Ramp E | 3492 | 2124 | yes |  |
-| 20675 | USRP 1L Interstate Ramp E | 3605 | 1872 | yes |  |
 | 20735 | USRP 1L Interstate Ramp E | 2964 | 1103 |  | yes |
-| 21043 | USRP 1L Interstate Ramp E | 3572 | 1994 | yes |  |
-| 21099 | USRP 2L Interstate E | 603 | -4705 | yes |  |
-| 21338 | USRP 3L Interstate E | 878 | -5244 | yes |  |
 | 21401 | USRP 3L Interstate E | 2143 | -2708 | yes |  |
-| 21512 | USRP 2L Interstate E | 3548 | 2082 | yes |  |
 | 21530 | USRP 2L Interstate_Data | 3507 | 2110 |  | yes |
-| 21897 | USRP 2L Interstate E | 4032 | 4852 | yes |  |
-| 21906 | USRP 3L Interstate E | 747 | -5137 | yes |  |
 | 21939 | USRP 2L Interstate E | 3023 | 1234 |  | yes |
-| 22005 | USRP 1L Interstate Ramp E | 3616 | 2304 | yes |  |
 | 22116 | USRP 1L Interstate Ramp E | 3033 | 1003 |  | yes |
-| 22300 | USRP 2L Interstate E | 611 | -4781 | yes |  |
 | 22393 | USRP 3L Interstate E | 2195 | -2639 | yes |  |
-| 22886 | USRP 1L Interstate Ramp E | 3609 | 2075 | yes |  |
-| 22934 | USRP 2-Lane National Road B | -3445 | -3291 | yes |  |
-| 23013 | USRP 3L Interstate B | 1670 | -3304 | yes |  |
 | 23062 | USRP 1L Interstate Ramp_Data | 110 | 3729 |  | yes |
 | 23484 | USRP 2L Interstate E | 3004 | 1160 |  | yes |
 | 23738 | USRP 2L Interstate_Data | 666 | -4804 |  | yes |
-| 23795 | USRP 3L Interstate B | 1735 | -3245 | yes |  |
 | 24407 | USRP 3L Interstate E | 1086 | -4100 | yes |  |
-| 24934 | USRP 2L Interstate B | 562 | 241 | yes | yes |
-| 25034 | USRP 2L Interstate E | 630 | -4704 | yes |  |
+| 24934 | USRP 2L Interstate B | 562 | 241 |  | yes |
 | 25373 | USRP 1L Interstate Ramp_Data | 3006 | 799 |  | yes |
 | 25609 | USRP 1L Interstate Ramp_Data | 109 | 41 |  | yes |
-| 25769 | USRP 1L Interstate Ramp E | 3477 | 2032 | yes |  |
-| 26105 | USRP 1L Interstate Ramp E | 3459 | 2066 | yes |  |
-| 26134 | USRP 2-Lane National Road B | -3671 | -2980 | yes |  |
 | 26235 | USRP 2L Interstate E | 313 | 3752 |  | yes |
-| 26240 | USRP 3L Interstate B | 1347 | -3757 | yes |  |
-| 26285 | USRP 1L Interstate Ramp E | 3525 | 2052 | yes |  |
 | 26294 | USRP 2L Interstate_Data | -1749 | -1776 |  | yes |
 | 26537 | USRP 3L Interstate E | 2038 | -2845 | yes |  |
-| 26635 | USRP 2-Lane National Road B | -3609 | -3065 | yes |  |
 | 26745 | USRP 3L Interstate E | 2182 | -2629 | yes |  |
-| 27061 | USRP 2L Interstate E | 675 | -4994 | yes |  |
 | 27292 | USRP 1L Interstate Ramp_Data | 2961 | 960 |  | yes |
-| 27293 | USRP 2L Interstate E | 833 | -4392 | yes |  |
 | 27364 | USRP 1L Interstate Ramp E | 3031 | 1095 |  | yes |
-| 27395 | USRP 4L Interstate E | 649 | -5013 | yes |  |
 | 27498 | USRP 3L Interstate E | 833 | -4433 | yes |  |
-| 27612 | USRP 2L Interstate E | 621 | -4939 | yes |  |
 | 27661 | USRP 1L Interstate Ramp E | 3017 | 863 |  | yes |
-| 27684 | USRP 2L Interstate E | 603 | -4925 | yes |  |
-| 27870 | USRP 2L Interstate B | 394 | 178 | yes | yes |
-| 27973 | USRP 1L Interstate Ramp E | 3734 | 2160 | yes |  |
-| 27996 | USRP 4L Interstate E | 759 | -5122 | yes |  |
-| 28071 | USRP 1L Interstate Ramp E | 3671 | 2114 | yes |  |
+| 27870 | USRP 2L Interstate B | 394 | 178 |  | yes |
 | 28152 | USRP 2L Interstate_Data | 602 | -4698 |  | yes |
 | 28282 | USRP 3L Interstate E | 2025 | -2836 | yes |  |
 | 28976 | USRP 1L Interstate Ramp_Data | 2855 | 989 |  | yes |
-| 29014 | USRP 3L Interstate B | 1627 | -3387 | yes |  |
-| 29685 | USRP 3L Interstate E | 813 | -5187 | yes |  |
 | 29767 | USRP 2L Interstate E | 3007 | 1131 |  | yes |
-| 29775 | USRP 2L Interstate E | 3615 | 2123 | yes |  |
-| 29898 | USRP 3L Interstate B | 1159 | -4004 | yes |  |
-| 29970 | USRP 2L Interstate E | 680 | -4639 | yes |  |
 | 30823 | USRP 1L Interstate Ramp E | -1730 | -1819 |  | yes |
 | 30998 | USRP 1L Interstate Ramp_Data | 3004 | 1471 |  | yes |
 | 31166 | USRP 2L Interstate B | -1615 | -1667 | yes |  |
 | 31224 | USRP 4L Interstate E | 884 | -4339 | yes |  |
-| 31228 | USRP 1L Interstate Ramp E | 3688 | 2105 | yes |  |
 | 31408 | USRP 2L Interstate B | -1627 | -1657 | yes |  |
 | 31492 | USRP 2L Interstate B | -1562 | -1579 | yes |  |
 | 31521 | USRP 1L Interstate Ramp_Data | 2775 | 1000 |  | yes |
 | 31688 | USRP 3L Interstate E | 960 | -4266 | yes |  |
 | 31840 | USRP 1L Interstate Ramp E | 2946 | 1091 |  | yes |
-| 32165 | USRP 3L Interstate B | 1288 | -3807 | yes |  |
 | 32327 | USRP 1L Interstate Ramp_Data | 3193 | 1886 |  | yes |
-| 32650 | USRP 1L Interstate Ramp E | 3671 | 2153 | yes | yes |
-| 32706 | USRP 4L Interstate E | 691 | -5080 | yes |  |
+| 32650 | USRP 1L Interstate Ramp E | 3671 | 2153 |  | yes |
 | 32758 | USRP 3L Interstate E | 2077 | -2767 | yes |  |
 | 32800 | USRP 3L Interstate E | 2290 | -2487 | yes |  |
 | 33002 | USRP 2L Interstate_Data | -1808 | -1809 |  | yes |
-| 33197 | USRP 2L Interstate E | 629 | -4781 | yes |  |
-| 33311 | USRP 1L Interstate Ramp E | 3720 | 2162 | yes |  |
-| 33321 | USRP 2L Interstate E | 647 | -4707 | yes |  |
-| 33371 | USRP 3L Interstate B | 1502 | -3526 | yes |  |
 | 33514 | USRP 1L Interstate Ramp_Data | 2842 | 1028 |  | yes |
 | 33693 | USRP 1L Interstate Ramp E | 3036 | 1049 |  | yes |
-| 33711 | USRP 3L Interstate B | 1448 | -3597 | yes |  |
-| 33741 | USRP 1L Interstate Ramp E | 3522 | 2131 | yes |  |
-| 33803 | USRP 2L Interstate E | 4059 | 4814 | yes |  |
-| 33845 | USRP 3L Interstate B | 1906 | -2993 | yes |  |
-| 34021 | USRP 2L Interstate E | 705 | -5067 | yes |  |
-| 34083 | USRP 2L Interstate E | 3704 | 2187 | yes |  |
-| 34456 | USRP 2L Interstate E | 802 | -4425 | yes |  |
-| 34845 | USRP 2L Interstate E | 3460 | 2031 | yes |  |
 | 35341 | USRP 3L Interstate E | 2090 | -2777 | yes |  |
 | 35381 | USRP 1L Interstate Ramp_Data | 47 | 3774 |  | yes |
-| 35437 | USRP 4L Interstate E | 782 | -4501 | yes |  |
-| 35648 | USRP 3L Interstate E | 1023 | -4183 | yes |  |
 | 35653 | USRP 1L Interstate Ramp E | 2987 | 1176 |  | yes |
-| 36148 | USRP 3L Interstate B | 1146 | -3994 | yes |  |
-| 36355 | USRP 3-Lane National Road E | -4121 | 111 | yes |  |
-| 36595 | USRP 2L Interstate E | 734 | -4513 | yes |  |
-| 36659 | USRP 3L Interstate B | 1683 | -3314 | yes |  |
-| 36686 | USRP 1L Interstate Ramp E | 3541 | 2095 | yes |  |
-| 36781 | USRP 1L Interstate Ramp E | 3642 | 2209 | yes |  |
-| 36784 | USRP 2L Interstate E | 703 | -4825 | yes |  |
 | 36808 | USRP 1L Interstate Ramp E | 3470 | 2018 |  | yes |
-| 36861 | USRP 1L Interstate Ramp E | 3711 | 2246 | yes |  |
 
 ## Dam (automatic: import-dam.json, bridge 0.9.23)
 

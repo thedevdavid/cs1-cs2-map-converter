@@ -185,3 +185,15 @@ audit/theme-remake.md §1), the fertility raster, tree density and the heightmap
 - Runner: the terrain-paint step is on by default, right after surfaces. Each file is dry-run first with the cap lifted (stamps per item), then posted in
   chunks of at most options.maxStamps. A rejected body or a netGuard removal stops the run. Undo: POST /import/terrain-paint/undo (newest first, last 3 kept).
 - Runner note: bridge 0.9.29 reports folded courses as merged; the live-graph re-check of point-check failures is now a fallback.
+
+## Round 25: noPillars only where a pier object set stands (A-v7: BR006 without pylons)
+
+- BR006: `nopillars` is gone from bridges.tsv, so variant (a) gets the game's pillars. Variant (b) (`--with po-br006-arches`) clears them through the runner's
+  pillars-off step, which now also takes the arch pieces and Bridge prefab segments.
+- Every other noPillars without a pier set behind it is dropped too (`--keep-cs1-nopillars` keeps them): 138 CS1 segments, from the CS1 Network Skins pillar
+  flags and the BR001 approach flags. 135 of their courses stand 8–114 m high in A-v6 with nothing under them: the BR001 south approach
+  (x 590–1110, z −5250…−4060, up to 114 m near the blue-arch site) and the interchange at x 3430–3690, z 1870–2320. The 4 BR001 3-lane connectors lose the flag.
+- noPillars stays on the 26 CS1 segments above the BR001 / BR003 ITBP + Pillar4x16 stacks (48 edges) and on the BR001 suspension deck.
+- x1 files against A-v7: geometry unchanged (no node or edge added, removed or moved). Only the `noPillars` field differs: import-all.json 145 edges,
+  import-bridges.json 4 (br006_c1_e0…e3), import-bridges-fixed.json 4 (br001_in/out connectors). A re-import onto A7b merges the same geometry, and dropping a flag
+  removes nothing. Pillars that noPillars already deleted come back only when the game updates those segments.

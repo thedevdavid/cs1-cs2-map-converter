@@ -103,7 +103,7 @@ const steps = [
   ["po-gantry", "/import/objects", [p(join("optional", "import-po-structure-gantry.json"))], true],
   // Round 22: BR001 / BR003 piers by default. The game's pillars on the courses above come back whenever a segment updates, so they are removed
   // again right before the piers go in (POST /net/pillars/remove on the live segments within 3 m of a cap).
-  ["pillars-off", "pillarsoff", [p("import-po-structure-piers.json")]],
+  ["pillars-off", "pillarsoff", [p("import-po-structure-piers.json"), p(join("optional", "import-po-structure-br006-arches.json"))]],
   ["po-piers", "/import/objects", [p("import-po-structure-piers.json")]],
   ["rock-scatter", "/import/objects", [p("import-rock-scatter.json")]],
   ["fort", "/import/objects", [p("import-fort.json")]],
@@ -131,9 +131,11 @@ async function verifyGraph(tag) {
 }
 
 // Pillars off under the PO piers: export the live graph, take the segments that pass within 3 m of an ITBP cap, POST /net/pillars/remove.
-async function pillarsOff(file) {
+// Round 25: also under the BR006 variant (b) arch pieces when --with po-br006-arches (bridges.tsv no longer sets nopillars on BR006).
+async function pillarsOff(file, archFile) {
   if (!existsSync(file)) return `${file} missing`;
   const caps = JSON.parse(readFileSync(file, "utf8")).objects.filter(o => o.prefab === "ITBP_Pillar Piers 01");
+  if (archFile && existsSync(archFile)) caps.push(...JSON.parse(readFileSync(archFile, "utf8")).objects);
   const path = join(process.cwd(), dir, `live-graph-${stamp}-pillars.json`);
   await request("GET", `/graph/export?path=${encodeURIComponent(path)}&curves=true`);
   if (!existsSync(path)) return "graph export failed";
@@ -141,7 +143,7 @@ async function pillarsOff(file) {
   const bz = (P, t) => { const u = 1 - t; return [0, 2].map(i => u * u * u * P[0][i] + 3 * u * u * t * P[1][i] + 3 * u * t * t * P[2][i] + t * t * t * P[3][i]); };
   const ids = new Set();
   for (const sg of g.segments ?? []) {
-    if (!sg.curve || !/Highway/.test(sg.prefab)) continue;
+    if (!sg.curve || !/Highway|Bridge/.test(sg.prefab)) continue;
     const pts = Array.from({ length: 33 }, (_, k) => bz(sg.curve, k / 32));
     if (caps.some(c => pts.some((p, k) => k > 0 && Math.hypot((p[0] + pts[k - 1][0]) / 2 - c.x, (p[1] + pts[k - 1][1]) / 2 - c.z) < 3 + Math.hypot(p[0] - pts[k - 1][0], p[1] - pts[k - 1][1]) / 2))) ids.add(sg.id);
   }
@@ -245,7 +247,7 @@ outer: for (const [name, endpoint, files] of steps) {
     const text = `net count after the network steps: ${countLine(netBaseline)}`; console.log(`  ${text}`);
     rows.push({ name, file: "GET /net/count", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue;
   }
-  if (endpoint === "pillarsoff") { const t0 = Date.now(); const text = dryRun ? "dry run: not sent" : await pillarsOff(files[0]); console.log(`  ${text}`); rows.push({ name, file: "POST /net/pillars/remove", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue; }
+  if (endpoint === "pillarsoff") { const t0 = Date.now(); const text = dryRun ? "dry run: not sent" : await pillarsOff(files[0], wanted("po-br006-arches") ? files[1] : null); console.log(`  ${text}`); rows.push({ name, file: "POST /net/pillars/remove", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue; }
   if (endpoint === "verify") { const t0 = Date.now(); const text = await verifyGraph(name.replace("verify-", "")); rows.push({ name, file: "GET /graph/export", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue; }
   for (const file of files) {
     if (!existsSync(file)) { console.log(`- ${name}: ${file} missing, skipped`); rows.push({ name, file, status: "missing" }); continue; }
