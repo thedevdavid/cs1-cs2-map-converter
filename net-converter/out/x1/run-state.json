@@ -166,6 +166,16 @@
    "step": "resources",
    "importId": null,
    "at": "2026-10-20T19:37:23.995Z"
+  },
+  "trees/import-trees-09.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193751-19",
+   "at": "2026-10-20T19:38:45.004Z"
+  },
+  "trees/import-trees-10.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193845-20",
+   "at": "2026-10-20T19:39:40.370Z"
   }
  }
 }
