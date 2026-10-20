@@ -15,20 +15,21 @@ Ready request bodies for `POST /map/settings` (bridge 0.9.23 or later; MCP `cs2_
 |---|---|---|
 | 1. Cold season | **In between:** a short cold season with occasional light snow, at about a third of Colorado's cold-season precipitation chance. No persistent white months | climate.json precipitation (chance / amount / deviation, %): spring **9 / 20 / 15**, autumn **5 / 15 / 10**, winter **6 / 15 / 10**; summer unchanged at 25 / 35 / 30 |
 | 2. All four seasons on the summer season prefab | **Yes, since the bridge supports it:** every season entry has `"prefab": "SeasonSummer"`. Foliage stays green all year; snow can still fall | delete the four `"prefab"` keys to keep the base's own seasons |
-| 3. Water | **In between, closer to real:** 60 % silty Mississippi, 40 % CS1 slate. The depth rule still keeps the shallow mountain creeks clear | water.json: `waterColor` **[0.28, 0.48, 0.36]**, `scatteringColor` **[0.18, 0.25, 0.20]**, `absorptionDistance` **3.8**, `ambientScattering` **0.5**, `causticsIntensity` **0.6**; the other 17 fields are unchanged |
+| 3. Water | **In between, closer to real:** 60 % silty Mississippi, 40 % CS1 slate. The depth rule still keeps the shallow mountain creeks clear | water.json: `waterColor` **[0.28, 0.48, 0.36]**, `waterScatteringColor` **[0.18, 0.25, 0.20]**, `absorptionDistance` **3.8**, `ambientScattering` **0.5**, `causticsIntensity` **0.6**; the other 17 fields are unchanged |
 | 4. Lumina in the map description | **Yes,** recommended as optional (text below) | set the description by hand |
-| 5. Sand/grass swatch | **Decided offline** from the game's surface icons (below). The in-game swatch test stays as a later confirmation | — |
+| 5. Sand/grass swatch | **Settled by the live swatch test** (2026-10-20, below). No grass surfaces at all; surfaces only where CS2 terrain shading cannot do the job, with organic outlines (theme-remake.md §4) | — |
 
-**Sand and grass, from the game's own surface icons** (`Cities2_Data/Content/Game/UI/Media/Game/Icons/Surface*.svg`; the swatch colour of each icon, with `#606060` as the frame):
+**Surface swatch result** (live, dakota-A5-2048 at (5500, 2500); the earlier guess from the UI icons was wrong for grass):
 
-| Prefab | Icon colour | Reads as | Use (theme-remake.md §4) |
-|---|---|---|---|
-| `Sand Surface 01` | `#7f745f` | light warm tan | **S1 bank sand** (sand bars, shores) |
-| `Sand Surface 02` | `#5e5a50` | darker grey-brown | **S3 bare earth** on hillsides, **S4** dirt patches |
-| `Grass Surface 01` | `#353f1f` | dark lush olive | not painted (the base terrain is already dark grass) |
-| `Grass Surface 02` | `#424c25` / `#394221` | lighter, slightly yellower | **G1/G2** fertile land and dry plains |
-
-The icons are UI art, not the textures themselves. The sand pair differs clearly (light tan vs darker grey-brown); the grass pair only slightly (Grass 02 is about 25 % lighter and a little yellower). Sand is therefore reliable, grass is a **likely but marginal** call: confirm both with the swatch test.
+| Prefab | Reads as in game | Use |
+|---|---|---|
+| `Sand Surface 01` | pale tan-beige sand, faint raking lines | **bank sand and sand bars** (rule S1) |
+| `Sand Surface 02` | grey-brown ground with fine furrows | small bare-earth patches on gentle slopes only (rule S3, ≤ 0.05 km²) |
+| `Grass Surface 01` / `02` | mown lawn with mowing stripes; 02 slightly lighter | **not used.** No vanilla surface reads as dry prairie grass; the plains keep CS2's own terrain grass |
+| `Agriculture Surface 01` | ploughed field | field circles (rule A1) |
+| `Pavement Surface 01` | dark grey asphalt | under stand-in buildings (rule P1) |
+| `Concrete Surface 01` | near-white | dam crest and plant pad only |
+| `Landfill Surface 01`, `Pavement Surface 02`, `Concrete Surface 02` | rubble, light asphalt, white | not used |
 
 ## Apply order
 
@@ -56,13 +57,23 @@ Run on the open map in the editor, after terrain, water sources and sea level.
    - the lower river at overview height (slate, small chop);
    - a summer evening (possible fog).
 
-   Expected tweaks: `absorptionDistance` ±2 if the creeks look muddy or the river looks glassy, and `scatteringColor` toward blue if it reads swampy.
+   Expected tweaks: `absorptionDistance` ±2 if the creeks look muddy or the river looks glassy, and `waterScatteringColor` toward blue if it reads swampy.
 
 **Why terrain.json makes no edits:** the terrain textures cannot be written from code (asset references; the panel's image picker only), so the CS1 textures cannot come back. The numeric fields (tiling, blur, splat, triplanar) have no CS1 counterpart worth guessing blind. The only candidate is the rock tiling: CS1 stretched its cliff texture to a ≈220 m repeat, while CS2's near rock tiling is 1600 (≈9 m repeat on a 14 km map). If the cliffs look busy in the screenshots, try `{"terrainEdit": {"terrainRockTiling": {"nearTiling": 800}}}`, judge, and undo by posting 1600.
 
+## Apply status (first live run, 2026-10-20, dakota-A5-2048)
+
+| Body | Runner result | Verdict |
+|---|---|---|
+| climate.json | 62 fields applied | **clean.** 62 = climate pick + 5 climate fields + 4 seasons × 13 fields (including the four `SeasonSummer` references, so that name resolved) + theme, starting month, starting time, natural disasters |
+| water.json | 22 sent, `scatteringColor` skipped ("not in the schema") | **my key was wrong:** the field is `m_WaterScatteringColor`, key `waterScatteringColor`. Fixed in water.json; re-post water.json (all 22 apply to the existing copy, no new clone) |
+| terrain.json | 1 applied | **clean** (`DefaultTerrainRenderSettings` selected) |
+
+**To check:** the swatch screenshot shows **31 °C at 08:39 in June**. With the edited seasons, an early-June morning should read about 17–22 °C (night ≈ 9, day ≈ 23 in early June; 08:39 is about 80 % of the way from night to day). Either the edited copy is not the current climate when the clock runs, or the curves were not rebuilt. Check `GET /map/settings?detail=1`: `look.climate` must be the "(copy)" with latitude 40, and its summer season must show `tempNightDay` [12, 28]. Then let the clock run to noon (expected ≈ 23–25 °C in early June). If it still reads the vanilla Waterway Pass temperatures, post climate.json again, save, reload and re-check.
+
 ## Swatch test (surfaces, before the paint plan)
 
-Purpose: decide which vanilla surface reads as brown earth, light bank sand and dry grass (theme-remake.md §4, rules S1, S3, G1, G2).
+Done once (result above); rerun only after a game update. Purpose: decide which vanilla surface reads as brown earth, light bank sand and dry grass (theme-remake.md §4, rules S1, S3, G1, G2).
 
 1. Pick a flat, open, dry spot near the start area and note its south-west corner (x, z).
 2. `node look/swatch.mjs <x> <z> out/swatch.json`. This writes ten 60 × 60 m squares, five per row with 10 m gaps: Grass 01/02, Sand 01/02, Agriculture 01, then Landfill 01, Pavement 01/02, Concrete 01/02.
