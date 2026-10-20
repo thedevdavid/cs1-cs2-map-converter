@@ -6,7 +6,7 @@ bool inventoryOnly = false, retry = false, layersOnly = false;
 string? treesDir = null, rockHeightmapPath = null, cs2HeightmapPath = null, runReportsDir = Path.Combine("out", "x1");
 string poOfflinePath = Path.Combine("..", "cs1-offline", "out", "po-offline.json");
 double rockDegrees = 40;
-bool seawayAtWater = false, mergeCanal = true, keepHighwayStubs = false, bridgesOn = true, bridgesFixedOn = false;
+bool seawayAtWater = false, mergeCanal = true, keepHighwayStubs = false, bridgesOn = true, bridgesFixedOn = true;
 const string RockSurface = "gaga TTP - Pebbles 1L dark";
 const string NetCorridorRule = "on a ground-level net corridor (half width + 2 m)";
 {
@@ -38,7 +38,7 @@ for (int i = 0; i < args.Length; i++)
         case "--run-reports": runReportsDir = args[++i]; break;
         case "--keep-highway-stubs": keepHighwayStubs = true; break;
         case "--bridges": bridgesOn = args[++i] != "off"; break;
-        case "--bridges-fixed": bridgesFixedOn = args[++i] == "on"; break;
+        case "--bridges-fixed": bridgesFixedOn = args[++i] != "off"; break;
         case "--seaway-at-water": seawayAtWater = true; break;
         case "--no-merge-canal": mergeCanal = false; break;
         case "--po-offline": poOfflinePath = args[++i]; break;
@@ -274,18 +274,23 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
     Func<double, double, double?>? waterOut = surfaceEarly == null ? null : (x, z) => surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.5 ? c.Surface * heightFactor : null;
     var (bMain, bFixed, bRep) = Bridges.Apply(result, dump, rootDoc.RootElement, specs, segIdsB, bridgesOn, bridgesFixedOn, waterOut, topologyFactor);
     foreach (var name in new[] { "import-bridges.json", "import-bridges-fixed.json" }) File.Delete(Path.Combine(outDir, name));
+    // BR001's deck courses outside the merged span: noPillars (PLAN.md item 4), through the skin-flag writer.
+    foreach (var seg in Bridges.NoPillarSegments) Outputs.SkinFlags[seg] = (true, Outputs.SkinFlags.TryGetValue(seg, out var sf) && sf.Lights);
+    var rules = Bridges.LoadRules(FindB(Path.Combine("..", "bridges", "cs2-bridge-rules.json")));
+    var checks = Bridges.Validate(bMain, rules, waterOut);
+    foreach (var kv in Bridges.Validate(bFixed, rules, waterOut)) checks[kv.Key] = kv.Value;
     if (bMain.Edges.Count > 0)
         Round9.WriteNet(Path.Combine(outDir, "import-bridges.json"), "Dakota Falls bridges",
             "Bridge overrides (bridges.tsv): straight, constant-grade bridge-prefab edges between the CS1 deck chains' end nodes; ends shared with the network import join it through snapToSegment (radius 2). Import right after import-all.json, which leaves these decks out. Prefab names UNVERIFIED.", bMain.Nodes, bMain.Edges, bMain.Replaces);
     if (bFixed.Edges.Count > 0)
         Round9.WriteNet(Path.Combine(outDir, "import-bridges-fixed.json"), "Dakota Falls fixed-span bridges",
-            $"BR001 merged onto BXP SuspensionBridge03 (fixedIndex 0-3) and the BR022 arch decor. Needs the bridge's fixedIndex support. {(bridgesFixedOn ? "import-all.json leaves out the replaced courses (--bridges-fixed on)." : "OFF by default: import-all.json still holds the replaced courses ('replaces'); regenerate with --bridges-fixed on before importing this file.")}",
+            $"BR001: the two carriageways merged onto one BXP SuspensionBridge03 edge abutment to abutment (976 m; the game cuts the spans and places the towers, bridge 0.9.22), split nodes outside it; BR022: one Arc Pedestrian Bridge Revised edge per arc chain. Import right after import-bridges.json. {(bridgesFixedOn ? "import-all.json leaves out the replaced courses." : "--bridges-fixed off: import-all.json still holds the replaced courses ('replaces'); do not import this file.")}",
             bFixed.Nodes, bFixed.Edges, bFixed.Replaces);
     auditLog.AppendLine().AppendLine("## Bridges (bridges.tsv)").AppendLine();
-    auditLog.AppendLine(bridgesOn ? $"{bRep.Count} bridge overrides; {bMain.Edges.Count} edges in import-bridges.json, {bFixed.Edges.Count} in import-bridges-fixed.json ({(bridgesFixedOn ? "ON" : "off by default")}). No prefab name is verified in game yet; --bridges off keeps every CS1 bridge as the plain mapped road." : "--bridges off: no overrides.").AppendLine();
-    auditLog.AppendLine("| bridge | prefab | plan | chains | edges | lengths m | file | notes and rule checks |").AppendLine("|---|---|---|---:|---:|---|---|---|");
+    auditLog.AppendLine(bridgesOn ? $"{bRep.Count} bridge overrides; {bMain.Edges.Count} edges in import-bridges.json, {bFixed.Edges.Count} in import-bridges-fixed.json ({(bridgesFixedOn ? "on" : "--bridges-fixed off")}). No prefab name is verified in game yet; --bridges off keeps every CS1 bridge as the plain mapped road. Rule checks: the bridge's 0.9.22 pre-checks computed offline against ../bridges/cs2-bridge-rules.json (bridge.lowElevation and vanilla prefabs are left to the runner's dry run). noPillars: BR006 deck, BR001 connectors and {Bridges.NoPillarSegments.Count} BR001 deck segments outside the merged span." : "--bridges off: no overrides.").AppendLine();
+    auditLog.AppendLine("| bridge | prefab | plan | chains | edges | lengths m | file | notes | rule checks (cs2-bridge-rules.json) |").AppendLine("|---|---|---|---:|---:|---|---|---|---|");
     foreach (var r in bRep)
-        auditLog.AppendLine(FormattableString.Invariant($"| {r.Id} | {r.Prefab} | {r.Plan} | {r.Chains} | {r.Lengths.Count} | {string.Join(", ", r.Lengths.Select(l => l.ToString("F0", System.Globalization.CultureInfo.InvariantCulture)).GroupBy(l => l).Select(g => g.Count() > 1 ? $"{g.Count()}×{g.Key}" : g.Key))} | {(r.InFixedFile ? "fixed" : "bridges")} | {r.Notes}{(r.Problems.Count > 0 ? "; " + string.Join("; ", r.Problems) : "")} |"));
+        auditLog.AppendLine(FormattableString.Invariant($"| {r.Id} | {r.Prefab} | {r.Plan} | {r.Chains} | {r.Lengths.Count} | {string.Join(", ", r.Lengths.Select(l => l.ToString("F0", System.Globalization.CultureInfo.InvariantCulture)).GroupBy(l => l).Select(g => g.Count() > 1 ? $"{g.Count()}×{g.Key}" : g.Key))} | {(r.InFixedFile ? "fixed" : "bridges")} | {r.Notes}{(r.Problems.Count > 0 ? "; " + string.Join("; ", r.Problems) : "")} | {(checks.TryGetValue(r.Id, out var ck) && ck.Count > 0 ? string.Join("; ", ck) : "ok")} |"));
     Console.WriteLine($"bridges: {bRep.Count} overrides, {bMain.Edges.Count} edges -> import-bridges.json, {bFixed.Edges.Count} -> import-bridges-fixed.json ({(bridgesFixedOn ? "on" : "off")})");
 }
 Outputs.WriteImport(Path.Combine(outDir, "import-highways.json"), "Dakota Falls highways", result.Layer(Layers.Highways).ToList(), absolute);

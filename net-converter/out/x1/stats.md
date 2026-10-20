@@ -6,7 +6,7 @@ Dump `C:\Users\dleva\AppData\Local/DakotaExport/2972879554_Dakota_Falls-20261019
 
 | layer | edges | nodes | border nodes | length km | ground | elevated | tunnel |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| highways | 1794 | 1773 | 10 | 118.7 | 1014 | 740 | 40 |
+| highways | 1739 | 1720 | 10 | 116.2 | 1014 | 685 | 40 |
 | rail | 430 | 439 | 4 | 33.7 | 297 | 110 | 23 |
 | roads | 1662 | 1548 | 6 | 125.4 | 1589 | 73 | 0 |
 | power | 60 | 62 | 1 | 12.8 | 60 | 0 | 0 |
@@ -25,7 +25,7 @@ Only highways, rail and roads are written as import files. power, skip and unmap
 |---|---|---:|---:|---|
 | highways | Highway Oneway - 1 lane | 283 | 15.9 | 2452038713.USRP 1L Interstate Ramp_Data, 2452038713.USRP 1L Interstate Ramp E |
 | highways | Highway Oneway - 2 lanes | 914 | 59.7 | 2452038713.USRP 2L Interstate E, 2452038713.USRP 2L Interstate_Data, 2452038713.USRP 2L Interstate B, 2452038713.USRP 2L Interstate T, 2452038713.USRP 2L Interstate S |
-| highways | Highway Oneway - 3 lanes | 565 | 41.4 | 2452038713.USRP 3L Interstate_Data, 2452038713.USRP 3L Interstate B, 2452038713.USRP 3L Interstate E, 2452038713.USRP 3L Interstate S |
+| highways | Highway Oneway - 3 lanes | 510 | 38.9 | 2452038713.USRP 3L Interstate_Data, 2452038713.USRP 3L Interstate E, 2452038713.USRP 3L Interstate B, 2452038713.USRP 3L Interstate S |
 | highways | Highway Oneway - 4 lanes | 32 | 1.8 | 2452038713.USRP 4L Interstate_Data, 2452038713.USRP 4L Interstate E |
 | rail | Double Train Track | 430 | 33.7 | 2610252544.R2USA W GrWo 2x2_Data, 2610252544.R2USA W GrWo 2x2 T0, 2932555116.R2EUR W GrCo 2x2 Pedrido E, 2610252544.R2USA W GrWo 2x2 S0, 2836620152.R2EUR W GrCo 2x2 Ourense SA E, 2610252544.R2USA W GrWo 2x2 E0 |
 | roads | Gravel Road | 1264 | 97.3 | Gravel Road, Gravel Road Elevated |
@@ -429,35 +429,35 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 
 ## Bridges (bridges.tsv)
 
-25 bridge overrides; 56 edges in import-bridges.json, 48 in import-bridges-fixed.json (off by default). No prefab name is verified in game yet; --bridges off keeps every CS1 bridge as the plain mapped road.
+25 bridge overrides; 56 edges in import-bridges.json, 9 in import-bridges-fixed.json (on). No prefab name is verified in game yet; --bridges off keeps every CS1 bridge as the plain mapped road. Rule checks: the bridge's 0.9.22 pre-checks computed offline against ../bridges/cs2-bridge-rules.json (bridge.lowElevation and vanilla prefabs are left to the runner's dry run). noPillars: BR006 deck, BR001 connectors and 4 BR001 deck segments outside the merged span.
 
-| bridge | prefab | plan | chains | edges | lengths m | file | notes and rule checks |
-|---|---|---|---:|---:|---|---|---|
-| BR001 | BXP SuspensionBridge03 - Six Lane Highway | fixed:168,320,320,168;merge | 2 | 4 | 2×168, 2×320 | fixed | Detroit: two 3-lane carriageways merged onto the 6-lane two-way suspension, towers 640 m apart (CS1 723 m); tower spacing 640 m vs CS1 724 m; carriageway n27934: 26 courses between e29898_0d0 and e11895_0d0 replaced; connectors 141 / 140 m; carriageway n14554: 29 courses between e33845_0d0 and e36148_0d0 replaced; connectors 140 / 141 m; clearance over e3593_0 Medium Seaway: 124.1 m (deck − course, output metres); deck over the water: min 58.1 m |
-| BR022 | BXP Arc Pedestrian Bridge Revised | span:44.8 | 4 | 40 | 40×45 | fixed | white multi-arch below the dam: decor arches along the CS1 monorail arch line |
-| BR005 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | count:2 | 2 | 4 | 4×164 | bridges | Hernando-Desoto: two ~150 m arches per carriageway ("M") |
-| BR009 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | span:179.2 | 2 | 4 | 4×105 | bridges | green truss arch over the gorge; the owner asked for one edge per carriageway, but the deck chain is 210 m straight (> 1.4 × 128 = 179 m), so two |
-| BR006 | Truss Arch Bridge - Small Road - 2 Lanes | span:179.2 | 1 | 4 | 4×146 | bridges | red deck arch over the dry valley (vanilla truss arch; BXP equivalent if this name fails); segment length 128 m assumed [U] |
-| BR007 | TrussArchBridge01 | span:179.2 | 1 | 2 | 2×95 | bridges | Ourense: truss arch over the main span; approaches stay Double Train Track; segment length 128 m assumed [U] |
-| BR010 | TrussArchBridge01 | span:179.2 | 1 | 2 | 2×132 | bridges | Pedrido: truss arch over the bow-string part; segment length 128 m assumed [U] |
-| BR023 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder (96 m: 2 edges) |
-| BR026 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder (96 m: 2 edges) |
-| BR033 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder |
-| BR035 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×59 | bridges | TRH through girder |
-| BR038 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder |
-| BR042 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×64 | bridges | TRH through girder |
-| BR011 | BXP Truss Viaduct - Train |  | 0 | 0 |  | bridges | R2USA B0 rail viaduct, one edge per span; no converted edges (outside the map or skipped) |
-| BR012 | BXP Truss Viaduct - Train | span:89.6 | 1 | 5 | 5×74 | bridges | R2USA B0 rail viaduct |
-| BR015 | BXP Truss Viaduct - Train | span:89.6 | 1 | 5 | 5×75 | bridges | R2USA B0 rail viaduct |
-| BR017 | BXP Truss Viaduct - Train | span:89.6 | 1 | 4 | 4×68 | bridges | R2USA B0 rail viaduct |
-| BR028 | BXP Truss Viaduct - Train | span:89.6 | 1 | 3 | 3×63 | bridges | R2USA B0 rail viaduct |
-| BR019 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 3 | 3×64 | bridges | gravel trestle; segment length 64 m assumed [U] |
-| BR020 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 2 | 2×84 | bridges | gravel trestle; br020_c1: CS1 chain curves up to 7 m off the straight line (171 m along, 168 m straight); br020_c1: deck 8.1 m over the water at (1258, 6142) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] |
-| BR044 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 78 | bridges | gravel trestle; segment length 64 m assumed [U] |
-| BR045 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 2 | 2×63 | bridges | gravel trestle; segment length 64 m assumed [U] |
-| BR049 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 86 | bridges | gravel trestle; br049_c1: deck 4.3 m over the water at (6847, 3314) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] |
-| BR050 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 81 | bridges | gravel trestle; br050_c1: deck 3.2 m over the water at (6786, 3457) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] |
-| BR053 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 67 | bridges | gravel trestle; br053_c1: deck 3.1 m over the water at (6846, 2594) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] |
+| bridge | prefab | plan | chains | edges | lengths m | file | notes | rule checks (cs2-bridge-rules.json) |
+|---|---|---|---:|---:|---|---|---|---|
+| BR001 | BXP SuspensionBridge03 - Six Lane Highway | fixed:168,320,320,168;merge | 2 | 1 | 976 | fixed | Detroit: two 3-lane carriageways merged onto the 6-lane two-way suspension, towers 640 m apart (CS1 723 m); tower spacing 640 m vs CS1 724 m; carriageway n27934: 26 courses between e29898_0d0 and e11895_0d0 replaced; connectors 141 / 140 m; carriageway n14554: 29 courses between e33845_0d0 and e36148_0d0 replaced; connectors 140 / 141 m; clearance over e3593_0 Medium Seaway: 124.1 m (deck − course, output metres); deck over the water: min 58.1 m | fixed br001_deck: 976 m within 586–1366 m (nominal 976) |
+| BR022 | BXP Arc Pedestrian Bridge Revised | count:1 | 4 | 4 | 4×446 | fixed | white multi-arch below the dam: decor arches along the CS1 monorail arch line, one edge per arc chain (not a fixed-span prefab per cs2-bridge-rules.json; the game cuts it into ≤ 44.8 m pieces); br022_c1: edge 446 m outside 0.6–1.4 × 32 m (19–45); br022_c2: edge 446 m outside 0.6–1.4 × 32 m (19–45); br022_c3: edge 446 m outside 0.6–1.4 × 32 m (19–45); br022_c4: edge 446 m outside 0.6–1.4 × 32 m (19–45) | br022_c1_e0: 446 m > 44.8 m, the game cuts it into 10 pieces; br022_c2_e0: 446 m > 44.8 m, the game cuts it into 10 pieces; br022_c3_e0: 446 m > 44.8 m, the game cuts it into 10 pieces; br022_c4_e0: 446 m > 44.8 m, the game cuts it into 10 pieces |
+| BR005 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | count:2 | 2 | 4 | 4×164 | bridges | Hernando-Desoto: two ~150 m arches per carriageway ("M") | ok |
+| BR009 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | span:179.2 | 2 | 4 | 4×105 | bridges | green truss arch over the gorge; the owner asked for one edge per carriageway, but the deck chain is 210 m straight (> 1.4 × 128 = 179 m), so two | ok |
+| BR006 | Truss Arch Bridge - Small Road - 2 Lanes | span:179.2 | 1 | 4 | 4×146 | bridges | red deck arch over the dry valley (vanilla truss arch; BXP equivalent if this name fails); segment length 128 m assumed [U] | Truss Arch Bridge - Small Road - 2 Lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
+| BR007 | TrussArchBridge01 | span:179.2 | 1 | 2 | 2×95 | bridges | Ourense: truss arch over the main span; approaches stay Double Train Track; segment length 128 m assumed [U] | TrussArchBridge01: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
+| BR010 | TrussArchBridge01 | span:179.2 | 1 | 2 | 2×132 | bridges | Pedrido: truss arch over the bow-string part; segment length 128 m assumed [U] | TrussArchBridge01: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
+| BR023 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder (96 m: 2 edges) | ok |
+| BR026 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder (96 m: 2 edges) | ok |
+| BR033 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder | ok |
+| BR035 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×59 | bridges | TRH through girder | ok |
+| BR038 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×48 | bridges | TRH through girder | ok |
+| BR042 | BXP Truss Viaduct - Train | span:89.6 | 1 | 2 | 2×64 | bridges | TRH through girder | ok |
+| BR011 | BXP Truss Viaduct - Train |  | 0 | 0 |  | bridges | R2USA B0 rail viaduct, one edge per span; no converted edges (outside the map or skipped) | ok |
+| BR012 | BXP Truss Viaduct - Train | span:89.6 | 1 | 5 | 5×74 | bridges | R2USA B0 rail viaduct | ok |
+| BR015 | BXP Truss Viaduct - Train | span:89.6 | 1 | 5 | 5×75 | bridges | R2USA B0 rail viaduct | ok |
+| BR017 | BXP Truss Viaduct - Train | span:89.6 | 1 | 4 | 4×68 | bridges | R2USA B0 rail viaduct | ok |
+| BR028 | BXP Truss Viaduct - Train | span:89.6 | 1 | 3 | 3×63 | bridges | R2USA B0 rail viaduct | ok |
+| BR019 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 3 | 3×64 | bridges | gravel trestle; segment length 64 m assumed [U] | Wooden Covered Bridge - 2 lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
+| BR020 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 2 | 2×84 | bridges | gravel trestle; br020_c1: CS1 chain curves up to 7 m off the straight line (171 m along, 168 m straight); br020_c1: deck 8.1 m over the water at (1258, 6142) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] | Wooden Covered Bridge - 2 lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
+| BR044 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 78 | bridges | gravel trestle; segment length 64 m assumed [U] | Wooden Covered Bridge - 2 lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
+| BR045 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 2 | 2×63 | bridges | gravel trestle; segment length 64 m assumed [U] | Wooden Covered Bridge - 2 lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
+| BR049 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 86 | bridges | gravel trestle; br049_c1: deck 4.3 m over the water at (6847, 3314) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] | Wooden Covered Bridge - 2 lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
+| BR050 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 81 | bridges | gravel trestle; br050_c1: deck 3.2 m over the water at (6786, 3457) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] | Wooden Covered Bridge - 2 lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
+| BR053 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 67 | bridges | gravel trestle; br053_c1: deck 3.1 m over the water at (6846, 2594) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] | Wooden Covered Bridge - 2 lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
 - Water sources: 65 → 41 (12 changes, water-check.md).
 - EXPERIMENT trees: the 641 net-corridor trees are in experiment-trees-net-corridor-01.json (import after the main tree files to try them; undo by its name).
 - Trees masked (same set for both scales): terrain below sea level 10,093; inside the CS1 water surface 1,133; on a ground-level net corridor (half width + 2 m) 641; total 11,867, 496,368 remain.

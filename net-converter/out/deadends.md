@@ -32,21 +32,26 @@ Live graph `out\live-graph.json` (2973 nodes).
 | Gravel Road | 1383 | 6161 | CS1 dead end (genuine) | Gravel Road Bridge [roads, bridge override (import-bridges*.json)] |
 | Gravel Road | 1462 | 6173 | neighbour collapsed (< 4 m) | Gravel Road [roads, collapsed (< 4 m)]; Gravel Road [roads, imported] |
 
-## Predicted for the regenerated import-all.json (fresh map): 51
+## Predicted for the regenerated import-all.json (fresh map): 55
 
 | reason | ends | stub prefabs |
 |---|---:|---|
 | connected in the data, not joined in the game | 38 | Double Train Track 18, Gravel Road 13, Highway Oneway - 2 lanes 5, Small Road 2 |
 | CS1 dead end (genuine) | 12 | Pavement Path 6, Gravel Road 4, Medium Road 2 |
+| no CS1 node here (game split, or merged/moved by the converter) | 4 | Highway Oneway - 3 lanes 4 |
 | neighbour collapsed (< 4 m) | 1 | Gravel Road 1 |
 
 | stub prefab | x | z | reason | CS1 segments here |
 |---|---:|---:|---|---|
 | Highway Oneway - 2 lanes | 595 | 234 | connected in the data, not joined in the game | USRP 2L Interstate_Data [highways, imported]; USRP 2L Interstate B [highways, bridge override (import-bridges*.json)] |
+| Highway Oneway - 3 lanes | 1919 | -3003 | no CS1 node here (game split, or merged/moved by the converter) |  |
 | Highway Oneway - 2 lanes | -4397 | 15 | connected in the data, not joined in the game | USRP 2L Interstate_Data [highways, imported]; USRP 2L Interstate B [highways, bridge override (import-bridges*.json)] |
 | Highway Oneway - 2 lanes | -4563 | 145 | connected in the data, not joined in the game | USRP 2L Interstate_Data [highways, imported]; USRP 2L Interstate B [highways, bridge override (import-bridges*.json)] |
 | Highway Oneway - 2 lanes | 591 | 249 | connected in the data, not joined in the game | USRP 2L Interstate B [highways, bridge override (import-bridges*.json)]; USRP 2L Interstate_Data [highways, imported] |
 | Highway Oneway - 2 lanes | -4571 | 132 | connected in the data, not joined in the game | USRP 2L Interstate_Data [highways, imported]; USRP 2L Interstate B [highways, bridge override (import-bridges*.json)] |
+| Highway Oneway - 3 lanes | 1159 | -4004 | no CS1 node here (game split, or merged/moved by the converter) |  |
+| Highway Oneway - 3 lanes | 1906 | -2993 | no CS1 node here (game split, or merged/moved by the converter) |  |
+| Highway Oneway - 3 lanes | 1146 | -3994 | no CS1 node here (game split, or merged/moved by the converter) |  |
 | Double Train Track | -250 | -6805 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W GrWo 2x2 B0 [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | -398 | -5800 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W GrWo 2x2 B0 [rail, bridge override (import-bridges*.json)] |
 | Double Train Track | -423 | -3356 | connected in the data, not joined in the game | R2USA W GrWo 2x2_Data [rail, imported]; R2USA W GrWo 2x2 B0 [rail, bridge override (import-bridges*.json)] |
@@ -68,8 +73,4 @@ Live graph `out\live-graph.json` (2973 nodes).
 | Small Road | -3696 | -2945 | connected in the data, not joined in the game | USRP 2-Lane National Road_Data [roads, imported]; USRP 2-Lane National Road B [roads, bridge override (import-bridges*.json)] |
 | Small Road | -3353 | -3417 | connected in the data, not joined in the game | USRP 2-Lane National Road B [roads, bridge override (import-bridges*.json)]; USRP 2-Lane National Road_Data [roads, imported] |
 | Gravel Road | -1536 | 4298 | connected in the data, not joined in the game | Gravel Road [roads, imported]; Gravel Road Elevated [roads, bridge override (import-bridges*.json)] |
-| Gravel Road | 6847 | 3346 | connected in the data, not joined in the game | Gravel Road [roads, imported]; Gravel Road Elevated [roads, bridge override (import-bridges*.json)] |
-| Gravel Road | 6846 | 2619 | connected in the data, not joined in the game | Gravel Road [roads, imported]; Gravel Road Elevated [roads, bridge override (import-bridges*.json)] |
-| Gravel Road | 6846 | 2553 | connected in the data, not joined in the game | Gravel Road Elevated [roads, bridge override (import-bridges*.json)]; Gravel Road [roads, imported] |
-| Gravel Road | 3737 | 2925 | connected in the data, not joined in the game | Gravel Road [roads, imported]; Gravel Road Bridge [roads, bridge override (import-bridges*.json)] |
 

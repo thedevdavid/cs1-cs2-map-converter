@@ -10,14 +10,14 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 |---|---|---:|---:|---:|---:|---:|---:|
 | highways | Highway Oneway - 1 lane | 283 | 280 | 0 | 3 | 0 | 3 |
 | highways | Highway Oneway - 2 lanes | 914 | 868 | 0 | 26 | 20 | 41 |
-| highways | Highway Oneway - 3 lanes | 565 | 564 | 0 | 1 | 0 | 1 |
+| highways | Highway Oneway - 3 lanes | 510 | 509 | 0 | 1 | 0 | 1 |
 | highways | Highway Oneway - 4 lanes | 32 | 31 | 1 | 0 | 0 | 0 |
 | rail | Double Train Track | 430 | 429 | 0 | 1 | 0 | 0 |
 | roads | Gravel Road | 1264 | 1041 | 0 | 116 | 107 | 209 |
 | roads | Medium Road | 42 | 35 | 0 | 2 | 5 | 7 |
 | roads | Pavement Path | 48 | 36 | 0 | 7 | 5 | 10 |
 | roads | Small Road | 308 | 297 | 0 | 6 | 5 | 8 |
-| **highways** | **all** | 1794 | 1743 | 1 | 30 | 20 | 45 |
+| **highways** | **all** | 1739 | 1688 | 1 | 30 | 20 | 45 |
 | **rail** | **all** | 430 | 429 | 0 | 1 | 0 | 0 |
 | **roads** | **all** | 1662 | 1409 | 0 | 131 | 122 | 234 |
 

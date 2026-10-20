@@ -55,7 +55,7 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
     ["import-rock-scatter.json", 5, "ROUND 8 vanilla rock scatter"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : `${j.edges.length} edges${j.replaces ? `, replaces ${j.replaces.join(", ")}` : ""}`); }
   // Bridges (bridges.tsv).
-  for (const [f, order, what] of [["import-bridges.json", 1, "bridge overrides (right after import-all.json, which leaves these decks out)"], ["import-bridges-fixed.json", 9, "OPTIONAL fixed-span bridges: BR001 merged suspension + BR022 arches (converter --bridges-fixed on, runner --with bridges-fixed)"]])
+  for (const [f, order, what] of [["import-bridges.json", 1, "bridge overrides (right after import-all.json, which leaves these decks out)"], ["import-bridges-fixed.json", 1, "fixed-span bridges: BR001 merged suspension (one 976 m edge) + BR022 arches, right after import-bridges.json"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, `${j.edges.length} edges, replaces ${j.replaces?.length ?? 0}`); }
   // Round 9.
   for (const [f, order, what] of [["import-gaps.json", 1, "ROUND 9 network gaps (snapToSegment onto the live network)"], ["import-gaps-e15883-taper.json", 1, "ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane"],

@@ -1,8 +1,8 @@
 // Whole fresh-map import against the CS2MCP bridge, in the ROUND order, one command.
 // node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run]
 //   [--no-verify] [--bridge http://127.0.0.1:8642] [--out out]
-// Steps: network bridges gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
-//   resources surfaces power-ends settings. Optional (only with --with or --only): bridges-fixed (needs the converter run with --bridges-fixed on and the bridge fixedIndex support), sand-smooth, decals.
+// Steps: network bridges bridges-fixed gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
+//   resources surfaces power-ends settings. Optional (only with --with or --only): sand-smooth, decals.
 // After the network steps and at the end the bridge's graph export is compared per prefab with the import files (--no-verify skips it).
 // Each step POSTs its file(s) and prints one line (created / merged / failed, seconds). A body error (HTTP 400 with problems)
 // stops the run and prints the problems; per-item failures are counted and the run goes on. The run report with every
@@ -56,7 +56,7 @@ const p = f => join(dir, f);
 const steps = [
   ["network", "/import/network", [p("import-all.json")]],
   ["bridges", "/import/network", [p("import-bridges.json")]],
-  ["bridges-fixed", "/import/network", [p("import-bridges-fixed.json")], true],
+  ["bridges-fixed", "/import/network", [p("import-bridges-fixed.json")]],
   ["gaps", "/import/network", [p("import-gaps.json")]],
   ["power", "/import/network", [p("import-power.json")]],
   ["canals", "/import/network", [p("import-canals.json")]],

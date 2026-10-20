@@ -5,12 +5,14 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 
 | order | file | content | count | size |
 |---:|---|---|---|---:|
-| 1 | `out\import-all.json` | network (2×) | 3886 edges, 3749 nodes | 2.0 MB |
+| 1 | `out\import-all.json` | network (2×) | 3831 edges, 3696 nodes | 2.0 MB |
 | 1 | `out\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (2×) | 56 edges, replaces 152 | 0.0 MB |
+| 1 | `out\import-bridges-fixed.json` | fixed-span bridges: BR001 merged suspension (one 976 m edge) + BR022 arches, right after import-bridges.json (2×) | 9 edges, replaces 151 | 0.0 MB |
 | 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 5 edges | 0.0 MB |
 | 1 | `out\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (2×) | 2 edges | 0.0 MB |
-| 1 | `out\x1\import-all.json` | network (1×) | 3886 edges, 3749 nodes | 2.0 MB |
+| 1 | `out\x1\import-all.json` | network (1×) | 3831 edges, 3696 nodes | 2.0 MB |
 | 1 | `out\x1\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (1×) | 56 edges, replaces 152 | 0.0 MB |
+| 1 | `out\x1\import-bridges-fixed.json` | fixed-span bridges: BR001 merged suspension (one 976 m edge) + BR022 arches, right after import-bridges.json (1×) | 9 edges, replaces 151 | 0.0 MB |
 | 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 5 edges | 0.0 MB |
 | 1 | `out\x1\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (1×) | 2 edges | 0.0 MB |
 | 2 | `out\import-power.json` | power (2×) | 58 edges | 0.0 MB |
@@ -62,8 +64,6 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 8 | `out\x1\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
 | 8 | `out\x1\import-surfaces-po-rock.json` | ROUND 9 rock texture on the PO terrain-like footprints (1×) | 63 polygons | 0.0 MB |
 | 8 | `out\x1\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (1×) | 79 polygons | 0.0 MB |
-| 9 | `out\import-bridges-fixed.json` | OPTIONAL fixed-span bridges: BR001 merged suspension + BR022 arches (converter --bridges-fixed on, runner --with bridges-fixed) (2×) | 48 edges, replaces 151 | 0.0 MB |
-| 9 | `out\x1\import-bridges-fixed.json` | OPTIONAL fixed-span bridges: BR001 merged suspension + BR022 arches (converter --bridges-fixed on, runner --with bridges-fixed) (1×) | 48 edges, replaces 151 | 0.0 MB |
 | 9 | `out\import-surfaces-decals-unmerged.json` | EXPERIMENT: decal squares, not merged | 128 polygons | 0.0 MB |
 | 9 | `out\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
 | 9 | `out\x1\import-surfaces-decals-unmerged.json` | EXPERIMENT: decal squares, not merged | 128 polygons | 0.0 MB |

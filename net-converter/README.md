@@ -344,3 +344,11 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   Bridge Revised along the monorail arch chains. Both in `import-bridges-fixed.json`, off by default (`--bridges-fixed on` removes the replaced courses from
   import-all.json; runner `--with bridges-fixed`).
 - `--bridges off` keeps every CS1 bridge as the plain mapped road. stats.md → "Bridges": prefab, plan, edges and lengths, length / curvature / over-water checks.
+- Round 13b (bridge 0.9.22 fixed-span contract): `import-bridges-fixed.json` holds BR001 as ONE `BXP SuspensionBridge03 - Six Lane Highway` edge abutment to
+  abutment (976 m, no inner nodes, no fixedIndex: CourseSplitSystem cuts the spans and places the towers) with the four 3-lane connectors to the split nodes
+  outside it, and BR022 as one `BXP Arc Pedestrian Bridge Revised` edge per arc chain (not a fixed-span prefab; the game cuts 446 m into 10 pieces). On by
+  default (`--bridges-fixed off` to keep BR001 as plain highway); the runner imports it right after import-bridges.json.
+- Rule checks (stats.md → Bridges, last column): the bridge's pre-checks computed offline against ../bridges/cs2-bridge-rules.json (`Bridges.Validate`):
+  bridge.length.short, bridge.fixed.repeat / .short / .chained, the game's split count, bridge.waterClearance. Vanilla prefabs and bridge.lowElevation are not in
+  the offline rules; the runner's dry run checks them.
+- noPillars (PLAN.md item 4): BR006 deck edges, the four BR001 connectors and BR001's deck courses outside the merged span in import-all.json.

@@ -15,7 +15,7 @@ public static class Bridges
     static readonly CultureInfo Ci = CultureInfo.InvariantCulture;
     static string F(FormattableString f) => f.ToString(Ci);
 
-    public sealed record Spec(string Id, Regex Select, string Prefab, double[]? Fixed, int? Count, double? Span, bool Merge, bool FixedFile, double Seg, bool SegAssumed, string Notes, string Alt);
+    public sealed record Spec(string Id, Regex Select, string Prefab, double[]? Fixed, int? Count, double? Span, bool Merge, bool FixedFile, double Seg, bool SegAssumed, string Notes, string Alt, bool NoPillars = false);
 
     public static List<Spec> Load(string path)
     {
@@ -24,7 +24,7 @@ public static class Bridges
         foreach (var line in File.ReadAllLines(path).Where(l => l.Length > 0 && !l.StartsWith('#')))
         {
             var c = line.Split('\t');
-            double[]? fx = null; int? count = null; double? span = null; bool merge = false, ff = false;
+            double[]? fx = null; int? count = null; double? span = null; bool merge = false, ff = false, np = false;
             foreach (var part in c[3].Split(';'))
             {
                 if (part.StartsWith("fixed:")) fx = part[6..].Split(',').Select(v => double.Parse(v, Ci)).ToArray();
@@ -32,10 +32,11 @@ public static class Bridges
                 else if (part.StartsWith("span:")) span = double.Parse(part[5..], Ci);
                 else if (part == "merge") merge = true;
                 else if (part == "fixedfile") ff = true;
+                else if (part == "nopillars") np = true;
             }
             var segTxt = c[4].Trim();
             res.Add(new Spec(c[0], new Regex(c[1], RegexOptions.CultureInvariant), c[2], fx, count, span, merge, ff,
-                double.Parse(segTxt.Split(' ')[0], Ci), segTxt.Contains("[U]"), c.Length > 5 ? c[5] : "", c.Length > 6 ? c[6] : ""));
+                double.Parse(segTxt.Split(' ')[0], Ci), segTxt.Contains("[U]"), c.Length > 5 ? c[5] : "", c.Length > 6 ? c[6] : "", np));
         }
         return res;
     }
@@ -49,6 +50,76 @@ public static class Bridges
             res[b.GetProperty("id").GetString()!] = b.GetProperty("segIds").EnumerateArray().Select(v => v.GetInt32()).ToArray();
         return res;
     }
+
+    /// <summary>Bridge rules per prefab from ../bridges/cs2-bridge-rules.json (offline parse of the BXP packs; vanilla prefabs are not in it).</summary>
+    public sealed record Rule(string Name, double Seg, bool CanCurve, double ElevationOnWater, double Min, double Max, double[]? FixedLengths, double FixedMin, double FixedMax);
+
+    public static Dictionary<string, Rule> LoadRules(string path)
+    {
+        var res = new Dictionary<string, Rule>(StringComparer.OrdinalIgnoreCase);
+        if (!File.Exists(path)) return res;
+        using var doc = JsonDocument.Parse(File.ReadAllBytes(path));
+        foreach (var p in doc.RootElement.GetProperty("prefabs").EnumerateArray())
+        {
+            static double N(JsonElement e, string k, double d = 0) => e.TryGetProperty(k, out var v) && v.ValueKind == JsonValueKind.Number ? v.GetDouble() : d;
+            string name = p.GetProperty("name").GetString()!;
+            double seg = N(p, "segmentLength");
+            double[]? fixedL = p.TryGetProperty("fixedSegments", out var fsg) && fsg.ValueKind == JsonValueKind.Array && fsg.GetArrayLength() > 0 ? fsg.EnumerateArray().Select(x => N(x, "length")).ToArray() : null;
+            double min = 0, max = double.MaxValue, fmin = 0, fmax = 0;
+            if (p.TryGetProperty("edgeLengthRange", out var r) && r.ValueKind == JsonValueKind.Object) { min = N(r, "min"); max = N(r, "max", double.MaxValue); }
+            if (p.TryGetProperty("importEdge", out var ie) && ie.ValueKind == JsonValueKind.Object) { fmin = N(ie, "lengthMin"); fmax = N(ie, "lengthMax"); }
+            res[name] = new Rule(name, seg, p.TryGetProperty("canCurve", out var cc) && cc.ValueKind == JsonValueKind.True, N(p, "elevationOnWater", 10), min, max, fixedL, fmin, fmax);
+        }
+        return res;
+    }
+
+    /// <summary>
+    /// The bridge's 0.9.22 pre-checks, computed offline for one import file (IMPORT_SCHEMA.md "Bridge prefabs"): bridge.length.short,
+    /// bridge.fixed.repeat / .short / .chained, bridge.straight (all edges here are straight), bridge.waterClearance (9 points). lowElevation needs the
+    /// net's elevation limit, which is not in the offline rules, so the runner's dry run checks it. Returns bridge id → findings.
+    /// </summary>
+    public static Dictionary<string, List<string>> Validate(Output o, Dictionary<string, Rule> rules, Func<double, double, double?>? waterOut)
+    {
+        var res = new Dictionary<string, List<string>>();
+        var nodes = o.Nodes.GroupBy(n => n.Id).ToDictionary(g => g.Key, g => g.First());
+        var fixedEdges = o.Edges.Where(e => rules.TryGetValue(e.Prefab, out var r) && r.FixedLengths != null).ToList();
+        foreach (var e in o.Edges)
+        {
+            string id = e.Id.Split('_')[0].ToUpperInvariant();
+            if (!res.TryGetValue(id, out var list)) res[id] = list = new();
+            if (!rules.TryGetValue(e.Prefab, out var r))
+            {
+                if (e.Note.Contains("approach")) continue;   // base road connector
+                string msg = $"{e.Prefab}: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run)";
+                if (!list.Contains(msg)) list.Add(msg);
+                continue;
+            }
+            var a = nodes[e.A]; var b = nodes[e.B];
+            double L = Math.Sqrt((a.X - b.X) * (a.X - b.X) + (a.Z - b.Z) * (a.Z - b.Z));
+            if (r.FixedLengths != null)
+            {
+                if (L > r.FixedMax) list.Add(F($"bridge.fixed.repeat {e.Id}: {L:F0} m > {r.FixedMax:F0} m"));
+                else if (L < r.FixedMin) list.Add(F($"bridge.fixed.short (warning) {e.Id}: {L:F0} m < {r.FixedMin:F0} m"));
+                else list.Add(F($"fixed {e.Id}: {L:F0} m within {r.FixedMin:F0}–{r.FixedMax:F0} m (nominal {r.FixedLengths.Sum():F0})"));
+                if (fixedEdges.Any(x => x != e && (x.A == e.A || x.A == e.B || x.B == e.A || x.B == e.B))) list.Add($"bridge.fixed.chained {e.Id}");
+            }
+            else
+            {
+                if (L < r.Min) list.Add(F($"bridge.length.short {e.Id}: {L:F0} m < {r.Min:F1} m"));
+                if (L > r.Max) list.Add(F($"{e.Id}: {L:F0} m > {r.Max:F1} m, the game cuts it into {Math.Ceiling((L - 0.16) / r.Max):F0} pieces"));
+            }
+            if (waterOut != null)
+                for (int k = 1; k <= 9; k++)
+                {
+                    double t = k / 10.0, x = a.X + t * (b.X - a.X), z = a.Z + t * (b.Z - a.Z);
+                    if (waterOut(x, z) is { } w && a.Y + t * (b.Y - a.Y) - w < r.ElevationOnWater) { list.Add(F($"bridge.waterClearance (warning) {e.Id}: {a.Y + t * (b.Y - a.Y) - w:F1} m < {r.ElevationOnWater:F0} m over the water")); break; }
+                }
+        }
+        return res;
+    }
+
+    /// <summary>CS1 segments whose remaining courses in the network import get noPillars (BR001 deck outside the merged span).</summary>
+    public static HashSet<int> NoPillarSegments { get; } = new();
 
     public sealed record Report(string Id, string Prefab, string Plan, int Chains, List<double> Lengths, List<string> Problems, bool InFixedFile, string Notes);
 
@@ -131,7 +202,7 @@ public static class Bridges
         var lengths = new List<double>();
         for (int k = 0; k < n; k++)
         {
-            o.Edges.Add(new Round9.NetEdge($"{tag}_e{k}", ids[k], ids[k + 1], s.Prefab, Note: F($"{s.Id} bridge edge {k + 1}/{n}; CS1 segments {string.Join(",", chain.Select(e => e.Cs1Segment).Distinct())}")));
+            o.Edges.Add(new Round9.NetEdge($"{tag}_e{k}", ids[k], ids[k + 1], s.Prefab, Note: F($"{s.Id} bridge edge {k + 1}/{n}; CS1 segments {string.Join(",", chain.Select(e => e.Cs1Segment).Distinct())}"), NoPillars: s.NoPillars));
             lengths.Add(chord / n);
         }
         foreach (var l in lengths)
@@ -168,7 +239,12 @@ public static class Bridges
             var target = s.FixedFile ? fix : main;
             if (sel.Count == 0) { reports.Add(new Report(s.Id, s.Prefab, "", 0, lengths, new() { "no converted edges (outside the map or skipped)" }, s.FixedFile, s.Notes)); continue; }
             int chains = 0;
-            if (s.Merge && s.Fixed != null) chains = Merge(s, sel, root, deg, target, problems, lengths, res, waterOut, topologyFactor);
+            if (s.Merge && s.Fixed != null)
+            {
+                var all = sel.ToList();
+                chains = Merge(s, sel, root, deg, target, problems, lengths, res, waterOut, topologyFactor);
+                if (s.NoPillars) foreach (var e in all.Where(e => !sel.Contains(e))) NoPillarSegments.Add(e.Cs1Segment);
+            }
             else
             {
                 var decorDeg = deg;
@@ -221,18 +297,15 @@ public static class Bridges
             return sum / carriage.Count;
         }
         var cuts = new double[s.Fixed.Length + 1]; cuts[0] = -half; for (int k = 0; k < s.Fixed.Length; k++) cuts[k + 1] = cuts[k] + s.Fixed[k];
-        var ids = new List<string>();
-        for (int k = 0; k < cuts.Length; k++)
-        {
-            string id = $"br001_m{k}";
-            o.Nodes.Add(new Round9.NetNode(id, cx + ux * cuts[k], DeckY(cuts[k]), cz + uz * cuts[k]));
-            ids.Add(id);
-        }
-        for (int k = 0; k < s.Fixed.Length; k++)
-        {
-            o.Edges.Add(new Round9.NetEdge($"br001_span{k}", ids[k], ids[k + 1], s.Prefab, Note: F($"BR001 fixed span {k}: {s.Fixed[k]:F0} m"), FixedIndex: k));
-            lengths.Add(s.Fixed[k]);
-        }
+        // Bridge 0.9.22 contract: ONE straight edge abutment to abutment; CourseSplitSystem cuts the span sequence and places the towers at
+        // L × 168/976 and L × 808/976 from a. No inner node, no fixedIndex, no control (all spans are straight).
+        var ids = new List<string> { "br001_a", "br001_b" };
+        double yA = DeckY(-half), yB = DeckY(half);
+        o.Nodes.Add(new Round9.NetNode("br001_a", cx - ux * half, yA, cz - uz * half));
+        o.Nodes.Add(new Round9.NetNode("br001_b", cx + ux * half, yB, cz + uz * half));
+        o.Edges.Add(new Round9.NetEdge("br001_deck", "br001_a", "br001_b", s.Prefab, Note: F($"BR001 abutment to abutment, {total:F0} m = {string.Join(" + ", s.Fixed.Select(v => v.ToString("F0", Ci)))}; towers at {cuts[1] + half:F0} and {cuts[3] + half:F0} m from a")));
+        lengths.Add(total);
+        if (Math.Abs(yA - yB) > 0.5) problems.Add(F($"deck ends differ by {Math.Abs(yA - yB):F1} m (constant grade over the bridge)"));
         // Splits: per carriageway and end, the first chain node at least 100 m beyond the deck end; connectors keep the one-way flow.
         foreach (var (edges, start, end) in carriage)
         {
@@ -255,15 +328,14 @@ public static class Bridges
             foreach (var sn in new[] { sLo, sHi }) o.Nodes.Add(new Round9.NetNode(sn.Id, sn.Position.X, Y(sn), sn.Position.Z, 2, null));
             // Flow along the chain from start to end if forward, so lo → deck → hi (or reversed).
             var prefab = edges[0].Map.Cs2Prefab!;
-            if (forward) { o.Edges.Add(new Round9.NetEdge($"br001_in_{sLo.Id}", sLo.Id, endLo, prefab, Note: "BR001 approach onto the merged deck")); o.Edges.Add(new Round9.NetEdge($"br001_out_{sHi.Id}", endHi, sHi.Id, prefab, Note: "BR001 approach off the merged deck")); }
-            else { o.Edges.Add(new Round9.NetEdge($"br001_in_{sHi.Id}", sHi.Id, endHi, prefab, Note: "BR001 approach onto the merged deck")); o.Edges.Add(new Round9.NetEdge($"br001_out_{sLo.Id}", endLo, sLo.Id, prefab, Note: "BR001 approach off the merged deck")); }
+            if (forward) { o.Edges.Add(new Round9.NetEdge($"br001_in_{sLo.Id}", sLo.Id, endLo, prefab, Note: "BR001 approach onto the merged deck", NoPillars: s.NoPillars)); o.Edges.Add(new Round9.NetEdge($"br001_out_{sHi.Id}", endHi, sHi.Id, prefab, Note: "BR001 approach off the merged deck", NoPillars: s.NoPillars)); }
+            else { o.Edges.Add(new Round9.NetEdge($"br001_in_{sHi.Id}", sHi.Id, endHi, prefab, Note: "BR001 approach onto the merged deck", NoPillars: s.NoPillars)); o.Edges.Add(new Round9.NetEdge($"br001_out_{sLo.Id}", endLo, sLo.Id, prefab, Note: "BR001 approach off the merged deck", NoPillars: s.NoPillars)); }
             var replaced = edges.Skip(lo).Take(hi - lo).ToList();
             o.Replaces.AddRange(replaced.Select(e => e.Id));
             problems.Add(F($"carriageway {start.Id}: {replaced.Count} courses between {sLo.Id} and {sHi.Id} replaced; connectors {Len(sLo.Position, new Vec3(o.Nodes.First(x => x.Id == endLo).X, 0, o.Nodes.First(x => x.Id == endLo).Z)):F0} / {Len(sHi.Position, new Vec3(o.Nodes.First(x => x.Id == endHi).X, 0, o.Nodes.First(x => x.Id == endHi).Z)):F0} m"));
             sel.RemoveAll(e => !replaced.Contains(e) && edges.Contains(e));   // only the replaced part leaves the network
         }
         // Clearance over the courses that pass beneath the deck (any layer, not BR001's own).
-        var deck = ids.Select(id => o.Nodes.First(n => n.Id == id)).ToList();
         double minClear = double.MaxValue; string under = "";
         foreach (var e in res.Edges.Where(e => !sel.Contains(e)))
             for (int k = 0; k <= 8; k++)

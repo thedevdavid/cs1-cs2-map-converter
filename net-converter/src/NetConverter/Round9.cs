@@ -15,7 +15,7 @@ public static class Round9
     // ---------- shared network writer (absolute heights) ----------
 
     public sealed record NetNode(string Id, double X, double Y, double Z, double? SnapRadius = null, string? SnapPrefab = null);
-    public sealed record NetEdge(string Id, string A, string B, string Prefab, Vec3? C1 = null, Vec3? C2 = null, string? Wall = null, string Note = "", int? FixedIndex = null);
+    public sealed record NetEdge(string Id, string A, string B, string Prefab, Vec3? C1 = null, Vec3? C2 = null, string? Wall = null, string Note = "", int? FixedIndex = null, bool NoPillars = false);
 
     public static void WriteNet(string path, string name, string comment, IReadOnlyList<NetNode> nodes, IReadOnlyList<NetEdge> edges, IReadOnlyList<string>? replaces = null)
     {
@@ -49,6 +49,7 @@ public static class Round9
             w.WriteEndArray();
             if (e.Wall != null) w.WriteString("wall", e.Wall);
             if (e.FixedIndex is { } fi) w.WriteNumber("fixedIndex", fi);
+            if (e.NoPillars) w.WriteBoolean("noPillars", true);
             if (e.Note.Length > 0) w.WriteString("note", e.Note);
             w.WriteEndObject();
         }

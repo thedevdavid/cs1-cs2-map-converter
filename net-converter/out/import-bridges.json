@@ -921,6 +921,7 @@
           -3338.42
         ]
       ],
+      "noPillars": true,
       "note": "BR006 bridge edge 1/4; CS1 segments 12729,22934,10906,15108,26635,26134"
     },
     {
@@ -940,6 +941,7 @@
           -3220.28
         ]
       ],
+      "noPillars": true,
       "note": "BR006 bridge edge 2/4; CS1 segments 12729,22934,10906,15108,26635,26134"
     },
     {
@@ -959,6 +961,7 @@
           -3102.14
         ]
       ],
+      "noPillars": true,
       "note": "BR006 bridge edge 3/4; CS1 segments 12729,22934,10906,15108,26635,26134"
     },
     {
@@ -978,6 +981,7 @@
           -2984
         ]
       ],
+      "noPillars": true,
       "note": "BR006 bridge edge 4/4; CS1 segments 12729,22934,10906,15108,26635,26134"
     },
     {
