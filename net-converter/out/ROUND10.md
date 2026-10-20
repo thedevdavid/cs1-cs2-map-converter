@@ -1,19 +1,19 @@
 # Conversion outputs (2026-10-20)
 
-Dump: `C:\Users\dleva\AppData\Local/DakotaExport/2972879554_Dakota_Falls-20261019-063123.json`. Run it all with `node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5]`. Import order (bridges: import-bridges.json right after the network; round 10, owner review of A-v4: no quays, retaining walls, PO walls, monorail decor or dam files; dam by hand, see manual-objects.md): network → gaps → power, canals, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → surfaces (fields, rock, PO rock, PO structures; sand-smooth, decals and grass optional) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
+Dump: `C:\Users\dleva\AppData\Local/DakotaExport/2972879554_Dakota_Falls-20261019-063123.json`. Run it all with `node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5]`. Import order (bridges: import-bridges.json right after the network; round 10, owner review of A-v4: no quays, retaining walls, PO walls, monorail decor or dam files; dam by hand, see manual-objects.md): network → gaps → power, canals, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → surfaces (vanilla only: fields, sand, PO pavement; grass optional; the pack surfaces rock, PO rock, decals and pack sand are in optional/, runner --with) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
 out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 2048); same nodes and courses in both.
 
 | order | file | content | count | size |
 |---:|---|---|---|---:|
-| 1 | `out\import-all.json` | network (2×) | 3831 edges, 3696 nodes | 2.0 MB |
+| 1 | `out\import-all.json` | network (2×) | 3827 edges, 3696 nodes | 2.0 MB |
 | 1 | `out\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (2×) | 56 edges, replaces 152 | 0.0 MB |
 | 1 | `out\import-bridges-fixed.json` | fixed-span bridges: BR001 merged suspension (one 976 m edge) + BR022 arches, right after import-bridges.json (2×) | 9 edges, replaces 151 | 0.0 MB |
-| 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 5 edges | 0.0 MB |
+| 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 6 edges | 0.0 MB |
 | 1 | `out\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (2×) | 2 edges | 0.0 MB |
-| 1 | `out\x1\import-all.json` | network (1×) | 3831 edges, 3696 nodes | 2.0 MB |
+| 1 | `out\x1\import-all.json` | network (1×) | 3827 edges, 3696 nodes | 2.0 MB |
 | 1 | `out\x1\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (1×) | 56 edges, replaces 152 | 0.0 MB |
 | 1 | `out\x1\import-bridges-fixed.json` | fixed-span bridges: BR001 merged suspension (one 976 m edge) + BR022 arches, right after import-bridges.json (1×) | 9 edges, replaces 151 | 0.0 MB |
-| 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 5 edges | 0.0 MB |
+| 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 6 edges | 0.0 MB |
 | 1 | `out\x1\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (1×) | 2 edges | 0.0 MB |
 | 2 | `out\import-power.json` | power (2×) | 58 edges | 0.0 MB |
 | 2 | `out\import-canals.json` | canals and flood walls (2×) | 16 edges: Narrow Boatway 14, Sound Barrier 2 | 0.0 MB |
@@ -51,22 +51,14 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 7 | `out\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 7 | `out\x1\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 8 | `out\import-surfaces-fields.json` | field surfaces | 56 polygons | 0.1 MB |
-| 8 | `out\import-surfaces-rock.json` | rock surfaces (slope >= 40°) | 151 polygons | 0.0 MB |
-| 8 | `out\import-surfaces-decals.json` | OPTIONAL (runner --with decals): decal surfaces, 16 m squares | 41 polygons | 0.0 MB |
-| 8 | `out\import-surfaces-sand-smooth.json` | OPTIONAL (runner --with sand-smooth): smoothed sand blobs | 387 polygons | 0.2 MB |
+| 8 | `out\import-surfaces-sand-smooth.json` | sand (vanilla Sand Surface 01, smoothed blobs) | 387 polygons | 0.2 MB |
 | 8 | `out\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
-| 8 | `out\import-surfaces-po-rock.json` | ROUND 9 rock texture on the PO terrain-like footprints (2×) | 63 polygons | 0.0 MB |
 | 8 | `out\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (2×) | 79 polygons | 0.0 MB |
 | 8 | `out\x1\import-surfaces-fields.json` | field surfaces | 56 polygons | 0.1 MB |
-| 8 | `out\x1\import-surfaces-rock.json` | rock surfaces (slope >= 40°) | 151 polygons | 0.0 MB |
-| 8 | `out\x1\import-surfaces-decals.json` | OPTIONAL (runner --with decals): decal surfaces, 16 m squares | 41 polygons | 0.0 MB |
-| 8 | `out\x1\import-surfaces-sand-smooth.json` | OPTIONAL (runner --with sand-smooth): smoothed sand blobs | 387 polygons | 0.2 MB |
+| 8 | `out\x1\import-surfaces-sand-smooth.json` | sand (vanilla Sand Surface 01, smoothed blobs) | 387 polygons | 0.2 MB |
 | 8 | `out\x1\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
-| 8 | `out\x1\import-surfaces-po-rock.json` | ROUND 9 rock texture on the PO terrain-like footprints (1×) | 63 polygons | 0.0 MB |
 | 8 | `out\x1\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (1×) | 79 polygons | 0.0 MB |
-| 9 | `out\import-surfaces-decals-unmerged.json` | EXPERIMENT: decal squares, not merged | 128 polygons | 0.0 MB |
 | 9 | `out\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
-| 9 | `out\x1\import-surfaces-decals-unmerged.json` | EXPERIMENT: decal squares, not merged | 128 polygons | 0.0 MB |
 | 9 | `out\x1\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
 | 9 | `out\trees/experiment-trees-net-corridor-01.json` | EXPERIMENT: trees on ground-net corridors (both scales) | 641 | |
 

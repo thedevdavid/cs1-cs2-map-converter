@@ -1,6 +1,12 @@
 {
-  "name": "Dakota Falls network gaps (round 9)",
-  "_comment": "Last Run A gaps; each end joins the live network through snapToSegment (an end within 2 % of a segment end joins that node).",
+  "name": "Dakota Falls network gaps",
+  "_comment": "Rebuilt Run A gaps; the courses in \u0027replaces\u0027 are left out of import-all.json. Ends join the network import through snapToSegment.",
+  "replaces": [
+    "e15883_0",
+    "e20430_0b",
+    "e25579_0",
+    "e36563_0"
+  ],
   "nodes": [
     {
       "id": "n21662",
@@ -40,6 +46,25 @@
       "snapToSegment": {
         "radius": 3,
         "prefabContains": "Highway Oneway"
+      }
+    },
+    {
+      "id": "n895",
+      "x": 1462.06,
+      "y": 161.16,
+      "z": 6173.44,
+      "snapToSegment": {
+        "radius": 3,
+        "prefabContains": "Gravel"
+      }
+    },
+    {
+      "id": "n26596",
+      "x": 1382.96,
+      "y": 161.35,
+      "z": 6161.47,
+      "snapToSegment": {
+        "radius": 3
       }
     },
     {
@@ -141,6 +166,25 @@
         ]
       ],
       "note": "e20430_0b with its course bowed 1 m away from e16466_0a (15.6 m off)"
+    },
+    {
+      "id": "gap_n895_n26596",
+      "a": "n895",
+      "b": "n26596",
+      "prefab": "Gravel Road",
+      "control": [
+        [
+          1435.69,
+          161.23,
+          6169.45
+        ],
+        [
+          1409.33,
+          161.29,
+          6165.46
+        ]
+      ],
+      "note": "CS1 gap closed"
     },
     {
       "id": "gap_e25579_0",

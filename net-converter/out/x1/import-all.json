@@ -40404,27 +40404,6 @@
       "cs1_segment": 15855
     },
     {
-      "id": "e15883_0",
-      "a": "n21662",
-      "b": "n14559",
-      "prefab": "Highway Oneway - 4 lanes",
-      "control": [
-        [
-          447.45,
-          227.97,
-          -4506.55
-        ],
-        [
-          427.09,
-          227.25,
-          -4488.26
-        ]
-      ],
-      "structure": "ground",
-      "cs1_prefab": "2452038713.USRP 4L Interstate_Data",
-      "cs1_segment": 15883
-    },
-    {
       "id": "e15887_0",
       "a": "n27764",
       "b": "n9706",
@@ -44881,27 +44860,6 @@
           850.37,
           334.78,
           4030.07
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 3L Interstate E",
-      "cs1_segment": 20430
-    },
-    {
-      "id": "e20430_0b",
-      "a": "e20430_0d0",
-      "b": "n7849",
-      "prefab": "Highway Oneway - 3 lanes",
-      "control": [
-        [
-          823.73,
-          334.78,
-          4014.79
-        ],
-        [
-          809.15,
-          334.78,
-          4006.37
         ]
       ],
       "structure": "elevated",
@@ -95672,27 +95630,6 @@
       "cs1_segment": 25563
     },
     {
-      "id": "e25579_0",
-      "a": "n2210",
-      "b": "n26745",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          6761.19,
-          284.32,
-          1410.79
-        ],
-        [
-          6725.99,
-          284.36,
-          1410.83
-        ]
-      ],
-      "structure": "ground",
-      "cs1_prefab": "Gravel Road",
-      "cs1_segment": 25579
-    },
-    {
       "id": "e25631_0",
       "a": "n9330",
       "b": "n689",
@@ -105542,27 +105479,6 @@
       "structure": "ground",
       "cs1_prefab": "Gravel Road",
       "cs1_segment": 36560
-    },
-    {
-      "id": "e36563_0",
-      "a": "n25933",
-      "b": "n12042",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          5554.02,
-          278.77,
-          820.35
-        ],
-        [
-          5518.82,
-          278.98,
-          820.4
-        ]
-      ],
-      "structure": "ground",
-      "cs1_prefab": "Gravel Road",
-      "cs1_segment": 36563
     },
     {
       "id": "e36568_0",

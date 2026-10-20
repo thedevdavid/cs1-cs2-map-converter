@@ -10,23 +10,22 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 |---|---|---:|---:|---:|---:|---:|---:|
 | highways | Highway Oneway - 1 lane | 283 | 282 | 1 | 0 | 0 | 0 |
 | highways | Highway Oneway - 2 lanes | 914 | 911 | 3 | 0 | 0 | 0 |
-| highways | Highway Oneway - 3 lanes | 510 | 510 | 0 | 0 | 0 | 0 |
-| highways | Highway Oneway - 4 lanes | 32 | 31 | 0 | 0 | 1 | 1 |
+| highways | Highway Oneway - 3 lanes | 509 | 509 | 0 | 0 | 0 | 0 |
+| highways | Highway Oneway - 4 lanes | 31 | 31 | 0 | 0 | 0 | 0 |
 | rail | Double Train Track | 430 | 429 | 0 | 1 | 0 | 0 |
-| roads | Gravel Road | 1264 | 1262 | 0 | 2 | 0 | 0 |
+| roads | Gravel Road | 1262 | 1262 | 0 | 0 | 0 | 0 |
 | roads | Medium Road | 42 | 42 | 0 | 0 | 0 | 0 |
 | roads | Pavement Path | 48 | 0 | 0 | 1 | 47 | 48 |
 | roads | Small Road | 308 | 308 | 0 | 0 | 0 | 0 |
-| **highways** | **all** | 1739 | 1734 | 4 | 0 | 1 | 1 |
+| **highways** | **all** | 1737 | 1733 | 4 | 0 | 0 | 0 |
 | **rail** | **all** | 430 | 429 | 0 | 1 | 0 | 0 |
-| **roads** | **all** | 1662 | 1612 | 0 | 3 | 47 | 48 |
+| **roads** | **all** | 1660 | 1612 | 0 | 1 | 47 | 48 |
 
 ### Edges not fully covered
 
 | layer | edge | prefab | status | points mapped/any | x | z |
 |---|---|---|---|---|---:|---:|
 | highways | e3183_0 | Highway Oneway - 2 lanes | WrongPrefab | 3/5 | 2969 | 1097 |
-| highways | e15883_0 | Highway Oneway - 4 lanes | Missing | 0/0 | 437 | -4497 |
 | highways | e19786_0a | Highway Oneway - 2 lanes | WrongPrefab | 2/5 | 3388 | 1972 |
 | highways | e32650_0 | Highway Oneway - 1 lane | WrongPrefab | 3/5 | 3671 | 2153 |
 | highways | e34504_0 | Highway Oneway - 2 lanes | WrongPrefab | 3/5 | 3785 | 2295 |
@@ -56,7 +55,6 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | roads | e23951_0 | Pavement Path | Missing | 0/0 | 1559 | 4692 |
 | roads | e24853_0 | Pavement Path | Missing | 0/0 | -9 | -2665 |
 | roads | e25471_0 | Pavement Path | Missing | 0/0 | 19 | -2600 |
-| roads | e25579_0 | Gravel Road | Partial | 4/4 | 6745 | 1411 |
 | roads | e25631_0 | Pavement Path | Missing | 0/0 | 40 | -2472 |
 | roads | e28443_0 | Pavement Path | Missing | 0/0 | -21 | -2605 |
 | roads | e28940_0 | Pavement Path | Missing | 0/0 | 335 | -3032 |
@@ -80,7 +78,6 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | roads | e34528_0aa | Pavement Path | Missing | 0/0 | 1451 | 4675 |
 | roads | e34528_0ab | Pavement Path | Missing | 0/0 | 1476 | 4679 |
 | roads | e34528_0b | Pavement Path | Missing | 0/0 | 1521 | 4686 |
-| roads | e36563_0 | Gravel Road | Partial | 4/4 | 5535 | 820 |
 
 ### Retry files
 

@@ -2,7 +2,7 @@
 // node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run]
 //   [--no-verify] [--bridge http://127.0.0.1:8642] [--out out]
 // Steps: network bridges bridges-fixed gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
-//   resources surfaces power-ends settings. Optional (only with --with or --only): sand-smooth, decals.
+//   resources surfaces power-ends settings. Optional (only with --with or --only): grass, and the pack surfaces in optional/: rock, po-rock, decals, sand-pack (sand-pack paints the same sand as the default sand file with the Dirty Surfaces prefab: use one of the two).
 // After the network steps and at the end the bridge's graph export is compared per prefab with the import files (--no-verify skips it).
 // Each step POSTs its file(s) and prints one line (created / merged / failed, seconds). A body error (HTTP 400 with problems)
 // stops the run and prints the problems; per-item failures are counted and the run goes on. The run report with every
@@ -73,9 +73,14 @@ const steps = [
   ["fort", "/import/objects", [p("import-fort.json")]],
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
   ["resources", "/import/resources", [p("import-resources.json")]],
-  ["surfaces", "/import/surfaces", ["import-surfaces-fields.json", "import-surfaces-rock.json", "import-surfaces-po-rock.json", "import-po-structures.json"].map(p)],
-  ["sand-smooth", "/import/surfaces", [p("import-surfaces-sand-smooth.json")], true],
-  ["decals", "/import/surfaces", [p("import-surfaces-decals.json")], true],
+  // Vanilla surfaces only (owner, 2026-10-20): fields (Agriculture Surface 01), sand (Sand Surface 01), PO pavement (Pavement Surface 01).
+  ["surfaces", "/import/surfaces", ["import-surfaces-fields.json", "import-surfaces-sand-smooth.json", "import-po-structures.json"].map(p)],
+  ["grass", "/import/surfaces", [p("import-surfaces-grass.json")], true],
+  // Pack surfaces kept in optional/ (Terrain Textures, Dirty Surfaces): only with --with.
+  ["rock", "/import/surfaces", [p(join("optional", "import-surfaces-rock.json"))], true],
+  ["po-rock", "/import/surfaces", [p(join("optional", "import-surfaces-po-rock.json"))], true],
+  ["decals", "/import/surfaces", [p(join("optional", "import-surfaces-decals.json"))], true],
+  ["sand-pack", "/import/surfaces", [p(join("optional", "import-surfaces-sand-smooth-pack.json"))], true],
   ["power-ends", "/import/network", [p("import-power-ends.json")]],
   ["verify-end", "verify", []],
 ];

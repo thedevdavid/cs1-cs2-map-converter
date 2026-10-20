@@ -1,13 +1,14 @@
 {
- "label": "now",
- "dir": "out/x1",
+ "label": "before",
+ "dir": "C:\\Users\\dleva\\AppData\\Local\\Temp/claude/D--work-mods-csl2-editor/0b8b3707-be88-4317-983f-7d41927220eb/scratchpad/head",
  "counts": {
-  "deadEnds": 22,
-  "genuine": 20,
-  "pipeline": 2,
+  "deadEnds": 11,
+  "genuine": 10,
+  "pipeline": 1,
   "midAirPairs": 0,
   "tornSplits": 0,
-  "isolatedShort": 2,
+  "duplicates": 4,
+  "isolatedShort": 1,
   "rampEndsNearMainline": 0,
   "liveDeadEnds": 288
  },
@@ -18,13 +19,6 @@
    "edge": "e20630_0",
    "elevated": false,
    "cs1deg": 2
-  },
-  {
-   "at": "(724, 4850)",
-   "prefab": "Pavement Path",
-   "edge": "gap_n21342_path",
-   "elevated": false,
-   "cs1deg": null
   }
  ],
  "genuine": [
@@ -50,13 +44,6 @@
    "cs1deg": 1
   },
   {
-   "at": "(4783, -683)",
-   "prefab": "Pavement Path",
-   "edge": "e18414_0",
-   "elevated": false,
-   "cs1deg": 1
-  },
-  {
    "at": "(4787, -709)",
    "prefab": "Pavement Path",
    "edge": "e18414_0",
@@ -67,13 +54,6 @@
    "at": "(295, -3026)",
    "prefab": "Pavement Path",
    "edge": "e18960_0",
-   "elevated": false,
-   "cs1deg": 1
-  },
-  {
-   "at": "(1577, 4694)",
-   "prefab": "Pavement Path",
-   "edge": "e23951_0",
    "elevated": false,
    "cs1deg": 1
   },
@@ -111,65 +91,27 @@
    "edge": "br020_c1_e1",
    "elevated": true,
    "cs1deg": 1
-  },
-  {
-   "at": "(1345, 4264)",
-   "prefab": "BXP Arc Pedestrian Bridge Revised",
-   "edge": "br022_c1_e0",
-   "elevated": true,
-   "cs1deg": 1
-  },
-  {
-   "at": "(948, 4061)",
-   "prefab": "BXP Arc Pedestrian Bridge Revised",
-   "edge": "br022_c1_e0",
-   "elevated": true,
-   "cs1deg": 1
-  },
-  {
-   "at": "(1341, 4273)",
-   "prefab": "BXP Arc Pedestrian Bridge Revised",
-   "edge": "br022_c2_e0",
-   "elevated": true,
-   "cs1deg": 1
-  },
-  {
-   "at": "(944, 4069)",
-   "prefab": "BXP Arc Pedestrian Bridge Revised",
-   "edge": "br022_c2_e0",
-   "elevated": true,
-   "cs1deg": 1
-  },
-  {
-   "at": "(1341, 4290)",
-   "prefab": "BXP Arc Pedestrian Bridge Revised",
-   "edge": "br022_c3_e0",
-   "elevated": true,
-   "cs1deg": 1
-  },
-  {
-   "at": "(944, 4086)",
-   "prefab": "BXP Arc Pedestrian Bridge Revised",
-   "edge": "br022_c3_e0",
-   "elevated": true,
-   "cs1deg": 1
-  },
-  {
-   "at": "(1345, 4282)",
-   "prefab": "BXP Arc Pedestrian Bridge Revised",
-   "edge": "br022_c4_e0",
-   "elevated": true,
-   "cs1deg": 1
-  },
-  {
-   "at": "(948, 4078)",
-   "prefab": "BXP Arc Pedestrian Bridge Revised",
-   "edge": "br022_c4_e0",
-   "elevated": true,
-   "cs1deg": 1
   }
  ],
  "midAir": [],
+ "duplicates": [
+  {
+   "at": "(437, -4497)",
+   "edges": "e15883_0 Highway Oneway - 4 lanes (import-all.json) / gap_e15883_3lane Highway Oneway - 3 lanes (import-gaps.json)"
+  },
+  {
+   "at": "(817, 4011)",
+   "edges": "e20430_0b Highway Oneway - 3 lanes (import-all.json) / gap_e20430_offset Highway Oneway - 3 lanes (import-gaps.json)"
+  },
+  {
+   "at": "(6745, 1411)",
+   "edges": "e25579_0 Gravel Road (import-all.json) / gap_e25579_0 Gravel Road (import-gaps.json)"
+  },
+  {
+   "at": "(5535, 820)",
+   "edges": "e36563_0 Gravel Road (import-all.json) / gap_e36563_0 Gravel Road (import-gaps.json)"
+  }
+ ],
  "torn": [],
  "isolated": [
   {
@@ -177,12 +119,6 @@
    "length": 83,
    "prefab": "Pavement Path",
    "edges": "e7126_0,e28940_0,e18960_0"
-  },
-  {
-   "at": "(4785, -696)",
-   "length": 26,
-   "prefab": "Pavement Path",
-   "edges": "e18414_0"
   }
  ],
  "rampEnds": [],

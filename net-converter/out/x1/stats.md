@@ -6,9 +6,9 @@ Dump `C:\Users\dleva\AppData\Local/DakotaExport/2972879554_Dakota_Falls-20261019
 
 | layer | edges | nodes | border nodes | length km | ground | elevated | tunnel |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| highways | 1739 | 1720 | 10 | 116.2 | 1014 | 685 | 40 |
+| highways | 1737 | 1720 | 10 | 116.1 | 1013 | 684 | 40 |
 | rail | 430 | 439 | 4 | 33.7 | 297 | 110 | 23 |
-| roads | 1662 | 1548 | 6 | 125.4 | 1589 | 73 | 0 |
+| roads | 1660 | 1548 | 6 | 125.3 | 1587 | 73 | 0 |
 | power | 60 | 62 | 1 | 12.8 | 60 | 0 | 0 |
 | skip | 722 | 797 | 12 | 63.8 | 722 | 0 | 0 |
 
@@ -25,10 +25,10 @@ Only highways, rail and roads are written as import files. power, skip and unmap
 |---|---|---:|---:|---|
 | highways | Highway Oneway - 1 lane | 283 | 15.9 | 2452038713.USRP 1L Interstate Ramp_Data, 2452038713.USRP 1L Interstate Ramp E |
 | highways | Highway Oneway - 2 lanes | 914 | 59.7 | 2452038713.USRP 2L Interstate E, 2452038713.USRP 2L Interstate_Data, 2452038713.USRP 2L Interstate B, 2452038713.USRP 2L Interstate T, 2452038713.USRP 2L Interstate S |
-| highways | Highway Oneway - 3 lanes | 510 | 38.9 | 2452038713.USRP 3L Interstate_Data, 2452038713.USRP 3L Interstate E, 2452038713.USRP 3L Interstate B, 2452038713.USRP 3L Interstate S |
-| highways | Highway Oneway - 4 lanes | 32 | 1.8 | 2452038713.USRP 4L Interstate_Data, 2452038713.USRP 4L Interstate E |
+| highways | Highway Oneway - 3 lanes | 509 | 38.8 | 2452038713.USRP 3L Interstate_Data, 2452038713.USRP 3L Interstate E, 2452038713.USRP 3L Interstate B, 2452038713.USRP 3L Interstate S |
+| highways | Highway Oneway - 4 lanes | 31 | 1.8 | 2452038713.USRP 4L Interstate_Data, 2452038713.USRP 4L Interstate E |
 | rail | Double Train Track | 430 | 33.7 | 2610252544.R2USA W GrWo 2x2_Data, 2610252544.R2USA W GrWo 2x2 T0, 2932555116.R2EUR W GrCo 2x2 Pedrido E, 2610252544.R2USA W GrWo 2x2 S0, 2836620152.R2EUR W GrCo 2x2 Ourense SA E, 2610252544.R2USA W GrWo 2x2 E0 |
-| roads | Gravel Road | 1264 | 97.3 | Gravel Road, Gravel Road Elevated |
+| roads | Gravel Road | 1262 | 97.1 | Gravel Road, Gravel Road Elevated |
 | roads | Medium Road | 42 | 2.5 | 2097539846.USRP 4-Lane National Road_Data, 2098643957.USRP 3-Lane National Road_Data, 2098643957.USRP 3-Lane National Road E |
 | roads | Pavement Path | 48 | 1.5 | Pedestrian Gravel, Pedestrian Elevated |
 | roads | Small Road | 308 | 24.1 | 2097530472.USRP 2-Lane National Road_Data, 2097530472.USRP 2-Lane National Road B |
@@ -384,7 +384,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Round 9 lake lake11: centre terrain 135.55 m vs level 135.84 m, moved to (6944, 2640) terrain 134.79 m.
 - Round 9 lake lake16: centre terrain 138.44 m vs level 138.91 m, moved to (640, 1008) terrain 136.86 m.
 - Round 9 lakes: 26 wet bodies above sea level 97.5 + 1 m with no CS1 source within 400 m; 18 sources (outside the map 4, single cells 4) -> import-water-lakes.json (append after import-water*.json).
-- Round 9 gaps: 5 edges -> import-gaps.json (e15883_0; bowed 4.5 m away from e1403_0 Highway Oneway - 4 lanes (15.6 m, needs 18.0); e15883_0: 3-lane course 68 m (alternative: 4-lane taper 12 m + 3-lane, import-gaps-e15883-taper.json); e20430_0b: course moved 1 m away from e16466_0a (15.6 m at mid); e25579_0: rebuilt, junction end snaps radius 6; e36563_0: rebuilt, junction end snaps radius 6; path stub n13342: 9.6 m, inside the road footprint; left to its snapToSegment in import-all.json; path stub n21342: connector 12.8 m to Gravel Road; path stub n7811: 9.3 m, inside the road footprint; left to its snapToSegment in import-all.json).
+- Round 9 gaps: 6 edges -> import-gaps.json, written before the network (e15883_0; bowed 4.5 m away from e1403_0 Highway Oneway - 4 lanes (15.6 m, needs 18.0); e15883_0: 3-lane course 68 m (alternative: 4-lane taper 12 m + 3-lane, import-gaps-e15883-taper.json); e20430_0b: course moved 1 m away from e16466_0a (15.6 m at mid); gravel gap n895–n26596: 80 m; e25579_0: rebuilt, junction end snaps radius 6; e36563_0: rebuilt, junction end snaps radius 6; path stub n13342: 9.6 m, inside the road footprint; left to its snapToSegment in import-all.json; path stub n21342: connector 12.8 m to Gravel Road; path stub n7811: 9.3 m, inside the road footprint; left to its snapToSegment in import-all.json; 4 originals left out of import-all.json (e15883_0, e20430_0b, e25579_0, e36563_0)).
 - Decal surfaces (import-surfaces-decals.json; PDO23 Dirty Surface 01 / PDO23 Soil Surface 01): 41 polygons, 0.022 km², max 298 points.
 - Sand: the 16 m-cell surfaces are dropped (owner review of A-v4); optional import-surfaces-sand-smooth.json: 387 blobs from 610 of 905 patches >= 2000 m² (21.54 km²).
 - Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
@@ -458,6 +458,9 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | BR049 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 86 | bridges | gravel trestle; br049_c1: deck 4.3 m over the water at (6847, 3314) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] | Wooden Covered Bridge - 2 lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
 | BR050 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 81 | bridges | gravel trestle; br050_c1: deck 3.2 m over the water at (6786, 3457) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] | Wooden Covered Bridge - 2 lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
 | BR053 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 67 | bridges | gravel trestle; br053_c1: deck 3.1 m over the water at (6846, 2594) (< 10 m, m_ElevationOnWater [U]); segment length 64 m assumed [U] | Wooden Covered Bridge - 2 lanes: not in cs2-bridge-rules.json (vanilla or base net; checked by the runner's dry run) |
+- Gaps: 6 edges in import-gaps.json; originals left out of import-all.json: e15883_0, e20430_0b, e25579_0, e36563_0.
+- Road QA fixes: pipeline dead ends snapped 0, stubs < 40 m left out 0, residual 0; isolated pieces < 100 m left out 0, kept (isolated in CS1 too) 1.
+  - isolated, kept: (367, -3024) Pavement Path, 83 m (e7126_0, e28940_0, e18960_0): isolated in CS1 too
 - Water sources: 65 → 41 (12 changes, water-check.md).
 - EXPERIMENT trees: the 641 net-corridor trees are in experiment-trees-net-corridor-01.json (import after the main tree files to try them; undo by its name).
 - Trees masked (same set for both scales): terrain below sea level 10,093; inside the CS1 water surface 1,133; on a ground-level net corridor (half width + 2 m) 641; total 11,867, 496,368 remain.

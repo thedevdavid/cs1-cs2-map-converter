@@ -19,10 +19,12 @@ const HALF = 7168;
 const nodes = new Map(), edges = [];
 const replaced = new Set();
 for (const f of ["import-bridges.json", "import-bridges-fixed.json"]) if (existsSync(join(dir, f))) for (const r of J(join(dir, f)).replaces ?? []) replaced.add(r);
+const snaps = new Set();
 for (const f of ["import-all.json", "import-bridges.json", "import-bridges-fixed.json", "import-gaps.json"]) {
   if (!existsSync(join(dir, f))) continue;
   const k = J(join(dir, f));
-  for (const n of k.nodes) if (!nodes.has(n.id)) nodes.set(n.id, { ...n, file: f });
+  for (const n of k.nodes) { if (!nodes.has(n.id)) nodes.set(n.id, { ...n, file: f }); if (n.snapToSegment && (f === "import-all.json" || f === "import-gaps.json")) snaps.add(n.id); }
+  for (const r of k.replaces ?? []) replaced.add(r);
   for (const e of k.edges) if (!(f === "import-all.json" && replaced.has(e.id))) edges.push({ ...e, file: f });
 }
 const halfW = p => /4 lanes/.test(p) ? 10 : /3 lanes/.test(p) ? 8 : /2 lanes/.test(p) ? 6 : /1 lane/.test(p) ? 4 : /Train/.test(p) ? 6 : /Pavement Path/.test(p) ? 2 : /Gravel/.test(p) ? 4 : /Medium/.test(p) ? 8 : 6;
@@ -51,7 +53,7 @@ const cs1NodeOf = n => { const m = /^n(\d+)$/.exec(n.id); return m ? cs1.get(+m[
 // ---- 1. dead ends
 const dead = [];
 for (const [id, es] of at) {
-  if (es.length !== 1) continue;
+  if (es.length !== 1 || snaps.has(id) || /Pedestrian Bridge/.test(es[0].prefab)) continue;   // a snapping end joins a segment; arc decor is open by design
   const n = P(id); if (isBorder(n)) continue;
   const c = cs1NodeOf(n);
   const genuine = c ? (cs1deg.get(c.id) ?? 0) <= 1 || c.flags?.includes("End") : false;
@@ -82,6 +84,8 @@ for (const [id, es] of at) {
     if (over > 10) torn.push({ id, x: n.x, z: n.z, e1: e1.id, p1: e1.prefab, e2: e2.id, p2: e2.prefab, ang, over });
   }
 }
+// ---- 3b. duplicate courses: two edges between the same pair of nodes (a rebuild over its original; A-v4 e15883)
+const dup = []; { const byPair = new Map(); for (const e of edges) { const k = [e.a, e.b].sort().join("|"); (byPair.get(k) ?? byPair.set(k, []).get(k)).push(e); } for (const [k, es] of byPair) if (es.length > 1) { const m = bez(es[0], 0.5); dup.push({ at: fmt(m[0], m[1]), edges: es.map(e => `${e.id} ${e.prefab} (${e.file})`).join(" / ") }); } }
 // ---- 4. isolated short components
 const seen = new Set(), isolated = [];
 for (const e0 of edges) {
@@ -89,7 +93,7 @@ for (const e0 of edges) {
   const comp = [], q = [e0]; seen.add(e0);
   while (q.length) { const e = q.pop(); comp.push(e); for (const k of [e.a, e.b]) for (const o of at.get(k)) if (!seen.has(o)) { seen.add(o); q.push(o); } }
   const L = comp.reduce((s, e) => s + len(e), 0);
-  if (L >= 100 || comp.some(e => isBorder(P(e.a)) || isBorder(P(e.b)))) continue;
+  if (L >= 100 || comp.some(e => isBorder(P(e.a)) || isBorder(P(e.b)) || snaps.has(e.a) || snaps.has(e.b)) || comp.every(e => /Pedestrian Bridge/.test(e.prefab))) continue;
   const c = bez(comp[0], 0.5);
   isolated.push({ x: c[0], z: c[1], length: L, edges: comp.map(e => e.id), prefab: comp[0].prefab });
 }
@@ -111,10 +115,11 @@ if (existsSync(join(dir, "live-graph.json"))) {
   live = { pulled: g.pulledAtUtc, deadEnds: g.nodes.filter(n => deg.get(n.node.index) === 1 && Math.max(Math.abs(n.position.x), Math.abs(n.position.z)) < HALF - 60).length };
 }
 const res = {
-  label, dir, counts: { deadEnds: dead.length, genuine: dead.filter(d => d.genuine).length, pipeline: dead.filter(d => !d.genuine).length, midAirPairs: stubs.length, tornSplits: torn.length, isolatedShort: isolated.length, rampEndsNearMainline: rampEnds.length, liveDeadEnds: live?.deadEnds ?? null },
+  label, dir, counts: { deadEnds: dead.length, genuine: dead.filter(d => d.genuine).length, pipeline: dead.filter(d => !d.genuine).length, midAirPairs: stubs.length, tornSplits: torn.length, duplicates: dup.length, isolatedShort: isolated.length, rampEndsNearMainline: rampEnds.length, liveDeadEnds: live?.deadEnds ?? null },
   pipeline: dead.filter(d => !d.genuine).map(d => ({ at: fmt(d.x, d.z), prefab: d.prefab, edge: d.edge, elevated: d.elevated, cs1deg: d.cs1deg })),
   genuine: dead.filter(d => d.genuine).map(d => ({ at: fmt(d.x, d.z), prefab: d.prefab, edge: d.edge, elevated: d.elevated, cs1deg: d.cs1deg })),
   midAir: stubs.map(s => ({ a: fmt(s.a.x, s.a.z), b: fmt(s.b.x, s.b.z), dist: Math.round(s.dist), prefab: s.a.prefab, genuine: s.a.genuine && s.b.genuine })),
+  duplicates: dup,
   torn: torn.map(t => ({ at: fmt(t.x, t.z), node: t.id, edges: `${t.e1} ${t.p1} / ${t.e2} ${t.p2}`, angle: +t.ang.toFixed(1), overlap: t.over })),
   isolated: isolated.map(i => ({ at: fmt(i.x, i.z), length: Math.round(i.length), prefab: i.prefab, edges: i.edges.join(",") })),
   rampEnds: rampEnds.map(r => ({ at: fmt(r.x, r.z), prefab: r.prefab, near: `${r.near} ${r.nearPrefab}`, dist: +r.dist.toFixed(1), genuine: r.genuine })),

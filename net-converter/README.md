@@ -352,3 +352,14 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   bridge.length.short, bridge.fixed.repeat / .short / .chained, the game's split count, bridge.waterClearance. Vanilla prefabs and bridge.lowElevation are not in
   the offline rules; the runner's dry run checks them.
 - noPillars (PLAN.md item 4): BR006 deck edges, the four BR001 connectors and BR001's deck courses outside the merged span in import-all.json.
+
+## Round 14: road QA, vanilla surfaces
+
+- `tools/road-qa.mjs [out/x1] [--json f] [--label l]`: dead ends (genuine vs pipeline against CS1), mid-air elevated stub pairs, torn splits, duplicate courses
+  (a rebuild over its original), isolated pieces < 100 m and ramp dead ends near a mainline, over import-all + bridges + gaps (snapping nodes count as joined).
+  Report with before / after counts and the residual list: `out/x1/road-qa.md`.
+- Fixes: the gap rebuilds now replace their originals in import-all.json (e15883_0, e20430_0b, e25579_0, e36563_0; on A-v4 both were built and tore the
+  4-lane / 3-lane split); the gaps pass also finds bridge-deck nodes (the CS1 gravel gap at BR020); a converter pass snaps pipeline dead ends onto a course
+  within 25 m or drops stubs < 40 m and drops isolated pieces < 100 m that CS1 connected (none left in this map; reported in stats.md).
+- Surfaces are vanilla only: fields (Agriculture Surface 01), sand as Sand Surface 01 (smoothed blobs, on by default), PO pavement (Pavement Surface 01); grass
+  optional. Terrain Textures rock (40° and PO footprints), Dirty Surfaces decals and the pack sand moved to `out/optional/` (runner `--with rock,po-rock,decals,sand-pack`).

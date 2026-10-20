@@ -26745,27 +26745,6 @@
       "cs1_segment": 15855
     },
     {
-      "id": "e15883_0",
-      "a": "n21662",
-      "b": "n14559",
-      "prefab": "Highway Oneway - 4 lanes",
-      "control": [
-        [
-          447.45,
-          227.97,
-          -4506.55
-        ],
-        [
-          427.09,
-          227.25,
-          -4488.26
-        ]
-      ],
-      "structure": "ground",
-      "cs1_prefab": "2452038713.USRP 4L Interstate_Data",
-      "cs1_segment": 15883
-    },
-    {
       "id": "e15887_0",
       "a": "n27764",
       "b": "n9706",
@@ -31222,27 +31201,6 @@
           850.37,
           334.78,
           4030.07
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 3L Interstate E",
-      "cs1_segment": 20430
-    },
-    {
-      "id": "e20430_0b",
-      "a": "e20430_0d0",
-      "b": "n7849",
-      "prefab": "Highway Oneway - 3 lanes",
-      "control": [
-        [
-          823.73,
-          334.78,
-          4014.79
-        ],
-        [
-          809.15,
-          334.78,
-          4006.37
         ]
       ],
       "structure": "elevated",

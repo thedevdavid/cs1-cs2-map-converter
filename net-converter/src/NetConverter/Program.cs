@@ -6,7 +6,7 @@ bool inventoryOnly = false, retry = false, layersOnly = false;
 string? treesDir = null, rockHeightmapPath = null, cs2HeightmapPath = null, runReportsDir = Path.Combine("out", "x1");
 string poOfflinePath = Path.Combine("..", "cs1-offline", "out", "po-offline.json");
 double rockDegrees = 40;
-List<Round9.NetNode> bridgeNodes = new(); int gapEdges = 0; string gapLog = "";
+List<Round9.NetNode> bridgeNodes = new(); int gapEdges = 0; string gapLog = ""; var externalNodes = new HashSet<string>();
 bool seawayAtWater = false, mergeCanal = true, keepHighwayStubs = false, bridgesOn = true, bridgesFixedOn = true;
 const string RockSurface = "gaga TTP - Pebbles 1L dark";
 const string NetCorridorRule = "on a ground-level net corridor (half width + 2 m)";
@@ -307,6 +307,76 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
     int removedG = result.Edges.RemoveAll(e => gr.Contains(e.Id));
     gapEdges = ge.Count; gapLog = $"{string.Join("; ", glog)}; {removedG} originals left out of import-all.json ({string.Join(", ", gapReplaces)})";
     auditLog.AppendLine($"- Gaps: {ge.Count} edges in import-gaps.json; originals left out of import-all.json: {string.Join(", ", gapReplaces)}.");
+    foreach (var n in gn) externalNodes.Add(n.Id);
+}
+{
+    // Road QA fixes (tools/road-qa.mjs): a dead end where CS1 continued (pipeline dead end) snaps onto the nearest course of its layer within
+    // 25 m (Δy ≤ 3 m), else its stub to the first junction is left out when shorter than 40 m; an isolated piece under 100 m that CS1 connected
+    // to more network is left out. Nodes that other import files join (bridges, gaps) or that already snap count as connected.
+    foreach (var n in bridgeNodes) externalNodes.Add(n.Id);
+    var cs1Deg = new Dictionary<int, int>();
+    foreach (var sg in dump.Segments) foreach (var k in new[] { sg.StartNode, sg.EndNode }) cs1Deg[k] = cs1Deg.GetValueOrDefault(k) + 1;
+    var net = result.Edges.Where(e => e.Map.Imported).ToList();
+    var degQ = new Dictionary<OutNode, int>(ReferenceEqualityComparer.Instance);
+    foreach (var e in net) foreach (var n in new[] { e.A, e.B }) degQ[n] = degQ.GetValueOrDefault(n) + 1;
+    bool Connected(OutNode n) => n.Snap != null || externalNodes.Contains(n.Id);
+    var snapped = new List<string>(); var removedStubs = new List<string>(); var residual = new List<string>();
+    var drop = new HashSet<OutEdge>(ReferenceEqualityComparer.Instance);
+    foreach (var (n, d) in degQ.ToList())
+    {
+        if (d != 1 || n.Border || Connected(n) || n.Cs1Node is not { } cn || !dump.Nodes.TryGetValue(cn, out var dn)) continue;
+        if (cs1Deg.GetValueOrDefault(cn) <= 1 || dn.Flags.Contains("End")) continue;   // genuine CS1 dead end
+        var own = net.First(e => e.A == n || e.B == n);
+        OutEdge? best = null; double bestD = 25; Vec3 bp = default;
+        foreach (var e in net)
+        {
+            if (e == own || e.A == n || e.B == n || e.Layer != own.Layer) continue;
+            for (int k = 0; k <= 16; k++) { var p = e.Curve.Eval(k / 16.0); double dd = Math.Sqrt((p.X - n.Position.X) * (p.X - n.Position.X) + (p.Z - n.Position.Z) * (p.Z - n.Position.Z)); if (dd < bestD) { bestD = dd; best = e; bp = p; } }
+        }
+        string at = FormattableString.Invariant($"{n.Id} ({n.Position.X:F0}, {n.Position.Z:F0}) {own.Map.Cs2Prefab}");
+        if (best != null && Math.Abs(bp.Y - n.Position.Y) / topologyFactor <= 3)
+        {
+            n.Snap = (Math.Ceiling(bestD + 1.5), best.Map.Cs2Prefab!);
+            snapped.Add(FormattableString.Invariant($"{at} → {best.Id} {best.Map.Cs2Prefab}, {bestD:F1} m"));
+            continue;
+        }
+        // Stub to the first junction.
+        var chain = new List<OutEdge> { own }; double len = own.Curve.LengthXZ(); var cur = own.A == n ? own.B : own.A; var ce = own;
+        while (degQ.GetValueOrDefault(cur) == 2 && len < 40)
+        {
+            var o = net.First(e => e != ce && (e.A == cur || e.B == cur));
+            chain.Add(o); len += o.Curve.LengthXZ(); cur = o.A == cur ? o.B : o.A; ce = o;
+        }
+        if (len < 40 && degQ.GetValueOrDefault(cur) > 2) { foreach (var c in chain) drop.Add(c); removedStubs.Add(FormattableString.Invariant($"{at}: {len:F0} m stub ({string.Join(", ", chain.Select(c => c.Id))})")); }
+        else residual.Add(FormattableString.Invariant($"{at}: CS1 continued here (CS1 degree {cs1Deg.GetValueOrDefault(cn)}), nothing within 25 m and the stub is {len:F0}+ m"));
+    }
+    // Isolated short pieces.
+    var at2 = new Dictionary<OutNode, List<OutEdge>>(ReferenceEqualityComparer.Instance);
+    foreach (var e in net) foreach (var n in new[] { e.A, e.B }) (at2.TryGetValue(n, out var l) ? l : at2[n] = new()).Add(e);
+    var seenQ = new HashSet<OutEdge>(ReferenceEqualityComparer.Instance); var isoDropped = new List<string>(); var isoKept = new List<string>();
+    foreach (var e0 in net)
+    {
+        if (!seenQ.Add(e0)) continue;
+        var comp = new List<OutEdge>(); var q = new Queue<OutEdge>(); q.Enqueue(e0);
+        while (q.Count > 0) { var e = q.Dequeue(); comp.Add(e); foreach (var n in new[] { e.A, e.B }) foreach (var o in at2[n]) if (seenQ.Add(o)) q.Enqueue(o); }
+        var ns = comp.SelectMany(e => new[] { e.A, e.B }).Distinct(ReferenceEqualityComparer.Instance).Cast<OutNode>().ToList();
+        double L = comp.Sum(e => e.Curve.LengthXZ());
+        if (L >= 100 || ns.Any(n => n.Border || Connected(n))) continue;
+        // CS1 connected the piece to more network when one of its CS1 nodes has more CS1 segments than the piece uses there.
+        bool pipeline = ns.Any(n => n.Cs1Node is { } c && cs1Deg.GetValueOrDefault(c) > at2[n].Count);
+        var m = comp[0].Curve.Eval(0.5);
+        string what = FormattableString.Invariant($"({m.X:F0}, {m.Z:F0}) {comp[0].Map.Cs2Prefab}, {L:F0} m ({string.Join(", ", comp.Select(c => c.Id))})");
+        if (pipeline) { foreach (var c in comp) drop.Add(c); isoDropped.Add(what); } else isoKept.Add(what + ": isolated in CS1 too");
+    }
+    foreach (var e in drop) result.Fate[e.Cs1Segment] = "road QA: left out (stub / isolated piece)";
+    result.Edges.RemoveAll(drop.Contains);
+    auditLog.AppendLine($"- Road QA fixes: pipeline dead ends snapped {snapped.Count}, stubs < 40 m left out {removedStubs.Count}, residual {residual.Count}; isolated pieces < 100 m left out {isoDropped.Count}, kept (isolated in CS1 too) {isoKept.Count}.");
+    foreach (var l in snapped) auditLog.AppendLine($"  - snapped: {l}");
+    foreach (var l in removedStubs) auditLog.AppendLine($"  - stub left out: {l}");
+    foreach (var l in residual) auditLog.AppendLine($"  - RESIDUAL dead end: {l}");
+    foreach (var l in isoDropped) auditLog.AppendLine($"  - isolated, left out: {l}");
+    foreach (var l in isoKept) auditLog.AppendLine($"  - isolated, kept: {l}");
+    Console.WriteLine($"road QA fixes: snapped {snapped.Count}, stubs left out {removedStubs.Count}, residual {residual.Count}, isolated left out {isoDropped.Count}, kept {isoKept.Count}");
 }
 Outputs.WriteImport(Path.Combine(outDir, "import-highways.json"), "Dakota Falls highways", result.Layer(Layers.Highways).ToList(), absolute);
 Outputs.WriteImport(Path.Combine(outDir, "import-rail.json"), "Dakota Falls rail", result.Layer(Layers.Rail).ToList(), absolute);
@@ -452,6 +522,18 @@ void WriteLayers()
     var root = rootDoc.RootElement;
     var baseDir = AppContext.BaseDirectory;
     string Find(string name) => File.Exists(name) ? name : Path.Combine(baseDir, name);
+    // Pack surfaces (Terrain Textures, Dirty Surfaces) and decals: vanilla only from now on (owner); the pack files stay in optional/.
+    string OptDir()
+    {
+        var d = Path.Combine(outDir, "optional");
+        if (!Directory.Exists(d))
+        {
+            Directory.CreateDirectory(d);
+        }
+        File.WriteAllText(Path.Combine(d, "README.md"), "# Optional pack surfaces\n\nNot imported by default: the owner chose vanilla surfaces only (2026-10-20). Terrain Textures Pack rock (40° slopes, PO terrain-like footprints), Dirty Surfaces Pack decals and the pack sand variant. Re-enable with tools/import-run.mjs --with rock,po-rock,decals,sand-pack.\n");
+        return d;
+    }
+    foreach (var old in new[] { "import-surfaces-rock.json", "import-surfaces-po-rock.json", "import-surfaces-decals.json", "import-surfaces-decals-unmerged.json" }) File.Delete(Path.Combine(outDir, old));
     var extra = new System.Text.StringBuilder();
     extra.AppendLine().AppendLine("## Other layers").AppendLine();
     // v3: sections that failed in the exporter are null and named here.
@@ -704,7 +786,7 @@ void WriteLayers()
         var rock = Surfaces.SteepRock(hmTrue, rockDegrees);
         var rocks = rock.Polygons.Select((r, k) => new SurfacePolygon($"rock{k + 1}", RockSurface, r, $"slope >= {rockDegrees}°")).ToList();
         rockPolys = rocks;
-        Surfaces.Write(Path.Combine(outDir, "import-surfaces-rock.json"), "surfaces-rock", rocks,
+        Surfaces.Write(Path.Combine(OptDir(), "import-surfaces-rock.json"), "surfaces-rock", rocks,
             $"Automatic rock surface: pixels of {Path.GetFileName(rockHm)} (true heights, 3.5 m) with slope >= {rockDegrees}°, patches >= 400 m², hole-free, simplified to 4 m, largest {rocks.Count} kept. Prefab {RockSurface} (Terrain Textures Pack - Rocks, brown scree).");
         string msg = string.Create(System.Globalization.CultureInfo.InvariantCulture, $"rock: {Path.GetFileName(rockHm)} (|err| vs CS1 nodes {err:F2} m), steep area {rock.SteepArea / 1e6:F2} km² in {rock.Patches} patches >= 400 m²; {rocks.Count} polygons kept ({rock.KeptArea / 1e6:F2} km²), {rock.Dropped} smallest dropped");
         Console.WriteLine(msg);
@@ -786,7 +868,7 @@ void WriteLayers()
             string prefab = smap.Resolve("po rock")?.FirstOrDefault()?.Prefab ?? RockSurface;
             var (polys, area, patches, dropped) = Round9.PoRock(raster);
             var poRock = polys.Select((r, k) => new SurfacePolygon($"porock{k + 1}", prefab, r, "PO terrain-like footprint")).ToList();
-            Surfaces.Write(Path.Combine(outDir, "import-surfaces-po-rock.json"), "surfaces-po-rock", poRock,
+            Surfaces.Write(Path.Combine(OptDir(), "import-surfaces-po-rock.json"), "surfaces-po-rock", poRock,
                 $"Rock texture on every PO mountain / rock work / falls steps footprint ({Path.GetFileName(raster)}, cells > 0, 3.5 m), hole-free, simplified to 4 m, patches >= 100 m². The 40° slope layer is import-surfaces-rock.json.");
             r9.Add(ci($"PO rock surfaces: {poRock.Count} polygons ({poRock.Sum(p => Math.Abs(Surfaces.Area(p.Ring))) / 1e6:F2} km² of {area / 1e6:F2} km² footprint, {patches} patches, {dropped} dropped), {prefab} -> import-surfaces-po-rock.json"));
         }
@@ -835,12 +917,12 @@ void WriteLayers()
         }
     {
         // EXPERIMENT: the 128 separate 16 m squares too, to compare with the merged shapes.
-        Surfaces.Write(Path.Combine(outDir, "import-surfaces-decals-unmerged.json"), "surfaces-decals-unmerged-experiment", decals, "EXPERIMENT: one 16 x 16 m square per CS1 decal, overlaps kept (z-fighting and OverlapExisting possible).");
+        Surfaces.Write(Path.Combine(OptDir(), "import-surfaces-decals-unmerged.json"), "surfaces-decals-unmerged-experiment", decals, "EXPERIMENT: one 16 x 16 m square per CS1 decal, overlaps kept (z-fighting and OverlapExisting possible).");
         var (u, pairs, groups) = Surfaces.UnionOverlapping(decals, 1);
         auditLog.AppendLine($"- Decal surfaces: {pairs} overlapping pairs merged in {groups} groups ({decals.Count} → {u.Count}).");
         decals = u;
     }
-    if (decals.Count > 0) Surfaces.Write(Path.Combine(outDir, "import-surfaces-decals.json"), "surfaces-decals", decals, "CS1 R69 Big Decal Dirt/Mud as Dirty Surfaces Pack (148077) area surfaces: 16 x 16 m squares at the CS1 position and angle (footprint assumed). Dirt -> PDO23 Dirty Surface 01, Mud -> PDO23 Soil Surface 01.");
+    if (decals.Count > 0) Surfaces.Write(Path.Combine(OptDir(), "import-surfaces-decals.json"), "surfaces-decals", decals, "CS1 R69 Big Decal Dirt/Mud as Dirty Surfaces Pack (148077) area surfaces: 16 x 16 m squares at the CS1 position and angle (footprint assumed). Dirt -> PDO23 Dirty Surface 01, Mud -> PDO23 Soil Surface 01.");
     Console.WriteLine(Surfaces.Stats("decal surfaces", decals));
     extra.AppendLine($"- {Surfaces.Stats("Decal surfaces (import-surfaces-decals.json; PDO23 Dirty Surface 01 / PDO23 Soil Surface 01)", decals)}.");
 
@@ -854,9 +936,12 @@ void WriteLayers()
             {
                 File.Delete(Path.Combine(outDir, "import-surfaces-sand.json"));
                 var (blobs, sp, sk) = SmoothSurfaces.Blobs(surfaces, "Sand");
+                // Vanilla surfaces only (owner): Sand Surface 01, on by default; the Dirty Surfaces Pack sand stays as an optional copy.
                 var sandPrefab = g.First().Prefab;
-                Surfaces.Write(Path.Combine(outDir, "import-surfaces-sand-smooth.json"), "surfaces-sand-smooth", blobs.Select((r, k) => new SurfacePolygon($"sand{k + 1}", sandPrefab, r, "CS1 sand blob")).ToList(),
-                    "OPTIONAL (off by default): CS1 sand patches >= 2000 m², 12 m round buffer, 2 majority-smoothing passes on a 4 m grid, hole-free, simplified to 4 m.");
+                Surfaces.Write(Path.Combine(outDir, "import-surfaces-sand-smooth.json"), "surfaces-sand-smooth", blobs.Select((r, k) => new SurfacePolygon($"sand{k + 1}", "Sand Surface 01", r, "CS1 sand blob")).ToList(),
+                    "CS1 sand as vanilla Sand Surface 01: patches >= 2000 m², 12 m round buffer, 2 majority-smoothing passes on a 4 m grid, hole-free, simplified to 4 m.");
+                Surfaces.Write(Path.Combine(OptDir(), "import-surfaces-sand-smooth-pack.json"), "surfaces-sand-smooth-pack", blobs.Select((r, k) => new SurfacePolygon($"sand{k + 1}", sandPrefab, r, "CS1 sand blob")).ToList(),
+                    $"OPTIONAL pack variant ({sandPrefab}) of import-surfaces-sand-smooth.json.");
                 extra.AppendLine(FormattableString.Invariant($"- Sand: the 16 m-cell surfaces are dropped (owner review of A-v4); optional import-surfaces-sand-smooth.json: {blobs.Count} blobs from {sk} of {sp} patches >= 2000 m² ({blobs.Sum(b => Math.Abs(Surfaces.Area(b))) / 1e6:F2} km²)."));
                 Console.WriteLine($"sand: {blobs.Count} smooth blobs (optional) from {sk} of {sp} patches");
             }
