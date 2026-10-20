@@ -62,3 +62,14 @@ Order (converter `out/ROUND6.md`): network → power, walls, ship paths → wate
 - Rocks sit on the slopes they came from; landmarks oriented correctly.
 - Resources visible in the editor's resource overlay where CS1 had cornfields.
 - Peaks: no flat 1024 m plateaus left; no seam at the playable/world-map edge.
+
+## Publishing (only after the owner accepts run A)
+
+Done by hand in the editor's Map Inspector, then "Share map"; nothing here is automated yet.
+
+1. **Description:** paste the full text from `MAP-DESCRIPTION.md` (the A-v6 save has the short one-paragraph version) — Map Settings → Map Description; add translations only if wanted.
+2. **Preview image and thumbnail:** take them in the editor's photo mode (the checklist accepts the defaults, but the defaults are the generic placeholder): preview from the river bend with the Detroit suspension bridge and the western range, thumbnail from the falls; set them in Map Settings → Preview / Thumbnail.
+3. **Starting tiles:** Map Settings → Select Starting Tiles; the 9 default tiles are the map centre. Proposed: the 9 tiles around the interstate junction north of the Detroit bridge (water, road and rail connections inside), to be confirmed on the accepted map.
+4. **Content prerequisites:** the game lists them itself (Bridges & Ports for the BXP/vanilla bridge set; the asset packs and ConcreteSet01 / Stone Arch kit are mods, not DLC — note them in the description instead).
+5. **Camera start:** Map Settings → Capture Camera Properties from the preview viewpoint.
+6. Final `cs2_map_checklist` must be `playable: true` with every publishing item passing; save once more under the final name (no leading or trailing space), then Share map.
