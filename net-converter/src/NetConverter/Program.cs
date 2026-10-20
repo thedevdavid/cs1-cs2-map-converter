@@ -1120,10 +1120,13 @@ void WriteLayers()
                     poRockRings.Add(sp.GetProperty("polygon").EnumerateArray().Select(v => (v[0].GetDouble(), v[1].GetDouble())).ToList());
         foreach (var l in TerrainPaint.Build(planIn, rockPolys.Select(p => p.Ring), poRockRings, decalCentres, result.Edges))
         {
-            TerrainPaint.Write(Path.Combine(outDir, l.File), l);
-            var km2 = l.Polygons.Sum(p => Math.Abs(Surfaces.Area(p.Ring))) / 1e6;
-            Console.WriteLine(FormattableString.Invariant($"terrain paint {l.Material}: {l.Polygons.Count} polygons, {km2:F2} km² ({l.Role}) -> {l.File}"));
-            extra.AppendLine(FormattableString.Invariant($"- Terrain paint {l.File}: material {l.Material} (placeholder), {l.Role}: {l.Polygons.Count} polygons, {km2:F2} km²."));
+            File.Delete(Path.Combine(outDir, l.File));
+            var tpPath = Path.Combine(l.Optional ? OptDir() : outDir, l.File);
+            TerrainPaint.Write(tpPath, l);
+            var km2 = l.Polygons.Sum(p => Math.Abs(Surfaces.Area(p.Ring))) / 1e6 + (l.Strokes?.Sum(s => Math.PI * s.Radius * s.Radius) ?? 0) / 1e6;
+            string what = FormattableString.Invariant($"material {l.Material}, {l.Role}: {l.Polygons.Count} polygons, {l.Strokes?.Count ?? 0} strokes, {km2:F2} km², softEdge {l.SoftEdge} m{(l.Optional ? ", not imported" : "")}");
+            Console.WriteLine($"terrain paint {what} -> {Path.GetRelativePath(outDir, tpPath)}");
+            extra.AppendLine($"- Terrain paint {Path.GetRelativePath(outDir, tpPath)}: {what}.");
         }
         Surfaces.Write(Path.Combine(outDir, "import-surfaces-sand.json"), "surfaces-sand", plan.Sand,
             "Paint plan S1/S3/S4 (audit/theme-remake.md §4): Sand Surface 01 on CS1 sand within 25 m of the water or ≤ 2 m above it; Sand Surface 02 on the other CS1 sand and on the CS1 dirt decals; none under water deeper than 1.5 m. 16 m grid, open/close one cell, simplified 4 m.");

@@ -1,12 +1,17 @@
 {
   "name": "terrain-paint-sand",
-  "_comment": "Terrain material paint (editor Terrain Inspector \u2192 MATERIALS), CS1 painted sand (all Sand cells). Format PENDING the bridge\u0027s /import/terrain-paint schema: polygons in CS2 x/z metres (the same at both scales), strength 1. Material name is a PLACEHOLDER until the bridge lists the editor\u0027s materials.",
-  "material": "Sand",
-  "materialPlaceholder": true,
+  "_comment": "Terrain material paint (editor Terrain \u2192 Materials, POST /import/terrain-paint, bridge 0.9.29): CS1 painted sand (all Sand cells). CS2 x/z metres, the same at both scales.",
+  "options": {
+    "dryRun": false,
+    "strength": 1,
+    "softEdge": 6,
+    "minStamp": 4,
+    "maxStamps": 250000
+  },
   "polygons": [
     {
       "id": "tp_sand_1",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3581.13,
@@ -6465,11 +6470,13 @@
           -7005.77
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_2",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1906.59,
@@ -14072,11 +14079,13 @@
           -4506.87
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_3",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           910.17,
@@ -19179,11 +19188,13 @@
           -3162
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_4",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3570.63,
@@ -21310,11 +21321,13 @@
           -5098
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_5",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1375.56,
@@ -24689,11 +24702,13 @@
           5814.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_6",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2302.47,
@@ -26772,11 +26787,13 @@
           -4464.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_7",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2844.04,
@@ -28983,11 +29000,13 @@
           -4346
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_8",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6218.17,
@@ -31938,11 +31957,13 @@
           -1510
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_9",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1249.02,
@@ -35033,11 +35054,13 @@
           5840
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_10",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1278.31,
@@ -36900,11 +36923,13 @@
           -2945.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_11",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1619.72,
@@ -38135,11 +38160,13 @@
           -3152.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_12",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5403.99,
@@ -40574,11 +40601,13 @@
           -2631.63
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_13",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2988.92,
@@ -43657,11 +43686,13 @@
           -7147.43
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_14",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3564.95,
@@ -47780,11 +47811,13 @@
           3241.62
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_15",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1091.64,
@@ -50707,11 +50740,13 @@
           3357.03
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_16",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           567.21,
@@ -52550,11 +52585,13 @@
           1606.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_17",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2018.28,
@@ -53769,11 +53806,13 @@
           -3707.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_18",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5959.57,
@@ -55664,11 +55703,13 @@
           -1003.69
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_19",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4728.63,
@@ -57519,11 +57560,13 @@
           -1115
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_20",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4995.48,
@@ -59178,11 +59221,13 @@
           -1297.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_21",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5722.47,
@@ -61305,11 +61350,13 @@
           -1501.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_22",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4737.76,
@@ -63560,11 +63607,13 @@
           -5910.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_23",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5764.19,
@@ -66123,11 +66172,13 @@
           -97.48
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_24",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4749.79,
@@ -67022,11 +67073,13 @@
           -6577.51
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_25",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6690.13,
@@ -68833,11 +68886,13 @@
           639
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_26",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6532.91,
@@ -70352,11 +70407,13 @@
           415.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_27",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6785.29,
@@ -71815,11 +71872,13 @@
           -198
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_28",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5424.66,
@@ -72854,11 +72913,13 @@
           -1184.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_29",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6227.87,
@@ -74053,11 +74114,13 @@
           -1642.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_30",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           7060.39,
@@ -75512,11 +75575,13 @@
           -458
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_31",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2398.24,
@@ -76827,11 +76892,13 @@
           -5093.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_32",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           296.1,
@@ -78122,11 +78189,13 @@
           -2417.12
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_33",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5712.53,
@@ -79125,11 +79194,13 @@
           -969.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_34",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2397.86,
@@ -80556,11 +80627,13 @@
           -3827.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_35",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4899.95,
@@ -82623,11 +82696,13 @@
           5249.25
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_36",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1193.26,
@@ -84390,11 +84465,13 @@
           5147.95
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_37",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1690.51,
@@ -85865,11 +85942,13 @@
           -6536.41
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_38",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6786.11,
@@ -87228,11 +87307,13 @@
           591
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_39",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1872.79,
@@ -88447,11 +88528,13 @@
           -7152.71
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_40",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5174.97,
@@ -89426,11 +89509,13 @@
           -1501.27
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_41",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           7070.54,
@@ -90557,11 +90642,13 @@
           -1497.09
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_42",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           453.92,
@@ -91552,11 +91639,13 @@
           351
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_43",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2585.26,
@@ -92339,11 +92428,13 @@
           -4186
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_44",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6733.64,
@@ -93674,11 +93765,13 @@
           2314.71
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_45",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5614.11,
@@ -94849,11 +94942,13 @@
           -1510
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_46",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1032.02,
@@ -96264,11 +96359,13 @@
           4662
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_47",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3953.86,
@@ -97975,11 +98072,13 @@
           6050.92
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_48",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6445.25,
@@ -99178,11 +99277,13 @@
           -1429.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_49",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           456.62,
@@ -100161,11 +100262,13 @@
           -2049
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_50",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1999.22,
@@ -101708,11 +101811,13 @@
           -5702.49
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_51",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2907.73,
@@ -103103,11 +103208,13 @@
           -4842
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_52",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3945.14,
@@ -104802,11 +104909,13 @@
           -3569.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_53",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           7069.08,
@@ -105693,11 +105802,13 @@
           419.34
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_54",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6963.7,
@@ -106604,11 +106715,13 @@
           -1639
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_55",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1725.47,
@@ -107563,11 +107676,13 @@
           -3249
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_56",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5996.06,
@@ -108806,11 +108921,13 @@
           6139.44
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_57",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5533.32,
@@ -109841,11 +109958,13 @@
           -597
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_58",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7129.19,
@@ -110916,11 +111035,13 @@
           6837.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_59",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6269,
@@ -112095,11 +112216,13 @@
           4289.08
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_60",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1695.48,
@@ -113154,11 +113277,13 @@
           -5338.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_61",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2331.33,
@@ -114269,11 +114394,13 @@
           -5499.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_62",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5278.06,
@@ -115040,11 +115167,13 @@
           -7009.98
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_63",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2176.26,
@@ -116295,11 +116424,13 @@
           -5753.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_64",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6699.85,
@@ -117086,11 +117217,13 @@
           -1521.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_65",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2107.9,
@@ -118245,11 +118378,13 @@
           -5942.96
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_66",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5531.33,
@@ -119100,11 +119235,13 @@
           -1371.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_67",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1796.64,
@@ -120059,11 +120196,13 @@
           -6016.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_68",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3668.9,
@@ -121126,11 +121265,13 @@
           6555.65
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_69",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5464.14,
@@ -122077,11 +122218,13 @@
           5444.72
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_70",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4344.7,
@@ -123052,11 +123195,13 @@
           6049.16
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_71",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1086.08,
@@ -124099,11 +124244,13 @@
           4351
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_72",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6403.5,
@@ -125286,11 +125433,13 @@
           -911
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_73",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1080.62,
@@ -126237,11 +126386,13 @@
           4977.46
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_74",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5369.15,
@@ -127260,11 +127411,13 @@
           -5085.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_75",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1793.84,
@@ -128063,11 +128216,13 @@
           -6168.98
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_76",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6148.2,
@@ -129042,11 +129197,13 @@
           3149.44
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_77",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2013.46,
@@ -129621,11 +129778,13 @@
           -4282.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_78",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5594.87,
@@ -130476,11 +130635,13 @@
           5010.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_79",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2244.74,
@@ -131175,11 +131336,13 @@
           -5633.98
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_80",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6557.51,
@@ -131634,11 +131797,13 @@
           -827.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_81",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5708.77,
@@ -132177,11 +132342,13 @@
           -394.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_82",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2248.56,
@@ -132792,11 +132959,13 @@
           -6481.25
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_83",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1188.15,
@@ -133523,11 +133692,13 @@
           5991.95
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_84",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5862.06,
@@ -134338,11 +134509,13 @@
           -6909.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_85",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6523.16,
@@ -135177,11 +135350,13 @@
           1071
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_86",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           943.74,
@@ -135964,11 +136139,13 @@
           3201
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_87",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2113.25,
@@ -136563,11 +136740,13 @@
           -5366.92
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_88",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6605.99,
@@ -137070,11 +137249,13 @@
           5615.46
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_89",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6445.59,
@@ -137629,11 +137810,13 @@
           -947.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_90",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3076.03,
@@ -138328,11 +138511,13 @@
           2911.12
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_91",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3284.11,
@@ -138727,11 +138912,13 @@
           -1013.78
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_92",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4792.78,
@@ -139550,11 +139737,13 @@
           -4491.38
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_93",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4901.03,
@@ -140225,11 +140414,13 @@
           6649.58
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_94",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5987.25,
@@ -140908,11 +141099,13 @@
           3764.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_95",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1797.45,
@@ -141503,11 +141696,13 @@
           -5105
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_96",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6782.81,
@@ -141910,11 +142105,13 @@
           259.03
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_97",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4609.01,
@@ -142653,11 +142850,13 @@
           -6819.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_98",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6148.21,
@@ -143204,11 +143403,13 @@
           2100.22
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_99",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6616.6,
@@ -143747,11 +143948,13 @@
           -1976.89
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_100",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5627.01,
@@ -144486,11 +144689,13 @@
           -6912.08
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_101",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2758.07,
@@ -144937,11 +145142,13 @@
           -6313.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_102",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5609.37,
@@ -145544,11 +145751,13 @@
           -5930.59
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_103",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6533.26,
@@ -145951,11 +146160,13 @@
           -439.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_104",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2114.25,
@@ -146542,11 +146753,13 @@
           -5718.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_105",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5160.96,
@@ -147233,11 +147446,13 @@
           -1767.19
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_106",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6786.11,
@@ -147652,11 +147867,13 @@
           -753.03
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_107",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           598.76,
@@ -148155,11 +148372,13 @@
           964.18
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_108",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4851.82,
@@ -148686,11 +148905,13 @@
           4036.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_109",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4271.47,
@@ -149349,11 +149570,13 @@
           5863.38
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_110",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5074.53,
@@ -149932,11 +150155,13 @@
           237.39
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_111",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6154.94,
@@ -150543,11 +150768,13 @@
           -4115.38
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_112",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5095.58,
@@ -150934,11 +151161,13 @@
           -2116.69
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_113",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4457.47,
@@ -151577,11 +151806,13 @@
           -4077.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_114",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3968.96,
@@ -152124,11 +152355,13 @@
           6448.03
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_115",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5294.97,
@@ -152727,11 +152960,13 @@
           5174.35
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_116",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4954.53,
@@ -153106,11 +153341,13 @@
           -2118.78
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_117",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5894.53,
@@ -153681,11 +153918,13 @@
           4438.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_118",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7073.93,
@@ -154304,11 +154543,13 @@
           1938.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_119",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3922.25,
@@ -154771,11 +155012,13 @@
           6805.31
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_120",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5615.1,
@@ -155242,11 +155485,13 @@
           -1681
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_121",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           535.85,
@@ -155781,11 +156026,13 @@
           2432.68
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_122",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5754.89,
@@ -156396,11 +156643,13 @@
           -3840.96
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_123",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6961.41,
@@ -156943,11 +157192,13 @@
           4727.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_124",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6144.91,
@@ -157402,11 +157653,13 @@
           5170.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_125",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1920.28,
@@ -157857,11 +158110,13 @@
           -5482.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_126",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6146.05,
@@ -158352,11 +158607,13 @@
           1736.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_127",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           460.38,
@@ -158735,11 +158992,13 @@
           2244.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_128",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6521.44,
@@ -159318,11 +159577,13 @@
           -3258.85
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_129",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6692.19,
@@ -159757,11 +160018,13 @@
           1293.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_130",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5606.24,
@@ -160128,11 +160391,13 @@
           -652.88
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_131",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6984.95,
@@ -160679,11 +160944,13 @@
           -6203.84
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_132",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6321.48,
@@ -161114,11 +161381,13 @@
           3352.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_133",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6648.87,
@@ -161653,11 +161922,13 @@
           3765.96
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_134",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6122.89,
@@ -162088,11 +162359,13 @@
           -6205.65
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_135",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6585.1,
@@ -162459,11 +162732,13 @@
           -3740.3
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_136",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6645.73,
@@ -162994,11 +163269,13 @@
           -6777.03
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_137",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           294.19,
@@ -163353,11 +163630,13 @@
           1269.71
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_138",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6582.7,
@@ -163808,11 +164087,13 @@
           1971.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_139",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1058.98,
@@ -164267,11 +164548,13 @@
           6749.34
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_140",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1975.46,
@@ -164786,11 +165069,13 @@
           -6885.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_141",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2099.84,
@@ -165201,11 +165486,13 @@
           -6241.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_142",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1978.21,
@@ -165672,11 +165959,13 @@
           -6136.89
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_143",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6935.15,
@@ -165991,11 +166280,13 @@
           422.49
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_144",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1015.93,
@@ -166566,11 +166857,13 @@
           5143.72
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_145",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1040.53,
@@ -167025,11 +167318,13 @@
           3362.16
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_146",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2660.25,
@@ -167452,11 +167747,13 @@
           -2921.27
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_147",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6470.33,
@@ -167895,11 +168192,13 @@
           1701.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_148",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2092.31,
@@ -168326,11 +168625,13 @@
           -6759.44
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_149",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2616.2,
@@ -168733,11 +169034,13 @@
           6648.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_150",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5976.64,
@@ -169264,11 +169567,13 @@
           -2893.6
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_151",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1562.45,
@@ -169539,11 +169844,13 @@
           -6456.05
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_152",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1546.89,
@@ -169910,11 +170217,13 @@
           -5929.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_153",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6050.5,
@@ -170301,11 +170610,13 @@
           960.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_154",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4339.56,
@@ -170672,11 +170983,13 @@
           6902.6
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_155",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6404.26,
@@ -170955,11 +171268,13 @@
           -2065.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_156",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5640.73,
@@ -171350,11 +171665,13 @@
           -2286.18
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_157",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3149.07,
@@ -171737,11 +172054,13 @@
           6583.32
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_158",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2729.23,
@@ -172128,11 +172447,13 @@
           -7065.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_159",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           269.71,
@@ -172575,11 +172896,13 @@
           6012.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_160",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           884.42,
@@ -172938,11 +173261,13 @@
           3067.04
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_161",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2667.03,
@@ -173321,11 +173646,13 @@
           -6575.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_162",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7009.43,
@@ -173576,11 +173903,13 @@
           -5871
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_163",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5411.87,
@@ -173959,11 +174288,13 @@
           149.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_164",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6667.35,
@@ -174386,11 +174717,13 @@
           -2417.48
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_165",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           407.27,
@@ -174729,11 +175062,13 @@
           961.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_166",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4189.98,
@@ -175028,11 +175363,13 @@
           6048.95
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_167",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3262.06,
@@ -175427,11 +175764,13 @@
           -6156.49
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_168",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5003.47,
@@ -175802,11 +176141,13 @@
           -6676.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_169",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6585.44,
@@ -176113,11 +176454,13 @@
           -3462.08
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_170",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6146.22,
@@ -176416,11 +176759,13 @@
           1520.14
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_171",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1926.94,
@@ -176643,11 +176988,13 @@
           -5147.57
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_172",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6081.67,
@@ -176978,11 +177325,13 @@
           1282.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_173",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           663.2,
@@ -177377,11 +177726,13 @@
           5618.05
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_174",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7115.16,
@@ -177716,11 +178067,13 @@
           -335.05
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_175",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6278.09,
@@ -178063,11 +178416,13 @@
           2769.18
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_176",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4880.47,
@@ -178434,11 +178789,13 @@
           5483.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_177",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5726.91,
@@ -178717,11 +179074,13 @@
           -6098.47
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_178",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6921.01,
@@ -179076,11 +179435,13 @@
           -2623.15
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_179",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5473.59,
@@ -179399,11 +179760,13 @@
           -5328.13
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_180",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2246.45,
@@ -179750,11 +180113,13 @@
           6594.98
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_181",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5578.36,
@@ -179977,11 +180342,13 @@
           -2376.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_182",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3310.68,
@@ -180248,11 +180615,13 @@
           -7153.34
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_183",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4761.13,
@@ -180603,11 +180972,13 @@
           -1344.09
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_184",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           283.29,
@@ -180858,11 +181229,13 @@
           965.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_185",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6268.11,
@@ -181109,11 +181482,13 @@
           5645.87
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_186",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3033.71,
@@ -181444,11 +181819,13 @@
           -6505.78
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_187",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6863.38,
@@ -181703,11 +182080,13 @@
           1632.18
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_188",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4680.63,
@@ -182098,11 +182477,13 @@
           -5326.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_189",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5355.04,
@@ -182413,11 +182794,13 @@
           -2047.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_190",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1970.08,
@@ -182660,11 +183043,13 @@
           -6563.85
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_191",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6897.51,
@@ -182939,11 +183324,13 @@
           -6940.72
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_192",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5866.94,
@@ -183154,11 +183541,13 @@
           4031.32
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_193",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5309,
@@ -183425,11 +183814,13 @@
           4195.41
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_194",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5976.78,
@@ -183676,11 +184067,13 @@
           184.13
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_195",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1080.94,
@@ -183895,11 +184288,13 @@
           4831.03
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_196",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2425.59,
@@ -184174,11 +184569,13 @@
           -6970.27
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_197",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7091.13,
@@ -184393,11 +184790,13 @@
           5277.22
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_198",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1251.24,
@@ -184668,11 +185067,13 @@
           6271
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_199",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6261.3,
@@ -184979,11 +185380,13 @@
           -2068.19
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_200",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1977.69,
@@ -185246,11 +185649,13 @@
           -6361.57
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_201",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6514.11,
@@ -185573,11 +185978,13 @@
           1265.69
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_202",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6555.15,
@@ -185804,11 +186211,13 @@
           2917.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_203",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6137.66,
@@ -186079,11 +186488,13 @@
           -1430.49
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_204",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6825.27,
@@ -186310,11 +186721,13 @@
           4004.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_205",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2327.49,
@@ -186549,11 +186962,13 @@
           -5395.86
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_206",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5371.98,
@@ -186796,11 +187211,13 @@
           5038.13
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_207",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5912.23,
@@ -187063,11 +187480,13 @@
           -1102.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_208",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5966.1,
@@ -187330,11 +187749,13 @@
           4225.31
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_209",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4309.41,
@@ -187585,11 +188006,13 @@
           5711.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_210",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5541.04,
@@ -187776,11 +188199,13 @@
           -7121.42
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_211",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3631.94,
@@ -188015,11 +188440,13 @@
           -6607.78
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_212",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3277.52,
@@ -188206,11 +188633,13 @@
           -6470.9
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_213",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6619.11,
@@ -188437,11 +188866,13 @@
           1902.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_214",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6538.16,
@@ -188680,11 +189111,13 @@
           1573.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_215",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           889.2,
@@ -188931,11 +189364,13 @@
           2819.55
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_216",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6690.12,
@@ -189162,11 +189597,13 @@
           -6912.85
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_217",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4125.17,
@@ -189425,11 +189862,13 @@
           -6453.96
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_218",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3089.59,
@@ -189616,11 +190055,13 @@
           -7149.85
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_219",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6114.93,
@@ -189827,11 +190268,13 @@
           -3256.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_220",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6833.78,
@@ -190066,11 +190509,13 @@
           2546.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_221",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5810.18,
@@ -190289,11 +190734,13 @@
           3592.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_222",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4121.4,
@@ -190544,11 +190991,13 @@
           -3691.11
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_223",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           550.84,
@@ -190835,11 +191284,13 @@
           6962.74
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_224",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4377.18,
@@ -191098,11 +191549,13 @@
           -3803.43
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_225",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4681,
@@ -191333,11 +191786,13 @@
           -3655
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_226",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6953.47,
@@ -191596,11 +192051,13 @@
           2389.12
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_227",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6280.45,
@@ -191823,11 +192280,13 @@
           -7036.72
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_228",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -516.1,
@@ -192006,11 +192465,13 @@
           -3529.69
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_229",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6867.91,
@@ -192209,11 +192670,13 @@
           -3408.41
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_230",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5954.59,
@@ -192392,11 +192855,13 @@
           541.52
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_231",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5041.85,
@@ -192595,11 +193060,13 @@
           4107.44
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_232",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5669.33,
@@ -192798,11 +193265,13 @@
           4802.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_233",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           831.83,
@@ -193029,11 +193498,13 @@
           5507.3
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_234",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4206.82,
@@ -193212,11 +193683,13 @@
           6387.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_235",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4185.1,
@@ -193467,11 +193940,13 @@
           -6573.76
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_236",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -302.92,
@@ -193646,11 +194121,13 @@
           -3501.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_237",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6299.16,
@@ -193857,11 +194334,13 @@
           -3136.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_238",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5889.65,
@@ -194112,11 +194591,13 @@
           -889.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_239",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7034.78,
@@ -194315,11 +194796,13 @@
           687.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_240",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2779.98,
@@ -194550,11 +195033,13 @@
           6653.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_241",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2608.83,
@@ -194733,11 +195218,13 @@
           -4002.29
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_242",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5913.88,
@@ -194960,11 +195447,13 @@
           -2189.34
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_243",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4201.34,
@@ -195219,11 +195708,13 @@
           -4509.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_244",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7035.09,
@@ -195382,11 +195873,13 @@
           -4267.34
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_245",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5705.18,
@@ -195577,11 +196070,13 @@
           -2519.44
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_246",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6777.34,
@@ -195800,11 +196295,13 @@
           -152.64
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_247",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5706.02,
@@ -195991,11 +196488,13 @@
           -2505.21
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_248",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -953.44,
@@ -196162,11 +196661,13 @@
           -3568.14
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_249",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4041.56,
@@ -196413,11 +196914,13 @@
           -4637.47
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_250",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6495.98,
@@ -196600,11 +197103,13 @@
           1797.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_251",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7128.83,
@@ -196771,11 +197276,13 @@
           3251.35
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_252",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6198.85,
@@ -196982,11 +197489,13 @@
           4164.48
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_253",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5623.39,
@@ -197177,11 +197686,13 @@
           5014.36
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_254",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6398.31,
@@ -197380,11 +197891,13 @@
           1247
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_255",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2047.78,
@@ -197551,11 +198064,13 @@
           -5333.1
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_256",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1397.59,
@@ -197698,11 +198213,13 @@
           4527.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_257",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1983.28,
@@ -197853,11 +198370,13 @@
           -5290.06
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_258",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3483.29,
@@ -198064,11 +198583,13 @@
           -6403.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_259",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6104.86,
@@ -198263,11 +198784,13 @@
           -2983.86
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_260",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6984.98,
@@ -198482,11 +199005,13 @@
           -2749.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_261",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2240.87,
@@ -198713,11 +199238,13 @@
           -6624.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_262",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3185.99,
@@ -198880,11 +199407,13 @@
           -6430.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_263",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4368.75,
@@ -199051,11 +199580,13 @@
           -6303.31
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_264",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4433.53,
@@ -199222,11 +199753,13 @@
           -6158.88
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_265",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7129.1,
@@ -199429,11 +199962,13 @@
           -3019.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_266",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6616.86,
@@ -199640,11 +200175,13 @@
           -60.11
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_267",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6008.36,
@@ -199815,11 +200352,13 @@
           817.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_268",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3128.71,
@@ -199970,11 +200509,13 @@
           -6637.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_269",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4290.71,
@@ -200157,11 +200698,13 @@
           -6433.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_270",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5236.25,
@@ -200296,11 +200839,13 @@
           -3597.95
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_271",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7100.98,
@@ -200435,11 +200980,13 @@
           1729.59
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_272",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2311.45,
@@ -200622,11 +201169,13 @@
           4673.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_273",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5282.72,
@@ -200765,11 +201314,13 @@
           5219.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_274",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1658.89,
@@ -200912,11 +201463,13 @@
           -3128.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_275",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6052.12,
@@ -201055,11 +201608,13 @@
           3071.08
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_276",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5608.97,
@@ -201194,11 +201749,13 @@
           -2564.14
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_277",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           5629.81,
@@ -201365,11 +201922,13 @@
           -2051.77
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_278",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           510.17,
@@ -201500,11 +202059,13 @@
           1298.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_279",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2118.28,
@@ -201667,11 +202228,13 @@
           5615.04
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_280",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           7065.37,
@@ -201814,11 +202377,13 @@
           -1561.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_281",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4905.12,
@@ -201965,11 +202530,13 @@
           -3440.04
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_282",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1864.86,
@@ -202116,11 +202683,13 @@
           -3133.29
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_283",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3778.24,
@@ -202295,11 +202864,13 @@
           6759.47
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_284",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1557.76,
@@ -202482,11 +203053,13 @@
           -5616.96
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_285",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3640.48,
@@ -202665,11 +203238,13 @@
           -6363.25
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_286",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3167.72,
@@ -202792,11 +203367,13 @@
           -6354.76
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_287",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6561.39,
@@ -202939,11 +203516,13 @@
           -6260.8
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_288",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5064.63,
@@ -203074,11 +203653,13 @@
           -6156.49
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_289",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5819.11,
@@ -203201,11 +203782,13 @@
           -5423.53
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_290",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4032.1,
@@ -203332,11 +203915,13 @@
           -4755.45
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_291",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4840.95,
@@ -203483,11 +204068,13 @@
           -4266.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_292",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -1265.89,
@@ -203610,11 +204197,13 @@
           -3505.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_293",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6111.17,
@@ -203741,11 +204330,13 @@
           -3079.52
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_294",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6331.07,
@@ -203868,11 +204459,13 @@
           -1502.68
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_295",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6986.78,
@@ -203995,11 +204588,13 @@
           -1467.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_296",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4489.28,
@@ -204150,11 +204745,13 @@
           -1132.22
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_297",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6258.51,
@@ -204277,11 +204874,13 @@
           14.6
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_298",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6440.99,
@@ -204460,11 +205059,13 @@
           58.11
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_299",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5376.39,
@@ -204587,11 +205188,13 @@
           600.64
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_300",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6489.29,
@@ -204718,11 +205321,13 @@
           1538.43
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_301",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6104.09,
@@ -204849,11 +205454,13 @@
           2580.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_302",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6117.21,
@@ -204980,11 +205587,13 @@
           2685.32
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_303",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6104.44,
@@ -205115,11 +205724,13 @@
           2821.65
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_304",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6072.3,
@@ -205246,11 +205857,13 @@
           2917.59
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_305",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5393.84,
@@ -205397,11 +206010,13 @@
           4563.68
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_306",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5146.96,
@@ -205524,11 +206139,13 @@
           4679.04
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_307",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5690.98,
@@ -205651,11 +206268,13 @@
           4982.92
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_308",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4580.59,
@@ -205778,11 +206397,13 @@
           5641.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_309",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1924.62,
@@ -205905,11 +206526,13 @@
           5684.61
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_310",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4485.13,
@@ -206032,11 +206655,13 @@
           5682.46
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_311",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2341.26,
@@ -206159,11 +206784,13 @@
           6596.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_312",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2843.17,
@@ -206286,11 +206913,13 @@
           6653.25
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_313",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2707.86,
@@ -206413,11 +207042,13 @@
           6651.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_314",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1349.13,
@@ -206540,11 +207171,13 @@
           6691.43
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_315",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1876.72,
@@ -206667,11 +207300,13 @@
           6690.71
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_316",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2909.4,
@@ -206790,11 +207425,13 @@
           -5818.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_317",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5202.21,
@@ -206925,11 +207562,13 @@
           -5172.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_318",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5201.78,
@@ -207064,11 +207703,13 @@
           -4206.71
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_319",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5304.52,
@@ -207199,11 +207840,13 @@
           -2220.05
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_320",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5955.04,
@@ -207334,11 +207977,13 @@
           393.11
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_321",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           670.54,
@@ -207469,11 +208114,13 @@
           759.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_322",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6896.33,
@@ -207604,11 +208251,13 @@
           2279.44
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_323",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6359.1,
@@ -207743,11 +208392,13 @@
           3954.89
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_324",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2535.57,
@@ -207878,11 +208529,13 @@
           5651.91
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_325",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6446.4,
@@ -207997,11 +208650,13 @@
           -2075.9
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_326",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1022.77,
@@ -208128,11 +208783,13 @@
           4815.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_327",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3357.4,
@@ -208243,11 +208900,13 @@
           -6399.64
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_328",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3031.23,
@@ -208362,11 +209021,13 @@
           -6092.36
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_329",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6105.27,
@@ -208481,11 +209142,13 @@
           1986.62
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_330",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6474.61,
@@ -208584,11 +209247,13 @@
           -4959.23
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_331",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3213.8,
@@ -208687,11 +209352,13 @@
           -7151.62
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_332",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2513.41,
@@ -208790,11 +209457,13 @@
           -6428.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_333",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3945.08,
@@ -208893,11 +209562,13 @@
           -6395.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_334",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5129.42,
@@ -208996,11 +209667,13 @@
           -5629.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_335",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -737.84,
@@ -209099,11 +209772,13 @@
           -3569.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_336",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2081.78,
@@ -209202,11 +209877,13 @@
           -3053.13
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_337",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5880.54,
@@ -209305,11 +209982,13 @@
           -618.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_338",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5585.61,
@@ -209408,11 +210087,13 @@
           422.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_339",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           567.07,
@@ -209511,11 +210192,13 @@
           753.87
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_340",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6849.99,
@@ -209614,11 +210297,13 @@
           4195.76
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_341",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           4894.24,
@@ -209717,11 +210402,13 @@
           5408.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_342",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2761.64,
@@ -209812,11 +210499,13 @@
           -7143.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_343",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7128.82,
@@ -209907,11 +210596,13 @@
           -6910.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_344",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4808.54,
@@ -210002,11 +210693,13 @@
           -6732.76
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_345",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4873.29,
@@ -210097,11 +210790,13 @@
           -6697.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_346",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3321.34,
@@ -210192,11 +210887,13 @@
           -6393.04
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_347",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3848.86,
@@ -210287,11 +210984,13 @@
           -6362.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_348",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3736.46,
@@ -210382,11 +211081,13 @@
           -6367.76
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_349",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7128.36,
@@ -210477,11 +211178,13 @@
           -6269.88
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_350",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6281.27,
@@ -210572,11 +211275,13 @@
           -6272.61
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_351",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7048.44,
@@ -210667,11 +211372,13 @@
           -6238.71
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_352",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6217.03,
@@ -210762,11 +211469,13 @@
           -6236.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_353",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           3287.56,
@@ -210857,11 +211566,13 @@
           -6235.49
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_354",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4505.31,
@@ -210952,11 +211663,13 @@
           -6001.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_355",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5049.59,
@@ -211047,11 +211760,13 @@
           -5960.88
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_356",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2743.18,
@@ -211142,11 +211857,13 @@
           -5933.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_357",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5737.06,
@@ -211237,11 +211954,13 @@
           -5385.63
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_358",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5673.42,
@@ -211332,11 +212051,13 @@
           -5354.3
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_359",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5577.52,
@@ -211427,11 +212148,13 @@
           -5324.88
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_360",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4776.45,
@@ -211522,11 +212245,13 @@
           -4987.73
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_361",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -4376.76,
@@ -211617,11 +212342,13 @@
           -4376.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_362",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3592.85,
@@ -211712,11 +212439,13 @@
           -3565.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_363",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -120.67,
@@ -211807,11 +212536,13 @@
           -3531.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_364",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2249.11,
@@ -211902,11 +212633,13 @@
           -2987.16
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_365",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2345.3,
@@ -211997,11 +212730,13 @@
           -2954.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_366",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2408.94,
@@ -212092,11 +212827,13 @@
           -2923.03
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_367",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           38.85,
@@ -212187,11 +212924,13 @@
           -2861.04
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_368",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -7081.06,
@@ -212282,11 +213021,13 @@
           -2713.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_369",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6329.04,
@@ -212377,11 +213118,13 @@
           -2254.37
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_370",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6249.05,
@@ -212472,11 +213215,13 @@
           -2253.26
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_371",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6185.08,
@@ -212567,11 +213312,13 @@
           -2218.64
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_372",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5432.64,
@@ -212662,11 +213409,13 @@
           -2073.28
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_373",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5192.76,
@@ -212757,11 +213506,13 @@
           -1836.58
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_374",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6536.83,
@@ -212852,11 +213603,13 @@
           -1500.91
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_375",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6248.93,
@@ -212947,11 +213700,13 @@
           -1468
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_376",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5977.49,
@@ -213042,11 +213797,13 @@
           -1273.45
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_377",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5945.19,
@@ -213137,11 +213894,13 @@
           -1167.09
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_378",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6888.35,
@@ -213232,11 +213991,13 @@
           -189.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_379",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6825.59,
@@ -213327,11 +214088,13 @@
           755.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_380",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2985.53,
@@ -213422,11 +214185,13 @@
           2888.46
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_381",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -6584.93,
@@ -213517,11 +214282,13 @@
           3653.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_382",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           6230.52,
@@ -213612,11 +214379,13 @@
           4071.9
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_383",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5416.96,
@@ -213707,11 +214476,13 @@
           5351.22
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_384",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -5321.22,
@@ -213802,11 +214573,13 @@
           5378.46
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_385",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2007.25,
@@ -213897,11 +214670,13 @@
           5648.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_386",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2247.53,
@@ -213992,11 +214767,13 @@
           5650.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_387",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           391.34,
@@ -214087,11 +214864,13 @@
           5780.96
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_388",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           519.02,
@@ -214182,11 +214961,13 @@
           5924.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_389",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           454.85,
@@ -214277,11 +215058,13 @@
           5952.16
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_390",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           359.12,
@@ -214372,11 +215155,13 @@
           5984.98
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_391",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3193.12,
@@ -214467,11 +215252,13 @@
           6417.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_392",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1031.61,
@@ -214562,11 +215349,13 @@
           6421.91
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_393",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3032.4,
@@ -214657,11 +215446,13 @@
           6528.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_394",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           2534.47,
@@ -214752,11 +215543,13 @@
           6632.88
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_395",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -3145.05,
@@ -214847,11 +215640,13 @@
           6722.09
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_396",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1159.54,
@@ -214942,11 +215737,13 @@
           6719.53
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_397",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           1958.99,
@@ -215037,11 +215834,13 @@
           6725.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_398",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           -2994.19,
@@ -215128,11 +215927,13 @@
           6785.9
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_399",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           695.02,
@@ -215223,11 +216024,13 @@
           6899.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     },
     {
       "id": "tp_sand_400",
-      "strength": 1,
+      "material": "Sand",
       "polygon": [
         [
           614.85,
@@ -215318,7 +216121,10 @@
           6935.58
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "CS1 sand"
     }
-  ]
+  ],
+  "strokes": []
 }

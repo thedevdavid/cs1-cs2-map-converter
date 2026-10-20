@@ -1,12 +1,17 @@
 {
   "name": "terrain-paint-dry-grass",
-  "_comment": "Terrain material paint (editor Terrain Inspector \u2192 MATERIALS), dry open ground: east / south-east plains (24434 cells) and south-facing slopes (20917 cells). Format PENDING the bridge\u0027s /import/terrain-paint schema: polygons in CS2 x/z metres (the same at both scales), strength 1. Material name is a PLACEHOLDER until the bridge lists the editor\u0027s materials.",
-  "material": "DryGrass",
-  "materialPlaceholder": true,
+  "_comment": "Terrain material paint (editor Terrain \u2192 Materials, POST /import/terrain-paint, bridge 0.9.29): dry open ground: east / south-east plains (24434 cells) and south-facing slopes (20917 cells). CS2 x/z metres, the same at both scales.",
+  "options": {
+    "dryRun": false,
+    "strength": 1,
+    "softEdge": 6,
+    "minStamp": 4,
+    "maxStamps": 250000
+  },
   "polygons": [
     {
       "id": "tp_dry_1",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5951.61,
@@ -3281,11 +3286,13 @@
           3823.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_2",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5953.63,
@@ -5936,11 +5943,13 @@
           6198.28
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_3",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5239.42,
@@ -8579,11 +8588,13 @@
           -7149.52
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_4",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6361.2,
@@ -11062,11 +11073,13 @@
           3476.05
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_5",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6829.07,
@@ -13301,11 +13314,13 @@
           5638.19
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_6",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5321.19,
@@ -14788,11 +14803,13 @@
           5742.6
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_7",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5940.16,
@@ -16747,11 +16764,13 @@
           -6623.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_8",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           925.56,
@@ -18838,11 +18857,13 @@
           -6646.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_9",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7128.89,
@@ -21129,11 +21150,13 @@
           -6875.91
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_10",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1533.25,
@@ -23116,11 +23139,13 @@
           923.45
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_11",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6078.43,
@@ -24051,11 +24076,13 @@
           -6124.29
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_12",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5525.16,
@@ -25230,11 +25257,13 @@
           6945.88
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_13",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2054.54,
@@ -26977,11 +27006,13 @@
           -173.21
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_14",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           141.49,
@@ -28652,11 +28683,13 @@
           -1524.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_15",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4422.59,
@@ -29467,11 +29500,13 @@
           6646.22
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_16",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1367,
@@ -30878,11 +30913,13 @@
           -1176.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_17",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1575.08,
@@ -32485,11 +32522,13 @@
           -5884.62
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_18",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6462.09,
@@ -33776,11 +33815,13 @@
           -5680.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_19",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3660.72,
@@ -34891,11 +34932,13 @@
           -6537.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_20",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5867.07,
@@ -35706,11 +35749,13 @@
           5237.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_21",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1644.7,
@@ -36877,11 +36922,13 @@
           -6395.55
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_22",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6465.03,
@@ -37684,11 +37731,13 @@
           4793.68
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_23",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6657.1,
@@ -38283,11 +38332,13 @@
           -5469.04
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_24",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1397.23,
@@ -39030,11 +39081,13 @@
           -1.75
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_25",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5073.85,
@@ -40017,11 +40070,13 @@
           -6034.22
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_26",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2518.93,
@@ -41044,11 +41099,13 @@
           -206.11
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_27",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6790.08,
@@ -41819,11 +41876,13 @@
           -6158.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_28",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6940.04,
@@ -42486,11 +42545,13 @@
           3356.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_29",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6982.58,
@@ -43413,11 +43474,13 @@
           4214.65
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_30",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5482,
@@ -44120,11 +44183,13 @@
           -6294.27
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_31",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6058.04,
@@ -45147,11 +45212,13 @@
           2371.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_32",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4570.96,
@@ -45934,11 +46001,13 @@
           -5942.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_33",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6810.65,
@@ -46869,11 +46938,13 @@
           -5946.71
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_34",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6990.99,
@@ -47432,11 +47503,13 @@
           -2532.64
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_35",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7000.18,
@@ -48191,11 +48264,13 @@
           3074.42
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_36",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7112.95,
@@ -48958,11 +49033,13 @@
           5072.26
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_37",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7081.16,
@@ -49573,11 +49650,13 @@
           6958.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_38",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           417.41,
@@ -50448,11 +50527,13 @@
           -7076.84
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_39",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5938.13,
@@ -51219,11 +51300,13 @@
           3652.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_40",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           253.37,
@@ -51990,11 +52073,13 @@
           -5627.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_41",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4945.57,
@@ -52601,11 +52686,13 @@
           6932.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_42",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1534.08,
@@ -53244,11 +53331,13 @@
           1439.38
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_43",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6871.71,
@@ -53883,11 +53972,13 @@
           5882.9
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_44",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2390.6,
@@ -54478,11 +54569,13 @@
           -1165.48
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_45",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -153.21,
@@ -55249,11 +55342,13 @@
           4900.21
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_46",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6695.99,
@@ -55892,11 +55987,13 @@
           -3343.13
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_47",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           7022.62,
@@ -56555,11 +56652,13 @@
           -5871.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_48",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6865.55,
@@ -57046,11 +57145,13 @@
           6165.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_49",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1671.48,
@@ -57669,11 +57770,13 @@
           152.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_50",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1917.38,
@@ -58664,11 +58767,13 @@
           -596.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_51",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4229.88,
@@ -59431,11 +59536,13 @@
           6934.48
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_52",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4368.86,
@@ -60190,11 +60297,13 @@
           6177.1
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_53",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2239.98,
@@ -60817,11 +60926,13 @@
           -2216.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_54",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6952.01,
@@ -61332,11 +61443,13 @@
           -2014.85
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_55",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1975.35,
@@ -62067,11 +62180,13 @@
           1637.73
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_56",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6040.48,
@@ -62662,11 +62777,13 @@
           -3918.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_57",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4079.93,
@@ -63261,11 +63378,13 @@
           4174.39
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_58",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2556.67,
@@ -63916,11 +64035,13 @@
           -1585
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_59",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1254.74,
@@ -64551,11 +64672,13 @@
           -6968.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_60",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1580.74,
@@ -65158,11 +65281,13 @@
           -5531.53
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_61",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           110.4,
@@ -65865,11 +65990,13 @@
           -7140.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_62",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6338.08,
@@ -66360,11 +66487,13 @@
           -3103.68
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_63",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7128.68,
@@ -66867,11 +66996,13 @@
           -5645.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_64",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4989.94,
@@ -67378,11 +67509,13 @@
           -5171.09
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_65",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5090.99,
@@ -67881,11 +68014,13 @@
           -3721.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_66",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5833.7,
@@ -68252,11 +68387,13 @@
           -3455.15
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_67",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6689.8,
@@ -68763,11 +68900,13 @@
           -5759.87
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_68",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3199.5,
@@ -69214,11 +69353,13 @@
           -7073.49
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_69",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2014.66,
@@ -69725,11 +69866,13 @@
           -2100.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_70",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3094.65,
@@ -70340,11 +70483,13 @@
           564.58
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_71",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3942.77,
@@ -70719,11 +70864,13 @@
           -3058.11
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_72",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3988.93,
@@ -71258,11 +71405,13 @@
           2633.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_73",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3278,
@@ -71773,11 +71922,13 @@
           -6365.15
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_74",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4550.86,
@@ -72288,11 +72439,13 @@
           345.8
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_75",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2807.91,
@@ -72747,11 +72900,13 @@
           -1277.18
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_76",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4636.06,
@@ -73070,11 +73225,13 @@
           -4076.69
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_77",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6524.5,
@@ -73493,11 +73650,13 @@
           4094.62
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_78",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           22.15,
@@ -73940,11 +74099,13 @@
           -2013.46
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_79",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           173.7,
@@ -74299,11 +74460,13 @@
           -6681.58
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_80",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2790.9,
@@ -74838,11 +75001,13 @@
           -1593.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_81",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           86.89,
@@ -75253,11 +75418,13 @@
           -6411.25
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_82",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           256.98,
@@ -75860,11 +76027,13 @@
           -886.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_83",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6460.45,
@@ -76311,11 +76480,13 @@
           -3001.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_84",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4665.19,
@@ -76822,11 +76993,13 @@
           -5708.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_85",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6759.1,
@@ -77169,11 +77342,13 @@
           946.69
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_86",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           330.02,
@@ -77548,11 +77723,13 @@
           -7151.08
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_87",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4652.23,
@@ -78043,11 +78220,13 @@
           -4921.63
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_88",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2889.69,
@@ -78530,11 +78709,13 @@
           -1345.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_89",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3622.76,
@@ -78949,11 +79130,13 @@
           -4285.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_90",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2096.38,
@@ -79372,11 +79555,13 @@
           -3320.55
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_91",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6660.95,
@@ -79827,11 +80012,13 @@
           1214.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_92",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3670.8,
@@ -80150,11 +80337,13 @@
           2772
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_93",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1844.88,
@@ -80573,11 +80762,13 @@
           -6732.2
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_94",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2679.08,
@@ -80960,11 +81151,13 @@
           672.41
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_95",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2897.29,
@@ -81391,11 +81584,13 @@
           -6710.57
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_96",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2086.54,
@@ -81906,11 +82101,13 @@
           1211.27
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_97",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4289.34,
@@ -82269,11 +82466,13 @@
           -5674.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_98",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           476.24,
@@ -82724,11 +82923,13 @@
           -5595.11
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_99",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5875.07,
@@ -83071,11 +83272,13 @@
           1219.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_100",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4839.57,
@@ -83458,11 +83661,13 @@
           -2937.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_101",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2599.12,
@@ -83825,11 +84030,13 @@
           4029.72
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_102",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6464.76,
@@ -84260,11 +84467,13 @@
           -2745.98
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_103",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           39.28,
@@ -84583,11 +84792,13 @@
           -6042.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_104",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2167.72,
@@ -85002,11 +85213,13 @@
           -2539.35
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_105",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4376.71,
@@ -85413,11 +85626,13 @@
           -3275.55
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_106",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6898.82,
@@ -85744,11 +85959,13 @@
           2838.44
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_107",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1782.23,
@@ -86175,11 +86392,13 @@
           -1144.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_108",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           278.83,
@@ -86550,11 +86769,13 @@
           4178.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_109",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           7046.41,
@@ -86905,11 +87126,13 @@
           5176.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_110",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6375.92,
@@ -87204,11 +87427,13 @@
           5254.21
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_111",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -1373,
@@ -87519,11 +87744,13 @@
           -4923.2
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_112",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2222.04,
@@ -87882,11 +88109,13 @@
           -7147.34
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_113",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3143.57,
@@ -88205,11 +88434,13 @@
           -6603.48
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_114",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           863.09,
@@ -88516,11 +88747,13 @@
           -7149.65
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_115",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4185.94,
@@ -88823,11 +89056,13 @@
           -4564.2
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_116",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5126.2,
@@ -89190,11 +89425,13 @@
           -3352.57
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_117",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           999.14,
@@ -89637,11 +89874,13 @@
           -6367.36
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_118",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3319.4,
@@ -90060,11 +90299,13 @@
           -4475.53
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_119",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2523.27,
@@ -90351,11 +90592,13 @@
           3479.58
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_120",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1862,
@@ -90758,11 +91001,13 @@
           -812.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_121",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5363,
@@ -91053,11 +91298,13 @@
           871.42
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_122",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4520.35,
@@ -91412,11 +91659,13 @@
           4950.18
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_123",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           7133.28,
@@ -91731,11 +91980,13 @@
           -6393.43
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_124",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6962.55,
@@ -92054,11 +92305,13 @@
           -1436.25
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_125",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           7046.32,
@@ -92429,11 +92682,13 @@
           5586.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_126",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3305.98,
@@ -92684,11 +92939,13 @@
           -2070.29
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_127",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1991.28,
@@ -93019,11 +93276,13 @@
           -7039.95
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_128",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3439.4,
@@ -93334,11 +93593,13 @@
           -6613.16
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_129",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5421.61,
@@ -93617,11 +93878,13 @@
           -4206.06
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_130",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1358.52,
@@ -93976,11 +94239,13 @@
           1250.43
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_131",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5805.73,
@@ -94303,11 +94568,13 @@
           -5198.87
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_132",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5501.92,
@@ -94566,11 +94833,13 @@
           679.06
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_133",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4311.1,
@@ -94849,11 +95118,13 @@
           -2156.16
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_134",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2846.23,
@@ -95124,11 +95395,13 @@
           -1885.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_135",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4586.88,
@@ -95403,11 +95676,13 @@
           5618.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_136",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -3988.41,
@@ -95706,11 +95981,13 @@
           -5618.27
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_137",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2551.61,
@@ -96021,11 +96298,13 @@
           4943.98
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_138",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2462.29,
@@ -96316,11 +96595,13 @@
           -1875.2
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_139",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3366.67,
@@ -96599,11 +96880,13 @@
           -6972.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_140",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3638.71,
@@ -96898,11 +97181,13 @@
           -6778.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_141",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6486.63,
@@ -97149,11 +97434,13 @@
           3490.57
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_142",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           590.57,
@@ -97436,11 +97723,13 @@
           -5430.29
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_143",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           236.02,
@@ -97755,11 +98044,13 @@
           -1834.65
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_144",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6870.4,
@@ -98026,11 +98317,13 @@
           4182.76
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_145",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2230.72,
@@ -98345,11 +98638,13 @@
           -6766.18
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_146",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6647.88,
@@ -98632,11 +98927,13 @@
           5666.63
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_147",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2564.82,
@@ -98971,11 +99268,13 @@
           -1683.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_148",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5970.98,
@@ -99214,11 +99513,13 @@
           702.75
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_149",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5850.06,
@@ -99453,11 +99754,13 @@
           4687.11
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_150",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1371.13,
@@ -99808,11 +100111,13 @@
           -1845.63
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_151",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6952.97,
@@ -100071,11 +100376,13 @@
           -5322.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_152",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4668.06,
@@ -100362,11 +100669,13 @@
           -2692.72
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_153",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1643.55,
@@ -100669,11 +100978,13 @@
           -2338.64
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_154",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2790.71,
@@ -100964,11 +101275,13 @@
           -559.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_155",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5803.12,
@@ -101291,11 +101604,13 @@
           -27.12
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_156",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -3060.22,
@@ -101546,11 +101861,13 @@
           3203.88
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_157",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           444.92,
@@ -101881,11 +102198,13 @@
           -5468.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_158",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5844.61,
@@ -102244,11 +102563,13 @@
           6970.49
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_159",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1454.03,
@@ -102543,11 +102864,13 @@
           -1485.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_160",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5898.85,
@@ -102794,11 +103117,13 @@
           4995.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_161",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6926.26,
@@ -103045,11 +103370,13 @@
           5997.84
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_162",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6561.91,
@@ -103304,11 +103631,13 @@
           6961.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_163",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6050.15,
@@ -103647,11 +103976,13 @@
           -5258.05
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_164",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6305.73,
@@ -103894,11 +104225,13 @@
           -4107.27
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_165",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1326.36,
@@ -104105,11 +104438,13 @@
           -233.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_166",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1109.12,
@@ -104344,11 +104679,13 @@
           -6950.61
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_167",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6018.11,
@@ -104631,11 +104968,13 @@
           6888.19
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_168",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4151.43,
@@ -104906,11 +105245,13 @@
           -6962.11
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_169",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5159.1,
@@ -105177,11 +105518,13 @@
           -5564.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_170",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2875.61,
@@ -105400,11 +105743,13 @@
           -904.34
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_171",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2525.89,
@@ -105719,11 +106064,13 @@
           1884.89
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_172",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6613.02,
@@ -105994,11 +106341,13 @@
           6406.32
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_173",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1671.46,
@@ -106229,11 +106578,13 @@
           -6106.23
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_174",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           285.99,
@@ -106476,11 +106827,13 @@
           -5242.8
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_175",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3989.16,
@@ -106759,11 +107112,13 @@
           -4976.63
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_176",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5227.09,
@@ -107014,11 +107369,13 @@
           3801.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_177",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5858.93,
@@ -107209,11 +107566,13 @@
           -492.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_178",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5660.2,
@@ -107432,11 +107791,13 @@
           963.13
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_179",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2390.03,
@@ -107643,11 +108004,13 @@
           1336.28
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_180",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2630.53,
@@ -107934,11 +108297,13 @@
           3273.38
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_181",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6974.14,
@@ -108169,11 +108534,13 @@
           3882.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_182",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2942.59,
@@ -108432,11 +108799,13 @@
           -6025.38
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_183",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -1878.02,
@@ -108647,11 +109016,13 @@
           -947.84
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_184",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2151.19,
@@ -108902,11 +109273,13 @@
           -6060.57
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_185",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3192,
@@ -109113,11 +109486,13 @@
           -1875.73
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_186",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1262.19,
@@ -109396,11 +109771,13 @@
           -1740.64
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_187",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2108.57,
@@ -109619,11 +109996,13 @@
           -990.55
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_188",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2285.42,
@@ -109854,11 +110233,13 @@
           -6462.05
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_189",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2774.71,
@@ -110085,11 +110466,13 @@
           3523.28
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_190",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1365.92,
@@ -110312,11 +110695,13 @@
           139.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_191",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1437.86,
@@ -110575,11 +110960,13 @@
           -7054.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_192",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3885.54,
@@ -110790,11 +111177,13 @@
           -740.92
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_193",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5669.18,
@@ -110993,11 +111382,13 @@
           -5781.34
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_194",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2351.9,
@@ -111208,11 +111599,13 @@
           1940.85
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_195",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6343.34,
@@ -111423,11 +111816,13 @@
           4131.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_196",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1630.5,
@@ -111638,11 +112033,13 @@
           -1677.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_197",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4856.57,
@@ -111837,11 +112234,13 @@
           6703.62
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_198",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1338.21,
@@ -112100,11 +112499,13 @@
           -1972.62
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_199",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2996.71,
@@ -112311,11 +112712,13 @@
           -1206.45
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_200",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3398.23,
@@ -112514,11 +112917,13 @@
           -3366.71
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_201",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -1056.6,
@@ -112733,11 +113138,13 @@
           4749.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_202",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6752.45,
@@ -112956,11 +113363,13 @@
           4937.39
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_203",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6901.7,
@@ -113147,11 +113556,13 @@
           5224.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_204",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5848.91,
@@ -113330,11 +113741,13 @@
           -5067.63
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_205",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2815.46,
@@ -113513,11 +113926,13 @@
           -702.22
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_206",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6660.95,
@@ -113700,11 +114115,13 @@
           3808.68
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_207",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2630.49,
@@ -113963,11 +114380,13 @@
           -1755.2
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_208",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           630.45,
@@ -114162,11 +114581,13 @@
           -6746.95
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_209",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1405.88,
@@ -114373,11 +114794,13 @@
           -2383.53
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_210",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3269.03,
@@ -114560,11 +114983,13 @@
           437.74
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_211",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6801.72,
@@ -114771,11 +115196,13 @@
           2851.89
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_212",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2414.28,
@@ -114950,11 +115377,13 @@
           1701.58
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_213",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5384.48,
@@ -115133,11 +115562,13 @@
           3673.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_214",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5765.06,
@@ -115324,11 +115755,13 @@
           3955.39
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_215",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6711.21,
@@ -115579,11 +116012,13 @@
           5265.55
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_216",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6454.55,
@@ -115770,11 +116205,13 @@
           5874.11
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_217",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6589.72,
@@ -116005,11 +116442,13 @@
           7135.06
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_218",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6533.97,
@@ -116184,11 +116623,13 @@
           -5360.36
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_219",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5035.05,
@@ -116391,11 +116832,13 @@
           -2989.48
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_220",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3822.17,
@@ -116602,11 +117045,13 @@
           -4813.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_221",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7055.13,
@@ -116785,11 +117230,13 @@
           -3385.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_222",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4622.26,
@@ -116988,11 +117435,13 @@
           -3369.48
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_223",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3013.21,
@@ -117171,11 +117620,13 @@
           -1899.4
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_224",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1326.1,
@@ -117354,11 +117805,13 @@
           -1631.69
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_225",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2379.93,
@@ -117541,11 +117994,13 @@
           795.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_226",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3550.31,
@@ -117716,11 +118171,13 @@
           3071.21
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_227",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2646.28,
@@ -117919,11 +118376,13 @@
           3456.36
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_228",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -1369.22,
@@ -118098,11 +118557,13 @@
           4911.3
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_229",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5608.78,
@@ -118265,11 +118726,13 @@
           6096.78
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_230",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3982.13,
@@ -118484,11 +118947,13 @@
           -6842.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_231",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5788.98,
@@ -118659,11 +119124,13 @@
           -5861.46
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_232",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           714.93,
@@ -118830,11 +119297,13 @@
           -5345.8
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_233",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           973.57,
@@ -119041,11 +119510,13 @@
           -3204.36
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_234",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1174.7,
@@ -119264,11 +119735,13 @@
           -2125
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_235",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4606.35,
@@ -119487,11 +119960,13 @@
           2592.96
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_236",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6430.57,
@@ -119690,11 +120165,13 @@
           5796.64
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_237",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6591.34,
@@ -119905,11 +120382,13 @@
           5928.86
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_238",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6407.04,
@@ -120116,11 +120595,13 @@
           -5119.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_239",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4502.3,
@@ -120307,11 +120788,13 @@
           -2363.88
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_240",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6644.04,
@@ -120474,11 +120957,13 @@
           -1919.29
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_241",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6503.53,
@@ -120649,11 +121134,13 @@
           4963.78
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_242",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4322.03,
@@ -120824,11 +121311,13 @@
           5131.18
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_243",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6088.77,
@@ -120991,11 +121480,13 @@
           -6541.38
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_244",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3892.72,
@@ -121162,11 +121653,13 @@
           -4253.75
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_245",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2878.36,
@@ -121373,11 +121866,13 @@
           813.55
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_246",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5789.89,
@@ -121532,11 +122027,13 @@
           -6608.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_247",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1102.56,
@@ -121695,11 +122192,13 @@
           -5171.74
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_248",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6533.08,
@@ -121882,11 +122381,13 @@
           -2344.87
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_249",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4165.33,
@@ -122041,11 +122542,13 @@
           -652.51
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_250",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6388.89,
@@ -122192,11 +122695,13 @@
           708.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_251",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6813.5,
@@ -122351,11 +122856,13 @@
           1604.47
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_252",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           7021.82,
@@ -122542,11 +123049,13 @@
           6141.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_253",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4763.45,
@@ -122693,11 +123202,13 @@
           -3179.71
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_254",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2475.95,
@@ -122844,11 +123355,13 @@
           -3002.69
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_255",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4679.27,
@@ -123039,11 +123552,13 @@
           -2349.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_256",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3495.92,
@@ -123206,11 +123721,13 @@
           2775.39
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_257",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1332.88,
@@ -123353,11 +123870,13 @@
           -6276.63
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_258",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2983.42,
@@ -123504,11 +124023,13 @@
           -3310.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_259",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2494.02,
@@ -123659,11 +124180,13 @@
           602.48
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_260",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4369.92,
@@ -123814,11 +124337,13 @@
           4605.78
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_261",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2172.24,
@@ -123969,11 +124494,13 @@
           4923.22
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_262",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5846.84,
@@ -124116,11 +124643,13 @@
           -6873.18
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_263",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5825.62,
@@ -124263,11 +124792,13 @@
           -6328.15
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_264",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           775.37,
@@ -124422,11 +124953,13 @@
           -5678.47
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_265",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3383.46,
@@ -124577,11 +125110,13 @@
           -4599.64
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_266",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2102.66,
@@ -124752,11 +125287,13 @@
           1684.6
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_267",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6876.16,
@@ -124931,11 +125468,13 @@
           5661.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_268",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1341.63,
@@ -125078,11 +125617,13 @@
           -5485.43
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_269",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1351.2,
@@ -125233,11 +125774,13 @@
           -5339.61
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_270",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2781.87,
@@ -125380,11 +125923,13 @@
           -4000.43
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_271",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           37.18,
@@ -125519,11 +126064,13 @@
           -3682.49
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_272",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2173.95,
@@ -125690,11 +126237,13 @@
           -427.96
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_273",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2750.22,
@@ -125837,11 +126386,13 @@
           1519.91
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_274",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4782.44,
@@ -125992,11 +126543,13 @@
           2213.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_275",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2229.44,
@@ -126135,11 +126688,13 @@
           -6906.57
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_276",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -1114.64,
@@ -126278,11 +126833,13 @@
           -5804.62
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_277",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           87.58,
@@ -126433,11 +126990,13 @@
           -5003.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_278",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3885.88,
@@ -126584,11 +127143,13 @@
           -4136.8
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_279",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1317.94,
@@ -126727,11 +127288,13 @@
           -1293.68
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_280",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1499.87,
@@ -126862,11 +127425,13 @@
           -303.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_281",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6631.48,
@@ -127005,11 +127570,13 @@
           5492.34
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_282",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5838.46,
@@ -127140,11 +127707,13 @@
           -6766.75
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_283",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5757.97,
@@ -127279,11 +127848,13 @@
           -5360.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_284",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1142.48,
@@ -127414,11 +127985,13 @@
           -5318.64
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_285",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3150.63,
@@ -127545,11 +128118,13 @@
           -3759.06
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_286",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2221.56,
@@ -127700,11 +128275,13 @@
           -3447.44
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_287",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2253.9,
@@ -127843,11 +128420,13 @@
           956.02
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_288",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6382.1,
@@ -127978,11 +128557,13 @@
           3702.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_289",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4057,
@@ -128117,11 +128698,13 @@
           4036.19
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_290",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4395.02,
@@ -128252,11 +128835,13 @@
           5552.08
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_291",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6621.09,
@@ -128387,11 +128972,13 @@
           6302.76
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_292",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7121.71,
@@ -128534,11 +129121,13 @@
           -5173.61
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_293",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           23.05,
@@ -128701,11 +129290,13 @@
           -5163.1
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_294",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6883.62,
@@ -128832,11 +129423,13 @@
           -5075.54
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_295",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1334.89,
@@ -128967,11 +129560,13 @@
           -2216.29
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_296",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2615.23,
@@ -129098,11 +129693,13 @@
           1364.61
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_297",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -3321.45,
@@ -129241,11 +129838,13 @@
           4165.89
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_298",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -3540.7,
@@ -129384,11 +129983,13 @@
           5797.2
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_299",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6465.69,
@@ -129515,11 +130116,13 @@
           7062.41
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_300",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4608.04,
@@ -129638,11 +130241,13 @@
           -3217.78
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_301",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -1720.96,
@@ -129769,11 +130374,13 @@
           -944.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_302",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1166.28,
@@ -129900,11 +130507,13 @@
           27.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_303",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3678.39,
@@ -130031,11 +130640,13 @@
           681.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_304",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2565.36,
@@ -130166,11 +130777,13 @@
           -1465.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_305",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1926.35,
@@ -130293,11 +130906,13 @@
           -282.13
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_306",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5709.75,
@@ -130420,11 +131035,13 @@
           -6481.28
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_307",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3350.57,
@@ -130567,11 +131184,13 @@
           -6218.51
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_308",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5718.69,
@@ -130690,11 +131309,13 @@
           -5612.44
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_309",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           974.31,
@@ -130813,11 +131434,13 @@
           -5275.62
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_310",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4430.92,
@@ -130940,11 +131563,13 @@
           -5228.96
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_311",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7089.88,
@@ -131063,11 +131688,13 @@
           -5072.25
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_312",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7042.04,
@@ -131190,11 +131817,13 @@
           -4971.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_313",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1244.25,
@@ -131313,11 +131942,13 @@
           -4908.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_314",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6984.56,
@@ -131452,11 +132083,13 @@
           -4459.19
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_315",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5366.93,
@@ -131575,11 +132208,13 @@
           -3004.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_316",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4958.88,
@@ -131698,11 +132333,13 @@
           -2567.74
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_317",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1574.5,
@@ -131833,11 +132470,13 @@
           -1518.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_318",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -3016.89,
@@ -131960,11 +132599,13 @@
           419.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_319",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1815.27,
@@ -132087,11 +132728,13 @@
           515.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_320",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1847.74,
@@ -132230,11 +132873,13 @@
           658.8
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_321",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6395.77,
@@ -132349,11 +132994,13 @@
           2364.51
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_322",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2900.84,
@@ -132476,11 +133123,13 @@
           3273.7
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_323",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6018.3,
@@ -132595,11 +133244,13 @@
           3540.74
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_324",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -626.41,
@@ -132722,11 +133373,13 @@
           4335.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_325",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5245.43,
@@ -132857,11 +133510,13 @@
           5155.23
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_326",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6980.98,
@@ -132976,11 +133631,13 @@
           5368.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_327",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6862.1,
@@ -133103,11 +133760,13 @@
           5460.2
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_328",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           7022.23,
@@ -133226,11 +133885,13 @@
           5971.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_329",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4134.68,
@@ -133349,11 +134010,13 @@
           -7067.82
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_330",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5238.91,
@@ -133472,11 +134135,13 @@
           -6107.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_331",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2630.6,
@@ -133603,11 +134268,13 @@
           -3517.34
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_332",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3431.23,
@@ -133730,11 +134397,13 @@
           -2191.89
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_333",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2620.89,
@@ -133861,11 +134530,13 @@
           -420.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_334",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           471.32,
@@ -133984,11 +134655,13 @@
           -5949.3
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_335",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1101.83,
@@ -134099,11 +134772,13 @@
           -6650.55
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_336",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5534.65,
@@ -134214,11 +134889,13 @@
           -5021.31
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_337",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2772.64,
@@ -134325,11 +135002,13 @@
           -3681.47
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_338",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2446.64,
@@ -134440,11 +135119,13 @@
           -3585.3
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_339",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4882.56,
@@ -134555,11 +135236,13 @@
           -2609.75
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_340",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6631.15,
@@ -134674,11 +135357,13 @@
           -1227.62
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_341",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3781,
@@ -134785,11 +135470,13 @@
           -652.12
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_342",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1085.93,
@@ -134900,11 +135587,13 @@
           -343.71
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_343",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2542.36,
@@ -135019,11 +135708,13 @@
           197.14
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_344",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4679.4,
@@ -135134,11 +135825,13 @@
           723.96
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_345",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2315.79,
@@ -135249,11 +135942,13 @@
           2161.27
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_346",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5150.49,
@@ -135364,11 +136059,13 @@
           2919.87
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_347",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -3330.14,
@@ -135475,11 +136172,13 @@
           3667.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_348",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6076.41,
@@ -135590,11 +136289,13 @@
           4451.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_349",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6918.69,
@@ -135705,11 +136406,13 @@
           5188.32
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_350",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6932.68,
@@ -135816,11 +136519,13 @@
           5564.38
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_351",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6878.62,
@@ -135935,11 +136640,13 @@
           6455.3
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_352",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6702.09,
@@ -136046,11 +136753,13 @@
           6502.68
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_353",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -3897.07,
@@ -136165,11 +136874,13 @@
           -7117.23
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_354",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6808.88,
@@ -136280,11 +136991,13 @@
           -5440.77
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_355",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6747.06,
@@ -136383,11 +137096,13 @@
           -5124.27
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_356",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6216.54,
@@ -136498,11 +137213,13 @@
           -4905.76
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_357",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           91.4,
@@ -136601,11 +137318,13 @@
           -4843.41
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_358",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3166.15,
@@ -136716,11 +137435,13 @@
           -3370.38
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_359",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2399.67,
@@ -136827,11 +137548,13 @@
           -3338.37
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_360",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4571.04,
@@ -136930,11 +137653,13 @@
           -3011.27
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_361",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2628.67,
@@ -137033,11 +137758,13 @@
           -2828.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_362",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7115.05,
@@ -137136,11 +137863,13 @@
           -2686.09
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_363",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3956.94,
@@ -137239,11 +137968,13 @@
           -265.13
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_364",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1788.97,
@@ -137350,11 +138081,13 @@
           915.75
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_365",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2624.95,
@@ -137453,11 +138186,13 @@
           1654.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_366",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5528.76,
@@ -137568,11 +138303,13 @@
           3460.23
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_367",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4018.31,
@@ -137679,11 +138416,13 @@
           3951.55
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_368",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6246.06,
@@ -137798,11 +138537,13 @@
           4085
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_369",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4250.68,
@@ -137901,11 +138642,13 @@
           4723.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_370",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5959.2,
@@ -138020,11 +138763,13 @@
           4803.6
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_371",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6871.11,
@@ -138143,11 +138888,13 @@
           5841.32
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_372",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1021.74,
@@ -138246,11 +138993,13 @@
           -6738.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_373",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4737.99,
@@ -138349,11 +139098,13 @@
           -5899.12
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_374",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4908.41,
@@ -138452,11 +139203,13 @@
           -5499.46
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_375",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4989.79,
@@ -138555,11 +139308,13 @@
           -5434.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_376",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1167.3,
@@ -138658,11 +139413,13 @@
           -4983.25
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_377",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           622.1,
@@ -138761,11 +139518,13 @@
           -4401.95
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_378",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6241.94,
@@ -138864,11 +139623,13 @@
           -3873.33
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_379",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2343.06,
@@ -138967,11 +139728,13 @@
           -3210.46
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_380",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2014,
@@ -139070,11 +139833,13 @@
           -3012.77
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_381",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2014.5,
@@ -139201,11 +139966,13 @@
           -2249.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_382",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -434.61,
@@ -139304,11 +140071,13 @@
           -831.79
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_383",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3022.32,
@@ -139407,11 +140176,13 @@
           -365.93
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_384",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           967.42,
@@ -139510,11 +140281,13 @@
           -40.61
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_385",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2374.47,
@@ -139613,11 +140386,13 @@
           146.44
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_386",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2716.45,
@@ -139716,11 +140491,13 @@
           393.08
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_387",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3165.12,
@@ -139819,11 +140596,13 @@
           3096.05
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_388",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3406.25,
@@ -139910,11 +140689,13 @@
           -7144.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_389",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4121.47,
@@ -140005,11 +140786,13 @@
           -7015.66
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_390",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           798.02,
@@ -140096,11 +140879,13 @@
           -6904.25
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_391",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1038.21,
@@ -140187,11 +140972,13 @@
           -6083.18
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_392",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1038.14,
@@ -140278,11 +141065,13 @@
           -5367.52
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_393",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1063.1,
@@ -140373,11 +141162,13 @@
           -5306.67
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_394",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2038.58,
@@ -140468,11 +141259,13 @@
           -5194.78
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_395",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -7042.25,
@@ -140559,11 +141352,13 @@
           -4751.51
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_396",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2615.54,
@@ -140654,11 +141449,13 @@
           -4608.42
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_397",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3485.71,
@@ -140745,11 +141542,13 @@
           -4608.21
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_398",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           653.81,
@@ -140836,11 +141635,13 @@
           -4568.41
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_399",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           7094.44,
@@ -140931,11 +141732,13 @@
           -4273.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_400",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1421.94,
@@ -141022,11 +141825,13 @@
           -4189.07
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_401",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2631.54,
@@ -141117,11 +141922,13 @@
           -3835.83
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_402",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3278.07,
@@ -141208,11 +142015,13 @@
           -3807.81
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_403",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2871.01,
@@ -141303,11 +142112,13 @@
           -3775.08
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_404",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2550.7,
@@ -141398,11 +142209,13 @@
           -3704.97
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_405",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2318.35,
@@ -141489,11 +142302,13 @@
           -3273.2
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_406",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4785.56,
@@ -141580,11 +142395,13 @@
           -2520.24
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_407",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1230.19,
@@ -141671,11 +142488,13 @@
           -2193.57
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_408",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1206.42,
@@ -141766,11 +142585,13 @@
           -1943.87
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_409",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2598.51,
@@ -141861,11 +142682,13 @@
           -1934.35
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_410",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2284.8,
@@ -141952,11 +142775,13 @@
           -1473.1
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_411",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3934.31,
@@ -142043,11 +142868,13 @@
           -510.29
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_412",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3143.04,
@@ -142138,11 +142965,13 @@
           -154.95
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_413",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1127.2,
@@ -142233,11 +143062,13 @@
           -139.95
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_414",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1063.64,
@@ -142328,11 +143159,13 @@
           383.32
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_415",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2429.91,
@@ -142419,11 +143252,13 @@
           462.91
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_416",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2014.25,
@@ -142510,11 +143345,13 @@
           702.43
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_417",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           1087.2,
@@ -142601,11 +143438,13 @@
           975.99
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_418",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           4471.01,
@@ -142696,11 +143535,13 @@
           1028.56
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_419",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5054.23,
@@ -142787,11 +143628,13 @@
           1153.01
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_420",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           7085.68,
@@ -142878,11 +143721,13 @@
           2255.46
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_421",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6477.76,
@@ -142969,11 +143814,13 @@
           2356.3
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_422",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           3951.82,
@@ -143060,11 +143907,13 @@
           2521.08
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_423",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           5149.92,
@@ -143151,11 +144000,13 @@
           2515.3
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_424",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2958.73,
@@ -143242,11 +144093,13 @@
           2719.04
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_425",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6769.89,
@@ -143333,11 +144186,13 @@
           3728.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_426",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5250.15,
@@ -143424,11 +144279,13 @@
           4270.88
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_427",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           2316.52,
@@ -143515,11 +144372,13 @@
           4885.17
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_428",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6637.59,
@@ -143606,11 +144465,13 @@
           5047.16
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_429",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -4680.7,
@@ -143701,11 +144562,13 @@
           5444.73
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_430",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6701.48,
@@ -143792,11 +144655,13 @@
           5967.91
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_431",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           6774.87,
@@ -143887,11 +144752,13 @@
           6050.15
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_432",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -6449.94,
@@ -143978,11 +144845,13 @@
           6305.39
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     },
     {
       "id": "tp_dry_433",
-      "strength": 1,
+      "material": "Dry",
       "polygon": [
         [
           -5699.97,
@@ -144069,7 +144938,10 @@
           7037.94
         ]
       ],
+      "strength": 1,
+      "softEdge": 6,
       "note": "dry grass"
     }
-  ]
+  ],
+  "strokes": []
 }

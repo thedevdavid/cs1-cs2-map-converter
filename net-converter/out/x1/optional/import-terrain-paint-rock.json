@@ -1,12 +1,17 @@
 {
   "name": "terrain-paint-rock",
-  "_comment": "Terrain material paint (editor Terrain Inspector \u2192 MATERIALS), slope \u2265 40\u00B0 and the PO rock / cliff footprints. Format PENDING the bridge\u0027s /import/terrain-paint schema: polygons in CS2 x/z metres (the same at both scales), strength 1. Material name is a PLACEHOLDER until the bridge lists the editor\u0027s materials.",
-  "material": "Rock",
-  "materialPlaceholder": true,
+  "_comment": "NOT IMPORTED: slope \u2265 40\u00B0 and the PO rock / cliff footprints. The game has no rock material (the terrain shader puts rock on steep slopes itself); kept as a mask only.",
+  "options": {
+    "dryRun": false,
+    "strength": 1,
+    "softEdge": 0,
+    "minStamp": 4,
+    "maxStamps": 250000
+  },
   "polygons": [
     {
       "id": "tp_rock40_1",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3367,
@@ -225,11 +230,13 @@
           -4686.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_2",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2908.5,
@@ -408,11 +415,13 @@
           -5596.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_3",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5803,
@@ -627,11 +636,13 @@
           -5194
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_4",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3132.5,
@@ -802,11 +813,13 @@
           -5187
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_5",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4448.5,
@@ -913,11 +926,13 @@
           -6100.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_6",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5981.5,
@@ -1004,11 +1019,13 @@
           -5544
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_7",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2971.5,
@@ -1079,11 +1096,13 @@
           -5894
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_8",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -17.5,
@@ -1186,11 +1205,13 @@
           -2656.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_9",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5383,
@@ -1353,11 +1374,13 @@
           -6349
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_10",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5932.5,
@@ -1460,11 +1483,13 @@
           -5404
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_11",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5225.5,
@@ -1679,11 +1704,13 @@
           -6205.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_12",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5911.5,
@@ -1738,11 +1765,13 @@
           -5334
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_13",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6349,
@@ -1825,11 +1854,13 @@
           -5474
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_14",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6954.5,
@@ -1908,11 +1939,13 @@
           1634.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_15",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           630,
@@ -2035,11 +2068,13 @@
           483
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_16",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6471.5,
@@ -2190,11 +2225,13 @@
           1018.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_17",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2824.5,
@@ -2273,11 +2310,13 @@
           -6282.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_18",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           4812.5,
@@ -2408,11 +2447,13 @@
           -2201.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_19",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6314,
@@ -2579,11 +2620,13 @@
           731.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_20",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1421,
@@ -2714,11 +2757,13 @@
           4676
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_21",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6177.5,
@@ -2889,11 +2934,13 @@
           658
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_22",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           2915.5,
@@ -3000,11 +3047,13 @@
           -4364.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_23",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6730.5,
@@ -3043,11 +3092,13 @@
           -6727
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_24",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5978,
@@ -3114,11 +3165,13 @@
           -4763.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_25",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1382.5,
@@ -3249,11 +3302,13 @@
           -3468.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_26",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6331.5,
@@ -3308,11 +3363,13 @@
           -5285
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_27",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2586.5,
@@ -3395,11 +3452,13 @@
           -7136.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_28",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6170.5,
@@ -3482,11 +3541,13 @@
           378
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_29",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3244.5,
@@ -3525,11 +3586,13 @@
           -5327
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_30",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -7014,
@@ -3564,11 +3627,13 @@
           -4196.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_31",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5491.5,
@@ -3639,11 +3704,13 @@
           -6352.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_32",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -7122.5,
@@ -3694,11 +3761,13 @@
           3363.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_33",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6072.5,
@@ -3741,11 +3810,13 @@
           -4802
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_34",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           2520,
@@ -3816,11 +3887,13 @@
           -3934
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_35",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           126,
@@ -3923,11 +3996,13 @@
           -2520
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_36",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3657.5,
@@ -3978,11 +4053,13 @@
           -4014.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_37",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6811,
@@ -4037,11 +4114,13 @@
           6702.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_38",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           836.5,
@@ -4136,11 +4215,13 @@
           4602.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_39",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2828,
@@ -4183,11 +4264,13 @@
           -6065.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_40",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6923,
@@ -4246,11 +4329,13 @@
           6471.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_41",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4522,
@@ -4297,11 +4382,13 @@
           3759
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_42",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4529,
@@ -4376,11 +4463,13 @@
           115.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_43",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5740,
@@ -4419,11 +4508,13 @@
           24.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_44",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5897.5,
@@ -4474,11 +4565,13 @@
           -5880
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_45",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6979,
@@ -4525,11 +4618,13 @@
           1890
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_46",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6044.5,
@@ -4584,11 +4679,13 @@
           -4907
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_47",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6751.5,
@@ -4639,11 +4736,13 @@
           6541.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_48",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4508,
@@ -4686,11 +4785,13 @@
           -6646.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_49",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2887.5,
@@ -4737,11 +4838,13 @@
           -6142.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_50",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3433.5,
@@ -4784,11 +4887,13 @@
           -4011
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_51",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4641,
@@ -4855,11 +4960,13 @@
           -52.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_52",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6548.5,
@@ -4894,11 +5001,13 @@
           -6027
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_53",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2933,
@@ -4933,11 +5042,13 @@
           -5771.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_54",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5418,
@@ -5004,11 +5115,13 @@
           -6324.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_55",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3318,
@@ -5043,11 +5156,13 @@
           -4777.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_56",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6538,
@@ -5094,11 +5209,13 @@
           -7049
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_57",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6219.5,
@@ -5133,11 +5250,13 @@
           -5442.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_58",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5509,
@@ -5220,11 +5339,13 @@
           -6426
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_59",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2275,
@@ -5283,11 +5404,13 @@
           -6317.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_60",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -7017.5,
@@ -5342,11 +5465,13 @@
           1841
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_61",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1284.5,
@@ -5397,11 +5522,13 @@
           -2950.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_62",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           3013.5,
@@ -5440,11 +5567,13 @@
           -4452
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_63",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5561.5,
@@ -5495,11 +5624,13 @@
           7
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_64",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4077.5,
@@ -5542,11 +5673,13 @@
           -6912.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_65",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6426,
@@ -5621,11 +5754,13 @@
           630
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_66",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6538,
@@ -5660,11 +5795,13 @@
           -6933.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_67",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5771.5,
@@ -5703,11 +5840,13 @@
           -6559
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_68",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4725,
@@ -5774,11 +5913,13 @@
           -5943
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_69",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5834.5,
@@ -5817,11 +5958,13 @@
           -4683
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_70",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6233.5,
@@ -5860,11 +6003,13 @@
           6650
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_71",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1018.5,
@@ -5935,11 +6080,13 @@
           4620
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_72",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4203.5,
@@ -6018,11 +6165,13 @@
           -5992
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_73",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4550,
@@ -6069,11 +6218,13 @@
           -5789
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_74",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6062,
@@ -6108,11 +6259,13 @@
           -7157.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_75",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5610.5,
@@ -6175,11 +6328,13 @@
           4742.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_76",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1421,
@@ -6214,11 +6369,13 @@
           4686.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_77",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3153.5,
@@ -6245,11 +6402,13 @@
           -4746
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_78",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5883.5,
@@ -6276,11 +6435,13 @@
           -5698
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_79",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3209.5,
@@ -6311,11 +6472,13 @@
           -4970
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_80",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4935,
@@ -6354,11 +6517,13 @@
           -5967.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_81",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3713.5,
@@ -6389,11 +6554,13 @@
           -3832.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_82",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6611.5,
@@ -6424,11 +6591,13 @@
           6020
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_83",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1344,
@@ -6475,11 +6644,13 @@
           4490.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_84",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4151,
@@ -6530,11 +6701,13 @@
           -6370
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_85",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4795,
@@ -6605,11 +6778,13 @@
           -126
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_86",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6363,
@@ -6652,11 +6827,13 @@
           -6037.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_87",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6496,
@@ -6699,11 +6876,13 @@
           6013
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_88",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5117,
@@ -6742,11 +6921,13 @@
           -2390.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_89",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5404,
@@ -6773,11 +6954,13 @@
           -5330.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_90",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           868,
@@ -6820,11 +7003,13 @@
           -2537.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_91",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5505.5,
@@ -6871,11 +7056,13 @@
           -6398
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_92",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           3353,
@@ -6934,11 +7121,13 @@
           -4840.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_93",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6618.5,
@@ -6965,11 +7154,13 @@
           -4518.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_94",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5239.5,
@@ -7004,11 +7195,13 @@
           -3.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_95",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1428,
@@ -7035,11 +7228,13 @@
           -4221
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_96",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5785.5,
@@ -7074,11 +7269,13 @@
           -6429.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_97",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6440,
@@ -7113,11 +7310,13 @@
           1102.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_98",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4697,
@@ -7164,11 +7363,13 @@
           -5845
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_99",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4938.5,
@@ -7211,11 +7412,13 @@
           3951.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_100",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6156.5,
@@ -7246,11 +7449,13 @@
           -4893
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_101",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -154,
@@ -7293,11 +7498,13 @@
           -2590
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_102",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4907,
@@ -7340,11 +7547,13 @@
           -6041
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_103",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6786.5,
@@ -7367,11 +7576,13 @@
           6230
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_104",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6653.5,
@@ -7414,11 +7625,13 @@
           1200.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_105",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -1543.5,
@@ -7473,11 +7686,13 @@
           -6286
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_106",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           2453.5,
@@ -7508,11 +7723,13 @@
           -4816
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_107",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -1687,
@@ -7555,11 +7772,13 @@
           1319.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_108",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4056.5,
@@ -7594,11 +7813,13 @@
           -5841.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_109",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           941.5,
@@ -7617,11 +7838,13 @@
           -4102
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_110",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           234.5,
@@ -7660,11 +7883,13 @@
           2481.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_111",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5624.5,
@@ -7707,11 +7932,13 @@
           5043.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_112",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2075.5,
@@ -7746,11 +7973,13 @@
           -5082
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_113",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4886,
@@ -7781,11 +8010,13 @@
           -6646.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_114",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5677,
@@ -7808,11 +8039,13 @@
           4837
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_115",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6632.5,
@@ -7839,11 +8072,13 @@
           1116.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_116",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5771.5,
@@ -7874,11 +8109,13 @@
           4844
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_117",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5782,
@@ -7913,11 +8150,13 @@
           -6454
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_118",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6695.5,
@@ -7948,11 +8187,13 @@
           1211
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_119",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5873,
@@ -7975,11 +8216,13 @@
           -5911.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_120",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5477.5,
@@ -8002,11 +8245,13 @@
           -73.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_121",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1214.5,
@@ -8025,11 +8270,13 @@
           4669
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_122",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1046.5,
@@ -8048,11 +8295,13 @@
           5876.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_123",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6839,
@@ -8079,11 +8328,13 @@
           1827
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_124",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1295,
@@ -8102,11 +8353,13 @@
           4686.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_125",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6058.5,
@@ -8133,11 +8386,13 @@
           -6475
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_126",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           4508,
@@ -8168,11 +8423,13 @@
           -1459.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_127",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -1291.5,
@@ -8207,11 +8464,13 @@
           1781.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_128",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           745.5,
@@ -8238,11 +8497,13 @@
           -2327.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_129",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5078.5,
@@ -8273,11 +8534,13 @@
           -980
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_130",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6856.5,
@@ -8304,11 +8567,13 @@
           6671
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_131",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           2544.5,
@@ -8347,11 +8612,13 @@
           -4756.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_132",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5582.5,
@@ -8374,11 +8641,13 @@
           4949
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_133",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -1620.5,
@@ -8417,11 +8686,13 @@
           1634.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_134",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6681.5,
@@ -8436,11 +8707,13 @@
           7164.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_135",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           738.5,
@@ -8463,11 +8736,13 @@
           -4189.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_136",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5652.5,
@@ -8502,11 +8777,13 @@
           4896.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_137",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -7028,
@@ -8529,11 +8806,13 @@
           -7115.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_138",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -1722,
@@ -8564,11 +8843,13 @@
           1627.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_139",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -1960,
@@ -8615,11 +8896,13 @@
           -1246
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_140",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -1816.5,
@@ -8646,11 +8929,13 @@
           1330
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_141",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4952.5,
@@ -8677,11 +8962,13 @@
           -59.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_142",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3178,
@@ -8724,11 +9011,13 @@
           -5414.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_143",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -3248,
@@ -8751,11 +9040,13 @@
           -4711
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_144",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -1869,
@@ -8782,11 +9073,13 @@
           -6622
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_145",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           4816,
@@ -8805,11 +9098,13 @@
           -1379
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_146",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1155,
@@ -8828,11 +9123,13 @@
           5190.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_147",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           759.5,
@@ -8851,11 +9148,13 @@
           -2345
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_148",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4826.5,
@@ -8890,11 +9189,13 @@
           -6405
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_149",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -7049,
@@ -8917,11 +9218,13 @@
           3304
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_150",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4886,
@@ -8956,11 +9259,13 @@
           255.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_rock40_151",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5173,
@@ -8979,11 +9284,13 @@
           -868
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "slope \u2265 40\u00B0"
     },
     {
       "id": "tp_porock_1",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6909,
@@ -9558,11 +9865,13 @@
           -5925.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_2",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -5838,
@@ -9797,11 +10106,13 @@
           6503
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_3",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2968,
@@ -10524,11 +10835,13 @@
           -5957
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_4",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -7038.5,
@@ -10775,11 +11088,13 @@
           5253.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_5",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -833,
@@ -11102,11 +11417,13 @@
           4249
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_6",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           483,
@@ -11409,11 +11726,13 @@
           1095.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_7",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           644,
@@ -11660,11 +11979,13 @@
           497
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_8",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1372,
@@ -11907,11 +12228,13 @@
           6051.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_9",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           577.5,
@@ -12030,11 +12353,13 @@
           1827
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_10",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2765,
@@ -12241,11 +12566,13 @@
           -6139
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_11",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6615,
@@ -12468,11 +12795,13 @@
           1050
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_12",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           6646.5,
@@ -12603,11 +12932,13 @@
           -1305.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_13",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -7168,
@@ -12654,11 +12985,13 @@
           7168
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_14",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2761.5,
@@ -12765,11 +13098,13 @@
           -5428.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_15",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           451.5,
@@ -12888,11 +13223,13 @@
           -3213
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_16",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6184.5,
@@ -13183,11 +13520,13 @@
           658
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_17",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2702,
@@ -13274,11 +13613,13 @@
           -6142.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_18",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           24.5,
@@ -13501,11 +13842,13 @@
           -2730
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_19",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2905,
@@ -13556,11 +13899,13 @@
           -5715.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_20",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2940,
@@ -13611,11 +13956,13 @@
           -5992
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_21",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2877,
@@ -13674,11 +14021,13 @@
           -5215
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_22",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           966,
@@ -13761,11 +14110,13 @@
           3181.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_23",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1351,
@@ -13824,11 +14175,13 @@
           3825.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_24",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -4490.5,
@@ -13887,11 +14240,13 @@
           140
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_25",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2338,
@@ -13966,11 +14321,13 @@
           -6363
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_26",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5467,
@@ -14025,11 +14382,13 @@
           4816
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_27",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5645.5,
@@ -14132,11 +14491,13 @@
           4704
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_28",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1722,
@@ -14199,11 +14560,13 @@
           -4193
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_29",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6065.5,
@@ -14250,11 +14613,13 @@
           143.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_30",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5285,
@@ -14313,11 +14678,13 @@
           5008.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_31",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1043,
@@ -14380,11 +14747,13 @@
           3342.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_32",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2936.5,
@@ -14435,11 +14804,13 @@
           -5754
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_33",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5694.5,
@@ -14494,11 +14865,13 @@
           4851
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_34",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5733,
@@ -14553,11 +14926,13 @@
           4970
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_35",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2898,
@@ -14580,11 +14955,13 @@
           -5848.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_36",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5446,
@@ -14655,11 +15032,13 @@
           5110
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_37",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1788.5,
@@ -14710,11 +15089,13 @@
           -4102
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_38",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1414,
@@ -14769,11 +15150,13 @@
           6951
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_39",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5652.5,
@@ -14824,11 +15207,13 @@
           4914
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_40",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           5575.5,
@@ -14859,11 +15244,13 @@
           4924.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_41",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -6559,
@@ -14914,11 +15301,13 @@
           1186.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_42",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -7168,
@@ -14937,11 +15326,13 @@
           -7126
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_43",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2964.5,
@@ -14964,11 +15355,13 @@
           -4980.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_44",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           651,
@@ -15047,11 +15440,13 @@
           2023
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_45",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           693,
@@ -15130,11 +15525,13 @@
           2117.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_46",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           703.5,
@@ -15205,11 +15602,13 @@
           2275
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_47",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           598.5,
@@ -15260,11 +15659,13 @@
           1925
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_48",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           591.5,
@@ -15315,11 +15716,13 @@
           1967
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_49",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1225,
@@ -15394,11 +15797,13 @@
           6016.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_50",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           598.5,
@@ -15429,11 +15834,13 @@
           1984.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_51",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           619.5,
@@ -15460,11 +15867,13 @@
           1921.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_52",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           609,
@@ -15499,11 +15908,13 @@
           2002
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_53",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           -2936.5,
@@ -15522,11 +15933,13 @@
           -5015.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_54",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           735,
@@ -15553,11 +15966,13 @@
           2303
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_55",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           658,
@@ -15576,11 +15991,13 @@
           2075.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_56",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           696.5,
@@ -15599,11 +16016,13 @@
           2152.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_57",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           658,
@@ -15622,11 +16041,13 @@
           2159.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_58",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           1249.5,
@@ -15645,11 +16066,13 @@
           6023.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_59",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           546,
@@ -15664,11 +16087,13 @@
           1869
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_60",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           619.5,
@@ -15687,11 +16112,13 @@
           2047.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_61",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           689.5,
@@ -15710,11 +16137,13 @@
           2278.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_62",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           731.5,
@@ -15733,11 +16162,13 @@
           2285.5
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     },
     {
       "id": "tp_porock_63",
-      "strength": 1,
+      "material": "(none: rock is automatic on steep slopes)",
       "polygon": [
         [
           707,
@@ -15756,7 +16187,10 @@
           2149
         ]
       ],
+      "strength": 1,
+      "softEdge": 0,
       "note": "PO rock / cliff footprint"
     }
-  ]
+  ],
+  "strokes": []
 }

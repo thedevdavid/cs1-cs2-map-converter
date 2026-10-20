@@ -68,8 +68,9 @@ const steps = [
   // Vanilla paint plan (audit/theme-remake.md §4): fields (Agriculture Surface 01), PO pavement and stand-in pavement (Pavement Surface 01),
   // sand (Sand Surface 01 banks, Sand Surface 02 bare earth and old decal spots), dry grass (Grass Surface 02).
   ["surfaces", "/import/surfaces", ["import-surfaces-fields.json", "import-po-structures.json", "import-surfaces-sand.json"].map(p)],
-  // Round 23: terrain material paint (editor MATERIALS brushes); optional until the bridge publishes /import/terrain-paint (--with terrain-paint).
-  ["terrain-paint", "/import/terrain-paint", ["import-terrain-paint-sand.json", "import-terrain-paint-rock.json", "import-terrain-paint-dry-grass.json", "import-terrain-paint-bare-earth.json"].map(p), true],
+  // Round 24: terrain material paint (editor Terrain → Materials, bridge 0.9.29): Sand, Dry, Dirt, right after the surfaces. Each file is dry-run
+  // first (stamps per item); a file over options.maxStamps is posted in chunks under the cap. No rock layer (the game paints rock on slopes itself).
+  ["terrain-paint", "/import/terrain-paint", ["import-terrain-paint-sand.json", "import-terrain-paint-dry-grass.json", "import-terrain-paint-bare-earth.json"].map(p)],
   ["sand-smooth", "/import/surfaces", [p(join("optional", "import-surfaces-sand-smooth.json"))], true],
   ["grass", "/import/surfaces", [p("import-surfaces-grass.json")], true],
   // Pack surfaces kept in optional/ (Terrain Textures, Dirty Surfaces): only with --with.
@@ -148,6 +149,7 @@ async function pillarsOff(file) {
   return `${caps.length} caps, ${ids.size} segments: HTTP ${r.status} ${JSON.stringify(r.json).slice(0, 200)}`;
 }
 
+// Bridge 0.9.29 reports such folded courses as merged, so this re-check is now only a fallback for older bridges.
 // A-v6 (Gravel Road e23168_0, e31265_0, e31665_0, e36006_0): the bridge's point check counts only segments created or recorded in the batch.
 // When the game folds a straight course into its straight same-prefab neighbours, it splits the whole run again into equal pieces on the 8 m grid,
 // keeping the neighbour's older segment entity. The road is there, but the check misses it. Here every "points along the course" failure is checked
@@ -254,6 +256,42 @@ outer: for (const [name, endpoint, files] of steps) {
     if (endpoint === "/import/objects" || endpoint === "/import/surfaces") body.options.bypassValidation = true;
     if (dryRun) { body.options.dryRun = true; body.dryRun = true; }
     body.name ??= file.split(/[\\/]/).pop().replace(/\.json$/, "");
+    if (endpoint === "/import/terrain-paint") {
+      // Dry run with the cap lifted to get every item's stamp count, then chunks of at most maxStamps (stops on a rejected body or netGuard like any step).
+      const cap = body.options.maxStamps ?? 250000;
+      const dr = await request("POST", endpoint, { ...body, options: { ...body.options, dryRun: true, maxStamps: 1e9 } });
+      if (dr.status !== 200) {
+        console.log(`✗ ${name} ${file}: dry run HTTP ${dr.status}`);
+        for (const pr of (dr.json?.problems ?? [dr.json?.error ?? dr.json]).slice(0, 50)) console.log(`    ${typeof pr === "string" ? pr : JSON.stringify(pr)}`);
+        problems.push({ name, file, status: dr.status, problems: dr.json?.problems ?? [dr.json] });
+        rows.push({ name, file, status: `dry run HTTP ${dr.status} rejected` }); stopped = `${name} (${file}) dry run`; break outer;
+      }
+      const per = new Map((dr.json.items ?? []).map(i => [i.id, i.stamps]));
+      const items = [...(body.polygons ?? []).map(x => ["polygons", x]), ...(body.strokes ?? []).map(x => ["strokes", x])];
+      const chunks = []; let cur = [], sum = 0;
+      for (const it of items) { const n = per.get(it[1].id) ?? 1; if (cur.length && sum + n > cap) { chunks.push(cur); cur = []; sum = 0; } cur.push(it); sum += n; }
+      if (cur.length) chunks.push(cur);
+      console.log(`  ${name} ${file.split(/[\\/]/).pop()}: dry run ${dr.json.stamps} stamps for ${items.length} items -> ${chunks.length} request(s) of at most ${cap}`);
+      if (dryRun) { rows.push({ name, file, status: "dry run ok", text: `${dr.json.stamps} stamps, ${items.length} items, ${chunks.length} request(s)` }); continue; }
+      for (const [ci, ch] of chunks.entries()) {
+        const part = { ...body, name: `${body.name}${chunks.length > 1 ? `-${ci + 1}` : ""}`, polygons: ch.filter(c => c[0] === "polygons").map(c => c[1]), strokes: ch.filter(c => c[0] === "strokes").map(c => c[1]) };
+        const t1 = Date.now();
+        const r = await request("POST", endpoint, part);
+        const secs = (Date.now() - t1) / 1000;
+        if (r.status !== 200) {
+          console.log(`✗ ${name} ${file} part ${ci + 1}: HTTP ${r.status} ${JSON.stringify(r.json).slice(0, 300)}`);
+          problems.push({ name, file, status: r.status, problems: r.json?.problems ?? [r.json] });
+          rows.push({ name, file, status: `HTTP ${r.status}`, secs }); stopped = `${name} (${file}) part ${ci + 1}`; break outer;
+        }
+        const ng = r.json.netGuard;
+        const text = `part ${ci + 1}/${chunks.length}: items ${r.json.items}, stamps ${r.json.stamps}${ng ? `; netGuard removed ${ng.segmentsRemoved ?? 0}` : ""}`;
+        console.log(`✓ ${name} ${file.split(/[\\/]/).pop()} ${text} (${fmt(secs)})`);
+        rows.push({ name, file, status: "ok", secs, importId: r.json.importId, undo: "POST /import/terrain-paint/undo (newest first, last 3 kept)", text });
+        if (ng && (ng.segmentsRemoved ?? 0) > 0) { guardStop = { name, file, netGuard: ng }; stopped = `${name} (${file}): netGuard removed ${ng.segmentsRemoved} segments`; break outer; }
+      }
+      markDone(file, null, name);
+      continue;
+    }
     const t0 = Date.now();
     const r = await request("POST", endpoint, body);
     const secs = (Date.now() - t0) / 1000;

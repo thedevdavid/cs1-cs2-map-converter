@@ -3,26 +3,29 @@ using System.Text.Json;
 namespace NetConverter;
 
 /// <summary>
-/// Round 23 (owner): the CS2 editor's Terrain Inspector → MATERIALS brushes (terrain material painting, not area surfaces), one layer per material.
-/// The bridge's /import/terrain-paint schema is pending; this writes polygons (organic outlines, x/z only, so both scales are the same) and a placeholder
-/// material name per layer. When the schema lands, only the writer changes (polygons as they are, or brush strokes sampled from them).
+/// Round 23/24 (owner): the CS2 editor's Terrain Inspector → MATERIALS brushes (terrain material painting, not area surfaces), one file per material,
+/// POST /import/terrain-paint (bridge 0.9.29, IMPORT_SCHEMA.md "Terrain material painting"). x/z only, so both scales are the same.
+/// Materials: Sand (Extra4), Dry (Extra1), Dirt (Extra3); no rock material (the shader puts rock on steep slopes), so the rock mask goes to optional/ unused.
 /// - sand: every CS1 Sand cell (the 479-polygon source set), 16 m grid, closed/opened two cells, SmoothRings outlines, ≥ 1 500 m².
 /// - rock: the slope ≥ 40° polygons (true-height heightmap) plus the PO rock / cliff footprints, as they are.
 /// - dry grass: open dry ground (CS1 fertility &lt; 0.5, no tree within 48 m, not sand, field, water or road) on (a) the east / south-east plains
 ///   (bearing from the map centre 45°–180°, at most 60 m above the start-area mean, slope &lt; 12°) and (b) south-facing slopes anywhere
 ///   (8°–35°, downhill within 60° of south). CS1 painted no grass class; the CS1 theme tinted fertile land yellower and forest floor darker
 ///   (audit/theme-remake.md §1), so dry = low fertility, open; south-facing as the sunny, drier side.
-/// - bare earth: the 128 CS1 R69 dirt / mud decals, a round 11 m patch with a slightly irregular edge at each.
+/// - bare earth: the 128 CS1 R69 dirt / mud decals, one 11 m stroke at each.
+/// Sand and dry grass: polygons, softEdge 6 m, strength 1.
 /// </summary>
 public static class TerrainPaint
 {
-    public sealed record Layer(string File, string Material, string Role, List<(string Id, List<(double X, double Z)> Ring, string Note)> Polygons);
+    public sealed record Layer(string File, string Material, string Role, List<(string Id, List<(double X, double Z)> Ring, string Note)> Polygons,
+        List<(string Id, double X, double Z, double Radius)>? Strokes = null, double SoftEdge = 0, bool Optional = false);
 
-    /// <summary>Placeholder material names until the bridge confirms the editor's material list (CS2 terrain splat layers: rock, dirt, grass + extras) [U].</summary>
+    /// <summary>Editor material names (bridge 0.9.29). "Rock" has no material; that layer is written to optional/ and not imported.</summary>
     public static readonly Dictionary<string, string> Materials = new()
     {
-        ["sand"] = "Sand", ["rock"] = "Rock", ["dry-grass"] = "DryGrass", ["bare-earth"] = "Dirt",
+        ["sand"] = "Sand", ["rock"] = "(none: rock is automatic on steep slopes)", ["dry-grass"] = "Dry", ["bare-earth"] = "Dirt",
     };
+    public const double SoftEdgeM = 6, DecalRadius = 11, MaxStamps = 250000;
 
     public static List<Layer> Build(PaintPlan.Inputs inp, IEnumerable<List<(double X, double Z)>> rock40, IEnumerable<List<(double X, double Z)>> poRock,
         IEnumerable<(double X, double Z)> decalCentres, IEnumerable<OutEdge> roads, double half = 7168)
@@ -85,19 +88,14 @@ public static class TerrainPaint
         }
         var layers = new List<Layer>();
         layers.Add(new("import-terrain-paint-sand.json", Materials["sand"], "CS1 painted sand (all Sand cells)",
-            Smooth(sand, "tp sand").Select((r, i) => ($"tp_sand_{i + 1}", r, "CS1 sand")).ToList()));
+            Smooth(sand, "tp sand").Select((r, i) => ($"tp_sand_{i + 1}", r, "CS1 sand")).ToList(), SoftEdge: SoftEdgeM));
         layers.Add(new("import-terrain-paint-rock.json", Materials["rock"], "slope ≥ 40° and the PO rock / cliff footprints",
             rock40.Where(r => r.Count >= 3).Select((r, i) => ($"tp_rock40_{i + 1}", r, "slope ≥ 40°"))
-                .Concat(poRock.Where(r => r.Count >= 3).Select((r, i) => ($"tp_porock_{i + 1}", r, "PO rock / cliff footprint"))).ToList()));
+                .Concat(poRock.Where(r => r.Count >= 3).Select((r, i) => ($"tp_porock_{i + 1}", r, "PO rock / cliff footprint"))).ToList(), Optional: true));
         layers.Add(new("import-terrain-paint-dry-grass.json", Materials["dry-grass"], $"dry open ground: east / south-east plains ({plains} cells) and south-facing slopes ({southSlopes} cells)",
-            Smooth(dry, "tp dry grass").Select((r, i) => ($"tp_dry_{i + 1}", r, "dry grass")).ToList()));
-        var rng = new Random(23);
-        layers.Add(new("import-terrain-paint-bare-earth.json", Materials["bare-earth"], "CS1 dirt / mud decals",
-            decalCentres.Select((c, i) => ($"tp_earth_{i + 1}", Enumerable.Range(0, 20).Select(k =>
-            {
-                double a = k * Math.PI / 10, r = 11 + (rng.NextDouble() - 0.5) * 3;
-                return (Math.Round(c.X + r * Math.Sin(a), 2), Math.Round(c.Z + r * Math.Cos(a), 2));
-            }).ToList(), "CS1 decal")).ToList()));
+            Smooth(dry, "tp dry grass").Select((r, i) => ($"tp_dry_{i + 1}", r, "dry grass")).ToList(), SoftEdge: SoftEdgeM));
+        layers.Add(new("import-terrain-paint-bare-earth.json", Materials["bare-earth"], "CS1 dirt / mud decals", new(),
+            decalCentres.Select((c, i) => ($"tp_earth_{i + 1}", Math.Round(c.X, 2), Math.Round(c.Z, 2), DecalRadius)).ToList()));
         return layers;
     }
 
@@ -107,19 +105,33 @@ public static class TerrainPaint
         using var w = new Utf8JsonWriter(fs, Json.Indented);
         w.WriteStartObject();
         w.WriteString("name", Path.GetFileNameWithoutExtension(path).Replace("import-", ""));
-        w.WriteString("_comment", $"Terrain material paint (editor Terrain Inspector → MATERIALS), {l.Role}. Format PENDING the bridge's /import/terrain-paint schema: polygons in CS2 x/z metres (the same at both scales), strength 1. Material name is a PLACEHOLDER until the bridge lists the editor's materials.");
-        w.WriteString("material", l.Material);
-        w.WriteBoolean("materialPlaceholder", true);
+        w.WriteString("_comment", l.Optional
+            ? $"NOT IMPORTED: {l.Role}. The game has no rock material (the terrain shader puts rock on steep slopes itself); kept as a mask only."
+            : $"Terrain material paint (editor Terrain → Materials, POST /import/terrain-paint, bridge 0.9.29): {l.Role}. CS2 x/z metres, the same at both scales.");
+        w.WriteStartObject("options");
+        w.WriteBoolean("dryRun", false); w.WriteNumber("strength", 1); w.WriteNumber("softEdge", l.SoftEdge); w.WriteNumber("minStamp", 4); w.WriteNumber("maxStamps", MaxStamps);
+        w.WriteEndObject();
         w.WriteStartArray("polygons");
         foreach (var (id, ring, note) in l.Polygons)
         {
             w.WriteStartObject();
             w.WriteString("id", id);
-            w.WriteNumber("strength", 1);
+            w.WriteString("material", l.Material);
             w.WriteStartArray("polygon");
             foreach (var (x, z) in ring) { w.WriteStartArray(); w.WriteNumberValue(Json.R2(x)); w.WriteNumberValue(Json.R2(z)); w.WriteEndArray(); }
             w.WriteEndArray();
+            w.WriteNumber("strength", 1);
+            w.WriteNumber("softEdge", l.SoftEdge);
             w.WriteString("note", note);
+            w.WriteEndObject();
+        }
+        w.WriteEndArray();
+        w.WriteStartArray("strokes");
+        foreach (var (id, x, z, r) in l.Strokes ?? new())
+        {
+            w.WriteStartObject();
+            w.WriteString("id", id); w.WriteString("material", l.Material);
+            w.WriteNumber("x", x); w.WriteNumber("z", z); w.WriteNumber("radius", r); w.WriteNumber("strength", 1);
             w.WriteEndObject();
         }
         w.WriteEndArray();

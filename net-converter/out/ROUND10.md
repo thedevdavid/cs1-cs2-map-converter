@@ -5,6 +5,14 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 
 | order | file | content | count | size |
 |---:|---|---|---|---:|
+| 0 | `out\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (2×) | 400 polygons, 0 strokes | 3.2 MB |
+| 0 | `out\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (2×) | 433 polygons, 0 strokes | 2.2 MB |
+| 0 | `out\import-terrain-paint-bare-earth.json` | ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals) (2×) | 0 polygons, 128 strokes | 0.0 MB |
+| 0 | `out\optional\import-terrain-paint-rock.json` | rock mask, NOT imported (no rock material) (2×) | 214 polygons, 0 strokes | 0.2 MB |
+| 0 | `out\x1\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (1×) | 400 polygons, 0 strokes | 3.2 MB |
+| 0 | `out\x1\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (1×) | 433 polygons, 0 strokes | 2.2 MB |
+| 0 | `out\x1\import-terrain-paint-bare-earth.json` | ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals) (1×) | 0 polygons, 128 strokes | 0.0 MB |
+| 0 | `out\x1\optional\import-terrain-paint-rock.json` | rock mask, NOT imported (no rock material) (1×) | 214 polygons, 0 strokes | 0.2 MB |
 | 1 | `out\import-all.json` | network (2×) | 3730 edges, 3601 nodes | 1.9 MB |
 | 1 | `out\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (2×) | 54 edges, replaces 152 | 0.0 MB |
 | 1 | `out\import-bridges-fixed.json` | fixed-span bridges: BR001 Detroit suspension (one edge) + its 3-lane connectors, right after import-bridges.json (2×) | 5 edges, replaces 55 | 0.0 MB |
@@ -63,18 +71,10 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 8 | `out\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
 | 8 | `out\import-surfaces-sand.json` | paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots | 112 polygons | 0.3 MB |
 | 8 | `out\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
-| 8 | `out\import-terrain-paint-sand.json` | ROUND 23 terrain paint: sand (material placeholder, format pending) (2×) | 400 polygons | 3.2 MB |
-| 8 | `out\import-terrain-paint-rock.json` | ROUND 23 terrain paint: rock (slope ≥ 40° + PO rock) (2×) | 214 polygons | 0.2 MB |
-| 8 | `out\import-terrain-paint-dry-grass.json` | ROUND 23 terrain paint: dry grass (plains + south-facing slopes) (2×) | 433 polygons | 2.1 MB |
-| 8 | `out\import-terrain-paint-bare-earth.json` | ROUND 23 terrain paint: bare earth at the CS1 dirt decals (2×) | 128 polygons | 0.2 MB |
 | 8 | `out\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (2×) | 11 polygons | 0.0 MB |
 | 8 | `out\x1\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
 | 8 | `out\x1\import-surfaces-sand.json` | paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots | 112 polygons | 0.3 MB |
 | 8 | `out\x1\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
-| 8 | `out\x1\import-terrain-paint-sand.json` | ROUND 23 terrain paint: sand (material placeholder, format pending) (1×) | 400 polygons | 3.2 MB |
-| 8 | `out\x1\import-terrain-paint-rock.json` | ROUND 23 terrain paint: rock (slope ≥ 40° + PO rock) (1×) | 214 polygons | 0.2 MB |
-| 8 | `out\x1\import-terrain-paint-dry-grass.json` | ROUND 23 terrain paint: dry grass (plains + south-facing slopes) (1×) | 433 polygons | 2.1 MB |
-| 8 | `out\x1\import-terrain-paint-bare-earth.json` | ROUND 23 terrain paint: bare earth at the CS1 dirt decals (1×) | 128 polygons | 0.2 MB |
 | 8 | `out\x1\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (1×) | 11 polygons | 0.0 MB |
 | 9 | `out\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
 | 9 | `out\x1\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
@@ -242,3 +242,19 @@ Residual: the 9 genuine CS1 dead ends and the isolated 83 m CS1 path in out/x1/r
    Variant (b) is optional/import-po-structure-br006-arches.json (--with po-br006-arches): 7 StoneArchRailBridge at 28 m pitch along the axis from
    (−3479, −3244) to (−3578, −3108), rotation 234 (the 28 m side along yaw 324), tops at the soffit of the 263.3 m deck (x1), legs sunk.
 5. Gantry: unchanged (optional, --with po-gantry).
+
+## Round 23: terrain material paint (editor Terrain Inspector → MATERIALS), data ready, format pending
+
+The same files are written at both scales (x/z only): `import-terrain-paint-<material>.json`, each with `material` (a PLACEHOLDER, `materialPlaceholder: true`)
+and `polygons: [{id, strength 1, polygon [[x, z], …], note}]`. Runner step `terrain-paint` after surfaces, optional (`--with terrain-paint`) until the bridge
+publishes `/import/terrain-paint`; then only `TerrainPaint.Write` changes (polygons as they are, or brush strokes sampled from them).
+
+| file | placeholder material | source | polygons | km² |
+|---|---|---|---:|---:|
+| import-terrain-paint-sand.json | Sand | every CS1 Sand cell (the 479-polygon source set), 16 m grid, close/open 2 cells, organic outlines as in round 19, ≥ 1 500 m² | 400 | 16.96 |
+| import-terrain-paint-rock.json | Rock | slope ≥ 40° (true-height heightmap) + the PO rock / cliff footprints | 214 | 5.39 |
+| import-terrain-paint-dry-grass.json | DryGrass | open dry ground (CS1 fertility < 0.5, no tree within 48 m, not sand / field / water / road): east and south-east plains (bearing 45°–180° from the centre, ≤ start mean + 60 m, slope < 12°) and south-facing slopes (8°–35°, downhill within 60° of south) | 433 | 9.72 |
+| import-terrain-paint-bare-earth.json | Dirt | a round 11 m patch at each of the 128 CS1 R69 dirt / mud decals | 128 | 0.05 |
+
+The CS1 data has no grass class (only Sand was painted). The dry-grass mask therefore stands on the CS1 theme's tints (fertile = yellower, forest floor = darker,
+audit/theme-remake.md §1), the fertility raster, tree density and the heightmap aspect. Area surfaces (sand, PO pavement, fields) are unchanged.
