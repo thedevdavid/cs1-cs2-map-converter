@@ -20,11 +20,11 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 2 | `out\import-power.json` | power (2×) | 58 edges | 0.0 MB |
 | 2 | `out\import-canals.json` | canals and flood walls (2×) | 16 edges: Narrow Boatway 14, Sound Barrier 2 | 0.0 MB |
 | 2 | `out\import-shippaths.json` | ship paths (2×) | 100 edges: Medium Seaway 100 | 0.1 MB |
-| 2 | `out\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first) (2×) | 3 edges, replaces e5094_0, e32855_0 | 0.0 MB |
+| 2 | `out\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam (A-v6: dam end on the plant marker, extra pylon), connectTo high voltage radius 60 (2×) | 4 edges | 0.0 MB |
 | 2 | `out\x1\import-power.json` | power (1×) | 58 edges | 0.0 MB |
 | 2 | `out\x1\import-canals.json` | canals and flood walls (1×) | 16 edges: Narrow Boatway 14, Sound Barrier 2 | 0.0 MB |
 | 2 | `out\x1\import-shippaths.json` | ship paths (1×) | 100 edges: Medium Seaway 100 | 0.1 MB |
-| 2 | `out\x1\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first) (1×) | 3 edges, replaces e5094_0, e32855_0 | 0.0 MB |
+| 2 | `out\x1\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam (A-v6: dam end on the plant marker, extra pylon), connectTo high voltage radius 60 (1×) | 4 edges | 0.0 MB |
 | 3 | `out\import-water.json` | water (2×), seaLevel 195 | 41 sources, 0 refined | 0.0 MB |
 | 3 | `out\import-water-sea186.json` | water VARIANT (2×), seaLevel 186: import instead of import-water.json to try the measured level | 45 sources | 0.0 MB |
 | 3 | `out\import-water-lakes.json` | ROUND 9 lake sources for unexplained wet bodies (after the water file) (2×) | 18 sources | 0.0 MB |

@@ -50,7 +50,7 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
   }
   for (const ff of existsSync(dir) ? readdirSync(dir).filter(x => x.startsWith("import-trees-fixed-")) : []) add(6, p(ff), `trees at fixed height, with y (${scale})`, `${J(p(ff)).objects.length}`);
   // Round 8 (owner review of Run A): each its own import, to add to the live map.
-  for (const [f, order, what] of [["import-power-ends.json", 2, "ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first)"], ["import-dam-deck.json", 2, "ROUND 8 dam deck network, absolute heights (after import-dam.json)"],
+  for (const [f, order, what] of [["import-power-ends.json", 2, "ROUND 8 power-line ends at the substation and the dam (A-v6: dam end on the plant marker, extra pylon), connectTo high voltage radius 60"], ["import-dam-deck.json", 2, "ROUND 8 dam deck network, absolute heights (after import-dam.json)"],
     ["import-substation.json", 5, "ROUND 8 substation building TransformerStation01"], ["import-po-rocks.json", 5, "po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds"],
     ["import-rock-scatter.json", 5, "ROUND 8 vanilla rock scatter"],
     ["import-po-structure-objects.json", 5, "ROUND 20 PO structures: BR006 arch (StoneArchRailBridge), ConcreteSet01 columns / piers, BR022 pads; runner --po-structures (mods 154132, 135944)"],

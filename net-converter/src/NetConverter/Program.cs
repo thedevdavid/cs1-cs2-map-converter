@@ -913,7 +913,16 @@ void WriteLayers()
         if (subB.Count > 0) targets.Add(("substation", subB[0].X, subB[0].Z));
         if (dam is { } d2) targets.Add(("dam", d2.A.X, d2.A.Z));
         var ends = Round8.PowerEnds(result.Layer(Layers.Power).ToList(), targets);
-        Round8.WritePowerEnds(Path.Combine(outDir, "import-power-ends.json"), ends, cs2True, heightFactor, absolute);
+        Round8.DamFrame? damFrame = null;
+        var damFile = Path.Combine(outDir, "import-dam.json");
+        if (dam != null && File.Exists(damFile))
+        {
+            using var dd = System.Text.Json.JsonDocument.Parse(File.ReadAllBytes(damFile));
+            var dn = dd.RootElement.GetProperty("nodes").EnumerateArray().ToDictionary(n => n.GetProperty("id").GetString()!);
+            if (dn.TryGetValue("damW", out var dw) && dn.TryGetValue("damE", out var de))
+                damFrame = new(dw.GetProperty("x").GetDouble(), dw.GetProperty("z").GetDouble(), de.GetProperty("x").GetDouble(), de.GetProperty("z").GetDouble(), de.GetProperty("y").GetDouble());
+        }
+        Round8.WritePowerEnds(Path.Combine(outDir, "import-power-ends.json"), ends, cs2True, heightFactor, absolute, damFrame);
         var pieces = Round8.LoadPoPieces(poOfflinePath);
         // v1 cliff positions stay the rock scatter's sources (import-rock-scatter.json unchanged); import-po-rocks.json is v2.
         var (cliffs, capped, bands) = Round8.Cliffs(pieces, cs2True, 7168, treeSeed + 8);

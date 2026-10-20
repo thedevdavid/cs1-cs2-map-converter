@@ -1,0 +1,171 @@
+{
+ "scale": "x1",
+ "started": "2026-10-20T19:29:27.352Z",
+ "files": {
+  "x1/import-surfaces-fields.json": {
+   "step": "surfaces",
+   "importId": "srf-20261020-192927-1",
+   "at": "2026-10-20T19:29:27.586Z"
+  },
+  "x1/import-po-structures.json": {
+   "step": "surfaces",
+   "importId": "srf-20261020-192927-2",
+   "at": "2026-10-20T19:29:27.721Z"
+  },
+  "x1/import-surfaces-sand.json": {
+   "step": "surfaces",
+   "importId": "srf-20261020-192927-3",
+   "at": "2026-10-20T19:29:28.013Z"
+  },
+  "x1/import-surfaces-grass-dry.json": {
+   "step": "surfaces",
+   "importId": "srf-20261020-192928-4",
+   "at": "2026-10-20T19:29:28.391Z"
+  },
+  "x1/import-all.json": {
+   "step": "network",
+   "importId": "imp-20261020-192928-1",
+   "at": "2026-10-20T19:29:46.110Z"
+  },
+  "x1/import-bridges.json": {
+   "step": "bridges",
+   "importId": "imp-20261020-192946-2",
+   "at": "2026-10-20T19:29:46.638Z"
+  },
+  "x1/import-bridges-fixed.json": {
+   "step": "bridges-fixed",
+   "importId": "imp-20261020-192946-3",
+   "at": "2026-10-20T19:29:47.038Z"
+  },
+  "x1/import-dam.json": {
+   "step": "dam",
+   "importId": "imp-20261020-192947-4",
+   "at": "2026-10-20T19:29:47.345Z"
+  },
+  "x1/import-gaps.json": {
+   "step": "gaps",
+   "importId": "imp-20261020-192947-5",
+   "at": "2026-10-20T19:29:47.508Z"
+  },
+  "x1/import-power.json": {
+   "step": "power",
+   "importId": "imp-20261020-192947-6",
+   "at": "2026-10-20T19:29:47.779Z"
+  },
+  "x1/import-canals.json": {
+   "step": "canals",
+   "importId": "imp-20261020-192947-7",
+   "at": "2026-10-20T19:29:48.006Z"
+  },
+  "x1/import-shippaths.json": {
+   "step": "shippaths",
+   "importId": "imp-20261020-192948-8",
+   "at": "2026-10-20T19:29:48.397Z"
+  },
+  "x1/import-substation.json": {
+   "step": "substation",
+   "importId": "obj-20261020-192948-1",
+   "at": "2026-10-20T19:29:48.646Z"
+  },
+  "x1/import-water-sea93.json": {
+   "step": "water",
+   "importId": "wat-20261020-193334-1",
+   "at": "2026-10-20T19:33:34.598Z"
+  },
+  "x1/import-water-lakes.json": {
+   "step": "lakes",
+   "importId": "wat-20261020-193334-2",
+   "at": "2026-10-20T19:33:34.720Z"
+  },
+  "x1/import-connections.json": {
+   "step": "connections",
+   "importId": "obj-20261020-193334-2",
+   "at": "2026-10-20T19:33:34.904Z"
+  },
+  "x1/import-objects.json": {
+   "step": "objects",
+   "importId": "obj-20261020-193334-3",
+   "at": "2026-10-20T19:33:36.049Z"
+  },
+  "x1/import-walls-props.json": {
+   "step": "barriers",
+   "importId": "obj-20261020-193336-4",
+   "at": "2026-10-20T19:33:36.287Z"
+  },
+  "x1/import-po-rocks.json": {
+   "step": "po-rocks",
+   "importId": "obj-20261020-193336-5",
+   "at": "2026-10-20T19:33:36.552Z"
+  },
+  "x1/import-po-structure-objects.json": {
+   "step": "po-structures",
+   "importId": "obj-20261020-193336-6",
+   "at": "2026-10-20T19:33:36.733Z"
+  },
+  "optional/import-po-structure-gantry.json": {
+   "step": "po-gantry",
+   "importId": "obj-20261020-193336-7",
+   "at": "2026-10-20T19:33:36.904Z"
+  },
+  "x1/import-rock-scatter.json": {
+   "step": "rock-scatter",
+   "importId": "obj-20261020-193337-8",
+   "at": "2026-10-20T19:33:39.425Z"
+  },
+  "x1/import-fort.json": {
+   "step": "fort",
+   "importId": "obj-20261020-193339-9",
+   "at": "2026-10-20T19:33:39.677Z"
+  },
+  "trees/import-trees-01.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193340-10",
+   "at": "2026-10-20T19:33:48.356Z"
+  },
+  "trees/import-trees-02.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193348-11",
+   "at": "2026-10-20T19:34:02.340Z"
+  },
+  "trees/import-trees-03.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193402-12",
+   "at": "2026-10-20T19:34:22.166Z"
+  },
+  "trees/import-trees-04.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193422-13",
+   "at": "2026-10-20T19:34:47.907Z"
+  },
+  "trees/import-trees-05.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193448-14",
+   "at": "2026-10-20T19:35:18.010Z"
+  },
+  "trees/import-trees-06.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193518-15",
+   "at": "2026-10-20T19:35:53.378Z"
+  },
+  "trees/import-trees-07.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193553-16",
+   "at": "2026-10-20T19:36:34.736Z"
+  },
+  "trees/import-trees-08.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193635-17",
+   "at": "2026-10-20T19:37:23.121Z"
+  },
+  "x1/import-trees-fixed-01.json": {
+   "step": "trees",
+   "importId": "obj-20261020-193723-18",
+   "at": "2026-10-20T19:37:23.756Z"
+  },
+  "x1/import-resources.json": {
+   "step": "resources",
+   "importId": null,
+   "at": "2026-10-20T19:37:23.995Z"
+  }
+ }
+}

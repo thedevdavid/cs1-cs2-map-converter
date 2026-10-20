@@ -119,14 +119,28 @@ public static class Round8
         return res;
     }
 
-    public static void WritePowerEnds(string path, List<PowerEnd> ends, Func<double, double, double>? cs2TerrainTrue, double heightFactor, bool absolute)
+    /// <summary>The dam edge as written to import-dam.json: west and east end (x, z) and the crest y in output metres.</summary>
+    public sealed record DamFrame(double Wx, double Wz, double Ex, double Ez, double CrestOut);
+
+    /// <summary>A-v6 live (bridge 0.9.26): the plant the dam edge builds has its High-voltage Marker at (1398.66, 148.18, 4718.33), 22.0 m back from the east
+    /// end along the dam axis and 27.0 m to its left (reservoir side). The working patch (next-run/power-ends-a6.json) ended on that marker with radius 60
+    /// (the substation marker is 148 m away) and an extra pylon 36.2 m past the east end, 48.6 m to the right, so no span exceeds about 210 m.
+    /// Offsets in the dam frame (along from the east end, left of west to east), so both follow the dam edge.</summary>
+    public static readonly (double Along, double Left) DamMarker = (-22.0, 27.0), DamPylon = (36.24, -48.56);
+
+    public static (double X, double Z) InDamFrame(DamFrame d, (double Along, double Left) o)
+    {
+        double ux = d.Ex - d.Wx, uz = d.Ez - d.Wz, l = Math.Sqrt(ux * ux + uz * uz); ux /= l; uz /= l;
+        return (d.Ex + o.Along * ux - o.Left * uz, d.Ez + o.Along * uz + o.Left * ux);
+    }
+
+    public static void WritePowerEnds(string path, List<PowerEnd> ends, Func<double, double, double>? cs2TerrainTrue, double heightFactor, bool absolute, DamFrame? dam = null)
     {
         using var fs = File.Create(path);
         using var w = new Utf8JsonWriter(fs, Json.Indented);
         w.WriteStartObject();
         w.WriteString("name", "Dakota Falls power line ends");
-        w.WriteString("_comment", "Replaces the last course of each 345 kV circuit (undo the edges in 'replaces' first). The end node carries connectTo {voltage high, radius 60} (bridge 0.9.13) and attaches to the building's high-voltage marker node; its x/z (building centre moved 8 m toward the line) only picks the marker. The start node joins the existing pylon node through snapToSegment (radius 2).");
-        w.WriteStartArray("replaces"); foreach (var e in ends) w.WriteStringValue(e.Replaces.Id); w.WriteEndArray();
+        w.WriteString("_comment", "The last course of each 345 kV circuit (import-power.json leaves those courses out). The end node carries connectTo {voltage high, radius 60} (bridge 0.9.13) and attaches to the building's high-voltage marker node; its x/z only picks the marker: the substation centre moved 8 m toward the line; for the dam, the plant marker as measured on A-v6, placed in the frame of the dam edge. The start node joins the existing pylon node through snapToSegment (radius 2).");
         w.WriteStartArray("nodes");
         foreach (var e in ends)
         {
@@ -138,13 +152,24 @@ public static class Round8
             w.WriteEndObject();
             w.WriteStartObject();
             w.WriteString("id", $"{e.Target}_end");
-            w.WriteNumber("x", Json.R2(e.X)); w.WriteNumber("z", Json.R2(e.Z));
-            double ground = cs2TerrainTrue != null ? cs2TerrainTrue(e.X, e.Z) * heightFactor : e.OldEnd.Terrain * Outputs.YScale;
+            bool onDam = e.Target == "dam" && dam != null;
+            var (ex, ez) = onDam ? InDamFrame(dam!, DamMarker) : (e.X, e.Z);
+            w.WriteNumber("x", Json.R2(ex)); w.WriteNumber("z", Json.R2(ez));
+            double ground = onDam ? dam!.CrestOut : cs2TerrainTrue != null ? cs2TerrainTrue(ex, ez) * heightFactor : e.OldEnd.Terrain * Outputs.YScale;
             w.WriteNumber("y", Json.R2(ground)); w.WriteNumber("elevation", 0);
             // Bridge 0.9.13: attach to the nearest building's high-voltage marker node; the x/z only picks the marker.
-            // The dam plant spawns at one end of the dam course (up to ~80 m from the centre): a wider radius there, still short of the station (141 m).
-            w.WriteStartObject("connectTo"); w.WriteString("voltage", "high"); w.WriteNumber("radius", e.Target == "dam" ? 120 : 60); w.WriteEndObject();
+            w.WriteStartObject("connectTo"); w.WriteString("voltage", "high"); w.WriteNumber("radius", 60); w.WriteEndObject();
             w.WriteEndObject();
+            if (onDam)
+            {
+                var (px, pz) = InDamFrame(dam!, DamPylon);
+                w.WriteStartObject();
+                w.WriteString("id", $"{e.Target}_pylon");
+                w.WriteNumber("x", Json.R2(px)); w.WriteNumber("z", Json.R2(pz));
+                w.WriteNumber("y", Json.R2(cs2TerrainTrue != null ? cs2TerrainTrue(px, pz) * heightFactor : dam!.CrestOut)); w.WriteNumber("elevation", 0);
+                w.WriteString("note", "A-v6: extra pylon before the plant marker, spans under 210 m");
+                w.WriteEndObject();
+            }
             if (e.Via is { } v)
             {
                 w.WriteStartObject();
@@ -158,22 +183,28 @@ public static class Round8
         w.WriteEndArray();
         w.WriteStartArray("edges");
         foreach (var e in ends)
-            foreach (var (id, a, b) in e.Via == null ? new[] { ($"{e.Replaces.Id}_to_{e.Target}", e.Anchor.Id, $"{e.Target}_end") }
-                     : new[] { ($"{e.Replaces.Id}_to_{e.Target}_a", e.Anchor.Id, $"{e.Target}_via"), ($"{e.Replaces.Id}_to_{e.Target}_b", $"{e.Target}_via", $"{e.Target}_end") })
+        {
+            var chain = new List<string> { e.Anchor.Id };
+            if (e.Via != null) chain.Add($"{e.Target}_via");
+            if (e.Target == "dam" && dam != null) chain.Add($"{e.Target}_pylon");
+            chain.Add($"{e.Target}_end");
+            var legs = Enumerable.Range(0, chain.Count - 1).Select(k => (Id: chain.Count == 2 ? $"{e.Replaces.Id}_to_{e.Target}" : $"{e.Replaces.Id}_to_{e.Target}_{(char)('a' + k)}", A: chain[k], B: chain[k + 1]));
+            foreach (var (id, a, b) in legs)
             {
                 w.WriteStartObject();
                 w.WriteString("id", id);
                 w.WriteString("a", a); w.WriteString("b", b);
                 w.WriteString("prefab", e.Replaces.Map.Cs2Prefab);
-                w.WriteString("replaces", e.Replaces.Id);
                 if (e.Note.Length > 0) w.WriteString("note", e.Note);
                 w.WriteString("cs1_prefab", e.Replaces.Map.Cs1Prefab);
                 w.WriteNumber("cs1_segment", e.Replaces.Cs1Segment);
                 w.WriteEndObject();
             }
+        }
         w.WriteEndArray();
         w.WriteStartObject("options");
         w.WriteNumber("batchSize", 64); w.WriteBoolean("nodesFirst", true); w.WriteString("heightMode", absolute ? "absolute" : "elevation"); w.WriteBoolean("dryRun", false);
+        w.WriteBoolean("bypassValidation", true);   // A-v6: OverlapExisting at the plant marker otherwise
         w.WriteEndObject();
         w.WriteEndObject();
     }

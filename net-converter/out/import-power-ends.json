@@ -1,10 +1,6 @@
 {
   "name": "Dakota Falls power line ends",
-  "_comment": "Replaces the last course of each 345 kV circuit (undo the edges in \u0027replaces\u0027 first). The end node carries connectTo {voltage high, radius 60} (bridge 0.9.13) and attaches to the building\u0027s high-voltage marker node; its x/z (building centre moved 8 m toward the line) only picks the marker. The start node joins the existing pylon node through snapToSegment (radius 2).",
-  "replaces": [
-    "e5094_0",
-    "e32855_0"
-  ],
+  "_comment": "The last course of each 345 kV circuit (import-power.json leaves those courses out). The end node carries connectTo {voltage high, radius 60} (bridge 0.9.13) and attaches to the building\u0027s high-voltage marker node; its x/z only picks the marker: the substation centre moved 8 m toward the line; for the dam, the plant marker as measured on A-v6, placed in the frame of the dam edge. The start node joins the existing pylon node through snapToSegment (radius 2).",
   "nodes": [
     {
       "id": "n26177",
@@ -41,14 +37,22 @@
     },
     {
       "id": "dam_end",
-      "x": 1555.81,
-      "z": 4685.08,
-      "y": 334.26,
+      "x": 1398.66,
+      "z": 4718.33,
+      "y": 331.2,
       "elevation": 0,
       "connectTo": {
         "voltage": "high",
-        "radius": 120
+        "radius": 60
       }
+    },
+    {
+      "id": "dam_pylon",
+      "x": 1470,
+      "z": 4654.99,
+      "y": 326.97,
+      "elevation": 0,
+      "note": "A-v6: extra pylon before the plant marker, spans under 210 m"
     },
     {
       "id": "dam_via",
@@ -65,7 +69,6 @@
       "a": "n26177",
       "b": "substation_end",
       "prefab": "High-voltage Line",
-      "replaces": "e5094_0",
       "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
       "cs1_segment": 5094
     },
@@ -74,7 +77,6 @@
       "a": "n2881",
       "b": "dam_via",
       "prefab": "High-voltage Line",
-      "replaces": "e32855_0",
       "note": "the straight course passed the substation 46 m off; extra pylon 87 m from it on the far side",
       "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
       "cs1_segment": 32855
@@ -82,9 +84,17 @@
     {
       "id": "e32855_0_to_dam_b",
       "a": "dam_via",
+      "b": "dam_pylon",
+      "prefab": "High-voltage Line",
+      "note": "the straight course passed the substation 46 m off; extra pylon 87 m from it on the far side",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 32855
+    },
+    {
+      "id": "e32855_0_to_dam_c",
+      "a": "dam_pylon",
       "b": "dam_end",
       "prefab": "High-voltage Line",
-      "replaces": "e32855_0",
       "note": "the straight course passed the substation 46 m off; extra pylon 87 m from it on the far side",
       "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
       "cs1_segment": 32855
@@ -94,6 +104,7 @@
     "batchSize": 64,
     "nodesFirst": true,
     "heightMode": "absolute",
-    "dryRun": false
+    "dryRun": false,
+    "bypassValidation": true
   }
 }
