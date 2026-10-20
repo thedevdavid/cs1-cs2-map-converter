@@ -2145,18 +2145,6 @@
       "elevation": 0
     },
     {
-      "id": "n27902",
-      "x": 1276.42,
-      "y": 331.72,
-      "z": 6145.3
-    },
-    {
-      "id": "n20736",
-      "x": 1297.04,
-      "y": 328.94,
-      "z": 6141.11
-    },
-    {
       "id": "n15281",
       "x": 6335.04,
       "y": 278.66,
@@ -2812,19 +2800,6 @@
       "elevation": 0
     },
     {
-      "id": "e4936_0d0",
-      "x": 6846.84,
-      "y": 278.9,
-      "z": 3303.37
-    },
-    {
-      "id": "n2819",
-      "x": 6846.78,
-      "y": 278.75,
-      "z": 3260.35,
-      "elevation": 0
-    },
-    {
       "id": "n15582",
       "x": 7099.45,
       "y": 289.25,
@@ -3153,13 +3128,6 @@
       "elevation": 0
     },
     {
-      "id": "n2577",
-      "x": 6845.87,
-      "y": 278.82,
-      "z": 2552.53,
-      "elevation": 0
-    },
-    {
       "id": "n18406",
       "x": -2337.81,
       "y": 266.02,
@@ -3484,30 +3452,6 @@
       "x": -4176.04,
       "y": 332.56,
       "z": 19.59
-    },
-    {
-      "id": "n21032",
-      "x": 1315.96,
-      "y": 325.9,
-      "z": 6151.33
-    },
-    {
-      "id": "e6492_0d0",
-      "x": 1349.46,
-      "y": 322.71,
-      "z": 6156.4
-    },
-    {
-      "id": "e6492_0bd1",
-      "x": 1369.66,
-      "y": 322.71,
-      "z": 6159.46
-    },
-    {
-      "id": "n26596",
-      "x": 1382.96,
-      "y": 322.71,
-      "z": 6161.47
     },
     {
       "id": "n15498",
@@ -3921,6 +3865,13 @@
       "x": 6335.52,
       "y": 278.9,
       "z": 3834.47,
+      "elevation": 0
+    },
+    {
+      "id": "n2577",
+      "x": 6845.87,
+      "y": 278.82,
+      "z": 2552.53,
       "elevation": 0
     },
     {
@@ -5649,36 +5600,6 @@
       "elevation": 0
     },
     {
-      "id": "n7290",
-      "x": -3475.21,
-      "y": 543.57,
-      "z": -3249.1
-    },
-    {
-      "id": "e10906_0ad1",
-      "x": -3487.87,
-      "y": 544.81,
-      "z": -3231.67
-    },
-    {
-      "id": "e10906_0d0",
-      "x": -3501.5,
-      "y": 546.26,
-      "z": -3212.89
-    },
-    {
-      "id": "e10906_0bd1",
-      "x": -3515.14,
-      "y": 547.75,
-      "z": -3194.11
-    },
-    {
-      "id": "n9137",
-      "x": -3527.79,
-      "y": 549.12,
-      "z": -3176.69
-    },
-    {
       "id": "n19247",
       "x": 5560.32,
       "y": 289.25,
@@ -6508,30 +6429,6 @@
       "elevation": 0
     },
     {
-      "id": "n32724",
-      "x": -3353.17,
-      "y": 531.99,
-      "z": -3417.18
-    },
-    {
-      "id": "e12729_0ad1",
-      "x": -3363.99,
-      "y": 533.09,
-      "z": -3402.27
-    },
-    {
-      "id": "e12729_0d0",
-      "x": -3380.25,
-      "y": 534.72,
-      "z": -3379.88
-    },
-    {
-      "id": "n13203",
-      "x": -3414.2,
-      "y": 538.01,
-      "z": -3333.13
-    },
-    {
       "id": "n6844",
       "x": -1604.19,
       "y": 433.15,
@@ -6586,24 +6483,6 @@
       "y": 284.08,
       "z": -2087.71,
       "elevation": 0
-    },
-    {
-      "id": "e12830_0g0d0",
-      "x": -1563.69,
-      "y": 430.07,
-      "z": 4450.9
-    },
-    {
-      "id": "e12830_0g0",
-      "x": -1554.95,
-      "y": 424.04,
-      "z": 4402.25
-    },
-    {
-      "id": "n10640",
-      "x": -1553.23,
-      "y": 423.72,
-      "z": 4392.68
     },
     {
       "id": "n11537",
@@ -7444,24 +7323,6 @@
       "elevation": 0
     },
     {
-      "id": "e15108_0ad1",
-      "x": -3540.36,
-      "y": 550.48,
-      "z": -3159.38
-    },
-    {
-      "id": "e15108_0d0",
-      "x": -3553.91,
-      "y": 551.96,
-      "z": -3140.72
-    },
-    {
-      "id": "n29964",
-      "x": -3580.03,
-      "y": 554.68,
-      "z": -3104.75
-    },
-    {
       "id": "n5994",
       "x": 5758.28,
       "y": 247.15,
@@ -7487,6 +7348,13 @@
       "x": -762.11,
       "y": 460.92,
       "z": 4853.47,
+      "elevation": 0
+    },
+    {
+      "id": "n2819",
+      "x": 6846.78,
+      "y": 278.75,
+      "z": 3260.35,
       "elevation": 0
     },
     {
@@ -8590,6 +8458,12 @@
       "z": -3450.46
     },
     {
+      "id": "n32724",
+      "x": -3353.17,
+      "y": 531.99,
+      "z": -3417.18
+    },
+    {
       "id": "n26103",
       "x": 5397.45,
       "y": 279.12,
@@ -9361,18 +9235,6 @@
       "elevation": 0
     },
     {
-      "id": "e21729_0g0",
-      "x": 3785.71,
-      "y": 381.62,
-      "z": 2916.98
-    },
-    {
-      "id": "e21729_0g1",
-      "x": 3766.01,
-      "y": 381.61,
-      "z": 2920.11
-    },
-    {
       "id": "n16403",
       "x": 7035.45,
       "y": 289.22,
@@ -9609,12 +9471,6 @@
       "y": 279.82,
       "z": -3539.71,
       "elevation": 0
-    },
-    {
-      "id": "e22934_0d0",
-      "x": -3444.71,
-      "y": 540.79,
-      "z": -3291.11
     },
     {
       "id": "n18932",
@@ -9860,19 +9716,6 @@
       "elevation": 0
     },
     {
-      "id": "e24516_0d0",
-      "x": 6785.67,
-      "y": 278.82,
-      "z": 3456.7
-    },
-    {
-      "id": "n22827",
-      "x": 6825.99,
-      "y": 278.01,
-      "z": 3456.65,
-      "elevation": 0
-    },
-    {
       "id": "n30303",
       "x": -676.33,
       "y": 259.54,
@@ -9926,19 +9769,6 @@
       "x": -21.04,
       "y": 321.98,
       "z": -2649.19,
-      "elevation": 0
-    },
-    {
-      "id": "n22937",
-      "x": 6483.67,
-      "y": 278.22,
-      "z": 1715.15
-    },
-    {
-      "id": "e24890_0d0",
-      "x": 6518.65,
-      "y": 277.65,
-      "z": 1715.1,
       "elevation": 0
     },
     {
@@ -10088,24 +9918,6 @@
       "elevation": 0
     },
     {
-      "id": "n12639",
-      "x": -3638.16,
-      "y": 560.24,
-      "z": -3024.69
-    },
-    {
-      "id": "e26134_0d0",
-      "x": -3670.5,
-      "y": 563.33,
-      "z": -2980.15
-    },
-    {
-      "id": "e26134_0bd1",
-      "x": -3685.99,
-      "y": 564.81,
-      "z": -2958.82
-    },
-    {
       "id": "n18445",
       "x": 4875.43,
       "y": 278.75,
@@ -10134,41 +9946,11 @@
       "elevation": 0
     },
     {
-      "id": "e26236_0g0",
-      "x": -1550.24,
-      "y": 423.17,
-      "z": 4376.09
-    },
-    {
-      "id": "e26236_0g1d0",
-      "x": -1542.1,
-      "y": 426.51,
-      "z": 4330.79
-    },
-    {
       "id": "n25937",
       "x": -1314.47,
       "y": 225.66,
       "z": -1776.62,
       "elevation": 0
-    },
-    {
-      "id": "e26316_0ad1",
-      "x": 1228.71,
-      "y": 335.05,
-      "z": 6137.66
-    },
-    {
-      "id": "e26316_0d0",
-      "x": 1246.66,
-      "y": 334.21,
-      "z": 6140.54
-    },
-    {
-      "id": "e26316_0bd1",
-      "x": 1264.61,
-      "y": 333.18,
-      "z": 6143.41
     },
     {
       "id": "n32009",
@@ -10183,12 +9965,6 @@
       "y": 289.25,
       "z": 803.27,
       "elevation": 0
-    },
-    {
-      "id": "e26635_0d0",
-      "x": -3609.09,
-      "y": 557.46,
-      "z": -3064.72
     },
     {
       "id": "n28955",
@@ -10931,6 +10707,13 @@
       "z": 4629.6
     },
     {
+      "id": "n22827",
+      "x": 6825.99,
+      "y": 278.01,
+      "z": 3456.65,
+      "elevation": 0
+    },
+    {
       "id": "n24171",
       "x": -643.36,
       "y": 256.62,
@@ -10961,13 +10744,6 @@
       "x": -6462.7,
       "y": 542.59,
       "z": 1077.56,
-      "elevation": 0
-    },
-    {
-      "id": "e35264_0d0",
-      "x": 6448.69,
-      "y": 277.76,
-      "z": 1715.19,
       "elevation": 0
     },
     {
@@ -14459,27 +14235,6 @@
       "cs1_segment": 3397
     },
     {
-      "id": "e3402_0",
-      "a": "n27902",
-      "b": "n20736",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          1279.52,
-          321.14,
-          6144.72
-        ],
-        [
-          1293.94,
-          313.79,
-          6141.68
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 3402
-    },
-    {
       "id": "e3416_0",
       "a": "n15281",
       "b": "n32228",
@@ -15656,48 +15411,6 @@
       "cs1_segment": 4913
     },
     {
-      "id": "e4936_0a",
-      "a": "n14808",
-      "b": "e4936_0d0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          6846.89,
-          278.78,
-          3339.93
-        ],
-        [
-          6846.86,
-          278.78,
-          3321.65
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 4936
-    },
-    {
-      "id": "e4936_0b",
-      "a": "e4936_0d0",
-      "b": "n2819",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          6846.81,
-          278.78,
-          3285.08
-        ],
-        [
-          6846.79,
-          278.78,
-          3266.8
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 4936
-    },
-    {
       "id": "e4947_0",
       "a": "n15582",
       "b": "c4947_0",
@@ -16326,27 +16039,6 @@
       "structure": "ground",
       "cs1_prefab": "Gravel Road",
       "cs1_segment": 5745
-    },
-    {
-      "id": "e5779_0",
-      "a": "n26724",
-      "b": "n2577",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          6845.94,
-          278.78,
-          2609.33
-        ],
-        [
-          6845.88,
-          278.78,
-          2562.56
-        ]
-      ],
-      "structure": "ground",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 5779
     },
     {
       "id": "e5794_0",
@@ -16998,69 +16690,6 @@
       "structure": "elevated",
       "cs1_prefab": "2098643957.USRP 3-Lane National Road_Data",
       "cs1_segment": 6440
-    },
-    {
-      "id": "e6492_0a",
-      "a": "n21032",
-      "b": "e6492_0d0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          1320.99,
-          322.71,
-          6152.09
-        ],
-        [
-          1335.22,
-          322.71,
-          6154.25
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Bridge",
-      "cs1_segment": 6492
-    },
-    {
-      "id": "e6492_0ba",
-      "a": "e6492_0d0",
-      "b": "e6492_0bd1",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          1356.58,
-          322.71,
-          6157.48
-        ],
-        [
-          1363.7,
-          322.71,
-          6158.55
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Bridge",
-      "cs1_segment": 6492
-    },
-    {
-      "id": "e6492_0bb",
-      "a": "e6492_0bd1",
-      "b": "n26596",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          1375.63,
-          322.71,
-          6160.36
-        ],
-        [
-          1380.45,
-          322.71,
-          6161.09
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Bridge",
-      "cs1_segment": 6492
     },
     {
       "id": "e6524_0",
@@ -21473,94 +21102,6 @@
       "cs1_segment": 10901
     },
     {
-      "id": "e10906_0aa",
-      "a": "n7290",
-      "b": "e10906_0ad1",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3479.16,
-          543.93,
-          -3243.67
-        ],
-        [
-          -3483.43,
-          544.35,
-          -3237.78
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 10906
-    },
-    {
-      "id": "e10906_0ab",
-      "a": "e10906_0ad1",
-      "b": "e10906_0d0",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3492.3,
-          545.27,
-          -3225.56
-        ],
-        [
-          -3496.9,
-          545.76,
-          -3219.23
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 10906
-    },
-    {
-      "id": "e10906_0ba",
-      "a": "e10906_0d0",
-      "b": "e10906_0bd1",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3506.1,
-          546.76,
-          -3206.56
-        ],
-        [
-          -3510.7,
-          547.27,
-          -3200.22
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 10906
-    },
-    {
-      "id": "e10906_0bb",
-      "a": "e10906_0bd1",
-      "b": "n9137",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3519.58,
-          548.24,
-          -3188
-        ],
-        [
-          -3523.85,
-          548.71,
-          -3182.12
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 10906
-    },
-    {
       "id": "e10908_0",
       "a": "n19247",
       "b": "n15852",
@@ -23388,72 +22929,6 @@
       "cs1_segment": 12712
     },
     {
-      "id": "e12729_0aa",
-      "a": "n32724",
-      "b": "e12729_0ad1",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3355.46,
-          532.22,
-          -3414.02
-        ],
-        [
-          -3359.27,
-          532.6,
-          -3408.77
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 12729
-    },
-    {
-      "id": "e12729_0ab",
-      "a": "e12729_0ad1",
-      "b": "e12729_0d0",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3368.71,
-          533.55,
-          -3395.77
-        ],
-        [
-          -3374.34,
-          534.12,
-          -3388.02
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 12729
-    },
-    {
-      "id": "e12729_0b",
-      "a": "e12729_0d0",
-      "b": "n13203",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3392.08,
-          535.9,
-          -3363.6
-        ],
-        [
-          -3405.05,
-          537.18,
-          -3345.74
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 12729
-    },
-    {
       "id": "e12738_0",
       "a": "n6844",
       "b": "n15001",
@@ -23578,69 +23053,6 @@
       "structure": "ground",
       "cs1_prefab": "Gravel Road",
       "cs1_segment": 12825
-    },
-    {
-      "id": "e12830_0g0a",
-      "a": "n20692",
-      "b": "e12830_0g0d0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          -1569.07,
-          426.66,
-          4480.82
-        ],
-        [
-          -1566.57,
-          426.19,
-          4466.89
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 12830
-    },
-    {
-      "id": "e12830_0g0b",
-      "a": "e12830_0g0d0",
-      "b": "e12830_0g0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          -1560.82,
-          425.13,
-          4434.91
-        ],
-        [
-          -1557.57,
-          424.53,
-          4416.85
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 12830
-    },
-    {
-      "id": "e12830_0g1",
-      "a": "e12830_0g0",
-      "b": "n10640",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          -1554.33,
-          423.93,
-          4398.85
-        ],
-        [
-          -1553.76,
-          423.82,
-          4395.64
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 12830
     },
     {
       "id": "e12868_0",
@@ -25846,72 +25258,6 @@
       "structure": "ground",
       "cs1_prefab": "Gravel Road",
       "cs1_segment": 15107
-    },
-    {
-      "id": "e15108_0aa",
-      "a": "n9137",
-      "b": "e15108_0ad1",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3531.71,
-          549.54,
-          -3171.29
-        ],
-        [
-          -3535.95,
-          550,
-          -3165.45
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 15108
-    },
-    {
-      "id": "e15108_0ab",
-      "a": "e15108_0ad1",
-      "b": "e15108_0d0",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3544.77,
-          550.96,
-          -3153.31
-        ],
-        [
-          -3549.34,
-          551.47,
-          -3147.02
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 15108
-    },
-    {
-      "id": "e15108_0b",
-      "a": "e15108_0d0",
-      "b": "n29964",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3563.05,
-          552.96,
-          -3128.13
-        ],
-        [
-          -3572.19,
-          553.93,
-          -3115.54
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 15108
     },
     {
       "id": "e15138_0",
@@ -32846,69 +32192,6 @@
       "cs1_segment": 21722
     },
     {
-      "id": "e21729_0g0",
-      "a": "n4630",
-      "b": "e21729_0g0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          3809.38,
-          381.62,
-          2913.23
-        ],
-        [
-          3798.24,
-          381.62,
-          2915
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Bridge",
-      "cs1_segment": 21729
-    },
-    {
-      "id": "e21729_0g1",
-      "a": "e21729_0g0",
-      "b": "e21729_0g1",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          3779.27,
-          381.62,
-          2918
-        ],
-        [
-          3772.47,
-          381.62,
-          2919.08
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Bridge",
-      "cs1_segment": 21729
-    },
-    {
-      "id": "e21729_0g2",
-      "a": "e21729_0g1",
-      "b": "n789",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          3753.15,
-          381.62,
-          2922.15
-        ],
-        [
-          3741.63,
-          381.62,
-          2923.97
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Bridge",
-      "cs1_segment": 21729
-    },
-    {
       "id": "e21737_0",
       "a": "n31328",
       "b": "n10381",
@@ -34083,50 +33366,6 @@
       "structure": "ground",
       "cs1_prefab": "Gravel Road",
       "cs1_segment": 22913
-    },
-    {
-      "id": "e22934_0a",
-      "a": "n13203",
-      "b": "e22934_0d0",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3423.35,
-          538.84,
-          -3320.52
-        ],
-        [
-          -3434.03,
-          539.82,
-          -3305.82
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 22934
-    },
-    {
-      "id": "e22934_0b",
-      "a": "e22934_0d0",
-      "b": "n7290",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3455.38,
-          541.76,
-          -3276.41
-        ],
-        [
-          -3466.06,
-          542.73,
-          -3261.7
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 22934
     },
     {
       "id": "e22952_0",
@@ -35326,48 +34565,6 @@
       "cs1_segment": 24494
     },
     {
-      "id": "e24516_0a",
-      "a": "n23052",
-      "b": "e24516_0d0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          6751.39,
-          278.78,
-          3456.74
-        ],
-        [
-          6768.53,
-          278.78,
-          3456.72
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 24516
-    },
-    {
-      "id": "e24516_0b",
-      "a": "e24516_0d0",
-      "b": "n22827",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          6802.81,
-          278.78,
-          3456.68
-        ],
-        [
-          6819.94,
-          278.78,
-          3456.66
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 24516
-    },
-    {
       "id": "e24518_0",
       "a": "n13829",
       "b": "n8052",
@@ -35786,48 +34983,6 @@
       "structure": "ground",
       "cs1_prefab": "Gravel Road",
       "cs1_segment": 24887
-    },
-    {
-      "id": "e24890_0a",
-      "a": "n22937",
-      "b": "e24890_0d0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          6493.1,
-          278.23,
-          1715.13
-        ],
-        [
-          6506.47,
-          278.25,
-          1715.12
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 24890
-    },
-    {
-      "id": "e24890_0b",
-      "a": "e24890_0d0",
-      "b": "n1004",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          6530.84,
-          278.29,
-          1715.09
-        ],
-        [
-          6541.84,
-          278.3,
-          1715.07
-        ]
-      ],
-      "structure": "ground",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 24890
     },
     {
       "id": "e24916_0",
@@ -36838,72 +35993,6 @@
       "cs1_segment": 26107
     },
     {
-      "id": "e26134_0a",
-      "a": "n12639",
-      "b": "e26134_0d0",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3646.88,
-          561.07,
-          -3012.68
-        ],
-        [
-          -3659.24,
-          562.25,
-          -2995.66
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 26134
-    },
-    {
-      "id": "e26134_0ba",
-      "a": "e26134_0d0",
-      "b": "e26134_0bd1",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3676.14,
-          563.87,
-          -2972.39
-        ],
-        [
-          -3681.5,
-          564.38,
-          -2965.01
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 26134
-    },
-    {
-      "id": "e26134_0bb",
-      "a": "e26134_0bd1",
-      "b": "n16871",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3690.49,
-          565.24,
-          -2952.62
-        ],
-        [
-          -3694.12,
-          565.59,
-          -2947.62
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 26134
-    },
-    {
       "id": "e26137_0",
       "a": "n18445",
       "b": "n10378",
@@ -37072,69 +36161,6 @@
       "cs1_segment": 26214
     },
     {
-      "id": "e26236_0g0",
-      "a": "n10640",
-      "b": "e26236_0g0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          -1552.34,
-          423.56,
-          4387.76
-        ],
-        [
-          -1551.33,
-          423.37,
-          4382.12
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 26236
-    },
-    {
-      "id": "e26236_0g1a",
-      "a": "e26236_0g0",
-      "b": "e26236_0g1d0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          -1547.66,
-          422.7,
-          4361.76
-        ],
-        [
-          -1544.69,
-          422.15,
-          4345.21
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 26236
-    },
-    {
-      "id": "e26236_0g1b",
-      "a": "e26236_0g1d0",
-      "b": "n3301",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          -1539.5,
-          421.19,
-          4316.36
-        ],
-        [
-          -1537.29,
-          420.78,
-          4304.05
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 26236
-    },
-    {
       "id": "e26311_0",
       "a": "n668",
       "b": "n25937",
@@ -37154,90 +36180,6 @@
       "structure": "ground",
       "cs1_prefab": "2097530472.USRP 2-Lane National Road_Data",
       "cs1_segment": 26311
-    },
-    {
-      "id": "e26316_0aa",
-      "a": "n14881",
-      "b": "e26316_0ad1",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          1219.13,
-          322.71,
-          6136.13
-        ],
-        [
-          1223.41,
-          322.71,
-          6136.82
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 26316
-    },
-    {
-      "id": "e26316_0ab",
-      "a": "e26316_0ad1",
-      "b": "e26316_0d0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          1234.01,
-          322.71,
-          6138.51
-        ],
-        [
-          1240.33,
-          322.71,
-          6139.52
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 26316
-    },
-    {
-      "id": "e26316_0ba",
-      "a": "e26316_0d0",
-      "b": "e26316_0bd1",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          1252.98,
-          322.71,
-          6141.55
-        ],
-        [
-          1259.31,
-          322.71,
-          6142.56
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 26316
-    },
-    {
-      "id": "e26316_0bb",
-      "a": "e26316_0bd1",
-      "b": "n27902",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          1269.91,
-          322.71,
-          6144.25
-        ],
-        [
-          1274.19,
-          322.71,
-          6144.94
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 26316
     },
     {
       "id": "e26320_0",
@@ -37385,50 +36327,6 @@
       "structure": "ground",
       "cs1_prefab": "Gravel Road",
       "cs1_segment": 26508
-    },
-    {
-      "id": "e26635_0a",
-      "a": "n29964",
-      "b": "e26635_0d0",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3588.75,
-          555.52,
-          -3092.74
-        ],
-        [
-          -3598.92,
-          556.49,
-          -3078.73
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 26635
-    },
-    {
-      "id": "e26635_0b",
-      "a": "e26635_0d0",
-      "b": "n12639",
-      "prefab": "Small Road",
-      "control": [
-        [
-          -3619.27,
-          558.43,
-          -3050.71
-        ],
-        [
-          -3629.44,
-          559.41,
-          -3036.7
-        ]
-      ],
-      "noPillars": true,
-      "structure": "elevated",
-      "cs1_prefab": "2097530472.USRP 2-Lane National Road B",
-      "cs1_segment": 26635
     },
     {
       "id": "e26636_0",
@@ -42681,27 +41579,6 @@
       "cs1_segment": 32323
     },
     {
-      "id": "e32350_0",
-      "a": "n20736",
-      "b": "n21032",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          1299.88,
-          313.79,
-          6142.64
-        ],
-        [
-          1313.12,
-          321.14,
-          6149.8
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 32350
-    },
-    {
       "id": "e32357_0",
       "a": "n19394",
       "b": "n9693",
@@ -45451,48 +44328,6 @@
       "structure": "ground",
       "cs1_prefab": "Gravel Road",
       "cs1_segment": 35131
-    },
-    {
-      "id": "e35264_0a",
-      "a": "n8743",
-      "b": "e35264_0d0",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          6425.5,
-          278.1,
-          1715.22
-        ],
-        [
-          6436.5,
-          278.12,
-          1715.21
-        ]
-      ],
-      "structure": "ground",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 35264
-    },
-    {
-      "id": "e35264_0b",
-      "a": "e35264_0d0",
-      "b": "n22937",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          6460.87,
-          278.18,
-          1715.18
-        ],
-        [
-          6474.24,
-          278.21,
-          1715.16
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "Gravel Road Elevated",
-      "cs1_segment": 35264
     },
     {
       "id": "e35314_0",

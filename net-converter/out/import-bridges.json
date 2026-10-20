@@ -1,0 +1,1827 @@
+{
+  "name": "Dakota Falls bridges",
+  "_comment": "Bridge overrides (bridges.tsv): straight, constant-grade bridge-prefab edges between the CS1 deck chains\u0027 end nodes; ends shared with the network import join it through snapToSegment (radius 2). Import right after import-all.json, which leaves these decks out. Prefab names UNVERIFIED.",
+  "replaces": [
+    "e18923_0aa",
+    "e18923_0ab",
+    "e18923_0ba",
+    "e18923_0bb",
+    "e27870_0a",
+    "e27870_0b",
+    "e2029_0aa",
+    "e2029_0ab",
+    "e2029_0b",
+    "e8562_0aa",
+    "e8562_0ab",
+    "e8562_0b",
+    "e24934_0a",
+    "e24934_0ba",
+    "e24934_0bb",
+    "e17085_0a",
+    "e17085_0b",
+    "e15768_0a",
+    "e15768_0ba",
+    "e15768_0bb",
+    "e17815_0aa",
+    "e17815_0ab",
+    "e17815_0ba",
+    "e17815_0bb",
+    "e7777_0aa",
+    "e7777_0ab",
+    "e7777_0baa",
+    "e7777_0bab",
+    "e7777_0bb",
+    "e23931_0aa",
+    "e23931_0ab",
+    "e23931_0ba",
+    "e23931_0bb",
+    "e34552_0aa",
+    "e34552_0ab",
+    "e34552_0ba",
+    "e34552_0bb",
+    "e21812_0aa",
+    "e21812_0aba",
+    "e21812_0abb",
+    "e21812_0ba",
+    "e21812_0bb",
+    "e12729_0aa",
+    "e12729_0ab",
+    "e12729_0b",
+    "e22934_0a",
+    "e22934_0b",
+    "e10906_0aa",
+    "e10906_0ab",
+    "e10906_0ba",
+    "e10906_0bb",
+    "e15108_0aa",
+    "e15108_0ab",
+    "e15108_0b",
+    "e26635_0a",
+    "e26635_0b",
+    "e26134_0a",
+    "e26134_0ba",
+    "e26134_0bb",
+    "e6687_0aa",
+    "e6687_0ab",
+    "e6687_0b",
+    "e31894_0aa",
+    "e31894_0ab",
+    "e31894_0b",
+    "e13940_0a",
+    "e13940_0ba",
+    "e13940_0bb",
+    "e27567_0a",
+    "e27567_0b",
+    "e549_0a",
+    "e549_0b",
+    "e31105_0aa",
+    "e31105_0ab",
+    "e31105_0b",
+    "e4424_0g0",
+    "e4424_0g1a",
+    "e4424_0g1b",
+    "e23026_0a",
+    "e23026_0b",
+    "e14932_0g0a",
+    "e14932_0g0b",
+    "e14932_0g1",
+    "e14932_0g2a",
+    "e14932_0g2b",
+    "e26599_0a",
+    "e26599_0b",
+    "e16183_0g0a",
+    "e16183_0g0b",
+    "e16183_0g1",
+    "e28777_0g0",
+    "e28777_0g1a",
+    "e28777_0g1b",
+    "e11092_0aa",
+    "e11092_0ab",
+    "e11092_0b",
+    "e24945_0a",
+    "e24945_0b",
+    "e3640_0a",
+    "e3640_0b",
+    "e3460_0a",
+    "e3460_0ba",
+    "e3460_0bb",
+    "e7666_0a",
+    "e7666_0b",
+    "e9613_0a",
+    "e9613_0b",
+    "e18412_0a",
+    "e18412_0b",
+    "e4931_0a",
+    "e4931_0b",
+    "e5956_0aa",
+    "e5956_0ab",
+    "e5956_0ba",
+    "e5956_0bb",
+    "e18585_0aa",
+    "e18585_0aba",
+    "e18585_0abb",
+    "e18585_0ba",
+    "e18585_0bb",
+    "e30706_0g0a",
+    "e30706_0g0b",
+    "e30706_0g1",
+    "e30706_0g2a",
+    "e30706_0g2b",
+    "e12830_0g0a",
+    "e12830_0g0b",
+    "e12830_0g1",
+    "e26236_0g0",
+    "e26236_0g1a",
+    "e26236_0g1b",
+    "e26316_0aa",
+    "e26316_0ab",
+    "e26316_0ba",
+    "e26316_0bb",
+    "e3402_0",
+    "e32350_0",
+    "e6492_0a",
+    "e6492_0ba",
+    "e6492_0bb",
+    "e21729_0g0",
+    "e21729_0g1",
+    "e21729_0g2",
+    "e35264_0a",
+    "e35264_0b",
+    "e24890_0a",
+    "e24890_0b",
+    "e4936_0a",
+    "e4936_0b",
+    "e24516_0a",
+    "e24516_0b",
+    "e5779_0"
+  ],
+  "nodes": [
+    {
+      "id": "n18884",
+      "x": 279.2,
+      "y": 270.96,
+      "z": 145.53,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br005_c1_n1",
+      "x": 437.14,
+      "y": 270.96,
+      "z": 189.72
+    },
+    {
+      "id": "n27866",
+      "x": 595.07,
+      "y": 270.96,
+      "z": 233.92,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n32680",
+      "x": 590.87,
+      "y": 271.67,
+      "z": 248.94,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br005_c2_n1",
+      "x": 432.93,
+      "y": 271.31,
+      "z": 204.75
+    },
+    {
+      "id": "n26229",
+      "x": 275,
+      "y": 270.96,
+      "z": 160.55,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n11662",
+      "x": -4388.21,
+      "y": 331.05,
+      "z": 28.12,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br009_c1_n1",
+      "x": -4475.38,
+      "y": 339.59,
+      "z": 86.66
+    },
+    {
+      "id": "n12478",
+      "x": -4562.56,
+      "y": 348.13,
+      "z": 145.2,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n8758",
+      "x": -4571.26,
+      "y": 348.48,
+      "z": 132.25,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br009_c2_n1",
+      "x": -4484.08,
+      "y": 339.71,
+      "z": 73.71
+    },
+    {
+      "id": "n5788",
+      "x": -4396.9,
+      "y": 330.95,
+      "z": 15.17,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n32724",
+      "x": -3353.17,
+      "y": 531.99,
+      "z": -3417.18,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br006_c1_n1",
+      "x": -3438.95,
+      "y": 540.21,
+      "z": -3299.04
+    },
+    {
+      "id": "br006_c1_n2",
+      "x": -3524.74,
+      "y": 548.43,
+      "z": -3180.9
+    },
+    {
+      "id": "br006_c1_n3",
+      "x": -3610.52,
+      "y": 556.65,
+      "z": -3062.76
+    },
+    {
+      "id": "n16871",
+      "x": -3696.3,
+      "y": 564.87,
+      "z": -2944.62,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n18382",
+      "x": 871.24,
+      "y": 333.24,
+      "z": 2648.82,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br007_c1_n1",
+      "x": 778.18,
+      "y": 333.24,
+      "z": 2665.8
+    },
+    {
+      "id": "n32428",
+      "x": 685.12,
+      "y": 333.24,
+      "z": 2682.78,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n25541",
+      "x": -304.2,
+      "y": 230.39,
+      "z": -2602.36,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br010_c1_n1",
+      "x": -324.73,
+      "y": 230.39,
+      "z": -2733.02
+    },
+    {
+      "id": "n21254",
+      "x": -345.26,
+      "y": 230.39,
+      "z": -2863.68,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n1474",
+      "x": 6681.94,
+      "y": 301.01,
+      "z": 2376.77,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br023_c1_n1",
+      "x": 6729.34,
+      "y": 299.43,
+      "z": 2369.26
+    },
+    {
+      "id": "n16420",
+      "x": 6776.75,
+      "y": 297.85,
+      "z": 2361.74,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n1817",
+      "x": 6587.12,
+      "y": 304.56,
+      "z": 2391.81,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br026_c1_n1",
+      "x": 6634.53,
+      "y": 302.78,
+      "z": 2384.29
+    },
+    {
+      "id": "n9787",
+      "x": 6492.3,
+      "y": 322.04,
+      "z": 2406.84,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br033_c1_n1",
+      "x": 6539.71,
+      "y": 313.3,
+      "z": 2399.32
+    },
+    {
+      "id": "n7058",
+      "x": 283.11,
+      "y": 344.73,
+      "z": 2756.14,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br035_c1_n1",
+      "x": 224.65,
+      "y": 343.91,
+      "z": 2766.81
+    },
+    {
+      "id": "n1912",
+      "x": 166.18,
+      "y": 343.08,
+      "z": 2777.48,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br038_c1_n1",
+      "x": 6824.16,
+      "y": 296.26,
+      "z": 2354.22
+    },
+    {
+      "id": "n25325",
+      "x": 6871.57,
+      "y": 294.68,
+      "z": 2346.71,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n10436",
+      "x": 3805.87,
+      "y": 410.59,
+      "z": 2832.79,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br042_c1_n1",
+      "x": 3742.24,
+      "y": 410.39,
+      "z": 2842.88
+    },
+    {
+      "id": "n19319",
+      "x": 3678.62,
+      "y": 410.19,
+      "z": 2852.96,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n1137",
+      "x": -452.24,
+      "y": 287.7,
+      "z": -5435.54,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br012_c1_n1",
+      "x": -441.49,
+      "y": 289.41,
+      "z": -5508.35
+    },
+    {
+      "id": "br012_c1_n2",
+      "x": -430.74,
+      "y": 291.12,
+      "z": -5581.16
+    },
+    {
+      "id": "br012_c1_n3",
+      "x": -419.99,
+      "y": 292.83,
+      "z": -5653.97
+    },
+    {
+      "id": "br012_c1_n4",
+      "x": -409.24,
+      "y": 294.54,
+      "z": -5726.78
+    },
+    {
+      "id": "n22177",
+      "x": -398.49,
+      "y": 296.25,
+      "z": -5799.59,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n26317",
+      "x": -305.01,
+      "y": 311.13,
+      "z": -6432.73,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br015_c1_n1",
+      "x": -294.03,
+      "y": 312.87,
+      "z": -6507.12
+    },
+    {
+      "id": "br015_c1_n2",
+      "x": -283.05,
+      "y": 314.62,
+      "z": -6581.52
+    },
+    {
+      "id": "br015_c1_n3",
+      "x": -272.06,
+      "y": 316.37,
+      "z": -6655.91
+    },
+    {
+      "id": "br015_c1_n4",
+      "x": -261.08,
+      "y": 318.11,
+      "z": -6730.3
+    },
+    {
+      "id": "n1880",
+      "x": -250.1,
+      "y": 319.86,
+      "z": -6804.7,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n19529",
+      "x": -422.57,
+      "y": 239.98,
+      "z": -3355.63,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br017_c1_n1",
+      "x": -433.08,
+      "y": 241.35,
+      "z": -3422.51
+    },
+    {
+      "id": "br017_c1_n2",
+      "x": -443.59,
+      "y": 242.72,
+      "z": -3489.4
+    },
+    {
+      "id": "br017_c1_n3",
+      "x": -454.1,
+      "y": 244.09,
+      "z": -3556.28
+    },
+    {
+      "id": "n2800",
+      "x": -464.61,
+      "y": 245.47,
+      "z": -3623.17,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n25067",
+      "x": -1398.53,
+      "y": 422.21,
+      "z": 4230.22,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br028_c1_n1",
+      "x": -1422.37,
+      "y": 424.23,
+      "z": 4288.06
+    },
+    {
+      "id": "br028_c1_n2",
+      "x": -1446.22,
+      "y": 426.25,
+      "z": 4345.9
+    },
+    {
+      "id": "n5617",
+      "x": -1470.06,
+      "y": 428.27,
+      "z": 4403.74,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n20692",
+      "x": -1570.21,
+      "y": 435.7,
+      "z": 4487.17,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br019_c1_n1",
+      "x": -1558.89,
+      "y": 433.9,
+      "z": 4424.18
+    },
+    {
+      "id": "br019_c1_n2",
+      "x": -1547.56,
+      "y": 432.09,
+      "z": 4361.19
+    },
+    {
+      "id": "n3301",
+      "x": -1536.24,
+      "y": 430.29,
+      "z": 4298.2,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n14881",
+      "x": 1216.9,
+      "y": 335.52,
+      "z": 6135.78,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br020_c1_n1",
+      "x": 1299.93,
+      "y": 329.11,
+      "z": 6148.62
+    },
+    {
+      "id": "n26596",
+      "x": 1382.96,
+      "y": 322.71,
+      "z": 6161.47
+    },
+    {
+      "id": "n4630",
+      "x": 3813.93,
+      "y": 384.59,
+      "z": 2912.51,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n789",
+      "x": 3736.98,
+      "y": 384.22,
+      "z": 2924.71,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n8743",
+      "x": 6420.78,
+      "y": 277.63,
+      "z": 1715.23,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "br045_c1_n1",
+      "x": 6483.67,
+      "y": 278.2,
+      "z": 1715.15
+    },
+    {
+      "id": "n1004",
+      "x": 6546.56,
+      "y": 278.78,
+      "z": 1715.07,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n14808",
+      "x": 6846.89,
+      "y": 278.79,
+      "z": 3346.38,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n2819",
+      "x": 6846.78,
+      "y": 278.75,
+      "z": 3260.35,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n23052",
+      "x": 6745.35,
+      "y": 278.78,
+      "z": 3456.75,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n22827",
+      "x": 6825.99,
+      "y": 278.01,
+      "z": 3456.65,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n26724",
+      "x": 6845.96,
+      "y": 278.53,
+      "z": 2619.36,
+      "snapToSegment": {
+        "radius": 2
+      }
+    },
+    {
+      "id": "n2577",
+      "x": 6845.87,
+      "y": 278.82,
+      "z": 2552.53,
+      "snapToSegment": {
+        "radius": 2
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "br005_c1_e0",
+      "a": "n18884",
+      "b": "br005_c1_n1",
+      "prefab": "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes",
+      "control": [
+        [
+          331.85,
+          270.96,
+          160.26
+        ],
+        [
+          384.49,
+          270.96,
+          174.99
+        ]
+      ],
+      "note": "BR005 bridge edge 1/2; CS1 segments 18923,27870,2029,8562"
+    },
+    {
+      "id": "br005_c1_e1",
+      "a": "br005_c1_n1",
+      "b": "n27866",
+      "prefab": "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes",
+      "control": [
+        [
+          489.78,
+          270.96,
+          204.46
+        ],
+        [
+          542.43,
+          270.96,
+          219.19
+        ]
+      ],
+      "note": "BR005 bridge edge 2/2; CS1 segments 18923,27870,2029,8562"
+    },
+    {
+      "id": "br005_c2_e0",
+      "a": "n32680",
+      "b": "br005_c2_n1",
+      "prefab": "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes",
+      "control": [
+        [
+          538.22,
+          271.55,
+          234.21
+        ],
+        [
+          485.58,
+          271.43,
+          219.48
+        ]
+      ],
+      "note": "BR005 bridge edge 1/2; CS1 segments 24934,17085,15768,17815"
+    },
+    {
+      "id": "br005_c2_e1",
+      "a": "br005_c2_n1",
+      "b": "n26229",
+      "prefab": "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes",
+      "control": [
+        [
+          380.29,
+          271.2,
+          190.02
+        ],
+        [
+          327.64,
+          271.08,
+          175.28
+        ]
+      ],
+      "note": "BR005 bridge edge 2/2; CS1 segments 24934,17085,15768,17815"
+    },
+    {
+      "id": "br009_c1_e0",
+      "a": "n11662",
+      "b": "br009_c1_n1",
+      "prefab": "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes",
+      "control": [
+        [
+          -4417.27,
+          333.9,
+          47.63
+        ],
+        [
+          -4446.32,
+          336.74,
+          67.15
+        ]
+      ],
+      "note": "BR009 bridge edge 1/2; CS1 segments 7777,23931"
+    },
+    {
+      "id": "br009_c1_e1",
+      "a": "br009_c1_n1",
+      "b": "n12478",
+      "prefab": "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes",
+      "control": [
+        [
+          -4504.44,
+          342.44,
+          106.17
+        ],
+        [
+          -4533.5,
+          345.28,
+          125.69
+        ]
+      ],
+      "note": "BR009 bridge edge 2/2; CS1 segments 7777,23931"
+    },
+    {
+      "id": "br009_c2_e0",
+      "a": "n8758",
+      "b": "br009_c2_n1",
+      "prefab": "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes",
+      "control": [
+        [
+          -4542.2,
+          345.55,
+          112.74
+        ],
+        [
+          -4513.14,
+          342.63,
+          93.22
+        ]
+      ],
+      "note": "BR009 bridge edge 1/2; CS1 segments 34552,21812"
+    },
+    {
+      "id": "br009_c2_e1",
+      "a": "br009_c2_n1",
+      "b": "n5788",
+      "prefab": "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes",
+      "control": [
+        [
+          -4455.02,
+          336.79,
+          54.2
+        ],
+        [
+          -4425.96,
+          333.87,
+          34.68
+        ]
+      ],
+      "note": "BR009 bridge edge 2/2; CS1 segments 34552,21812"
+    },
+    {
+      "id": "br006_c1_e0",
+      "a": "n32724",
+      "b": "br006_c1_n1",
+      "prefab": "Truss Arch Bridge - Small Road - 2 Lanes",
+      "control": [
+        [
+          -3381.76,
+          534.73,
+          -3377.8
+        ],
+        [
+          -3410.36,
+          537.47,
+          -3338.42
+        ]
+      ],
+      "note": "BR006 bridge edge 1/4; CS1 segments 12729,22934,10906,15108,26635,26134"
+    },
+    {
+      "id": "br006_c1_e1",
+      "a": "br006_c1_n1",
+      "b": "br006_c1_n2",
+      "prefab": "Truss Arch Bridge - Small Road - 2 Lanes",
+      "control": [
+        [
+          -3467.55,
+          542.95,
+          -3259.66
+        ],
+        [
+          -3496.14,
+          545.69,
+          -3220.28
+        ]
+      ],
+      "note": "BR006 bridge edge 2/4; CS1 segments 12729,22934,10906,15108,26635,26134"
+    },
+    {
+      "id": "br006_c1_e2",
+      "a": "br006_c1_n2",
+      "b": "br006_c1_n3",
+      "prefab": "Truss Arch Bridge - Small Road - 2 Lanes",
+      "control": [
+        [
+          -3553.33,
+          551.17,
+          -3141.52
+        ],
+        [
+          -3581.93,
+          553.91,
+          -3102.14
+        ]
+      ],
+      "note": "BR006 bridge edge 3/4; CS1 segments 12729,22934,10906,15108,26635,26134"
+    },
+    {
+      "id": "br006_c1_e3",
+      "a": "br006_c1_n3",
+      "b": "n16871",
+      "prefab": "Truss Arch Bridge - Small Road - 2 Lanes",
+      "control": [
+        [
+          -3639.12,
+          559.39,
+          -3023.38
+        ],
+        [
+          -3667.71,
+          562.13,
+          -2984
+        ]
+      ],
+      "note": "BR006 bridge edge 4/4; CS1 segments 12729,22934,10906,15108,26635,26134"
+    },
+    {
+      "id": "br007_c1_e0",
+      "a": "n18382",
+      "b": "br007_c1_n1",
+      "prefab": "TrussArchBridge01",
+      "control": [
+        [
+          840.22,
+          333.24,
+          2654.48
+        ],
+        [
+          809.2,
+          333.24,
+          2660.14
+        ]
+      ],
+      "note": "BR007 bridge edge 1/2; CS1 segments 6687,31894"
+    },
+    {
+      "id": "br007_c1_e1",
+      "a": "br007_c1_n1",
+      "b": "n32428",
+      "prefab": "TrussArchBridge01",
+      "control": [
+        [
+          747.16,
+          333.24,
+          2671.46
+        ],
+        [
+          716.14,
+          333.24,
+          2677.12
+        ]
+      ],
+      "note": "BR007 bridge edge 2/2; CS1 segments 6687,31894"
+    },
+    {
+      "id": "br010_c1_e0",
+      "a": "n25541",
+      "b": "br010_c1_n1",
+      "prefab": "TrussArchBridge01",
+      "control": [
+        [
+          -311.04,
+          230.39,
+          -2645.92
+        ],
+        [
+          -317.88,
+          230.39,
+          -2689.47
+        ]
+      ],
+      "note": "BR010 bridge edge 1/2; CS1 segments 13940,27567,549"
+    },
+    {
+      "id": "br010_c1_e1",
+      "a": "br010_c1_n1",
+      "b": "n21254",
+      "prefab": "TrussArchBridge01",
+      "control": [
+        [
+          -331.57,
+          230.39,
+          -2776.57
+        ],
+        [
+          -338.42,
+          230.39,
+          -2820.13
+        ]
+      ],
+      "note": "BR010 bridge edge 2/2; CS1 segments 13940,27567,549"
+    },
+    {
+      "id": "br023_c1_e0",
+      "a": "n1474",
+      "b": "br023_c1_n1",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          6697.74,
+          300.48,
+          2374.27
+        ],
+        [
+          6713.54,
+          299.95,
+          2371.76
+        ]
+      ],
+      "note": "BR023 bridge edge 1/2; CS1 segments 31105"
+    },
+    {
+      "id": "br023_c1_e1",
+      "a": "br023_c1_n1",
+      "b": "n16420",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          6745.15,
+          298.9,
+          2366.75
+        ],
+        [
+          6760.95,
+          298.37,
+          2364.25
+        ]
+      ],
+      "note": "BR023 bridge edge 2/2; CS1 segments 31105"
+    },
+    {
+      "id": "br026_c1_e0",
+      "a": "n1817",
+      "b": "br026_c1_n1",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          6602.92,
+          303.97,
+          2389.3
+        ],
+        [
+          6618.72,
+          303.38,
+          2386.8
+        ]
+      ],
+      "note": "BR026 bridge edge 1/2; CS1 segments 4424"
+    },
+    {
+      "id": "br026_c1_e1",
+      "a": "br026_c1_n1",
+      "b": "n1474",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          6650.33,
+          302.19,
+          2381.78
+        ],
+        [
+          6666.13,
+          301.6,
+          2379.28
+        ]
+      ],
+      "note": "BR026 bridge edge 2/2; CS1 segments 4424"
+    },
+    {
+      "id": "br033_c1_e0",
+      "a": "n9787",
+      "b": "br033_c1_n1",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          6508.11,
+          319.13,
+          2404.33
+        ],
+        [
+          6523.91,
+          316.22,
+          2401.83
+        ]
+      ],
+      "note": "BR033 bridge edge 1/2; CS1 segments 23026"
+    },
+    {
+      "id": "br033_c1_e1",
+      "a": "br033_c1_n1",
+      "b": "n1817",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          6555.51,
+          310.39,
+          2396.82
+        ],
+        [
+          6571.32,
+          307.48,
+          2394.31
+        ]
+      ],
+      "note": "BR033 bridge edge 2/2; CS1 segments 23026"
+    },
+    {
+      "id": "br035_c1_e0",
+      "a": "n7058",
+      "b": "br035_c1_n1",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          263.62,
+          344.46,
+          2759.7
+        ],
+        [
+          244.13,
+          344.18,
+          2763.25
+        ]
+      ],
+      "note": "BR035 bridge edge 1/2; CS1 segments 14932"
+    },
+    {
+      "id": "br035_c1_e1",
+      "a": "br035_c1_n1",
+      "b": "n1912",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          205.16,
+          343.63,
+          2770.37
+        ],
+        [
+          185.67,
+          343.36,
+          2773.92
+        ]
+      ],
+      "note": "BR035 bridge edge 2/2; CS1 segments 14932"
+    },
+    {
+      "id": "br038_c1_e0",
+      "a": "n16420",
+      "b": "br038_c1_n1",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          6792.55,
+          297.32,
+          2359.23
+        ],
+        [
+          6808.36,
+          296.79,
+          2356.73
+        ]
+      ],
+      "note": "BR038 bridge edge 1/2; CS1 segments 26599"
+    },
+    {
+      "id": "br038_c1_e1",
+      "a": "br038_c1_n1",
+      "b": "n25325",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          6839.96,
+          295.74,
+          2351.72
+        ],
+        [
+          6855.76,
+          295.21,
+          2349.21
+        ]
+      ],
+      "note": "BR038 bridge edge 2/2; CS1 segments 26599"
+    },
+    {
+      "id": "br042_c1_e0",
+      "a": "n10436",
+      "b": "br042_c1_n1",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          3784.66,
+          410.52,
+          2836.15
+        ],
+        [
+          3763.45,
+          410.46,
+          2839.51
+        ]
+      ],
+      "note": "BR042 bridge edge 1/2; CS1 segments 16183,28777"
+    },
+    {
+      "id": "br042_c1_e1",
+      "a": "br042_c1_n1",
+      "b": "n19319",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          3721.03,
+          410.33,
+          2846.24
+        ],
+        [
+          3699.83,
+          410.26,
+          2849.6
+        ]
+      ],
+      "note": "BR042 bridge edge 2/2; CS1 segments 16183,28777"
+    },
+    {
+      "id": "br012_c1_e0",
+      "a": "n1137",
+      "b": "br012_c1_n1",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -448.66,
+          288.27,
+          -5459.81
+        ],
+        [
+          -445.07,
+          288.84,
+          -5484.08
+        ]
+      ],
+      "note": "BR012 bridge edge 1/5; CS1 segments 11092,24945,3640,3460"
+    },
+    {
+      "id": "br012_c1_e1",
+      "a": "br012_c1_n1",
+      "b": "br012_c1_n2",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -437.91,
+          289.98,
+          -5532.62
+        ],
+        [
+          -434.32,
+          290.55,
+          -5556.89
+        ]
+      ],
+      "note": "BR012 bridge edge 2/5; CS1 segments 11092,24945,3640,3460"
+    },
+    {
+      "id": "br012_c1_e2",
+      "a": "br012_c1_n2",
+      "b": "br012_c1_n3",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -427.16,
+          291.69,
+          -5605.43
+        ],
+        [
+          -423.57,
+          292.26,
+          -5629.7
+        ]
+      ],
+      "note": "BR012 bridge edge 3/5; CS1 segments 11092,24945,3640,3460"
+    },
+    {
+      "id": "br012_c1_e3",
+      "a": "br012_c1_n3",
+      "b": "br012_c1_n4",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -416.41,
+          293.4,
+          -5678.24
+        ],
+        [
+          -412.82,
+          293.97,
+          -5702.51
+        ]
+      ],
+      "note": "BR012 bridge edge 4/5; CS1 segments 11092,24945,3640,3460"
+    },
+    {
+      "id": "br012_c1_e4",
+      "a": "br012_c1_n4",
+      "b": "n22177",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -405.66,
+          295.11,
+          -5751.05
+        ],
+        [
+          -402.07,
+          295.68,
+          -5775.32
+        ]
+      ],
+      "note": "BR012 bridge edge 5/5; CS1 segments 11092,24945,3640,3460"
+    },
+    {
+      "id": "br015_c1_e0",
+      "a": "n26317",
+      "b": "br015_c1_n1",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -301.35,
+          311.71,
+          -6457.53
+        ],
+        [
+          -297.69,
+          312.29,
+          -6482.32
+        ]
+      ],
+      "note": "BR015 bridge edge 1/5; CS1 segments 7666,9613,18412,4931"
+    },
+    {
+      "id": "br015_c1_e1",
+      "a": "br015_c1_n1",
+      "b": "br015_c1_n2",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -290.37,
+          313.46,
+          -6531.92
+        ],
+        [
+          -286.71,
+          314.04,
+          -6556.72
+        ]
+      ],
+      "note": "BR015 bridge edge 2/5; CS1 segments 7666,9613,18412,4931"
+    },
+    {
+      "id": "br015_c1_e2",
+      "a": "br015_c1_n2",
+      "b": "br015_c1_n3",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -279.39,
+          315.2,
+          -6606.31
+        ],
+        [
+          -275.72,
+          315.79,
+          -6631.11
+        ]
+      ],
+      "note": "BR015 bridge edge 3/5; CS1 segments 7666,9613,18412,4931"
+    },
+    {
+      "id": "br015_c1_e3",
+      "a": "br015_c1_n3",
+      "b": "br015_c1_n4",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -268.4,
+          316.95,
+          -6680.71
+        ],
+        [
+          -264.74,
+          317.53,
+          -6705.51
+        ]
+      ],
+      "note": "BR015 bridge edge 4/5; CS1 segments 7666,9613,18412,4931"
+    },
+    {
+      "id": "br015_c1_e4",
+      "a": "br015_c1_n4",
+      "b": "n1880",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -257.42,
+          318.7,
+          -6755.1
+        ],
+        [
+          -253.76,
+          319.28,
+          -6779.9
+        ]
+      ],
+      "note": "BR015 bridge edge 5/5; CS1 segments 7666,9613,18412,4931"
+    },
+    {
+      "id": "br017_c1_e0",
+      "a": "n19529",
+      "b": "br017_c1_n1",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -426.07,
+          240.43,
+          -3377.92
+        ],
+        [
+          -429.58,
+          240.89,
+          -3400.22
+        ]
+      ],
+      "note": "BR017 bridge edge 1/4; CS1 segments 5956,18585"
+    },
+    {
+      "id": "br017_c1_e1",
+      "a": "br017_c1_n1",
+      "b": "br017_c1_n2",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -436.59,
+          241.81,
+          -3444.81
+        ],
+        [
+          -440.09,
+          242.26,
+          -3467.1
+        ]
+      ],
+      "note": "BR017 bridge edge 2/4; CS1 segments 5956,18585"
+    },
+    {
+      "id": "br017_c1_e2",
+      "a": "br017_c1_n2",
+      "b": "br017_c1_n3",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -447.1,
+          243.18,
+          -3511.69
+        ],
+        [
+          -450.6,
+          243.64,
+          -3533.99
+        ]
+      ],
+      "note": "BR017 bridge edge 3/4; CS1 segments 5956,18585"
+    },
+    {
+      "id": "br017_c1_e3",
+      "a": "br017_c1_n3",
+      "b": "n2800",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -457.61,
+          244.55,
+          -3578.58
+        ],
+        [
+          -461.11,
+          245.01,
+          -3600.87
+        ]
+      ],
+      "note": "BR017 bridge edge 4/4; CS1 segments 5956,18585"
+    },
+    {
+      "id": "br028_c1_e0",
+      "a": "n25067",
+      "b": "br028_c1_n1",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -1406.48,
+          422.88,
+          4249.5
+        ],
+        [
+          -1414.43,
+          423.56,
+          4268.78
+        ]
+      ],
+      "note": "BR028 bridge edge 1/3; CS1 segments 30706"
+    },
+    {
+      "id": "br028_c1_e1",
+      "a": "br028_c1_n1",
+      "b": "br028_c1_n2",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -1430.32,
+          424.9,
+          4307.34
+        ],
+        [
+          -1438.27,
+          425.58,
+          4326.62
+        ]
+      ],
+      "note": "BR028 bridge edge 2/3; CS1 segments 30706"
+    },
+    {
+      "id": "br028_c1_e2",
+      "a": "br028_c1_n2",
+      "b": "n5617",
+      "prefab": "BXP Truss Viaduct - Train",
+      "control": [
+        [
+          -1454.16,
+          426.92,
+          4365.18
+        ],
+        [
+          -1462.11,
+          427.6,
+          4384.46
+        ]
+      ],
+      "note": "BR028 bridge edge 3/3; CS1 segments 30706"
+    },
+    {
+      "id": "br019_c1_e0",
+      "a": "n20692",
+      "b": "br019_c1_n1",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          -1566.44,
+          435.1,
+          4466.17
+        ],
+        [
+          -1562.66,
+          434.5,
+          4445.18
+        ]
+      ],
+      "note": "BR019 bridge edge 1/3; CS1 segments 12830,26236"
+    },
+    {
+      "id": "br019_c1_e1",
+      "a": "br019_c1_n1",
+      "b": "br019_c1_n2",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          -1555.11,
+          433.3,
+          4403.18
+        ],
+        [
+          -1551.34,
+          432.69,
+          4382.19
+        ]
+      ],
+      "note": "BR019 bridge edge 2/3; CS1 segments 12830,26236"
+    },
+    {
+      "id": "br019_c1_e2",
+      "a": "br019_c1_n2",
+      "b": "n3301",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          -1543.79,
+          431.49,
+          4340.19
+        ],
+        [
+          -1540.01,
+          430.89,
+          4319.2
+        ]
+      ],
+      "note": "BR019 bridge edge 3/3; CS1 segments 12830,26236"
+    },
+    {
+      "id": "br020_c1_e0",
+      "a": "n14881",
+      "b": "br020_c1_n1",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          1244.57,
+          333.38,
+          6140.06
+        ],
+        [
+          1272.25,
+          331.25,
+          6144.34
+        ]
+      ],
+      "note": "BR020 bridge edge 1/2; CS1 segments 26316,3402,32350,6492"
+    },
+    {
+      "id": "br020_c1_e1",
+      "a": "br020_c1_n1",
+      "b": "n26596",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          1327.61,
+          326.98,
+          6152.9
+        ],
+        [
+          1355.28,
+          324.84,
+          6157.19
+        ]
+      ],
+      "note": "BR020 bridge edge 2/2; CS1 segments 26316,3402,32350,6492"
+    },
+    {
+      "id": "br044_c1_e0",
+      "a": "n4630",
+      "b": "n789",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          3788.28,
+          384.46,
+          2916.58
+        ],
+        [
+          3762.63,
+          384.34,
+          2920.64
+        ]
+      ],
+      "note": "BR044 bridge edge 1/1; CS1 segments 21729"
+    },
+    {
+      "id": "br045_c1_e0",
+      "a": "n8743",
+      "b": "br045_c1_n1",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          6441.74,
+          277.82,
+          1715.2
+        ],
+        [
+          6462.71,
+          278.01,
+          1715.17
+        ]
+      ],
+      "note": "BR045 bridge edge 1/2; CS1 segments 35264,24890"
+    },
+    {
+      "id": "br045_c1_e1",
+      "a": "br045_c1_n1",
+      "b": "n1004",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          6504.63,
+          278.4,
+          1715.12
+        ],
+        [
+          6525.6,
+          278.59,
+          1715.09
+        ]
+      ],
+      "note": "BR045 bridge edge 2/2; CS1 segments 35264,24890"
+    },
+    {
+      "id": "br049_c1_e0",
+      "a": "n14808",
+      "b": "n2819",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          6846.86,
+          278.77,
+          3317.71
+        ],
+        [
+          6846.82,
+          278.76,
+          3289.03
+        ]
+      ],
+      "note": "BR049 bridge edge 1/1; CS1 segments 4936"
+    },
+    {
+      "id": "br050_c1_e0",
+      "a": "n23052",
+      "b": "n22827",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          6772.23,
+          278.53,
+          3456.72
+        ],
+        [
+          6799.11,
+          278.27,
+          3456.68
+        ]
+      ],
+      "note": "BR050 bridge edge 1/1; CS1 segments 24516"
+    },
+    {
+      "id": "br053_c1_e0",
+      "a": "n26724",
+      "b": "n2577",
+      "prefab": "Wooden Covered Bridge - 2 lanes",
+      "control": [
+        [
+          6845.93,
+          278.62,
+          2597.08
+        ],
+        [
+          6845.9,
+          278.72,
+          2574.81
+        ]
+      ],
+      "note": "BR053 bridge edge 1/1; CS1 segments 5779"
+    }
+  ],
+  "options": {
+    "batchSize": 64,
+    "nodesFirst": true,
+    "heightMode": "absolute",
+    "bypassValidation": true,
+    "dryRun": false
+  }
+}

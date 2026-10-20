@@ -1,15 +1,17 @@
 # Conversion outputs (2026-10-20)
 
-Dump: `C:\Users\dleva\AppData\Local/DakotaExport/2972879554_Dakota_Falls-20261019-063123.json`. Run it all with `node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5]`. Import order (round 10, owner review of A-v4: no quays, retaining walls, PO walls, monorail decor or dam files; dam by hand, see manual-objects.md): network → gaps → power, canals, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → surfaces (fields, rock, PO rock, PO structures; sand-smooth, decals and grass optional) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
+Dump: `C:\Users\dleva\AppData\Local/DakotaExport/2972879554_Dakota_Falls-20261019-063123.json`. Run it all with `node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5]`. Import order (bridges: import-bridges.json right after the network; round 10, owner review of A-v4: no quays, retaining walls, PO walls, monorail decor or dam files; dam by hand, see manual-objects.md): network → gaps → power, canals, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → surfaces (fields, rock, PO rock, PO structures; sand-smooth, decals and grass optional) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
 out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 2048); same nodes and courses in both.
 
 | order | file | content | count | size |
 |---:|---|---|---|---:|
-| 1 | `out\import-all.json` | network (2×) | 4038 edges, 3881 nodes | 2.1 MB |
-| 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 6 edges | 0.0 MB |
+| 1 | `out\import-all.json` | network (2×) | 3886 edges, 3749 nodes | 2.0 MB |
+| 1 | `out\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (2×) | 56 edges, replaces 152 | 0.0 MB |
+| 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 5 edges | 0.0 MB |
 | 1 | `out\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (2×) | 2 edges | 0.0 MB |
-| 1 | `out\x1\import-all.json` | network (1×) | 4038 edges, 3881 nodes | 2.1 MB |
-| 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 6 edges | 0.0 MB |
+| 1 | `out\x1\import-all.json` | network (1×) | 3886 edges, 3749 nodes | 2.0 MB |
+| 1 | `out\x1\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (1×) | 56 edges, replaces 152 | 0.0 MB |
+| 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 5 edges | 0.0 MB |
 | 1 | `out\x1\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (1×) | 2 edges | 0.0 MB |
 | 2 | `out\import-power.json` | power (2×) | 58 edges | 0.0 MB |
 | 2 | `out\import-canals.json` | canals and flood walls (2×) | 16 edges: Narrow Boatway 14, Sound Barrier 2 | 0.0 MB |
@@ -31,14 +33,14 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\import-objects.json` | objects (2×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
 | 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
 | 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 793 | 0.2 MB |
-| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17511 | 3.2 MB |
+| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17555 | 3.2 MB |
 | 5 | `out\import-fort.json` | ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED) (2×) | 112 | 0.0 MB |
 | 5 | `out\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (2×) | 2 | 0.0 MB |
 | 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
 | 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
 | 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 793 | 0.2 MB |
-| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17511 | 3.2 MB |
+| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17555 | 3.2 MB |
 | 5 | `out\x1\import-fort.json` | ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED) (1×) | 112 | 0.0 MB |
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
 | 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |
@@ -60,6 +62,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 8 | `out\x1\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
 | 8 | `out\x1\import-surfaces-po-rock.json` | ROUND 9 rock texture on the PO terrain-like footprints (1×) | 63 polygons | 0.0 MB |
 | 8 | `out\x1\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (1×) | 79 polygons | 0.0 MB |
+| 9 | `out\import-bridges-fixed.json` | OPTIONAL fixed-span bridges: BR001 merged suspension + BR022 arches (converter --bridges-fixed on, runner --with bridges-fixed) (2×) | 48 edges, replaces 151 | 0.0 MB |
+| 9 | `out\x1\import-bridges-fixed.json` | OPTIONAL fixed-span bridges: BR001 merged suspension + BR022 arches (converter --bridges-fixed on, runner --with bridges-fixed) (1×) | 48 edges, replaces 151 | 0.0 MB |
 | 9 | `out\import-surfaces-decals-unmerged.json` | EXPERIMENT: decal squares, not merged | 128 polygons | 0.0 MB |
 | 9 | `out\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
 | 9 | `out\x1\import-surfaces-decals-unmerged.json` | EXPERIMENT: decal squares, not merged | 128 polygons | 0.0 MB |

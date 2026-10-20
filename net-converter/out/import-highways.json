@@ -1207,30 +1207,6 @@
       "elevation": 0
     },
     {
-      "id": "n15175",
-      "x": 439.35,
-      "y": 270.96,
-      "z": 190.34
-    },
-    {
-      "id": "e2029_0ad1",
-      "x": 461.33,
-      "y": 270.96,
-      "z": 196.49
-    },
-    {
-      "id": "e2029_0d0",
-      "x": 485.02,
-      "y": 270.96,
-      "z": 203.12
-    },
-    {
-      "id": "n29457",
-      "x": 530.69,
-      "y": 270.97,
-      "z": 215.9
-    },
-    {
       "id": "n24510",
       "x": -229.24,
       "y": 291.33,
@@ -4019,42 +3995,6 @@
       "elevation": 0
     },
     {
-      "id": "n11662",
-      "x": -4388.21,
-      "y": 331.05,
-      "z": 28.12
-    },
-    {
-      "id": "e7777_0ad1",
-      "x": -4404.34,
-      "y": 332.23,
-      "z": 38.95
-    },
-    {
-      "id": "e7777_0d0",
-      "x": -4428.57,
-      "y": 334.66,
-      "z": 55.22
-    },
-    {
-      "id": "e7777_0bad2",
-      "x": -4441.99,
-      "y": 336.01,
-      "z": 64.24
-    },
-    {
-      "id": "e7777_0bd1",
-      "x": -4455.36,
-      "y": 337.35,
-      "z": 73.21
-    },
-    {
-      "id": "n8087",
-      "x": -4479.16,
-      "y": 339.75,
-      "z": 89.2
-    },
-    {
       "id": "n27535",
       "x": 3554.89,
       "y": 289.98,
@@ -4385,18 +4325,6 @@
       "y": 434.5,
       "z": 6605.49,
       "elevation": 0
-    },
-    {
-      "id": "e8562_0ad1",
-      "x": 547.54,
-      "y": 270.96,
-      "z": 220.62
-    },
-    {
-      "id": "e8562_0d0",
-      "x": 566.5,
-      "y": 270.96,
-      "z": 225.92
     },
     {
       "id": "n26400",
@@ -5932,6 +5860,12 @@
       "elevation": 0
     },
     {
+      "id": "n11662",
+      "x": -4388.21,
+      "y": 331.05,
+      "z": 28.12
+    },
+    {
       "id": "n10116",
       "x": 3930.67,
       "y": 390.71,
@@ -7407,30 +7341,6 @@
       "elevation": 0
     },
     {
-      "id": "n23026",
-      "x": 434.8,
-      "y": 270.96,
-      "z": 205.27
-    },
-    {
-      "id": "e15768_0d0",
-      "x": 389.16,
-      "y": 270.96,
-      "z": 192.5
-    },
-    {
-      "id": "e15768_0bd1",
-      "x": 365.48,
-      "y": 270.96,
-      "z": 185.87
-    },
-    {
-      "id": "n22832",
-      "x": 343.52,
-      "y": 270.96,
-      "z": 179.72
-    },
-    {
       "id": "n21416",
       "x": 3872.42,
       "y": 333.35,
@@ -7950,18 +7860,6 @@
       "elevation": 0
     },
     {
-      "id": "n8219",
-      "x": 526.08,
-      "y": 270.97,
-      "z": 230.81
-    },
-    {
-      "id": "e17085_0d0",
-      "x": 480.44,
-      "y": 270.96,
-      "z": 218.04
-    },
-    {
       "id": "n14285",
       "x": -6734.78,
       "y": 565.6,
@@ -8160,30 +8058,6 @@
       "x": 1526.79,
       "y": 311.01,
       "z": -3492.46
-    },
-    {
-      "id": "e17815_0ad1",
-      "x": 325.58,
-      "y": 270.96,
-      "z": 174.71
-    },
-    {
-      "id": "e17815_0d0",
-      "x": 305.4,
-      "y": 270.96,
-      "z": 169.06
-    },
-    {
-      "id": "e17815_0bd1",
-      "x": 287.15,
-      "y": 270.96,
-      "z": 163.95
-    },
-    {
-      "id": "n26229",
-      "x": 275,
-      "y": 270.96,
-      "z": 160.55
     },
     {
       "id": "n3572",
@@ -8436,30 +8310,6 @@
       "y": 360.06,
       "z": 2216.21,
       "elevation": 0
-    },
-    {
-      "id": "e18923_0ad1",
-      "x": 291.41,
-      "y": 270.96,
-      "z": 148.94
-    },
-    {
-      "id": "e18923_0d0",
-      "x": 309.74,
-      "y": 270.96,
-      "z": 154.07
-    },
-    {
-      "id": "e18923_0bd1",
-      "x": 330.01,
-      "y": 270.96,
-      "z": 159.74
-    },
-    {
-      "id": "n8135",
-      "x": 348.01,
-      "y": 270.96,
-      "z": 164.78
     },
     {
       "id": "n14287",
@@ -9188,36 +9038,6 @@
       "elevation": 0
     },
     {
-      "id": "n23495",
-      "x": -4487.72,
-      "y": 339.98,
-      "z": 76.16
-    },
-    {
-      "id": "e21812_0ad1",
-      "x": -4463.95,
-      "y": 337.55,
-      "z": 60.2
-    },
-    {
-      "id": "e21812_0abd2",
-      "x": -4450.61,
-      "y": 336.2,
-      "z": 51.23
-    },
-    {
-      "id": "e21812_0d0",
-      "x": -4437.2,
-      "y": 334.83,
-      "z": 42.23
-    },
-    {
-      "id": "e21812_0bd1",
-      "x": -4413.01,
-      "y": 332.38,
-      "z": 25.98
-    },
-    {
       "id": "n7770",
       "x": -613.71,
       "y": 213.3,
@@ -9857,24 +9677,6 @@
       "z": 1872.58
     },
     {
-      "id": "e23931_0ad1",
-      "x": -4500.99,
-      "y": 341.94,
-      "z": 103.86
-    },
-    {
-      "id": "e23931_0d0",
-      "x": -4525.55,
-      "y": 344.41,
-      "z": 120.35
-    },
-    {
-      "id": "e23931_0bd1",
-      "x": -4547.77,
-      "y": 346.64,
-      "z": 135.27
-    },
-    {
       "id": "n26104",
       "x": -1947.74,
       "y": 458.05,
@@ -10123,24 +9925,6 @@
       "elevation": 0
     },
     {
-      "id": "n32680",
-      "x": 590.87,
-      "y": 271.67,
-      "z": 248.94
-    },
-    {
-      "id": "e24934_0d0",
-      "x": 562.12,
-      "y": 270.96,
-      "z": 240.9
-    },
-    {
-      "id": "e24934_0bd1",
-      "x": 543.04,
-      "y": 270.96,
-      "z": 235.56
-    },
-    {
       "id": "e24955_0d0",
       "x": 3882.5,
       "y": 448.62,
@@ -10196,6 +9980,12 @@
       "x": 607.26,
       "y": 272.23,
       "z": 253.53
+    },
+    {
+      "id": "n32680",
+      "x": 590.87,
+      "y": 271.67,
+      "z": 248.94
     },
     {
       "id": "n21461",
@@ -10793,12 +10583,6 @@
       "elevation": 0
     },
     {
-      "id": "e27870_0d0",
-      "x": 393.68,
-      "y": 270.96,
-      "z": 177.56
-    },
-    {
       "id": "n31048",
       "x": -1322.17,
       "y": 246.77,
@@ -11291,6 +11075,12 @@
       "z": 1015.52
     },
     {
+      "id": "n26229",
+      "x": 275,
+      "y": 270.96,
+      "z": 160.55
+    },
+    {
       "id": "e31688_0ad1",
       "x": 943.78,
       "y": 278.3,
@@ -11697,24 +11487,6 @@
       "y": 327.39,
       "z": 2391.5,
       "elevation": 0
-    },
-    {
-      "id": "e34552_0ad1",
-      "x": -4556.44,
-      "y": 346.97,
-      "z": 122.3
-    },
-    {
-      "id": "e34552_0d0",
-      "x": -4534.19,
-      "y": 344.7,
-      "z": 107.36
-    },
-    {
-      "id": "e34552_0bd1",
-      "x": -4509.58,
-      "y": 342.2,
-      "z": 90.84
     },
     {
       "id": "n14202",
@@ -13976,75 +13748,6 @@
       "structure": "ground",
       "cs1_prefab": "2452038713.USRP 3L Interstate_Data",
       "cs1_segment": 1974
-    },
-    {
-      "id": "e2029_0aa",
-      "a": "n15175",
-      "b": "e2029_0ad1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          446.2,
-          270.96,
-          192.26
-        ],
-        [
-          453.62,
-          270.96,
-          194.34
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 2029
-    },
-    {
-      "id": "e2029_0ab",
-      "a": "e2029_0ad1",
-      "b": "e2029_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          469.04,
-          270.96,
-          198.65
-        ],
-        [
-          477.03,
-          270.96,
-          200.89
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 2029
-    },
-    {
-      "id": "e2029_0b",
-      "a": "e2029_0d0",
-      "b": "n29457",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          501.01,
-          270.96,
-          207.6
-        ],
-        [
-          516.99,
-          270.96,
-          212.07
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 2029
     },
     {
       "id": "e2051_0",
@@ -19524,111 +19227,6 @@
       "cs1_segment": 7769
     },
     {
-      "id": "e7777_0aa",
-      "a": "n11662",
-      "b": "e7777_0ad1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4391.62,
-          330.95,
-          30.41
-        ],
-        [
-          -4397.3,
-          331.52,
-          34.23
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 7777
-    },
-    {
-      "id": "e7777_0ab",
-      "a": "e7777_0ad1",
-      "b": "e7777_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4411.37,
-          332.94,
-          43.68
-        ],
-        [
-          -4419.76,
-          333.78,
-          49.31
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 7777
-    },
-    {
-      "id": "e7777_0baa",
-      "a": "e7777_0d0",
-      "b": "e7777_0bad2",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4432.97,
-          335.11,
-          58.18
-        ],
-        [
-          -4437.49,
-          335.56,
-          61.21
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 7777
-    },
-    {
-      "id": "e7777_0bab",
-      "a": "e7777_0bad2",
-      "b": "e7777_0bd1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4446.49,
-          336.46,
-          67.26
-        ],
-        [
-          -4450.99,
-          336.92,
-          70.28
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 7777
-    },
-    {
-      "id": "e7777_0bb",
-      "a": "e7777_0bd1",
-      "b": "n8087",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4464.1,
-          338.23,
-          79.08
-        ],
-        [
-          -4472.34,
-          339.06,
-          84.62
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 7777
-    },
-    {
       "id": "e7784_0",
       "a": "n27535",
       "b": "n27226",
@@ -20431,75 +20029,6 @@
       "structure": "ground",
       "cs1_prefab": "2452038713.USRP 2L Interstate_Data",
       "cs1_segment": 8508
-    },
-    {
-      "id": "e8562_0aa",
-      "a": "n29457",
-      "b": "e8562_0ad1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          535.52,
-          270.96,
-          217.25
-        ],
-        [
-          541.35,
-          270.96,
-          218.89
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 8562
-    },
-    {
-      "id": "e8562_0ab",
-      "a": "e8562_0ad1",
-      "b": "e8562_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          553.73,
-          270.96,
-          222.35
-        ],
-        [
-          560.26,
-          270.96,
-          224.18
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 8562
-    },
-    {
-      "id": "e8562_0b",
-      "a": "e8562_0d0",
-      "b": "n27866",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          578.97,
-          270.96,
-          229.42
-        ],
-        [
-          590.24,
-          270.96,
-          232.57
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 8562
     },
     {
       "id": "e8581_0",
@@ -27912,75 +27441,6 @@
       "cs1_segment": 15718
     },
     {
-      "id": "e15768_0a",
-      "a": "n23026",
-      "b": "e15768_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          421.11,
-          270.96,
-          201.44
-        ],
-        [
-          405.13,
-          270.96,
-          196.97
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 15768
-    },
-    {
-      "id": "e15768_0ba",
-      "a": "e15768_0d0",
-      "b": "e15768_0bd1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          381.17,
-          270.96,
-          190.26
-        ],
-        [
-          373.18,
-          270.96,
-          188.03
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 15768
-    },
-    {
-      "id": "e15768_0bb",
-      "a": "e15768_0bd1",
-      "b": "n22832",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          357.78,
-          270.96,
-          183.72
-        ],
-        [
-          350.36,
-          270.96,
-          181.64
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 15768
-    },
-    {
       "id": "e15769_0",
       "a": "n21416",
       "b": "n31097",
@@ -29570,52 +29030,6 @@
       "cs1_segment": 17081
     },
     {
-      "id": "e17085_0a",
-      "a": "n8219",
-      "b": "e17085_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          512.39,
-          270.96,
-          226.98
-        ],
-        [
-          496.42,
-          270.96,
-          222.51
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 17085
-    },
-    {
-      "id": "e17085_0b",
-      "a": "e17085_0d0",
-      "b": "n23026",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          464.47,
-          270.96,
-          213.57
-        ],
-        [
-          448.49,
-          270.96,
-          209.1
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 17085
-    },
-    {
       "id": "e17099_0",
       "a": "n32450",
       "b": "n31162",
@@ -30360,98 +29774,6 @@
       "structure": "elevated",
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 17800
-    },
-    {
-      "id": "e17815_0aa",
-      "a": "n22832",
-      "b": "e17815_0ad1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          338.38,
-          270.96,
-          178.29
-        ],
-        [
-          332.17,
-          270.96,
-          176.55
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 17815
-    },
-    {
-      "id": "e17815_0ab",
-      "a": "e17815_0ad1",
-      "b": "e17815_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          319,
-          270.96,
-          172.86
-        ],
-        [
-          312.04,
-          270.96,
-          170.92
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 17815
-    },
-    {
-      "id": "e17815_0ba",
-      "a": "e17815_0d0",
-      "b": "e17815_0bd1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          298.77,
-          270.96,
-          167.2
-        ],
-        [
-          292.45,
-          270.96,
-          165.43
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 17815
-    },
-    {
-      "id": "e17815_0bb",
-      "a": "e17815_0bd1",
-      "b": "n26229",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          281.85,
-          270.96,
-          162.47
-        ],
-        [
-          277.57,
-          270.96,
-          161.27
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 17815
     },
     {
       "id": "e17838_0",
@@ -31365,98 +30687,6 @@
       "structure": "ground",
       "cs1_prefab": "2452038713.USRP 2L Interstate_Data",
       "cs1_segment": 18908
-    },
-    {
-      "id": "e18923_0aa",
-      "a": "n18884",
-      "b": "e18923_0ad1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          281.78,
-          270.96,
-          146.25
-        ],
-        [
-          286.09,
-          270.96,
-          147.45
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 18923
-    },
-    {
-      "id": "e18923_0ab",
-      "a": "e18923_0ad1",
-      "b": "e18923_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          296.73,
-          270.96,
-          150.43
-        ],
-        [
-          303.07,
-          270.96,
-          152.21
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 18923
-    },
-    {
-      "id": "e18923_0ba",
-      "a": "e18923_0d0",
-      "b": "e18923_0bd1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          316.4,
-          270.96,
-          155.94
-        ],
-        [
-          323.39,
-          270.96,
-          157.89
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 18923
-    },
-    {
-      "id": "e18923_0bb",
-      "a": "e18923_0bd1",
-      "b": "n8135",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          336.62,
-          270.96,
-          161.59
-        ],
-        [
-          342.85,
-          270.96,
-          163.34
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 18923
     },
     {
       "id": "e18928_0",
@@ -34316,111 +33546,6 @@
       "cs1_segment": 21798
     },
     {
-      "id": "e21812_0aa",
-      "a": "n23495",
-      "b": "e21812_0ad1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4480.91,
-          339.29,
-          71.58
-        ],
-        [
-          -4472.68,
-          338.45,
-          66.06
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 21812
-    },
-    {
-      "id": "e21812_0aba",
-      "a": "e21812_0ad1",
-      "b": "e21812_0abd2",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4459.59,
-          337.12,
-          57.27
-        ],
-        [
-          -4455.1,
-          336.66,
-          54.25
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 21812
-    },
-    {
-      "id": "e21812_0abb",
-      "a": "e21812_0abd2",
-      "b": "e21812_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4446.11,
-          335.75,
-          48.21
-        ],
-        [
-          -4441.6,
-          335.29,
-          45.19
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 21812
-    },
-    {
-      "id": "e21812_0ba",
-      "a": "e21812_0d0",
-      "b": "e21812_0bd1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4428.41,
-          333.95,
-          36.32
-        ],
-        [
-          -4420.03,
-          333.1,
-          30.7
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 21812
-    },
-    {
-      "id": "e21812_0bb",
-      "a": "e21812_0bd1",
-      "b": "n5788",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4405.99,
-          331.67,
-          21.27
-        ],
-        [
-          -4400.31,
-          331.09,
-          17.46
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 21812
-    },
-    {
       "id": "e21843_0",
       "a": "n14854",
       "b": "n7770",
@@ -36755,90 +35880,6 @@
       "cs1_segment": 23898
     },
     {
-      "id": "e23931_0aa",
-      "a": "n8087",
-      "b": "e23931_0ad1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4485.41,
-          340.38,
-          93.4
-        ],
-        [
-          -4492.97,
-          341.14,
-          98.47
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 23931
-    },
-    {
-      "id": "e23931_0ab",
-      "a": "e23931_0ad1",
-      "b": "e23931_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4509,
-          342.75,
-          109.24
-        ],
-        [
-          -4517.47,
-          343.6,
-          114.92
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 23931
-    },
-    {
-      "id": "e23931_0ba",
-      "a": "e23931_0d0",
-      "b": "e23931_0bd1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4533.63,
-          345.22,
-          125.78
-        ],
-        [
-          -4541.32,
-          345.99,
-          130.94
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 23931
-    },
-    {
-      "id": "e23931_0bb",
-      "a": "e23931_0bd1",
-      "b": "n12478",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4554.22,
-          347.29,
-          139.6
-        ],
-        [
-          -4559.43,
-          347.82,
-          143.1
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 23931
-    },
-    {
       "id": "e23975_0",
       "a": "n26104",
       "b": "n28166",
@@ -37890,75 +36931,6 @@
       "structure": "ground",
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp_Data",
       "cs1_segment": 24910
-    },
-    {
-      "id": "e24934_0a",
-      "a": "n32680",
-      "b": "e24934_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          586.01,
-          270.96,
-          247.58
-        ],
-        [
-          574.67,
-          270.96,
-          244.41
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 24934
-    },
-    {
-      "id": "e24934_0ba",
-      "a": "e24934_0d0",
-      "b": "e24934_0bd1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          555.84,
-          270.96,
-          239.14
-        ],
-        [
-          549.26,
-          270.96,
-          237.3
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 24934
-    },
-    {
-      "id": "e24934_0bb",
-      "a": "e24934_0bd1",
-      "b": "n8219",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          536.81,
-          270.96,
-          233.82
-        ],
-        [
-          530.94,
-          270.96,
-          232.17
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 24934
     },
     {
       "id": "e24955_0a",
@@ -41369,52 +40341,6 @@
       "structure": "ground",
       "cs1_prefab": "2452038713.USRP 3L Interstate_Data",
       "cs1_segment": 27854
-    },
-    {
-      "id": "e27870_0a",
-      "a": "n8135",
-      "b": "e27870_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          361.71,
-          270.96,
-          168.62
-        ],
-        [
-          377.7,
-          270.96,
-          173.09
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 27870
-    },
-    {
-      "id": "e27870_0b",
-      "a": "e27870_0d0",
-      "b": "n15175",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          409.67,
-          270.96,
-          182.04
-        ],
-        [
-          425.65,
-          270.96,
-          186.51
-        ]
-      ],
-      "noPillars": true,
-      "noStreetLights": true,
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 27870
     },
     {
       "id": "e27872_0",
@@ -48106,90 +47032,6 @@
       "structure": "ground",
       "cs1_prefab": "2452038713.USRP 2L Interstate_Data",
       "cs1_segment": 34504
-    },
-    {
-      "id": "e34552_0aa",
-      "a": "n8758",
-      "b": "e34552_0ad1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4568.12,
-          348.16,
-          130.15
-        ],
-        [
-          -4562.9,
-          347.63,
-          126.64
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 34552
-    },
-    {
-      "id": "e34552_0ab",
-      "a": "e34552_0ad1",
-      "b": "e34552_0d0",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4549.98,
-          346.31,
-          117.97
-        ],
-        [
-          -4542.28,
-          345.53,
-          112.79
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 34552
-    },
-    {
-      "id": "e34552_0ba",
-      "a": "e34552_0d0",
-      "b": "e34552_0bd1",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4526.1,
-          343.88,
-          101.93
-        ],
-        [
-          -4517.61,
-          343.02,
-          96.23
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 34552
-    },
-    {
-      "id": "e34552_0bb",
-      "a": "e34552_0bd1",
-      "b": "n23495",
-      "prefab": "Highway Oneway - 2 lanes",
-      "control": [
-        [
-          -4501.56,
-          341.39,
-          85.45
-        ],
-        [
-          -4493.99,
-          340.62,
-          80.36
-        ]
-      ],
-      "structure": "elevated",
-      "cs1_prefab": "2452038713.USRP 2L Interstate B",
-      "cs1_segment": 34552
     },
     {
       "id": "e34570_0",

@@ -1,0 +1,37 @@
+# Bridge overrides (owner decisions 2026-10-20, ../bridges/DECISIONS.md and PLAN.md). Override mapping.tsv for these CS1 segments only.
+# Columns (tab-separated):
+#   id      bridge id from ../bridges/data/cs1-bridges.json (its segIds)
+#   select  regex on the CS1 net prefab of those segments ("." = all of them): which part is the bridge deck
+#   prefab  CS2 bridge prefab (UNVERIFIED names until the next game run; the runner's dry run reports unknown ones)
+#   plan    fixed:<span,...> (exact spans, fixedIndex per edge) | count:<n> (n equal straight edges per chain) | span:<max m> (fewest equal edges ≤ max)
+#           ;merge = BR001 carriageway merge onto one two-way centreline; ;fixedfile = written to import-bridges-fixed.json (off by default)
+#   seg     m_SegmentLength (m) for the 0.6–1.4 × seg rule; [U] = assumed (vanilla values are not readable offline; bridges/cs2-bridge-rules.json will replace them)
+#   notes
+#   alt     kept alternative (prefab | plan), not used; swap it into prefab/plan to try it
+#
+# id	select	prefab	plan	seg	notes	alt
+BR001	(?i)3L Interstate B	BXP SuspensionBridge03 - Six Lane Highway	fixed:168,320,320,168;merge;fixedfile	320	Detroit: two 3-lane carriageways merged onto the 6-lane two-way suspension, towers 640 m apart (CS1 723 m)	Suspension Bridge - Highway Oneway - 3 lanes | span:448 (per carriageway, vanilla, no merge)
+BR022	.	BXP Arc Pedestrian Bridge Revised	span:44.8;fixedfile	32	white multi-arch below the dam: decor arches along the CS1 monorail arch line	DIY Artdeco Bridge Kit objects (OlympicBridge, 4thStBridgePillar) by hand
+BR005	.	BXP Truss Arch Bridge - Highway Oneway - 2 Lanes	count:2	128	Hernando-Desoto: two ~150 m arches per carriageway ("M")	Truss Arch Bridge - Highway Twoway - 2 Lanes | count:2 (two-way, needs a merge)
+BR009	.	BXP Truss Arch Bridge - Highway Oneway - 2 Lanes	span:179.2	128	green truss arch over the gorge; the owner asked for one edge per carriageway, but the deck chain is 210 m straight (> 1.4 × 128 = 179 m), so two	plain deck + PittTrussBridge / TrussBridgeHollow objects
+BR006	.	Truss Arch Bridge - Small Road - 2 Lanes	span:179.2	128 [U]	red deck arch over the dry valley (vanilla truss arch; BXP equivalent if this name fails)	plain elevated Small Road + StoneArchRailBridge / OlympicBridge objects
+BR007	(?i)Ourense SA B	TrussArchBridge01	span:179.2	128 [U]	Ourense: truss arch over the main span; approaches stay Double Train Track	plain elevated Double Train Track + StoneArchRailBridge objects
+BR010	(?i)Pedrido B	TrussArchBridge01	span:179.2	128 [U]	Pedrido: truss arch over the bow-string part	BXP Extradosed Bridge - Train - 2 Tracks | span:179.2
+BR023	.	BXP Truss Viaduct - Train	span:89.6	64	TRH through girder (96 m: 2 edges)	plain elevated Double Train Track
+BR026	.	BXP Truss Viaduct - Train	span:89.6	64	TRH through girder (96 m: 2 edges)	plain elevated Double Train Track
+BR033	.	BXP Truss Viaduct - Train	span:89.6	64	TRH through girder	plain elevated Double Train Track
+BR035	.	BXP Truss Viaduct - Train	span:89.6	64	TRH through girder	plain elevated Double Train Track
+BR038	.	BXP Truss Viaduct - Train	span:89.6	64	TRH through girder	plain elevated Double Train Track
+BR042	.	BXP Truss Viaduct - Train	span:89.6	64	TRH through girder	plain elevated Double Train Track
+BR011	(?i)B0	BXP Truss Viaduct - Train	span:89.6	64	R2USA B0 rail viaduct, one edge per span	plain elevated Double Train Track
+BR012	(?i)B0	BXP Truss Viaduct - Train	span:89.6	64	R2USA B0 rail viaduct	plain elevated Double Train Track
+BR015	(?i)B0	BXP Truss Viaduct - Train	span:89.6	64	R2USA B0 rail viaduct	plain elevated Double Train Track
+BR017	(?i)B0	BXP Truss Viaduct - Train	span:89.6	64	R2USA B0 rail viaduct	plain elevated Double Train Track
+BR028	(?i)B0	BXP Truss Viaduct - Train	span:89.6	64	R2USA B0 rail viaduct	plain elevated Double Train Track
+BR019	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
+BR020	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
+BR044	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
+BR045	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
+BR049	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
+BR050	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road
+BR053	.	Wooden Covered Bridge - 2 lanes	span:89.6	64 [U]	gravel trestle	plain elevated Gravel Road

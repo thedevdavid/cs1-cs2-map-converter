@@ -15,9 +15,9 @@ public static class Round9
     // ---------- shared network writer (absolute heights) ----------
 
     public sealed record NetNode(string Id, double X, double Y, double Z, double? SnapRadius = null, string? SnapPrefab = null);
-    public sealed record NetEdge(string Id, string A, string B, string Prefab, Vec3? C1 = null, Vec3? C2 = null, string? Wall = null, string Note = "");
+    public sealed record NetEdge(string Id, string A, string B, string Prefab, Vec3? C1 = null, Vec3? C2 = null, string? Wall = null, string Note = "", int? FixedIndex = null);
 
-    public static void WriteNet(string path, string name, string comment, IReadOnlyList<NetNode> nodes, IReadOnlyList<NetEdge> edges)
+    public static void WriteNet(string path, string name, string comment, IReadOnlyList<NetNode> nodes, IReadOnlyList<NetEdge> edges, IReadOnlyList<string>? replaces = null)
     {
         var byId = nodes.GroupBy(n => n.Id).ToDictionary(g => g.Key, g => g.First());
         using var fs = File.Create(path);
@@ -25,6 +25,7 @@ public static class Round9
         w.WriteStartObject();
         w.WriteString("name", name);
         w.WriteString("_comment", comment);
+        if (replaces != null) { w.WriteStartArray("replaces"); foreach (var r in replaces) w.WriteStringValue(r); w.WriteEndArray(); }
         w.WriteStartArray("nodes");
         foreach (var n in byId.Values)
         {
@@ -47,6 +48,7 @@ public static class Round9
             foreach (var c in new[] { c1, c2 }) { w.WriteStartArray(); w.WriteNumberValue(Json.R2(c.X)); w.WriteNumberValue(Json.R2(c.Y)); w.WriteNumberValue(Json.R2(c.Z)); w.WriteEndArray(); }
             w.WriteEndArray();
             if (e.Wall != null) w.WriteString("wall", e.Wall);
+            if (e.FixedIndex is { } fi) w.WriteNumber("fixedIndex", fi);
             if (e.Note.Length > 0) w.WriteString("note", e.Note);
             w.WriteEndObject();
         }

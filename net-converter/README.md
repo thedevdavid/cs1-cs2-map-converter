@@ -331,3 +331,16 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   {mode boundsMin, sink 0.15, slopeSink true} (bridge 0.9.19 grounds each object without y from its prefab bounds); po-rocks pieces carry a per-object
   `sink` (fraction of the height, (H − v) / H: median 0.40, max 0.59) for the v3 visible-height rule. import-objects.json keeps y on the 1 189 objects that
   stand on structures (> 3 m above the CS2 terrain), assuming the bridge grounds only objects without y. prefab-bounds.json stays for the v3 sink fractions.
+
+## Round 13 (orchestrator round 11): bridge replacements (`bridges.tsv`, `Bridges.cs`)
+
+- `bridges.tsv`: bridge id (../bridges/data/cs1-bridges.json segIds) → deck selector → CS2 prefab → plan (`fixed:`, `count:`, `span:`, `merge`, `fixedfile`) → seg
+  (`[U]` = assumed) → notes → kept alternative. It overrides mapping.tsv for those segments only.
+- Each selected deck chain (split at junctions) becomes straight, constant-grade edges between its end nodes (deck height = the end nodes' heights, already × scale),
+  no span split, no smoothing; ends shared with the network join it by snapToSegment (radius 2). → `import-bridges.json`, imported right after import-all.json
+  (which leaves these decks out).
+- BR001: one two-way centreline of 168 + 320 + 320 + 168 m (fixedIndex 0–3) on the CS1 tower axis, centred between the towers; each carriageway splits off at its
+  first node ≥ 100 m beyond a deck end, the carriageway courses in between are replaced; clearance and height over water reported. BR022: BXP Arc Pedestrian
+  Bridge Revised along the monorail arch chains. Both in `import-bridges-fixed.json`, off by default (`--bridges-fixed on` removes the replaced courses from
+  import-all.json; runner `--with bridges-fixed`).
+- `--bridges off` keeps every CS1 bridge as the plain mapped road. stats.md → "Bridges": prefab, plan, edges and lengths, length / curvature / over-water checks.

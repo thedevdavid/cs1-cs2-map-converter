@@ -43,26 +43,6 @@
       }
     },
     {
-      "id": "n895",
-      "x": 1462.06,
-      "y": 322.32,
-      "z": 6173.44,
-      "snapToSegment": {
-        "radius": 3,
-        "prefabContains": "Gravel"
-      }
-    },
-    {
-      "id": "n26596",
-      "x": 1382.96,
-      "y": 322.71,
-      "z": 6161.47,
-      "snapToSegment": {
-        "radius": 3,
-        "prefabContains": "Gravel"
-      }
-    },
-    {
       "id": "n2210",
       "x": 6780.39,
       "y": 284.19,
@@ -161,25 +141,6 @@
         ]
       ],
       "note": "e20430_0b with its course bowed 1 m away from e16466_0a (15.6 m off)"
-    },
-    {
-      "id": "gap_n895_n26596",
-      "a": "n895",
-      "b": "n26596",
-      "prefab": "Gravel Road",
-      "control": [
-        [
-          1435.69,
-          322.45,
-          6169.45
-        ],
-        [
-          1409.33,
-          322.58,
-          6165.46
-        ]
-      ],
-      "note": "CS1 gap closed"
     },
     {
       "id": "gap_e25579_0",

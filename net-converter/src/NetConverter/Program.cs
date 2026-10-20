@@ -6,7 +6,7 @@ bool inventoryOnly = false, retry = false, layersOnly = false;
 string? treesDir = null, rockHeightmapPath = null, cs2HeightmapPath = null, runReportsDir = Path.Combine("out", "x1");
 string poOfflinePath = Path.Combine("..", "cs1-offline", "out", "po-offline.json");
 double rockDegrees = 40;
-bool seawayAtWater = false, mergeCanal = true, keepHighwayStubs = false;
+bool seawayAtWater = false, mergeCanal = true, keepHighwayStubs = false, bridgesOn = true, bridgesFixedOn = false;
 const string RockSurface = "gaga TTP - Pebbles 1L dark";
 const string NetCorridorRule = "on a ground-level net corridor (half width + 2 m)";
 {
@@ -37,6 +37,8 @@ for (int i = 0; i < args.Length; i++)
         case "--cs2-heightmap": cs2HeightmapPath = args[++i]; break;
         case "--run-reports": runReportsDir = args[++i]; break;
         case "--keep-highway-stubs": keepHighwayStubs = true; break;
+        case "--bridges": bridgesOn = args[++i] != "off"; break;
+        case "--bridges-fixed": bridgesFixedOn = args[++i] == "on"; break;
         case "--seaway-at-water": seawayAtWater = true; break;
         case "--no-merge-canal": mergeCanal = false; break;
         case "--po-offline": poOfflinePath = args[++i]; break;
@@ -262,6 +264,29 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
             if (skinFlags.TryGetValue(segs[i + 1], out var fl) && (fl.Pillars || fl.Lights)) Outputs.SkinFlags[segs[i]] = fl;
         Console.WriteLine($"network skins: {Outputs.SkinFlags.Count} segments (no pillars {Outputs.SkinFlags.Values.Count(v => v.Pillars)}, no street lights {Outputs.SkinFlags.Values.Count(v => v.Lights)})");
     }
+}
+{
+    // Bridge overrides (bridges.tsv): the chosen CS1 bridge decks become CS2 bridge prefabs in import-bridges.json (right after the network
+    // import); BR001 merge and the BR022 arches go to import-bridges-fixed.json (fixedIndex; off by default, --bridges-fixed on).
+    string FindB(string name) => File.Exists(name) ? name : Path.Combine(AppContext.BaseDirectory, name);
+    var specs = Bridges.Load(FindB("bridges.tsv"));
+    var segIdsB = Bridges.LoadSegIds(FindB(Path.Combine("..", "bridges", "data", "cs1-bridges.json")));
+    Func<double, double, double?>? waterOut = surfaceEarly == null ? null : (x, z) => surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.5 ? c.Surface * heightFactor : null;
+    var (bMain, bFixed, bRep) = Bridges.Apply(result, dump, rootDoc.RootElement, specs, segIdsB, bridgesOn, bridgesFixedOn, waterOut, topologyFactor);
+    foreach (var name in new[] { "import-bridges.json", "import-bridges-fixed.json" }) File.Delete(Path.Combine(outDir, name));
+    if (bMain.Edges.Count > 0)
+        Round9.WriteNet(Path.Combine(outDir, "import-bridges.json"), "Dakota Falls bridges",
+            "Bridge overrides (bridges.tsv): straight, constant-grade bridge-prefab edges between the CS1 deck chains' end nodes; ends shared with the network import join it through snapToSegment (radius 2). Import right after import-all.json, which leaves these decks out. Prefab names UNVERIFIED.", bMain.Nodes, bMain.Edges, bMain.Replaces);
+    if (bFixed.Edges.Count > 0)
+        Round9.WriteNet(Path.Combine(outDir, "import-bridges-fixed.json"), "Dakota Falls fixed-span bridges",
+            $"BR001 merged onto BXP SuspensionBridge03 (fixedIndex 0-3) and the BR022 arch decor. Needs the bridge's fixedIndex support. {(bridgesFixedOn ? "import-all.json leaves out the replaced courses (--bridges-fixed on)." : "OFF by default: import-all.json still holds the replaced courses ('replaces'); regenerate with --bridges-fixed on before importing this file.")}",
+            bFixed.Nodes, bFixed.Edges, bFixed.Replaces);
+    auditLog.AppendLine().AppendLine("## Bridges (bridges.tsv)").AppendLine();
+    auditLog.AppendLine(bridgesOn ? $"{bRep.Count} bridge overrides; {bMain.Edges.Count} edges in import-bridges.json, {bFixed.Edges.Count} in import-bridges-fixed.json ({(bridgesFixedOn ? "ON" : "off by default")}). No prefab name is verified in game yet; --bridges off keeps every CS1 bridge as the plain mapped road." : "--bridges off: no overrides.").AppendLine();
+    auditLog.AppendLine("| bridge | prefab | plan | chains | edges | lengths m | file | notes and rule checks |").AppendLine("|---|---|---|---:|---:|---|---|---|");
+    foreach (var r in bRep)
+        auditLog.AppendLine(FormattableString.Invariant($"| {r.Id} | {r.Prefab} | {r.Plan} | {r.Chains} | {r.Lengths.Count} | {string.Join(", ", r.Lengths.Select(l => l.ToString("F0", System.Globalization.CultureInfo.InvariantCulture)).GroupBy(l => l).Select(g => g.Count() > 1 ? $"{g.Count()}×{g.Key}" : g.Key))} | {(r.InFixedFile ? "fixed" : "bridges")} | {r.Notes}{(r.Problems.Count > 0 ? "; " + string.Join("; ", r.Problems) : "")} |"));
+    Console.WriteLine($"bridges: {bRep.Count} overrides, {bMain.Edges.Count} edges -> import-bridges.json, {bFixed.Edges.Count} -> import-bridges-fixed.json ({(bridgesFixedOn ? "on" : "off")})");
 }
 Outputs.WriteImport(Path.Combine(outDir, "import-highways.json"), "Dakota Falls highways", result.Layer(Layers.Highways).ToList(), absolute);
 Outputs.WriteImport(Path.Combine(outDir, "import-rail.json"), "Dakota Falls rail", result.Layer(Layers.Rail).ToList(), absolute);
