@@ -412,3 +412,10 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   deck line; low decks are lifted to 8.5 m with a breadth-first ≤ 6 % regrade of every approach branch (fallback only past 150 m).
 - Network: e20430_0b moved clear of its parallel carriageway; one-way courses left without exit or entry after the stub removal are pruned; crossings that CS1
   separated but our straight height profile did not get a node at the lower course's CS1 height.
+
+## Round 20: PO structures
+
+- `PoStructures.cs` writes `import-po-structure-objects.json` from `../bridges/data/po-structures-proposal.json`: the BR006 arch, its columns and piers, and the BR022 pads.
+  It also writes optional/ files for the gantry and the ITBP piers. Bounds come from `po-structure-bounds.json` (`tools/fetch-po-structure-bounds.mjs`).
+- `Round9.LoadPavedBlocks` skips PO group roots 27 and 288 (bridge parts).
+- Runner: `--po-structures`, `--with po-gantry,po-piers`. The look files are resolved from the script folder and logged with their hash.

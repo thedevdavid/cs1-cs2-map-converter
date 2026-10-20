@@ -1,0 +1,60 @@
+{
+ "generated": "2026-10-20T15:51:20.854Z",
+ "bridge": "http://127.0.0.1:8642",
+ "prefabs": [
+  {
+   "name": "StoneArchRailBridge",
+   "type": "StaticObjectPrefab",
+   "boundsMin": {
+    "x": -14.0000029,
+    "y": -100,
+    "z": -9.562814
+   },
+   "boundsMax": {
+    "x": 14.0000029,
+    "y": 40.4000244,
+    "z": 9.562814
+   },
+   "size": {
+    "x": 28.0000057,
+    "y": 40.4000244,
+    "z": 19.1256275
+   }
+  },
+  {
+   "name": "Pillar1x16",
+   "missing": "no building, network or object prefab named 'Pillar1x16'"
+  },
+  {
+   "name": "Pillar4x16",
+   "missing": "no building, network or object prefab named 'Pillar4x16'"
+  },
+  {
+   "name": "BasePlateConcrete32",
+   "missing": "no building, network or object prefab named 'BasePlateConcrete32'"
+  },
+  {
+   "name": "HWY Truss Gantry 2L  A",
+   "missing": "no building, network or object prefab named 'HWY Truss Gantry 2L  A'"
+  },
+  {
+   "name": "ITBP_Pillar Piers 01",
+   "type": "StaticObjectPrefab",
+   "boundsMin": {
+    "x": -3.60000134,
+    "y": -1.80000091,
+    "z": -5.40000057
+   },
+   "boundsMax": {
+    "x": 4.40000343,
+    "y": 3.6009798,
+    "z": 2.60000038
+   },
+   "size": {
+    "x": 8.800007,
+    "y": 3.6009798,
+    "z": 10.8000011
+   }
+  }
+ ]
+}

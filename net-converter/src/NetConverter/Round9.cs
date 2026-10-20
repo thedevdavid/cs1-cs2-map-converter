@@ -148,6 +148,9 @@ public static class Round9
 
     public sealed record PavedBlock(int Id, string Prefab, double Yaw, double MinY, double MaxY, List<(double X, double Z)> Top, (double X, double Z)[] Corners);
 
+    /// <summary>PO group roots that are bridge parts, not paved ground (bridges/PLAN-structures.md): 27 = BR006 viaduct, 288 = BR005 bearings.</summary>
+    public static readonly int[] BridgeGroupRoots = [27, 288];
+
     public static List<PavedBlock> LoadPavedBlocks(string poOfflinePath)
     {
         var res = new List<PavedBlock>();
@@ -156,6 +159,8 @@ public static class Round9
         foreach (var o in doc.RootElement.GetProperty("objects").EnumerateArray())
         {
             if (o.GetProperty("class").GetString() != "structure" || (o.TryGetProperty("subClass", out var sc) ? sc.GetString() : "") != "paved block") continue;
+            if (o.TryGetProperty("group", out var grp) && grp.ValueKind == JsonValueKind.Object && grp.TryGetProperty("rootId", out var rid)
+                && rid.ValueKind == JsonValueKind.Number && BridgeGroupRoots.Contains(rid.GetInt32())) continue;
             if (!o.TryGetProperty("vertices", out var vs) || vs.GetArrayLength() < 9) continue;
             var v = vs.EnumerateArray().Select(x => x.GetDouble()).ToArray();
             double minY = double.MaxValue, maxY = double.MinValue;

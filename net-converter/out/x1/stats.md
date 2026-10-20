@@ -1,6 +1,6 @@
 # net-converter stats
 
-Dump `C:\Users\dleva\AppData\Local/DakotaExport/2972879554_Dakota_Falls-20261019-063123.json`, mapping `mapping.tsv`.
+Dump `C:\Users\dleva\AppData\Local\DakotaExport\2972879554_Dakota_Falls-20261019-063123.json`, mapping `mapping.tsv`.
 
 ## Output layers
 
@@ -378,8 +378,13 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Round 8 rock scatter: in water left out 75, slopes > 45° left out 1462, slopes 25–45° (lowered by the bridge's slopeSink) 5164; 17562 (small 12254, medium 4455, boulders 853) around 3110 rock/cliff objects (r 60 m) and in 151 rock polygons; rejected road 296, spacing 935, water 3970, border 35 -> import-rock-scatter.json.
 - Round 9 PO rock surfaces: 63 polygons (4.79 km² of 4.79 km² footprint, 48 patches, 0 dropped), gaga TTP - Pebbles 2L -> import-surfaces-po-rock.json.
 - Round 9 fort: 112 objects along the 12 CS1 Castle Wall segments (RuinsStoneFormation01 34, RuinsStoneFormation02 29, RuinsStoneCairns01 11, RuinsStoneCairns03 10, RuinsStoneCairns02 8, StandingStone05 4, StandingStone06 3, StandingStone07 3, StandingStone08 3, StandingStone01 2, StandingStone04 2, OldCastle01 1, StandingStone02 1, StandingStone03 1), keep OldCastle01 at (5, -2619) (UNVERIFIED placeable) -> import-fort.json; RuinsCastle01 stays in import-objects.json.
-- Round 9 PO walls left out (dropped by the game inside a highway in the run reports): pb273_side23, pb275_side23, pb646_side23.
-- Round 9 PO paved blocks: 85 blocks -> 79 pavement polygons (import-po-structures.json); PO walls dropped (owner review of A-v4); tunnel/shed and bridge/pillar PO stay in manual-objects.md.
+- Round 9 PO walls left out (dropped by the game inside a highway in the run reports): pb646_side23.
+- Round 9 PO paved blocks: 11 blocks (group roots 27, 288 left out: BR006 and BR005 bridge parts, see PO structures) -> 11 pavement polygons (import-po-structures.json); PO walls dropped (owner review of A-v4).
+- Round 9 PO structures: BR006 arch StoneArchRailBridge at (-3528.5, -3175.8) yaw 324, foot y 199.3 × 1.
+- Round 9 PO structures: 72 objects (Pillar1x16 34, Pillar4x16 34, BasePlateConcrete32 3, StoneArchRailBridge 1), 39 grounded (no y, boundsMin), 33 with y (the arch foot, columns standing on the arch).
+- Round 9 PO structures: optional: 1 gantry (grounded), 50 piers (ITBP_Pillar Piers 01 50), cap tops at the PO pier tops.
+- Round 9 PO structures: not in the running game, pivot assumed at the base: Pillar1x16.
+- Round 9 PO structures: 185 proposal rows -> import-po-structure-objects.json 72, optional/import-po-structure-gantry.json 1, optional/import-po-structure-piers.json 50.
 - Round 9 lake lake7: centre terrain 138.23 m vs level 134.94 m, moved to (6272, 4032) terrain 134.26 m.
 - Round 9 lake lake11: centre terrain 135.55 m vs level 135.84 m, moved to (6944, 2640) terrain 134.79 m.
 - Round 9 lake lake16: centre terrain 138.44 m vs level 138.91 m, moved to (640, 1008) terrain 136.86 m.

@@ -987,7 +987,16 @@ void WriteLayers()
         if (pbOut.Count > 0) r9.Add($"PO walls left out (dropped by the game inside a highway in the run reports): {string.Join(", ", pbOut)}");
         Surfaces.Write(Path.Combine(outDir, "import-po-structures.json"), "po-structures", ps, $"Tops of the PO paved blocks (convex hull of the top vertices), {pave}, overlaps unioned.");
         File.Delete(Path.Combine(outDir, "import-po-walls.json"));   // owner review of A-v4: not needed
-        r9.Add(ci($"PO paved blocks: {blocks.Count} blocks -> {ps.Count} pavement polygons (import-po-structures.json); PO walls dropped (owner review of A-v4); tunnel/shed and bridge/pillar PO stay in manual-objects.md"));
+        r9.Add(ci($"PO paved blocks: {blocks.Count} blocks (group roots {string.Join(", ", Round9.BridgeGroupRoots)} left out: BR006 and BR005 bridge parts, see PO structures) -> {ps.Count} pavement polygons (import-po-structures.json); PO walls dropped (owner review of A-v4)"));
+        // Round 20: PO structure objects (bridges/PLAN-structures.md); the runner imports them only with --po-structures.
+        var poRows = PoStructures.Load(Find(Path.Combine("..", "bridges", "data", "po-structures-proposal.json")));
+        var (poMain, poGantry, poPiers, poLog) = PoStructures.Build(poRows, cs2True, heightFactor, PoStructures.LoadBounds(Find("po-structure-bounds.json")));
+        var poGround = new Objects.Grounding(Sink: 0, SlopeSink: false);
+        Objects.Write(Path.Combine(outDir, "import-po-structure-objects.json"), "po-structure-objects", poMain, poGround);
+        Objects.Write(Path.Combine(OptDir(), "import-po-structure-gantry.json"), "po-structure-gantry", poGantry, poGround);
+        Objects.Write(Path.Combine(OptDir(), "import-po-structure-piers.json"), "po-structure-piers", poPiers, poGround);
+        foreach (var l in poLog) r9.Add("PO structures: " + l);
+        r9.Add($"PO structures: {poRows.Count} proposal rows -> import-po-structure-objects.json {poMain.Count}, optional/import-po-structure-gantry.json {poGantry.Count}, optional/import-po-structure-piers.json {poPiers.Count}");
         if (surfaceEarly != null)
         {
             var (lakes, bodies, outside, tiny) = Round9.Lakes(surfaceEarly, dump, seaLevel, 7168, cs2True, out var lakeLog);

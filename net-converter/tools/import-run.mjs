@@ -1,6 +1,9 @@
 // Whole fresh-map import against the CS2MCP bridge, in the ROUND order, one command.
 // node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run]
-//   [--no-verify] [--resume | --fresh] [--verify-only] [--bridge http://127.0.0.1:8642] [--out out]
+//   [--no-verify] [--resume | --fresh] [--verify-only] [--po-structures] [--bridge http://127.0.0.1:8642] [--out out]
+// --po-structures (round 20): the PO structure objects (BR006 arch, columns and piers, BR022 pads; ConcreteSet01 154132 and DIY Stone Arch 135944
+//   must be in the playset) after po-rocks; same as --with po-structures. The gantry (Truss Gantry 132188) and the ITBP piers (140978, only with
+//   noPillars) are separate optional steps: --with po-gantry,po-piers.
 // run-state.json (per scale folder) lists the files imported on this map; --skip / --only / --resume skip those, a plain run (or --fresh) starts over.
 // Steps (in order): surfaces network bridges bridges-fixed dam gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
 //   resources surfaces power-ends settings look. Optional (only with --with or --only): grass, sand-smooth (the earlier smoothed sand), and the pack surfaces in optional/: rock, po-rock, decals, sand-pack (sand-pack paints the same sand as the default sand file with the Dirty Surfaces prefab: use one of the two).
@@ -9,12 +12,15 @@
 // stops the run and prints the problems; per-item failures are counted and the run goes on. The run report with every
 // importId (for undo) goes to <scale dir>/run-<timestamp>.md (x1 → out/x1, x2 → out).
 import http from "node:http";
-import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const args = process.argv.slice(2);
 const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : def; };
 const flag = name => args.includes(name);
+const toolDir = dirname(fileURLToPath(import.meta.url));
 const scale = opt("--scale", null);
 if (!["x1", "x2"].includes(scale)) {
   console.error("usage: node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run] [--no-verify] [--resume | --fresh] [--verify-only] [--bridge http://127.0.0.1:8642] [--out out]");
@@ -30,6 +36,7 @@ const climate = opt("--climate", null);
 const dryRun = flag("--dry-run");
 const list = s => (s ? s.split(",").map(x => x.trim()).filter(Boolean) : []);
 const skip = new Set(list(opt("--skip", ""))), only = new Set(list(opt("--only", ""))), withOpt = new Set(list(opt("--with", "")));
+if (args.includes("--po-structures")) withOpt.add("po-structures");
 const verify = !flag("--no-verify");
 
 function request(method, path, body) {
@@ -87,6 +94,10 @@ const steps = [
   ["objects", "/import/objects", [p("import-objects.json")]],
   ["barriers", "/import/objects", [p("import-walls-props.json")]],
   ["po-rocks", "/import/objects", [p("import-po-rocks.json")]],
+  // Round 20 (bridges/PLAN-structures.md): off by default until the owner confirms the kit mods are in the playset (--po-structures).
+  ["po-structures", "/import/objects", [p("import-po-structure-objects.json")], true],
+  ["po-gantry", "/import/objects", [p(join("optional", "import-po-structure-gantry.json"))], true],
+  ["po-piers", "/import/objects", [p(join("optional", "import-po-structure-piers.json"))], true],
   ["rock-scatter", "/import/objects", [p("import-rock-scatter.json")]],
   ["fort", "/import/objects", [p("import-fort.json")]],
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
@@ -244,20 +255,21 @@ if (!stopped && wanted("look")) {
   const norm = k => k.replace(/^m_/, "").toLowerCase();
   const sources = [];
   for (const name of ["climate", "water", "terrain"]) {
-    const file = [join("..", "look", `${name}.json`), join("look", `${name}.json`)].find(existsSync);
+    const file = [join(toolDir, "..", "..", "look", `${name}.json`), join(toolDir, "..", "look", `${name}.json`)].find(existsSync);
     if (file) sources.push([name, file]);
   }
   const lines = [];
   for (const [name, file] of sources) {
-    const body = JSON.parse(readFileSync(file, "utf8")); delete body._source;
+    const raw = readFileSync(file, "utf8"), body = JSON.parse(raw); delete body._source;   // read now, every run: the current file, never run-state
+    const ver = `sha1 ${createHash("sha1").update(raw).digest("hex").slice(0, 8)}, ${statSync(file).mtime.toISOString().slice(0, 16)}`;
     if (name === "climate" && climate) body.climate = climate;
     const dropped = [];
     for (const editKey of ["climateEdit", "waterEdit", "terrainEdit"])
       if (body[editKey] && known.size > 0)
         for (const k of Object.keys(body[editKey])) if (!known.has(norm(k))) { dropped.push(`${editKey}.${k}`); delete body[editKey][k]; }
-    if (dryRun) { lines.push(`${name}: ${file} (dry run, not sent)${dropped.length ? `; unknown: ${dropped.join(", ")}` : ""}`); continue; }
+    if (dryRun) { lines.push(`${name}: ${file} [${ver}] (dry run, not sent)${dropped.length ? `; unknown: ${dropped.join(", ")}` : ""}`); continue; }
     const r = await request("POST", "/map/settings", body);
-    const line = `${name}: ${file} HTTP ${r.status}, applied ${(r.json.applied ?? []).length}${r.json.problems?.length ? `, problems ${JSON.stringify(r.json.problems).slice(0, 300)}` : ""}${dropped.length ? `; skipped (not in /map/look/schema): ${dropped.join(", ")}` : ""}`;
+    const line = `${name}: ${file} [${ver}] HTTP ${r.status}, applied ${(r.json.applied ?? []).length}${r.json.problems?.length ? `, problems ${JSON.stringify(r.json.problems).slice(0, 300)}` : ""}${dropped.length ? `; skipped (not in /map/look/schema): ${dropped.join(", ")}` : ""}`;
     console.log(`${r.status === 200 && !r.json.problems?.length ? "✓" : "!"} look ${line}`);
     lines.push(line);
   }

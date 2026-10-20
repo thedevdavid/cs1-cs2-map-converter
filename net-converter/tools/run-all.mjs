@@ -52,10 +52,13 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
   // Round 8 (owner review of Run A): each its own import, to add to the live map.
   for (const [f, order, what] of [["import-power-ends.json", 2, "ROUND 8 power-line ends at the substation and the dam, connectTo high voltage (bridge 0.9.13; undo the replaced edges first)"], ["import-dam-deck.json", 2, "ROUND 8 dam deck network, absolute heights (after import-dam.json)"],
     ["import-substation.json", 5, "ROUND 8 substation building TransformerStation01"], ["import-po-rocks.json", 5, "po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds"],
-    ["import-rock-scatter.json", 5, "ROUND 8 vanilla rock scatter"]])
+    ["import-rock-scatter.json", 5, "ROUND 8 vanilla rock scatter"],
+    ["import-po-structure-objects.json", 5, "ROUND 20 PO structures: BR006 arch (StoneArchRailBridge), ConcreteSet01 columns / piers, BR022 pads; runner --po-structures (mods 154132, 135944)"],
+    [join("optional", "import-po-structure-gantry.json"), 5, "ROUND 20 optional gantry HWY Truss Gantry 2L  A (132188), runner --with po-gantry"],
+    [join("optional", "import-po-structure-piers.json"), 5, "ROUND 20 optional ITBP piers BR001 / BR003 (140978), only with noPillars, runner --with po-piers"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : `${j.edges.length} edges${j.replaces ? `, replaces ${j.replaces.join(", ")}` : ""}`); }
   // Bridges (bridges.tsv).
-  for (const [f, order, what] of [["import-bridges.json", 1, "bridge overrides (right after import-all.json, which leaves these decks out)"], ["import-bridges-fixed.json", 1, "fixed-span bridges: BR001 merged suspension (one 976 m edge) + BR022 arches, right after import-bridges.json"], ["import-dam.json", 1, "dam: one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant), after the bridges"]])
+  for (const [f, order, what] of [["import-bridges.json", 1, "bridge overrides (right after import-all.json, which leaves these decks out)"], ["import-bridges-fixed.json", 1, "fixed-span bridges: BR001 Detroit suspension (one edge) + its 3-lane connectors, right after import-bridges.json"], ["import-dam.json", 1, "dam: one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant), after the bridges"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, `${j.edges.length} edges, replaces ${j.replaces?.length ?? 0}`); }
   // Round 9.
   for (const [f, order, what] of [["import-gaps.json", 1, "ROUND 9 network gaps (snapToSegment onto the live network)"], ["import-gaps-e15883-taper.json", 1, "ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane"],
