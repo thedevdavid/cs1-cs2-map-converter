@@ -321,7 +321,7 @@ Not available at all: a pollution tint (the shader takes pollution from the simu
 
 Bridge request: [`look/water.json`](../look/water.json).
 
-Check after applying (one screenshot each): the falls (foam), the reservoir from the dam (calm, green-grey, opaque), a western creek (bed visible, blue-green), the lower river at overview height (slate, small chop). Expected adjustments: `absorptionDistance` ±2 if the creeks look muddy or the river looks glassy; `scatteringColor` toward blue if it reads too swampy against CS1.
+Check after applying (one screenshot each): the falls (foam), the reservoir from the dam (calm, green-grey, opaque), a western creek (bed visible, blue-green), the lower river at overview height (slate, small chop). Expected adjustments: `absorptionDistance` ±2 if the creeks look muddy or the river looks glassy; `waterScatteringColor` toward blue if it reads too swampy against CS1.
 
 ## Owner decisions (2026-10-20)
 
