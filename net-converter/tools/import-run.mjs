@@ -1,7 +1,7 @@
 // Whole fresh-map import against the CS2MCP bridge, in the ROUND order, one command.
 // node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run]
 //   [--no-verify] [--bridge http://127.0.0.1:8642] [--out out]
-// Steps: network bridges bridges-fixed dam gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
+// Steps (in order): surfaces network bridges bridges-fixed dam gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
 //   resources surfaces power-ends settings look. Optional (only with --with or --only): grass, sand-smooth (the earlier smoothed sand), and the pack surfaces in optional/: rock, po-rock, decals, sand-pack (sand-pack paints the same sand as the default sand file with the Dirty Surfaces prefab: use one of the two).
 // After the network steps and at the end the bridge's graph export is compared per prefab with the import files (--no-verify skips it).
 // Each step POSTs its file(s) and prints one line (created / merged / failed, seconds). A body error (HTTP 400 with problems)
@@ -52,29 +52,11 @@ const treeFiles = existsSync(treesDir) ? readdirSync(treesDir).filter(f => /^imp
 const fixedFiles = existsSync(dir) ? readdirSync(dir).filter(f => /^import-trees-fixed-\d\d\.json$/.test(f)).sort().map(f => join(dir, f)) : [];
 const p = f => join(dir, f);
 
-// [step, endpoint, files]
+// [step, endpoint, files, optional]
+// Order (bridge 0.9.24, cs2mcp/NOTES.md round 24): the A-v4 surfaces step removed 309 built segments (92 % of the roads inside field polygons), so
+// every surface goes first and the nets are drawn over them. The substation building comes before power-ends (connectTo needs its marker); the
+// net count is taken after the last network step, and every later objects / surfaces step must report netGuard.segmentsRemoved = 0.
 const steps = [
-  ["network", "/import/network", [p("import-all.json")]],
-  ["bridges", "/import/network", [p("import-bridges.json")]],
-  ["bridges-fixed", "/import/network", [p("import-bridges-fixed.json")]],
-  // Bridge 0.9.23: one dam edge; the game builds the plant and the dam ends from it.
-  ["dam", "/import/network", [p("import-dam.json")]],
-  ["gaps", "/import/network", [p("import-gaps.json")]],
-  ["power", "/import/network", [p("import-power.json")]],
-  ["canals", "/import/network", [p("import-canals.json")]],
-  ["shippaths", "/import/network", [p("import-shippaths.json")]],
-  ["verify-network", "verify", []],
-  ["water", "/import/water", [p(waterFile)]],
-  ["lakes", "/import/water", [p("import-water-lakes.json")]],
-  ["connections", "/import/objects", [p("import-connections.json")]],
-  ["objects", "/import/objects", [p("import-objects.json")]],
-  ["barriers", "/import/objects", [p("import-walls-props.json")]],
-  ["substation", "/import/objects", [p("import-substation.json")]],
-  ["po-rocks", "/import/objects", [p("import-po-rocks.json")]],
-  ["rock-scatter", "/import/objects", [p("import-rock-scatter.json")]],
-  ["fort", "/import/objects", [p("import-fort.json")]],
-  ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
-  ["resources", "/import/resources", [p("import-resources.json")]],
   // Vanilla paint plan (audit/theme-remake.md §4): fields (Agriculture Surface 01), PO pavement and stand-in pavement (Pavement Surface 01),
   // sand (Sand Surface 01 banks, Sand Surface 02 bare earth and old decal spots), dry grass (Grass Surface 02).
   ["surfaces", "/import/surfaces", ["import-surfaces-fields.json", "import-po-structures.json", "import-surfaces-pavement.json", "import-surfaces-sand.json", "import-surfaces-grass-dry.json"].map(p)],
@@ -85,12 +67,34 @@ const steps = [
   ["po-rock", "/import/surfaces", [p(join("optional", "import-surfaces-po-rock.json"))], true],
   ["decals", "/import/surfaces", [p(join("optional", "import-surfaces-decals.json"))], true],
   ["sand-pack", "/import/surfaces", [p(join("optional", "import-surfaces-sand-smooth-pack.json"))], true],
+  ["network", "/import/network", [p("import-all.json")]],
+  ["bridges", "/import/network", [p("import-bridges.json")]],
+  ["bridges-fixed", "/import/network", [p("import-bridges-fixed.json")]],
+  // Bridge 0.9.23: one dam edge; the game builds the plant and the dam ends from it.
+  ["dam", "/import/network", [p("import-dam.json")]],
+  ["gaps", "/import/network", [p("import-gaps.json")]],
+  ["power", "/import/network", [p("import-power.json")]],
+  ["canals", "/import/network", [p("import-canals.json")]],
+  ["shippaths", "/import/network", [p("import-shippaths.json")]],
+  ["substation", "/import/objects", [p("import-substation.json")]],
   ["power-ends", "/import/network", [p("import-power-ends.json")]],
+  ["net-count", "netcount", []],
+  ["verify-network", "verify", []],
+  ["water", "/import/water", [p(waterFile)]],
+  ["lakes", "/import/water", [p("import-water-lakes.json")]],
+  ["connections", "/import/objects", [p("import-connections.json")]],
+  ["objects", "/import/objects", [p("import-objects.json")]],
+  ["barriers", "/import/objects", [p("import-walls-props.json")]],
+  ["po-rocks", "/import/objects", [p("import-po-rocks.json")]],
+  ["rock-scatter", "/import/objects", [p("import-rock-scatter.json")]],
+  ["fort", "/import/objects", [p("import-fort.json")]],
+  ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
+  ["resources", "/import/resources", [p("import-resources.json")]],
   ["verify-end", "verify", []],
 ];
 const optional = new Set(steps.filter(s => s[3]).map(s => s[0]));
 const wanted = name => (only.size === 0 ? (!optional.has(name) || withOpt.has(name)) : only.has(name)) && !skip.has(name)
-  && (!name.startsWith("verify") || (verify && !dryRun));
+  && (!name.startsWith("verify") || (verify && !dryRun)) && (name !== "net-count" || !dryRun);
 for (const n of [...skip, ...only, ...withOpt]) if (![...steps.map(s => s[0]), "settings", "look"].includes(n)) { console.error(`unknown step: ${n}`); process.exit(2); }
 
 // Graph check: the bridge's export per prefab against the network import files run so far (A-v4 lost 297 built segments after the import).
@@ -125,8 +129,38 @@ if (ping.status !== 200) { console.error(`bridge not reachable at ${bridge.origi
 console.log(`bridge ${bridge.origin}: ${JSON.stringify(ping.json).slice(0, 160)}`);
 console.log(`scale ${scale} (${dir}), sea ${sea} → ${seaOut} (${waterFile})${dryRun ? ", DRY RUN" : ""}`);
 
+// GET /net/count (bridge 0.9.24): top-level segments per prefab, plus owned segments.
+const perPrefab = j => j?.perPrefab ?? j?.counts?.perPrefab ?? j?.prefabs ?? {};
+const totalOf = j => j?.segments ?? j?.total ?? j?.counts?.segments ?? Object.values(perPrefab(j)).reduce((a, b) => a + b, 0);
+async function netCount() { const r = await request("GET", "/net/count"); return r.status === 200 ? r.json : { error: `HTTP ${r.status}`, raw: r.json }; }
+const countLine = j => `${totalOf(j)} segments${j?.owned != null ? `, owned ${typeof j.owned === "object" ? JSON.stringify(j.owned) : j.owned}` : ""}: ${Object.entries(perPrefab(j)).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v}`).join(", ")}`;
+function diffLine(a, b) {
+  const pa = perPrefab(a), pb = perPrefab(b), keys = [...new Set([...Object.keys(pa), ...Object.keys(pb)])].sort();
+  const d = keys.map(k => [k, (pb[k] ?? 0) - (pa[k] ?? 0)]).filter(([, v]) => v !== 0);
+  return d.length ? d.map(([k, v]) => `${k} ${v > 0 ? "+" : ""}${v}`).join(", ") : "no change";
+}
+if (flag("--verify-only")) {
+  // Compare after 2 minutes idle and after save + reload (cs2mcp/NOTES.md round 24, verification steps 3 and 4).
+  const now = await netCount();
+  console.log(`net count ${countLine(now)}`);
+  const reports = readdirSync(dir).filter(f => /^run-.*\.json$/.test(f)).sort();
+  if (reports.length) {
+    const last = JSON.parse(readFileSync(join(dir, reports.at(-1)), "utf8"));
+    if (last.netCountAfterNetwork) console.log(`vs the network baseline of ${reports.at(-1)}: ${diffLine(last.netCountAfterNetwork, now)}`);
+  }
+  const vstamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\..*/, "").replace("T", "-");
+  writeFileSync(join(dir, `netcount-${vstamp}.json`), JSON.stringify(now, null, 1));
+  process.exit(0);
+}
+let netBaseline = null, netEnd = null, guardStop = null;
+
 outer: for (const [name, endpoint, files] of steps) {
   if (!wanted(name)) continue;
+  if (endpoint === "netcount") {
+    const t0 = Date.now(); netBaseline = await netCount();
+    const text = `net count after the network steps: ${countLine(netBaseline)}`; console.log(`  ${text}`);
+    rows.push({ name, file: "GET /net/count", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue;
+  }
   if (endpoint === "verify") { const t0 = Date.now(); const text = await verifyGraph(name.replace("verify-", "")); rows.push({ name, file: "GET /graph/export", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue; }
   for (const file of files) {
     if (!existsSync(file)) { console.log(`- ${name}: ${file} missing, skipped`); rows.push({ name, file, status: "missing" }); continue; }
@@ -157,7 +191,17 @@ outer: for (const [name, endpoint, files] of steps) {
     if (endpoint === "/import/network") for (const e of body.edges ?? []) imported[e.prefab] = (imported[e.prefab] ?? 0) + 1;
     const fails = (r.json.failedEdges ?? r.json.failedObjects ?? []).slice(0, 20);
     console.log(`${s.failed ? "!" : "✓"} ${name} ${file.split(/[\\/]/).pop()}: ${s.text} (${fmt(r.json.seconds ?? secs)})${r.json.completed === false ? ` ABORTED: ${r.json.abortReason}` : ""}`);
-    rows.push({ name, file, status: r.json.completed === false ? `aborted: ${r.json.abortReason}` : "ok", secs: r.json.seconds ?? secs, importId: r.json.importId, undo: undoOf(endpoint, r.json, name), text: s.text, fails });
+    const ng = r.json.netGuard;
+    const guardText = ng ? `; netGuard removed ${ng.segmentsRemoved ?? 0}${ng.geometryGone ? ` (geometry gone ${ng.geometryGone})` : ""}` : "";
+    rows.push({ name, file, status: r.json.completed === false ? `aborted: ${r.json.abortReason}` : "ok", secs: r.json.seconds ?? secs, importId: r.json.importId, undo: undoOf(endpoint, r.json, name), text: s.text + guardText, fails });
+    // Stop at the first objects / surfaces step that removed built segments (netGuard, bridge 0.9.24).
+    if (ng && (ng.segmentsRemoved ?? 0) > 0) {
+      console.log(`✗ ${name} ${file}: netGuard: ${ng.segmentsRemoved} segments removed (geometry gone ${ng.geometryGone ?? "?"}); run stopped`);
+      for (const b of (ng.batches ?? []).slice(0, 20)) console.log(`    batch: items ${JSON.stringify(b.items ?? []).slice(0, 400)}${b.lost ? `; lost ${JSON.stringify(b.lost).slice(0, 400)}` : ""}`);
+      guardStop = { name, file, netGuard: ng };
+      stopped = `${name} (${file}): netGuard removed ${ng.segmentsRemoved} segments`;
+      break outer;
+    }
   }
 }
 
@@ -207,6 +251,13 @@ if (!stopped && wanted("look")) {
   rows.push({ name: "look", file: "POST /map/settings (look)", status: "ok", secs: (Date.now() - t0) / 1000, text: lines.join(" | ") });
 }
 
+if (!dryRun && netBaseline && wanted("net-count")) {
+  netEnd = await netCount();
+  const text = `net count at the end: ${countLine(netEnd)}; vs after the network: ${diffLine(netBaseline, netEnd)}`;
+  console.log(`  ${text}`);
+  rows.push({ name: "net-count-end", file: "GET /net/count", status: "ok", secs: 0, text });
+}
+
 const total = rows.reduce((s, r) => s + (r.secs ?? 0), 0);
 const md = [`# Import run ${stamp} (${scale}, sea ${sea} → ${seaOut}${dryRun ? ", dry run" : ""})`, "",
   `Bridge ${bridge.origin}; files from \`${dir}\` (trees from \`${treesDir}\`). ${stopped ? `**Stopped at ${stopped}: body rejected.**` : "Completed."} Total ${fmt(total)}.`, "",
@@ -214,8 +265,12 @@ const md = [`# Import run ${stamp} (${scale}, sea ${sea} → ${seaOut}${dryRun ?
   "| step | file | result | seconds | importId | undo |", "|---|---|---|---:|---|---|",
   ...rows.map(r => `| ${r.name} | \`${r.file}\` | ${r.text ?? r.status}${r.error ? ` ${r.error}` : ""} | ${(r.secs ?? 0).toFixed(1)} | ${r.importId ?? ""} | ${r.undo ?? ""} |`), ""];
 for (const r of rows.filter(r => r.fails?.length)) md.push(`## Failures: ${r.name} \`${r.file}\``, "", ...r.fails.map(f => `- ${f.id} ${f.prefab}: ${f.error}`), "");
+if (netBaseline) md.push("## Net counts (GET /net/count)", "", `- after the network steps: ${countLine(netBaseline)}`, ...(netEnd ? [`- at the end: ${countLine(netEnd)}`, `- difference: ${diffLine(netBaseline, netEnd)}`] : []), "",
+  "Check again with `node tools/import-run.mjs --scale ${scale} --verify-only` after 2 minutes idle and after save + reload; both must equal the network count.", "");
+if (guardStop) md.push(`## netGuard stop: ${guardStop.name} \`${guardStop.file}\``, "", "```json", JSON.stringify(guardStop.netGuard, null, 1).slice(0, 20000), "```", "");
 for (const pr of problems) md.push(`## Rejected body: ${pr.name} \`${pr.file}\` (HTTP ${pr.status})`, "", ...pr.problems.map(x => `- ${typeof x === "string" ? x : JSON.stringify(x)}`), "");
 const report = join(dir, `run-${stamp}.md`);
 writeFileSync(report, md.join("\n"));
+writeFileSync(report.replace(/\.md$/, ".json"), JSON.stringify({ stamp, scale, sea, netCountAfterNetwork: netBaseline, netCountEnd: netEnd, guardStop, rows }, null, 1));
 console.log(`report ${report}`);
 process.exit(stopped ? 1 : 0);

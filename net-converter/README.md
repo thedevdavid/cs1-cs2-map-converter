@@ -375,3 +375,12 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   the other CS1 sand and the old decal spots, nothing under water deeper than 1.5 m), `import-surfaces-grass-dry.json` (G1/G2 Grass Surface 02, the variant to
   confirm with the swatch test), `import-surfaces-pavement.json` (P1 under stand-in buildings without a lot; none in this map). Priority A1 > P1 > S1 > S4 > S3 >
   G1 > G2 on a 16 m grid, close + open one cell (S1 close only), small patches dropped, simplified 4 m. The earlier smoothed sand is in optional/.
+
+## Round 16: runner order and net guard (bridge 0.9.24)
+
+- The A-v4 surfaces step removed the lost segments (cs2mcp/NOTES.md round 24), so `tools/import-run.mjs` now imports every surface first, then the networks
+  (network, bridges, bridges-fixed, dam, gaps, power, canals, ship paths, the substation building, power-ends), then water, objects, trees and resources.
+- `GET /net/count` after the last network step (stored), `netGuard.segmentsRemoved` checked on every later objects / surfaces report: the run stops at the first
+  non-zero value and prints the batch items; at the end a second count with the per-prefab difference. Both counts and any guard stop go into
+  `run-<stamp>.md` and its `run-<stamp>.json` twin.
+- `--verify-only`: prints `/net/count` and its difference from the last run's network count (for the 2-minute-idle and save + reload checks).
