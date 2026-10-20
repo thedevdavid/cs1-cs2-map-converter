@@ -1,0 +1,1086 @@
+{
+  "name": "terrain-paint-n3-drawdown-dirt",
+  "_comment": "Terrain material paint (editor Terrain \u2192 Materials, POST /import/terrain-paint, bridge 0.9.29): N3 reservoir drawdown ring, 0\u20132.5 m above the level. CS2 x/z metres, the same at both scales.",
+  "options": {
+    "dryRun": false,
+    "strength": 0.7,
+    "softEdge": 0,
+    "minStamp": 4,
+    "maxStamps": 250000
+  },
+  "polygons": [],
+  "strokes": [
+    {
+      "id": "n3-drawdown-dirt_1",
+      "material": "Dirt",
+      "x": 1428.01,
+      "z": 4534.77,
+      "radius": 10.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_2",
+      "material": "Dirt",
+      "x": 1068.82,
+      "z": 4601.23,
+      "radius": 8.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_3",
+      "material": "Dirt",
+      "x": 1077.85,
+      "z": 4683.23,
+      "radius": 11.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_4",
+      "material": "Dirt",
+      "x": 1095.54,
+      "z": 4697.76,
+      "radius": 10.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_5",
+      "material": "Dirt",
+      "x": 1446.92,
+      "z": 4744.51,
+      "radius": 10.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_6",
+      "material": "Dirt",
+      "x": 1460.3,
+      "z": 4758.56,
+      "radius": 9.9,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_7",
+      "material": "Dirt",
+      "x": 1484.1,
+      "z": 4771.07,
+      "radius": 8.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_8",
+      "material": "Dirt",
+      "x": 1491.05,
+      "z": 4790.1,
+      "radius": 8.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_9",
+      "material": "Dirt",
+      "x": 1494.49,
+      "z": 4810.77,
+      "radius": 9.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_10",
+      "material": "Dirt",
+      "x": 964.07,
+      "z": 4823.96,
+      "radius": 9.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_11",
+      "material": "Dirt",
+      "x": 1491.39,
+      "z": 4819.98,
+      "radius": 10,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_12",
+      "material": "Dirt",
+      "x": 981.72,
+      "z": 4842.87,
+      "radius": 10.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_13",
+      "material": "Dirt",
+      "x": 1035.18,
+      "z": 4854.64,
+      "radius": 10.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_14",
+      "material": "Dirt",
+      "x": 1047.02,
+      "z": 4854.51,
+      "radius": 9.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_15",
+      "material": "Dirt",
+      "x": 1068.71,
+      "z": 4860.28,
+      "radius": 10.9,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_16",
+      "material": "Dirt",
+      "x": 1353.04,
+      "z": 4885.17,
+      "radius": 8.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_17",
+      "material": "Dirt",
+      "x": 1371.79,
+      "z": 4885.01,
+      "radius": 10.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_18",
+      "material": "Dirt",
+      "x": 1509.2,
+      "z": 4883.06,
+      "radius": 10.9,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_19",
+      "material": "Dirt",
+      "x": 1353.66,
+      "z": 4899.95,
+      "radius": 8.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_20",
+      "material": "Dirt",
+      "x": 1511.26,
+      "z": 4905.34,
+      "radius": 11.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_21",
+      "material": "Dirt",
+      "x": 1353.55,
+      "z": 4916.78,
+      "radius": 9.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_22",
+      "material": "Dirt",
+      "x": 1383.64,
+      "z": 4919.15,
+      "radius": 10.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_23",
+      "material": "Dirt",
+      "x": 1508.51,
+      "z": 4916.2,
+      "radius": 11.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_24",
+      "material": "Dirt",
+      "x": 1339.64,
+      "z": 4950.12,
+      "radius": 12,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_25",
+      "material": "Dirt",
+      "x": 1339.46,
+      "z": 4968.08,
+      "radius": 10.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_26",
+      "material": "Dirt",
+      "x": 1337.67,
+      "z": 4979.34,
+      "radius": 9.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_27",
+      "material": "Dirt",
+      "x": 1351.68,
+      "z": 5018.45,
+      "radius": 10.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_28",
+      "material": "Dirt",
+      "x": 1366.69,
+      "z": 5013.28,
+      "radius": 9.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_29",
+      "material": "Dirt",
+      "x": 1530.76,
+      "z": 5019.19,
+      "radius": 8.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_30",
+      "material": "Dirt",
+      "x": 1530.71,
+      "z": 5033.07,
+      "radius": 10.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_31",
+      "material": "Dirt",
+      "x": 1529.33,
+      "z": 5046.92,
+      "radius": 10.9,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_32",
+      "material": "Dirt",
+      "x": 1530.87,
+      "z": 5066.47,
+      "radius": 8.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_33",
+      "material": "Dirt",
+      "x": 1539.94,
+      "z": 5096.07,
+      "radius": 10.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_34",
+      "material": "Dirt",
+      "x": 1540.48,
+      "z": 5111.53,
+      "radius": 8.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_35",
+      "material": "Dirt",
+      "x": 1557.77,
+      "z": 5139.15,
+      "radius": 11.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_36",
+      "material": "Dirt",
+      "x": 1560.96,
+      "z": 5158.74,
+      "radius": 10,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_37",
+      "material": "Dirt",
+      "x": 1219.68,
+      "z": 5180.98,
+      "radius": 8.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_38",
+      "material": "Dirt",
+      "x": 1577.85,
+      "z": 5196.58,
+      "radius": 11.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_39",
+      "material": "Dirt",
+      "x": 1573.84,
+      "z": 5205.85,
+      "radius": 11.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_40",
+      "material": "Dirt",
+      "x": 1571.32,
+      "z": 5225.89,
+      "radius": 10.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_41",
+      "material": "Dirt",
+      "x": 1159.87,
+      "z": 5238.8,
+      "radius": 10.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_42",
+      "material": "Dirt",
+      "x": 1155.73,
+      "z": 5253.31,
+      "radius": 11.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_43",
+      "material": "Dirt",
+      "x": 1157.62,
+      "z": 5267.6,
+      "radius": 11,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_44",
+      "material": "Dirt",
+      "x": 1255.84,
+      "z": 5288.73,
+      "radius": 10.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_45",
+      "material": "Dirt",
+      "x": 1595.69,
+      "z": 5286.19,
+      "radius": 9.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_46",
+      "material": "Dirt",
+      "x": 1175.64,
+      "z": 5299.92,
+      "radius": 8.9,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_47",
+      "material": "Dirt",
+      "x": 1255.05,
+      "z": 5300.8,
+      "radius": 9.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_48",
+      "material": "Dirt",
+      "x": 1592.94,
+      "z": 5306.03,
+      "radius": 10.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_49",
+      "material": "Dirt",
+      "x": 1177.3,
+      "z": 5324.48,
+      "radius": 9.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_50",
+      "material": "Dirt",
+      "x": 1259.42,
+      "z": 5320.03,
+      "radius": 9.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_51",
+      "material": "Dirt",
+      "x": 1589.22,
+      "z": 5315.62,
+      "radius": 11.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_52",
+      "material": "Dirt",
+      "x": 1260.17,
+      "z": 5337.62,
+      "radius": 8.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_53",
+      "material": "Dirt",
+      "x": 1592.83,
+      "z": 5333.04,
+      "radius": 11.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_54",
+      "material": "Dirt",
+      "x": 1196.69,
+      "z": 5350.35,
+      "radius": 9.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_55",
+      "material": "Dirt",
+      "x": 1210.37,
+      "z": 5368.84,
+      "radius": 9.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_56",
+      "material": "Dirt",
+      "x": 1208.34,
+      "z": 5387.16,
+      "radius": 10.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_57",
+      "material": "Dirt",
+      "x": 1224.97,
+      "z": 5403.2,
+      "radius": 8.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_58",
+      "material": "Dirt",
+      "x": 1594.37,
+      "z": 5417.27,
+      "radius": 10,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_59",
+      "material": "Dirt",
+      "x": 1236.51,
+      "z": 5435.93,
+      "radius": 10.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_60",
+      "material": "Dirt",
+      "x": 1596.05,
+      "z": 5431.43,
+      "radius": 9.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_61",
+      "material": "Dirt",
+      "x": 1255.86,
+      "z": 5447.2,
+      "radius": 10.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_62",
+      "material": "Dirt",
+      "x": 1589.99,
+      "z": 5445.61,
+      "radius": 10,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_63",
+      "material": "Dirt",
+      "x": 1274.09,
+      "z": 5468.52,
+      "radius": 10.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_64",
+      "material": "Dirt",
+      "x": 1589.2,
+      "z": 5467.8,
+      "radius": 11.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_65",
+      "material": "Dirt",
+      "x": 1287.29,
+      "z": 5479.36,
+      "radius": 11.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_66",
+      "material": "Dirt",
+      "x": 1300.31,
+      "z": 5483.57,
+      "radius": 8.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_67",
+      "material": "Dirt",
+      "x": 1588.83,
+      "z": 5475.96,
+      "radius": 8.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_68",
+      "material": "Dirt",
+      "x": 1306.96,
+      "z": 5493.45,
+      "radius": 10.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_69",
+      "material": "Dirt",
+      "x": 1573.69,
+      "z": 5511.85,
+      "radius": 9.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_70",
+      "material": "Dirt",
+      "x": 1574.09,
+      "z": 5530.66,
+      "radius": 11.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_71",
+      "material": "Dirt",
+      "x": 1574.94,
+      "z": 5545.78,
+      "radius": 11,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_72",
+      "material": "Dirt",
+      "x": 1576,
+      "z": 5559.84,
+      "radius": 11.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_73",
+      "material": "Dirt",
+      "x": 1578.57,
+      "z": 5575.38,
+      "radius": 9.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_74",
+      "material": "Dirt",
+      "x": 956.14,
+      "z": 5595.25,
+      "radius": 11.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_75",
+      "material": "Dirt",
+      "x": 972.81,
+      "z": 5606.76,
+      "radius": 11.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_76",
+      "material": "Dirt",
+      "x": 1558.05,
+      "z": 5606.08,
+      "radius": 8.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_77",
+      "material": "Dirt",
+      "x": 1561.64,
+      "z": 5619.2,
+      "radius": 8.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_78",
+      "material": "Dirt",
+      "x": 1560.59,
+      "z": 5642.22,
+      "radius": 9.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_79",
+      "material": "Dirt",
+      "x": 1556.52,
+      "z": 5657.9,
+      "radius": 8.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_80",
+      "material": "Dirt",
+      "x": 1563.75,
+      "z": 5667.3,
+      "radius": 11.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_81",
+      "material": "Dirt",
+      "x": 1555.76,
+      "z": 5686.99,
+      "radius": 8.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_82",
+      "material": "Dirt",
+      "x": 1563.89,
+      "z": 5707.26,
+      "radius": 8.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_83",
+      "material": "Dirt",
+      "x": 1556.27,
+      "z": 5756.3,
+      "radius": 11.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_84",
+      "material": "Dirt",
+      "x": 1564.3,
+      "z": 5766.74,
+      "radius": 9.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_85",
+      "material": "Dirt",
+      "x": 1546.96,
+      "z": 5829.69,
+      "radius": 9.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_86",
+      "material": "Dirt",
+      "x": 1541.69,
+      "z": 5851.15,
+      "radius": 11.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_87",
+      "material": "Dirt",
+      "x": 1546.42,
+      "z": 5868.64,
+      "radius": 8.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_88",
+      "material": "Dirt",
+      "x": 1541.44,
+      "z": 5881.45,
+      "radius": 11,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_89",
+      "material": "Dirt",
+      "x": 1546.34,
+      "z": 5899.35,
+      "radius": 11.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_90",
+      "material": "Dirt",
+      "x": 1527.15,
+      "z": 5926.48,
+      "radius": 11.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_91",
+      "material": "Dirt",
+      "x": 1098.4,
+      "z": 5947.82,
+      "radius": 9.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_92",
+      "material": "Dirt",
+      "x": 1528.46,
+      "z": 5947.38,
+      "radius": 9.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_93",
+      "material": "Dirt",
+      "x": 1145.77,
+      "z": 5955.92,
+      "radius": 10.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_94",
+      "material": "Dirt",
+      "x": 1162.38,
+      "z": 5956.78,
+      "radius": 9.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_95",
+      "material": "Dirt",
+      "x": 1173.38,
+      "z": 5978.34,
+      "radius": 10.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_96",
+      "material": "Dirt",
+      "x": 1513.16,
+      "z": 5978.64,
+      "radius": 9.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_97",
+      "material": "Dirt",
+      "x": 1491.75,
+      "z": 5995.83,
+      "radius": 11.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_98",
+      "material": "Dirt",
+      "x": 1494.06,
+      "z": 6004.33,
+      "radius": 8.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_99",
+      "material": "Dirt",
+      "x": 1480.99,
+      "z": 6027.32,
+      "radius": 11,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_100",
+      "material": "Dirt",
+      "x": 1463.41,
+      "z": 6036.55,
+      "radius": 12,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_101",
+      "material": "Dirt",
+      "x": 1461.46,
+      "z": 6058.12,
+      "radius": 10.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_102",
+      "material": "Dirt",
+      "x": 1444.59,
+      "z": 6068.91,
+      "radius": 10,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_103",
+      "material": "Dirt",
+      "x": 1443.12,
+      "z": 6085.49,
+      "radius": 9.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_104",
+      "material": "Dirt",
+      "x": 1451.45,
+      "z": 6104.92,
+      "radius": 10.9,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_105",
+      "material": "Dirt",
+      "x": 1446.18,
+      "z": 6115.04,
+      "radius": 11.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_106",
+      "material": "Dirt",
+      "x": 1274.99,
+      "z": 6131.05,
+      "radius": 11.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_107",
+      "material": "Dirt",
+      "x": 1443.99,
+      "z": 6132.18,
+      "radius": 8.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_108",
+      "material": "Dirt",
+      "x": 1272.03,
+      "z": 6150.4,
+      "radius": 9.9,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_109",
+      "material": "Dirt",
+      "x": 1452.19,
+      "z": 6151.33,
+      "radius": 11,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_110",
+      "material": "Dirt",
+      "x": 1446.4,
+      "z": 6172.47,
+      "radius": 8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_111",
+      "material": "Dirt",
+      "x": 1449.72,
+      "z": 6181.36,
+      "radius": 11.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_112",
+      "material": "Dirt",
+      "x": 1240.6,
+      "z": 6199.92,
+      "radius": 9.9,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_113",
+      "material": "Dirt",
+      "x": 1466.96,
+      "z": 6211.8,
+      "radius": 10.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_114",
+      "material": "Dirt",
+      "x": 1268.55,
+      "z": 6265.03,
+      "radius": 10.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_115",
+      "material": "Dirt",
+      "x": 1283.23,
+      "z": 6293.3,
+      "radius": 9.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_116",
+      "material": "Dirt",
+      "x": 1572.52,
+      "z": 6300.89,
+      "radius": 8.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_117",
+      "material": "Dirt",
+      "x": 1589.81,
+      "z": 6315,
+      "radius": 11.3,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_118",
+      "material": "Dirt",
+      "x": 1355.43,
+      "z": 6342.41,
+      "radius": 8.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_119",
+      "material": "Dirt",
+      "x": 1628.2,
+      "z": 6346.43,
+      "radius": 9.5,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_120",
+      "material": "Dirt",
+      "x": 1364.18,
+      "z": 6357.39,
+      "radius": 11,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_121",
+      "material": "Dirt",
+      "x": 1386.42,
+      "z": 6361.72,
+      "radius": 9.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_122",
+      "material": "Dirt",
+      "x": 1399.25,
+      "z": 6372.73,
+      "radius": 9.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_123",
+      "material": "Dirt",
+      "x": 1642.85,
+      "z": 6378.58,
+      "radius": 10,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_124",
+      "material": "Dirt",
+      "x": 1414.2,
+      "z": 6387.03,
+      "radius": 11.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_125",
+      "material": "Dirt",
+      "x": 1654.68,
+      "z": 6396.44,
+      "radius": 10.1,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_126",
+      "material": "Dirt",
+      "x": 1432.56,
+      "z": 6407.8,
+      "radius": 8.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_127",
+      "material": "Dirt",
+      "x": 1444.73,
+      "z": 6410.67,
+      "radius": 9.8,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_128",
+      "material": "Dirt",
+      "x": 1465.21,
+      "z": 6419.59,
+      "radius": 8.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_129",
+      "material": "Dirt",
+      "x": 1668.79,
+      "z": 6427.29,
+      "radius": 11.6,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_130",
+      "material": "Dirt",
+      "x": 1516,
+      "z": 6441.4,
+      "radius": 11,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_131",
+      "material": "Dirt",
+      "x": 1523.94,
+      "z": 6457.78,
+      "radius": 11.4,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_132",
+      "material": "Dirt",
+      "x": 1690.85,
+      "z": 6455.13,
+      "radius": 11.7,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_133",
+      "material": "Dirt",
+      "x": 1685.13,
+      "z": 6472.98,
+      "radius": 8.2,
+      "strength": 0.7
+    },
+    {
+      "id": "n3-drawdown-dirt_134",
+      "material": "Dirt",
+      "x": 1692.36,
+      "z": 6486.67,
+      "radius": 8.9,
+      "strength": 0.7
+    }
+  ]
+}

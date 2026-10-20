@@ -126,5 +126,6 @@ public static class PaintPlan
     /// <summary>The paint plan's morphology: closed then opened by two cells.</summary>
     public static bool[] CloseOpen(bool[] m, int n) => Open(Open(Close(Close(m, n), n), n), n);
     public static bool[] Grow(bool[] m, int n) => Dilate(m, n);
+    public static bool[] CloseOnly(bool[] m, int n) => Close(Close(m, n), n);
     static bool[] Close(bool[] m, int n) => Erode(Dilate(m, n), n);
 }

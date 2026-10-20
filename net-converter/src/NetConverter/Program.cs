@@ -935,7 +935,8 @@ void WriteLayers()
         auditLog.AppendLine($"- Grass surfaces: {pairs} overlapping pairs merged in {groups} groups ({grass.Count} → {u.Count}).");
         grass = u;
     }
-    if (grass.Count > 0) Surfaces.Write(Path.Combine(outDir, "import-surfaces-grass.json"), "surfaces-grass", grass, "OPTIONAL: Landscape Grass props clustered (DBSCAN 12 m, >= 5 tufts), convex hull padded 3 m, clipped to ±7168.");
+    // Round 27 (owner policy): no area Grass Surface of any kind; the Lush / Dry brushes paint grass.
+    File.Delete(Path.Combine(outDir, "import-surfaces-grass.json"));
     Console.WriteLine(Surfaces.Stats($"grass ({tufts.Count} tufts)", grass));
     extra.AppendLine($"- {Surfaces.Stats($"Grass surfaces from {tufts.Count} Landscape Grass props (import-surfaces-grass.json, optional)", grass)}.");
 
@@ -1226,6 +1227,24 @@ void WriteLayers()
             string what = FormattableString.Invariant($"material {l.Material}, {l.Role}: {l.Polygons.Count} polygons, {l.Strokes?.Count ?? 0} strokes, {km2:F2} km², softEdge {l.SoftEdge} m{(l.Optional ? ", not imported" : "")}");
             Console.WriteLine($"terrain paint {what} -> {Path.GetRelativePath(outDir, tpPath)}");
             extra.AppendLine($"- Terrain paint {Path.GetRelativePath(outDir, tpPath)}: {what}.");
+        }
+        // Round 27: the landscape spots N1–N13 (audit/theme-remake.md §4) as terrain-paint layers, one file per feature and brush.
+        {
+            int[]? Layer(string name) => root.TryGetProperty("naturalResources", out var nr) && nr.TryGetProperty("layers", out var ly) && ly.TryGetProperty(name, out var a) && a.ValueKind == JsonValueKind.Array ? a.EnumerateArray().Select(v => v.GetInt32()).ToArray() : null;
+            (double X, double Z)? upstream = null;
+            var damF = Path.Combine(outDir, "import-dam.json");
+            if (File.Exists(damF))
+                using (var dd = JsonDocument.Parse(File.ReadAllBytes(damF)))
+                {
+                    var dn = dd.RootElement.GetProperty("nodes").EnumerateArray().ToDictionary(x => x.GetProperty("id").GetString()!);
+                    if (dn.TryGetValue("damW", out var dw) && dn.TryGetValue("damE", out var de))
+                        upstream = Round8.InDamFrame(new Round8.DamFrame(dw.GetProperty("x").GetDouble(), dw.GetProperty("z").GetDouble(), de.GetProperty("x").GetDouble(), de.GetProperty("z").GetDouble(), 0), (-152, 80));   // the reservoir side
+                }
+            var blds = root.GetProperty("buildings").EnumerateArray().Select(b => b.GetProperty("position").EnumerateArray().Select(v => v.GetDouble()).ToArray()).Select(p => (p[0], p[2])).ToList();
+            var featLog = new List<string>();
+            foreach (var l in TerrainFeatures.Build(new TerrainFeatures.Inputs(planIn, Layer("ore"), Layer("oil"), result.Edges, blds, upstream), featLog))
+                TerrainPaint.Write(Path.Combine(outDir, l.File), l);
+            foreach (var l in featLog) { Console.WriteLine("terrain paint " + l); extra.AppendLine($"- Terrain paint {l}."); }
         }
         Surfaces.Write(Path.Combine(outDir, "import-surfaces-sand.json"), "surfaces-sand", plan.Sand,
             "Paint plan S1/S3/S4 (audit/theme-remake.md §4): Sand Surface 01 on CS1 sand within 25 m of the water or ≤ 2 m above it; Sand Surface 02 on the other CS1 sand and on the CS1 dirt decals; none under water deeper than 1.5 m. 16 m grid, open/close one cell, simplified 4 m.");

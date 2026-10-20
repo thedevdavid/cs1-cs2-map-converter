@@ -38,18 +38,19 @@ const list = s => (s ? s.split(",").map(x => x.trim()).filter(Boolean) : []);
 const skip = new Set(list(opt("--skip", ""))), only = new Set(list(opt("--only", ""))), withOpt = new Set(list(opt("--with", "")));
 if (args.includes("--po-structures")) withOpt.add("po-structures");
 // Round 26: terrain-paint overrides without regenerating, e.g. --paint sand.strength=0.4,all.softEdge=25,dry.feather=0,dirt.radius=14
-//   layers: sand, dry (dry-grass), dirt (bare-earth), all; keys: strength (main pass), softEdge, feather (feather-pass strength, 0 = no feather pass),
+//   layers: sand, dry (dry-grass), dirt (bare-earth), lush, all, or one landscape feature n1 … n13 (round 27); keys: strength (main pass), softEdge, feather (feather-pass strength, 0 = no feather pass),
 //   radius (dirt strokes, main pass; the feather stroke stays 10 m larger).
 const paintOpt = {};
 for (const kv of list(opt("--paint", ""))) {
-  const m = kv.match(/^(sand|dry|dry-grass|dirt|bare-earth|all)\.(strength|softEdge|feather|radius)=([\d.]+)$/);
+  const m = kv.match(/^(sand|dry|dry-grass|dirt|bare-earth|lush|all|n\d{1,2})\.(strength|softEdge|feather|radius)=([\d.]+)$/);
   if (!m) { console.error(`--paint: cannot read "${kv}"`); process.exit(2); }
   const layer = { "dry-grass": "dry", "bare-earth": "dirt" }[m[1]] ?? m[1];
   (paintOpt[layer] ??= {})[m[2]] = +m[3];
 }
-const paintLayer = file => /sand/.test(file) ? "sand" : /dry/.test(file) ? "dry" : /earth|dirt/.test(file) ? "dirt" : "other";
+const paintLayer = file => /sand\.json$/.test(file) ? "sand" : /dry/.test(file) ? "dry" : /lush/.test(file) ? "lush" : /earth|dirt/.test(file) ? "dirt" : "other";
+const paintFeature = file => (file.match(/terrain-paint-(n\d{1,2})-/) ?? [])[1];
 function applyPaint(body, file) {
-  const o = { ...(paintOpt.all ?? {}), ...(paintOpt[paintLayer(file)] ?? {}) };
+  const o = { ...(paintOpt.all ?? {}), ...(paintOpt[paintLayer(file)] ?? {}), ...(paintOpt[paintFeature(file)] ?? {}) };
   if (Object.keys(o).length === 0) return "";
   const feather = x => /_f$/.test(x.id);
   for (const k of ["polygons", "strokes"]) {
@@ -100,8 +101,12 @@ const steps = [
   // Round 24: terrain material paint (editor Terrain → Materials, bridge 0.9.29): Sand, Dry, Dirt, right after the surfaces. Each file is dry-run
   // first (stamps per item); a file over options.maxStamps is posted in chunks under the cap. No rock layer (the game paints rock on slopes itself).
   ["terrain-paint", "/import/terrain-paint", ["import-terrain-paint-sand.json", "import-terrain-paint-dry-grass.json", "import-terrain-paint-bare-earth.json"].map(p)],
+  // Round 27: landscape spots N1–N13 (audit/theme-remake.md §4), plan order; each its own step (--skip paint-n7 etc.), files per brush.
+  ...[["paint-n1", ["n1-riparian-lush"]], ["paint-n12", ["n12-fertile-dry"]], ["paint-n13", ["n13-high-ground-dry"]], ["paint-n6", ["n6-savanna-dry", "n6-savanna-dirt"]],
+    ["paint-n4", ["n4-hogback-sand"]], ["paint-n5", ["n5-scree-dirt"]], ["paint-n3", ["n3-drawdown-dirt"]], ["paint-n2", ["n2-pit-banks-dirt", "n2-pit-banks-sand"]],
+    ["paint-n8", ["n8-playa-rim-lush", "n8-playa-centre-dirt"]], ["paint-n7", ["n7-prairie-dog-dry", "n7-prairie-dog-dirt"]], ["paint-n11", ["n11-ore-dirt", "n11-oil-dirt"]],
+    ["paint-n9", ["n9-dirt-roads-dirt"]], ["paint-n10", ["n10-rail-ballast-dirt"]]].map(([name, fs]) => [name, "/import/terrain-paint", fs.map(x => p(`import-terrain-paint-${x}.json`))]),
   ["sand-smooth", "/import/surfaces", [p(join("optional", "import-surfaces-sand-smooth.json"))], true],
-  ["grass", "/import/surfaces", [p("import-surfaces-grass.json")], true],
   // Pack surfaces kept in optional/ (Terrain Textures, Dirty Surfaces): only with --with.
   ["rock", "/import/surfaces", [p(join("optional", "import-surfaces-rock.json"))], true],
   ["po-rock", "/import/surfaces", [p(join("optional", "import-surfaces-po-rock.json"))], true],

@@ -1,0 +1,78 @@
+{
+  "name": "terrain-paint-n2-pit-banks-sand",
+  "_comment": "Terrain material paint (editor Terrain \u2192 Materials, POST /import/terrain-paint, bridge 0.9.29): N2 gravel-pit pond shore. CS2 x/z metres, the same at both scales.",
+  "options": {
+    "dryRun": false,
+    "strength": 0.6,
+    "softEdge": 0,
+    "minStamp": 4,
+    "maxStamps": 250000
+  },
+  "polygons": [],
+  "strokes": [
+    {
+      "id": "n2-pit-banks-sand_1",
+      "material": "Sand",
+      "x": 4090.78,
+      "z": -6871.27,
+      "radius": 6,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-sand_2",
+      "material": "Sand",
+      "x": 4074.24,
+      "z": -6858.75,
+      "radius": 5.4,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-sand_3",
+      "material": "Sand",
+      "x": 4106.7,
+      "z": -6853.71,
+      "radius": 6.6,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-sand_4",
+      "material": "Sand",
+      "x": 4088.31,
+      "z": -6836.01,
+      "radius": 5.5,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-sand_5",
+      "material": "Sand",
+      "x": 3275.86,
+      "z": -6057.94,
+      "radius": 7.3,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-sand_6",
+      "material": "Sand",
+      "x": 3287.22,
+      "z": -6040.93,
+      "radius": 7.5,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-sand_7",
+      "material": "Sand",
+      "x": 328.25,
+      "z": 2199.21,
+      "radius": 4.9,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-sand_8",
+      "material": "Sand",
+      "x": 215.47,
+      "z": 2347.34,
+      "radius": 5.3,
+      "strength": 0.6
+    }
+  ]
+}

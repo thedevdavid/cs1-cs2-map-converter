@@ -237,3 +237,31 @@ Diagnosis: A against live-graph-20261020-211001-end.json and the run report; B, 
   - **Option 3:** 400 m NW, one 976 m `BXP Double Deck Suspension Bridge - Highway` (the game cuts 3 × 325 m), with `… - Lower Highway` 8 m below running the other way. The 8 m is a guess; TODO: measure live. Plus 150 m 3-lane one-way stubs.
   - **Deck height:** as BR001.
   - **Land:** the 976 m river part includes the banks. BR001's own line is about a third over land, the test lines about the same (41 / 46 of 123), so there is no island.
+
+## Round 27: landscape spots N1–N13 as terrain paint (audit/theme-remake.md §4, revised)
+
+There is one file per feature and brush, `import-terrain-paint-<nN>-<feature>-<brush>.json`, identical at both scales. Each feature is its own runner step
+(paint-n1 … paint-n13, on by default, in the plan order N1, N12, N13, N6, N4, N5, N3, N2, N8, N7, N11, N9, N10, all after the round-24 Sand / Dry / Dirt).
+Areas are organic polygons with the round-26 feather pass (0.2, one cell out); rings, streaks and dabs are strokes with radius and position jittered,
+seeded per feature. `--paint` overrides any layer: brush (sand / dry / dirt / lush), feature (n1 … n13) or all.
+
+| # | file(s) | brush, strength | result (x1) |
+|---|---|---|---|
+| N1 | n1-riparian-lush | Lush 0.6, soft 30 m | 73 polygons, 1.17 km²: ≤ 150 m from water, ≤ 4 m above it, not sand |
+| N12 | n12-fertile-dry | Dry 0.35 | 276 polygons, 15.15 km²: fertility ≥ 0.5, not field / forest |
+| N13 | n13-high-ground-dry | Dry 0.5 | 97 polygons, 11.40 km² above the treeline 589 m (99th percentile of tree cells), slope < 30° |
+| N6 | n6-savanna-dry + n6-savanna-dirt | Dry 0.4 + Dirt 0.45 dabs r 4–8 | 1 334 polygons, 41.37 km² + 40 029 dabs: foothill band, 1–6 trees per cell |
+| N4 | n4-hogback-sand | Sand 0.5 | 31 644 strokes in 3-stroke streaks along the contour: band, 18–38°, east-facing |
+| N5 | n5-scree-dirt | Dirt 0.8 | 80 polygons, 0.47 km²: 28–40° within 60 m below ≥ 45° |
+| N3 | n3-drawdown-dirt | Dirt 0.7 | 134 strokes: 0–2.5 m above the reservoir (level 157.5 m, flooded at ± 1.5 m from the upstream water) |
+| N2 | n2-pit-banks-dirt + n2-pit-banks-sand | Dirt 0.6 / Sand 0.6 | 13 + 8 strokes: 5 small ponds within 1.5 km of the river with flat banks |
+| N8 | n8-playa-rim-lush + n8-playa-centre-dirt | Lush 0.5 / Dirt 0.6 | 80 playas (priority-flood fill, depth 0.4–3 m, 0.5–20 ha): 0.58 + 0.92 km² |
+| N7 | n7-prairie-dog-dry + n7-prairie-dog-dirt | Dry 0.8 + Dirt 0.5 dabs | 1 town (0.04 km², 162 mounds) |
+| N11 | n11-ore-dirt + n11-oil-dirt | Dirt 0.5 / Dirt 0.3 | ore 8.74 km², oil 57.32 km² (CS1 resource ≥ 0.4) |
+| N9 | n9-dirt-roads-dirt | Dirt 0.5 | 12 274 strokes along gravel / dirt roads, half-width + 4 m |
+| N10 | n10-rail-ballast-dirt | Dirt 0.35 | 4 418 strokes along ground rail with ≤ 6 buildings within 300 m |
+
+- **N7:** only 1 km² qualifies (flat plains with no tree within 100 m). The rate of 1 town per 12 km² gives 0, so the converter places at least one town when 0.5 km² or more qualifies.
+- **N11 oil:** the CS1 oil layer covers 57 km² at ≥ 0.4. At strength 0.3 that is a big tint; `--skip paint-n11` or `--paint n11.strength=0.15` to tone it.
+- **Policy:** no area Grass Surface of any kind. import-surfaces-grass.json is no longer written and its runner step is gone. The sand area surfaces stay for the comparison.
+- **Canyon road:** waiting for hm-rebuild's new inner heightmap. The road-terrain check re-runs against it when it is reported (`--cs2-heightmap <png>`).

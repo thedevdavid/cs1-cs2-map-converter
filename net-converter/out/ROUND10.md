@@ -9,10 +9,46 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (2×) | 956 polygons, 0 strokes | 5.0 MB |
 | 0 | `out\import-terrain-paint-bare-earth.json` | ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals) (2×) | 0 polygons, 256 strokes | 0.0 MB |
 | 0 | `out\optional\import-terrain-paint-rock.json` | rock mask, NOT imported (no rock material) (2×) | 214 polygons, 0 strokes | 0.2 MB |
+| 0 | `out\import-terrain-paint-n1-riparian-lush.json` | ROUND 27 terrain paint N1 Lush (2×) | 153 polygons, 0 strokes | 0.7 MB |
+| 0 | `out\import-terrain-paint-n2-pit-banks-dirt.json` | ROUND 27 terrain paint N2 Dirt (2×) | 0 polygons, 13 strokes | 0.0 MB |
+| 0 | `out\import-terrain-paint-n2-pit-banks-sand.json` | ROUND 27 terrain paint N2 Sand (2×) | 0 polygons, 8 strokes | 0.0 MB |
+| 0 | `out\import-terrain-paint-n3-drawdown-dirt.json` | ROUND 27 terrain paint N3 Dirt (2×) | 0 polygons, 134 strokes | 0.0 MB |
+| 0 | `out\import-terrain-paint-n4-hogback-sand.json` | ROUND 27 terrain paint N4 Sand (2×) | 0 polygons, 31644 strokes | 5.1 MB |
+| 0 | `out\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (2×) | 200 polygons, 0 strokes | 0.9 MB |
+| 0 | `out\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (2×) | 0 polygons, 40029 strokes | 6.4 MB |
+| 0 | `out\import-terrain-paint-n6-savanna-dry.json` | ROUND 27 terrain paint N6 Dry (2×) | 1903 polygons, 0 strokes | 20.6 MB |
+| 0 | `out\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 Dirt (2×) | 0 polygons, 162 strokes | 0.0 MB |
+| 0 | `out\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 Dry (2×) | 2 polygons, 0 strokes | 0.0 MB |
+| 0 | `out\import-terrain-paint-n8-playa-centre-dirt.json` | ROUND 27 terrain paint N8 Dirt (2×) | 162 polygons, 0 strokes | 0.6 MB |
+| 0 | `out\import-terrain-paint-n8-playa-rim-lush.json` | ROUND 27 terrain paint N8 Lush (2×) | 191 polygons, 0 strokes | 0.8 MB |
+| 0 | `out\import-terrain-paint-n9-dirt-roads-dirt.json` | ROUND 27 terrain paint N9 Dirt (2×) | 0 polygons, 12253 strokes | 2.0 MB |
+| 0 | `out\import-terrain-paint-n10-rail-ballast-dirt.json` | ROUND 27 terrain paint N10 Dirt (2×) | 0 polygons, 4357 strokes | 0.7 MB |
+| 0 | `out\import-terrain-paint-n11-oil-dirt.json` | ROUND 27 terrain paint N11 Dirt (2×) | 425 polygons, 0 strokes | 8.5 MB |
+| 0 | `out\import-terrain-paint-n11-ore-dirt.json` | ROUND 27 terrain paint N11 Dirt (2×) | 196 polygons, 0 strokes | 1.8 MB |
+| 0 | `out\import-terrain-paint-n12-fertile-dry.json` | ROUND 27 terrain paint N12 Dry (2×) | 475 polygons, 0 strokes | 4.3 MB |
+| 0 | `out\import-terrain-paint-n13-high-ground-dry.json` | ROUND 27 terrain paint N13 Dry (2×) | 175 polygons, 0 strokes | 2.7 MB |
 | 0 | `out\x1\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (1×) | 743 polygons, 0 strokes | 7.1 MB |
 | 0 | `out\x1\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (1×) | 956 polygons, 0 strokes | 5.0 MB |
 | 0 | `out\x1\import-terrain-paint-bare-earth.json` | ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals) (1×) | 0 polygons, 256 strokes | 0.0 MB |
 | 0 | `out\x1\optional\import-terrain-paint-rock.json` | rock mask, NOT imported (no rock material) (1×) | 214 polygons, 0 strokes | 0.2 MB |
+| 0 | `out\x1\import-terrain-paint-n1-riparian-lush.json` | ROUND 27 terrain paint N1 Lush (1×) | 153 polygons, 0 strokes | 0.7 MB |
+| 0 | `out\x1\import-terrain-paint-n2-pit-banks-dirt.json` | ROUND 27 terrain paint N2 Dirt (1×) | 0 polygons, 13 strokes | 0.0 MB |
+| 0 | `out\x1\import-terrain-paint-n2-pit-banks-sand.json` | ROUND 27 terrain paint N2 Sand (1×) | 0 polygons, 8 strokes | 0.0 MB |
+| 0 | `out\x1\import-terrain-paint-n3-drawdown-dirt.json` | ROUND 27 terrain paint N3 Dirt (1×) | 0 polygons, 134 strokes | 0.0 MB |
+| 0 | `out\x1\import-terrain-paint-n4-hogback-sand.json` | ROUND 27 terrain paint N4 Sand (1×) | 0 polygons, 31644 strokes | 5.1 MB |
+| 0 | `out\x1\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (1×) | 200 polygons, 0 strokes | 0.9 MB |
+| 0 | `out\x1\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (1×) | 0 polygons, 40029 strokes | 6.4 MB |
+| 0 | `out\x1\import-terrain-paint-n6-savanna-dry.json` | ROUND 27 terrain paint N6 Dry (1×) | 1903 polygons, 0 strokes | 20.6 MB |
+| 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 Dirt (1×) | 0 polygons, 162 strokes | 0.0 MB |
+| 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 Dry (1×) | 2 polygons, 0 strokes | 0.0 MB |
+| 0 | `out\x1\import-terrain-paint-n8-playa-centre-dirt.json` | ROUND 27 terrain paint N8 Dirt (1×) | 162 polygons, 0 strokes | 0.6 MB |
+| 0 | `out\x1\import-terrain-paint-n8-playa-rim-lush.json` | ROUND 27 terrain paint N8 Lush (1×) | 191 polygons, 0 strokes | 0.8 MB |
+| 0 | `out\x1\import-terrain-paint-n9-dirt-roads-dirt.json` | ROUND 27 terrain paint N9 Dirt (1×) | 0 polygons, 12274 strokes | 2.0 MB |
+| 0 | `out\x1\import-terrain-paint-n10-rail-ballast-dirt.json` | ROUND 27 terrain paint N10 Dirt (1×) | 0 polygons, 4418 strokes | 0.7 MB |
+| 0 | `out\x1\import-terrain-paint-n11-oil-dirt.json` | ROUND 27 terrain paint N11 Dirt (1×) | 425 polygons, 0 strokes | 8.5 MB |
+| 0 | `out\x1\import-terrain-paint-n11-ore-dirt.json` | ROUND 27 terrain paint N11 Dirt (1×) | 196 polygons, 0 strokes | 1.8 MB |
+| 0 | `out\x1\import-terrain-paint-n12-fertile-dry.json` | ROUND 27 terrain paint N12 Dry (1×) | 475 polygons, 0 strokes | 4.3 MB |
+| 0 | `out\x1\import-terrain-paint-n13-high-ground-dry.json` | ROUND 27 terrain paint N13 Dry (1×) | 175 polygons, 0 strokes | 2.7 MB |
 | 1 | `out\import-all.json` | network (2×) | 3781 edges, 3648 nodes | 1.9 MB |
 | 1 | `out\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (2×) | 54 edges, replaces 150 | 0.0 MB |
 | 1 | `out\import-bridges-fixed.json` | fixed-span bridges: BR001 Detroit suspension (one edge) + its 3-lane connectors, right after import-bridges.json (2×) | 5 edges, replaces 55 | 0.0 MB |
@@ -45,7 +81,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\import-objects.json` | objects (2×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
 | 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
 | 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 248 | 0.1 MB |
-| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17562 | 3.2 MB |
+| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17557 | 3.2 MB |
 | 5 | `out\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (2×) | 3 | 0.0 MB |
 | 5 | `out\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (2×) | 201 | 0.0 MB |
 | 5 | `out\optional\import-po-structure-br006-arches.json` | ROUND 22 BR006 variant b: 7 StoneArchRailBridge (135944) under the deck, runner --with po-br006-arches (2×) | 7 | 0.0 MB |
@@ -56,7 +92,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
 | 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 248 | 0.1 MB |
-| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17558 | 3.2 MB |
+| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17553 | 3.2 MB |
 | 5 | `out\x1\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (1×) | 3 | 0.0 MB |
 | 5 | `out\x1\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (1×) | 131 | 0.0 MB |
 | 5 | `out\x1\optional\import-po-structure-br006-arches.json` | ROUND 22 BR006 variant b: 7 StoneArchRailBridge (135944) under the deck, runner --with po-br006-arches (1×) | 7 | 0.0 MB |
@@ -70,11 +106,9 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 7 | `out\x1\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 8 | `out\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
 | 8 | `out\import-surfaces-sand.json` | paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots | 112 polygons | 0.3 MB |
-| 8 | `out\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
 | 8 | `out\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (2×) | 11 polygons | 0.0 MB |
 | 8 | `out\x1\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
 | 8 | `out\x1\import-surfaces-sand.json` | paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots | 112 polygons | 0.3 MB |
-| 8 | `out\x1\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
 | 8 | `out\x1\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (1×) | 11 polygons | 0.0 MB |
 | 9 | `out\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
 | 9 | `out\x1\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
@@ -281,3 +315,43 @@ audit/theme-remake.md §1), the fertility raster, tree density and the heightmap
 - x1 files against A-v7: geometry unchanged (no node or edge added, removed or moved). Only the `noPillars` field differs: import-all.json 145 edges,
   import-bridges.json 4 (br006_c1_e0…e3), import-bridges-fixed.json 4 (br001_in/out connectors). A re-import onto A7b merges the same geometry, and dropping a flag
   removes nothing. Pillars that noPillars already deleted come back only when the game updates those segments.
+
+## Round 26: owner's A-v7 review (shots next-run/shots-a7) + Detroit test layer
+
+Diagnosis: A against live-graph-20261020-211001-end.json and the run report; B, C, D, E and F-ii per edge against the CS1 dump, the import files and the live graph.
+
+- **A (2995, 820), "completely missing interchange":** the game dropped nothing. Every import-all edge in the 600 m box was live (0.00–0.07 m) and the run had 0 failures.
+  - **Cause:** the converter had left out 36 CS1 segments: 11 in the round-12 highway-stub removal and 25 in the round-19 one-way prune.
+  - **Fix:** stubs and branch are kept by default now (`--drop-highway-stubs` restores the old removal). The box has 48 edges, A-v7 had 13. Dead ends 9 → 11; the 2 new ones are CS1's own stub ends at (2293, 277) / (2302, 255).
+  - **Map-wide:** only 4 edges have no live segment within 2 m.
+    - The dam: expected, owned segments.
+    - e25368_0 at (−182, 2388): rail, fused with its twin 2.9 m away.
+    - gap_e25579_0 and gap_e36563_0: their T-ends sit 56 m and 64 m along the through road. The game re-splits the straight run after snapToSegment (bridge-side, same in A-v6).
+- **Systemic causes, all fixed:**
+  - **R1:** game-rule limits ran at half strength at x1 (crossing raise 4 m, ramp 4 %). They are now output metres: limits ÷ YScale in ConvertOptions.
+  - **R2:** the ramp walk spread raises in height above terrain, so on rising terrain a falling elevation became a rising road. It now takes the lower of the absolute and above-terrain ramps, and never rewrites a junction.
+  - **R3:** same-layer crossings were never separated. They now go through the grade-separation pass. A crossing CS1 already cleared by ≥ 8 m is not raised. The round-19 restore pass is off (its split node was clamped back onto the terrain).
+- **B (608, −4721):** fixed by R1–R3; ramps are graded at 8 % in output metres.
+  - **Not fixed:** B5, curved 3/4-lane elevated pieces sagging 5–9 m mid-span. The cause is in the game or bridge (heights from live terrain); it doesn't depend on our file.
+  - **Not fixed:** B4, ramps CS1 itself had at 3–7 m (hand-placed walls). They stay in the wall band.
+- **C (−4224, −60):** the ramps over the Medium Road now stand 8.4 m above it (A-v7: 0.7 m), and the stacked restore node is gone.
+- **D (BR005):** with two approaches at one deck end, only the through approach is straightened, so the side ramp keeps its tangent and no stub forms. The same applies to BR009.
+  - **Unverified:** the carriageway centres are 15.7 m apart (decks 3.7 m apart). Whether the two BXP arches clip needs a live look.
+- **E (BR001):** each connector is a curve that leaves the deck end 12° off the axis and arrives parallel to its carriageway. Leg centres are 7 / 12 / 15 / 16.5 m apart at 20 / 40 / 60 / 100 m (A-v7: 16 m only at 140 m). Same elevations.
+- **F:**
+  - **(i) Access roads:** import-access-roads.json (runner step `access` after the dam) adds Gravel Roads from e1619_0 to the substation front (41 m) and from e33625_0 to 6 m past the dam's east end (144 m). Whether the plant picks up that road is unverified.
+  - **(ii) BR002 hump:** this is the bridge south of the dam, and its deck had no lift. The hump came from an unneeded crossing raise spread by the old ramp walk (R2/R3); it is fixed.
+  - **(ii) Raised bridges:**
+    - BR017, BR033 and BR038 go as one edge: the middle already stands ≥ 8 m, so no lift.
+    - BR020 +3.9, BR044 +2.2, BR049 +7.3, BR050 +4.7 and BR053 +8.3 m are lifted, with one climb at ≤ 3 % from up to 300 m back.
+    - BR028 and BR045 keep their base prefab: a 3 % climb would need more than 300 m.
+- **G:** every PO piece is terrain-like and already baked into the heightmap.
+  - **PO rocks:** po-rocks v4 keeps only the boulder class (Boulder01–08 and rzrock). 473 cliff pieces are dropped, 72 in water are dropped, 0 sat on a net corridor; 248 are left.
+  - **Canyon road:** the west canyon road problem is the heightmap. road-terrain-mismatch.json and .md list 62 ground courses more than 2 m off the playable heightmap (up to 34.5 m at (−6500, 1000)) for hm-rebuild to carve or fill.
+  - **(−3000, −5500):** no roads there, only rocks.
+- **H (terrain paint):** main pass strength 0.45, softEdge 20 m. A feather pass at strength 0.2 uses the mask grown by one 16 m cell, smoothed on its own (0 self-intersections). Per-layer overrides without regenerating: `--paint sand.strength=0.4,all.softEdge=25,dry.feather=0,dirt.radius=14`.
+- **Detroit test** (import-detroit-test.json, runner step `detroit-test` after the dam, standalone, bypassValidation, undoable):
+  - **Option 2:** 200 m NW, 2 × 362 m `BXP Suspension Bridge - Highway Twoway - 6 Lanes` between the CS1 tower positions, plus 150 m `Highway Twoway - 4 lanes` stubs. No vanilla 6-lane two-way highway is known.
+  - **Option 3:** 400 m NW, one 976 m `BXP Double Deck Suspension Bridge - Highway` (the game cuts 3 × 325 m), with `… - Lower Highway` 8 m below running the other way. The 8 m is a guess; TODO: measure live. Plus 150 m 3-lane one-way stubs.
+  - **Deck height:** as BR001.
+  - **Land:** the 976 m river part includes the banks. BR001's own line is about a third over land, the test lines about the same (41 / 46 of 123), so there is no island.

@@ -68,6 +68,11 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : j.sources ? `${j.sources.length} sources` : `${j.edges.length} edges`); }
   for (const [f, what] of [["import-terrain-paint-sand.json", "ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m"], ["import-terrain-paint-dry-grass.json", "ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m"], ["import-terrain-paint-bare-earth.json", "ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals)"], [join("optional", "import-terrain-paint-rock.json"), "rock mask, NOT imported (no rock material)"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(0, p(f), `${what} (${scale})`, `${j.polygons.length} polygons, ${(j.strokes ?? []).length} strokes`); }
+  // Round 27: the landscape spots N1–N13 (audit/theme-remake.md §4).
+  for (const tf of existsSync(dir) ? readdirSync(dir).filter(x => /^import-terrain-paint-n\d+-.*\.json$/.test(x)).sort((x, y) => parseInt(x.match(/-n(\d+)-/)[1]) - parseInt(y.match(/-n(\d+)-/)[1])) : []) {
+    const j = J(p(tf)); const brush = (j.polygons[0] ?? j.strokes[0])?.material ?? "?";
+    add(0, p(tf), `ROUND 27 terrain paint ${tf.match(/-(n\d+)-/)[1].toUpperCase()} ${brush} (${scale})`, `${j.polygons.length} polygons, ${j.strokes.length} strokes`);
+  }
   for (const [f, what] of [["import-po-structures.json", "ROUND 9 pavement tops of the PO paved blocks"]])
     if (existsSync(p(f))) add(8, p(f), `${what} (${scale})`, `${J(p(f)).surfaces.length} polygons`);
   if (existsSync(p("import-po-candidates.json"))) add(5, p("import-po-candidates.json"), `Procedural Object candidates, UNVERIFIED (${scale})`, `${J(p("import-po-candidates.json")).objects.length}`);

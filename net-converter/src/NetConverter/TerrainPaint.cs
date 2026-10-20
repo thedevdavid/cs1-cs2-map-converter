@@ -19,7 +19,8 @@ namespace NetConverter;
 public static class TerrainPaint
 {
     public sealed record Layer(string File, string Material, string Role, List<(string Id, List<(double X, double Z)> Ring, string Note)> Polygons,
-        List<(string Id, double X, double Z, double Radius)>? Strokes = null, double SoftEdge = 0, bool Optional = false, List<List<(double X, double Z)>>? Feather = null);
+        List<(string Id, double X, double Z, double Radius)>? Strokes = null, double SoftEdge = 0, bool Optional = false, List<List<(double X, double Z)>>? Feather = null,
+        double Strength = TerrainPaint.Strength, bool FeatherStrokes = true);
 
     /// <summary>Editor material names (bridge 0.9.29). "Rock" has no material; that layer is written to optional/ and not imported.</summary>
     public static readonly Dictionary<string, string> Materials = new()
@@ -111,7 +112,7 @@ public static class TerrainPaint
             ? $"NOT IMPORTED: {l.Role}. The game has no rock material (the terrain shader puts rock on steep slopes itself); kept as a mask only."
             : $"Terrain material paint (editor Terrain → Materials, POST /import/terrain-paint, bridge 0.9.29): {l.Role}. CS2 x/z metres, the same at both scales.");
         w.WriteStartObject("options");
-        w.WriteBoolean("dryRun", false); w.WriteNumber("strength", Strength); w.WriteNumber("softEdge", l.SoftEdge); w.WriteNumber("minStamp", 4); w.WriteNumber("maxStamps", MaxStamps);
+        w.WriteBoolean("dryRun", false); w.WriteNumber("strength", l.Strength); w.WriteNumber("softEdge", l.SoftEdge); w.WriteNumber("minStamp", 4); w.WriteNumber("maxStamps", MaxStamps);
         w.WriteEndObject();
         void Poly(string id, List<(double X, double Z)> ring, double strength, string note)
         {
@@ -131,7 +132,7 @@ public static class TerrainPaint
         int fk = 0;
         string ftag = l.Polygons.Count > 0 ? string.Join("_", l.Polygons[0].Id.Split('_')[..2]) : "tp";
         if (!l.Optional) foreach (var ring in l.Feather ?? new()) Poly($"{ftag}_{++fk}_f", ring, FeatherStrength, "feather pass, one 16 m cell outside");
-        foreach (var (id, ring, note) in l.Polygons) Poly(id, ring, Strength, note);
+        foreach (var (id, ring, note) in l.Polygons) Poly(id, ring, l.Strength, note);
         w.WriteEndArray();
         w.WriteStartArray("strokes");
         void Stroke(string id, double x, double z, double r, double strength)
@@ -141,8 +142,8 @@ public static class TerrainPaint
             w.WriteNumber("x", x); w.WriteNumber("z", z); w.WriteNumber("radius", r); w.WriteNumber("strength", strength);
             w.WriteEndObject();
         }
-        foreach (var (id, x, z, r) in l.Strokes ?? new()) Stroke(id + "_f", x, z, r + FeatherOut, FeatherStrength);
-        foreach (var (id, x, z, r) in l.Strokes ?? new()) Stroke(id, x, z, r, Strength);
+        if (l.FeatherStrokes) foreach (var (id, x, z, r) in l.Strokes ?? new()) Stroke(id + "_f", x, z, r + FeatherOut, FeatherStrength);
+        foreach (var (id, x, z, r) in l.Strokes ?? new()) Stroke(id, x, z, r, l.Strength);
         w.WriteEndArray();
         w.WriteEndObject();
     }

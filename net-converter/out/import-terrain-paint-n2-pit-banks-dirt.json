@@ -1,0 +1,118 @@
+{
+  "name": "terrain-paint-n2-pit-banks-dirt",
+  "_comment": "Terrain material paint (editor Terrain \u2192 Materials, POST /import/terrain-paint, bridge 0.9.29): N2 gravel-pit pond banks, 5 ponds. CS2 x/z metres, the same at both scales.",
+  "options": {
+    "dryRun": false,
+    "strength": 0.6,
+    "softEdge": 0,
+    "minStamp": 4,
+    "maxStamps": 250000
+  },
+  "polygons": [],
+  "strokes": [
+    {
+      "id": "n2-pit-banks-dirt_1",
+      "material": "Dirt",
+      "x": 4155.82,
+      "z": -7018.79,
+      "radius": 11.9,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_2",
+      "material": "Dirt",
+      "x": 4069.2,
+      "z": -6873.21,
+      "radius": 10.1,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_3",
+      "material": "Dirt",
+      "x": 4090.78,
+      "z": -6871.27,
+      "radius": 12.3,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_4",
+      "material": "Dirt",
+      "x": 4074.24,
+      "z": -6858.75,
+      "radius": 8.5,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_5",
+      "material": "Dirt",
+      "x": 4106.7,
+      "z": -6853.71,
+      "radius": 12.8,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_6",
+      "material": "Dirt",
+      "x": 4088.31,
+      "z": -6836.01,
+      "radius": 10.9,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_7",
+      "material": "Dirt",
+      "x": 3275.86,
+      "z": -6057.94,
+      "radius": 8.6,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_8",
+      "material": "Dirt",
+      "x": 3287.22,
+      "z": -6040.93,
+      "radius": 11.4,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_9",
+      "material": "Dirt",
+      "x": 328.25,
+      "z": 2199.21,
+      "radius": 10.8,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_10",
+      "material": "Dirt",
+      "x": 521.57,
+      "z": 2279.45,
+      "radius": 12.3,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_11",
+      "material": "Dirt",
+      "x": 219.04,
+      "z": 2331.31,
+      "radius": 7.7,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_12",
+      "material": "Dirt",
+      "x": 215.47,
+      "z": 2347.34,
+      "radius": 9.5,
+      "strength": 0.6
+    },
+    {
+      "id": "n2-pit-banks-dirt_13",
+      "material": "Dirt",
+      "x": 532.66,
+      "z": 2347.45,
+      "radius": 7.8,
+      "strength": 0.6
+    }
+  ]
+}
