@@ -63,9 +63,16 @@ Recommendation: exclude group roots 27 and 288 from `PavedStructures`, keep grou
 | **Tigons Rail Infrastructure Pack** (133250) | lessgo + clone | nets `Stone Pillar Bridge - Train`, `Truss Arch Bridge - Train`, `Tied Arch Bridge 4 Track - Train` (+ `Plain`). **New for PLAN.md:** a stone-pillar rail viaduct net for BR007 Ourense / BR010 Pedrido approaches |
 | CS KR Stream Park (142259) | lessgo + clone | `CSKRStoneWall8m`, `CSKRStoneWallBridge24m` (small stone walls) |
 | Culverts 1 (156959) | lessgo only | `MacLukCulvert001…007` (small culvert mouths) |
-| Art Deco Walls, Tunnels and Bridges Set (157964) | **not downloaded**, in no playset | WEB_157964 |
+| Art Deco Walls, Tunnels and Bridges Set (157964) | **not downloaded**, in no playset | contains **arched art-deco tunnel portals** (narrow and wide, with wing walls; one shown over a 2-lane road tunnel in a rock face), ~8 wall/arch sections and deck slabs, 13 props, no dependencies [web: mod page]; prefab names unread [U] |
 
-No local mod has a rock shed or avalanche gallery. WEB_OTHER
+No local mod has a rock shed or avalanche gallery, and a web search of Paradox Mods (English and Japanese terms) found none either; there is no CS2 port of the CS1 JP Rock shed [web]. Other finds:
+- **Extended Road Upgrades Continued (164028):** adds selectable Quay, Retaining Wall, Elevated and Tunnel modes to roads and tracks (game 1.5+). Do not enable it alongside the deprecated 76971.
+- **LA Retaining Wall - Network Versions (160660):** retaining walls drawn as a net.
+- **CS KR Retaining Wall Netlane (158569):** needs Extra Detailing Tools 80528.
+- **LA River Channel Pack 3 (159454):** wall props.
+- **Fraggnaut's Tunnel Pack (121503):** tunnel exits, but deprecated, needs Anarchy and region packs, and props are reported to disappear. Avoid it.
+
+None of these is needed for the PO port.
 
 ### How the pipeline would place them
 - **Objects:** `/import/objects` with `prefab`, `x`, `z`, `y` (absolute; a y above the terrain becomes the object's elevation) and `rotation` (yaw) [V: IMPORT_SCHEMA.md]. There is no pitch or roll, so pieces under sloped decks need a Move It pass. Where a kit prefab's pivot sits (base or centre) is [U]; measure bounds with `/prefabs/info` and set `y = y2 − bounds.min.y`. The game validates overlaps, so pieces touching decks or water need Anarchy (74604, already in E2C) or `bypassValidation`.
@@ -109,7 +116,7 @@ Totals:
 
 ## Recommendations
 
-1. **Tunnel portals:** leave all tunnel entries to the game. None of the PO objects is a portal at a CS1 tunnel mouth. Optionally put `TunnelEntrance18` (154132) faces at the two interstate tunnel mouths (nodes 19082/12983 at (−5339, 168…183) and 3614/23990 at (−5076, 173…189)) if the vanilla portal looks too plain. That is a taste choice, not a port of PO data.
+1. **Tunnel portals:** leave all tunnel entries to the game. None of the PO objects is a portal at a CS1 tunnel mouth. Optionally put `TunnelEntrance18` (154132) or the Art Deco portals of 157964 (not downloaded) at the two interstate tunnel mouths (nodes 19082/12983 at (−5339, 168…183) and 3614/23990 at (−5076, 173…189)) if the vanilla portal looks too plain. That is a taste choice, not a port of PO data.
 2. **Rock shed (11):** no CS2 equivalent. Either (a) leave the national road open (simplest), or (b) place `CliffSideTall` / `CliffFreeStanding` (137334, already in E2C) on the hill side at the 11 positions, yaw + 90° toward the road, as an overhang look with Anarchy. A true gallery (road under a roof) would need the road built as a shallow tunnel, and CS2 tunnels need terrain above them, so no.
 3. **Piers (BR001 38, BR003 12):** worth it only together with `noPillars`. Use `ITBP_Pillar Piers 01` (140978) at the PO positions with the PO yaw (37.2° and 40°). Otherwise drop them; CS2's pillars stand roughly where CS1's did.
 4. **BR006 (red deck arch, 68 cubes + 2 arch meshes):** one arch object (`StoneArchRailBridge` or `OlympicBridge`, owner choice) at the arch centre (−3528, −3176), yaw 324, plus `Pillar1x16` columns and `Pillar4x16` piers at the 68 cube positions. All of it must come out of the pavement/quay path.
@@ -128,7 +135,7 @@ Totals:
 | 74324, 77240 | Move It, Find It | sloped pieces by hand | downloaded |
 | 137334 | Cliffs and Rocks Pack | optional rock-shed overhang | **already in E2C** |
 | 133250 | Tigons Rail Infrastructure | optional `Stone Pillar Bridge - Train` for the rail viaducts (PLAN.md) | downloaded |
-| 157964 | Art Deco Walls, Tunnels and Bridges | WEB_157964_ADD | not downloaded |
+| 157964 | Art Deco Walls, Tunnels and Bridges | optional: nicer arched portal faces than ConcreteSet01 if the owner wants decorative portals at the interstate tunnel mouths (recommendation 1) | not downloaded |
 
 ## Converter and CS2MCP work
 
