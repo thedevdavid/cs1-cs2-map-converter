@@ -179,44 +179,60 @@ public static class Round8
     }
 
     /// <summary>
-    /// The dam per the bridge's 0.9.23 contract (IMPORT_SCHEMA.md "Dams"): ONE straight edge of the dam net from abutment to abutment, no control,
-    /// both nodes at the crest (absolute y, level), abutments on the ground: from the dam's midpoint outward along the CS1 axis, each end sits at the
-    /// first point where the CS2 terrain reaches the crest − 1 m (at most 250 m beyond the CS1 quay ends). flow "auto" (the game flips the course
-    /// by the river's flow; the plant goes to the side the prefab's FlowLeft/FlowRight decides). The plant and the dam end objects are spawned by
-    /// the game from the course; no object file.
+    /// The dam per the bridge contract (IMPORT_SCHEMA.md "Dams", 0.9.23–0.9.25, A-v5 analysis): ONE straight edge of the dam net, only the two end nodes, both
+    /// at the crest (as close to the CS1 172 m as a 304 m bank-to-bank line allows, × scale, absolute y, level), flow "invert" (the prefab is FlowLeft and the river runs north → south, so the plant lands on the
+    /// intended side), batchSize 1. The fixed sequence 64 + 4 × 18 + 32 + 4 × 18 + 64 m makes the edge 304 m. The line is searched around the CS1 dam site:
+    /// centre within 400 m, heading 81° ± 15° (CS1 axis, west–east across the river); it must cross the CS1 water surface and have its middle at least
+    /// 8.5 m below the crest (bridge.lowElevation); among those, the abutments nearest the crest height on the CS2 playable heightmap win.
+    /// Writes the terrain profile along the chosen line next to the import file (dam-profile.md).
     /// </summary>
-    public static List<string> WriteDam(string path, Func<double, double, double>? terrainTrue, double heightFactor)
+    public const double DamLength = 304;
+
+    public static List<string> WriteDam(string path, Func<double, double, double>? terrainTrue, double heightFactor, Func<double, double, bool>? wet = null)
     {
         var log = new List<string>();
-        double ax = DamDeckA.X, az = DamDeckA.Z, bx = DamDeckB.X, bz = DamDeckB.Z, len = Math.Sqrt((bx - ax) * (bx - ax) + (bz - az) * (bz - az));
-        double ux = (bx - ax) / len, uz = (bz - az) / len, mx = (ax + bx) / 2, mz = (az + bz) / 2;
-        // Live rules (bridge-rules-live.json): fixed spans 64 + (9.6–22.4) + 32 + (9.6–22.4) + 64 m, so the one dam edge is 179.2–204.8 m; bridge.lowElevation
-        // needs ≥ 8 m above the terrain at an end or the middle. Search the length and a shift along the CS1 axis for the abutments nearest the ground,
-        // with the crest = max(172 m, middle terrain + 8.5 m).
         double T(double x, double z) => terrainTrue?.Invoke(x, z) ?? DamCrestTrue;
-        (double X, double Z, double T) w = default, e = default; double crest = DamCrestTrue, bestScore = double.MaxValue, bestL = 192;
-        for (double LL = 180; LL <= 204; LL += 1)
-            for (double sh = -60; sh <= 60; sh += 2)
-            {
-                double cx = mx + ux * sh, cz = mz + uz * sh, c = Math.Max(DamCrestTrue, T(cx, cz) + 8.5);
-                var pw = (cx - ux * LL / 2, cz - uz * LL / 2); var pe = (cx + ux * LL / 2, cz + uz * LL / 2);
-                double tw = T(pw.Item1, pw.Item2), te = T(pe.Item1, pe.Item2), score = Math.Abs(c - tw) + Math.Abs(c - te);
-                if (score < bestScore) { bestScore = score; w = (pw.Item1, pw.Item2, tw); e = (pe.Item1, pe.Item2, te); crest = c; bestL = LL; }
-            }
+        double cx0 = (DamDeckA.X + DamDeckB.X) / 2, cz0 = (DamDeckA.Z + DamDeckB.Z) / 2;
+        double head0 = Math.Atan2(DamDeckB.X - DamDeckA.X, DamDeckB.Z - DamDeckA.Z) * 180 / Math.PI;
+        double half = DamLength / 2, crest = DamCrestTrue;
+        (double Score, double Cx, double Cz, double Head, double Tw, double Te, double Tmid, int WetSamples, double Crest)? best = null;
+        for (double dh = -15; dh <= 15; dh += 1)
+        {
+            double h = (head0 + dh) * Math.PI / 180, ux = Math.Sin(h), uz = Math.Cos(h);
+            for (double ox = -400; ox <= 400; ox += 8)
+                for (double oz = -400; oz <= 400; oz += 8)
+                {
+                    double cx = cx0 + ox, cz = cz0 + oz;
+                    double tMid = T(cx, cz);
+                    int wetN = 0;
+                    if (wet != null) for (int k = 1; k < 16; k++) { double t = -half + DamLength * k / 16; if (wet(cx + ux * t, cz + uz * t)) wetN++; }
+                    if (wet != null && wetN == 0) continue;                    // must cross the river
+                    double tw = T(cx - ux * half, cz - uz * half), te = T(cx + ux * half, cz + uz * half);
+                    // Crest: between the two bank heights, as close to the CS1 172 m as they allow; the middle must stay 8.5 m below it.
+                    double c = Math.Clamp(DamCrestTrue, Math.Min(tw, te), Math.Max(tw, te));
+                    if (c - tMid < 8.5) continue;                              // bridge.lowElevation at the middle
+                    double score = Math.Abs(c - tw) + Math.Abs(c - te) + 0.5 * Math.Abs(c - DamCrestTrue) + 0.002 * (ox * ox + oz * oz) / 100 + 0.2 * Math.Abs(dh);
+                    if (best == null || score < best.Value.Score) best = (score, cx, cz, head0 + dh, tw, te, tMid, wetN, c);
+                }
+        }
+        if (best is not { } b) { log.Add("no dam line found that crosses the water with an 8.5 m deep valley within 400 m of the CS1 site; nothing written"); File.Delete(path); return log; }
+        crest = Math.Round(b.Crest, 1);
+        double hr = b.Head * Math.PI / 180, bx = Math.Sin(hr), bz = Math.Cos(hr);
+        var w = (X: b.Cx - bx * half, Z: b.Cz - bz * half); var e = (X: b.Cx + bx * half, Z: b.Cz + bz * half);
         double y = Math.Round(crest * heightFactor, 2);
         using (var fs = File.Create(path))
         using (var wr = new Utf8JsonWriter(fs, Json.Indented))
         {
             wr.WriteStartObject();
             wr.WriteString("name", "Dakota Falls dam");
-            wr.WriteString("_comment", "Hydro dam per bridge 0.9.23 (IMPORT_SCHEMA.md 'Dams'): one level edge abutment to abutment, no control, abutments on the ground at the crest height; the game builds the plant and the dam end objects from the course. River flows north to south, reservoir north; flow auto.");
+            wr.WriteString("_comment", "Hydro dam (bridge 0.9.25): one level straight edge of 304 m (fixed 64 + 4x18 + 32 + 4x18 + 64), only the two end nodes at the crest, flow invert (FlowLeft prefab, river north to south, reservoir north); the game builds the plant and the dam spans.");
             wr.WriteStartArray("nodes");
             foreach (var (id, p) in new[] { ("damW", w), ("damE", e) })
             { wr.WriteStartObject(); wr.WriteString("id", id); wr.WriteNumber("x", Json.R2(p.X)); wr.WriteNumber("y", y); wr.WriteNumber("z", Json.R2(p.Z)); wr.WriteEndObject(); }
             wr.WriteEndArray();
             wr.WriteStartArray("edges");
             wr.WriteStartObject();
-            wr.WriteString("id", "dam"); wr.WriteString("a", "damW"); wr.WriteString("b", "damE"); wr.WriteString("prefab", DamDeckPrefab); wr.WriteString("flow", "auto");
+            wr.WriteString("id", "dam"); wr.WriteString("a", "damW"); wr.WriteString("b", "damE"); wr.WriteString("prefab", DamDeckPrefab); wr.WriteString("flow", "invert");
             wr.WriteEndObject();
             wr.WriteEndArray();
             wr.WriteStartObject("options");
@@ -224,9 +240,21 @@ public static class Round8
             wr.WriteEndObject();
             wr.WriteEndObject();
         }
-        double L = Math.Sqrt((e.X - w.X) * (e.X - w.X) + (e.Z - w.Z) * (e.Z - w.Z));
-        log.Add(FormattableString.Invariant($"dam edge {L:F0} m (fixed spans 179.2–204.8 m; CS1 quays {len:F0} m), crest {crest:F1} m × {heightFactor} (CS1 172; ≥ middle terrain + 8.5 for bridge.lowElevation); west abutment ({w.X:F0}, {w.Z:F0}) terrain {w.T:F1} m (elevation {crest - w.T:F1}), east ({e.X:F0}, {e.Z:F0}) terrain {e.T:F1} m (elevation {crest - e.T:F1})"));
-        if (Math.Abs(crest - w.T) > 1 || Math.Abs(crest - e.T) > 1) log.Add("an abutment is more than 1 m off the terrain (dam.elevation warning only)");
+        // Profile along the line, every 16 m, with the terrain 40 m to either side (north = upstream).
+        var md = new System.Text.StringBuilder();
+        md.AppendLine("# Dam line profile (CS2 playable heightmap, true metres)").AppendLine();
+        md.AppendLine(FormattableString.Invariant($"West abutment ({w.X:F1}, {w.Z:F1}), east abutment ({e.X:F1}, {e.Z:F1}), heading {b.Head:F1}° (CS1 axis {head0:F1}°), length {DamLength} m, crest {crest} m (× {heightFactor} = {y})."));
+        md.AppendLine().AppendLine("| s m (from west) | x | z | terrain m | below crest m | CS1 water | terrain 40 m north | terrain 40 m south |").AppendLine("|---:|---:|---:|---:|---:|---|---:|---:|");
+        double nx = -bz, nz = bx;
+        if (nz < 0) { nx = -nx; nz = -nz; }   // the side toward +z (north)
+        for (double s0 = 0; s0 <= DamLength + 0.01; s0 += 16)
+        {
+            double x = w.X + bx * s0, z = w.Z + bz * s0, t = T(x, z);
+            md.AppendLine(FormattableString.Invariant($"| {s0:F0} | {x:F0} | {z:F0} | {t:F1} | {crest - t:F1} | {(wet?.Invoke(x, z) == true ? "wet" : "")} | {T(x + nx * 40, z + nz * 40):F1} | {T(x - nx * 40, z - nz * 40):F1} |"));
+        }
+        File.WriteAllText(Path.Combine(Path.GetDirectoryName(path)!, "dam-profile.md"), md.ToString());
+        log.Add(FormattableString.Invariant($"dam edge {DamLength} m heading {b.Head:F1}° (CS1 {head0:F1}°), crest {crest} m × {heightFactor}; west abutment ({w.X:F0}, {w.Z:F0}) terrain {b.Tw:F1} m (elevation {crest - b.Tw:F1}), east ({e.X:F0}, {e.Z:F0}) terrain {b.Te:F1} m (elevation {crest - b.Te:F1}); middle terrain {b.Tmid:F1} m ({crest - b.Tmid:F1} below the crest); {b.WetSamples}/15 samples over CS1 water; flow invert; profile dam-profile.md"));
+        if (Math.Abs(crest - b.Tw) > 1 || Math.Abs(crest - b.Te) > 1) log.Add("an abutment is more than 1 m off the terrain (dam.elevation warning)");
         return log;
     }
 

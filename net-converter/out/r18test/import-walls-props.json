@@ -1,0 +1,5636 @@
+{
+  "name": "walls-props",
+  "_comment": "rotation = yaw in degrees about \u002By, 0 = \u002Bz, clockwise from above, from CS1 m_angle as \u2212angle\u00B7180/\u03C0 (UNVERIFIED sign). y only where the object is clearly on a structure: \u003E 3 m above the CS2 playable heightmap (else \u003E 2 m off the CS1 terrain); never for buildings (CS1 y \u00D7 height factor).",
+  "options": {
+    "dryRun": false,
+    "batchSize": 500,
+    "bypassValidation": true,
+    "report": "compact"
+  },
+  "objects": [
+    {
+      "id": "bar255_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -327.28,
+      "z": -1119.83,
+      "rotation": 123.46,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -325.76,
+      "z": -1117.51,
+      "rotation": 123.24,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -324.19,
+      "z": -1115.12,
+      "rotation": 123.03,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -322.6,
+      "z": -1112.66,
+      "rotation": 122.83,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -320.99,
+      "z": -1110.15,
+      "rotation": 122.64,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -319.35,
+      "z": -1107.59,
+      "rotation": 122.46,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -317.71,
+      "z": -1104.99,
+      "rotation": 122.28,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -316.05,
+      "z": -1102.36,
+      "rotation": 122.1,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -314.39,
+      "z": -1099.71,
+      "rotation": 121.91,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -312.74,
+      "z": -1097.04,
+      "rotation": 121.73,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -311.1,
+      "z": -1094.37,
+      "rotation": 121.54,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -309.47,
+      "z": -1091.71,
+      "rotation": 121.35,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -307.85,
+      "z": -1089.05,
+      "rotation": 121.15,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -306.27,
+      "z": -1086.42,
+      "rotation": 120.94,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -304.71,
+      "z": -1083.81,
+      "rotation": 120.72,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -303.19,
+      "z": -1081.24,
+      "rotation": 120.48,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -301.71,
+      "z": -1078.71,
+      "rotation": 120.22,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -300.28,
+      "z": -1076.24,
+      "rotation": 119.94,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar255_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -298.9,
+      "z": -1073.83,
+      "rotation": 119.64,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar1762_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3362.86,
+      "z": 1982.81,
+      "y": 176.95,
+      "rotation": 331.11,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar1762_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3359.39,
+      "z": 1980.9,
+      "y": 176.82,
+      "rotation": 331.11,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar1778_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3369.18,
+      "z": 1986.56,
+      "rotation": 328.68,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar1778_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3365.8,
+      "z": 1984.5,
+      "rotation": 328.68,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar3495_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -236.17,
+      "z": -933.59,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -235.27,
+      "z": -930.95,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -234.34,
+      "z": -928.25,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -233.4,
+      "z": -925.51,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -232.45,
+      "z": -922.72,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -231.47,
+      "z": -919.89,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -230.49,
+      "z": -917.03,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -229.5,
+      "z": -914.13,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -228.49,
+      "z": -911.2,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -227.48,
+      "z": -908.25,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -226.46,
+      "z": -905.28,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -225.43,
+      "z": -902.29,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -224.4,
+      "z": -899.29,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -223.37,
+      "z": -896.28,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -222.33,
+      "z": -893.27,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -221.3,
+      "z": -890.26,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -220.27,
+      "z": -887.25,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -219.24,
+      "z": -884.25,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -218.21,
+      "z": -881.26,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_19",
+      "prefab": "ConcreteBarrier01",
+      "x": -217.19,
+      "z": -878.29,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_20",
+      "prefab": "ConcreteBarrier01",
+      "x": -216.18,
+      "z": -875.33,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_21",
+      "prefab": "ConcreteBarrier01",
+      "x": -215.17,
+      "z": -872.41,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_22",
+      "prefab": "ConcreteBarrier01",
+      "x": -214.18,
+      "z": -869.51,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_23",
+      "prefab": "ConcreteBarrier01",
+      "x": -213.19,
+      "z": -866.64,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_24",
+      "prefab": "ConcreteBarrier01",
+      "x": -212.22,
+      "z": -863.82,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_25",
+      "prefab": "ConcreteBarrier01",
+      "x": -211.27,
+      "z": -861.03,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_26",
+      "prefab": "ConcreteBarrier01",
+      "x": -210.32,
+      "z": -858.29,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_27",
+      "prefab": "ConcreteBarrier01",
+      "x": -209.4,
+      "z": -855.59,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3495_28",
+      "prefab": "ConcreteBarrier01",
+      "x": -208.49,
+      "z": -852.95,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar3820_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3386.36,
+      "z": 1996.76,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar3820_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3383.83,
+      "z": 1995.26,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar3820_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3380.81,
+      "z": 1993.46,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar3820_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3378.29,
+      "z": 1991.95,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar4357_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 1201.57,
+      "z": 6141.2,
+      "rotation": 231,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar4357_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 1203.71,
+      "z": 6138.55,
+      "rotation": 231,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar5344_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -6005.08,
+      "z": 533.67,
+      "rotation": 207.23,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar5997_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 452.24,
+      "z": -4524.07,
+      "rotation": 219.17,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar5997_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 455.31,
+      "z": -4526.58,
+      "rotation": 219.17,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar5997_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 458.38,
+      "z": -4529.08,
+      "rotation": 219.17,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8043_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3417.17,
+      "z": 2013.89,
+      "rotation": 340.56,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar8043_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3413.43,
+      "z": 2012.57,
+      "rotation": 340.56,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar8264_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 91.08,
+      "z": 18.91,
+      "rotation": 111.3,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 92.11,
+      "z": 21.49,
+      "rotation": 112.3,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 93.22,
+      "z": 24.11,
+      "rotation": 113.22,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 94.38,
+      "z": 26.78,
+      "rotation": 114.09,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 95.61,
+      "z": 29.47,
+      "rotation": 114.91,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_5",
+      "prefab": "ConcreteBarrier01",
+      "x": 96.9,
+      "z": 32.2,
+      "rotation": 115.69,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_6",
+      "prefab": "ConcreteBarrier01",
+      "x": 98.24,
+      "z": 34.94,
+      "rotation": 116.44,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 99.63,
+      "z": 37.68,
+      "rotation": 117.16,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 101.06,
+      "z": 40.43,
+      "rotation": 117.87,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 102.53,
+      "z": 43.18,
+      "rotation": 118.57,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 104.04,
+      "z": 45.9,
+      "rotation": 119.25,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 105.58,
+      "z": 48.61,
+      "rotation": 119.94,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 107.14,
+      "z": 51.29,
+      "rotation": 120.64,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 108.73,
+      "z": 53.93,
+      "rotation": 121.35,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 110.33,
+      "z": 56.52,
+      "rotation": 122.07,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 111.95,
+      "z": 59.06,
+      "rotation": 122.82,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 113.57,
+      "z": 61.55,
+      "rotation": 123.6,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 115.2,
+      "z": 63.96,
+      "rotation": 124.43,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 116.83,
+      "z": 66.3,
+      "rotation": 125.3,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar8264_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 118.45,
+      "z": 68.55,
+      "rotation": 126.24,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar9401_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -6055.43,
+      "z": 560.17,
+      "rotation": 205.93,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar9401_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -6052.9,
+      "z": 558.94,
+      "rotation": 205.94,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar9401_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -6049.87,
+      "z": 557.47,
+      "rotation": 205.94,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar9401_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -6047.34,
+      "z": 556.24,
+      "rotation": 205.94,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar11052_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 216.85,
+      "z": 135.97,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 219.69,
+      "z": 136.77,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 222.7,
+      "z": 137.61,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 225.85,
+      "z": 138.49,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 229.13,
+      "z": 139.41,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_5",
+      "prefab": "ConcreteBarrier01",
+      "x": 232.49,
+      "z": 140.35,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_6",
+      "prefab": "ConcreteBarrier01",
+      "x": 235.92,
+      "z": 141.31,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 239.4,
+      "z": 142.28,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 242.88,
+      "z": 143.26,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 246.36,
+      "z": 144.23,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 249.8,
+      "z": 145.19,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 253.18,
+      "z": 146.14,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 256.46,
+      "z": 147.06,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 259.64,
+      "z": 147.95,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 262.67,
+      "z": 148.79,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 265.54,
+      "z": 149.6,
+      "y": 135.48,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 268.21,
+      "z": 150.34,
+      "y": 135.48,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 270.66,
+      "z": 151.03,
+      "y": 135.48,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 272.87,
+      "z": 151.65,
+      "y": 135.48,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 274.81,
+      "z": 152.19,
+      "y": 135.48,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11052_20",
+      "prefab": "ConcreteBarrier01",
+      "x": 276.45,
+      "z": 152.65,
+      "y": 135.48,
+      "rotation": 164.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar11173_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3274.94,
+      "z": 1949.83,
+      "y": 176.37,
+      "rotation": 327.58,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar11173_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3272.46,
+      "z": 1948.26,
+      "y": 176.24,
+      "rotation": 327.58,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar11173_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3269.49,
+      "z": 1946.37,
+      "y": 176.08,
+      "rotation": 327.58,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar11173_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3267.01,
+      "z": 1944.79,
+      "y": 175.95,
+      "rotation": 327.58,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar12379_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -397.25,
+      "z": -1208.65,
+      "rotation": 133.44,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -395.36,
+      "z": -1206.64,
+      "rotation": 132.99,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -393.43,
+      "z": -1204.56,
+      "rotation": 132.59,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -391.48,
+      "z": -1202.42,
+      "rotation": 132.23,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -389.49,
+      "z": -1200.22,
+      "rotation": 131.89,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -387.49,
+      "z": -1197.97,
+      "rotation": 131.58,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -385.47,
+      "z": -1195.69,
+      "rotation": 131.29,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -383.45,
+      "z": -1193.37,
+      "rotation": 131.02,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -381.42,
+      "z": -1191.03,
+      "rotation": 130.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -379.4,
+      "z": -1188.67,
+      "rotation": 130.51,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -377.38,
+      "z": -1186.3,
+      "rotation": 130.27,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -375.38,
+      "z": -1183.93,
+      "rotation": 130.04,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -373.41,
+      "z": -1181.57,
+      "rotation": 129.81,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -371.46,
+      "z": -1179.23,
+      "rotation": 129.59,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -369.55,
+      "z": -1176.9,
+      "rotation": 129.36,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -367.67,
+      "z": -1174.61,
+      "rotation": 129.13,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -365.85,
+      "z": -1172.35,
+      "rotation": 128.9,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -364.07,
+      "z": -1170.15,
+      "rotation": 128.66,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12379_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -362.35,
+      "z": -1167.99,
+      "rotation": 128.41,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 23.78,
+      "z": -177,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 24.68,
+      "z": -174.36,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 25.61,
+      "z": -171.66,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 26.55,
+      "z": -168.92,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 27.51,
+      "z": -166.13,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_5",
+      "prefab": "ConcreteBarrier01",
+      "x": 28.48,
+      "z": -163.3,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_6",
+      "prefab": "ConcreteBarrier01",
+      "x": 29.46,
+      "z": -160.44,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 30.46,
+      "z": -157.54,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 31.46,
+      "z": -154.61,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 32.47,
+      "z": -151.66,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 33.49,
+      "z": -148.69,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 34.52,
+      "z": -145.7,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 35.55,
+      "z": -142.7,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 36.58,
+      "z": -139.69,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 37.62,
+      "z": -136.68,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 38.65,
+      "z": -133.67,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 39.68,
+      "z": -130.66,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 40.71,
+      "z": -127.66,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 41.74,
+      "z": -124.67,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 42.76,
+      "z": -121.7,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_20",
+      "prefab": "ConcreteBarrier01",
+      "x": 43.77,
+      "z": -118.75,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_21",
+      "prefab": "ConcreteBarrier01",
+      "x": 44.78,
+      "z": -115.82,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_22",
+      "prefab": "ConcreteBarrier01",
+      "x": 45.77,
+      "z": -112.92,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_23",
+      "prefab": "ConcreteBarrier01",
+      "x": 46.76,
+      "z": -110.06,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_24",
+      "prefab": "ConcreteBarrier01",
+      "x": 47.73,
+      "z": -107.23,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_25",
+      "prefab": "ConcreteBarrier01",
+      "x": 48.69,
+      "z": -104.44,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_26",
+      "prefab": "ConcreteBarrier01",
+      "x": 49.63,
+      "z": -101.7,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_27",
+      "prefab": "ConcreteBarrier01",
+      "x": 50.55,
+      "z": -99,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar12988_28",
+      "prefab": "ConcreteBarrier01",
+      "x": 51.46,
+      "z": -96.36,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar13657_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 1474.92,
+      "z": 6176.21,
+      "rotation": 259.6,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar13657_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 1475.57,
+      "z": 6172.67,
+      "rotation": 259.6,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar13918_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -6076.25,
+      "z": 570.47,
+      "rotation": 207.88,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar13918_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -6073.15,
+      "z": 568.82,
+      "rotation": 207.89,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar13918_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -6070.04,
+      "z": 567.18,
+      "rotation": 207.88,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar14660_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3375.61,
+      "z": 1990.48,
+      "rotation": 328.68,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar14660_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3372.23,
+      "z": 1988.42,
+      "rotation": 328.68,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar15233_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3410.41,
+      "z": 1992.57,
+      "rotation": 331.11,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar15233_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3406.95,
+      "z": 1990.65,
+      "rotation": 331.11,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar15239_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3410.85,
+      "z": 2011.12,
+      "rotation": 330.3,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar15239_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3407.41,
+      "z": 2009.16,
+      "rotation": 330.3,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar15566_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3421.96,
+      "z": 1998.94,
+      "rotation": 331.09,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar15566_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3419.39,
+      "z": 1997.52,
+      "rotation": 331.09,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar15566_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3416.31,
+      "z": 1995.82,
+      "rotation": 331.09,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar15566_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3413.73,
+      "z": 1994.39,
+      "rotation": 331.09,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar15587_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 1473.15,
+      "z": 6180.06,
+      "rotation": 232.21,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar17781_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -437.7,
+      "z": -1247.68,
+      "rotation": 138.67,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -435.63,
+      "z": -1245.86,
+      "rotation": 138.3,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -433.53,
+      "z": -1243.97,
+      "rotation": 137.96,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -431.38,
+      "z": -1242.02,
+      "rotation": 137.65,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -429.2,
+      "z": -1240.02,
+      "rotation": 137.36,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -426.99,
+      "z": -1237.98,
+      "rotation": 137.08,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -424.76,
+      "z": -1235.9,
+      "rotation": 136.82,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -422.53,
+      "z": -1233.79,
+      "rotation": 136.57,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -420.28,
+      "z": -1231.66,
+      "rotation": 136.33,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -418.04,
+      "z": -1229.51,
+      "rotation": 136.09,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -415.81,
+      "z": -1227.35,
+      "rotation": 135.86,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -413.59,
+      "z": -1225.19,
+      "rotation": 135.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -411.4,
+      "z": -1223.04,
+      "rotation": 135.39,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -409.24,
+      "z": -1220.89,
+      "rotation": 135.15,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -407.11,
+      "z": -1218.77,
+      "rotation": 134.91,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -405.02,
+      "z": -1216.67,
+      "rotation": 134.66,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -402.99,
+      "z": -1214.6,
+      "rotation": 134.4,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -401.01,
+      "z": -1212.57,
+      "rotation": 134.13,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar17781_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -399.1,
+      "z": -1210.59,
+      "rotation": 133.83,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar20416_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 1204.05,
+      "z": 6136.35,
+      "rotation": 285.35,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar21684_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3396.55,
+      "z": 1984.87,
+      "rotation": 330.84,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar21684_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3393.09,
+      "z": 1982.94,
+      "rotation": 330.84,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar22012_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3265.07,
+      "z": 1943.11,
+      "y": 176.37,
+      "rotation": 326.5,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar22012_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3262.61,
+      "z": 1941.49,
+      "y": 176.24,
+      "rotation": 326.5,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar22012_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3259.68,
+      "z": 1939.55,
+      "y": 176.08,
+      "rotation": 326.5,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar22012_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3257.23,
+      "z": 1937.93,
+      "y": 175.95,
+      "rotation": 326.5,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar22314_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -410.48,
+      "z": -1199.78,
+      "rotation": 313.84,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -412.46,
+      "z": -1201.82,
+      "rotation": 314.15,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -414.5,
+      "z": -1203.91,
+      "rotation": 314.44,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -416.6,
+      "z": -1206.04,
+      "rotation": 314.71,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -418.75,
+      "z": -1208.21,
+      "rotation": 314.97,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -420.95,
+      "z": -1210.4,
+      "rotation": 315.22,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -423.19,
+      "z": -1212.61,
+      "rotation": 315.47,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -425.46,
+      "z": -1214.83,
+      "rotation": 315.72,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -427.74,
+      "z": -1217.06,
+      "rotation": 315.96,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -430.05,
+      "z": -1219.27,
+      "rotation": 316.21,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -432.35,
+      "z": -1221.47,
+      "rotation": 316.46,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -434.66,
+      "z": -1223.65,
+      "rotation": 316.72,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -436.95,
+      "z": -1225.8,
+      "rotation": 317,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -439.23,
+      "z": -1227.92,
+      "rotation": 317.28,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -441.48,
+      "z": -1229.98,
+      "rotation": 317.59,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -443.69,
+      "z": -1232,
+      "rotation": 317.92,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -445.87,
+      "z": -1233.95,
+      "rotation": 318.27,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22314_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -447.99,
+      "z": -1235.83,
+      "rotation": 318.66,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar22804_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3383.03,
+      "z": 1976.46,
+      "rotation": 336.78,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar22804_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3379.39,
+      "z": 1974.9,
+      "rotation": 336.78,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar23630_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 1204.66,
+      "z": 6130.74,
+      "rotation": 262.12,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar23630_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 1205.17,
+      "z": 6127.05,
+      "rotation": 262.12,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar24194_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -450.08,
+      "z": -1237.65,
+      "rotation": 319.05,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -452.22,
+      "z": -1239.5,
+      "rotation": 319.4,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -454.43,
+      "z": -1241.38,
+      "rotation": 319.71,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -456.69,
+      "z": -1243.29,
+      "rotation": 320.01,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -459,
+      "z": -1245.22,
+      "rotation": 320.3,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -461.36,
+      "z": -1247.16,
+      "rotation": 320.57,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -463.76,
+      "z": -1249.13,
+      "rotation": 320.82,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -466.19,
+      "z": -1251.1,
+      "rotation": 321.07,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -468.66,
+      "z": -1253.09,
+      "rotation": 321.31,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -471.15,
+      "z": -1255.07,
+      "rotation": 321.55,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -473.66,
+      "z": -1257.06,
+      "rotation": 321.78,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -476.18,
+      "z": -1259.04,
+      "rotation": 322,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -478.72,
+      "z": -1261.01,
+      "rotation": 322.23,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -481.26,
+      "z": -1262.97,
+      "rotation": 322.45,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -483.8,
+      "z": -1264.92,
+      "rotation": 322.68,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -486.34,
+      "z": -1266.84,
+      "rotation": 322.9,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -488.87,
+      "z": -1268.75,
+      "rotation": 323.13,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -491.38,
+      "z": -1270.62,
+      "rotation": 323.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -493.87,
+      "z": -1272.47,
+      "rotation": 323.61,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_19",
+      "prefab": "ConcreteBarrier01",
+      "x": -496.34,
+      "z": -1274.28,
+      "rotation": 323.86,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_20",
+      "prefab": "ConcreteBarrier01",
+      "x": -498.77,
+      "z": -1276.05,
+      "rotation": 324.12,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_21",
+      "prefab": "ConcreteBarrier01",
+      "x": -501.17,
+      "z": -1277.77,
+      "rotation": 324.4,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_22",
+      "prefab": "ConcreteBarrier01",
+      "x": -503.53,
+      "z": -1279.46,
+      "rotation": 324.69,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar24194_23",
+      "prefab": "ConcreteBarrier01",
+      "x": -505.85,
+      "z": -1281.09,
+      "rotation": 324.99,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar25062_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -6066.75,
+      "z": 565.79,
+      "rotation": 206,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar25062_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -6063.59,
+      "z": 564.25,
+      "rotation": 205.99,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar25062_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -6060.43,
+      "z": 562.72,
+      "rotation": 205.99,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar25712_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3428.56,
+      "z": 2002.87,
+      "rotation": 336.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar25712_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3425.86,
+      "z": 2001.71,
+      "rotation": 336.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar25712_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3422.63,
+      "z": 2000.32,
+      "rotation": 336.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar25712_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3419.93,
+      "z": 1999.16,
+      "rotation": 336.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3411.02,
+      "z": 2029.31,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3409.6,
+      "z": 2028.48,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3407.96,
+      "z": 2027.51,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3406.1,
+      "z": 2026.42,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 3404.04,
+      "z": 2025.21,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_5",
+      "prefab": "ConcreteBarrier01",
+      "x": 3401.8,
+      "z": 2023.9,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_6",
+      "prefab": "ConcreteBarrier01",
+      "x": 3399.4,
+      "z": 2022.49,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 3396.85,
+      "z": 2021,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 3394.18,
+      "z": 2019.43,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 3391.39,
+      "z": 2017.8,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 3388.52,
+      "z": 2016.12,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 3385.57,
+      "z": 2014.39,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 3382.56,
+      "z": 2012.62,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 3379.51,
+      "z": 2010.84,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 3376.44,
+      "z": 2009.04,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 3373.37,
+      "z": 2007.23,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 3370.3,
+      "z": 2005.44,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 3367.27,
+      "z": 2003.66,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 3364.29,
+      "z": 2001.91,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 3361.37,
+      "z": 2000.2,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_20",
+      "prefab": "ConcreteBarrier01",
+      "x": 3358.54,
+      "z": 1998.54,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_21",
+      "prefab": "ConcreteBarrier01",
+      "x": 3355.8,
+      "z": 1996.94,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_22",
+      "prefab": "ConcreteBarrier01",
+      "x": 3353.18,
+      "z": 1995.4,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26202_23",
+      "prefab": "ConcreteBarrier01",
+      "x": 3350.7,
+      "z": 1993.95,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar26324_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -6009.6,
+      "z": 536.64,
+      "rotation": 195.74,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar27305_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 1204.09,
+      "z": 6133.49,
+      "rotation": 255.17,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar27970_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -496.9,
+      "z": -1293.99,
+      "rotation": 145,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -494.63,
+      "z": -1292.39,
+      "rotation": 144.7,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -492.31,
+      "z": -1290.74,
+      "rotation": 144.42,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -489.96,
+      "z": -1289.05,
+      "rotation": 144.16,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -487.57,
+      "z": -1287.31,
+      "rotation": 143.91,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -485.15,
+      "z": -1285.54,
+      "rotation": 143.67,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -482.71,
+      "z": -1283.74,
+      "rotation": 143.43,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -480.25,
+      "z": -1281.9,
+      "rotation": 143.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -477.77,
+      "z": -1280.04,
+      "rotation": 142.98,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -475.28,
+      "z": -1278.16,
+      "rotation": 142.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -472.78,
+      "z": -1276.25,
+      "rotation": 142.54,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -470.29,
+      "z": -1274.33,
+      "rotation": 142.33,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -467.79,
+      "z": -1272.4,
+      "rotation": 142.11,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -465.3,
+      "z": -1270.45,
+      "rotation": 141.9,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -462.83,
+      "z": -1268.51,
+      "rotation": 141.68,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -460.37,
+      "z": -1266.55,
+      "rotation": 141.46,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -457.93,
+      "z": -1264.6,
+      "rotation": 141.23,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -455.52,
+      "z": -1262.66,
+      "rotation": 141,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -453.14,
+      "z": -1260.72,
+      "rotation": 140.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_19",
+      "prefab": "ConcreteBarrier01",
+      "x": -450.79,
+      "z": -1258.8,
+      "rotation": 140.51,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_20",
+      "prefab": "ConcreteBarrier01",
+      "x": -448.48,
+      "z": -1256.88,
+      "rotation": 140.25,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_21",
+      "prefab": "ConcreteBarrier01",
+      "x": -446.22,
+      "z": -1254.99,
+      "rotation": 139.97,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_22",
+      "prefab": "ConcreteBarrier01",
+      "x": -444,
+      "z": -1253.12,
+      "rotation": 139.68,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_23",
+      "prefab": "ConcreteBarrier01",
+      "x": -441.84,
+      "z": -1251.28,
+      "rotation": 139.38,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar27970_24",
+      "prefab": "ConcreteBarrier01",
+      "x": -439.74,
+      "z": -1249.46,
+      "rotation": 139.05,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28057_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -6006.09,
+      "z": 535.44,
+      "rotation": 208.7,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar28083_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 71.71,
+      "z": -37.38,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 72.61,
+      "z": -34.76,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 73.53,
+      "z": -32.08,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 74.47,
+      "z": -29.33,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 75.43,
+      "z": -26.53,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_5",
+      "prefab": "ConcreteBarrier01",
+      "x": 76.41,
+      "z": -23.68,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_6",
+      "prefab": "ConcreteBarrier01",
+      "x": 77.4,
+      "z": -20.79,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 78.4,
+      "z": -17.87,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 79.41,
+      "z": -14.94,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 80.43,
+      "z": -11.98,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 81.44,
+      "z": -9.03,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 82.45,
+      "z": -6.08,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 83.46,
+      "z": -3.14,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 84.46,
+      "z": -0.22,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 85.45,
+      "z": 2.66,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 86.43,
+      "z": 5.51,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 87.39,
+      "z": 8.32,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 88.34,
+      "z": 11.06,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 89.26,
+      "z": 13.75,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28083_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 90.16,
+      "z": 16.36,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -263.79,
+      "z": -1004.13,
+      "rotation": 113.91,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -262.66,
+      "z": -1001.57,
+      "rotation": 113.65,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -261.52,
+      "z": -998.94,
+      "rotation": 113.41,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -260.36,
+      "z": -996.26,
+      "rotation": 113.18,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -259.2,
+      "z": -993.53,
+      "rotation": 112.96,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -258.03,
+      "z": -990.74,
+      "rotation": 112.75,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -256.85,
+      "z": -987.92,
+      "rotation": 112.55,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -255.67,
+      "z": -985.06,
+      "rotation": 112.36,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -254.48,
+      "z": -982.17,
+      "rotation": 112.17,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -253.3,
+      "z": -979.26,
+      "rotation": 111.99,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -252.12,
+      "z": -976.32,
+      "rotation": 111.81,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -250.95,
+      "z": -973.37,
+      "rotation": 111.63,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -249.78,
+      "z": -970.41,
+      "rotation": 111.46,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -248.62,
+      "z": -967.45,
+      "rotation": 111.28,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -247.47,
+      "z": -964.49,
+      "rotation": 111.11,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -246.34,
+      "z": -961.54,
+      "rotation": 110.93,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -245.22,
+      "z": -958.6,
+      "rotation": 110.75,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -244.12,
+      "z": -955.67,
+      "rotation": 110.57,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -243.03,
+      "z": -952.78,
+      "rotation": 110.38,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_19",
+      "prefab": "ConcreteBarrier01",
+      "x": -241.97,
+      "z": -949.91,
+      "rotation": 110.19,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_20",
+      "prefab": "ConcreteBarrier01",
+      "x": -240.94,
+      "z": -947.07,
+      "rotation": 109.99,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_21",
+      "prefab": "ConcreteBarrier01",
+      "x": -239.92,
+      "z": -944.28,
+      "rotation": 109.78,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_22",
+      "prefab": "ConcreteBarrier01",
+      "x": -238.94,
+      "z": -941.53,
+      "rotation": 109.56,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_23",
+      "prefab": "ConcreteBarrier01",
+      "x": -237.99,
+      "z": -938.83,
+      "rotation": 109.32,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28687_24",
+      "prefab": "ConcreteBarrier01",
+      "x": -237.07,
+      "z": -936.18,
+      "rotation": 109.08,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar28733_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3285.44,
+      "z": 1954.88,
+      "y": 176.37,
+      "rotation": 336.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar28733_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3282.74,
+      "z": 1953.72,
+      "y": 176.24,
+      "rotation": 336.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar28733_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3279.51,
+      "z": 1952.33,
+      "y": 176.08,
+      "rotation": 336.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar28733_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3276.81,
+      "z": 1951.17,
+      "y": 175.95,
+      "rotation": 336.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar29631_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -297.56,
+      "z": -1071.46,
+      "rotation": 119.33,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -296.2,
+      "z": -1069.03,
+      "rotation": 119.05,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -294.82,
+      "z": -1066.54,
+      "rotation": 118.79,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -293.43,
+      "z": -1063.99,
+      "rotation": 118.55,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -292.02,
+      "z": -1061.39,
+      "rotation": 118.32,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -290.61,
+      "z": -1058.75,
+      "rotation": 118.1,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -289.18,
+      "z": -1056.06,
+      "rotation": 117.88,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -287.75,
+      "z": -1053.34,
+      "rotation": 117.68,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -286.31,
+      "z": -1050.59,
+      "rotation": 117.48,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -284.87,
+      "z": -1047.81,
+      "rotation": 117.29,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -283.43,
+      "z": -1045.01,
+      "rotation": 117.1,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -282,
+      "z": -1042.2,
+      "rotation": 116.91,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -280.57,
+      "z": -1039.38,
+      "rotation": 116.72,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -279.15,
+      "z": -1036.55,
+      "rotation": 116.54,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -277.75,
+      "z": -1033.72,
+      "rotation": 116.35,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -276.36,
+      "z": -1030.9,
+      "rotation": 116.16,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -274.98,
+      "z": -1028.09,
+      "rotation": 115.97,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -273.63,
+      "z": -1025.3,
+      "rotation": 115.78,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -272.3,
+      "z": -1022.53,
+      "rotation": 115.58,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_19",
+      "prefab": "ConcreteBarrier01",
+      "x": -270.99,
+      "z": -1019.78,
+      "rotation": 115.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_20",
+      "prefab": "ConcreteBarrier01",
+      "x": -269.71,
+      "z": -1017.07,
+      "rotation": 115.16,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_21",
+      "prefab": "ConcreteBarrier01",
+      "x": -268.46,
+      "z": -1014.39,
+      "rotation": 114.93,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_22",
+      "prefab": "ConcreteBarrier01",
+      "x": -267.24,
+      "z": -1011.75,
+      "rotation": 114.7,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_23",
+      "prefab": "ConcreteBarrier01",
+      "x": -266.05,
+      "z": -1009.17,
+      "rotation": 114.45,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar29631_24",
+      "prefab": "ConcreteBarrier01",
+      "x": -264.91,
+      "z": -1006.63,
+      "rotation": 114.19,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar30874_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 463.44,
+      "z": -4534.48,
+      "rotation": 223.72,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar30874_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 465.54,
+      "z": -4536.49,
+      "rotation": 223.73,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar30874_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 468.22,
+      "z": -4539.05,
+      "rotation": 223.73,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar30874_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 470.9,
+      "z": -4541.62,
+      "rotation": 223.73,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar30874_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 473,
+      "z": -4543.63,
+      "rotation": 223.73,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar31016_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3375.78,
+      "z": 1972.39,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar31016_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3373.25,
+      "z": 1970.89,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar31016_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3370.23,
+      "z": 1969.09,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar31016_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3367.7,
+      "z": 1967.58,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar31449_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3398.02,
+      "z": 2003.38,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar31449_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3395.49,
+      "z": 2001.88,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar31449_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3392.47,
+      "z": 2000.08,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar31449_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3389.95,
+      "z": 1998.57,
+      "rotation": 329.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar31967_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -6037.81,
+      "z": 551.45,
+      "y": 233.9,
+      "rotation": 205.96,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar32096_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 120.08,
+      "z": 70.73,
+      "rotation": 127.33,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 121.78,
+      "z": 72.91,
+      "rotation": 128.44,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 123.56,
+      "z": 75.12,
+      "rotation": 129.48,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 125.43,
+      "z": 77.34,
+      "rotation": 130.45,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 127.36,
+      "z": 79.57,
+      "rotation": 131.38,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_5",
+      "prefab": "ConcreteBarrier01",
+      "x": 129.36,
+      "z": 81.81,
+      "rotation": 132.26,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_6",
+      "prefab": "ConcreteBarrier01",
+      "x": 131.42,
+      "z": 84.04,
+      "rotation": 133.12,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 133.53,
+      "z": 86.26,
+      "rotation": 133.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 135.68,
+      "z": 88.47,
+      "rotation": 134.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 137.88,
+      "z": 90.65,
+      "rotation": 135.57,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 140.11,
+      "z": 92.8,
+      "rotation": 136.38,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 142.37,
+      "z": 94.93,
+      "rotation": 137.18,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 144.64,
+      "z": 97.01,
+      "rotation": 138.01,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 146.94,
+      "z": 99.04,
+      "rotation": 138.84,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 149.24,
+      "z": 101.02,
+      "rotation": 139.71,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 151.54,
+      "z": 102.94,
+      "rotation": 140.61,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 153.84,
+      "z": 104.8,
+      "rotation": 141.55,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 156.12,
+      "z": 106.58,
+      "rotation": 142.54,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 158.39,
+      "z": 108.28,
+      "rotation": 143.6,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32096_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 160.64,
+      "z": 109.91,
+      "rotation": 144.74,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar32576_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3418.37,
+      "z": 2015.93,
+      "rotation": 332.19,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar32576_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3414.87,
+      "z": 2014.08,
+      "rotation": 332.19,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33210_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -360.68,
+      "z": -1165.87,
+      "rotation": 128.15,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -358.96,
+      "z": -1163.67,
+      "rotation": 127.89,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -357.21,
+      "z": -1161.41,
+      "rotation": 127.64,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -355.42,
+      "z": -1159.08,
+      "rotation": 127.41,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -353.61,
+      "z": -1156.7,
+      "rotation": 127.19,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -351.77,
+      "z": -1154.27,
+      "rotation": 126.97,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -349.92,
+      "z": -1151.81,
+      "rotation": 126.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -348.07,
+      "z": -1149.31,
+      "rotation": 126.55,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -346.21,
+      "z": -1146.79,
+      "rotation": 126.34,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -344.35,
+      "z": -1144.26,
+      "rotation": 126.13,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -342.5,
+      "z": -1141.72,
+      "rotation": 125.91,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -340.67,
+      "z": -1139.18,
+      "rotation": 125.69,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -338.86,
+      "z": -1136.65,
+      "rotation": 125.46,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -337.08,
+      "z": -1134.13,
+      "rotation": 125.23,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -335.33,
+      "z": -1131.64,
+      "rotation": 124.97,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -333.62,
+      "z": -1129.19,
+      "rotation": 124.7,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -331.95,
+      "z": -1126.77,
+      "rotation": 124.42,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -330.34,
+      "z": -1124.4,
+      "rotation": 124.1,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33210_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -328.79,
+      "z": -1122.09,
+      "rotation": 123.76,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar33462_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3405.01,
+      "z": 2007.75,
+      "rotation": 330.3,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33462_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3401.57,
+      "z": 2005.79,
+      "rotation": 330.3,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3348.33,
+      "z": 1992.56,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3345.85,
+      "z": 1991.11,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3343.23,
+      "z": 1989.57,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3340.5,
+      "z": 1987.97,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 3337.66,
+      "z": 1986.31,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_5",
+      "prefab": "ConcreteBarrier01",
+      "x": 3334.75,
+      "z": 1984.59,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_6",
+      "prefab": "ConcreteBarrier01",
+      "x": 3331.76,
+      "z": 1982.85,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 3328.73,
+      "z": 1981.07,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 3325.67,
+      "z": 1979.27,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 3322.59,
+      "z": 1977.47,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 3319.52,
+      "z": 1975.67,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 3316.48,
+      "z": 1973.89,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 3313.47,
+      "z": 1972.12,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 3310.52,
+      "z": 1970.39,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 3307.64,
+      "z": 1968.71,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 3304.86,
+      "z": 1967.07,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 3302.18,
+      "z": 1965.51,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 3299.64,
+      "z": 1964.01,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 3297.24,
+      "z": 1962.61,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 3295,
+      "z": 1961.29,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_20",
+      "prefab": "ConcreteBarrier01",
+      "x": 3292.94,
+      "z": 1960.09,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_21",
+      "prefab": "ConcreteBarrier01",
+      "x": 3291.08,
+      "z": 1959,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_22",
+      "prefab": "ConcreteBarrier01",
+      "x": 3289.43,
+      "z": 1958.03,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33478_23",
+      "prefab": "ConcreteBarrier01",
+      "x": 3288.02,
+      "z": 1957.2,
+      "rotation": 329.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar33487_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 1478.03,
+      "z": 6169.1,
+      "rotation": 224.39,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34110_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3389.42,
+      "z": 1980.7,
+      "rotation": 328.68,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34110_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3386.03,
+      "z": 1978.64,
+      "rotation": 328.68,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34627_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 52.34,
+      "z": -93.78,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 53.24,
+      "z": -91.17,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 54.17,
+      "z": -88.48,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 55.11,
+      "z": -85.72,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 56.08,
+      "z": -82.91,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_5",
+      "prefab": "ConcreteBarrier01",
+      "x": 57.06,
+      "z": -80.06,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_6",
+      "prefab": "ConcreteBarrier01",
+      "x": 58.05,
+      "z": -77.16,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 59.05,
+      "z": -74.24,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 60.06,
+      "z": -71.3,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 61.08,
+      "z": -68.34,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 62.1,
+      "z": -65.38,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 63.11,
+      "z": -62.42,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 64.12,
+      "z": -59.48,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 65.12,
+      "z": -56.55,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 66.12,
+      "z": -53.66,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 67.1,
+      "z": -50.8,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 68.06,
+      "z": -48,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 69.01,
+      "z": -45.24,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 69.93,
+      "z": -42.55,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34627_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 70.83,
+      "z": -39.93,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34688_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -6131.84,
+      "z": 594.56,
+      "rotation": 203.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -6130.2,
+      "z": 593.83,
+      "rotation": 203.93,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -6128.18,
+      "z": 592.94,
+      "rotation": 203.91,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -6125.82,
+      "z": 591.89,
+      "rotation": 203.9,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -6123.18,
+      "z": 590.72,
+      "rotation": 203.89,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -6120.28,
+      "z": 589.44,
+      "rotation": 203.89,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -6117.19,
+      "z": 588.07,
+      "y": 238.04,
+      "rotation": 203.88,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -6113.94,
+      "z": 586.63,
+      "y": 237.92,
+      "rotation": 203.88,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -6110.58,
+      "z": 585.14,
+      "y": 237.8,
+      "rotation": 203.87,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -6107.15,
+      "z": 583.63,
+      "y": 237.67,
+      "rotation": 203.87,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -6103.7,
+      "z": 582.1,
+      "y": 237.55,
+      "rotation": 203.87,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -6100.27,
+      "z": 580.58,
+      "y": 237.42,
+      "rotation": 203.86,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -6096.91,
+      "z": 579.1,
+      "y": 237.3,
+      "rotation": 203.86,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -6093.66,
+      "z": 577.66,
+      "y": 237.18,
+      "rotation": 203.85,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -6090.56,
+      "z": 576.29,
+      "y": 237.07,
+      "rotation": 203.85,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -6087.67,
+      "z": 575.01,
+      "y": 236.98,
+      "rotation": 203.84,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -6085.02,
+      "z": 573.84,
+      "rotation": 203.84,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -6082.67,
+      "z": 572.8,
+      "rotation": 203.83,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -6080.64,
+      "z": 571.91,
+      "rotation": 203.81,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34688_19",
+      "prefab": "ConcreteBarrier01",
+      "x": -6079,
+      "z": 571.18,
+      "rotation": 203.79,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar34931_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 162.88,
+      "z": 111.44,
+      "rotation": 146.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 165.21,
+      "z": 112.94,
+      "rotation": 147.72,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 167.63,
+      "z": 114.44,
+      "rotation": 148.75,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 170.13,
+      "z": 115.93,
+      "rotation": 149.71,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 172.7,
+      "z": 117.4,
+      "rotation": 150.62,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_5",
+      "prefab": "ConcreteBarrier01",
+      "x": 175.33,
+      "z": 118.86,
+      "rotation": 151.5,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_6",
+      "prefab": "ConcreteBarrier01",
+      "x": 178.02,
+      "z": 120.29,
+      "rotation": 152.34,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 180.75,
+      "z": 121.7,
+      "rotation": 153.15,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 183.52,
+      "z": 123.07,
+      "rotation": 153.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 186.32,
+      "z": 124.42,
+      "rotation": 154.74,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 189.14,
+      "z": 125.73,
+      "rotation": 155.53,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 191.98,
+      "z": 126.99,
+      "rotation": 156.32,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 194.82,
+      "z": 128.22,
+      "rotation": 157.12,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 197.66,
+      "z": 129.39,
+      "rotation": 157.94,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 200.49,
+      "z": 130.51,
+      "rotation": 158.78,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 203.3,
+      "z": 131.58,
+      "rotation": 159.65,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 206.09,
+      "z": 132.59,
+      "rotation": 160.56,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 208.84,
+      "z": 133.53,
+      "rotation": 161.53,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 211.54,
+      "z": 134.41,
+      "rotation": 162.55,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar34931_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 214.2,
+      "z": 135.22,
+      "rotation": 163.65,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -5.01,
+      "z": -260.85,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -4.49,
+      "z": -259.33,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -3.89,
+      "z": -257.59,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -3.23,
+      "z": -255.65,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -2.49,
+      "z": -253.51,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -1.7,
+      "z": -251.2,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -0.85,
+      "z": -248.72,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 0.05,
+      "z": -246.1,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 1,
+      "z": -243.33,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 2,
+      "z": -240.44,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 3.03,
+      "z": -237.44,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 4.09,
+      "z": -234.34,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 5.18,
+      "z": -231.16,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 6.3,
+      "z": -227.91,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 7.44,
+      "z": -224.59,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 8.59,
+      "z": -221.24,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 9.75,
+      "z": -217.85,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 10.92,
+      "z": -214.44,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 12.09,
+      "z": -211.03,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 13.26,
+      "z": -207.63,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_20",
+      "prefab": "ConcreteBarrier01",
+      "x": 14.42,
+      "z": -204.25,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_21",
+      "prefab": "ConcreteBarrier01",
+      "x": 15.57,
+      "z": -200.91,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_22",
+      "prefab": "ConcreteBarrier01",
+      "x": 16.7,
+      "z": -197.61,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_23",
+      "prefab": "ConcreteBarrier01",
+      "x": 17.81,
+      "z": -194.38,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_24",
+      "prefab": "ConcreteBarrier01",
+      "x": 18.89,
+      "z": -191.22,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_25",
+      "prefab": "ConcreteBarrier01",
+      "x": 19.95,
+      "z": -188.15,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_26",
+      "prefab": "ConcreteBarrier01",
+      "x": 20.97,
+      "z": -185.18,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_27",
+      "prefab": "ConcreteBarrier01",
+      "x": 21.95,
+      "z": -182.33,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35526_28",
+      "prefab": "ConcreteBarrier01",
+      "x": 22.88,
+      "z": -179.61,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar35625_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3403.84,
+      "z": 1988.72,
+      "rotation": 336.24,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35625_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3400.21,
+      "z": 1987.12,
+      "rotation": 336.24,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35660_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 3255.96,
+      "z": 1935.96,
+      "y": 176.37,
+      "rotation": 329.47,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35660_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 3253.43,
+      "z": 1934.46,
+      "y": 176.24,
+      "rotation": 329.47,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35660_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 3250.4,
+      "z": 1932.68,
+      "y": 176.08,
+      "rotation": 329.47,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35660_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 3247.87,
+      "z": 1931.18,
+      "y": 175.95,
+      "rotation": 329.47,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -6034.86,
+      "z": 550.04,
+      "rotation": 205.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -6032.97,
+      "z": 549.14,
+      "rotation": 205.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -6030.51,
+      "z": 547.97,
+      "rotation": 205.36,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -6027.62,
+      "z": 546.6,
+      "rotation": 205.36,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -6024.44,
+      "z": 545.1,
+      "rotation": 205.36,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -6021.12,
+      "z": 543.52,
+      "rotation": 205.36,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -6017.81,
+      "z": 541.95,
+      "rotation": 205.36,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -6014.63,
+      "z": 540.45,
+      "rotation": 205.36,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -6011.74,
+      "z": 539.08,
+      "rotation": 205.36,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -6009.28,
+      "z": 537.91,
+      "rotation": 205.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar35831_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -6007.39,
+      "z": 537.01,
+      "rotation": 205.37,
+      "kind": "prop",
+      "cs1": "Concrete Barrier_Data"
+    },
+    {
+      "id": "bar36608_0",
+      "prefab": "ConcreteBarrier01",
+      "x": -207.6,
+      "z": -850.34,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_1",
+      "prefab": "ConcreteBarrier01",
+      "x": -206.66,
+      "z": -847.62,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_2",
+      "prefab": "ConcreteBarrier01",
+      "x": -205.68,
+      "z": -844.77,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_3",
+      "prefab": "ConcreteBarrier01",
+      "x": -204.66,
+      "z": -841.8,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_4",
+      "prefab": "ConcreteBarrier01",
+      "x": -203.61,
+      "z": -838.73,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_5",
+      "prefab": "ConcreteBarrier01",
+      "x": -202.53,
+      "z": -835.57,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_6",
+      "prefab": "ConcreteBarrier01",
+      "x": -201.42,
+      "z": -832.34,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_7",
+      "prefab": "ConcreteBarrier01",
+      "x": -200.28,
+      "z": -829.04,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_8",
+      "prefab": "ConcreteBarrier01",
+      "x": -199.14,
+      "z": -825.7,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_9",
+      "prefab": "ConcreteBarrier01",
+      "x": -197.98,
+      "z": -822.32,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_10",
+      "prefab": "ConcreteBarrier01",
+      "x": -196.81,
+      "z": -818.91,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_11",
+      "prefab": "ConcreteBarrier01",
+      "x": -195.64,
+      "z": -815.5,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_12",
+      "prefab": "ConcreteBarrier01",
+      "x": -194.47,
+      "z": -812.1,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_13",
+      "prefab": "ConcreteBarrier01",
+      "x": -193.31,
+      "z": -808.71,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_14",
+      "prefab": "ConcreteBarrier01",
+      "x": -192.15,
+      "z": -805.35,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_15",
+      "prefab": "ConcreteBarrier01",
+      "x": -191.02,
+      "z": -802.04,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_16",
+      "prefab": "ConcreteBarrier01",
+      "x": -189.9,
+      "z": -798.79,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_17",
+      "prefab": "ConcreteBarrier01",
+      "x": -188.81,
+      "z": -795.61,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_18",
+      "prefab": "ConcreteBarrier01",
+      "x": -187.74,
+      "z": -792.51,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_19",
+      "prefab": "ConcreteBarrier01",
+      "x": -186.71,
+      "z": -789.51,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_20",
+      "prefab": "ConcreteBarrier01",
+      "x": -185.72,
+      "z": -786.62,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_21",
+      "prefab": "ConcreteBarrier01",
+      "x": -184.77,
+      "z": -783.85,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_22",
+      "prefab": "ConcreteBarrier01",
+      "x": -183.87,
+      "z": -781.22,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_23",
+      "prefab": "ConcreteBarrier01",
+      "x": -183.02,
+      "z": -778.75,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_24",
+      "prefab": "ConcreteBarrier01",
+      "x": -182.22,
+      "z": -776.44,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_25",
+      "prefab": "ConcreteBarrier01",
+      "x": -181.49,
+      "z": -774.3,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_26",
+      "prefab": "ConcreteBarrier01",
+      "x": -180.82,
+      "z": -772.36,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_27",
+      "prefab": "ConcreteBarrier01",
+      "x": -180.23,
+      "z": -770.62,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36608_28",
+      "prefab": "ConcreteBarrier01",
+      "x": -179.7,
+      "z": -769.1,
+      "rotation": 108.95,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_0",
+      "prefab": "ConcreteBarrier01",
+      "x": 407.88,
+      "z": -4481.1,
+      "rotation": 225.01,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_1",
+      "prefab": "ConcreteBarrier01",
+      "x": 409.16,
+      "z": -4482.37,
+      "rotation": 224.77,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_2",
+      "prefab": "ConcreteBarrier01",
+      "x": 410.73,
+      "z": -4483.94,
+      "rotation": 224.63,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_3",
+      "prefab": "ConcreteBarrier01",
+      "x": 412.58,
+      "z": -4485.75,
+      "rotation": 224.54,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_4",
+      "prefab": "ConcreteBarrier01",
+      "x": 414.65,
+      "z": -4487.79,
+      "rotation": 224.47,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_5",
+      "prefab": "ConcreteBarrier01",
+      "x": 416.92,
+      "z": -4490.02,
+      "rotation": 224.42,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_6",
+      "prefab": "ConcreteBarrier01",
+      "x": 419.35,
+      "z": -4492.4,
+      "rotation": 224.39,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_7",
+      "prefab": "ConcreteBarrier01",
+      "x": 421.9,
+      "z": -4494.89,
+      "rotation": 224.35,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_8",
+      "prefab": "ConcreteBarrier01",
+      "x": 424.54,
+      "z": -4497.48,
+      "rotation": 224.33,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_9",
+      "prefab": "ConcreteBarrier01",
+      "x": 427.24,
+      "z": -4500.11,
+      "rotation": 224.31,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_10",
+      "prefab": "ConcreteBarrier01",
+      "x": 429.95,
+      "z": -4502.76,
+      "rotation": 224.29,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_11",
+      "prefab": "ConcreteBarrier01",
+      "x": 432.65,
+      "z": -4505.39,
+      "rotation": 224.27,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_12",
+      "prefab": "ConcreteBarrier01",
+      "x": 435.3,
+      "z": -4507.96,
+      "rotation": 224.26,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_13",
+      "prefab": "ConcreteBarrier01",
+      "x": 437.85,
+      "z": -4510.46,
+      "rotation": 224.24,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_14",
+      "prefab": "ConcreteBarrier01",
+      "x": 440.29,
+      "z": -4512.83,
+      "rotation": 224.23,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_15",
+      "prefab": "ConcreteBarrier01",
+      "x": 442.57,
+      "z": -4515.04,
+      "rotation": 224.22,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_16",
+      "prefab": "ConcreteBarrier01",
+      "x": 444.65,
+      "z": -4517.07,
+      "rotation": 224.2,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_17",
+      "prefab": "ConcreteBarrier01",
+      "x": 446.51,
+      "z": -4518.88,
+      "rotation": 224.19,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_18",
+      "prefab": "ConcreteBarrier01",
+      "x": 448.1,
+      "z": -4520.42,
+      "rotation": 224.17,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    },
+    {
+      "id": "bar36622_19",
+      "prefab": "ConcreteBarrier01",
+      "x": 449.39,
+      "z": -4521.68,
+      "rotation": 224.14,
+      "kind": "prop",
+      "cs1": "Concrete Barrier - raisable_Data"
+    }
+  ]
+}

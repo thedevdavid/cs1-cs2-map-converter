@@ -1,0 +1,99 @@
+{
+  "name": "Dakota Falls power line ends",
+  "_comment": "Replaces the last course of each 345 kV circuit (undo the edges in \u0027replaces\u0027 first). The end node carries connectTo {voltage high, radius 60} (bridge 0.9.13) and attaches to the building\u0027s high-voltage marker node; its x/z (building centre moved 8 m toward the line) only picks the marker. The start node joins the existing pylon node through snapToSegment (radius 2).",
+  "replaces": [
+    "e5094_0",
+    "e32855_0"
+  ],
+  "nodes": [
+    {
+      "id": "n26177",
+      "x": 1666.34,
+      "y": 169.91,
+      "z": 4490.16,
+      "elevation": 0,
+      "snapToSegment": {
+        "radius": 2,
+        "prefabContains": "High-voltage Line"
+      }
+    },
+    {
+      "id": "substation_end",
+      "x": 1600.48,
+      "z": 4544.04,
+      "y": 168.36,
+      "elevation": 0,
+      "connectTo": {
+        "voltage": "high",
+        "radius": 60
+      }
+    },
+    {
+      "id": "n2881",
+      "x": 1683.97,
+      "y": 170.28,
+      "z": 4504.37,
+      "elevation": 0,
+      "snapToSegment": {
+        "radius": 2,
+        "prefabContains": "High-voltage Line"
+      }
+    },
+    {
+      "id": "dam_end",
+      "x": 1555.81,
+      "z": 4685.08,
+      "y": 167.13,
+      "elevation": 0,
+      "connectTo": {
+        "voltage": "high",
+        "radius": 120
+      }
+    },
+    {
+      "id": "dam_via",
+      "x": 1664.74,
+      "z": 4600.15,
+      "y": 167.36,
+      "elevation": 0,
+      "note": "the straight course passed the substation 46 m off; extra pylon 87 m from it on the far side"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e5094_0_to_substation",
+      "a": "n26177",
+      "b": "substation_end",
+      "prefab": "High-voltage Line",
+      "replaces": "e5094_0",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 5094
+    },
+    {
+      "id": "e32855_0_to_dam_a",
+      "a": "n2881",
+      "b": "dam_via",
+      "prefab": "High-voltage Line",
+      "replaces": "e32855_0",
+      "note": "the straight course passed the substation 46 m off; extra pylon 87 m from it on the far side",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 32855
+    },
+    {
+      "id": "e32855_0_to_dam_b",
+      "a": "dam_via",
+      "b": "dam_end",
+      "prefab": "High-voltage Line",
+      "replaces": "e32855_0",
+      "note": "the straight course passed the substation 46 m off; extra pylon 87 m from it on the far side",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 32855
+    }
+  ],
+  "options": {
+    "batchSize": 64,
+    "nodesFirst": true,
+    "heightMode": "absolute",
+    "dryRun": false
+  }
+}

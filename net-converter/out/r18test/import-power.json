@@ -1,0 +1,1654 @@
+{
+  "name": "Dakota Falls power lines",
+  "_comment": "net-converter: CS1 Dakota Falls -\u003E CS2, x/z metres unchanged (factor 1.0), clipped at \u00B17168 m; y = CS1 world height; elevation = metres above terrain",
+  "_note": "Left out (replaced by import-power-ends.json): e5094_0, e32855_0.",
+  "nodes": [
+    {
+      "id": "n11873",
+      "x": 2468.86,
+      "y": 235.38,
+      "z": 3658.92,
+      "elevation": 0
+    },
+    {
+      "id": "n17192",
+      "x": 2294.73,
+      "y": 207.31,
+      "z": 3800.15,
+      "elevation": 0
+    },
+    {
+      "id": "n5138",
+      "x": -45.43,
+      "y": 150.25,
+      "z": -446.45,
+      "elevation": 0
+    },
+    {
+      "id": "n15329",
+      "x": -112.88,
+      "y": 151.5,
+      "z": -669.72,
+      "elevation": 0
+    },
+    {
+      "id": "n12018",
+      "x": 2120.61,
+      "y": 192.04,
+      "z": 3941.39,
+      "elevation": 0
+    },
+    {
+      "id": "n11271",
+      "x": 1946.48,
+      "y": 180.71,
+      "z": 4082.62,
+      "elevation": 0
+    },
+    {
+      "id": "n5430",
+      "x": 2817.11,
+      "y": 207.22,
+      "z": 3376.45,
+      "elevation": 0
+    },
+    {
+      "id": "n11110",
+      "x": 2642.98,
+      "y": 229.59,
+      "z": 3517.69,
+      "elevation": 0
+    },
+    {
+      "id": "n22416",
+      "x": 2991.23,
+      "y": 192.36,
+      "z": 3235.22,
+      "elevation": 0
+    },
+    {
+      "id": "n26177",
+      "x": 1666.34,
+      "y": 169.91,
+      "z": 4490.16,
+      "elevation": 0
+    },
+    {
+      "id": "n5552",
+      "x": 1702.53,
+      "y": 171.1,
+      "z": 4372.47,
+      "elevation": 0
+    },
+    {
+      "id": "n21695",
+      "x": 4465.03,
+      "y": 186.28,
+      "z": 2666.09,
+      "elevation": 0
+    },
+    {
+      "id": "n31754",
+      "x": 4226.01,
+      "y": 190.61,
+      "z": 2702.61,
+      "elevation": 0
+    },
+    {
+      "id": "n28672",
+      "x": -6.29,
+      "y": 134.09,
+      "z": -34.1,
+      "elevation": 0
+    },
+    {
+      "id": "n14073",
+      "x": -25.86,
+      "y": 135.86,
+      "z": -240.28,
+      "elevation": 0
+    },
+    {
+      "id": "n22191",
+      "x": 245.36,
+      "y": 159.27,
+      "z": 2617.18,
+      "elevation": 0
+    },
+    {
+      "id": "n32086",
+      "x": 223.7,
+      "y": 147.55,
+      "z": 2388.95,
+      "elevation": 0
+    },
+    {
+      "id": "n28691",
+      "x": 6138.15,
+      "y": 157.94,
+      "z": 2410.46,
+      "elevation": 0
+    },
+    {
+      "id": "n30509",
+      "x": 5899.13,
+      "y": 160.84,
+      "z": 2446.98,
+      "elevation": 0
+    },
+    {
+      "id": "n27986",
+      "x": 6825.81,
+      "y": 142.07,
+      "z": 2308.36,
+      "elevation": 0
+    },
+    {
+      "id": "n21729",
+      "x": 6616.18,
+      "y": 139.24,
+      "z": 2337.42,
+      "elevation": 0
+    },
+    {
+      "id": "n16063",
+      "x": 3986.99,
+      "y": 194.58,
+      "z": 2739.13,
+      "elevation": 0
+    },
+    {
+      "id": "n6257",
+      "x": 3747.97,
+      "y": 182.86,
+      "z": 2775.65,
+      "elevation": 0
+    },
+    {
+      "id": "n21639",
+      "x": 1334.8,
+      "y": 145.1,
+      "z": 4119.64,
+      "elevation": 0
+    },
+    {
+      "id": "n8436",
+      "x": 1164.04,
+      "y": 141.48,
+      "z": 3965.21,
+      "elevation": 0
+    },
+    {
+      "id": "n8815",
+      "x": 50.39,
+      "y": 144.38,
+      "z": 563.08,
+      "elevation": 0
+    },
+    {
+      "id": "n27493",
+      "x": 32.84,
+      "y": 142.59,
+      "z": 378.25,
+      "elevation": 0
+    },
+    {
+      "id": "n14355",
+      "x": 986.04,
+      "y": 142.78,
+      "z": 3804.38,
+      "elevation": 0
+    },
+    {
+      "id": "n19326",
+      "x": 806.77,
+      "y": 159.37,
+      "z": 3641.71,
+      "elevation": 0
+    },
+    {
+      "id": "n29926",
+      "x": 1602.75,
+      "y": 170.3,
+      "z": 4282.86,
+      "elevation": 0
+    },
+    {
+      "id": "n7213",
+      "x": 7052.99,
+      "y": 144.54,
+      "z": 2271.29,
+      "elevation": 0
+    },
+    {
+      "id": "n16773",
+      "x": 694.49,
+      "y": 163.11,
+      "z": 3436.81,
+      "elevation": 0
+    },
+    {
+      "id": "n25033",
+      "x": 6377.17,
+      "y": 154.14,
+      "z": 2373.94,
+      "elevation": 0
+    },
+    {
+      "id": "n19946",
+      "x": 13.27,
+      "y": 137.57,
+      "z": 172.07,
+      "elevation": 0
+    },
+    {
+      "id": "n10432",
+      "x": 1772.35,
+      "y": 173.16,
+      "z": 4223.85,
+      "elevation": 0
+    },
+    {
+      "id": "n2881",
+      "x": 1683.97,
+      "y": 170.28,
+      "z": 4504.37,
+      "elevation": 0
+    },
+    {
+      "id": "n24213",
+      "x": 1725.4,
+      "y": 171.67,
+      "z": 4371.9,
+      "elevation": 0
+    },
+    {
+      "id": "n13931",
+      "x": -247.78,
+      "y": 141.5,
+      "z": -1116.26,
+      "elevation": 0
+    },
+    {
+      "id": "n23573",
+      "x": -315.23,
+      "y": 138.47,
+      "z": -1339.53,
+      "elevation": 0
+    },
+    {
+      "id": "n12004",
+      "x": 5660.11,
+      "y": 163.24,
+      "z": 2483.5,
+      "elevation": 0
+    },
+    {
+      "id": "n18128",
+      "x": 5421.1,
+      "y": 169.44,
+      "z": 2520.02,
+      "elevation": 0
+    },
+    {
+      "id": "n17095",
+      "x": 72.05,
+      "y": 142.85,
+      "z": 791.32,
+      "elevation": 0
+    },
+    {
+      "id": "c17639_0",
+      "x": 7168,
+      "y": 143.73,
+      "z": 2252.52,
+      "elevation": 0,
+      "border": true
+    },
+    {
+      "id": "n20414",
+      "x": 469.93,
+      "y": 160.57,
+      "z": 3027,
+      "elevation": 0
+    },
+    {
+      "id": "n23551",
+      "x": 357.64,
+      "y": 165.28,
+      "z": 2822.09,
+      "elevation": 0
+    },
+    {
+      "id": "n20546",
+      "x": 4943.06,
+      "y": 178.13,
+      "z": 2593.05,
+      "elevation": 0
+    },
+    {
+      "id": "n24858",
+      "x": 4704.04,
+      "y": 182.18,
+      "z": 2629.57,
+      "elevation": 0
+    },
+    {
+      "id": "n17074",
+      "x": 137.04,
+      "y": 144.6,
+      "z": 1476.02,
+      "elevation": 0
+    },
+    {
+      "id": "n28040",
+      "x": 115.38,
+      "y": 144.31,
+      "z": 1247.78,
+      "elevation": 0
+    },
+    {
+      "id": "n19892",
+      "x": 93.72,
+      "y": 143.56,
+      "z": 1019.55,
+      "elevation": 0
+    },
+    {
+      "id": "n9478",
+      "x": 3513.61,
+      "y": 191.97,
+      "z": 2811.52,
+      "elevation": 0
+    },
+    {
+      "id": "n9694",
+      "x": 202.04,
+      "y": 149.48,
+      "z": 2160.72,
+      "elevation": 0
+    },
+    {
+      "id": "n9841",
+      "x": 582.21,
+      "y": 161.15,
+      "z": 3231.9,
+      "elevation": 0
+    },
+    {
+      "id": "n27613",
+      "x": 180.37,
+      "y": 147.97,
+      "z": 1932.48,
+      "elevation": 0
+    },
+    {
+      "id": "n25930",
+      "x": 158.71,
+      "y": 148.41,
+      "z": 1704.25,
+      "elevation": 0
+    },
+    {
+      "id": "n24086",
+      "x": 3339.49,
+      "y": 190.92,
+      "z": 2952.76,
+      "elevation": 0
+    },
+    {
+      "id": "n28046",
+      "x": -180.33,
+      "y": 144.44,
+      "z": -892.99,
+      "elevation": 0
+    },
+    {
+      "id": "n8563",
+      "x": 1458.04,
+      "y": 156.29,
+      "z": 4194.67,
+      "elevation": 0
+    },
+    {
+      "id": "n2178",
+      "x": 3165.36,
+      "y": 185.35,
+      "z": 3093.99,
+      "elevation": 0
+    },
+    {
+      "id": "n4619",
+      "x": 5182.08,
+      "y": 173.87,
+      "z": 2556.54,
+      "elevation": 0
+    }
+  ],
+  "edges": [
+    {
+      "id": "e226_0",
+      "a": "n11873",
+      "b": "n17192",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          2442.73,
+          485.08,
+          3680.1
+        ],
+        [
+          2320.85,
+          448.86,
+          3778.97
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 226
+    },
+    {
+      "id": "e1126_0",
+      "a": "n5138",
+      "b": "n15329",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          -55.55,
+          300.88,
+          -479.94
+        ],
+        [
+          -102.76,
+          302.64,
+          -636.23
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 1126
+    },
+    {
+      "id": "e1272_0",
+      "a": "n12018",
+      "b": "n11271",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          2067.8,
+          384.82,
+          3983.09
+        ],
+        [
+          1975.35,
+          367.28,
+          4056.14
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 1272
+    },
+    {
+      "id": "e2165_0",
+      "a": "n5430",
+      "b": "n11110",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          2790.97,
+          428.43,
+          3397.62
+        ],
+        [
+          2669.12,
+          464.59,
+          3496.53
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 2165
+    },
+    {
+      "id": "e2664_0",
+      "a": "n22416",
+      "b": "n5430",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          2965.1,
+          390.12,
+          3256.39
+        ],
+        [
+          2843.24,
+          415.29,
+          3355.28
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 2664
+    },
+    {
+      "id": "e3617_0",
+      "a": "n26177",
+      "b": "n5552",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          1671.77,
+          348.71,
+          4472.51
+        ],
+        [
+          1697.11,
+          348.71,
+          4390.13
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 3617
+    },
+    {
+      "id": "e4026_0",
+      "a": "n21695",
+      "b": "n31754",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          4429.17,
+          373.92,
+          2671.57
+        ],
+        [
+          4261.86,
+          379.98,
+          2697.13
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 4026
+    },
+    {
+      "id": "e4376_0",
+      "a": "n28672",
+      "b": "n14073",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          -9.23,
+          268.7,
+          -65.03
+        ],
+        [
+          -22.93,
+          271.21,
+          -209.35
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 4376
+    },
+    {
+      "id": "e4649_0",
+      "a": "n22191",
+      "b": "n32086",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          242.11,
+          315.38,
+          2582.95
+        ],
+        [
+          226.95,
+          298.94,
+          2423.19
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 4649
+    },
+    {
+      "id": "e4779_0",
+      "a": "n28691",
+      "b": "n30509",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          6102.3,
+          314.75,
+          2415.94
+        ],
+        [
+          5934.98,
+          318.64,
+          2441.5
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 4779
+    },
+    {
+      "id": "e5302_0",
+      "a": "n27986",
+      "b": "n21729",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          6794.37,
+          281.19,
+          2312.72
+        ],
+        [
+          6647.63,
+          277.44,
+          2333.06
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 5302
+    },
+    {
+      "id": "e6779_0",
+      "a": "n16063",
+      "b": "n6257",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          3951.12,
+          385.69,
+          2744.48
+        ],
+        [
+          3783.74,
+          369.26,
+          2769.64
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 6779
+    },
+    {
+      "id": "e7740_0",
+      "a": "n21639",
+      "b": "n8436",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          1309.23,
+          289.13,
+          4096.43
+        ],
+        [
+          1189.65,
+          284.09,
+          3988.37
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 7740
+    },
+    {
+      "id": "e8022_0",
+      "a": "n8815",
+      "b": "n27493",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          47.77,
+          288.23,
+          535.36
+        ],
+        [
+          35.47,
+          285.72,
+          405.97
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 8022
+    },
+    {
+      "id": "e9739_0",
+      "a": "n14355",
+      "b": "n19326",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          959.15,
+          290.57,
+          3779.98
+        ],
+        [
+          833.66,
+          313.79,
+          3666.11
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 9739
+    },
+    {
+      "id": "e10423_0",
+      "a": "n29926",
+      "b": "n5552",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          1617.72,
+          341.83,
+          4296.31
+        ],
+        [
+          1687.44,
+          347.5,
+          4359.18
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 10423
+    },
+    {
+      "id": "e10528_0",
+      "a": "n7213",
+      "b": "n27986",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          7018.91,
+          287.14,
+          2276.85
+        ],
+        [
+          6859.89,
+          282.9,
+          2302.8
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 10528
+    },
+    {
+      "id": "e12153_0",
+      "a": "n19326",
+      "b": "n16773",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          789.92,
+          319.89,
+          3610.98
+        ],
+        [
+          711.33,
+          325.11,
+          3467.54
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 12153
+    },
+    {
+      "id": "e12253_0",
+      "a": "n25033",
+      "b": "n28691",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          6341.31,
+          309.13,
+          2379.42
+        ],
+        [
+          6174,
+          313.08,
+          2404.98
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 12253
+    },
+    {
+      "id": "e12328_0",
+      "a": "n14073",
+      "b": "n5138",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          -28.8,
+          276.06,
+          -271.2
+        ],
+        [
+          -42.5,
+          296.19,
+          -415.52
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 12328
+    },
+    {
+      "id": "e12721_0",
+      "a": "n19946",
+      "b": "n28672",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          10.52,
+          274.08,
+          141.13
+        ],
+        [
+          -2.79,
+          269.21,
+          -3.23
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 12721
+    },
+    {
+      "id": "e12783_0",
+      "a": "n11271",
+      "b": "n10432",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          1920.36,
+          359.18,
+          4103.81
+        ],
+        [
+          1798.47,
+          348.61,
+          4202.67
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 12783
+    },
+    {
+      "id": "e13766_0",
+      "a": "n2881",
+      "b": "n24213",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          1690.19,
+          348.71,
+          4484.5
+        ],
+        [
+          1719.19,
+          348.71,
+          4391.77
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 13766
+    },
+    {
+      "id": "e14121_0",
+      "a": "n11110",
+      "b": "n11873",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          2616.86,
+          475.41,
+          3538.86
+        ],
+        [
+          2494.98,
+          489.77,
+          3637.75
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 14121
+    },
+    {
+      "id": "e15593_0",
+      "a": "n13931",
+      "b": "n23573",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          -257.9,
+          282.09,
+          -1149.75
+        ],
+        [
+          -305.12,
+          277.86,
+          -1306.04
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 15593
+    },
+    {
+      "id": "e16494_0",
+      "a": "n12004",
+      "b": "n18128",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          5624.26,
+          326.82,
+          2488.98
+        ],
+        [
+          5456.95,
+          336.75,
+          2514.54
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 16494
+    },
+    {
+      "id": "e17132_0",
+      "a": "n17095",
+      "b": "n8815",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          68.8,
+          286.16,
+          757.08
+        ],
+        [
+          53.64,
+          288.31,
+          597.32
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 17132
+    },
+    {
+      "id": "e17639_0",
+      "a": "c17639_0",
+      "b": "n7213",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          7119.25,
+          287.54,
+          2260.47
+        ],
+        [
+          7070.19,
+          287.92,
+          2268.48
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 17639
+    },
+    {
+      "id": "e20237_0",
+      "a": "n20414",
+      "b": "n23551",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          453.08,
+          322.5,
+          2996.26
+        ],
+        [
+          374.49,
+          328.85,
+          2852.83
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 20237
+    },
+    {
+      "id": "e20777_0",
+      "a": "n20546",
+      "b": "n24858",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          4907.2,
+          356.64,
+          2598.5
+        ],
+        [
+          4739.87,
+          362.99,
+          2623.94
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 20777
+    },
+    {
+      "id": "e21224_0",
+      "a": "n17074",
+      "b": "n28040",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          133.8,
+          289.12,
+          1441.78
+        ],
+        [
+          118.63,
+          288.69,
+          1282.02
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 21224
+    },
+    {
+      "id": "e21304_0",
+      "a": "n28040",
+      "b": "n19892",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          112.13,
+          288.38,
+          1213.55
+        ],
+        [
+          96.97,
+          287.36,
+          1053.78
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 21304
+    },
+    {
+      "id": "e21642_0",
+      "a": "n6257",
+      "b": "n9478",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          3712.82,
+          368.47,
+          2781.03
+        ],
+        [
+          3548.77,
+          381.22,
+          2806.14
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 21642
+    },
+    {
+      "id": "e22636_0",
+      "a": "n32086",
+      "b": "n9694",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          220.45,
+          295.95,
+          2354.72
+        ],
+        [
+          205.29,
+          298.44,
+          2194.95
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 22636
+    },
+    {
+      "id": "e22809_0",
+      "a": "n24213",
+      "b": "n10432",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          1732.45,
+          348.36,
+          4349.7
+        ],
+        [
+          1765.31,
+          346.7,
+          4246.06
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 22809
+    },
+    {
+      "id": "e24640_0",
+      "a": "n9841",
+      "b": "n20414",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          565.36,
+          322.11,
+          3201.16
+        ],
+        [
+          486.77,
+          321.31,
+          3057.73
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 24640
+    },
+    {
+      "id": "e24821_0",
+      "a": "n24858",
+      "b": "n21695",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          4668.19,
+          365.6,
+          2635.05
+        ],
+        [
+          4500.88,
+          371.38,
+          2660.61
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 24821
+    },
+    {
+      "id": "e25550_0",
+      "a": "n27613",
+      "b": "n25930",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          177.12,
+          296.07,
+          1898.25
+        ],
+        [
+          161.96,
+          296.66,
+          1738.48
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 25550
+    },
+    {
+      "id": "e25866_0",
+      "a": "n9478",
+      "b": "n24086",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          3487.49,
+          382.95,
+          2832.71
+        ],
+        [
+          3365.61,
+          378.29,
+          2931.57
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 25866
+    },
+    {
+      "id": "e26162_0",
+      "a": "n25930",
+      "b": "n17074",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          155.46,
+          295.65,
+          1670.02
+        ],
+        [
+          140.29,
+          290.35,
+          1510.25
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 26162
+    },
+    {
+      "id": "e26257_0",
+      "a": "n17192",
+      "b": "n12018",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          2268.63,
+          434.16,
+          3821.36
+        ],
+        [
+          2146.71,
+          401.79,
+          3920.18
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 26257
+    },
+    {
+      "id": "e26623_0",
+      "a": "n15329",
+      "b": "n28046",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          -122.99,
+          300.89,
+          -703.21
+        ],
+        [
+          -170.22,
+          291.01,
+          -859.5
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 26623
+    },
+    {
+      "id": "e27302_0",
+      "a": "n21729",
+      "b": "n25033",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          6580.33,
+          281.38,
+          2342.9
+        ],
+        [
+          6413.02,
+          303.54,
+          2368.46
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 27302
+    },
+    {
+      "id": "e28308_0",
+      "a": "n27493",
+      "b": "n19946",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          29.87,
+          283.67,
+          347.33
+        ],
+        [
+          16.05,
+          276.63,
+          203.01
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 28308
+    },
+    {
+      "id": "e28499_0",
+      "a": "n8563",
+      "b": "n29926",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          1479.87,
+          316.8,
+          4207.7
+        ],
+        [
+          1581.06,
+          336.41,
+          4269.6
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 28499
+    },
+    {
+      "id": "e29211_0",
+      "a": "n24086",
+      "b": "n2178",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          3313.37,
+          375.79,
+          2973.94
+        ],
+        [
+          3191.48,
+          368.82,
+          3072.8
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 29211
+    },
+    {
+      "id": "e29250_0",
+      "a": "n30509",
+      "b": "n12004",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          5863.28,
+          320.25,
+          2452.46
+        ],
+        [
+          5695.97,
+          323.91,
+          2478.02
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 29250
+    },
+    {
+      "id": "e30718_0",
+      "a": "n8436",
+      "b": "n14355",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          1137.34,
+          283.4,
+          3941.08
+        ],
+        [
+          1012.74,
+          285.21,
+          3828.5
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 30718
+    },
+    {
+      "id": "e31664_0",
+      "a": "n9694",
+      "b": "n27613",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          198.79,
+          298.52,
+          2126.48
+        ],
+        [
+          183.62,
+          296.4,
+          1966.72
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 31664
+    },
+    {
+      "id": "e32108_0",
+      "a": "n16773",
+      "b": "n9841",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          677.64,
+          325.63,
+          3406.07
+        ],
+        [
+          599.05,
+          322.88,
+          3262.64
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 32108
+    },
+    {
+      "id": "e32466_0",
+      "a": "n31754",
+      "b": "n16063",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          4190.16,
+          382.47,
+          2708.09
+        ],
+        [
+          4022.84,
+          388.02,
+          2733.65
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 32466
+    },
+    {
+      "id": "e32968_0",
+      "a": "n23551",
+      "b": "n22191",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          340.8,
+          328.51,
+          2791.35
+        ],
+        [
+          262.2,
+          320.6,
+          2647.92
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 32968
+    },
+    {
+      "id": "e33621_0",
+      "a": "n28046",
+      "b": "n13931",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          -190.35,
+          288,
+          -926.51
+        ],
+        [
+          -237.52,
+          283.88,
+          -1082.82
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 33621
+    },
+    {
+      "id": "e34052_0",
+      "a": "n2178",
+      "b": "n22416",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          3139.49,
+          369.93,
+          3115.48
+        ],
+        [
+          3017.6,
+          382.12,
+          3214.34
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 34052
+    },
+    {
+      "id": "e34216_0",
+      "a": "n8563",
+      "b": "n21639",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          1439.66,
+          309.24,
+          4183.24
+        ],
+        [
+          1353.18,
+          293.57,
+          4131.07
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 34216
+    },
+    {
+      "id": "e35589_0",
+      "a": "n4619",
+      "b": "n20546",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          5146.23,
+          347.77,
+          2562.01
+        ],
+        [
+          4978.91,
+          353.95,
+          2587.58
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 35589
+    },
+    {
+      "id": "e35693_0",
+      "a": "n19892",
+      "b": "n17095",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          90.47,
+          286.93,
+          985.31
+        ],
+        [
+          75.3,
+          285.92,
+          825.55
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 35693
+    },
+    {
+      "id": "e36093_0",
+      "a": "n18128",
+      "b": "n4619",
+      "prefab": "High-voltage Line",
+      "control": [
+        [
+          5385.24,
+          340.02,
+          2525.49
+        ],
+        [
+          5217.93,
+          345.31,
+          2551.06
+        ]
+      ],
+      "structure": "ground",
+      "cs1_prefab": "2920928696.345 kV H Frame Ceramic Insulator_Data",
+      "cs1_segment": 36093
+    }
+  ],
+  "options": {
+    "batchSize": 64,
+    "nodesFirst": true,
+    "heightMode": "absolute",
+    "dryRun": false
+  }
+}

@@ -808,7 +808,8 @@ void WriteLayers()
             // Bridge live test: yaw 261.7 (−CS1 angle) aligns the plant with the CS1 dam axis; the mirrored variant is gone.
             // Bridge 0.9.23 builds the plant, the dam and its ends from one network edge (IMPORT_SCHEMA.md "Dams"); no plant object file.
             foreach (var dropped in new[] { "import-dam-B.json", "import-dam-deck.json" }) File.Delete(Path.Combine(outDir, dropped));
-            damLog = Round8.WriteDam(Path.Combine(outDir, "import-dam.json"), cs2True, heightFactor);
+            Func<double, double, bool>? wetDam = surfaceEarly == null ? null : (x, z) => surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.5;
+            damLog = Round8.WriteDam(Path.Combine(outDir, "import-dam.json"), cs2True, heightFactor, wetDam);
         }
         var targets = new List<(string, double, double)>();
         if (subB.Count > 0) targets.Add(("substation", subB[0].X, subB[0].Z));
