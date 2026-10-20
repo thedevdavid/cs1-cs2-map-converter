@@ -9,11 +9,11 @@ Both runs use the **same heightmap pair**. Only the Height Scale field and the i
 |---|---|---|
 | Height Scale on import | **2048** | **4096** |
 | Playable heightmap | **`10190843-dktflls-1to1.png`** (A-v3: peaks + PO mountains/rock work + falls steps capped at the CS1 water line); comparison `10190843-dktflls-1to1-soft.png` (softened mountains, pair it with world map 10190910) | same |
-| World map | **`10200633-dktflls-1to1_worldmap.png`** (hmap-ext f2e2e35, tickets 01–27: massifs, 8 hill groups, creek network cutting ~21 m, 29–33 % flats; heavier north foothills); `10200636-dktflls-1to1_worldmap.png` is the same with the lighter north of 10191247; soft variant `10200635-dktflls-1to1-soft_worldmap.png` | same |
+| World map | **ticket-28 successor from hmap-ext when it lands (flats + gullies); until then `10200633-dktflls-1to1_worldmap.png`** (Import World Map can be redone later on the same map without touching the playable area) (hmap-ext f2e2e35, tickets 01–27: massifs, 8 hill groups, creek network cutting ~21 m, 29–33 % flats; heavier north foothills); `10200636-dktflls-1to1_worldmap.png` is the same with the lighter north of 10191247; soft variant `10200635-dktflls-1to1-soft_worldmap.png` | same |
 | Import file set | `net-converter/out/x1/` | `net-converter/out/` |
 | Sea Level (Water tab) | **93 m** first (measured CS1 lower river 92.8 m); 97.5 m if banks look dry | **186 m** first; 195 m fallback |
 | Heights in game | true CS1 metres | 2 × CS1 |
-| Save name | `dakota-A-2048` | `dakota-B-4096` |
+| Save name | `dakota-A6-2048` (A-v6, 2026-10-20) | `dakota-B-4096` |
 
 ## Before the game starts (you)
 
@@ -31,7 +31,9 @@ Both runs use the **same heightmap pair**. Only the Height Scale field and the i
 
 ## Per run (orchestrator, through the bridge)
 
-**One command:** `node net-converter/tools/import-run.mjs --scale x1 --sea 93` (run B: `--scale x2 --sea 186`; climate comes from `look/climate.json`, override with `--climate`). Order since A-v5: surfaces first, then nets (network, gaps, bridges, dam, power, canals, ship paths), then water, connections, objects, barriers, station, cliffs, scatter, fort, trees, resources, power ends, settings, look. The runner stops at the first step whose `netGuard.segmentsRemoved` is not 0 and prints `/net/count` after the nets and at the end.
+**One command (A-v6):** `node net-converter/tools/import-run.mjs --scale x1 --sea 93 --po-structures --with po-gantry` (run B: `--scale x2 --sea 186`; climate comes from `look/climate.json`, override with `--climate`). Order since A-v5: surfaces first, then nets (network, gaps, bridges, dam, power, canals, ship paths), then water, connections, objects, barriers, station, cliffs, scatter, fort, trees, resources, power ends, settings, look. The runner stops at the first step whose `netGuard.segmentsRemoved` is not 0 and prints `/net/count` after the nets and at the end.
+
+**A-v6 (2026-10-20):** bridge **0.9.26** must be the running build (closed surface polygons, so the surface step no longer deletes nets; Traffic-style TM:PE pre-validation) — restart the game after Skyve shows it. Converter round 19 + 20 files in `out/x1`: footpaths and dam walkway gone, organic sand/dry-grass polygons and true field circles, straightened BR005/BR009 approaches, interchange head-on joins and the (−4224,−60) crossing restored, nine low bridges at 8.5 m, BR007/BR010 single truss-arch edges, 304 m dam edge with `flow: invert`. `--po-structures` places the 72 PO structure objects (BR006 StoneArchRailBridge + ConcreteSet01 columns/piers, BR022 pads; mods 154132 + 135944 in the playset since 2026-10-20) after po-rocks; `--with po-gantry` adds the one Truss Gantry (132188). `po-piers` (ITBP 140978) stays off until `noPillars` is verified on BR001/BR003. The look step re-posts `look/climate.json` and the corrected `look/water.json`. After the save: `node cs2mcp/scripts/import-tmpe.mjs --dry-run --body net-converter/out/x1/import-all.json`, then the real import, save again as `dakota-A6b-2048`.
 
 **A-v5 acceptance (bridge round 24):** segment counts per prefab must match (a) right after the net steps, (b) after 2 minutes of idle editor time, (c) after save + reload (`node net-converter/tools/import-run.mjs --verify-only`). Save under a name with no leading or trailing space. It runs every layer below in order, prints one line per layer, stops on a body error and writes `out/<scale>/run-<timestamp>.md` with every importId. The numbered list stays as the reference and for manual re-runs of single layers.
 
