@@ -25,7 +25,8 @@ Both runs use the **same heightmap pair**. Only the Height Scale field and the i
 
 1. Map → New. Terrain tab → Import Heightmap: set **Height Scale** first (2048 for A, 4096 for B), then pick the playable file, then Import World Map with the `_worldmap` file.
 2. Water tab → Sea Level: 97.5 (A) or 195 (B) → Apply. (A new map defaults to 511.7 m, which floods everything.)
-3. Open the road tool once and turn the **Anarchy toggle on** (highlighted). Leave the tool open during imports or rely on `bypassValidation`.
+3. Open the road tool once and turn the **Anarchy toggle on** (highlighted), or rely on `bypassValidation` (A-v5 ran without the toggle, no losses).
+3b. **Unpause the editor simulation** (play button bottom-left) before judging water: sources only flow while the clock runs; A-v5 showed 0 wet cells on the streams until it was unpaused, 290 within a minute. Let it run a few minutes and save again, since the water state is saved.
 4. Say "Run A ready" or "Run B ready" in the orchestrator session.
 
 ## Per run (orchestrator, through the bridge)
