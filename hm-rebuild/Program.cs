@@ -23,6 +23,7 @@ public static class Program
         {
             if (args.Length > 0 && args[0] == "peaks") return Peaks.Run(args);
             if (args.Length > 0 && args[0] == "stamp") return Stamp.Cli(args);
+            if (args.Length > 0 && args[0] == "roads") return Roads.Cli(args);
             if (args.Length > 0 && args[0] == "selftest") return SelfTest.Run(keepDir: args.Length > 2 && args[1] == "--keep" ? args[2] : null);
             var o = Options.Parse(args);
             if (o == null) { Usage(); return 2; }

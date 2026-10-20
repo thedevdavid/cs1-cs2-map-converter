@@ -147,3 +147,16 @@ dotnet run -c Release -- stamp "$H\10190615-dktflls-1to1.png" out\10190615\10190
 - **Per-object cap:** top' = min(top, CS1 water − 0.5 m) on wet pixels. A pixel is wet if its nearest CS1 cell is wet; its water height is bilinear over the wet cells of the surrounding 2×2. Objects whose largest rise after the cap is under 1 m (`--min-add`) are skipped.
 - **Final surface cap:** after the falloff and smoothing, wet pixels are held at max(terrain, water − 0.5 m), so skirts from bank rocks can't build a wall across the channel.
 - **Stats:** `<prefix>-<name>_stats.md` lists per object the layer, wet and capped pixels, the capped CS1 cells, and the maximum added height raw and capped.
+
+## `roads`: road corridors through baked rock
+
+```powershell
+dotnet run -c Release -- roads "$H\10190843-dktflls-1to1.png" out\10190843\10190843-dktflls-1to1_worldmap.placeholder-hm-rebuild.png --courses ..\net-converter\out\x1\road-terrain-mismatch.json --name dktflls-1to1 --install $H
+```
+
+- **Input:** the net-converter mismatch list, with per edge a polyline of `[x, z, roadY, cs2TerrainY]` in true metres and `halfWidth`.
+- **Core:** half width + 6 m shoulders (`--shoulder`), at the road height interpolated along each segment.
+- **Grading:** a smoothstep over 10 m + 0.3 × the deepest cut or fill on that edge, capped at 20 m (`--blend 10,20`).
+- **River bed:** pixels whose terrain is below 93 m (`--water`) are left untouched unless the road itself is lower, and a cut never goes below 93 m.
+- **Guarantee:** pixels outside the corridors are bit-identical; this is asserted on every run.
+- **Stats:** `<prefix>-<name>_stats.md` gives per-edge residuals |terrain − road| at the course points, before and after.
