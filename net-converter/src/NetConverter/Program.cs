@@ -1030,6 +1030,7 @@ void WriteLayers()
     // R69 Big Decal Dirt/Mud: no decal without EAI, so each becomes a 16 × 16 m Dirty Surfaces Pack square at the CS1 position and angle.
     const double DecalSize = 16; // CS1 "Big Decal" footprint not in the dump
     var decals = new List<SurfacePolygon>();
+    var decalCentres = new List<(double X, double Z)>();
     if (root.TryGetProperty("props", out var dp) && dp.TryGetProperty("points", out var dpts))
         foreach (var d in dpts.EnumerateArray())
         {
@@ -1044,6 +1045,7 @@ void WriteLayers()
             var ring = new[] { (1, 1), (1, -1), (-1, -1), (-1, 1) }.Select(c => (pos[0] + h * (c.Item1 * fx + c.Item2 * rx), pos[2] + h * (c.Item1 * fz + c.Item2 * rz))).ToList();
             string target = prefab.Contains("Mud", StringComparison.OrdinalIgnoreCase) ? "PDO23 Soil Surface 01" : "PDO23 Dirty Surface 01";
             decals.Add(new SurfacePolygon($"decal{d.GetProperty("id").GetInt32()}", target, ring, $"CS1 {Json.Short(prefab)}, {DecalSize} m square"));
+            decalCentres.Add((pos[0], pos[2]));
         }
     {
         // EXPERIMENT: the 128 separate 16 m squares too, to compare with the merged shapes.
@@ -1106,8 +1108,23 @@ void WriteLayers()
             (double, double) Pt(double u, double v) => (o.X + u * fz + v * fx, o.Z - u * fx + v * fz);
             standIns.Add(new List<(double, double)> { Pt(-w / 2, -l / 2), Pt(w / 2, -l / 2), Pt(w / 2, l / 2), Pt(-w / 2, l / 2) });
         }
-        var plan = PaintPlan.Build(new PaintPlan.Inputs(surfaces, surfaceEarly, cs2Terrain == null ? null : cs2Terrain.Sample, fert, fertGrid,
-            trees.Objects.Select(t => (t.X, t.Z)), fields.Select(p => p.Ring), poBlocks, decals.Select(p => p.Ring), standIns));
+        var planIn = new PaintPlan.Inputs(surfaces, surfaceEarly, cs2Terrain == null ? null : cs2Terrain.Sample, fert, fertGrid,
+            trees.Objects.Select(t => (t.X, t.Z)), fields.Select(p => p.Ring), poBlocks, decals.Select(p => p.Ring), standIns);
+        var plan = PaintPlan.Build(planIn);
+        // Round 23: terrain material paint layers (editor MATERIALS brushes), one file per material; format and material names pending the bridge.
+        var poRockRings = new List<List<(double X, double Z)>>();
+        var poRockPath = Path.Combine(OptDir(), "import-surfaces-po-rock.json");
+        if (File.Exists(poRockPath))
+            using (var pd = JsonDocument.Parse(File.ReadAllBytes(poRockPath)))
+                foreach (var sp in pd.RootElement.GetProperty("surfaces").EnumerateArray())
+                    poRockRings.Add(sp.GetProperty("polygon").EnumerateArray().Select(v => (v[0].GetDouble(), v[1].GetDouble())).ToList());
+        foreach (var l in TerrainPaint.Build(planIn, rockPolys.Select(p => p.Ring), poRockRings, decalCentres, result.Edges))
+        {
+            TerrainPaint.Write(Path.Combine(outDir, l.File), l);
+            var km2 = l.Polygons.Sum(p => Math.Abs(Surfaces.Area(p.Ring))) / 1e6;
+            Console.WriteLine(FormattableString.Invariant($"terrain paint {l.Material}: {l.Polygons.Count} polygons, {km2:F2} km² ({l.Role}) -> {l.File}"));
+            extra.AppendLine(FormattableString.Invariant($"- Terrain paint {l.File}: material {l.Material} (placeholder), {l.Role}: {l.Polygons.Count} polygons, {km2:F2} km²."));
+        }
         Surfaces.Write(Path.Combine(outDir, "import-surfaces-sand.json"), "surfaces-sand", plan.Sand,
             "Paint plan S1/S3/S4 (audit/theme-remake.md §4): Sand Surface 01 on CS1 sand within 25 m of the water or ≤ 2 m above it; Sand Surface 02 on the other CS1 sand and on the CS1 dirt decals; none under water deeper than 1.5 m. 16 m grid, open/close one cell, simplified 4 m.");
         // Round 22 (owner, A-v6): no dry-grass paint; the swatch test rejected Grass Surface 01/02 as mown lawn (look/README.md).

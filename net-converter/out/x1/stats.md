@@ -394,6 +394,10 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Decal surfaces (import-surfaces-decals.json; PDO23 Dirty Surface 01 / PDO23 Soil Surface 01): 41 polygons, 0.022 km², max 298 points.
 - Sand: the 16 m-cell surfaces are dropped (owner review of A-v4); optional import-surfaces-sand-smooth.json: 387 blobs from 610 of 905 patches >= 2000 m² (21.54 km²).
 - Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
+- Terrain paint import-terrain-paint-sand.json: material Sand (placeholder), CS1 painted sand (all Sand cells): 400 polygons, 16.96 km².
+- Terrain paint import-terrain-paint-rock.json: material Rock (placeholder), slope ≥ 40° and the PO rock / cliff footprints: 214 polygons, 5.39 km².
+- Terrain paint import-terrain-paint-dry-grass.json: material DryGrass (placeholder), dry open ground: east / south-east plains (24434 cells) and south-facing slopes (20917 cells): 433 polygons, 9.72 km².
+- Terrain paint import-terrain-paint-bare-earth.json: material Dirt (placeholder), CS1 dirt / mud decals: 128 polygons, 0.05 km².
 - Paint plan S1 bank sand: 376 cells, 22 polygons, 0.07 km².
 - Paint plan S3 bare earth + S4 dirt decals: 13359 cells, 90 polygons, 2.56 km².
 - Paint plan G1 fertile + G2 dry plains: 62204 cells, 159 polygons, 15.20 km².

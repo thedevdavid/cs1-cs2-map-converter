@@ -123,5 +123,7 @@ public static class PaintPlan
     static bool[] Erode(bool[] m, int n) { var r = new bool[m.Length]; for (int j = 1; j < n - 1; j++) for (int i = 1; i < n - 1; i++) { int k = j * n + i; r[k] = m[k] && m[k - 1] && m[k + 1] && m[k - n] && m[k + n]; } return r; }
     static bool[] Dilate(bool[] m, int n) { var r = new bool[m.Length]; for (int j = 0; j < n; j++) for (int i = 0; i < n; i++) { int k = j * n + i; r[k] = m[k] || (i > 0 && m[k - 1]) || (i < n - 1 && m[k + 1]) || (j > 0 && m[k - n]) || (j < n - 1 && m[k + n]); } return r; }
     static bool[] Open(bool[] m, int n) => Dilate(Erode(m, n), n);
+    /// <summary>The paint plan's morphology: closed then opened by two cells.</summary>
+    public static bool[] CloseOpen(bool[] m, int n) => Open(Open(Close(Close(m, n), n), n), n);
     static bool[] Close(bool[] m, int n) => Erode(Dilate(m, n), n);
 }

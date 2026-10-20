@@ -63,10 +63,18 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 8 | `out\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
 | 8 | `out\import-surfaces-sand.json` | paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots | 112 polygons | 0.3 MB |
 | 8 | `out\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
+| 8 | `out\import-terrain-paint-sand.json` | ROUND 23 terrain paint: sand (material placeholder, format pending) (2×) | 400 polygons | 3.2 MB |
+| 8 | `out\import-terrain-paint-rock.json` | ROUND 23 terrain paint: rock (slope ≥ 40° + PO rock) (2×) | 214 polygons | 0.2 MB |
+| 8 | `out\import-terrain-paint-dry-grass.json` | ROUND 23 terrain paint: dry grass (plains + south-facing slopes) (2×) | 433 polygons | 2.1 MB |
+| 8 | `out\import-terrain-paint-bare-earth.json` | ROUND 23 terrain paint: bare earth at the CS1 dirt decals (2×) | 128 polygons | 0.2 MB |
 | 8 | `out\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (2×) | 11 polygons | 0.0 MB |
 | 8 | `out\x1\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
 | 8 | `out\x1\import-surfaces-sand.json` | paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots | 112 polygons | 0.3 MB |
 | 8 | `out\x1\import-surfaces-grass.json` | grass surfaces (optional alternative to the grass plants) | 51 polygons | 0.0 MB |
+| 8 | `out\x1\import-terrain-paint-sand.json` | ROUND 23 terrain paint: sand (material placeholder, format pending) (1×) | 400 polygons | 3.2 MB |
+| 8 | `out\x1\import-terrain-paint-rock.json` | ROUND 23 terrain paint: rock (slope ≥ 40° + PO rock) (1×) | 214 polygons | 0.2 MB |
+| 8 | `out\x1\import-terrain-paint-dry-grass.json` | ROUND 23 terrain paint: dry grass (plains + south-facing slopes) (1×) | 433 polygons | 2.1 MB |
+| 8 | `out\x1\import-terrain-paint-bare-earth.json` | ROUND 23 terrain paint: bare earth at the CS1 dirt decals (1×) | 128 polygons | 0.2 MB |
 | 8 | `out\x1\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (1×) | 11 polygons | 0.0 MB |
 | 9 | `out\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
 | 9 | `out\x1\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
@@ -212,3 +220,25 @@ Residual: the 9 genuine CS1 dead ends and the isolated 83 m CS1 path in out/x1/r
 2. Gravel Road point-check failures (e23168_0, e31265_0, e31665_0, e36006_0): offline, all four are straight, axis-aligned, flat 48–96 m farm-grid courses
    in the east (x 6335–6981). No other course comes within 12 m, so they are not merged under another prefab. e31665_0 and e36006_0 lie on the field circles
    field36 / field34 (Agriculture Surface 01); e23168_0 and e31265_0 lie on no surface. Waiting on the A-v6 live graph export.
+
+## Round 22: A-v6 review
+
+1. Gravel Road point-check failures (e23168_0, e31265_0, e31665_0 2/3 points, e36006_0 1/3), root cause from live-graph-20261020-193334-end.json and
+   run-20261020-192927.json: the roads are there. All three check points (t 0.2 / 0.5 / 0.8) of each course lie 0.01–0.04 m from a live Gravel Road.
+   - The game folded each straight course into its straight Gravel Road neighbours and split the run again into equal 8 m-grid pieces. Example: e19271_0 88 m
+     + e31265_0 80 m + e11921_0 88 m = 256 m between two junctions became 98704:45 + 98400:33 of 128 m each. Others: 104 + 104, 104 + 96, 128 + 128.
+   - The courses' inner nodes moved: n14925, n4745 and n32228 have no live node.
+   - The bridge's check (BridgeImportToolSystem, kCourseSamples) only counts segments that are new since the batch snapshot or recorded for it. The game
+     kept the neighbour's older segment entity for part of the run, so those samples counted as missing. No other prefab, no surface, nothing missing.
+   - Fix (runner): every "points along the course" failure is checked again against the live graph export (verify steps); covered courses are reported as
+     present, not as failures. Offline on the A-v6 data: 4 present, 0 missing. Bridge-side fix suggested: also count the segments the batch updated.
+2. BR001 / BR003 piers (import-po-structure-piers.json, on by default):
+   - Each of the 50 PO piers gets an ITBP_Pillar Piers 01 cap with its top at the deck soffit (deck y of the course above, which is 0.1–1.3 m away in plan,
+     − 2 m deck depth), and a Pillar4x16 stack from the cap down to the terrain: 81 pieces at x1 (up to 41.8 m), 151 at x2 (up to 89.2 m).
+   - The 26 CS1 segments above them get noPillars in import-all.json.
+   - Runner step pillars-off, right before po-piers: live graph export, highway segments within 3 m of a cap, POST /net/pillars/remove.
+3. Dry grass: import-surfaces-grass-dry.json is no longer written (swatch verdict, look/README.md). import-surfaces-pavement.json is off the runner's list.
+4. BR006: the main file import-po-structure-objects.json is variant (a), no kit objects at BR006 (3 BR022 pads only), and the runner default.
+   Variant (b) is optional/import-po-structure-br006-arches.json (--with po-br006-arches): 7 StoneArchRailBridge at 28 m pitch along the axis from
+   (−3479, −3244) to (−3578, −3108), rotation 234 (the 28 m side along yaw 324), tops at the soffit of the 263.3 m deck (x1), legs sunk.
+5. Gantry: unchanged (optional, --with po-gantry).

@@ -66,6 +66,8 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
     ["import-po-walls.json", 2, "ROUND 9 QuaySmall01 sides of the PO paved blocks"], ["import-water-lakes.json", 3, "ROUND 9 lake sources for unexplained wet bodies (after the water file)"],
     ["import-fort.json", 5, "ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED)"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : j.sources ? `${j.sources.length} sources` : `${j.edges.length} edges`); }
+  for (const [f, what] of [["import-terrain-paint-sand.json", "ROUND 23 terrain paint: sand (material placeholder, format pending)"], ["import-terrain-paint-rock.json", "ROUND 23 terrain paint: rock (slope ≥ 40° + PO rock)"], ["import-terrain-paint-dry-grass.json", "ROUND 23 terrain paint: dry grass (plains + south-facing slopes)"], ["import-terrain-paint-bare-earth.json", "ROUND 23 terrain paint: bare earth at the CS1 dirt decals"]])
+    if (existsSync(p(f))) add(8, p(f), `${what} (${scale})`, `${J(p(f)).polygons.length} polygons`);
   for (const [f, what] of [["import-po-structures.json", "ROUND 9 pavement tops of the PO paved blocks"]])
     if (existsSync(p(f))) add(8, p(f), `${what} (${scale})`, `${J(p(f)).surfaces.length} polygons`);
   if (existsSync(p("import-po-candidates.json"))) add(5, p("import-po-candidates.json"), `Procedural Object candidates, UNVERIFIED (${scale})`, `${J(p("import-po-candidates.json")).objects.length}`);

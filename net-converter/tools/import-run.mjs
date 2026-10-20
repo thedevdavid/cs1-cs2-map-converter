@@ -68,6 +68,8 @@ const steps = [
   // Vanilla paint plan (audit/theme-remake.md §4): fields (Agriculture Surface 01), PO pavement and stand-in pavement (Pavement Surface 01),
   // sand (Sand Surface 01 banks, Sand Surface 02 bare earth and old decal spots), dry grass (Grass Surface 02).
   ["surfaces", "/import/surfaces", ["import-surfaces-fields.json", "import-po-structures.json", "import-surfaces-sand.json"].map(p)],
+  // Round 23: terrain material paint (editor MATERIALS brushes); optional until the bridge publishes /import/terrain-paint (--with terrain-paint).
+  ["terrain-paint", "/import/terrain-paint", ["import-terrain-paint-sand.json", "import-terrain-paint-rock.json", "import-terrain-paint-dry-grass.json", "import-terrain-paint-bare-earth.json"].map(p), true],
   ["sand-smooth", "/import/surfaces", [p(join("optional", "import-surfaces-sand-smooth.json"))], true],
   ["grass", "/import/surfaces", [p("import-surfaces-grass.json")], true],
   // Pack surfaces kept in optional/ (Terrain Textures, Dirty Surfaces): only with --with.
