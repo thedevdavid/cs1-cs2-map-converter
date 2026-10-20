@@ -393,3 +393,13 @@ writes `fixtures/v3/` (a hand-made v3 dump with siblings), and `node tools/run-a
   deck is lifted to 8.5 m when that is ≤ 5 m and the approaches stay ≤ 5 % (rail) / 10 % (road), else the CS1 chain keeps its base prefab. The validator checks it.
 - The dam edge follows its fixed spans (179.2–204.8 m) with the crest ≥ the middle terrain + 8.5 m; length and position along the CS1 axis bring the
   abutments as close to the ground as the terrain allows.
+
+## Round 18: dam across the channel, idempotent runner
+
+- `import-dam.json`: one 304 m `Hydroelectric_Power_Plant_01 Dam` edge (fixed 64 + 4 × 18 + 32 + 4 × 18 + 64 m, bridge 0.9.25), only the two end nodes at the crest,
+  `flow: "invert"` (FlowLeft prefab, river north → south), batchSize 1. The line is searched around the CS1 site (centre ± 400 m, heading 81° ± 15°): it must cross
+  the CS1 water, keep its middle ≥ 8.5 m below the crest, and its two ends where the terrain reaches the crest (crest between the two bank heights, as close to 172 m
+  as they allow). Chosen: (1127, 4639) → (1425, 4696), heading 79°, crest 165.6 m (× 2 = 331.2), abutments 0.4 / 0.0 m off the terrain; `dam-profile.md` lists the
+  terrain and the CS1 water 40 m north (reservoir ≈ 157.8 m) and south (≈ 154–156 m) of each point.
+- `tools/import-run.mjs`: `run-state.json` per scale folder records every imported file with its importId; `--skip`, `--only` or `--resume` skip what is there,
+  a plain run or `--fresh` starts a new map state.

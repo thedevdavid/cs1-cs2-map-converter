@@ -188,8 +188,9 @@ public static class Round8
     /// </summary>
     public const double DamLength = 304;
 
-    public static List<string> WriteDam(string path, Func<double, double, double>? terrainTrue, double heightFactor, Func<double, double, bool>? wet = null)
+    public static List<string> WriteDam(string path, Func<double, double, double>? terrainTrue, double heightFactor, Func<double, double, double?>? waterSurface = null)
     {
+        Func<double, double, bool>? wet = waterSurface == null ? null : (x, z) => waterSurface(x, z) != null;
         var log = new List<string>();
         double T(double x, double z) => terrainTrue?.Invoke(x, z) ?? DamCrestTrue;
         double cx0 = (DamDeckA.X + DamDeckB.X) / 2, cz0 = (DamDeckA.Z + DamDeckB.Z) / 2;
@@ -244,13 +245,14 @@ public static class Round8
         var md = new System.Text.StringBuilder();
         md.AppendLine("# Dam line profile (CS2 playable heightmap, true metres)").AppendLine();
         md.AppendLine(FormattableString.Invariant($"West abutment ({w.X:F1}, {w.Z:F1}), east abutment ({e.X:F1}, {e.Z:F1}), heading {b.Head:F1}° (CS1 axis {head0:F1}°), length {DamLength} m, crest {crest} m (× {heightFactor} = {y})."));
-        md.AppendLine().AppendLine("| s m (from west) | x | z | terrain m | below crest m | CS1 water | terrain 40 m north | terrain 40 m south |").AppendLine("|---:|---:|---:|---:|---:|---|---:|---:|");
+        md.AppendLine().AppendLine("| s m (from west) | x | z | terrain m | below crest m | CS1 water | terrain 40 m north | water 40 m north | terrain 40 m south | water 40 m south |").AppendLine("|---:|---:|---:|---:|---:|---|---:|---:|---:|---:|");
+        string W(double x, double z) => waterSurface?.Invoke(x, z) is { } v ? v.ToString("F1", System.Globalization.CultureInfo.InvariantCulture) : "";
         double nx = -bz, nz = bx;
         if (nz < 0) { nx = -nx; nz = -nz; }   // the side toward +z (north)
         for (double s0 = 0; s0 <= DamLength + 0.01; s0 += 16)
         {
             double x = w.X + bx * s0, z = w.Z + bz * s0, t = T(x, z);
-            md.AppendLine(FormattableString.Invariant($"| {s0:F0} | {x:F0} | {z:F0} | {t:F1} | {crest - t:F1} | {(wet?.Invoke(x, z) == true ? "wet" : "")} | {T(x + nx * 40, z + nz * 40):F1} | {T(x - nx * 40, z - nz * 40):F1} |"));
+            md.AppendLine(FormattableString.Invariant($"| {s0:F0} | {x:F0} | {z:F0} | {t:F1} | {crest - t:F1} | {(wet?.Invoke(x, z) == true ? "wet" : "")} | {T(x + nx * 40, z + nz * 40):F1} | {W(x + nx * 40, z + nz * 40)} | {T(x - nx * 40, z - nz * 40):F1} | {W(x - nx * 40, z - nz * 40)} |"));
         }
         File.WriteAllText(Path.Combine(Path.GetDirectoryName(path)!, "dam-profile.md"), md.ToString());
         log.Add(FormattableString.Invariant($"dam edge {DamLength} m heading {b.Head:F1}° (CS1 {head0:F1}°), crest {crest} m × {heightFactor}; west abutment ({w.X:F0}, {w.Z:F0}) terrain {b.Tw:F1} m (elevation {crest - b.Tw:F1}), east ({e.X:F0}, {e.Z:F0}) terrain {b.Te:F1} m (elevation {crest - b.Te:F1}); middle terrain {b.Tmid:F1} m ({crest - b.Tmid:F1} below the crest); {b.WetSamples}/15 samples over CS1 water; flow invert; profile dam-profile.md"));

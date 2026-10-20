@@ -1,6 +1,7 @@
 // Whole fresh-map import against the CS2MCP bridge, in the ROUND order, one command.
 // node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run]
-//   [--no-verify] [--bridge http://127.0.0.1:8642] [--out out]
+//   [--no-verify] [--resume | --fresh] [--verify-only] [--bridge http://127.0.0.1:8642] [--out out]
+// run-state.json (per scale folder) lists the files imported on this map; --skip / --only / --resume skip those, a plain run (or --fresh) starts over.
 // Steps (in order): surfaces network bridges bridges-fixed dam gaps power canals shippaths water lakes connections objects barriers substation po-rocks rock-scatter fort trees
 //   resources surfaces power-ends settings look. Optional (only with --with or --only): grass, sand-smooth (the earlier smoothed sand), and the pack surfaces in optional/: rock, po-rock, decals, sand-pack (sand-pack paints the same sand as the default sand file with the Dirty Surfaces prefab: use one of the two).
 // After the network steps and at the end the bridge's graph export is compared per prefab with the import files (--no-verify skips it).
@@ -16,7 +17,7 @@ const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args[
 const flag = name => args.includes(name);
 const scale = opt("--scale", null);
 if (!["x1", "x2"].includes(scale)) {
-  console.error("usage: node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run] [--no-verify] [--bridge http://127.0.0.1:8642] [--out out]");
+  console.error("usage: node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run] [--no-verify] [--resume | --fresh] [--verify-only] [--bridge http://127.0.0.1:8642] [--out out]");
   process.exit(2);
 }
 const sea = Number(opt("--sea", "93"));
@@ -154,6 +155,18 @@ if (flag("--verify-only")) {
 }
 let netBaseline = null, netEnd = null, guardStop = null;
 
+// Idempotence (A-v5: the substation was imported twice on a resumed run): run-state.json in the scale folder records every file imported on this
+// map with its importId. A resumed run (--skip / --only / --resume) skips the files already there; a plain run starts a new map state (--fresh forces it).
+const statePath = join(dir, "run-state.json");
+const resume = (skip.size > 0 || only.size > 0 || flag("--resume")) && !flag("--fresh");
+let state = { scale, started: new Date().toISOString(), files: {} };
+if (resume && existsSync(statePath)) state = JSON.parse(readFileSync(statePath, "utf8"));
+else if (!dryRun) writeFileSync(statePath, JSON.stringify(state, null, 1));
+const doneKey = file => file.split(/[\\/]/).slice(-2).join("/");
+const done = file => state.files[doneKey(file)];
+const markDone = (file, importId, name) => { if (dryRun) return; state.files[doneKey(file)] = { step: name, importId: importId ?? null, at: new Date().toISOString() }; writeFileSync(statePath, JSON.stringify(state, null, 1)); };
+console.log(resume ? `resuming: ${Object.keys(state.files).length} files already imported on this map (run-state.json since ${state.started})` : "new map state (run-state.json reset)");
+
 outer: for (const [name, endpoint, files] of steps) {
   if (!wanted(name)) continue;
   if (endpoint === "netcount") {
@@ -164,6 +177,7 @@ outer: for (const [name, endpoint, files] of steps) {
   if (endpoint === "verify") { const t0 = Date.now(); const text = await verifyGraph(name.replace("verify-", "")); rows.push({ name, file: "GET /graph/export", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue; }
   for (const file of files) {
     if (!existsSync(file)) { console.log(`- ${name}: ${file} missing, skipped`); rows.push({ name, file, status: "missing" }); continue; }
+    if (done(file)) { const d = done(file); console.log(`- ${name}: ${file} already imported (${d.importId ?? "no id"}, ${d.at}), skipped`); rows.push({ name, file, status: `already imported (${d.importId ?? ""})`, importId: d.importId }); continue; }
     const body = JSON.parse(readFileSync(file, "utf8"));
     body.options ??= {};
     if (endpoint === "/import/network") { body.options.nodesFirst = true; body.options.bypassValidation = true; }
@@ -191,6 +205,7 @@ outer: for (const [name, endpoint, files] of steps) {
     if (endpoint === "/import/network") for (const e of body.edges ?? []) imported[e.prefab] = (imported[e.prefab] ?? 0) + 1;
     const fails = (r.json.failedEdges ?? r.json.failedObjects ?? []).slice(0, 20);
     console.log(`${s.failed ? "!" : "✓"} ${name} ${file.split(/[\\/]/).pop()}: ${s.text} (${fmt(r.json.seconds ?? secs)})${r.json.completed === false ? ` ABORTED: ${r.json.abortReason}` : ""}`);
+    markDone(file, r.json.importId, name);
     const ng = r.json.netGuard;
     const guardText = ng ? `; netGuard removed ${ng.segmentsRemoved ?? 0}${ng.geometryGone ? ` (geometry gone ${ng.geometryGone})` : ""}` : "";
     rows.push({ name, file, status: r.json.completed === false ? `aborted: ${r.json.abortReason}` : "ok", secs: r.json.seconds ?? secs, importId: r.json.importId, undo: undoOf(endpoint, r.json, name), text: s.text + guardText, fails });

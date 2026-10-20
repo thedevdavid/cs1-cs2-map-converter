@@ -1,18 +1,18 @@
 {
   "name": "Dakota Falls dam",
-  "_comment": "Hydro dam per bridge 0.9.23 (IMPORT_SCHEMA.md \u0027Dams\u0027): one level edge abutment to abutment, no control, abutments on the ground at the crest height; the game builds the plant and the dam end objects from the course. River flows north to south, reservoir north; flow auto.",
+  "_comment": "Hydro dam (bridge 0.9.25): one level straight edge of 304 m (fixed 64 \u002B 4x18 \u002B 32 \u002B 4x18 \u002B 64), only the two end nodes at the crest, flow invert (FlowLeft prefab, river north to south, reservoir north); the game builds the plant and the dam spans.",
   "nodes": [
     {
       "id": "damW",
-      "x": 1478.35,
-      "y": 175.46,
-      "z": 4678.92
+      "x": 1126.68,
+      "y": 165.6,
+      "z": 4639.08
     },
     {
       "id": "damE",
-      "x": 1656.24,
-      "y": 175.46,
-      "z": 4706.39
+      "x": 1425.32,
+      "y": 165.6,
+      "z": 4695.92
     }
   ],
   "edges": [
@@ -21,7 +21,7 @@
       "a": "damW",
       "b": "damE",
       "prefab": "Hydroelectric_Power_Plant_01 Dam",
-      "flow": "auto"
+      "flow": "invert"
     }
   ],
   "options": {
