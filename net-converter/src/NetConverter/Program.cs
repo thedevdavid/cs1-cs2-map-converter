@@ -6,6 +6,7 @@ bool inventoryOnly = false, retry = false, layersOnly = false;
 string? treesDir = null, rockHeightmapPath = null, cs2HeightmapPath = null, runReportsDir = Path.Combine("out", "x1");
 string poOfflinePath = Path.Combine("..", "cs1-offline", "out", "po-offline.json");
 double rockDegrees = 40;
+List<Round9.NetNode> bridgeNodes = new(); int gapEdges = 0; string gapLog = "";
 bool seawayAtWater = false, mergeCanal = true, keepHighwayStubs = false, bridgesOn = true, bridgesFixedOn = true;
 const string RockSurface = "gaga TTP - Pebbles 1L dark";
 const string NetCorridorRule = "on a ground-level net corridor (half width + 2 m)";
@@ -292,6 +293,20 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
     foreach (var r in bRep)
         auditLog.AppendLine(FormattableString.Invariant($"| {r.Id} | {r.Prefab} | {r.Plan} | {r.Chains} | {r.Lengths.Count} | {string.Join(", ", r.Lengths.Select(l => l.ToString("F0", System.Globalization.CultureInfo.InvariantCulture)).GroupBy(l => l).Select(g => g.Count() > 1 ? $"{g.Count()}×{g.Key}" : g.Key))} | {(r.InFixedFile ? "fixed" : "bridges")} | {r.Notes}{(r.Problems.Count > 0 ? "; " + string.Join("; ", r.Problems) : "")} | {(checks.TryGetValue(r.Id, out var ck) && ck.Count > 0 ? string.Join("; ", ck) : "ok")} |"));
     Console.WriteLine($"bridges: {bRep.Count} overrides, {bMain.Edges.Count} edges -> import-bridges.json, {bFixed.Edges.Count} -> import-bridges-fixed.json ({(bridgesFixedOn ? "on" : "off")})");
+    bridgeNodes = bMain.Nodes.Concat(bFixed.Nodes).ToList();
+}
+{
+    // Network gaps (Run A): the rebuilt courses replace their originals in import-all.json (fresh-map runs; the original and its rebuild
+    // overlapped on A-v4 and tore the 4-lane / 3-lane split at (463, −4520)).
+    var (gn, ge, tn, te, glog) = Round9.Gaps(result, topologyFactor, bridgeNodes, out var gapReplaces);
+    Round9.WriteNet(Path.Combine(outDir, "import-gaps.json"), "Dakota Falls network gaps",
+        "Rebuilt Run A gaps; the courses in 'replaces' are left out of import-all.json. Ends join the network import through snapToSegment.", gn, ge, gapReplaces);
+    if (te.Count > 0) Round9.WriteNet(Path.Combine(outDir, "import-gaps-e15883-taper.json"), "e15883_0 taper alternative",
+        "Alternative to gap_e15883_3lane in import-gaps.json: 12 m of 4-lane, then 3-lane. Import only one of the two.", tn, te);
+    var gr = gapReplaces.ToHashSet();
+    int removedG = result.Edges.RemoveAll(e => gr.Contains(e.Id));
+    gapEdges = ge.Count; gapLog = $"{string.Join("; ", glog)}; {removedG} originals left out of import-all.json ({string.Join(", ", gapReplaces)})";
+    auditLog.AppendLine($"- Gaps: {ge.Count} edges in import-gaps.json; originals left out of import-all.json: {string.Join(", ", gapReplaces)}.");
 }
 Outputs.WriteImport(Path.Combine(outDir, "import-highways.json"), "Dakota Falls highways", result.Layer(Layers.Highways).ToList(), absolute);
 Outputs.WriteImport(Path.Combine(outDir, "import-rail.json"), "Dakota Falls rail", result.Layer(Layers.Rail).ToList(), absolute);
@@ -796,12 +811,7 @@ void WriteLayers()
             Water.Write(Path.Combine(outDir, "import-water-lakes.json"), lakes, heightFactor, seaLevel * heightFactor, 7168);
             r9.Add(ci($"lakes: {bodies} wet bodies above sea level {seaLevel} + 1 m with no CS1 source within 400 m; {lakes.Count} sources (outside the map {outside}, single cells {tiny}) -> import-water-lakes.json (append after import-water*.json)"));
         }
-        var (gn, ge, tn, te, glog) = Round9.Gaps(result, topologyFactor);
-        Round9.WriteNet(Path.Combine(outDir, "import-gaps.json"), "Dakota Falls network gaps (round 9)",
-            "Last Run A gaps; each end joins the live network through snapToSegment (an end within 2 % of a segment end joins that node).", gn, ge);
-        if (te.Count > 0) Round9.WriteNet(Path.Combine(outDir, "import-gaps-e15883-taper.json"), "e15883_0 taper alternative",
-            "Alternative to gap_e15883_3lane in import-gaps.json: 12 m of 4-lane, then 3-lane. Import only one of the two.", tn, te);
-        r9.Add($"gaps: {ge.Count} edges -> import-gaps.json ({string.Join("; ", glog)})");
+        r9.Add($"gaps: {gapEdges} edges -> import-gaps.json, written before the network ({gapLog})");
         foreach (var l in r9) { Console.WriteLine("round 9 " + l); extra.AppendLine($"- Round 9 {l}."); }
     }
 

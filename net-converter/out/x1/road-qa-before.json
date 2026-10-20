@@ -1,0 +1,193 @@
+{
+ "label": "now",
+ "dir": "out/x1",
+ "counts": {
+  "deadEnds": 22,
+  "genuine": 20,
+  "pipeline": 2,
+  "midAirPairs": 0,
+  "tornSplits": 0,
+  "isolatedShort": 2,
+  "rampEndsNearMainline": 0,
+  "liveDeadEnds": 288
+ },
+ "pipeline": [
+  {
+   "at": "(1462, 6173)",
+   "prefab": "Gravel Road",
+   "edge": "e20630_0",
+   "elevated": false,
+   "cs1deg": 2
+  },
+  {
+   "at": "(724, 4850)",
+   "prefab": "Pavement Path",
+   "edge": "gap_n21342_path",
+   "elevated": false,
+   "cs1deg": null
+  }
+ ],
+ "genuine": [
+  {
+   "at": "(-768, 4363)",
+   "prefab": "Gravel Road",
+   "edge": "e6088_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(373, -3031)",
+   "prefab": "Pavement Path",
+   "edge": "e7126_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(1104, 4897)",
+   "prefab": "Gravel Road",
+   "edge": "e16674_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(4783, -683)",
+   "prefab": "Pavement Path",
+   "edge": "e18414_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(4787, -709)",
+   "prefab": "Pavement Path",
+   "edge": "e18414_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(295, -3026)",
+   "prefab": "Pavement Path",
+   "edge": "e18960_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(1577, 4694)",
+   "prefab": "Pavement Path",
+   "edge": "e23951_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(-3987, 334)",
+   "prefab": "Gravel Road",
+   "edge": "e26933_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(-480, -1481)",
+   "prefab": "Medium Road",
+   "edge": "e29367_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(-229, -2362)",
+   "prefab": "Gravel Road",
+   "edge": "e30245_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(-643, -1188)",
+   "prefab": "Medium Road",
+   "edge": "e34353_0",
+   "elevated": false,
+   "cs1deg": 1
+  },
+  {
+   "at": "(1383, 6161)",
+   "prefab": "Wooden Covered Bridge - 2 lanes",
+   "edge": "br020_c1_e1",
+   "elevated": true,
+   "cs1deg": 1
+  },
+  {
+   "at": "(1345, 4264)",
+   "prefab": "BXP Arc Pedestrian Bridge Revised",
+   "edge": "br022_c1_e0",
+   "elevated": true,
+   "cs1deg": 1
+  },
+  {
+   "at": "(948, 4061)",
+   "prefab": "BXP Arc Pedestrian Bridge Revised",
+   "edge": "br022_c1_e0",
+   "elevated": true,
+   "cs1deg": 1
+  },
+  {
+   "at": "(1341, 4273)",
+   "prefab": "BXP Arc Pedestrian Bridge Revised",
+   "edge": "br022_c2_e0",
+   "elevated": true,
+   "cs1deg": 1
+  },
+  {
+   "at": "(944, 4069)",
+   "prefab": "BXP Arc Pedestrian Bridge Revised",
+   "edge": "br022_c2_e0",
+   "elevated": true,
+   "cs1deg": 1
+  },
+  {
+   "at": "(1341, 4290)",
+   "prefab": "BXP Arc Pedestrian Bridge Revised",
+   "edge": "br022_c3_e0",
+   "elevated": true,
+   "cs1deg": 1
+  },
+  {
+   "at": "(944, 4086)",
+   "prefab": "BXP Arc Pedestrian Bridge Revised",
+   "edge": "br022_c3_e0",
+   "elevated": true,
+   "cs1deg": 1
+  },
+  {
+   "at": "(1345, 4282)",
+   "prefab": "BXP Arc Pedestrian Bridge Revised",
+   "edge": "br022_c4_e0",
+   "elevated": true,
+   "cs1deg": 1
+  },
+  {
+   "at": "(948, 4078)",
+   "prefab": "BXP Arc Pedestrian Bridge Revised",
+   "edge": "br022_c4_e0",
+   "elevated": true,
+   "cs1deg": 1
+  }
+ ],
+ "midAir": [],
+ "torn": [],
+ "isolated": [
+  {
+   "at": "(367, -3024)",
+   "length": 83,
+   "prefab": "Pavement Path",
+   "edges": "e7126_0,e28940_0,e18960_0"
+  },
+  {
+   "at": "(4785, -696)",
+   "length": 26,
+   "prefab": "Pavement Path",
+   "edges": "e18414_0"
+  }
+ ],
+ "rampEnds": [],
+ "live": {
+  "pulled": "2026-10-20T12:08:26.849Z",
+  "deadEnds": 288
+ }
+}

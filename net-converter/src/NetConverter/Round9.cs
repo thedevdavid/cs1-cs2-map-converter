@@ -280,8 +280,19 @@ public static class Round9
     /// that node). Returns the main file and the alternative 4-lane taper for e15883_0.
     /// </summary>
     public static (List<NetNode> Nodes, List<NetEdge> Edges, List<NetNode> TaperNodes, List<NetEdge> TaperEdges, List<string> Log) Gaps(ConvertResult res, double topologyFactor)
+        => Gaps(res, topologyFactor, null, out _);
+
+    /// <summary>
+    /// As above; <paramref name="extraNodes"/> are nodes of other import files (bridge decks) a gap may end on, and <paramref name="replaces"/>
+    /// lists the network courses the gap edges rebuild: on a fresh map they must leave import-all.json, or the original and its rebuild overlap
+    /// (A-v4: e15883_0 and gap_e15883_3lane tore the 4-lane / 3-lane split at (463, −4520)).
+    /// </summary>
+    public static (List<NetNode> Nodes, List<NetEdge> Edges, List<NetNode> TaperNodes, List<NetEdge> TaperEdges, List<string> Log) Gaps(ConvertResult res, double topologyFactor,
+        IReadOnlyList<NetNode>? extraNodes, out List<string> replaces)
     {
         var log = new List<string>();
+        replaces = new List<string>();
+        var rep = replaces;
         var nodes = new List<NetNode>(); var edges = new List<NetEdge>();
         var byId = res.Edges.ToDictionary(e => e.Id);
         var nodeById = res.Edges.SelectMany(e => new[] { e.A, e.B }).GroupBy(n => n.Id).ToDictionary(g => g.Key, g => g.First());
@@ -296,6 +307,7 @@ public static class Round9
             nodes.Add(Snap(e4.A, 3, "Highway Oneway")); nodes.Add(Snap(e4.B, 3, "Highway Oneway"));
             var (b1, b2, bow) = Clear(res, e4, FootprintShift.Cs2Half("Highway Oneway - 3 lanes", 8), topologyFactor);
             edges.Add(new NetEdge("gap_e15883_3lane", e4.A.Id, e4.B.Id, "Highway Oneway - 3 lanes", C(e4, b1, 1 / 3.0), C(e4, b2, 2 / 3.0), Note: "e15883_0 as a 3-lane course" + bow));
+            rep.Add(e4.Id);
             if (bow.Length > 0) log.Add("e15883_0" + bow);
             // Taper: 12 m of 4-lane from the 4-lane end.
             bool aIs4 = res.Edges.Any(x => x != e4 && (x.A == e4.A || x.B == e4.A) && x.Map.Cs2Prefab == "Highway Oneway - 4 lanes");
@@ -320,18 +332,21 @@ public static class Round9
             double nx = -dz / L, nz = dx / L;
             if ((other.p.X - mid.X) * nx + (other.p.Z - mid.Z) * nz > 0) { nx = -nx; nz = -nz; }   // away from the parallel course
             nodes.Add(Snap(e3.A, 3, "Highway Oneway")); nodes.Add(Snap(e3.B, 3, "Highway Oneway"));
+            rep.Add(e3.Id);
             edges.Add(new NetEdge("gap_e20430_offset", e3.A.Id, e3.B.Id, e3.Map.Cs2Prefab!,
                 C(e3, e3.Curve.B with { X = e3.Curve.B.X + nx, Z = e3.Curve.B.Z + nz }, 1 / 3.0), C(e3, e3.Curve.C with { X = e3.Curve.C.X + nx, Z = e3.Curve.C.Z + nz }, 2 / 3.0),
                 Note: Fmt($"e20430_0b with its course bowed 1 m away from {other.x.Id} ({Len(other.p.X, other.p.Z, mid.X, mid.Z):F1} m off)")));
             log.Add(Fmt($"e20430_0b: course moved 1 m away from {other.x.Id} ({Len(other.p.X, other.p.Z, mid.X, mid.Z):F1} m at mid)"));
         }
         // Gravel: the CS1 gap (1462, 6173)–(1383, 6161), closed with a straight Gravel Road between the two dead ends.
+        NetNode? Find(string id) => nodeById.TryGetValue(id, out var n) ? Snap(n, 3, "Gravel")
+            : extraNodes?.FirstOrDefault(x => x.Id == id) is { } x ? x with { SnapRadius = 3, SnapPrefab = null } : null;   // e.g. a bridge deck end (BR020)
         foreach (var (a, b) in new[] { ("n895", "n26596") })
-            if (nodeById.TryGetValue(a, out var na) && nodeById.TryGetValue(b, out var nb))
+            if (Find(a) is { } na && Find(b) is { } nb)
             {
-                nodes.Add(Snap(na, 3, "Gravel")); nodes.Add(Snap(nb, 3, "Gravel"));
+                nodes.Add(na); nodes.Add(nb);
                 edges.Add(new NetEdge($"gap_{a}_{b}", a, b, "Gravel Road", Note: "CS1 gap closed"));
-                log.Add(Fmt($"gravel gap {a}–{b}: {Len(na.Position.X, na.Position.Z, nb.Position.X, nb.Position.Z):F0} m"));
+                log.Add(Fmt($"gravel gap {a}–{b}: {Len(na.X, na.Z, nb.X, nb.Z):F0} m"));
             }
         // Gravel pieces whose T-junction node the game absorbed (Run A): the junction end splits the merged segment (radius 6).
         foreach (var id in new[] { "e25579_0", "e36563_0" })
@@ -339,6 +354,7 @@ public static class Round9
             {
                 foreach (var n in new[] { g.A, g.B }) nodes.Add(Snap(n, degree.GetValueOrDefault(n.Id) >= 3 ? 6 : 3, "Gravel"));
                 edges.Add(new NetEdge($"gap_{id}", g.A.Id, g.B.Id, g.Map.Cs2Prefab!, C(g, g.Curve.B, 1 / 3.0), C(g, g.Curve.C, 2 / 3.0), Note: "Run A: T-junction node absorbed"));
+                rep.Add(id);
                 log.Add($"{id}: rebuilt, junction end snaps radius 6");
             }
         // Pavement Path stubs (PathSnap): a short connector from the path end to the segment beside it, snap radius 20.

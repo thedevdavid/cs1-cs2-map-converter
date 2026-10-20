@@ -9,7 +9,7 @@ Both runs use the **same heightmap pair**. Only the Height Scale field and the i
 |---|---|---|
 | Height Scale on import | **2048** | **4096** |
 | Playable heightmap | **`10190843-dktflls-1to1.png`** (A-v3: peaks + PO mountains/rock work + falls steps capped at the CS1 water line); comparison `10190843-dktflls-1to1-soft.png` (softened mountains, pair it with world map 10190910) | same |
-| World map | **`10191247-dktflls-1to1_worldmap.png`** (hmap-ext b4c785b, tickets 01–25: four western massifs 1 292–1 950 m with passes 666–882 m, north foothills 484–989 m, rolling east/south 150–350 m); soft variant `10191249-dktflls-1to1-soft_worldmap.png`; ticket 26 (inner statistics) may refine it later | same |
+| World map | **`10200633-dktflls-1to1_worldmap.png`** (hmap-ext f2e2e35, tickets 01–27: massifs, 8 hill groups, creek network cutting ~21 m, 29–33 % flats; heavier north foothills); `10200636-dktflls-1to1_worldmap.png` is the same with the lighter north of 10191247; soft variant `10200635-dktflls-1to1-soft_worldmap.png` | same |
 | Import file set | `net-converter/out/x1/` | `net-converter/out/` |
 | Sea Level (Water tab) | **93 m** first (measured CS1 lower river 92.8 m); 97.5 m if banks look dry | **186 m** first; 195 m fallback |
 | Heights in game | true CS1 metres | 2 × CS1 |
