@@ -1,0 +1,25 @@
+{
+  "base": "gain16 (x1.6)",
+  "step": {
+    "gain": 1.9,
+    "desat": 0.1
+  },
+  "slots": {
+    "Dirt": {
+      "source": "Springwood.crp::RuinedDiffuseTexture",
+      "meanRGB": [
+        113.1,
+        98.6,
+        83.2
+      ]
+    },
+    "Extra3": {
+      "source": "Seychelles.crp::GravelDiffuseTexture",
+      "meanRGB": [
+        91,
+        79.6,
+        70.7
+      ]
+    }
+  }
+}
