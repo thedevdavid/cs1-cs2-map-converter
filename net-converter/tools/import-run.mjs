@@ -423,9 +423,10 @@ if (!stopped && wanted("look")) {
 if (!stopped && wanted("textures")) {
   // Round 29: the 14 CS1 terrain textures (look/README.md "A-v8 file list") into the terrain render settings copy, right after the look step:
   // POST /map/terrain-textures (bridge 0.9.32+, background job), then poll /map/terrain-textures/status until it is no longer running.
-  // --skip textures leaves the map's textures alone; --textures-dir <folder> picks another set (default look/textures/gain16, fallback look/textures/raw).
+  // --skip textures leaves the map's textures alone; --textures-dir <folder> picks another set (default look/textures/current: gain16 with the dirt one step lighter, owner after A-v8;
+  // fallbacks look/textures/gain16, look/textures/raw).
   const t0 = Date.now();
-  const tdir = opt("--textures-dir", [join(toolDir, "..", "..", "look", "textures", "gain16"), join(toolDir, "..", "..", "look", "textures", "raw")].find(existsSync) ?? "");
+  const tdir = opt("--textures-dir", ["current", "gain16", "raw"].map(x => join(toolDir, "..", "..", "look", "textures", x)).find(existsSync) ?? "");
   const slots = [["Rock", "Cliff"], ["Dirt", "Dirt"], ["Grass", "Grass"], ["Extra1", "Extra1"], ["Extra2", "Extra2"], ["Extra3", "Extra3"], ["Extra4", "Extra4"]];
   const textures = [], missing = [];
   for (const [slot, base] of slots) {
@@ -437,7 +438,7 @@ if (!stopped && wanted("textures")) {
     if (t.diffuse || t.normal) textures.push(t);
   }
   let text;
-  if (!tdir || textures.length === 0) text = `no texture files (${tdir || "look/textures/gain16 missing"})`;
+  if (!tdir || textures.length === 0) text = `no texture files (${tdir || "none of look/textures/current, gain16, raw exists: run node look/tools/export-theme.mjs, then export-current.mjs"})`;
   else if (dryRun) text = `${textures.length} slots from ${tdir} (dry run, not sent)${missing.length ? `; missing ${missing.join(", ")}` : ""}`;
   else {
     const r = await request("POST", "/map/terrain-textures", { textures });
