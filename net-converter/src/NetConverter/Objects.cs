@@ -353,7 +353,7 @@ public static class Trees
 
 public sealed record PlacedObject(string Id, string Prefab, string Kind, double X, double Z, double? Y, double Rotation, string Cs1, string Source)
 {
-    /// <summary>Round 41: tilt about the local x axis in degrees, + = the local +z end up (bridge 0.9.50 "pitch"; older bridges ignore it).</summary>
+    /// <summary>Round 41: bridge 0.9.50 "pitch", degrees about the local x axis: + tilts the local +z end DOWN (Unity Quaternion.Euler(pitch, rotation, roll)); older bridges ignore it.</summary>
     public double? Pitch { get; init; }
 }
 public sealed record ManualObject(string Cs1, string Source, double X, double Y, double Z, double Rotation, string Note);
