@@ -1,5 +1,5 @@
 // Scans every pdx_mods item in a playset and dumps its prefabs (from .cok bundles) to JSON.
-// Usage: node scan-assets.mjs [playsetName] > out.json
+// Usage: node scan-assets.mjs [playsetName | --all] > out.json   (--all = every installed pdx_mods folder)
 import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
@@ -112,7 +112,10 @@ const walk = (dir, base = dir, acc = []) => {
 };
 
 const result = [];
-for (const m of playset.mods) {
+const mods = playsetName === "--all"
+  ? [...new Set(installed.map(d => d.split("_")[0]))].map(id => ({ sourceId: id, isEnabled: null }))
+  : playset.mods;
+for (const m of mods) {
   const meta = byId.get(m.sourceId) || {};
   const dir = installed.find(d => d.startsWith(m.sourceId + "_"));
   const files = dir ? walk(path.join(modsDir, "pdx_mods", dir)) : [];
