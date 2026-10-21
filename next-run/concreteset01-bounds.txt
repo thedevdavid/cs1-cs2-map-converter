@@ -1,0 +1,18 @@
+Pillar2x8: "size":{"x":2.0,"y":8.0,"z":2.0} "boundsMin":{"x":-1.0,"y":0.0,"z":-1.0} 
+Pillar2x16: "size":{"x":2.0,"y":16.0,"z":2.0} "boundsMin":{"x":-1.0,"y":0.0,"z":-1.0} 
+Pillar1x8: "size":{"x":1.0,"y":8.0,"z":1.0} "boundsMin":{"x":-0.5,"y":0.0,"z":-0.5} 
+Wall16x16: "size":{"x":16.0,"y":16.0,"z":1.0} "boundsMin":{"x":-8.0,"y":0.0,"z":-0.5} 
+Wall32x16: "size":{"x":32.0,"y":16.0,"z":1.0} "boundsMin":{"x":-16.0,"y":0.0,"z":-0.5} 
+Wall32x32: "size":{"x":32.0,"y":32.0,"z":1.0} "boundsMin":{"x":-16.0,"y":0.0,"z":-0.5} 
+BasePlateConcrete16: "size":{"x":16.0,"y":0.2,"z":16.0} "boundsMin":{"x":-8.0,"y":0.0,"z":-8.0} 
+BasePlateConcrete62: "size":{"x":62.5,"y":0.2,"z":62.5} "boundsMin":{"x":-31.25,"y":0.0,"z":-31.25} 
+TunnelEntrance18Deep32: "size":{"x":26.0,"y":14.0,"z":32.0} "boundsMin":{"x":-13.0,"y":0.0,"z":-16.0} 
+TunnelEntrance18Deep64: "size":{"x":26.0,"y":14.0,"z":64.0} "boundsMin":{"x":-13.0,"y":0.0,"z":-32.0} 
+TunnelEntrance18: "size":{"x":26.0,"y":14.0,"z":16.0} "boundsMin":{"x":-13.0,"y":0.0,"z":-8.0} 
+ArtDecoTunnelLarge: "size":{"x":21.5190945,"y":11.203001,"z":23.9217587} "boundsMin":{"x":-10.7595472,"y":-0.497901917,"z":-11.9608126} 
+ArtDecoTunnelSmall: "size":{"x":21.5191059,"y":8.776518,"z":13.5455694} "boundsMin":{"x":-10.759553,"y":-0.0714197159,"z":-6.772778} 
+Tunnel: "name":"Tunnel01" 
+Gallery: 
+Shed: 
+Covered: "name":"BXP PedestrianBridgeCoveredWood01 Revised" "name":"BXP Covered Pedestrian Bridge Revised" "name":"PedestrianBridgeCoveredWood01" "name":"Covered Pedestrian Bridge" "name":"Covered Bike Bridge" "name":"Wooden Covered Bridge - 2 lanes" 
+Canopy: 
