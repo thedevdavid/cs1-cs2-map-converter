@@ -909,3 +909,53 @@ Owner: "1. top looks staggered. it should look smooth. 2. cliffs ar positioned r
 - Check: 29 of 30 inner rows match −atan(rise between the neighbouring rows) within 0.1°. Row 31 is 0.4° off, because the clamped last row sits only 14.4 m from it.
 - Rows butt (15.8 m step, 0.2 m overlap), with no fascia stack. Row heights, clearance (min 6.60 m), colonnade and rocks are unchanged from round 41.
 - No roll is written: the road is level across.
+
+### Round 41c: one smooth roof profile
+
+- **Bound.** Each row's underside is at least the highest road point under its 16 m span + 6.6 m (as in 41). The CS1 node-height bumps no longer set the row heights directly.
+- **Profile, outside the steep stretches.** A curve above the bound with |rise| ≤ 3° and a pitch change between neighbouring rows ≤ 1°. It is built by raising only: slope passes both ways, then a 5-row smoothing re-raised onto the bound, iterated. The bound is also raised wherever a pitched row's downhill end would come within 6.6 m of the road. Rows are now evenly spaced, 15.35 m apart; the round-41 end row was a near-duplicate of its neighbour, 2 m away.
+- **Steep stretches.** The road itself is steeper than 3° over 48 m at x1 rows 1–7 (SE end, 4.0–9.7°), 17–20 (4.0–6.3°) and 23–27 (4.4–9.6°). As asked, these follow the road grade: no pitch limits there, only a 3-row smoothing.
+- **Why not hold the limits everywhere.** A first attempt kept 3° and 1° everywhere. It came out nearly level and bridged the road's 9 m dip at rows 19–23, with up to 17.3 m clearance in x1. The road changes grade faster than 1° per 16 m row there.
+- **Result, x1** (A-v16 runs at 2048):
+  - rise −5.55 … +10.22° toward +z (file pitch = −rise);
+  - outside the steep stretches: |rise| max 1.52°, change between neighbouring rows max 1.00°;
+  - overall change max 5.92° (inside or at the edge of the steep stretches);
+  - clearance 6.60 – 10.42 m (max at row 22, the bottom of the dip);
+  - largest level step between rows 2.89 m (only matters on a bridge that ignores pitch).
+- **2×.** Rise −1.11 … +5.32°, change outside steep max 0.99°, overall 3.56°, clearance 6.60 – 25.87 m. At 2× only row 1 counts as steep, so the dip is bridged.
+- **Per row, x1:**
+| row | at (x, z) | underside | highest road | clearance | file pitch |
+|---:|---|---:|---:|---:|---:|
+| 1 | (-6244, 658) | 266.52 | 258.32 | 8.20 | -4.59 |
+| 2 | (-6254, 671) | 267.76 | 261.15 | 6.61 | -5.57 |
+| 3 | (-6263, 683) | 269.52 | 262.91 | 6.61 | -6.35 |
+| 4 | (-6271, 696) | 271.17 | 264.54 | 6.63 | -6.14 |
+| 5 | (-6280, 709) | 272.83 | 266.17 | 6.66 | -6.15 |
+| 6 | (-6288, 722) | 274.48 | 267.85 | 6.63 | -5.73 |
+| 7 | (-6296, 735) | 275.91 | 269.31 | 6.60 | -2.94 |
+| 8 | (-6304, 748) | 276.06 | 269.46 | 6.60 | -0.56 |
+| 9 | (-6312, 762) | 276.20 | 269.60 | 6.60 | -0.54 |
+| 10 | (-6320, 775) | 276.35 | 269.74 | 6.61 | -0.54 |
+| 11 | (-6327, 788) | 276.50 | 269.89 | 6.61 | -0.48 |
+| 12 | (-6335, 802) | 276.60 | 270.00 | 6.60 | -0.02 |
+| 13 | (-6342, 815) | 276.50 | 269.90 | 6.60 | 0.78 |
+| 14 | (-6349, 829) | 276.18 | 269.58 | 6.60 | 1.16 |
+| 15 | (-6356, 843) | 275.88 | 269.28 | 6.60 | 1.13 |
+| 16 | (-6363, 856) | 275.58 | 268.98 | 6.60 | 1.15 |
+| 17 | (-6370, 870) | 275.26 | 268.66 | 6.60 | 2.41 |
+| 18 | (-6377, 884) | 274.29 | 267.68 | 6.61 | 5.07 |
+| 19 | (-6384, 898) | 272.54 | 265.79 | 6.75 | 5.55 |
+| 20 | (-6391, 911) | 271.30 | 263.95 | 7.35 | 2.61 |
+| 21 | (-6397, 925) | 271.14 | 262.16 | 8.98 | -0.01 |
+| 22 | (-6404, 939) | 271.31 | 260.85 | 10.46 | -1 |
+| 23 | (-6411, 953) | 271.68 | 263.80 | 7.88 | -4.03 |
+| 24 | (-6417, 967) | 273.47 | 266.61 | 6.86 | -8.2 |
+| 25 | (-6424, 981) | 276.11 | 269.43 | 6.68 | -10.22 |
+| 26 | (-6430, 995) | 279.00 | 272.38 | 6.62 | -7.78 |
+| 27 | (-6437, 1009) | 280.30 | 273.68 | 6.62 | -1.85 |
+| 28 | (-6443, 1023) | 280.00 | 273.39 | 6.61 | 1.38 |
+| 29 | (-6449, 1037) | 279.56 | 272.95 | 6.61 | 1.52 |
+| 30 | (-6456, 1051) | 279.18 | 272.54 | 6.64 | 1.28 |
+| 31 | (-6462, 1065) | 278.88 | 272.10 | 6.78 | 0.98 |
+| 32 | (-6467, 1076) | 278.66 | 271.68 | 6.98 | 0.82 |
+- Unchanged: colonnade every 6 m (129 Pillar1x8 in x1), rocks at the shed, row depth into the cut face, tree mask.
