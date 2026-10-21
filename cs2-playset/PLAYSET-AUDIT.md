@@ -102,6 +102,70 @@ None.
 
 These are exactly the `contentPrerequisites` the editor writes into the map. Traffic 80095 is recommended but not required.
 
-All other prefabs in the A-v10 set are vanilla. No installed PDX mod contains them, and every one has a base-game locale entry (`Game/Locale.cok`). That includes rocks `Rock01–30`, `Boulder01–08`, `StandingStone*`, `Ruins*`, logs, the vanilla roads, highways, tracks and seaways, `Wooden Covered Bridge - 2 lanes`, `Truss Arch Bridge - Small Road - 2 Lanes` and the dam.
+All other prefabs in the A-v10 set are vanilla. No installed PDX mod contains them, and every one has a base-game locale entry (`Game/Locale.cok`). That includes rocks `Rock01–30`, `Boulder01–08`, `StandingStone*`, `Ruins*`, logs, the vanilla roads, highways, tracks and seaways, `Wooden Covered Bridge - 2 lanes`, `Truss Arch Bridge - Small Road - 2 Lanes` and the dam. Trees (`PineTree01`, `SpruceTree01`, `EuropeanSpruce01`, `BirchTree01`, `OakTree01`, `NA_Hickory`, `NA_Linden`, `GreenBushWild*`, `FlowerBushWild*`) and the surfaces the runner posts (`Agriculture Surface 01`, `Grass Surface 01` (fields file only), `Pavement Surface 01`, `Sand Surface 01/02`) are vanilla too. The PDO23 and gaga TTP pack surfaces appear only in the `optional/` files, which are not posted.
 
 **Only the build needs:** CS2MCP, Anarchy, Move It, Find It, Scene Explorer, Image Overlay, Earth2Cities, Unified Icon Library, Asset Icon Library, ImportedData/TextureAssets, and Traffic (for the TM:PE import). Lumina, EGT and TWA (+ I18n) are personal visuals.
+
+## The three lists
+
+Each mod appears in exactly one list.
+
+### 1. Can be deleted
+
+Never used by the map. Items marked *build-time only* stay in the playset until the build is finished; remove them before publishing.
+
+- 144834 Terrain Textures Pack: Rocks
+- 144550 Terrain Textures Pack - Grass
+- 143898 Terrain Textures Pack - Ground
+- 148077 Dirty Surfaces Pack
+- 135944 DIY Stone Arch Rail / Road Bridge Kit
+- 136168 DIY Artdeco Bridge Kit / LA River Bridges
+- 142603 Generic Arched Truss Bridge
+- 143426 Classic Rail Truss Bridge Kit
+- 133250 Tigons Rail Infrastructure Pack
+- 157964 Art Deco Walls, Tunnels, and Bridges Set
+- 162558 Pillar Spacing
+- 160320 Bridge Builder
+- local ImportedData 1424637002, 1698185143, 865402566 (SC44 train imports)
+- 153995 BasePlateConcrete62: not in the playset and not needed; ConcreteSet01 ships the same prefab
+- CS2MCP (local): *build-time only, remove before publishing*
+- 74285 Scene Explorer: *build-time only, remove before publishing*
+- 74539 Image Overlay: *build-time only, remove before publishing*
+- 140919 Earth2Cities: *build-time only (E2C calibration), remove before publishing*
+- 74417 Unified Icon Library: *build-time only; players who install Anarchy, Move It or Find It get it automatically*
+- 79634 Asset Icon Library: *build-time only; comes with Find It*
+- 75426 I18n Everywhere: *build-time only; comes with Time & Weather Anarchy*
+- local ImportedData/TextureAssets: *build-time only; the map embeds its textures*
+
+### 2. Must be a dependency on PDX Mods
+
+The published map needs these to load its content.
+
+- Bridges & Ports DLC (`BridgesAndPorts`, a DLC prerequisite, not a mod)
+- 92245 Bridge Expansion Pack
+- 124160 Bridge Expansion Pack: B&P
+- 140978 Island-Type Bridge Pier
+- 154132 ConcreteSet01
+- 132188 Truss Grantry Prop Pack (only while the `po-gantry` step is kept)
+- 134056 Asset-Dependency-Pack (Styx's)
+- 137334 Cliffs and Rocks Pack
+- 146553 Arid Rocks
+- 140176 RZ Rocks
+- 146871 Ferns
+- 132403 pd Long Grass
+- 134147 PD-WildFlower
+- 132771 pd Bloom
+- 159384 Leafy Undergrowth (Dark)
+- 159309 Leafy Undergrowth (Light)
+- 80095 Traffic (lane data; the editor does not add it to `contentPrerequisites` itself)
+
+### 3. Must be a recommendation in the map description
+
+Player-side look or convenience; the map loads without them.
+
+- 94394 Lumina
+- 161533 Enhanced Graphics and Textures
+- 88893 Time & Weather Anarchy (if kept: Main profile, not "desert")
+- 74604 Anarchy (for players who edit the map)
+- 74324 Move It (for players who edit the map)
+- 77240 Find It (for players who edit the map)
