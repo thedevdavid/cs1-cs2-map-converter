@@ -25,7 +25,8 @@ public static class RockShed
 {
     public const double RoofStep = 8, WallStep = 16, ColumnStep = 4, Clear = 6.5, Slab = 16, WallLength = 32, WallHeight = 16, Plate = 0.2,
         StripWidth = 20, StripEnds = 10,
-        ShellHalf = 23.5, HillCap = 25, BenchSearch = 100;   // round 40: CS1 rock_c shells 46.7–47.7 m long; their hill side reaches 25 m from the road axis
+        ShellHalf = 23.5, HillCap = 40, BenchSearch = 100;   // round 40: CS1 rock_c shells 46.7–47.7 m long. Round 40b: the hill edge is no longer capped at the
+                                                             // shell's (axis + 25 m): every row reaches into the cut face, up to axis + 40 m
     public const int FasciaPlates = 4;
 
     /// <summary>The road under the shed as one polyline with arc length, the shed's range on it and its hill side.</summary>
@@ -128,6 +129,7 @@ public static class RockShed
         // that width, the valley one on the column line with the fascia under it.
         int rowsN = (int)Math.Ceiling((r1 - r0 - Slab) / RoofStep) + 1, slabs = 0, fascia = 0, capped = 0;
         var rowAt = new List<(double L, double Y, double Edge)>();
+        var cappedRows = new List<string>();
         var bench = new List<double>();   // column line → first terrain at or above the roof top, per row
         for (int i = 0; i < rowsN; i++)
         {
@@ -140,7 +142,7 @@ public static class RockShed
                 if (TerrAt(l, d) >= top) first = d;
             bench.Add(first is double f ? f - valley : double.PositiveInfinity);
             double edge = meet is double m ? Math.Min(Math.Max(m + 2, hill), HillCap) : HillCap;
-            if (meet == null) capped++;
+            if (meet == null) { capped++; cappedRows.Add(FormattableString.Invariant($"row {i + 1} (face at {(first is double ff ? $"{ff - valley:F1} m" : "none")})")); }
             rowAt.Add((l, y, edge));
             int n = Math.Max(2, (int)Math.Ceiling((edge - valley) / Slab));
             for (int k = 0; k < n; k++)
@@ -194,9 +196,9 @@ public static class RockShed
         string P((double X, double Z, double Y, double Tx, double Tz) p) => FormattableString.Invariant($"({p.X:F1}, {p.Z:F1})");
         var fin = bench.Where(double.IsFinite).ToList();
         int widest = fin.Count > 0 ? bench.IndexOf(fin.Max()) + 1 : 0;
-        string benchText = FormattableString.Invariant($"column line → terrain at the roof top per row: min {(fin.Count > 0 ? fin.Min() : double.NaN):F1} m, max {(fin.Count > 0 ? fin.Max() : double.NaN):F1} m (widest at row {widest}), the shell's hill edge at {HillCap - valley:F1} m{(fin.Count < bench.Count ? $", {bench.Count - fin.Count} rows not within {BenchSearch:F0} m" : "")}");
+        string benchText = FormattableString.Invariant($"column line → terrain at the roof top per row: min {(fin.Count > 0 ? fin.Min() : double.NaN):F1} m, max {(fin.Count > 0 ? fin.Max() : double.NaN):F1} m (widest at row {widest}), the cap at {HillCap - valley:F1} m{(fin.Count < bench.Count ? $", {bench.Count - fin.Count} rows not within {BenchSearch:F0} m" : "")}");
         var check = Check(res, c, r0, r1, rowAt, TerrAt, RoofTop);
-        return (res, FormattableString.Invariant($"rock shed open gallery, CS1 shell extent {r1 - r0:F0} m of road from {P(c.At(r0))} to {P(c.At(r1))} (A-v14: {c.L1 - c.L0:F0} m from {P(c.At(c.L0))} to {P(c.At(c.L1))}) ({string.Join(", ", c.Road.Select(e => e.Id))}): {slabs} BasePlateConcrete16 in {rowsN} rows every {RoofStep} m at road + {Clear} m on a 48 m smoothed profile, into the hill ({capped} rows capped at the shell's hill edge {HillCap} m from the axis) + {fascia} fascia plates; {benchText}; hill-side wall only at gaps: {w16} Wall32x16 + {w32} Wall32x32 on the {HillCap} m line; {stacks} valley-side columns every {ColumnStep} m ({p8} Pillar1x8); bare roof; no portals; {check}"));
+        return (res, FormattableString.Invariant($"rock shed open gallery, CS1 shell extent {r1 - r0:F0} m of road from {P(c.At(r0))} to {P(c.At(r1))} (A-v14: {c.L1 - c.L0:F0} m from {P(c.At(c.L0))} to {P(c.At(c.L1))}) ({string.Join(", ", c.Road.Select(e => e.Id))}): {slabs} BasePlateConcrete16 in {rowsN} rows every {RoofStep} m at road + {Clear} m on a 48 m smoothed profile, into the cut face: row depth from the column line min {rowAt.Min(r => r.Edge - valley):F1} m, max {rowAt.Max(r => r.Edge - valley):F1} m ({capped} rows stopped at the cap, axis + {HillCap} m = {HillCap - valley:F1} m{(cappedRows.Count > 0 ? ": " + string.Join(", ", cappedRows) : "")}) + {fascia} fascia plates; {benchText}; hill-side wall only at gaps: {w16} Wall32x16 + {w32} Wall32x32 on the {HillCap} m line; {stacks} valley-side columns every {ColumnStep} m ({p8} Pillar1x8); bare roof; no portals; {check}"));
     }
 
     /// <summary>
