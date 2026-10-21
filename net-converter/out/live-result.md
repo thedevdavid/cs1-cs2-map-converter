@@ -374,3 +374,20 @@ Detroit: the owner keeps the BXP SuspensionBridge03; import-detroit-opt2.json no
   - Levels at the centre: ground 171–174 m, +1 at 180–187 m, +2 at 189–198 m, a top ramp at 200–201 m (CS1 33741 at 27 m), so 3–4 levels as in CS1.
 - **Cameras:** the owner's (3493, 2152), yaw 0, pitch 50, distance 700. To show the levels: (3493, 2152), yaw 45 (from the south-west, looking north-east
   along the main road at 60°), pitch 30, distance 600.
+
+## Round 33: the A-v9 network failures (run-20261021-025202, 10 against 3 in A-v8)
+
+Diffed against live-graph-20261021-025202-end.json and against the A-v8 files (1a79162):
+- **Dropped as "runs inside the existing segment"** (a new bridge 0.9.39 check; all three were built in A-v8):
+  - e31224_0ba, 4 lanes: a real overlap with the parallel 3-lane carriageway e25_0 (16.3 m apart, 18 m needed). Its run-report drop is now read and it moves
+    3.2 m clear (the asked 2.2 m + 1 m).
+  - e22564_0b, 2 lanes, and e31224_0bb, 4 lanes: the segment the game names is their sibling at the same node, a merge or diverge (e9919_0 1-lane, and the
+    2-lane legs e15395_0a / e27293_0). Moving them would bend the junction; not moved and listed in stats.md for the bridge. This looks like a false positive
+    of the new check at shared nodes. e22564_0b and its sibling also went up 1.6–2.5 m with the round-32 flyover lift.
+- **Point-check 0 or 1 of 3** (e16410_0a, e24407_0ba, e24407_0bb, e35437_0b): high BR001 south-approach pieces (live neighbours 19–41 m up). Their heights are
+  the same as in A-v8, where they were built. The one change is the round-32 `elevated: true` flag, and they are gone from the live graph.
+  - Change: the flag is now written only where an end is below 8 m (where it changes the look). x1: 505 → 155 edges, x2: 479 → 93. None of the four carries it.
+  - For the bridge session: check what the flag does to segments already above 8.05 m.
+- **The three known ones** (e31685_0, e34504_0, e35131_0) are the junctions the game moved (round 29).
+- **The run-report reader:** it now covers highway courses (FootprintShift with the drop messages), only where a separate course of the named prefab is
+  closer than the two half-widths + 0.5 m.

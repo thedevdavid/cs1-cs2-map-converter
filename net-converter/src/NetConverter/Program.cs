@@ -263,6 +263,26 @@ auditLog.AppendLine($"- Short border edges folded into their neighbour (< 10 m):
     // original or as a separate rebuild. Move it (and its end nodes) 1.9 m away in the network itself.
     var e204 = FootprintShift.Apply(result, result.Edges.Where(e => e.Id == "e20430_0b"), topologyFactor, new Dictionary<string, (string Prefab, double Move)> { ["e20430_0b"] = ("Highway Oneway - 3 lanes", 0.9) });
     foreach (var l in e204.Shifted.Concat(e204.Impossible)) auditLog.AppendLine($"- e20430_0b clear of its parallel carriageway: {l}");
+    // A-v9 (bridge 0.9.39 drops a course that runs inside an existing segment): highway courses the run reports name are moved sideways the asked distance
+    // + 1 m from the named neighbour (e22564_0b, e31224_0ba, e31224_0bb in run-20261021-025202).
+    if (drops != null)
+    {
+        // Only where a separate course of the named prefab comes closer than the two half-widths + 0.5 m (a parallel carriageway). When the game's neighbour shares a node with the dropped
+        // piece (its sibling at a merge or diverge: e22564_0b / e9919_0, e31224_0bb / the 2-lane legs), moving it is wrong; those are listed for the bridge.
+        bool NearSeparate(OutEdge e)
+        {
+            var (prefab, _) = drops[e.Id]; var pts = Enumerable.Range(0, 9).Select(k => e.Curve.Eval(k / 8.0)).ToArray();
+            return result.Edges.Any(o => o != e && o.Map.Imported && o.Map.Cs2Prefab == prefab && o.A != e.A && o.A != e.B && o.B != e.A && o.B != e.B
+                && pts.Any(p => Enumerable.Range(0, 9).Select(k => o.Curve.Eval(k / 8.0)).Any(q => Math.Sqrt((p.X - q.X) * (p.X - q.X) + (p.Z - q.Z) * (p.Z - q.Z)) < FootprintShift.Cs2Half(e) + FootprintShift.Cs2Half(o) + 0.5)));
+        }
+        var hwAll = result.Edges.Where(e => e.Map.Imported && drops.ContainsKey(e.Id) && e.Map.Cs2Prefab!.StartsWith("Highway")).ToList();
+        var hwDropped = hwAll.Where(NearSeparate).ToList();
+        foreach (var e in hwAll.Except(hwDropped)) auditLog.AppendLine($"- Highway course dropped by the game beside a node-sharing sibling, not moved (bridge check to review): {e.Id} {e.Map.Cs2Prefab} vs '{drops[e.Id].Prefab}'.");
+        var hwShift = FootprintShift.Apply(result, hwDropped, topologyFactor, drops);
+        Console.WriteLine($"highway courses dropped as overlapping in the run reports: {hwDropped.Count}, moved {hwShift.Shifted.Count}, impossible {hwShift.Impossible.Count}");
+        foreach (var l in hwShift.Shifted) auditLog.AppendLine($"- Highway course moved clear of its neighbour (run report drop): {l}");
+        foreach (var l in hwShift.Impossible) auditLog.AppendLine($"- Highway course NOT moved (run report drop): {l}");
+    }
     // Only the courses still written (canals, flood walls): moving a dropped quay's node would bend the road it shares.
     var fs8 = FootprintShift.Apply(result, result.Layer(Layers.Walls).Where(e => e.Map.Cs2Prefab is not ("QuaySmall01" or "QuayMedium01")), topologyFactor, drops);
     auditLog.AppendLine($"- Courses inside a highway footprint (walls, decor) moved sideways by the two CS2 half-widths + 1 m: {fs8.Shifted.Count}; impossible (between carriageways) {fs8.Impossible.Count}.");

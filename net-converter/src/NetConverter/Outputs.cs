@@ -58,7 +58,9 @@ public static class Outputs
             w.WriteString("structure", e.Structure.ToString().ToLowerInvariant());
             // Round 32 (bridge 0.9.39): a CS1 elevated (bridge-AI) road course gets "elevated": true; the bridge then stores 8.05 m on its segments and inner
             // nodes, so CS2 builds it on pillars instead of retaining walls even where the grade kept it below 8 m (the touch-down pieces).
-            if (e.AiStructure == Structure.Elevated && e.Structure == Structure.Elevated && e.Layer != Layers.Rail) w.WriteBoolean("elevated", true);
+            // A-v9: only where it helps, an end below the 8 m pillar threshold. On high viaducts the flag changed nothing for the look, and four BR001 approach
+            // pieces 20–40 m up (e16410_0a, e24407_0ba/bb, e35437_0b) vanished in A-v9, the first run with the flag.
+            if (e.AiStructure == Structure.Elevated && e.Structure == Structure.Elevated && e.Layer != Layers.Rail && Math.Min(e.A.Elevation, e.B.Elevation) * YScale < 8.05) w.WriteBoolean("elevated", true);
             w.WriteString("cs1_prefab", e.Map.Cs1Prefab);
             w.WriteNumber("cs1_segment", e.Cs1Segment);
             w.WriteEndObject();
