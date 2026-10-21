@@ -281,7 +281,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 ## Other layers
 
 - Power: 60 courses of High-voltage Line in import-power.json (nodes on the ground).
-- Trees: 504,987 objects in 11 chunks under out\trees (points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale)); outside ±7168 m 158,877; dropped 73,855 (see trees/README.md).
+- Trees: 504,894 objects in 11 chunks under out\trees (points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale)); outside ±7168 m 158,877; dropped 73,855 (see trees/README.md).
 - Pack rocks: no y (their y was dropped on 1112); options.grounding {mode boundsMin, sink 0.15, slopeSink} grounds every object without y from its prefab bounds (bridge 0.9.19).
 - Surface-rock cliffs (round 34): 249 CS1 Brown Surface Rock Medium/Large on a ≥ 25° playable slope → CliffStack / CliffRock5 (contour yaw, sunk ≥ 1.5 m downhill); 799 stay rocks on gentler slopes, 0 near a net, 0 in water, 11 dropped as a second piece in a 16 m cell.
 - Object y policy: y only > 3 m above the CS2 playable heightmap (10201528-dktflls-1to1.png), never for buildings: 2301 with y; against the old CS1-terrain rule 556 lose y, 0 gain it.
@@ -381,7 +381,8 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Round 9 fort: 112 objects along the 12 CS1 Castle Wall segments (RuinsStoneFormation01 34, RuinsStoneFormation02 29, RuinsStoneCairns01 11, RuinsStoneCairns03 10, RuinsStoneCairns02 8, StandingStone05 4, StandingStone06 3, StandingStone07 3, StandingStone08 3, StandingStone01 2, StandingStone04 2, OldCastle01 1, StandingStone02 1, StandingStone03 1), keep OldCastle01 at (5, -2619) (UNVERIFIED placeable) -> import-fort.json; RuinsCastle01 stays in import-objects.json.
 - Round 9 PO walls left out (dropped by the game inside a highway in the run reports): pb646_side23.
 - Round 9 PO paved blocks: 11 blocks (group roots 27, 288 left out: BR006 and BR005 bridge parts, see PO structures) -> 11 pavement polygons (import-po-structures.json); PO walls dropped (owner review of A-v4).
-- Round 9 rock shed open gallery over 445 m of road (e10437_0, e13009_0, e20651_0, e24116_0, e31333_0, e32978_0, e34976_0): 110 BasePlateConcrete16 (55 rows of 2, every 8 m) at road + 6.5 m on a 48 m smoothed profile, 28 Wall32x16 on the hill side (every 16 m, top flush with the roof), 56 valley-side columns every 8 m (1 Pillar2x16 + 55 Pillar2x8), 11 CliffRock5 behind the wall; check: roof covers 99.9 % of the road strip (13 of 11570 1 m samples open), largest step between roof rows 2.98 m (converter metres, 2× heights; half that in x1), the wall covers 100.0 % of the hill edge (0 of 445 1 m samples open), largest wall height step 2.98 m -> import-rock-shed.json.
+- Round 9 rock shed open gallery over 445 m of road (e10437_0, e13009_0, e20651_0, e24116_0, e31333_0, e32978_0, e34976_0): 110 BasePlateConcrete16 (55 rows of 2, every 8 m) at road + 6.5 m on a 48 m smoothed profile + 220 fascia plates (4 under each valley slab), 28 Wall32x16 on the hill side (every 16 m, top flush with the roof), 111 valley-side columns every 4 m (111 Pillar1x8), roof cover 11 CliffRock5 + 1180 bushes + 778 stones; no portals (TunnelEntrance18 would stand 4 m above the hill wall); check: roof covers 99.9 % of the road strip (13 of 11570 1 m samples open), largest step between roof rows 1.49 m, the wall covers 100.0 % of the hill edge (0 of 445 1 m samples open), largest wall height step 2.98 m, 0 roof-cover pieces reach past the valley edge -> import-rock-shed.json.
+- Round 9 rock shed clear strip: 236 points -> clear-rock-shed.json (tree mask uses the same ring).
 - Round 9 PO structures: BR006 variant b: 7 StoneArchRailBridge at 28 m pitch along yaw 324 from (-3528.5, -3175.8), rotation 234.
 - Round 9 PO structures: main (BR006 variant a, no kit objects at BR006): 3 objects (BasePlateConcrete32 3), 3 grounded.
 - Round 9 PO structures: BR006 variant b: 7 StoneArchRailBridge; gantry 1 (grounded).
@@ -398,13 +399,13 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
 - Terrain paint import-terrain-paint-sand.json: material Sand, CS1 painted sand (all Sand cells): 321 polygons, 0 strokes, 9.94 km², softEdge 20 m.
 - Terrain paint optional\import-terrain-paint-rock.json: material (none: rock is automatic on steep slopes), slope ≥ 40° and the PO rock / cliff footprints: 214 polygons, 0 strokes, 5.39 km², softEdge 0 m, not imported.
-- Terrain paint import-terrain-paint-dry-grass.json: material Dry, dry open ground: east / south-east plains (22501 cells) and south-facing slopes (20824 cells): 426 polygons, 0 strokes, 9.19 km², softEdge 20 m.
+- Terrain paint import-terrain-paint-dry-grass.json: material Dry, dry open ground: east / south-east plains (22501 cells) and south-facing slopes (20825 cells): 426 polygons, 0 strokes, 9.19 km², softEdge 20 m.
 - Terrain paint import-terrain-paint-bare-earth.json: material Dirt, CS1 dirt / mud decals: 0 polygons, 128 strokes, 0.05 km², softEdge 0 m.
 - Terrain paint import-terrain-paint-n1-riparian-lush.json: Lush 0.6, 73 polygons, 1.17 km², 7834 cells (N1 cottonwood / willow bottoms).
 - Terrain paint import-terrain-paint-n12-fertile-dry.json: Dry 0.35, 276 polygons, 15.15 km², 59080 cells (N12 CS1 fertile land (yellower)).
 - Terrain paint import-terrain-paint-n13-high-ground-dry.json: Dry 0.5, 97 polygons, 11.42 km², 45868 cells (N13 bare high ground above the treeline 588 m).
-- Terrain paint import-terrain-paint-n6-savanna-dry.json: Dry 0.4, 1334 polygons, 41.37 km², 133406 cells (N6 ponderosa savanna floor).
-- Terrain paint import-terrain-paint-n6-savanna-dirt.json: Dirt 0.45, 40029 strokes (N6 bare soil dabs between the pines).
+- Terrain paint import-terrain-paint-n6-savanna-dry.json: Dry 0.4, 1334 polygons, 41.37 km², 133390 cells (N6 ponderosa savanna floor).
+- Terrain paint import-terrain-paint-n6-savanna-dirt.json: Dirt 0.45, 40027 strokes (N6 bare soil dabs between the pines).
 - Terrain paint import-terrain-paint-n4-hogback-sand.json: Sand 0.5, 31644 strokes (N4 hogback sandstone streaks along the contour (30066 cells)).
 - Terrain paint import-terrain-paint-n5-scree-dirt.json: Dirt 0.8, 80 polygons, 0.47 km², 2260 cells (N5 talus / scree aprons below cliffs).
 - Terrain paint N3: reservoir level 157.5 m (2912 wet cells at ± 1.5 m).
@@ -458,7 +459,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Flat QuaySmall01 edges (cross-slope < 0.4 m at × 1): 21, wall right 11, both 4, left 6; their nodes raised to ≥ 4 m (one side) / ≥ 8 m (both) as the fallback.
 - One-way highway stubs to CS1 dead ends left out: 0 courses.
 - One-way courses pruned after the stub removal (they met head-on at a node with no exit or no entry): 0.
-- Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md, run-20261020-192927.md, run-20261020-193334.md, run-20261020-193751.md, run-20261020-211001.md, run-20261020-231951.md, run-20261021-000201.md, run-20261021-025202.md, run-20261021-121517.md, run-20261021-122852.md, run-20261021-131042.md, run-20261021-134229.md, run-a7.md (36 dropped courses).
+- Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md, run-20261020-192927.md, run-20261020-193334.md, run-20261020-193751.md, run-20261020-211001.md, run-20261020-231951.md, run-20261021-000201.md, run-20261021-025202.md, run-20261021-121517.md, run-20261021-122852.md, run-20261021-131042.md, run-20261021-134229.md, run-20261021-143023.md, run-20261021-144033.md, run-a7.md (36 dropped courses).
 - e20430_0b clear of its parallel carriageway: e20430_0b Highway Oneway - 3 lanes beside e16466_0a Highway Oneway - 3 lanes (15.5 m; run report: move 0.9 m): moved 1.9 m
 - Carriageway spread: pass 1: 98 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 226 nodes moved apart.
 - Carriageway spread: pass 2: 13 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 47 nodes moved apart.
@@ -513,8 +514,8 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
   - isolated, kept: (367, -3024) Pavement Path, 83 m (e7126_0, e28940_0, e18960_0): isolated in CS1 too
 - Water sources: 65 → 41 (12 changes, water-check.md).
 - EXPERIMENT trees: the 726 net-corridor trees are in experiment-trees-net-corridor-01.json (import after the main tree files to try them; undo by its name).
-- Island check (4096, -6127), 300 m: 23 trees kept; masked CS2 terrain below sea level 93 m + 0.5 38, inside the CS1 water surface and below 93.5 m 0, on a ground-level net corridor (half width + 2 m) 0.
-- Trees masked (same set for both scales): CS2 terrain below sea level 93 m + 0.5 2,472; inside the CS1 water surface and below 93.5 m 0; on a ground-level net corridor (half width + 2 m) 726; total 3,198, 505,037 remain.
+- Island check (4096, -6127), 300 m: 23 trees kept; masked CS2 terrain below sea level 93 m + 0.5 38, inside the CS1 water surface and below 93.5 m 0, on a ground-level net corridor (half width + 2 m) 0, the rock shed's open valley side (20 m strip, 10 m past each end) 0.
+- Trees masked (same set for both scales): CS2 terrain below sea level 93 m + 0.5 2,472; inside the CS1 water surface and below 93.5 m 0; on a ground-level net corridor (half width + 2 m) 726; the rock shed's open valley side (20 m strip, 10 m past each end) 93; total 3,291, 504,944 remain.
 - Field circles: 7 overlapping pairs shrunk to touch (0.5 m gap) instead of a union, so they stay circles.
 - Fields: 55 circles (closed CS1 rings, and open arcs fitted by least squares, RMS < 6 m), 0 swept arcs left (smoothed).
 - Grass surfaces: 2 overlapping pairs merged in 2 groups (53 → 51).

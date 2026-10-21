@@ -15,7 +15,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\import-terrain-paint-n3-drawdown-dirt.json` | ROUND 27 terrain paint N3 Dirt (2×) | 0 polygons, 134 strokes | 0.0 MB |
 | 0 | `out\import-terrain-paint-n4-hogback-sand.json` | ROUND 27 terrain paint N4 Sand (2×) | 0 polygons, 31644 strokes | 5.1 MB |
 | 0 | `out\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (2×) | 200 polygons, 0 strokes | 0.9 MB |
-| 0 | `out\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (2×) | 0 polygons, 40029 strokes | 6.4 MB |
+| 0 | `out\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (2×) | 0 polygons, 40027 strokes | 6.4 MB |
 | 0 | `out\import-terrain-paint-n6-savanna-dry.json` | ROUND 27 terrain paint N6 Dry (2×) | 1903 polygons, 0 strokes | 20.6 MB |
 | 0 | `out\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 Dirt (2×) | 0 polygons, 215 strokes | 0.0 MB |
 | 0 | `out\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 Dry (2×) | 2 polygons, 0 strokes | 0.0 MB |
@@ -37,7 +37,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\x1\import-terrain-paint-n3-drawdown-dirt.json` | ROUND 27 terrain paint N3 Dirt (1×) | 0 polygons, 134 strokes | 0.0 MB |
 | 0 | `out\x1\import-terrain-paint-n4-hogback-sand.json` | ROUND 27 terrain paint N4 Sand (1×) | 0 polygons, 31644 strokes | 5.1 MB |
 | 0 | `out\x1\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (1×) | 200 polygons, 0 strokes | 0.9 MB |
-| 0 | `out\x1\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (1×) | 0 polygons, 40029 strokes | 6.4 MB |
+| 0 | `out\x1\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (1×) | 0 polygons, 40027 strokes | 6.4 MB |
 | 0 | `out\x1\import-terrain-paint-n6-savanna-dry.json` | ROUND 27 terrain paint N6 Dry (1×) | 1903 polygons, 0 strokes | 20.6 MB |
 | 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 Dirt (1×) | 0 polygons, 215 strokes | 0.0 MB |
 | 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 Dry (1×) | 2 polygons, 0 strokes | 0.0 MB |
@@ -101,7 +101,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
 | 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |
 | 6 | `out\x1\import-trees-fixed-01.json` | trees at fixed height, with y (1×) | 50 | 0.0 MB |
-| 6 | `out\trees/import-trees-01.json` … `import-trees-11.json` | trees (both scales) | 504,987 in 11 files | |
+| 6 | `out\trees/import-trees-01.json` … `import-trees-11.json` | trees (both scales) | 504,894 in 11 files | |
 | 7 | `out\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 7 | `out\x1\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 8 | `out\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
@@ -715,3 +715,32 @@ The pieces between them are built, so the course alternates between built and mi
 **For A-v12:**
 - Check the nine ids above in the post-network graph. A piece still missing at 2 m clearance would point to something else: pillars of the earlier carriageway, or the game's own merge of collinear pieces.
 - **For the bridge session:** `DescribeOverlap` should not skip same-prefab segments that are not the course's own collinear neighbours. Then a parallel carriageway overlap is named instead of reported as a bare point-check failure.
+
+## Round 37: the ConcreteSet01 avalanche gallery (owner's A-v11 review, next-run/shots-a11/fix/24-01..07)
+
+**What was wrong:**
+- The yaw sign was right. In 24-01 the asymmetric Wall32x16 pieces and the 62.5 m plate's edges run along the road, which matches the bridge's `quaternion.RotateY(yaw)` (local +z → (sin, cos)). The yaw is now derived per piece, as asked.
+- The layout was the problem:
+  - The 62.5 m plate is 2.5 times the road strip, so it reached over the cliff and into the hill.
+  - Every plate took the unsmoothed road y at its own centre, positioned by a chord projection instead of along the road. That gave steps, gaps on the outer side of the curve, and mixed 16 / 32 / 62 m sizes.
+  - The 16 m walls stood on the road, so they rose 9.5 m above the roof at 6.5 m. They were 32 m long at a 32 m pitch, which left gaps on the curve.
+  - The rocks were set at road + 2.6 m and showed above the wall and roof.
+
+**New layout** (RockShed.cs, ConcreteSet01 only, all pivot centre-bottom per next-run/concreteset01-bounds.txt):
+- **Placement along the road.** Every piece is placed by its arc length along the road and turned to the road bearing at its centre (walls: the chord of the hill edge between their ends).
+- **One height profile.** The road y is smoothed over 48 m. Roof = profile + 6.5 m; columns, walls and rocks take their heights from it.
+- **Roof.** BasePlateConcrete16 only (no 62.5 m plate), two across:
+  - one slab with its valley edge on the column line, one with its hill edge on the wall;
+  - they overlap in the middle;
+  - a row every 8 m, overlapping 8 m along.
+  - The road really climbs and drops about 10 m under the shed (x1 260 → 270 → 259 → 274 m), and slabs can only turn about Y, so the roof is terraced. The largest step between rows is 1.49 m in x1 (2.98 m at 2×).
+- **Hill-side wall.** Wall32x16 every 16 m (half overlap), top flush with the roof. The rest goes down into the hill cut.
+- **Valley side.** A Pillar2x16 / Pillar2x8 stack every 8 m of road under the slab's valley edge, from the roof underside to the terrain.
+- **Rocks.** The 11 CliffRock5 sit on the terrain 7 m behind the wall, at most roof − 4 m. In x1 they are 7–9 m below the roof.
+
+**Counts** (x1): 110 BasePlateConcrete16, 28 Wall32x16, 55 Pillar2x8, 1 Pillar2x16, 11 CliffRock5. The extent is x −6467 … −6233, z 668 … 1075, y 252 … 279.
+
+**Bounds check** (written into stats.md):
+- The roof covers 99.9 % of the road strip from the column line to the wall, sampled at 1 m. The 13 open samples are at the two ends.
+- The wall covers 100 % of the hill edge.
+- Not checked: the CliffRock5 height. If a rock still shows above the wall, lower its y or move it further back.
