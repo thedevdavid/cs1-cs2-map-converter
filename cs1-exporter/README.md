@@ -63,6 +63,47 @@ Keep **Procedural Objects**, **Effects Module**, **Tree Control**, **Network Ski
 **Theme Mixer** enabled in the playset used for the export (Surface Painter is not used by this map);
 otherwise the JSON says why their data is missing (`proceduralObjectsReason`, `terrainSurfaces.notes`).
 
+## Camera command (v0.5.0, map editor only)
+
+While a map is open in the **map editor** (LoadMap/NewMap), the mod polls
+`%LOCALAPPDATA%\DakotaExport\camera.json` every 0.25 s. To take shots, write that file (write it as
+`camera.json.tmp` and rename, so the mod never reads half a file). For each shot the mod sets
+`CameraController` target **and** current position, angle and size (so there is no smoothing). It can
+hide the UI, waits `frames` frames, calls `Application.CaptureScreenshot`, waits until the PNG is on
+disk, and restores the UI. It then writes `camera.done.json` (via `.tmp` + rename) and deletes
+`camera.json`. Poll for `camera.done.json`, and delete it before the next request. Only the camera and the
+UI visibility change; nothing is saved.
+
+Request (single shot, or `"shots": [...]` with top-level values as defaults; the comments below are explanation only, the file must be plain JSON):
+
+```json
+{
+  "x": 1234.5, "z": -2345.0,      // world metres, CS1 frame (origin map centre, x east, z north); required
+  "y": 120.0,                      // optional target height; default = terrain/water surface at x,z
+  "yaw": 90,                       // degrees compass: 0 looks north (+z), 90 east (+x) = CS2 angleX; default 0
+  "pitch": 35,                     // degrees down from horizontal; default 45
+  "distance": 800,                 // metres from target to camera; default 500
+  "out": "D:\shots\cs1-12.png",  // PNG path; relative paths go under %LOCALAPPDATA%\DakotaExport\shots\; required
+  "hideUi": true,                  // optional, hides all UIView views for the shot (UIView.Show(false)), restored after
+  "frames": 3,                     // optional settle frames before capture (default 3; use 10–30 after long jumps)
+  "superSize": 1                   // optional Application.CaptureScreenshot supersampling 1–4
+}
+```
+
+`{"hideUi": true, "frames": 5, "shots": [ {"x":..,"z":..,"yaw":..,"pitch":..,"distance":..,"out":"a.png"}, ... ]}`
+takes every shot in one request.
+
+`camera.done.json` (schema `dakota-export/cs1/camera/v1`): `exporterVersion`, `startedUtc`,
+`completedUtc`, `requestError`, `request` (the raw request text), `okCount`, and `shots[]` with
+`index`, `ok`, `error`, `out`, `bytes`, `requested {x, z, yaw, pitch, distance, hideUi, frames, superSize}`
+and `actual {targetPosition, yaw, pitch, size, height, distance, cameraPosition, cameraEuler,
+fieldOfView, minDistance, maxDistance, screen {width, height}}`, read from the camera just before capture.
+
+Notes:
+- The distance is converted to CameraController's size: `size = distance × tan(fov) / max(0.01, 1 − height / maxDistance)`, which inverts `CameraController.UpdateTransform`. The game's own limits can still change the result: it clamps the size to `m_minDistance…m_maxDistance` (40–3000 by default) and lifts the camera above the terrain. Use `actual.distance` and `actual.cameraPosition` for what was really shot.
+- The image is the game window's resolution × `superSize`.
+- `%LOCALAPPDATA%\DakotaExport\no-auto-export.flag` turns off the automatic export on load, so a restart for screenshots does not write another 150 MB export. The camera command stays on. Delete the file to export again.
+
 ## Output
 
 ```text

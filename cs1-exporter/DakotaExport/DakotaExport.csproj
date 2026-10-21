@@ -6,9 +6,9 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <AssemblyName>DakotaExport</AssemblyName>
     <RootNamespace>DakotaExport</RootNamespace>
-    <Version>0.4.2</Version>
-    <FileVersion>0.4.2.0</FileVersion>
-    <AssemblyVersion>0.4.2.0</AssemblyVersion>
+    <Version>0.5.0</Version>
+    <FileVersion>0.5.0.0</FileVersion>
+    <AssemblyVersion>0.5.0.0</AssemblyVersion>
     <Deterministic>true</Deterministic>
     <CitiesSkylinesManagedDir Condition="'$(CitiesSkylinesManagedDir)' == ''">D:\SteamLibrary\steamapps\common\Cities_Skylines\Cities_Data\Managed</CitiesSkylinesManagedDir>
     <InstallMod Condition="'$(InstallMod)' == ''">true</InstallMod>

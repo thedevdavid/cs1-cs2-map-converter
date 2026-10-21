@@ -13,9 +13,17 @@ namespace DakotaExport
             base.OnLevelLoaded(mode);
             bool supported = mode == LoadMode.LoadMap || mode == LoadMode.NewMap ||
                              mode == LoadMode.LoadGame || mode == LoadMode.NewGame;
+            if (mode == LoadMode.LoadMap || mode == LoadMode.NewMap) CameraCommand.Enable();
             if (!supported)
             {
                 ExportLog.Unity("level loaded in mode " + mode + "; export not armed.");
+                return;
+            }
+
+            // %LOCALAPPDATA%\DakotaExport\no-auto-export.flag turns the automatic export off (camera command stays on).
+            if (System.IO.File.Exists(System.IO.Path.Combine(CameraCommand.Dir, "no-auto-export.flag")))
+            {
+                ExportLog.Unity("no-auto-export.flag present; export not armed.");
                 return;
             }
 
@@ -24,6 +32,7 @@ namespace DakotaExport
 
         public override void OnLevelUnloading()
         {
+            CameraCommand.Disable();
             ExportTrigger.Disarm();
             base.OnLevelUnloading();
         }
@@ -55,6 +64,7 @@ namespace DakotaExport
 
         public override void OnUpdate(float realTimeDelta, float simulationTimeDelta)
         {
+            CameraCommand.Update(realTimeDelta);
             if (!s_armed) return;
             if (--s_framesLeft > 0) return;
             s_armed = false;

@@ -7,7 +7,7 @@ namespace DakotaExport
     /// </summary>
     public sealed class DakotaExportMod : IUserMod
     {
-        public const string Version = "0.4.2";
+        public const string Version = "0.5.0";
 
         public string Name
         {
