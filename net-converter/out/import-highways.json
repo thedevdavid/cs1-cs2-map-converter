@@ -11580,6 +11580,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 15
     },
@@ -11601,6 +11602,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 15
     },
@@ -11622,6 +11624,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 15
     },
@@ -11686,6 +11689,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 59
     },
@@ -11812,6 +11816,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 172
     },
@@ -12169,6 +12174,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 568
     },
@@ -12190,6 +12196,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 568
     },
@@ -12275,6 +12282,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 630
     },
@@ -12297,6 +12305,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 630
     },
@@ -12319,6 +12328,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 630
     },
@@ -12403,6 +12413,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 740
     },
@@ -12992,6 +13003,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 1387
     },
@@ -13202,6 +13214,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 1638
     },
@@ -13223,6 +13236,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 1677
     },
@@ -13244,6 +13258,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 1677
     },
@@ -13392,6 +13407,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 1808
     },
@@ -13623,6 +13639,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 2130
     },
@@ -13644,6 +13661,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 2130
     },
@@ -13665,6 +13683,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 2130
     },
@@ -13959,6 +13978,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 2382
     },
@@ -14043,6 +14063,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 2563
     },
@@ -14064,6 +14085,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 2563
     },
@@ -14085,6 +14107,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 2563
     },
@@ -14274,6 +14297,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 2804
     },
@@ -14484,6 +14508,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 3118
     },
@@ -14505,6 +14530,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 3118
     },
@@ -14548,6 +14574,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 3183
     },
@@ -15011,6 +15038,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 3500
     },
@@ -15074,6 +15102,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 3598
     },
@@ -15095,6 +15124,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 3602
     },
@@ -15116,6 +15146,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 3638
     },
@@ -15599,6 +15630,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 4284
     },
@@ -15620,6 +15652,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 4284
     },
@@ -15641,6 +15674,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 4315
     },
@@ -15662,6 +15696,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 4315
     },
@@ -15683,6 +15718,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 4315
     },
@@ -15704,6 +15740,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 4316
     },
@@ -15725,6 +15762,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 4316
     },
@@ -15873,6 +15911,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 4510
     },
@@ -15936,6 +15975,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 4626
     },
@@ -15957,6 +15997,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 4626
     },
@@ -16063,6 +16104,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 4813
     },
@@ -16084,6 +16126,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 4813
     },
@@ -16126,6 +16169,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 4838
     },
@@ -16357,6 +16401,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 5049
     },
@@ -16420,6 +16465,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 5111
     },
@@ -16441,6 +16487,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 5111
     },
@@ -16525,6 +16572,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 5188
     },
@@ -16546,6 +16594,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 5188
     },
@@ -16861,6 +16910,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 5591
     },
@@ -16882,6 +16932,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 5591
     },
@@ -16903,6 +16954,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 5616
     },
@@ -16987,6 +17039,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 5703
     },
@@ -17029,6 +17082,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 5750
     },
@@ -17197,6 +17251,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 5916
     },
@@ -17323,6 +17378,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 6041
     },
@@ -17344,6 +17400,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 6041
     },
@@ -17407,6 +17464,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 6254
     },
@@ -17428,6 +17486,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 6254
     },
@@ -17491,6 +17550,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 6338
     },
@@ -17512,6 +17572,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 6338
     },
@@ -17534,6 +17595,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 6425
     },
@@ -17556,6 +17618,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 6425
     },
@@ -17577,6 +17640,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 6447
     },
@@ -17598,6 +17662,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 6447
     },
@@ -17619,6 +17684,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 6447
     },
@@ -17829,6 +17895,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 6739
     },
@@ -17850,6 +17917,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 6739
     },
@@ -17871,6 +17939,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 6801
     },
@@ -17892,6 +17961,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 6801
     },
@@ -18060,6 +18130,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 7008
     },
@@ -18313,6 +18384,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 7316
     },
@@ -18335,6 +18407,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 7316
     },
@@ -18461,6 +18534,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 7553
     },
@@ -18482,6 +18556,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 7553
     },
@@ -18546,6 +18621,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 7621
     },
@@ -18568,6 +18644,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 7621
     },
@@ -18799,6 +18876,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 7800
     },
@@ -18820,6 +18898,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 7805
     },
@@ -18841,6 +18920,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 7805
     },
@@ -18862,6 +18942,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 7805
     },
@@ -18883,6 +18964,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 7805
     },
@@ -18904,6 +18986,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 7805
     },
@@ -18988,6 +19071,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 7944
     },
@@ -19114,6 +19198,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 8050
     },
@@ -19388,6 +19473,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 8322
     },
@@ -19536,6 +19622,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 8479
     },
@@ -19558,6 +19645,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 8479
     },
@@ -19979,6 +20067,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 8896
     },
@@ -20105,6 +20194,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 9026
     },
@@ -20126,6 +20216,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 9026
     },
@@ -20399,6 +20490,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9203
     },
@@ -20420,6 +20512,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9203
     },
@@ -20463,6 +20556,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 9301
     },
@@ -20485,6 +20579,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 9301
     },
@@ -20506,6 +20601,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9348
     },
@@ -20527,6 +20623,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9348
     },
@@ -20569,6 +20666,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9387
     },
@@ -20590,6 +20688,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9387
     },
@@ -20611,6 +20710,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9387
     },
@@ -20632,6 +20732,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9387
     },
@@ -20716,6 +20817,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9467
     },
@@ -20737,6 +20839,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9467
     },
@@ -20821,6 +20924,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 9740
     },
@@ -20926,6 +21030,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 9919
     },
@@ -21241,6 +21346,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 10176
     },
@@ -21304,6 +21410,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 10276
     },
@@ -21556,6 +21663,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 10739
     },
@@ -21577,6 +21685,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 10739
     },
@@ -21598,6 +21707,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 10739
     },
@@ -21619,6 +21729,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 10739
     },
@@ -21724,6 +21835,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 10815
     },
@@ -21787,6 +21899,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 10900
     },
@@ -21808,6 +21921,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 10900
     },
@@ -21851,6 +21965,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 10926
     },
@@ -21873,6 +21988,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 10926
     },
@@ -21895,6 +22011,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 10926
     },
@@ -22022,6 +22139,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 11059
     },
@@ -22148,6 +22266,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 11372
     },
@@ -22169,6 +22288,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 11372
     },
@@ -22190,6 +22310,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 11467
     },
@@ -22211,6 +22332,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 11467
     },
@@ -22232,6 +22354,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 11507
     },
@@ -22421,6 +22544,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 11661
     },
@@ -22463,6 +22587,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 11693
     },
@@ -22484,6 +22609,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 11693
     },
@@ -22505,6 +22631,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 11693
     },
@@ -22589,6 +22716,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 11716
     },
@@ -22610,6 +22738,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 11716
     },
@@ -22673,6 +22802,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 11735
     },
@@ -22694,6 +22824,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 11735
     },
@@ -22715,6 +22846,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 11759
     },
@@ -22736,6 +22868,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 11759
     },
@@ -22757,6 +22890,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 11759
     },
@@ -22778,6 +22912,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 11759
     },
@@ -22841,6 +22976,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 11895
     },
@@ -23031,6 +23167,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 12097
     },
@@ -23178,6 +23315,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 12418
     },
@@ -23556,6 +23694,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 12648
     },
@@ -23577,6 +23716,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 12655
     },
@@ -23598,6 +23738,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 12655
     },
@@ -23619,6 +23760,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 12663
     },
@@ -23787,6 +23929,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 12792
     },
@@ -23808,6 +23951,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 12792
     },
@@ -23829,6 +23973,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 12801
     },
@@ -23934,6 +24079,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 13011
     },
@@ -24061,6 +24207,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 13208
     },
@@ -24271,6 +24418,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 13452
     },
@@ -24292,6 +24440,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 13452
     },
@@ -24544,6 +24693,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 13697
     },
@@ -24565,6 +24715,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 13697
     },
@@ -24944,6 +25095,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 14096
     },
@@ -25091,6 +25243,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 14182
     },
@@ -25112,6 +25265,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 14182
     },
@@ -25154,6 +25308,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 14225
     },
@@ -25344,6 +25499,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 14379
     },
@@ -25366,6 +25522,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 14379
     },
@@ -25388,6 +25545,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 14379
     },
@@ -25431,6 +25589,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 14428
     },
@@ -25599,6 +25758,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 14527
     },
@@ -25620,6 +25780,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 14527
     },
@@ -25662,6 +25823,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 14574
     },
@@ -25683,6 +25845,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 14574
     },
@@ -25704,6 +25867,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 14574
     },
@@ -25725,6 +25889,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 14729
     },
@@ -25746,6 +25911,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 14729
     },
@@ -25767,6 +25933,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 14729
     },
@@ -25935,6 +26102,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 14892
     },
@@ -26019,6 +26187,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 14972
     },
@@ -26040,6 +26209,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 14972
     },
@@ -26061,6 +26231,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 14974
     },
@@ -26082,6 +26253,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 14974
     },
@@ -26335,6 +26507,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 15276
     },
@@ -26356,6 +26529,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 15276
     },
@@ -26398,6 +26572,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 15344
     },
@@ -26419,6 +26594,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 15344
     },
@@ -26483,6 +26659,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 15395
     },
@@ -26505,6 +26682,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 15395
     },
@@ -26547,6 +26725,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 15414
     },
@@ -26568,6 +26747,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 15414
     },
@@ -27030,6 +27210,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 15887
     },
@@ -27158,6 +27339,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 15972
     },
@@ -27536,6 +27718,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 16410
     },
@@ -27557,6 +27740,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 16410
     },
@@ -27599,6 +27783,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 16466
     },
@@ -27620,6 +27805,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 16466
     },
@@ -27705,6 +27891,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 16607
     },
@@ -27727,6 +27914,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 16607
     },
@@ -27748,6 +27936,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 16619
     },
@@ -27853,6 +28042,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 16750
     },
@@ -27938,6 +28128,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 16854
     },
@@ -28043,6 +28234,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 16914
     },
@@ -28085,6 +28277,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 16958
     },
@@ -28106,6 +28299,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 16958
     },
@@ -28127,6 +28321,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 16958
     },
@@ -28148,6 +28343,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 16958
     },
@@ -28295,6 +28491,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 17051
     },
@@ -28316,6 +28513,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 17051
     },
@@ -28463,6 +28661,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 17314
     },
@@ -28484,6 +28683,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 17314
     },
@@ -28505,6 +28705,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 17366
     },
@@ -28526,6 +28727,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 17372
     },
@@ -28547,6 +28749,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 17372
     },
@@ -28758,6 +28961,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 17669
     },
@@ -28780,6 +28984,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 17669
     },
@@ -29097,6 +29302,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 17897
     },
@@ -29119,6 +29325,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 17897
     },
@@ -29141,6 +29348,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 17897
     },
@@ -29163,6 +29371,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 17897
     },
@@ -29185,6 +29394,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 18004
     },
@@ -29207,6 +29417,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 18004
     },
@@ -29229,6 +29440,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 18004
     },
@@ -29251,6 +29463,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 18004
     },
@@ -29629,6 +29842,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 18529
     },
@@ -29734,6 +29948,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 18755
     },
@@ -29881,6 +30096,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 18898
     },
@@ -29902,6 +30118,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 18898
     },
@@ -30134,6 +30351,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 19107
     },
@@ -30156,6 +30374,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 19107
     },
@@ -30261,6 +30480,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 19296
     },
@@ -30282,6 +30502,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 19296
     },
@@ -30450,6 +30671,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 19525
     },
@@ -30471,6 +30693,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 19525
     },
@@ -30492,6 +30715,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 19525
     },
@@ -30513,6 +30737,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 19525
     },
@@ -30534,6 +30759,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 19546
     },
@@ -30956,6 +31182,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 19926
     },
@@ -31061,6 +31288,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 20118
     },
@@ -31082,6 +31310,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 20118
     },
@@ -31335,6 +31564,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 20380
     },
@@ -31356,6 +31586,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 20387
     },
@@ -31377,6 +31608,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 20387
     },
@@ -31398,6 +31630,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 20387
     },
@@ -31419,6 +31652,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 20387
     },
@@ -31482,6 +31716,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 20430
     },
@@ -31503,6 +31738,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 20430
     },
@@ -31650,6 +31886,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 20616
     },
@@ -31692,6 +31929,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 20664
     },
@@ -31713,6 +31951,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 20664
     },
@@ -31734,6 +31973,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 20675
     },
@@ -31756,6 +31996,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 20735
     },
@@ -31924,6 +32165,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21041
     },
@@ -31945,6 +32187,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 21043
     },
@@ -31966,6 +32209,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21099
     },
@@ -31987,6 +32231,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21099
     },
@@ -32092,6 +32337,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 21150
     },
@@ -32113,6 +32359,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 21150
     },
@@ -32176,6 +32423,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21320
     },
@@ -32197,6 +32445,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21320
     },
@@ -32218,6 +32467,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21320
     },
@@ -32239,6 +32489,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 21338
     },
@@ -32260,6 +32511,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 21338
     },
@@ -32408,6 +32660,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 21401
     },
@@ -32430,6 +32683,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 21401
     },
@@ -32493,6 +32747,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21512
     },
@@ -32514,6 +32769,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21512
     },
@@ -32683,6 +32939,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21728
     },
@@ -32809,6 +33066,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21897
     },
@@ -32830,6 +33088,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21897
     },
@@ -32872,6 +33131,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 21906
     },
@@ -32893,6 +33153,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 21906
     },
@@ -32914,6 +33175,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 21918
     },
@@ -32935,6 +33197,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 21918
     },
@@ -32957,6 +33220,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21939
     },
@@ -32979,6 +33243,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 21939
     },
@@ -33042,6 +33307,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 22005
     },
@@ -33063,6 +33329,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 22005
     },
@@ -33127,6 +33394,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 22116
     },
@@ -33295,6 +33563,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 22300
     },
@@ -33316,6 +33585,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 22300
     },
@@ -33359,6 +33629,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 22393
     },
@@ -33381,6 +33652,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 22393
     },
@@ -33423,6 +33695,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 22426
     },
@@ -33444,6 +33717,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 22426
     },
@@ -33465,6 +33739,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 22426
     },
@@ -33486,6 +33761,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 22426
     },
@@ -33549,6 +33825,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 22564
     },
@@ -33570,6 +33847,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 22564
     },
@@ -33633,6 +33911,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 22640
     },
@@ -33654,6 +33933,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 22640
     },
@@ -33696,6 +33976,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 22671
     },
@@ -33717,6 +33998,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 22671
     },
@@ -33780,6 +34062,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 22799
     },
@@ -33801,6 +34084,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 22799
     },
@@ -33864,6 +34148,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 22842
     },
@@ -33885,6 +34170,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 22842
     },
@@ -33906,6 +34192,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 22886
     },
@@ -33927,6 +34214,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 22886
     },
@@ -34053,6 +34341,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 22957
     },
@@ -34222,6 +34511,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 23083
     },
@@ -34411,6 +34701,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 23275
     },
@@ -34559,6 +34850,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 23484
     },
@@ -34664,6 +34956,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 23601
     },
@@ -34685,6 +34978,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 23601
     },
@@ -35274,6 +35568,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 24259
     },
@@ -35295,6 +35590,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 24259
     },
@@ -35443,6 +35739,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 24407
     },
@@ -35465,6 +35762,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 24407
     },
@@ -35487,6 +35785,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 24407
     },
@@ -35697,6 +35996,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 24659
     },
@@ -35718,6 +36018,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 24659
     },
@@ -36054,6 +36355,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 24955
     },
@@ -36075,6 +36377,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 24955
     },
@@ -36117,6 +36420,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 25034
     },
@@ -36138,6 +36442,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 25034
     },
@@ -36180,6 +36485,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 25138
     },
@@ -36201,6 +36507,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 25138
     },
@@ -36538,6 +36845,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 25462
     },
@@ -36559,6 +36867,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 25462
     },
@@ -36601,6 +36910,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 25484
     },
@@ -36770,6 +37080,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 25630
     },
@@ -36812,6 +37123,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 25731
     },
@@ -36833,6 +37145,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 25731
     },
@@ -36875,6 +37188,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 25769
     },
@@ -37085,6 +37399,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 26105
     },
@@ -37106,6 +37421,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 26105
     },
@@ -37127,6 +37443,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 26110
     },
@@ -37148,6 +37465,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 26110
     },
@@ -37169,6 +37487,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 26110
     },
@@ -37190,6 +37509,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 26110
     },
@@ -37359,6 +37679,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 26235
     },
@@ -37443,6 +37764,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 26285
     },
@@ -37486,6 +37808,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 26331
     },
@@ -37507,6 +37830,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 26331
     },
@@ -37591,6 +37915,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 26394
     },
@@ -37717,6 +38042,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 26452
     },
@@ -37886,6 +38212,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 26537
     },
@@ -37908,6 +38235,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 26537
     },
@@ -38161,6 +38489,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 26745
     },
@@ -38183,6 +38512,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 26745
     },
@@ -38246,6 +38576,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 26936
     },
@@ -38372,6 +38703,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 27061
     },
@@ -38393,6 +38725,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 27061
     },
@@ -38709,6 +39042,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 27293
     },
@@ -38794,6 +39128,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 27364
     },
@@ -38878,6 +39213,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 27395
     },
@@ -38899,6 +39235,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 27395
     },
@@ -38963,6 +39300,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 27498
     },
@@ -38985,6 +39323,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 27498
     },
@@ -39027,6 +39366,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 27545
     },
@@ -39048,6 +39388,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 27545
     },
@@ -39132,6 +39473,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 27612
     },
@@ -39153,6 +39495,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 27612
     },
@@ -39217,6 +39560,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 27661
     },
@@ -39238,6 +39582,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 27684
     },
@@ -39427,6 +39772,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 27946
     },
@@ -39448,6 +39794,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 27946
     },
@@ -39511,6 +39858,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 27960
     },
@@ -39532,6 +39880,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 27973
     },
@@ -39553,6 +39902,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 27973
     },
@@ -39595,6 +39945,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 27996
     },
@@ -39616,6 +39967,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 27996
     },
@@ -39679,6 +40031,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 28071
     },
@@ -39764,6 +40117,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 28161
     },
@@ -39785,6 +40139,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 28200
     },
@@ -39806,6 +40161,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 28200
     },
@@ -39827,6 +40183,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 28200
     },
@@ -39848,6 +40205,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 28200
     },
@@ -39869,6 +40227,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 28200
     },
@@ -39912,6 +40271,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 28282
     },
@@ -39934,6 +40294,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 28282
     },
@@ -40481,6 +40842,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 29321
     },
@@ -40712,6 +41074,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 29685
     },
@@ -40733,6 +41096,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 29685
     },
@@ -40860,6 +41224,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 29767
     },
@@ -40881,6 +41246,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 29775
     },
@@ -40923,6 +41289,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 29803
     },
@@ -40944,6 +41311,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 29898
     },
@@ -41028,6 +41396,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 29966
     },
@@ -41049,6 +41418,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 29970
     },
@@ -41091,6 +41461,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 30000
     },
@@ -41301,6 +41672,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 30217
     },
@@ -41595,6 +41967,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 30780
     },
@@ -41638,6 +42011,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 30823
     },
@@ -41892,6 +42266,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31166
     },
@@ -41914,6 +42289,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31166
     },
@@ -41936,6 +42312,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31166
     },
@@ -41958,6 +42335,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31166
     },
@@ -42022,6 +42400,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 31224
     },
@@ -42044,6 +42423,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 31224
     },
@@ -42066,6 +42446,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 31224
     },
@@ -42087,6 +42468,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 31228
     },
@@ -42108,6 +42490,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 31228
     },
@@ -42151,6 +42534,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31408
     },
@@ -42173,6 +42557,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31408
     },
@@ -42195,6 +42580,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31408
     },
@@ -42217,6 +42603,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31408
     },
@@ -42344,6 +42731,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31492
     },
@@ -42366,6 +42754,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31492
     },
@@ -42388,6 +42777,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31492
     },
@@ -42537,6 +42927,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 31688
     },
@@ -42559,6 +42950,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 31688
     },
@@ -42581,6 +42973,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 31688
     },
@@ -42603,6 +42996,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 31688
     },
@@ -42793,6 +43187,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 31840
     },
@@ -42856,6 +43251,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31917
     },
@@ -42877,6 +43273,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31917
     },
@@ -42898,6 +43295,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 31917
     },
@@ -43129,6 +43527,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 32052
     },
@@ -43171,6 +43570,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 32113
     },
@@ -43339,6 +43739,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 32197
     },
@@ -43360,6 +43761,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 32197
     },
@@ -43486,6 +43888,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 32311
     },
@@ -43507,6 +43910,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 32311
     },
@@ -43528,6 +43932,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 32311
     },
@@ -43549,6 +43954,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 32311
     },
@@ -43570,6 +43976,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 32311
     },
@@ -43866,6 +44273,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 32650
     },
@@ -43950,6 +44358,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 32706
     },
@@ -43971,6 +44380,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 32706
     },
@@ -44035,6 +44445,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 32758
     },
@@ -44057,6 +44468,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 32758
     },
@@ -44100,6 +44512,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 32800
     },
@@ -44122,6 +44535,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 32800
     },
@@ -44144,6 +44558,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 32800
     },
@@ -44586,6 +45001,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 33197
     },
@@ -44607,6 +45023,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 33197
     },
@@ -44628,6 +45045,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 33228
     },
@@ -44649,6 +45067,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 33228
     },
@@ -44670,6 +45089,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 33228
     },
@@ -44733,6 +45153,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 33290
     },
@@ -44754,6 +45175,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 33311
     },
@@ -44775,6 +45197,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 33311
     },
@@ -44796,6 +45219,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 33321
     },
@@ -44817,6 +45241,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 33321
     },
@@ -44922,6 +45347,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 33472
     },
@@ -45134,6 +45560,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 33693
     },
@@ -45197,6 +45624,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 33741
     },
@@ -45239,6 +45667,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 33803
     },
@@ -45281,6 +45710,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 33837
     },
@@ -45302,6 +45732,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 33845
     },
@@ -45428,6 +45859,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 33976
     },
@@ -45449,6 +45881,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 34021
     },
@@ -45512,6 +45945,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 34083
     },
@@ -45533,6 +45967,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 34083
     },
@@ -45827,6 +46262,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 34456
     },
@@ -46121,6 +46557,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 34845
     },
@@ -46142,6 +46579,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 34845
     },
@@ -46268,6 +46706,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 35073
     },
@@ -46289,6 +46728,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 35073
     },
@@ -46457,6 +46897,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 35223
     },
@@ -46541,6 +46982,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 35268
     },
@@ -46562,6 +47004,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 35268
     },
@@ -46583,6 +47026,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate B",
       "cs1_segment": 35268
     },
@@ -46626,6 +47070,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 35341
     },
@@ -46648,6 +47093,7 @@
       ],
       "noPillars": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 35341
     },
@@ -46712,6 +47158,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 35437
     },
@@ -46733,6 +47180,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 4L Interstate E",
       "cs1_segment": 35437
     },
@@ -46754,6 +47202,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 35449
     },
@@ -46775,6 +47224,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 35449
     },
@@ -46796,6 +47246,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 35449
     },
@@ -46964,6 +47415,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 35648
     },
@@ -46985,6 +47437,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 35648
     },
@@ -47006,6 +47459,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate E",
       "cs1_segment": 35648
     },
@@ -47028,6 +47482,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 35653
     },
@@ -47050,6 +47505,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 35653
     },
@@ -47470,6 +47926,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 36028
     },
@@ -47491,6 +47948,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 36028
     },
@@ -47659,6 +48117,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 3L Interstate B",
       "cs1_segment": 36148
     },
@@ -47827,6 +48286,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 36304
     },
@@ -47848,6 +48308,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 36304
     },
@@ -47869,6 +48330,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 36304
     },
@@ -48079,6 +48541,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 36595
     },
@@ -48100,6 +48563,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 36595
     },
@@ -48163,6 +48627,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 36686
     },
@@ -48184,6 +48649,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 36686
     },
@@ -48310,6 +48776,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 36781
     },
@@ -48331,6 +48798,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 36781
     },
@@ -48352,6 +48820,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 2L Interstate E",
       "cs1_segment": 36784
     },
@@ -48395,6 +48864,7 @@
       ],
       "noStreetLights": true,
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 36808
     },
@@ -48458,6 +48928,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 36861
     },
@@ -48479,6 +48950,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2452038713.USRP 1L Interstate Ramp E",
       "cs1_segment": 36861
     }

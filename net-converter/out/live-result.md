@@ -349,3 +349,14 @@ Detroit: the owner keeps the BXP SuspensionBridge03; import-detroit-opt2.json no
   - The list is in flyover-lifts.md, per scale.
   - Interchange 5 afterwards: 67 of its 71 CS1-elevated courses reach ≥ 8 m. The other 4 are the touch-down pieces the 8 % grade keeps lower: e9026_0a 7.1/7.2,
     e9203_0b 6.9/3.8, e14428_0 −1.0/7.2, e34845_0b 7.9/6.9 (estimated against the live terrain).
+
+## Round 32b: bridge 0.9.39 "elevated" flag; control-point heights fixed
+
+- **`elevated` flag:** every course that was a CS1 elevated (bridge-AI) road piece and is still elevated after the flyover lift gets `"elevated": true` (bridge 0.9.39).
+  - The bridge then stores 8.05 m on its segments and inner nodes, so CS2 builds pillars instead of retaining walls, also on the touch-down pieces the 8 %
+    grade keeps below 8 m.
+  - Count: x1 505 edges, x2 479. Rail is not flagged.
+  - Unverified in game: the bridge has not tested the flag yet, and a later net-tool edit of such a segment reverts it.
+- **Control-point y:** written in output metres like the nodes. They were topology heights before (2 × the node y at x1); the ratio is now 1.000 at both scales.
+  The BR001 fork control points in import-bridges-fixed.json no longer have y 0: they sit on the straight grade between the ends. The bridge ignores control
+  y today.

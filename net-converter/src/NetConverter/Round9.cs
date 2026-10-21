@@ -42,6 +42,9 @@ public static class Round9
             var a = byId[e.A]; var b = byId[e.B];
             var c1 = e.C1 ?? new Vec3(a.X + (b.X - a.X) / 3, (2 * a.Y + b.Y) / 3, a.Z + (b.Z - a.Z) / 3);
             var c2 = e.C2 ?? new Vec3(a.X + 2 * (b.X - a.X) / 3, (a.Y + 2 * b.Y) / 3, a.Z + 2 * (b.Z - a.Z) / 3);
+            // Control points given in plan only (y 0, e.g. the BR001 forks): y on the straight grade between the ends, like the computed ones.
+            if (e.C1 is { Y: 0 }) c1 = c1 with { Y = (2 * a.Y + b.Y) / 3 };
+            if (e.C2 is { Y: 0 }) c2 = c2 with { Y = (a.Y + 2 * b.Y) / 3 };
             w.WriteStartObject();
             w.WriteString("id", e.Id); w.WriteString("a", e.A); w.WriteString("b", e.B); w.WriteString("prefab", e.Prefab);
             w.WriteStartArray("control");

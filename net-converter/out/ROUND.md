@@ -55,7 +55,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 1 | `out\import-dam.json` | dam: one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant), after the bridges (2×) | 1 edges, replaces 0 | 0.0 MB |
 | 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 4 edges | 0.0 MB |
 | 1 | `out\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (2×) | 2 edges | 0.0 MB |
-| 1 | `out\x1\import-all.json` | network (1×) | 3793 edges, 3658 nodes | 1.9 MB |
+| 1 | `out\x1\import-all.json` | network (1×) | 3793 edges, 3658 nodes | 2.0 MB |
 | 1 | `out\x1\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (1×) | 43 edges, replaces 139 | 0.0 MB |
 | 1 | `out\x1\import-bridges-fixed.json` | fixed-span bridges: BR001 Detroit suspension (one edge) + its 3-lane connectors, right after import-bridges.json (1×) | 5 edges, replaces 55 | 0.0 MB |
 | 1 | `out\x1\import-dam.json` | dam: one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant), after the bridges (1×) | 1 edges, replaces 0 | 0.0 MB |
@@ -444,3 +444,26 @@ Remaining CHECKs, by cause:
   (round 29).
 
 Detroit: the owner keeps the BXP SuspensionBridge03; import-detroit-opt2.json now lives only in optional/, and the `detroit-opt2` step (opt-in only) points there.
+
+## Round 32: CS1 flyovers on pillars (owner: the CS1 reference shot next-run/cs1-reference-interchange-12.jpg)
+
+- **The shot is interchange 5 at (3493, 2152).** It is the only stack: 139 highway segments, 68 ramps, 32 of them more than 6 m above the terrain, up to 27.4 m (CS1
+  33741). Interchanges 9 and 16 near (2995, 820) have at most 5 and 3 such segments, none above 12 m.
+  - Matching CS2 camera (estimate): pivot (3493, 2152), yaw 330° (looking north-north-west, across the main through road at bearing 60°), pitch 45°,
+    zoom about 900.
+- **Per segment:** out/x1/fidelity/interchange-5-ramps.md compares CS1 height, CS1 node elevation and flags with the A-v8 live elevation. Of the 32 CS1
+  segments more than 6 m up, 29 were ≥ 8 m live (pillars), 2 sat in the 0.5–8 m band (retaining walls) and 1 on the ground. Below 6 m, most of the CS1
+  'Ramp E' / '2L Interstate E' pieces at 4–6 m were 5–8 m live, so walls.
+- **Rule** (FlyoverLift.cs, map-wide, before the bridge overrides): every course that was an elevated (bridge-AI) piece in CS1 goes to ≥ 8.5 m above the terrain
+  (output metres).
+  - Nodes where such a chain meets a ground or tunnel course, border nodes and tunnel nodes stay fixed.
+  - The lift ramps from the nearest fixed node at ≤ 8 % along the elevated courses. No node is lowered.
+  - Rail is not included.
+  - **Threshold assumption** (the bridge session has not answered): the A-v6/A-v7 /prefabs/info notes show Highway Oneway elevationLimit 4 m, and CS2 builds
+    walls at 1–2 × that, so 8 m is the pillar threshold (= minElevatedHeight 8 for bridges); 8.5 m gives a margin.
+- **Result:**
+  - x1: 174 nodes lifted on 250 CS1-elevated courses, mean +1.9 m, max +5.3 m.
+  - x2: 47 nodes on 85 courses (the doubled heights put most of them above 8.5 m already).
+  - The list is in flyover-lifts.md, per scale.
+  - Interchange 5 afterwards: 67 of its 71 CS1-elevated courses reach ≥ 8 m. The other 4 are the touch-down pieces the 8 % grade keeps lower: e9026_0a 7.1/7.2,
+    e9203_0b 6.9/3.8, e14428_0 −1.0/7.2, e34845_0b 7.9/6.9 (estimated against the live terrain).

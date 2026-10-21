@@ -51,11 +51,14 @@ public static class Outputs
             w.WriteString("id", e.Id);
             w.WriteString("a", e.A.Id); w.WriteString("b", e.B.Id);
             w.WriteString("prefab", e.Map.Cs2Prefab);
-            w.WriteStartArray("control"); P(w, e.Curve.B); P(w, e.Curve.C); w.WriteEndArray();
+            w.WriteStartArray("control"); P(w, e.Curve.B with { Y = e.Curve.B.Y * YScale }); P(w, e.Curve.C with { Y = e.Curve.C.Y * YScale }); w.WriteEndArray();   // y in output metres, like the nodes
             if (!absolute) { w.WriteStartArray("elevation"); w.WriteNumberValue(R2(e.A.Elevation * YScale)); w.WriteNumberValue(R2(e.B.Elevation * YScale)); w.WriteEndArray(); }
             if (e.Wall != null) w.WriteString("wall", e.Wall);
             if (SkinFlags.TryGetValue(e.Cs1Segment, out var sk)) { if (sk.Pillars) w.WriteBoolean("noPillars", true); if (sk.Lights) w.WriteBoolean("noStreetLights", true); }
             w.WriteString("structure", e.Structure.ToString().ToLowerInvariant());
+            // Round 32 (bridge 0.9.39): a CS1 elevated (bridge-AI) road course gets "elevated": true; the bridge then stores 8.05 m on its segments and inner
+            // nodes, so CS2 builds it on pillars instead of retaining walls even where the grade kept it below 8 m (the touch-down pieces).
+            if (e.AiStructure == Structure.Elevated && e.Structure == Structure.Elevated && e.Layer != Layers.Rail) w.WriteBoolean("elevated", true);
             w.WriteString("cs1_prefab", e.Map.Cs1Prefab);
             w.WriteNumber("cs1_segment", e.Cs1Segment);
             w.WriteEndObject();

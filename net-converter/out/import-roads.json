@@ -14254,6 +14254,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "Gravel Road Elevated",
       "cs1_segment": 4102
     },
@@ -14275,6 +14276,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "Gravel Road Elevated",
       "cs1_segment": 4102
     },
@@ -14296,6 +14298,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "Gravel Road Elevated",
       "cs1_segment": 4102
     },
@@ -27820,6 +27823,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 18179
     },
@@ -27841,6 +27845,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 18179
     },
@@ -43969,6 +43974,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 36355
     },
@@ -43990,6 +43996,7 @@
         ]
       ],
       "structure": "elevated",
+      "elevated": true,
       "cs1_prefab": "2098643957.USRP 3-Lane National Road E",
       "cs1_segment": 36355
     },
