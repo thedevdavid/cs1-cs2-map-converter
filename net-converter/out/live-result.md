@@ -649,3 +649,17 @@ Owner: "24 doesnt look like the example inspo images". Interchange 8 / BR001 are
 - The roof covers 99.9 % of the road strip; the 13 open 1 m samples are at the ends.
 - The largest step between roof rows is 1.49 m in x1 (2.98 m at 2×). The round-37 figure of 2.98 m for x1 was a bug in the check: deduplicating heights skipped a row. It now compares row to row.
 - The wall covers 100 % of the hill edge.
+
+## Round 39: no boulders on the gallery roof (A-v13, save dakota-A13b-2048, shots 24-01 / 24-06 / 24-14)
+
+The colonnade, the portal heads and the hill wall were accepted (24-10, 24-14). The 11 CliffRock5 on the roof, each about 30 m across and 10 m high, read as giant boulders on a shelf.
+
+1. **CliffRock5 removed** from the roof, and none were put behind the wall. The optional 3–4 rocks up the slope were left out: in 24-06 the steep hill cut above the wall already reads as cliff. The CS1 rock_c rows now only fix the shed's extent.
+2. **Denser low cover:**
+   - The roof scatter is now a jittered 1.6 m grid (was 2.5 m), 70 % bushes (was 60 %): 3253 GreenBushWild01/02 and 1456 Rock01…Rock30 in x1.
+   - The scatter is still inset 1.5 m from the valley edge, and every base sits at the roof top. The check finds 0 pieces past the valley edge.
+   - New plan-view cover estimate in stats.md, sampled at 0.5 m: **17 % of the roof top bare from above**. It assumes a bush crown radius of 1.2 m, from 24-06; there are no bounds for GreenBushWild in the repo. At 0.9 m it would be about a third.
+   - Heights: the stones are about 0.6 m. The adult bush height isn't measured; if they show above about 1.5 m, the writer would need a younger age for them, since it writes "adult" for every tree.
+3. **Everything else unchanged from round 38**: roof slabs, fascia, walls, Pillar1x8 colonnade, valley tree mask, clear-rock-shed.json.
+
+The gallery file is now 5178 objects in x1 (was 2438): 330 plates, 28 walls, 111 Pillar1x8, 3253 bushes, 1456 stones.

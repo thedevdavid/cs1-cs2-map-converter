@@ -15,7 +15,7 @@ namespace NetConverter;
 /// Round 38 (owner's A-v12 review: "24 doesnt look like the example inspo images"; ref-gallery-1 inside, ref-gallery-2 outside):
 /// - colonnade: slim Pillar1x8 stacks every 4 m under the valley edge, roof underside down to the terrain;
 /// - fascia: the valley row of slabs gets 4 more plates stacked under it at 0.2 m steps (a 1 m concrete edge);
-/// - cover: the 11 CS1 rock_c positions as CliffRock5 back on the roof, set toward the hill so their valley side stays on the roof; a jittered 2.5 m scatter
+/// - cover (round 39: without CliffRock5, which read as giant boulders; 70 % bushes): a jittered 1.6 m scatter
 ///   of GreenBushWild01/02 and Rock01…Rock30 over the roof top, inset 1.5 m from the valley edge; every base at the roof top (row y + 0.2);
 /// - the valley side kept open: no trees within 20 m of the column line and 10 m past each end (<see cref="ValleyStrip"/>; the tree mask and clear-rock-shed.json);
 /// - portals: none. TunnelEntrance18 (26 × 14 × 16 m, 10 m opening) would have to sink 3.5 m below the road to meet the roof at + 6.5 m and would still
@@ -24,7 +24,7 @@ namespace NetConverter;
 public static class RockShed
 {
     public const double RoofStep = 8, WallStep = 16, ColumnStep = 4, Clear = 6.5, Slab = 16, WallLength = 32, WallHeight = 16, Plate = 0.2,
-        CoverStep = 2.5, StripWidth = 20, StripEnds = 10;
+        CoverStep = 1.6, StripWidth = 20, StripEnds = 10;
     public const int FasciaPlates = 4;
 
     /// <summary>The road under the shed as one polyline with arc length, the shed's range on it and its hill side.</summary>
@@ -166,17 +166,10 @@ public static class RockShed
                 p8++; top -= 8; left -= 8;
             }
         }
-        // Cover: the CS1 rock_c pieces as CliffRock5 on the roof (bounds x −19.1…17.1, y −2.57…14.35, z −18.1…18.2), turned to the road and set toward
-        // the hill so no part reaches past the valley edge; base (bounds min y) at the roof top.
-        int rocks = 0;
-        const double cliffReach = 19.1, cliffBase = 2.57;
-        foreach (var r in shed)
-        {
-            double l = Math.Clamp(c.LOf(r.X, r.Z), l0 + 4, l1 - 4); var t = c.At(l); var (x, z) = c.Off(l, valley + 1.5 + cliffReach);
-            res.Add(O($"shed_rock_{r.Id}", "CliffRock5", x, z, RoofTop(l) + cliffBase, Yaw(t.Tx, t.Tz), $"rock cover on the roof at CS1 rock_c {r.Id}"));
-            rocks++;
-        }
-        // Scatter over the roof top: a jittered 2.5 m grid, 60 % bushes, 40 % small rocks (the rock-scatter layer's Rock01…Rock30), 1.5 m clear of the valley edge.
+        // Round 39 (A-v13 shots 24-01/06/14): no CliffRock5. Each one is about 30 m across and 10 m high and read as a giant boulder on a shelf; the cover is
+        // the low scatter only, and the steep hill cut above the wall reads as cliff without them.
+        // Scatter over the roof top: a jittered 1.6 m grid, 70 % bushes, 30 % small rocks (the rock-scatter layer's Rock01…Rock30, about 1 × 0.6 × 1 m), 1.5 m clear of
+        // the valley edge. Round 39: was 2.5 m and 60 %; denser so that from above at most about a third of the plate shows (see the cover estimate in Check).
         var rng = new Random(seed);
         int bushes = 0, stones = 0;
         for (double l = l0 + 1; l <= l1 - 1; l += CoverStep)
@@ -184,7 +177,7 @@ public static class RockShed
             {
                 double jl = Math.Clamp(l + (rng.NextDouble() - 0.5) * CoverStep * 0.8, l0 + 1, l1 - 1), jd = Math.Max(valley + 1.5, d + (rng.NextDouble() - 0.5) * CoverStep * 0.8);
                 var (x, z) = c.Off(jl, jd); double top = RoofTop(jl), yaw = rng.NextDouble() * 360;
-                if (rng.NextDouble() < 0.6)
+                if (rng.NextDouble() < 0.7)
                 {
                     res.Add(O($"shed_bush_{++bushes}", rng.NextDouble() < 0.5 ? "GreenBushWild01" : "GreenBushWild02", x, z, top, yaw, "roof cover bush", "tree"));
                 }
@@ -196,7 +189,7 @@ public static class RockShed
                 }
             }
         var check = Check(res, c);
-        return (res, FormattableString.Invariant($"rock shed open gallery over {len:F0} m of road ({string.Join(", ", c.Road.Select(e => e.Id))}): {slabs} BasePlateConcrete16 ({rowsN} rows of 2, every {RoofStep} m) at road + {Clear} m on a 48 m smoothed profile + {fascia} fascia plates ({FasciaPlates} under each valley slab), {walls} Wall32x16 on the hill side (every {WallStep} m, top flush with the roof), {stacks} valley-side columns every {ColumnStep} m ({p8} Pillar1x8), roof cover {rocks} CliffRock5 + {bushes} bushes + {stones} stones; no portals (TunnelEntrance18 would stand 4 m above the hill wall); {check}"));
+        return (res, FormattableString.Invariant($"rock shed open gallery over {len:F0} m of road ({string.Join(", ", c.Road.Select(e => e.Id))}): {slabs} BasePlateConcrete16 ({rowsN} rows of 2, every {RoofStep} m) at road + {Clear} m on a 48 m smoothed profile + {fascia} fascia plates ({FasciaPlates} under each valley slab), {walls} Wall32x16 on the hill side (every {WallStep} m, top flush with the roof), {stacks} valley-side columns every {ColumnStep} m ({p8} Pillar1x8), roof cover {bushes} bushes + {stones} stones (no CliffRock5); no portals (TunnelEntrance18 would stand 4 m above the hill wall); {check}"));
     }
 
     /// <summary>
@@ -238,6 +231,21 @@ public static class RockShed
             double reach = o.Prefab == "CliffRock5" ? 19.1 : o.Prefab.StartsWith("GreenBush") ? 1.5 : 0.5;
             if (d - reach < c.Valley - 0.01) over++;
         }
-        return FormattableString.Invariant($"check: roof covers {100.0 * (samples - open) / samples:F1} % of the road strip ({open} of {samples} 1 m samples open), largest step between roof rows {step:F2} m, the wall covers {100.0 * (wallSamples - wallOpen) / wallSamples:F1} % of the hill edge ({wallOpen} of {wallSamples} 1 m samples open), largest wall height step {worstStep:F2} m, {over} roof-cover pieces reach past the valley edge");
+        // Plan-view cover estimate of the roof top from above (round 39): a 0.5 m sample counts as hidden within BushCrown of a bush or 0.45 m of a stone.
+        // BushCrown is an assumption (adult GreenBushWild crowns looked about 2.5–3 m across in the A-v13 close shot 24-06); no bounds for it in the repo.
+        const double BushCrown = 1.2;
+        var cover = objs.Where(o => o.Id.StartsWith("shed_bush_") || o.Id.StartsWith("shed_stone_")).Select(o => (o.X, o.Z, R: o.Id.StartsWith("shed_bush_") ? BushCrown : 0.45)).ToList();
+        var grid = new Dictionary<(long, long), List<(double X, double Z, double R)>>();
+        foreach (var p in cover) { var k = ((long)Math.Floor(p.X / 4), (long)Math.Floor(p.Z / 4)); if (!grid.TryGetValue(k, out var gl)) grid[k] = gl = new(); gl.Add(p); }
+        int topSamples = 0, bare = 0;
+        for (double l = c.L0 + 2; l <= c.L1 - 2; l += 0.5)
+            for (double d = c.Valley + 0.25; d <= c.Hill - 0.25; d += 0.5)
+            {
+                var (x, z) = c.Off(l, d); topSamples++; long gx = (long)Math.Floor(x / 4), gz = (long)Math.Floor(z / 4); bool hid = false;
+                for (long a = -1; a <= 1 && !hid; a++) for (long b = -1; b <= 1 && !hid; b++)
+                        if (grid.TryGetValue((gx + a, gz + b), out var gl)) hid = gl.Any(p => (p.X - x) * (p.X - x) + (p.Z - z) * (p.Z - z) <= p.R * p.R);
+                if (!hid) bare++;
+            }
+        return FormattableString.Invariant($"cover estimate from above: {100.0 * bare / topSamples:F0} % of the roof top bare (bush crown {BushCrown} m radius assumed); check: roof covers {100.0 * (samples - open) / samples:F1} % of the road strip ({open} of {samples} 1 m samples open), largest step between roof rows {step:F2} m, the wall covers {100.0 * (wallSamples - wallOpen) / wallSamples:F1} % of the hill edge ({wallOpen} of {wallSamples} 1 m samples open), largest wall height step {worstStep:F2} m, {over} roof-cover pieces reach past the valley edge");
     }
 }
