@@ -808,10 +808,14 @@ void WriteLayers()
         // that terrain is below 93.5 m too.
         const double treeSea = 93.5;
         Func<double, double, double> treeTerr = (x, z) => cs2Terrain != null ? cs2Terrain.Sample(x, z) : cs1Terrain?.Sample(x, z) ?? double.MaxValue;
+        // Round 38 (owner, A-v12 shot 24: trees against the colonnade hid it from the lake): the rock shed's valley side stays open grass.
+        var shedPo = Find(Path.Combine("..", "bridges", "data", "po-structures-proposal.json"));
+        var shedStrip = File.Exists(shedPo) ? RockShed.ValleyStrip(PoStructures.Load(shedPo), result.Edges, cs2Terrain == null ? null : cs2Terrain.Sample) : null;
         var masked = Trees.Mask(trees,
             ("CS2 terrain below sea level 93 m + 0.5", (x, z) => treeTerr(x, z) < treeSea),
             ("inside the CS1 water surface and below 93.5 m", (x, z) => surfaceEarly != null && surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.05 && treeTerr(x, z) < treeSea),
-            (NetCorridorRule, OnNet));
+            (NetCorridorRule, OnNet),
+            ("the rock shed's open valley side (20 m strip, 10 m past each end)", (x, z) => shedStrip != null && RockShed.Inside(shedStrip, x, z)));
         // EXPERIMENT: the net-corridor trees in their own file, so the game's behaviour (hidden under nets, or fine at the
         // verge) can be tried and undone alone.
         var expFiles = Trees.WriteChunks(tdir, trees.Removed[NetCorridorRule], 50000, "experiment-trees-net-corridor", "trees-net-corridor-experiment");
@@ -1261,6 +1265,13 @@ void WriteLayers()
         var (shedObjs, shedLog) = RockShed.Build(poRows, result.Edges, cs2True, heightFactor);
         Objects.Write(Path.Combine(outDir, "import-rock-shed.json"), "rock-shed", shedObjs, null);   // absolute y, no grounding / sink
         r9.Add(shedLog + " -> import-rock-shed.json");
+        // Round 38: the same valley strip as the tree mask, for clearing trees already placed on an open map (not a surface to import).
+        if (RockShed.ValleyStrip(poRows, result.Edges, cs2True) is { } strip)
+        {
+            Surfaces.Write(Path.Combine(outDir, "clear-rock-shed.json"), "clear-rock-shed", [new SurfacePolygon("clear_rock_shed", "none (clear area)", strip, "rock shed valley side")],
+                "Round 38: the rock shed's open valley side, column line out 20 m and 10 m past each end. Trees inside it are masked from the tree import; this ring is for demolishing trees already placed (by area), NOT for /import/surfaces.");
+            r9.Add(ci($"rock shed clear strip: {strip.Count} points -> clear-rock-shed.json (tree mask uses the same ring)"));
+        }
         foreach (var l in poS.Log) r9.Add("PO structures: " + l);
         r9.Add($"PO structures: {poRows.Count} proposal rows -> import-po-structure-objects.json {poS.Main.Count}, import-po-structure-piers.json {poS.Piers.Count}, optional/import-po-structure-br006-arches.json {poS.Br006Arches.Count}, optional/import-po-structure-gantry.json {poS.Gantries.Count}");
         if (surfaceEarly != null)
