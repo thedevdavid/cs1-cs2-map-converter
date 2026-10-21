@@ -73,7 +73,7 @@ const check = (name, ok, detail) => { checks.push({ name, ok, detail }); console
 check('current climate is the edited copy', /\(copy\)/.test(clim.name ?? clim.prefab ?? ''), String(clim.name ?? clim.prefab));
 check('daysPerYear is 12', clim.daysPerYear === 12, String(clim.daysPerYear));
 const keyCount = clim.temperatureKeys ?? clim.keys ?? clim.temperatureCurve?.keys;
-check('temperature curve rebuilt (288 keys)', keyCount === 288 || keyCount === undefined, String(keyCount));
+check('temperature curve rebuilt (288 hourly keys + LoopCurve closing key = 289)', keyCount === 289 || keyCount === undefined, String(keyCount));
 const monthly = clim.monthly ?? [];
 // design noon bands per month (start area): Jan 9, Feb 12, Mar 15, Apr 18, May 22, Jun 25, Jul 28, Aug 25, Sep 21, Oct 17, Nov 13, Dec 10 (±7)
 const NOON = [9.3, 12.0, 14.7, 18.3, 22.0, 25.6, 28.0, 24.2, 20.5, 16.8, 13.0, 9.7];
@@ -89,6 +89,33 @@ const snowOutlook = monthly.map(m => {
   return { month: m.month, midnight: mid, noon, precipitation: pr, plainsSnowPossible: mid != null && mid <= 0 && pr >= 0.1, peakSnowPossible: mid != null && mid - PEAK <= 0 && pr >= 0.1 };
 });
 for (const s of snowOutlook) if (s.month >= 4 && s.month <= 10) check(`no plains snow possible in month ${s.month}`, !s.plainsSnowPossible, `midnight ${f1(s.midnight)} °C, precip ${f2(s.precipitation)}`);
+
+// ---- 0b. full-year snow scan from the curves (hourly, no clock running; skip with --no-scan) ----
+// Snow forms where precipitation >= 0.1 and the local temperature (curve - 1 °C/100 m above the start tiles) <= 0 °C
+// (SnowSystem, hard-coded). Precipitation is already scaled down by cloud cover inside the curve.
+const scan = [];
+if (!process.argv.includes('--no-scan')) {
+  for (let m = 0; m < 12; m++) {
+    const row = { month: m + 1, hours: 0, precipHours: 0, plainsSnowHours: 0, summitSnowHours: 0, maxPrecip: 0, minTemp: Infinity };
+    for (let h = 0; h < 24; h++) {
+      await request('POST', '/map/time', { date: (m + (h + 0.5) / 24) / 12, hour: h + 0.5 });
+      const c = (await request('GET', '/map/time')).json.curveAtDate ?? {};
+      const T = c.temperature, P = c.precipitation ?? 0;
+      if (T == null) continue;
+      row.hours++; row.maxPrecip = Math.max(row.maxPrecip, P); row.minTemp = Math.min(row.minTemp, T);
+      if (P >= 0.1) { row.precipHours++; if (T <= 0) row.plainsSnowHours++; if (T - PEAK <= 0) row.summitSnowHours++; }
+    }
+    scan.push(row);
+  }
+  await request('POST', '/map/time', { reset: true });
+  for (const r of scan) {
+    if (r.month >= 4 && r.month <= 10) check(`scan: no plains snow hours in month ${r.month}`, r.plainsSnowHours === 0, `${r.plainsSnowHours} h`);
+  }
+  const cold = scan.filter(r => [12, 1, 2, 3].includes(r.month));
+  const summit = cold.reduce((a, r) => a + r.summitSnowHours, 0), plains = cold.reduce((a, r) => a + r.plainsSnowHours, 0);
+  check('scan: occasional summit snow in Dec–Mar (> 0 h)', summit > 0, `${summit} h of ${cold.reduce((a, r) => a + r.hours, 0)}`);
+  check('scan: plains snow stays light in Dec–Mar (≤ 10 % of hours)', plains <= 0.1 * cold.reduce((a, r) => a + r.hours, 0), `${plains} h`);
+}
 
 // ---- 1. shots ----
 const rows = [];
@@ -138,6 +165,8 @@ const md = [
   ...checks.map(c => `| ${c.name} | ${c.ok ? 'PASS' : '**FAIL**'} | ${c.detail} |`), '',
   '## Snow outlook from the curves', '', '| Month | Midnight °C (start / summit) | Noon °C | Precipitation | Snow possible: plains / summits |', '|---|---|---|---|---|',
   ...snowOutlook.map(s => `| ${s.month} | ${f1(s.midnight)} / ${f1(s.midnight == null ? null : s.midnight - PEAK)} | ${f1(s.noon)} | ${f2(s.precipitation)} | ${s.plainsSnowPossible ? 'yes' : 'no'} / ${s.peakSnowPossible ? 'yes' : 'no'} |`), '',
+  ...(scan.length ? ['## Full-year snow scan (hourly curve samples)', '', '| Month | Hours with precipitation ≥ 0.1 | Snow hours: plains / summits | Max precipitation | Min temperature °C |', '|---|---|---|---|---|',
+    ...scan.map(r => `| ${r.month} | ${r.precipHours} | ${r.plainsSnowHours} / ${r.summitSnowHours} | ${f2(r.maxPrecip)} | ${f1(r.minTemp)} |`), ''] : []),
   '## Shots', '', '| Shot | Date / hour | Expected °C | Live °C | Sampled °C | Precip. | Cloud | Fog | Rain / snow | Season | Screenshots | Result |', '|---|---|---|---|---|---|---|---|---|---|---|---|',
   ...rows.map(r => r.error ? `| ${r.id} | ${r.month} / ${r.hour}:00 | ${r.expect} | — | — | — | — | — | — | — | — | **FAIL** ${r.error} |` :
     `| ${r.id} ${r.note} | ${r.month} / ${r.hour}:00 | ${r.expect} | ${f1(r.live.temperature)} | ${f1(r.sample.temperature)} | ${f2(r.sample.precipitation)} | ${f2(r.sample.cloudiness)} | ${f2(r.sample.fog)} | ${r.live.isRaining ? 'rain' : '—'} / ${r.live.isSnowing ? 'snow' : '—'} | ${r.live.season ?? '—'} | ${Object.values(r.shots).join(', ')} | ${r.pass ? 'PASS' : '**FAIL**: ' + r.fails.join('; ')} |`),

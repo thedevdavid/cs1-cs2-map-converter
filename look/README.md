@@ -36,6 +36,33 @@ Ready request bodies for `POST /map/settings` (bridge 0.9.23 or later; MCP `cs2_
 | `Concrete Surface 01` | near-white | dam crest and plant pad only |
 | `Landfill Surface 01`, `Pavement Surface 02`, `Concrete Surface 02` | rubble, light asphalt, white | not used |
 
+## Climate: verified (A-v9b, 2026-10-21)
+
+Measured with `look/season-test.mjs` on dakota-A9c-2048, bridge 0.9.41, mod overrides cleared (report `next-run/shots-seasons/a9b/report.md`):
+- **All nine shots PASS:** live = sampled curve value.
+- **Noon °C per shot:** Jan 11.8, Jan 06:00 4.8, Mar 14.1, May 25.7, Jul 28.6, Jul 20:00 17.0, Sep 23.3, Nov 14.3, Dec 10.5.
+- **Other checks:** every month's noon value is within ±7 °C of the design; no plains snow is possible April–October.
+- **Curve keys:** 289 is correct (288 hourly keys plus the closing key `LoopCurve` appends at t = 12); the check now expects 289.
+
+**Temperatures: no change.** The shoulder months read 2–4 °C above the design targets (May +3.7, Sep +2.8, Jan +2.5); summer is on target (+0.6).
+- That is the game's own smoothing (`SmoothTangents` on the season keys) plus one fixed Gaussian draw per month (`randomSeed` 1, σ ≈ 3 °C), not a wrong setting.
+- Against the real Front Range: Denver highs Jan 7 / May 21 / Sep 25 °C. Mild winter days and a warm May suit the CS1 endless-summer brief.
+- If the owner wants the shoulders cooler, lower the spring and autumn day value by 2 (`tempNightDay` [0, 11]) rather than changing the seed.
+
+**Snow: changed after A-v9b.** No snow in any shot, not even on the summits, and that was **not** the design intent ("occasional light snow").
+- **Cause:** the curves multiply precipitation by cloud cover (× cloud/0.7, plus × cloud/0.4 below 0.4) and zero it below 0.2 cloud. With the cold seasons at 25–35 % cloud and 15–20 % amount, an event peaked around 0.05, under the 0.1 snow threshold, so it could never snow.
+- **Fix in climate.json:**
+
+  | Season | cloudAmount | precipitationAmount |
+  |---|---|---|
+  | Spring | 35 → **45** | 20 → **45** |
+  | Autumn | 25 → **40** | 15 → **35** |
+  | Winter | 30 → **45** | 15 → **40** |
+
+  The precipitation **chances are unchanged** (9 / 5 / 6 %), so snow stays occasional; events now reach about 0.2–0.3.
+- **What to expect** (run A, summits about 7.7 °C colder): the summits get snow on cold-season nights when an event happens (Jan midnight −9.6 °C, noon +4 °C, so mostly melting by day). The plains get a rare night-time dusting (Jan midnight −1.9 °C) that melts by noon.
+- **Re-check after re-posting climate.json:** the test now runs a **full-year hourly snow scan** from the curves (24 samples per month, no running clock). It checks: no plains snow hours April–October; at least some summit snow hours December–March; plains snow at most 10 % of cold-season hours. The scan table is in the report. Screenshots alone cannot prove snow, because one 120 s settle rarely coincides with an event.
+
 ## Apply order
 
 Run on the open map in the editor, after terrain, water sources and sea level.

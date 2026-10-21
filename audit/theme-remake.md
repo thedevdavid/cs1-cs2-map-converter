@@ -258,10 +258,10 @@ Seasons (four entries; `index` = position in the base's `seasons` array. Read th
 | `tempNightDay` °C | **[0, 13]** | **[12, 28]** | **[0, 13]** | **[−5, 8]** | Denver normals: Jan −8/7, Mar −3/12, Jul 16/31, Nov −4/11. Summer is kept inside CS1's 15–30 °C day range, with nights a little above CS1's mean; winter is a little milder than Denver. The summer swing of 16 °C (> 15.3) gives evening fog |
 | `tempDeviationNightDay` °C | **[4, 5]** | **[3, 4]** | **[4, 5]** | **[4, 5]** | Front Range weather swings (chinooks, cold fronts) are larger in the cold half; summer is steadier |
 | `cloudChance` % | **45** | **40** | **30** | **35** | sunny region; spring is the cloudiest, autumn the clearest |
-| `cloudAmount` % | **35** | **25** | **25** | **30** | broken cloud, never overcast for long; summer afternoon cumulus |
+| `cloudAmount` % | **45** | **25** | **40** | **45** | summer: broken afternoon cumulus. Cold seasons raised from 35/25/30 after A-v9: the game scales precipitation by cloud (× cloud/0.7, and again × cloud/0.4 below 0.4), so thin cloud can never reach the 0.1 snow threshold |
 | `cloudAmountDeviation` % | **25** | **25** | **20** | **20** | summer convection varies the most |
 | `precipitationChance` % | **9** | **25** | **5** | **6** | owner decision 2026-10-20: a short cold season with **occasional light snow**, at about a third of Colorado's cold-season precipitation days (spring ≈ 27 %, winter ≈ 17 %, November ≈ 15 %). Summer thunderstorms stay at full strength |
-| `precipitationAmount` % | **20** | **35** | **15** | **15** | light: around the game's 0.1 snow threshold, so many cold-season events are flurries that lay nothing. Summer thunderstorms are short and moderate |
+| `precipitationAmount` % | **45** | **35** | **35** | **40** | cold seasons raised from 20/15/15 after A-v9: with 40–45 % cloud an event now reaches about 0.2–0.3, above the 0.1 snow threshold. The **chance** stays low (5–9 %), so snow stays occasional |
 | `precipitationAmountDeviation` % | **15** | **30** | **10** | **10** | summer storms vary a lot; cold-season events stay light |
 | `turbulence` (0–1) | **0.25** | **0.5** | **0.15** | **0.15** | convective summer weather changes hour to hour; the cold season is calm |
 | `auroraAmount` (0–1) | **0** | **0** | **0** | **0** | 40° N: practically never; CS1 northern lights 0 |
