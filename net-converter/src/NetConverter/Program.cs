@@ -676,6 +676,9 @@ if (retryReport != null)
     else Console.WriteLine($"retry: {failedSegs.Count} failed CS1 segments -> {edges.Count} edges, NOT entity-bound (live graph empty or missing)");
 }
 if (!layersOnly) WriteLayers();
+// Round 31: the fate of every CS1 segment (imported, skipped by mapping, left out and why), for tools/fidelity.mjs.
+File.WriteAllLines(Path.Combine(outDir, "segment-fates.tsv"),
+    new[] { "cs1_segment\tprefab\tfate" }.Concat(dump.Segments.OrderBy(s => s.Id).Select(s => $"{s.Id}\t{s.Prefab}\t{result.Fate.GetValueOrDefault(s.Id, "?")}")));
 Console.WriteLine($"written to {Path.GetFullPath(outDir)}");
 return 0;
 

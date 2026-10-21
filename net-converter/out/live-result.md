@@ -297,3 +297,32 @@ seeded per feature. `--paint` overrides any layer: brush (sand / dry / dirt / lu
 `import-detroit-opt3` crashed the game natively twice, even with the lower deck stripped: the `BXP Double Deck Suspension Bridge - Highway` upper deck alone
 is enough. Its file now lives only in optional/import-detroit-opt3.json, with a CRASHES note, and has no runner step. `import-detroit-opt2` imported fine
 (2 spans created, 2 stubs merged) and stays the opt-in `--with detroit-opt2` step after verify-end.
+
+## Round 31: fidelity check (owner review of A-v8: "that interchange is completely messed up")
+
+`tools/fidelity.mjs` draws a top-down SVG per interstate interchange (CS1 nodes where ≥ 3 segments meet and one is a highway or ramp, clustered within 350 m;
+16 clusters) and per bridge override with its approaches (21). Each shows CS1 (blue where elevated), our import files (green) and the live A-v8 graph (red, dashed
+where elevated). It flags:
+- orange: a CS1 segment with no live segment within 2 m of its midpoint;
+- magenta: a live segment with no CS1 source;
+- blue: live more than 4 m off the CS1 height at that point.
+Each image has its own .md with the tables and, for every missing CS1 segment, the converter's recorded fate. The fates are now written to segment-fates.tsv.
+Index with a verdict per image: out/x1/fidelity/index.md (37 images; 20 OK).
+
+**(2995, 820)** (interchange 9 at (2872, 913) and 16 at (3015, 1505) cover it): OK. All 64 CS1 segments in the 800 m box have a live counterpart within
+2 m, live and CS1 agree within 4 m in height everywhere, and there are 0 live segments without a CS1 source. Prefabs map one to one (USRP 1L/2L/3L/4L
+Interstate → Highway Oneway 1/2/3/4 lanes). Junctions: 5 with ≥ 3 segments in both, 0 dead ends in both. In A-v7 the branch was missing: the round-12 stub
+removal and the round-19 prune had taken out 36 CS1 segments, and round 26 put them back, so A-v8 has the CS1 layout. A difference the owner sees beyond
+this (lane markings, how CS2 draws the merges, the USRP assets' looks) is not in the network data; a CS1 screenshot from the same camera would show what is meant.
+
+Remaining CHECKs, by cause:
+- **Our deliberate changes:** the BR001 carriageways replaced by the merged deck (28 CS1 segments); the round-26 crossing raises (+4 to +5 m: interchange
+  11, BR009, BR019); the gravel trestles lifted to 8.5 m with 3 % climbs (BR023, 026, 033, 038, 049, 050, 053: 7–12 segments each). If CS1 heights matter more
+  than the bridge rule there, those lifts can go back to CS1 heights with the plain base road.
+- **The heightmap** (hm-rebuild's carve is pending): the canyon road, interchanges 14 and 15 (National Road 11–24 m, 2L Interstate 4–8 m).
+- **Bridge-side:** interchange 8 / the BR001 south approach. CS1 segments 14574 / 35648 are at y 139.8–140.7 in our file (= CS1), but the live
+  64661:3 / 64743:3 stand at y 168.7–178.3 (elevation ≈ 110 m). The importer does not keep our absolute heights there, the same mechanism as the sagging curved decks.
+- **Fate list:** 16370 and 19410 lie outside the border, 31152 collapsed (< 4 m), 16061 was folded into its neighbour; e35131 is the A-v8 junction the game moved
+  (round 29).
+
+Detroit: the owner keeps the BXP SuspensionBridge03; import-detroit-opt2.json now lives only in optional/, and the `detroit-opt2` step (opt-in only) points there.

@@ -148,7 +148,7 @@ const steps = [
   ["verify-end", "verify", []],
   // Round 28/30: the Detroit test deck option 2, opt-in only (--with detroit-opt2; opt3 crashed the game and is out, optional/ only), after the final check, so a crash (A-v8: native crash in the
   // combined test step) never costs the map. Save the map before trying them.
-  ["detroit-opt2", "/import/network", [p("import-detroit-opt2.json")], true],
+  ["detroit-opt2", "/import/network", [p(join("optional", "import-detroit-opt2.json"))], true],   // round 31: owner keeps BR001; file in optional/
 ];
 const optional = new Set(steps.filter(s => s[3]).map(s => s[0]));
 const wanted = name => (only.size === 0 ? (!optional.has(name) || withOpt.has(name)) : only.has(name)) && !skip.has(name)

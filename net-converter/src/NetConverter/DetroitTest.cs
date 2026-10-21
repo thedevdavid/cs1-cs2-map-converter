@@ -73,8 +73,9 @@ public static class DetroitTest
         // Round 30: opt3 CRASHES the game natively (the BXP Double Deck Suspension Bridge - Highway upper deck alone is enough, reproduced twice): it moves
         // to optional/ and out of the runner; opt2 imported fine and stays the opt-in test.
         File.Delete(Path.Combine(outDir, "import-detroit-opt3.json"));
+        File.Delete(Path.Combine(outDir, "import-detroit-opt2.json"));   // round 31: the owner keeps BR001 as it is; opt2 stays in optional/ only
         var opt = Path.Combine(outDir, "optional"); Directory.CreateDirectory(opt);
-        foreach (var (file, tag, what) in new[] { (Path.Combine(outDir, "import-detroit-opt2.json"), "dt2_", "option 2, BXP Suspension Bridge - Highway Twoway - 6 Lanes"),
+        foreach (var (file, tag, what) in new[] { (Path.Combine(opt, "import-detroit-opt2.json"), "dt2_", "option 2, BXP Suspension Bridge - Highway Twoway - 6 Lanes"),
                                                   (Path.Combine(opt, "import-detroit-opt3.json"), "dt3_", "option 3, BXP Double Deck Suspension Bridge - Highway + Lower Highway. CRASHES THE GAME NATIVELY (A-v8, twice, upper deck alone): do not import") })
         {
             using var fs = File.Create(file);
