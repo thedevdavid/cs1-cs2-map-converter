@@ -841,3 +841,58 @@ Owner: "1. top looks staggered. it should look smooth. 2. cliffs ar positioned r
 | 31 | (-6462, 1065) | 278.88 | 272.10 | 6.78 | 0.98 |
 | 32 | (-6467, 1076) | 278.66 | 271.68 | 6.98 | 0.82 |
 - Unchanged: colonnade every 6 m (129 Pillar1x8 in x1), rocks at the shed, row depth into the cut face, tree mask.
+
+### Round 41d: 3° and 1° everywhere, paid for in clearance
+
+- **Limits.** |pitch| ≤ 3° and a pitch change between neighbouring rows ≤ 1° now hold at every row, the steep stretches included. Nothing follows the road any more.
+- **Profile.** It is built from the row bounds (highest road point under the row + 6.6 m), with no iteration:
+  - a dilation by a structuring element that has the limits in it: curvature 0.97° of slope change per row near its apex, slope 0.98 × 3° beyond;
+  - then a closing (dilation + erosion) with the same element, which fills the valleys.
+  - The first dilation rounds the crests. A closing alone keeps the bound's sharp crest at the road's high point (row 27), which came out as a 3.7° turn in one row.
+- **Result, x1:**
+  - rise −1.41 … +2.94° toward +z (file pitch = −rise);
+  - change between neighbouring rows max 0.97°;
+  - clearance 6.60 … 16.64 m (pitched 16.79 m).
+- **2×:** rise −1.74 … +2.94°, change max 0.97°, clearance 6.60 … 29.42 m.
+- **Over the 14 m allowance (x1)**, all at the road's 9 m dip, where the road falls about 9 m within three rows. A 3° roof cannot follow that, so the roof bridges it:
+  - row 22 at (−6404, 939): **16.67 m** (the maximum);
+  - row 21 (−6397, 925): 14.57 m;
+  - row 23 (−6411, 953): 14.51 m;
+  - row 1 at the SE end (−6244, 658): 15.25 m, where the road climbs 9.7° into the shed.
+- **Over 12 m:** rows 2, 20 and 24.
+- **Per row, x1:**
+| row | at (x, z) | underside | highest road | clearance | file pitch |
+|---:|---|---:|---:|---:|---:|
+| 1 | (-6244, 658) | 273.57 | 258.32 | 15.25 | -0.49 |
+| 2 | (-6254, 671) | 273.70 | 261.15 | 12.55 | -0.97 |
+| 3 | (-6263, 683) | 274.09 | 262.91 | 11.18 | -1.94 |
+| 4 | (-6271, 696) | 274.74 | 264.54 | 10.20 | -2.42 |
+| 5 | (-6280, 709) | 275.39 | 266.17 | 9.22 | -1.94 |
+| 6 | (-6288, 722) | 275.78 | 267.85 | 7.93 | -1.03 |
+| 7 | (-6296, 735) | 275.94 | 269.31 | 6.63 | -0.57 |
+| 8 | (-6304, 748) | 276.08 | 269.46 | 6.62 | -0.54 |
+| 9 | (-6312, 762) | 276.23 | 269.60 | 6.63 | -0.54 |
+| 10 | (-6320, 775) | 276.38 | 269.74 | 6.64 | -0.51 |
+| 11 | (-6327, 788) | 276.50 | 269.89 | 6.61 | -0.42 |
+| 12 | (-6335, 802) | 276.60 | 270.00 | 6.60 | -0.01 |
+| 13 | (-6342, 815) | 276.51 | 269.90 | 6.61 | 0.42 |
+| 14 | (-6349, 829) | 276.37 | 269.58 | 6.79 | 0.85 |
+| 15 | (-6356, 843) | 276.05 | 269.28 | 6.77 | 1.17 |
+| 16 | (-6363, 856) | 275.75 | 268.98 | 6.77 | 1.1 |
+| 17 | (-6370, 870) | 275.46 | 268.66 | 6.80 | 0.65 |
+| 18 | (-6377, 884) | 275.40 | 267.68 | 7.72 | -0.25 |
+| 19 | (-6384, 898) | 275.60 | 265.79 | 9.81 | -1.19 |
+| 20 | (-6391, 911) | 276.04 | 263.95 | 12.09 | -2.12 |
+| 21 | (-6397, 925) | 276.73 | 262.16 | 14.57 | -2.77 |
+| 22 | (-6404, 939) | 277.52 | 260.85 | 16.67 | -2.94 |
+| 23 | (-6411, 953) | 278.31 | 263.80 | 14.51 | -2.94 |
+| 24 | (-6417, 967) | 279.10 | 266.61 | 12.49 | -2.68 |
+| 25 | (-6424, 981) | 279.75 | 269.43 | 10.32 | -1.94 |
+| 26 | (-6430, 995) | 280.14 | 272.38 | 7.76 | -0.97 |
+| 27 | (-6437, 1009) | 280.27 | 273.68 | 6.59 | 0 |
+| 28 | (-6443, 1023) | 280.14 | 273.39 | 6.75 | 0.75 |
+| 29 | (-6449, 1037) | 279.87 | 272.95 | 6.92 | 1.23 |
+| 30 | (-6456, 1051) | 279.48 | 272.54 | 6.94 | 1.41 |
+| 31 | (-6462, 1065) | 279.11 | 272.10 | 7.01 | 0.9 |
+| 32 | (-6467, 1076) | 279.00 | 271.68 | 7.32 | 0.43 |
+- Colonnade: 82 stacks every 6 m, 135 Pillar1x8 in x1. Taller where the roof bridges the dip.
