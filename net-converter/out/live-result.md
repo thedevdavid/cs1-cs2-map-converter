@@ -531,3 +531,22 @@ terrain: 16 m pieces while more than 8 m remain, then one 8 m piece. The bottom 
 
 **Carriageway spread** (CarriagewaySpread.cs): parallel one-way highway courses closer than their two CS2 half-widths (the bridge's drop threshold) are pushed
 apart to the half-widths + 0.3 m: 17 pairs, about 55 nodes, converged in 3 passes. It does not touch the BR001 pieces above (16.5 m is enough).
+
+## Round 35c: A-v11 failures; runner save polling
+
+**A-v11** (run-20261021-131042, live-graph-20261021-131042-end.json), the 12 point-check failures:
+- **Present but folded or moved junctions:** e31685_0, e34504_0 (2 of 3 points lie 0.0 m on a live 2-lane piece) and e35131_0 (0.4 m at t 0.2, the
+  curve straightened).
+- **Missing:** e16410_0a, e24407_0ba / _0bb, e31688_0ab / _0bb, e35437_0b, e35648_0a / _0ba / _0bb.
+  - Nothing of any prefab lies within 12 m of their midpoints.
+  - The same set as A-v10, without e31688_0aa (built this time).
+- **Spot 14 (817, 4013):** 0 live dead ends CS1 does not have.
+- **Spot 15 (608, −4721):** 6: (723, −4579), (782, −4501), (808, −4467), (944, −4288), (960, −4266), (976, −4245).
+- **The round-35b carriageway spread** did not touch these pieces (their carriageways are 16.5 m apart, enough), so it cannot fix them.
+- **What changed for them since A-v8**, where they were built: diffing the import files, their nodes, structure and noPillars are identical. The only
+  difference is the control-point y: A-v8 had the old 2 × node y (~280 m), A-v9 on the corrected node y (~140 m). Bridge 0.9.39 arrived at the same
+  time.
+  - Suggested test on the saved map: post one of them (e35648_0ba) with the old and with the new control y, or ask the bridge how its build uses control y.
+
+**Runner `--save`:** a 202 answer is now followed by polling GET /map/save/status every second until done or failed (up to 5 min). It prints the package
+size and the time, e.g. "saved as … (59.3 MB, 2.0 s)" against the mock.

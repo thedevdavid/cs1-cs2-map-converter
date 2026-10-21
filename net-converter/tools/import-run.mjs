@@ -445,10 +445,26 @@ if (!stopped && wanted("look")) {
 
 if (!stopped && saveName && phase !== "post-save" && !dryRun) {
   // --save: right after the build (before any render-settings step of a later post-save pass).
+  // The bridge answers 202 and saves in the background (A-v11): poll GET /map/save/status until done or failed, then report the package size.
+  const t0 = Date.now();
   const r = await request("POST", `/map/save?name=${encodeURIComponent(saveName)}`).catch(e => ({ status: 0, json: { error: String(e) } }));
-  const text = r.status === 200 ? `saved as ${saveName}: ${JSON.stringify(r.json).slice(0, 200)}` : `POST /map/save HTTP ${r.status} (${JSON.stringify(r.json).slice(0, 160)}): not available, save the map by hand now`;
-  console.log(`${r.status === 200 ? "✓" : "!"} save ${text}`);
-  rows.push({ name: "save", file: "POST /map/save", status: r.status === 200 ? "ok" : `HTTP ${r.status}`, text });
+  let ok = r.status === 200 && !/fail/i.test(r.json?.state ?? ""), st = r.json ?? {};
+  if (r.status === 202 || (r.status === 200 && /running|queued|saving/i.test(st.state ?? ""))) {
+    for (let i = 0; i < 300; i++) {                                     // up to 5 min, every second
+      await new Promise(res => setTimeout(res, 1000));
+      const q = await request("GET", "/map/save/status").catch(() => ({ status: 0, json: {} }));
+      st = q.json ?? {};
+      if (/done|saved|ok|complete/i.test(st.state ?? "")) { ok = true; break; }
+      if (/fail|error/i.test(st.state ?? "")) { ok = false; break; }
+    }
+  }
+  const size = st.size ?? st.bytes ?? st.sizeBytes ?? st.packageSize ?? st.packageBytes;
+  const sizeText = typeof size === "number" ? `${(size / 1048576).toFixed(1)} MB` : size ?? "size not reported";
+  const text = ok ? `saved as ${saveName} (${sizeText}, ${((Date.now() - t0) / 1000).toFixed(1)} s)`
+    : r.status === 404 ? `POST /map/save not available (HTTP 404): save the map by hand now`
+    : `save ${saveName} not confirmed: HTTP ${r.status}, state ${st.state ?? "?"} ${JSON.stringify(st).slice(0, 160)}; check the save, or save by hand`;
+  console.log(`${ok ? "✓" : "!"} save ${text}`);
+  rows.push({ name: "save", file: "POST /map/save", status: ok ? "ok" : `HTTP ${r.status}`, secs: (Date.now() - t0) / 1000, text, save: st });
 }
 if (phase === "build" && !stopped) console.log("build phase done: save the map, reload it, then run with --phase post-save (terrain-cs1 + textures), then save again");
 
