@@ -959,3 +959,5 @@ Owner: "mostly good but: 1. use 4-lane highway there. 2. still have issues with 
    - 33 rock pieces.
 
 **Counts** (x1): 96 BasePlateConcrete16, 78 Pillar2x8, 4 Pillar2x16, 22 CliffRock5, 11 CliffRock3.
+
+- **Pitch sign confirmed (A-v17, bridge 0.9.50, round-42 file):** the roof showed as one continuous plane on the 2.30 % grade, with no saw-tooth between rows (next-run/shots-a17/fix/24-06, 24-10). A wrong sign would have given about 0.7 m steps every 16 m. File pitch = −rise stays.
