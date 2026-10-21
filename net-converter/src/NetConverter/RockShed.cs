@@ -6,18 +6,13 @@ namespace NetConverter;
 /// - hill side closed: ConcreteSet01 `Wall32x16` (32 × 16 × 1 m, pivot centre-bottom) from road level, every 32 m;
 /// - roof: square plates at road y + 6.5 m, valley edge on the column line: `BasePlateConcrete62` (153995, 62.5 m) where the road rises ≤ 1.2 m under it,
 ///   else `BasePlateConcrete32`, else `BasePlateConcrete16` (two across the road);
-/// - valley side open: a slim column every 8 m on the valley edge, from road level up to the slab underside (<see cref="Column"/>: the vanilla pillar prop,
-///   Vertical Pillar, the vanilla road stack pillar, y = slab underside);
+/// - valley side open: a column every 8 m on the valley edge from the terrain to the slab underside, ConcreteSet01 Pillar2x16 / Pillar2x8 stacked (owner:
+///   "use the packs, not the vanilla");
 /// - the 11 CS1 `rock_c` positions: cliff pieces behind the wall on the hill side (no rock on the roof).
 /// - guardrail: none yet (no vanilla guardrail prop or net confirmed).
 /// </summary>
 public static class RockShed
 {
-    /// <summary>The valley-side column: the vanilla road stack pillar Vertical Pillar (cs2mcp/PREFAB_NAMES.md, bridge 0.9.42). It is placed with y = its top
-    /// (the slab underside) and the bridge passes elevation = y − ground, so it reaches the terrain by itself: <see cref="ColumnHeight"/> is 0. A prop with
-    /// its pivot at the base would take its own height here instead.</summary>
-    public const string Column = "Vertical Pillar";
-    public const double ColumnHeight = 0;
     public const double Bay = 32, ColumnStep = 8, Clear = 6.5;
 
     public static (List<PlacedObject> Objects, string Log) Build(List<PoStructures.Row> rows, IEnumerable<OutEdge> edges, Func<double, double, double>? terrainTrue, double heightFactor)
@@ -77,11 +72,21 @@ public static class RockShed
             var c = At(s + 16);
             res.Add(O($"shed_wall_{++walls}", "Wall32x16", c.X + nx * (half + 1), c.Z + nz * (half + 1), c.Y, Yaw(c.Tx, c.Tz) - 90, "hill-side wall from road level (32 m side along the road)"));
         }
-        // Valley-side columns every 8 m, base at road level, top at the slab underside (the prop's own height decides; sunk below road level if it is taller).
+        // Valley-side columns every 8 m (owner: packs only): ConcreteSet01 Pillar2x16 / Pillar2x8 (pivot centre-bottom) stacked from the slab underside down
+        // to the terrain, 16 m pieces while more than 8 m remain, then one 8 m piece; the lowest piece goes into the ground by what is left over.
+        int stacks = 0, p16 = 0, p8 = 0;
         for (double s = 0; s <= al + 0.01; s += ColumnStep)
         {
             var c = At(s); double underside = (roofAt.FirstOrDefault(r => s >= r.S0 - 0.01 && s <= r.S1 + 0.01) is { S1: > 0 } r ? r.Y : c.Y + Clear);
-            res.Add(O($"shed_col_{++cols}", Column, c.X - nx * (half + 0.5), c.Z - nz * (half + 0.5), underside - ColumnHeight, Yaw(c.Tx, c.Tz), $"open valley-side column, top at the roof underside ({Column})"));
+            double px = c.X - nx * (half + 0.5), pz = c.Z - nz * (half + 0.5), ground = terrainTrue != null ? Terr(px, pz) : c.Y;
+            double top = underside, left = Math.Max(underside - ground, 0.5); int piece = 0; stacks++;
+            while (left > 0.05)
+            {
+                double h = left > 8 ? 16 : 8;
+                res.Add(O($"shed_col_{stacks}_{++piece}", h > 8 ? "Pillar2x16" : "Pillar2x8", px, pz, top - h, Yaw(c.Tx, c.Tz), $"valley-side column, piece {piece} from the roof underside down"));
+                if (h > 8) p16++; else p8++;
+                top -= h; left -= h; cols++;
+            }
         }
         // The CS1 rock_c pieces as rock behind the wall on the hill side.
         int rocks = 0;
@@ -91,6 +96,6 @@ public static class RockShed
             res.Add(O($"shed_rock_{r.Id}", "CliffRock5", c.X + nx * (half + 12), c.Z + nz * (half + 12), c.Y + 2.57, Yaw(c.Tx, c.Tz), $"rock behind the hill-side wall at CS1 rock_c {r.Id}"));
             rocks++;
         }
-        return (res, FormattableString.Invariant($"rock shed open gallery over {al:F0} m of {string.Join(", ", road.Select(e => e.Id))}: roof {plates["BasePlateConcrete62"]} BasePlateConcrete62 + {plates["BasePlateConcrete32"]} BasePlateConcrete32 + {plates["BasePlateConcrete16"]} BasePlateConcrete16 at road + 6.5 m, {walls} Wall32x16 on the hill side, {cols} valley-side columns ({Column}, every 8 m), {rocks} CliffRock5 behind the wall; no guardrail"));
+        return (res, FormattableString.Invariant($"rock shed open gallery over {al:F0} m of {string.Join(", ", road.Select(e => e.Id))}: roof {plates["BasePlateConcrete62"]} BasePlateConcrete62 + {plates["BasePlateConcrete32"]} BasePlateConcrete32 + {plates["BasePlateConcrete16"]} BasePlateConcrete16 at road + 6.5 m, {walls} Wall32x16 on the hill side, {stacks} valley-side columns every 8 m ({p16} Pillar2x16 + {p8} Pillar2x8 stacked to the terrain), {rocks} CliffRock5 behind the wall; no guardrail"));
     }
 }
