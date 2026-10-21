@@ -355,6 +355,8 @@ public sealed record PlacedObject(string Id, string Prefab, string Kind, double 
 {
     /// <summary>Round 41: bridge 0.9.50 "pitch", degrees about the local x axis: + tilts the local +z end DOWN (Unity Quaternion.Euler(pitch, rotation, roll)); older bridges ignore it.</summary>
     public double? Pitch { get; init; }
+    /// <summary>Round 45: bridge 0.9.51 "pin": keep elevation = y − terrain (negative allowed) and the rotation; the game's ground pass no longer re-grounds it.</summary>
+    public bool Pin { get; init; }
 }
 public sealed record ManualObject(string Cs1, string Source, double X, double Y, double Z, double Rotation, string Note);
 
@@ -479,6 +481,7 @@ public static class Objects
             if (sinks != null && sinks.TryGetValue(o.Id, out var sk)) w.WriteNumber("sink", Math.Round(sk, 3));
             w.WriteNumber("rotation", o.Rotation);
             if (o.Pitch is double pitch) w.WriteNumber("pitch", pitch);
+            if (o.Pin) w.WriteBoolean("pin", true);
             w.WriteString("kind", o.Kind);
             if (o.Kind is "plant" or "tree") w.WriteString("age", "adult");
             w.WriteString("cs1", Json.Short(o.Cs1));
