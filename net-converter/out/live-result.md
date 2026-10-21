@@ -961,3 +961,16 @@ Owner: "mostly good but: 1. use 4-lane highway there. 2. still have issues with 
 **Counts** (x1): 96 BasePlateConcrete16, 78 Pillar2x8, 4 Pillar2x16, 22 CliffRock5, 11 CliffRock3.
 
 - **Pitch sign confirmed (A-v17, bridge 0.9.50, round-42 file):** the roof showed as one continuous plane on the 2.30 % grade, with no saw-tooth between rows (next-run/shots-a17/fix/24-06, 24-10). A wrong sign would have given about 0.7 m steps every 16 m. File pitch = −rise stays.
+
+## Round 44 check: the SE-portal "staircase" (A-v18, dakota-A18b-2048, shots 24-18 / 24-19)
+
+**No converter change.** The roof's valley edge is one continuous offset curve already, end rows included.
+
+- **Against the live highway** (live-graph-20261021-221136-end.json, 5 live `Highway Twoway - 4 lanes` segments under the shed): the outer valley edge of every row's valley plate, both ends of the edge, is **10.49–10.63 m** from the live centreline.
+  - Rows 1–4 at the SE portal: 10.63/10.59, 10.55/10.52, 10.55/10.55, 10.53/10.53.
+  - Mid-curve rows: within ±0.05 m of each other.
+  - Row 32's far corner (13.19) lies past the end of the highway at the NW junction.
+- **Against our own file:** same numbers (import-all.json; tools/shed-check.mjs: −0.006 … +0.13 m off the 10.5 m offset).
+- **Pillars:** centres 8.98–9.07 m from the live centreline (offset 10.5 − 1.5).
+- **No transition width:** the shed uses the highway's 10 m half width over its full length; the road has no other prefab there.
+- **What the stepped edge in 24-18 and the row-to-row "sawtooth" in 24-19 are:** the pillar tops showing above the roof at the valley edge (item a), seen top-down as a row of small dark cubes. Not the plates. They follow from the bridge's live-y readout of the pillars (pending).
