@@ -7,15 +7,17 @@ namespace NetConverter;
 /// - roof: `BasePlateConcrete32` (32 × 0.2 × 32 m) bays centred over the road at road y + 6.5 m, each at its own height; where two bays would step more than
 ///   1 m, two `BasePlateConcrete16` halves;
 /// - valley side open: a slim column every 8 m on the valley edge, from road level up to the slab underside (<see cref="Column"/>: the vanilla pillar prop,
-///   to be confirmed live; ConcreteSet01 Pillar2x8 until then);
+///   Vertical Pillar, the vanilla road stack pillar, y = slab underside);
 /// - the 11 CS1 `rock_c` positions: cliff pieces behind the wall on the hill side (no rock on the roof).
 /// - guardrail: none yet (no vanilla guardrail prop or net confirmed).
 /// </summary>
 public static class RockShed
 {
-    /// <summary>The valley-side column prop and its height (m, pivot at the base). One place to change once the vanilla pillar prop is measured live.</summary>
-    public const string Column = "Pillar2x8";
-    public const double ColumnHeight = 8.0;
+    /// <summary>The valley-side column: the vanilla road stack pillar Vertical Pillar (cs2mcp/PREFAB_NAMES.md, bridge 0.9.42). It is placed with y = its top
+    /// (the slab underside) and the bridge passes elevation = y − ground, so it reaches the terrain by itself: <see cref="ColumnHeight"/> is 0. A prop with
+    /// its pivot at the base would take its own height here instead.</summary>
+    public const string Column = "Vertical Pillar";
+    public const double ColumnHeight = 0;
     public const double Bay = 32, ColumnStep = 8, Clear = 6.5;
 
     public static (List<PlacedObject> Objects, string Log) Build(List<PoStructures.Row> rows, IEnumerable<OutEdge> edges, Func<double, double, double>? terrainTrue, double heightFactor)

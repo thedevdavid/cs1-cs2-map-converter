@@ -472,3 +472,11 @@ import-rock-shed.json, the same `rock-shed` import, absolute y, no sink, over 44
     ITBP, ConcreteSet01, Pier01–03 or a *NetPillar of a bridge;
   - wanted: about 1–2 m square and 6–10 m tall, pivot at the base;
   - for the guardrail: any object or net with "Guardrail", "Guard Rail", "Crash Barrier" or "Highway Barrier" in the name.
+
+## Round 34f: gallery columns are the vanilla `Vertical Pillar`
+
+The 56 valley-side columns (every 8 m) are now `Vertical Pillar`, the vanilla road stack pillar (PREFAB_NAMES.md, bridge 0.9.42), set in RockShed.Column.
+- y = the roof slab underside, yaw = road heading. The bridge passes elevation = y − ground, so each reaches the terrain by itself.
+- The rest is unchanged: roof x1 4 + 20 / x2 6 + 16 bays at road + 6.5 m, 14 Wall32x16, 11 CliffRock5 behind the wall, no guardrail.
+- Total 105 objects at x1, 103 at x2.
+- To check at the start of A-v10: the measured size of Vertical Pillar against the 8 m pitch and the 6.5 m roof offset.

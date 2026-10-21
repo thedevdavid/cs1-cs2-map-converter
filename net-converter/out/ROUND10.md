@@ -574,3 +574,19 @@ import-rock-shed.json, the same `rock-shed` import, absolute y, no sink, over 44
 - The 37 roof slabs span the rest of the 25 m road to the hill-side rock by themselves (CliffRock6 is 55 m and CliffRock5 36 m across), so one slab per bay.
 - 14 CliffStack on the hill side, as before.
 - All 28 posts reach into the slope (none short). Beam variants 02–05: to measure in A-v10.
+
+## Round 34e: rock shed as an open-sided avalanche gallery (owner, next-run/ref-gallery-1/2.webp)
+
+import-rock-shed.json, the same `rock-shed` import, absolute y, no sink, over 444 m:
+- **Hill side closed:** 14 Wall32x16 from road level.
+- **Roof:** BasePlateConcrete32 bays at road + 6.5 m, BasePlateConcrete16 halves where a bay would step more than 1 m. x1: 4 full + 20 half bays, x2: 6 + 16.
+- **Valley side open:** 56 columns every 8 m on the valley edge, top at the roof underside. The prop is one constant, `RockShed.Column` + `ColumnHeight`
+  (src/NetConverter/RockShed.cs). It is ConcreteSet01 `Pillar2x8` until the vanilla pillar prop is confirmed, so the file imports as it is.
+- **Rock:** 11 CliffRock5 behind the wall at the CS1 rock_c positions; no rock roof slabs, no ITBP.
+- **Guardrail:** none (no vanilla guardrail prop or net confirmed).
+- **Candidates to check live** (`/prefabs?category=object&query=Pillar`, also `query=Column`, `query=Guard`, `query=Rail`, `query=Barrier`; then `/prefabs/info`
+  for size and boundsMin of each):
+  - the vanilla road / highway / train pillar objects the elevated nets spawn; their names are unknown here; any prefab whose name contains "Pillar" and is not
+    ITBP, ConcreteSet01, Pier01–03 or a *NetPillar of a bridge;
+  - wanted: about 1–2 m square and 6–10 m tall, pivot at the base;
+  - for the guardrail: any object or net with "Guardrail", "Guard Rail", "Crash Barrier" or "Highway Barrier" in the name.
