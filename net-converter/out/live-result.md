@@ -643,7 +643,7 @@ Owner: "24 doesnt look like the example inspo images". Interchange 8 / BR001 are
 4. **Foreground:** a new tree-mask rule, the rock shed's open valley side. The ring runs from just under the slab edge out 20 m from the column line, 10 m past each end, and masks 93 trees. The same ring is in out/clear-rock-shed.json and out/x1/clear-rock-shed.json (surfaces format, one polygon, prefab "none (clear area)") for demolishing the trees already placed. It is not a surface import.
 5. **Portals:** left as they are. TunnelEntrance18 (26 × 14 × 16 m, 10 m opening) would have to sink 3.5 m below the road for its opening to meet the roof at + 6.5 m. It would still stand 4 m above the hill wall, which is flush with the roof.
 
-**Counts** (x1): 2349 objects: 110 roof slabs + 220 fascia plates, 28 Wall32x16, 111 Pillar1x8, 11 CliffRock5, 1180 bushes, 778 stones.
+**Counts** (x1): 2438 objects: 110 roof slabs + 220 fascia plates, 28 Wall32x16, 111 Pillar1x8, 11 CliffRock5, 1180 bushes, 778 stones.
 
 **Bounds check** (stats.md):
 - The roof covers 99.9 % of the road strip; the 13 open 1 m samples are at the ends.
