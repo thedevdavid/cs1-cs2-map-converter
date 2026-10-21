@@ -899,3 +899,13 @@ Owner: "1. top looks staggered. it should look smooth. 2. cliffs ar positioned r
 5. **No terrain over the top:** the roof still reaches into the cut face as in 40b (row depth 42.0–44.0 m from the column line in x1). No fill and no walls.
 
 **Counts** (x1): import-rock-shed.json has 213 objects: 96 BasePlateConcrete16, all with pitch, and 117 Pillar1x8. The tree mask is unchanged.
+
+### Round 41b: pitch sign for bridge 0.9.50
+
+- Bridge 0.9.50 (cs2mcp 338ff30, IMPORT_SCHEMA.md objects table) applies `Quaternion.Euler(pitch, rotation, roll)`. **Positive pitch tilts the +z end down.** Round 41 had written + = up, so the file now gets **pitch = −rise**.
+- A slab's local +z is the road's arc-length direction (from the SE end toward the NW end).
+- x1 rises run −6.7° … +10.5°, so file pitches run +6.7° … −10.5°.
+- The first rows climb toward the NW: y 264.98, 267.81, 269.62, 271.32 m carry pitch −10.15°, −8.35°, −6.33°, −6.10°.
+- Check: 29 of 30 inner rows match −atan(rise between the neighbouring rows) within 0.1°. Row 31 is 0.4° off, because the clamped last row sits only 14.4 m from it.
+- Rows butt (15.8 m step, 0.2 m overlap), with no fascia stack. Row heights, clearance (min 6.60 m), colonnade and rocks are unchanged from round 41.
+- No roll is written: the road is level across.

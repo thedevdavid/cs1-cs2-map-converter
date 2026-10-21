@@ -29,7 +29,7 @@ public static class RockShed
 {
     public const double RoofStep = 15.8, WallStep = 16, ColumnStep = 6, Clear = 6.5, Slab = 16, WallLength = 32, WallHeight = 16, Plate = 0.2,
         StripWidth = 20, StripEnds = 10,
-        ShellHalf = 23.5, HillCap = 40, BenchSearch = 100, ClearMargin = 0.1;   // round 40: CS1 rock_c shells 46.7–47.7 m long. Round 40b: the hill edge is no longer capped at the
+        ShellHalf = 23.5, HillCap = 40, BenchSearch = 100, ClearMargin = 0.1, MaxPitch = 3, MaxPitchStep = 1;   // round 40: CS1 rock_c shells 46.7–47.7 m long. Round 40b: the hill edge is no longer capped at the
                                                              // shell's (axis + 25 m): every row reaches into the cut face, up to axis + 40 m
 
     /// <summary>The road under the shed as one polyline with arc length, the shed's range on it and its hill side.</summary>
@@ -136,22 +136,54 @@ public static class RockShed
         // (terrain >= roof top along the row's centre and 6 m either side), + 2 m, capped at HillCap; 16 m slabs spread evenly across that width.
         int rowsN = (int)Math.Ceiling((r1 - r0 - Slab) / RoofStep) + 1, slabs = 0, capped = 0;
         double RoadMax(double l) => Enumerable.Range(0, 17).Max(k => c.At(l - Slab / 2 + k).Y);
-        var ls = Enumerable.Range(0, rowsN).Select(i => Math.Min(r0 + Slab / 2 + i * RoofStep, r1 - Slab / 2)).ToList();
-        var ys = ls.Select(l => Math.Max(c.RoofY(l), RoadMax(l) + Clear + ClearMargin)).ToList();
+        double rowStep = (r1 - r0 - Slab) / (rowsN - 1);   // even spacing, at most RoofStep (no near-duplicate end row)
+        var ls = Enumerable.Range(0, rowsN).Select(i => r0 + Slab / 2 + i * rowStep).ToList();
+        // Round 41c: one smooth roof profile over the rows. Lower bound per row: the highest road point under its 16 m span + Clear + ClearMargin (6.6 m).
+        // Above it, a curve with |pitch| <= MaxPitch (3°) and a pitch change between neighbouring rows <= MaxPitchStep (1°); where the road's own grade
+        // (over 48 m) is steeper than 3°, the rows follow the road (no pitch limits there; owner: keep that stretch at the road grade). Built by raising only (extra clearance is fine): slope passes both ways, then
+        // a 5-row smoothing re-raised onto the bound, iterated. A pitched row's downhill end sits lower than its centre, so the bound is raised where the
+        // pitched underside comes within 6.6 m of the road, and the profile rebuilt.
+        var bound = ls.Select(l => RoadMax(l) + Clear + ClearMargin).ToList();
+        var roadGrade = ls.Select(l => Math.Abs(Math.Atan2(c.Profile(l + 24) - c.Profile(l - 24), 48)) * 180 / Math.PI).ToList();
+        var steep = roadGrade.Select(g => g > MaxPitch).ToList();
+        var cap = roadGrade.Select(g => g > MaxPitch ? 90 : MaxPitch).ToList();
+        var ys = bound.ToList();
         List<double> Pitches() => ls.Select((l, i) => { int a = Math.Max(0, i - 1), b = Math.Min(rowsN - 1, i + 1); return b > a ? Math.Atan2(ys[b] - ys[a], ls[b] - ls[a]) * 180 / Math.PI : 0; }).ToList();
+        void Fit()
+        {
+            ys = bound.ToList();
+            for (int it = 0; it < 400; it++)
+            {
+                for (int i = 1; i < rowsN; i++)    // forward: the next row may not lie lower than the cap allows
+                    ys[i] = Math.Max(ys[i], ys[i - 1] - (ls[i] - ls[i - 1]) * Math.Tan(Math.Min(cap[i], cap[i - 1]) * Math.PI / 180));
+                for (int i = rowsN - 2; i >= 0; i--)
+                    ys[i] = Math.Max(ys[i], ys[i + 1] - (ls[i + 1] - ls[i]) * Math.Tan(Math.Min(cap[i], cap[i + 1]) * Math.PI / 180));
+                var p = Pitches();
+                // The limits hold outside the steep stretches; there the profile follows the road (only a 3-row smoothing, re-raised onto the bound).
+                double worst = Enumerable.Range(1, rowsN - 1).Where(i => !steep[i] && !steep[i - 1]).Select(i => Math.Abs(p[i] - p[i - 1])).DefaultIfEmpty(0).Max();
+                if (worst <= MaxPitchStep && Enumerable.Range(0, rowsN).All(i => Math.Abs(p[i]) <= cap[i] + 0.01)) break;
+                var sm = ys.Select((_, i) => steep[i] ? Enumerable.Range(i - 1, 3).Select(k => ys[Math.Clamp(k, 0, rowsN - 1)]).Average()
+                    : Enumerable.Range(i - 2, 5).Select(k => ys[Math.Clamp(k, 0, rowsN - 1)]).Average()).ToList();
+                ys = sm.Select((v, i) => Math.Max(v, bound[i])).ToList();
+            }
+        }
+        Fit();
         var pitch = Pitches();
-        // A pitched row's downhill end sits lower than its centre: raise any row whose pitched underside comes within Clear of the road, then re-pitch.
         for (int pass = 0; pass < 4; pass++)
         {
             bool raised = false;
             for (int i = 0; i < rowsN; i++)
             {
                 double g = Math.Tan(pitch[i] * Math.PI / 180), worst = Enumerable.Range(0, 17).Min(k => ys[i] + (k - Slab / 2) * g - c.At(ls[i] - Slab / 2 + k).Y);
-                if (worst < Clear + ClearMargin - 0.005) { ys[i] += Clear + ClearMargin - worst; raised = true; }
+                if (worst < Clear + ClearMargin - 0.005) { bound[i] += Clear + ClearMargin - worst; raised = true; }
             }
             if (!raised) break;
-            pitch = Pitches();
+            Fit(); pitch = Pitches();
         }
+        double maxStep = Enumerable.Range(1, rowsN - 1).Max(i => Math.Abs(pitch[i] - pitch[i - 1]));
+        double maxStepFlat = Enumerable.Range(1, rowsN - 1).Where(i => !steep[i] && !steep[i - 1]).Select(i => Math.Abs(pitch[i] - pitch[i - 1])).DefaultIfEmpty(0).Max();
+        double maxRiseFlat = Enumerable.Range(0, rowsN).Where(i => !steep[i]).Select(i => Math.Abs(pitch[i])).DefaultIfEmpty(0).Max();
+        var steepRoad = Enumerable.Range(0, rowsN).Where(i => roadGrade[i] > MaxPitch).ToList();
         var rowAt = new List<(double L, double Y, double Edge)>();
         var cappedRows = new List<string>();
         var bench = new List<double>();   // column line → first terrain at or above the roof top, per row
@@ -228,7 +260,7 @@ public static class RockShed
         int widest = fin.Count > 0 ? bench.IndexOf(fin.Max()) + 1 : 0;
         string benchText = FormattableString.Invariant($"column line → terrain at the roof top per row: min {(fin.Count > 0 ? fin.Min() : double.NaN):F1} m, max {(fin.Count > 0 ? fin.Max() : double.NaN):F1} m (widest at row {widest}), the cap at {HillCap - valley:F1} m{(fin.Count < bench.Count ? $", {bench.Count - fin.Count} rows not within {BenchSearch:F0} m" : "")}");
         var check = Check(res, c, r0, r1, rowAt, TerrAt, RoofTop);
-        return (res, FormattableString.Invariant($"rock shed open gallery, CS1 shell extent {r1 - r0:F0} m of road from {P(c.At(r0))} to {P(c.At(r1))} (A-v14: {c.L1 - c.L0:F0} m from {P(c.At(c.L0))} to {P(c.At(c.L1))}) ({string.Join(", ", c.Road.Select(e => e.Id))}): {slabs} BasePlateConcrete16 in {rowsN} rows every {RoofStep} m, one layer, pitched to the grade (rise {pitch.Min():F2}…{pitch.Max():F2}° toward +z; file pitch = −rise), underside >= the highest road point under each row + {Clear} m (clearance over the road per row: level min {clearance.Min(q => q.Level):F2} m, pitched min {clearance.Min(q => q.Pitched):F2} m), into the cut face: row depth from the column line min {rowAt.Min(r => r.Edge - valley):F1} m, max {rowAt.Max(r => r.Edge - valley):F1} m ({capped} rows stopped at the cap, axis + {HillCap} m = {HillCap - valley:F1} m{(cappedRows.Count > 0 ? ": " + string.Join(", ", cappedRows) : "")}); {benchText}; hill-side wall only at gaps: {w16} Wall32x16 + {w32} Wall32x32 on the {HillCap} m line; {stacks} valley-side columns every {ColumnStep} m ({p8} Pillar1x8, bases 0.5 m in the ground{(deep > 0 ? $"; {deep} single pieces deeper, up to {worstDeep:F1} m, where the underside is under 7.5 m above the terrain" : "")}); bare roof; no portals; {check}"));
+        return (res, FormattableString.Invariant($"rock shed open gallery, CS1 shell extent {r1 - r0:F0} m of road from {P(c.At(r0))} to {P(c.At(r1))} (A-v14: {c.L1 - c.L0:F0} m from {P(c.At(c.L0))} to {P(c.At(c.L1))}) ({string.Join(", ", c.Road.Select(e => e.Id))}): {slabs} BasePlateConcrete16 in {rowsN} rows every {rowStep:F2} m, one layer, on one smooth profile (rise {pitch.Min():F2}…{pitch.Max():F2}° toward +z, file pitch = −rise; outside the steep stretches |rise| max {maxRiseFlat:F2}° and change between neighbouring rows max {maxStepFlat:F2}°, overall change max {maxStep:F2}°; the profile follows the road where the road itself is steeper than {MaxPitch}° over 48 m: {(steepRoad.Count == 0 ? "nowhere" : string.Join(", ", steepRoad.Select(i => FormattableString.Invariant($"row {i + 1} road {roadGrade[i]:F1}° at {P(c.At(ls[i]))}"))))}), underside >= the highest road point under each row + {Clear + ClearMargin} m (clearance over the road per row: level min {clearance.Min(q => q.Level):F2} max {clearance.Max(q => q.Level):F2} m, pitched min {clearance.Min(q => q.Pitched):F2} max {clearance.Max(q => q.Pitched):F2} m), into the cut face: row depth from the column line min {rowAt.Min(r => r.Edge - valley):F1} m, max {rowAt.Max(r => r.Edge - valley):F1} m ({capped} rows stopped at the cap, axis + {HillCap} m = {HillCap - valley:F1} m{(cappedRows.Count > 0 ? ": " + string.Join(", ", cappedRows) : "")}); {benchText}; hill-side wall only at gaps: {w16} Wall32x16 + {w32} Wall32x32 on the {HillCap} m line; {stacks} valley-side columns every {ColumnStep} m ({p8} Pillar1x8, bases 0.5 m in the ground{(deep > 0 ? $"; {deep} single pieces deeper, up to {worstDeep:F1} m, where the underside is under 7.5 m above the terrain" : "")}); bare roof; no portals; {check}"));
     }
 
     /// <summary>
