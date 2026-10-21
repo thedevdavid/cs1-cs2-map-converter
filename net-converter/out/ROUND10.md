@@ -555,3 +555,15 @@ It runs along the CS1 road line over 444 m (e10437_0, e13009_0, e20651_0, e24116
 - **Hill side:** 14 Wall32x16 from road level, 32 m side along the road.
 - **Rock face:** 11 CliffRock5 on top of the wall line at the CS1 rock_c positions.
 - No tunnel fallback.
+
+## Round 34c: the rock shed from pylon props (owner: "custom made out of pylon props"; plates and walls gone)
+
+import-rock-shed.json, the same `rock-shed` import, absolute y, no sink, over 444 m of the National Road line:
+- **Posts:** 28, every 16 m, post top at road y + 6.5 m. The 4-lane road is 25 m wide (CS2 Medium Road), more than the 13.2 m reach of
+  `ITBP_Single-Sided Beam 01`, so by the rule they are `ITBP_Pillar Median 01` T-piers on the centreline (27 m across, crossbeam across the road).
+  - All 28 posts (21.5 m) reach down into the ground; none is short. Single-Sided Beam 02–05 and Pillar Median 02–04 are not measured, so variant 01 throughout.
+- **Roof:** 37 rock slabs every 12 m resting at road y + 7 m, long axis along the road: CliffRock6 (60.7 × 8.5 × 55.3 flat slab), every third a CliffRock5.
+  The CS1 rock_c positions are spread over the whole length.
+- **Back:** 14 CliffStack on the hill side every 32 m, base at road level.
+- **Alternative if the owner wants the CS1 look of posts on the valley edge only:** Single-Sided Beams there, with two-thirds of the roof width hanging from the
+  slabs alone.

@@ -5,8 +5,8 @@ namespace NetConverter;
 /// slabs cantilevered over the 4-lane National Road at x −6453…−6245, z 677…1069, held by dark posts on the valley edge) rebuilt from pylon props, one
 /// undoable import (`rock-shed`), absolute y, no sink (next-run/pylon-props.txt for the bounds):
 /// - posts: Island-Type Bridge Pier `ITBP_Single-Sided Beam 01` (15.2 × 21.5 × 4 m, an L-shaped post with a one-sided cantilever, pivot at the post top,
-///   beam toward local +x up to 13.2 m) every 16 m on the valley edge, beam pointing uphill over the road, post top at road y + 6.5 m. Where the road is
-///   wider than the cantilever reaches, `ITBP_Pillar Median 01` (27 m T-pier, pivot at the top) on the centreline instead. Variants 02–05 are unmeasured,
+///   beam toward local +x up to 13.2 m) every 16 m on the valley edge, beam pointing uphill over the road, post top at road y + 6.5 m; the slabs span the
+///   rest of the road width (owner: no T-piers on the centreline). Variants 02–05 are unmeasured,
 ///   so 01 throughout; the 21.5 m post goes into the slope where the valley is shallower.
 /// - roof: rock slabs resting on the beams at road y + 7 m, long axis along the road, one per 12 m over the whole length (the 11 CS1 positions
 ///   duplicated): `CliffRock6` (60.7 × 8.5 × 55.3 flat slab, min y −1.1), every third a `CliffRock5`.
@@ -46,7 +46,9 @@ public static class RockShed
             new(id, prefab, "object", Math.Round(x, 2), Math.Round(z, 2), Math.Round(y, 2), Math.Round(((yaw % 360) + 360) % 360, 1), "JP Rock shed (pylon props)", note);
         // Posts: the beam's local +x has to point uphill: local +x = (cos r, −sin r) in (x, z), so r = atan2(−nz, nx).
         double beamYaw = Math.Atan2(-nz, nx) * 180 / Math.PI;
-        bool median = 2 * half + 1 > BeamReach;
+        // Owner decision (round 34d): as in CS1, posts on the valley edge only, never T-piers on the centreline; the rock slabs (CliffRock6 55 m, CliffRock5
+        // 36 m across) span the rest of the 25 m road to the hill-side rock by themselves.
+        const bool median = false;
         int posts = 0, floating = 0, sunk = 0;
         for (double s = 0; s <= al + 0.01; s += PostStep)
         {

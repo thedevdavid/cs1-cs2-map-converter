@@ -449,3 +449,10 @@ import-rock-shed.json, the same `rock-shed` import, absolute y, no sink, over 44
 - **Back:** 14 CliffStack on the hill side every 32 m, base at road level.
 - **Alternative if the owner wants the CS1 look of posts on the valley edge only:** Single-Sided Beams there, with two-thirds of the roof width hanging from the
   slabs alone.
+
+## Round 34d: rock shed posts on the valley edge only (owner decision)
+
+- 28 `ITBP_Single-Sided Beam 01` posts on the valley edge every 16 m, cantilever pointing uphill, post top at road y + 6.5 m. No T-piers on the centreline.
+- The 37 roof slabs span the rest of the 25 m road to the hill-side rock by themselves (CliffRock6 is 55 m and CliffRock5 36 m across), so one slab per bay.
+- 14 CliffStack on the hill side, as before.
+- All 28 posts reach into the slope (none short). Beam variants 02–05: to measure in A-v10.
