@@ -1,6 +1,6 @@
 # Conversion outputs (2026-10-21)
 
-Dump: `C:\Users\dleva\AppData\Local\DakotaExport\2972879554_Dakota_Falls-20261019-063123.json`. Run it all with `node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5]`. Import order (bridges: import-bridges.json right after the network; round 10, owner review of A-v4: no quays, retaining walls, PO walls, monorail decor or dam files; dam by hand, see manual-objects.md): network → gaps → power, canals, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → dam (one network edge) after the bridges → … → surfaces (vanilla paint plan: fields, PO pavement, sand, dry grass; grass optional; the pack surfaces rock, PO rock, decals and pack sand are in optional/, runner --with) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
+Dump: `C:\Users\dleva\AppData\Local\DakotaExport\2972879554_AutoSave-20261020-183735.json`. Run it all with `node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5]`. Import order (bridges: import-bridges.json right after the network; round 10, owner review of A-v4: no quays, retaining walls, PO walls, monorail decor or dam files; dam by hand, see manual-objects.md): network → gaps → power, canals, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → dam (one network edge) after the bridges → … → surfaces (vanilla paint plan: fields, PO pavement, sand, dry grass; grass optional; the pack surfaces rock, PO rock, decals and pack sand are in optional/, runner --with) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
 out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 2048); same nodes and courses in both.
 
 | order | file | content | count | size |
@@ -43,7 +43,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 Dry (1×) | 2 polygons, 0 strokes | 0.0 MB |
 | 0 | `out\x1\import-terrain-paint-n8-playa-centre-dirt.json` | ROUND 27 terrain paint N8 Dirt (1×) | 162 polygons, 0 strokes | 0.6 MB |
 | 0 | `out\x1\import-terrain-paint-n8-playa-rim-lush.json` | ROUND 27 terrain paint N8 Lush (1×) | 191 polygons, 0 strokes | 0.8 MB |
-| 0 | `out\x1\import-terrain-paint-n9-dirt-roads-dirt.json` | ROUND 27 terrain paint N9 Dirt (1×) | 0 polygons, 12274 strokes | 2.0 MB |
+| 0 | `out\x1\import-terrain-paint-n9-dirt-roads-dirt.json` | ROUND 27 terrain paint N9 Dirt (1×) | 0 polygons, 12266 strokes | 2.0 MB |
 | 0 | `out\x1\import-terrain-paint-n10-rail-ballast-dirt.json` | ROUND 27 terrain paint N10 Dirt (1×) | 0 polygons, 4418 strokes | 0.7 MB |
 | 0 | `out\x1\import-terrain-paint-n11-oil-dirt.json` | ROUND 27 terrain paint N11 Dirt (1×) | 425 polygons, 0 strokes | 8.5 MB |
 | 0 | `out\x1\import-terrain-paint-n11-ore-dirt.json` | ROUND 27 terrain paint N11 Dirt (1×) | 196 polygons, 0 strokes | 1.8 MB |
@@ -56,7 +56,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 1 | `out\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (2×) | 4 edges | 0.0 MB |
 | 1 | `out\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (2×) | 2 edges | 0.0 MB |
 | 1 | `out\x1\import-all.json` | network (1×) | 3793 edges, 3658 nodes | 1.9 MB |
-| 1 | `out\x1\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (1×) | 44 edges, replaces 139 | 0.0 MB |
+| 1 | `out\x1\import-bridges.json` | bridge overrides (right after import-all.json, which leaves these decks out) (1×) | 43 edges, replaces 139 | 0.0 MB |
 | 1 | `out\x1\import-bridges-fixed.json` | fixed-span bridges: BR001 Detroit suspension (one edge) + its 3-lane connectors, right after import-bridges.json (1×) | 5 edges, replaces 55 | 0.0 MB |
 | 1 | `out\x1\import-dam.json` | dam: one Hydroelectric_Power_Plant_01 Dam edge (bridge 0.9.23 builds the plant), after the bridges (1×) | 1 edges, replaces 0 | 0.0 MB |
 | 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 4 edges | 0.0 MB |
@@ -415,3 +415,32 @@ seeded per feature. `--paint` overrides any layer: brush (sand / dry / dirt / lu
 `import-detroit-opt3` crashed the game natively twice, even with the lower deck stripped: the `BXP Double Deck Suspension Bridge - Highway` upper deck alone
 is enough. Its file now lives only in optional/import-detroit-opt3.json, with a CRASHES note, and has no runner step. `import-detroit-opt2` imported fine
 (2 spans created, 2 stubs merged) and stays the opt-in `--with detroit-opt2` step after verify-end.
+
+## Round 31: fidelity check (owner review of A-v8: "that interchange is completely messed up")
+
+`tools/fidelity.mjs` draws a top-down SVG per interstate interchange (CS1 nodes where ≥ 3 segments meet and one is a highway or ramp, clustered within 350 m;
+16 clusters) and per bridge override with its approaches (21). Each shows CS1 (blue where elevated), our import files (green) and the live A-v8 graph (red, dashed
+where elevated). It flags:
+- orange: a CS1 segment with no live segment within 2 m of its midpoint;
+- magenta: a live segment with no CS1 source;
+- blue: live more than 4 m off the CS1 height at that point.
+Each image has its own .md with the tables and, for every missing CS1 segment, the converter's recorded fate. The fates are now written to segment-fates.tsv.
+Index with a verdict per image: out/x1/fidelity/index.md (37 images; 20 OK).
+
+**(2995, 820)** (interchange 9 at (2872, 913) and 16 at (3015, 1505) cover it): OK. All 64 CS1 segments in the 800 m box have a live counterpart within
+2 m, live and CS1 agree within 4 m in height everywhere, and there are 0 live segments without a CS1 source. Prefabs map one to one (USRP 1L/2L/3L/4L
+Interstate → Highway Oneway 1/2/3/4 lanes). Junctions: 5 with ≥ 3 segments in both, 0 dead ends in both. In A-v7 the branch was missing: the round-12 stub
+removal and the round-19 prune had taken out 36 CS1 segments, and round 26 put them back, so A-v8 has the CS1 layout. A difference the owner sees beyond
+this (lane markings, how CS2 draws the merges, the USRP assets' looks) is not in the network data; a CS1 screenshot from the same camera would show what is meant.
+
+Remaining CHECKs, by cause:
+- **Our deliberate changes:** the BR001 carriageways replaced by the merged deck (28 CS1 segments); the round-26 crossing raises (+4 to +5 m: interchange
+  11, BR009, BR019); the gravel trestles lifted to 8.5 m with 3 % climbs (BR023, 026, 033, 038, 049, 050, 053: 7–12 segments each). If CS1 heights matter more
+  than the bridge rule there, those lifts can go back to CS1 heights with the plain base road.
+- **The heightmap** (hm-rebuild's carve is pending): the canyon road, interchanges 14 and 15 (National Road 11–24 m, 2L Interstate 4–8 m).
+- **Bridge-side:** interchange 8 / the BR001 south approach. CS1 segments 14574 / 35648 are at y 139.8–140.7 in our file (= CS1), but the live
+  64661:3 / 64743:3 stand at y 168.7–178.3 (elevation ≈ 110 m). The importer does not keep our absolute heights there, the same mechanism as the sagging curved decks.
+- **Fate list:** 16370 and 19410 lie outside the border, 31152 collapsed (< 4 m), 16061 was folded into its neighbour; e35131 is the A-v8 junction the game moved
+  (round 29).
+
+Detroit: the owner keeps the BXP SuspensionBridge03; import-detroit-opt2.json now lives only in optional/, and the `detroit-opt2` step (opt-in only) points there.

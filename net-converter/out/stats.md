@@ -1,12 +1,12 @@
 # net-converter stats
 
-Dump `C:\Users\dleva\AppData\Local\DakotaExport\2972879554_Dakota_Falls-20261019-063123.json`, mapping `mapping.tsv`.
+Dump `C:\Users\dleva\AppData\Local\DakotaExport\2972879554_AutoSave-20261020-183735.json`, mapping `mapping.tsv`.
 
 ## Output layers
 
 | layer | edges | nodes | border nodes | length km | ground | elevated | tunnel |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| highways | 1752 | 1734 | 10 | 118.0 | 1091 | 621 | 40 |
+| highways | 1752 | 1734 | 10 | 118.0 | 1090 | 622 | 40 |
 | rail | 410 | 419 | 4 | 33.7 | 332 | 66 | 12 |
 | roads | 1619 | 1506 | 6 | 124.4 | 1597 | 22 | 0 |
 | power | 60 | 62 | 1 | 12.8 | 60 | 0 | 0 |
@@ -128,7 +128,7 @@ Nodes 5582, segments 5532, net prefabs 62, water sources 65, outside connections
 | 2920928696.345 kV H Frame Ceramic Insulator_Data | PowerLineAI | 66 | 14.29 |
 | 2105051034.Terraforming Network Ext 0.5U_Data | CanalAI | 225 | 13.61 |
 | 2674210208.Field Wheat Network 3_Data | RoadAI | 102 | 12.24 |
-| Ship Path | ShipPathAI | 117 | 10.90 |
+| Ship Path | ShipPathAI | 117 | 10.79 |
 | 2674210208.Field Wheat Cut Network 3_Data | RoadAI | 76 | 9.07 |
 | 2452038713.USRP 1L Interstate Ramp_Data | RoadAI | 167 | 7.12 |
 | 2674210208.Field Wheat Young Network_Data | RoadAI | 55 | 7.05 |
@@ -188,15 +188,15 @@ CS1 `elevation` byte and measured y − terrain:
 
 | bucket | elevation byte | y − terrain |
 |---|---:|---:|
-| < -20 | 0 | 115 |
+| < -20 | 0 | 130 |
 | -20..-5 | 0 | 318 |
 | -5..-0.5 | 0 | 1067 |
 | ±0.5 | 5437 | 2129 |
 | 0.5..5 | 66 | 1083 |
 | 5..10 | 26 | 199 |
 | 10..20 | 32 | 187 |
-| 20..40 | 16 | 277 |
-| > 40 | 5 | 207 |
+| 20..40 | 16 | 272 |
+| > 40 | 5 | 197 |
 
 Underground nodes 51; nodes with Outside flag 24; nodes beyond ±7168 m 778.
 
@@ -215,7 +215,7 @@ Underground nodes 51; nodes with Outside flag 24; nodes beyond ±7168 m 778.
 
 - Hairpins (Bézier length > 1.6 × chord, self-intersection, or a control point behind its end), checked on every imported CS1 segment: **0** found, 0 rebuilt.
 - Exact duplicate edges dropped: **0**.
-- Structure now from node elevation (not the B/E/S/T prefab suffix): 219 imported edges differ from the suffix-based class (Ground→Elevated 214, Ground→Tunnel 2, Elevated→Ground 3).
+- Structure now from node elevation (not the B/E/S/T prefab suffix): 218 imported edges differ from the suffix-based class (Ground→Elevated 214, Ground→Tunnel 2, Elevated→Ground 2).
 - Elevation ramps (Δelevation > 6 m over < 60 m) smoothed to ≤ 8 %: **67** ramps, 30 nodes raised/lowered, 6 still steeper than 12 % (blocked by a junction or the border).
 
 - Node merges refused because the nodes are stacked (height difference ≥ 2 m): **9**.
@@ -281,7 +281,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 ## Other layers
 
 - Power: 60 courses of High-voltage Line in import-power.json (nodes on the ground).
-- Trees: 496,303 objects in 10 chunks under out\trees (points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale)); outside ±7168 m 158,877; dropped 73,855 (see trees/README.md).
+- Trees: 496,303 objects in 10 chunks under out\trees (points (2972879554_AutoSave-20261020-183735-trees.json, trees/v2: y, flags, scale)); outside ±7168 m 158,877; dropped 73,855 (see trees/README.md).
 - Pack rocks: no y (their y was dropped on 1112); options.grounding {mode boundsMin, sink 0.15, slopeSink} grounds every object without y from its prefab bounds (bridge 0.9.19).
 - Object y policy: y only > 3 m above the CS2 playable heightmap (10201528-dktflls-1to1.png), never for buildings: 2301 with y; against the old CS1-terrain rule 556 lose y, 0 gain it.
 - Objects: 6130 of 8408 CS1 buildings/props got a CS2 target (72.9 %); SKIP 247, MANUAL 7, unmapped 0, outside ±7168 m 2024; 2301 carry y.
@@ -405,7 +405,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Terrain paint import-terrain-paint-n6-savanna-dirt.json: Dirt 0.45, 40029 strokes (N6 bare soil dabs between the pines).
 - Terrain paint import-terrain-paint-n4-hogback-sand.json: Sand 0.5, 31644 strokes (N4 hogback sandstone streaks along the contour (30066 cells)).
 - Terrain paint import-terrain-paint-n5-scree-dirt.json: Dirt 0.8, 80 polygons, 0.47 km², 2260 cells (N5 talus / scree aprons below cliffs).
-- Terrain paint N3: reservoir level 157.5 m (2912 wet cells at ± 1.5 m).
+- Terrain paint N3: reservoir level 157.5 m (2908 wet cells at ± 1.5 m).
 - Terrain paint import-terrain-paint-n3-drawdown-dirt.json: Dirt 0.7, 134 strokes (N3 reservoir drawdown ring, 0–2.5 m above the level).
 - Terrain paint import-terrain-paint-n2-pit-banks-dirt.json: Dirt 0.6, 13 strokes (N2 gravel-pit pond banks, 5 ponds).
 - Terrain paint import-terrain-paint-n2-pit-banks-sand.json: Sand 0.6, 8 strokes (N2 gravel-pit pond shore).
@@ -471,7 +471,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 |---|---|---|---:|---:|---|---|---|---|
 | BR001 | BXP SuspensionBridge03 - Six Lane Highway | fixed:168,320,320,168;merge | 2 | 1 | 976 | fixed | Detroit: two 3-lane carriageways merged onto the 6-lane two-way suspension, towers 640 m apart (CS1 723 m); tower spacing 640 m vs CS1 724 m; carriageway n27934: 26 courses between e29898_0d0 and e11895_0d0 replaced; connectors 141 / 140 m; carriageway n14554: 29 courses between e33845_0d0 and e36148_0d0 replaced; connectors 140 / 141 m; clearance over e3593_0 Medium Seaway: 248.2 m (deck − course, output metres); deck over the water: min 116.3 m | fixed br001_deck: 976 m within 586–1366 m (nominal 976) |
 | BR004 | (dropped) | drop | 0 | 0 |  | bridges | dam-crest walkway (Pedestrian Elevated, 799 m): dropped (owner review of A-v5: an unwanted footpath along the dam); 31 courses dropped, 798 m; footpaths that only led onto it: 2 (118 m) | ok |
-| BR005 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | count:2 | 2 | 4 | 4×164 | bridges | Hernando-Desoto: two ~150 m arches per carriageway ("M"); br005_c1: 2 approaches meet at n18884: only the through one is straightened; br005_c1: approach e3338_0 met the deck at 6°, its end now runs straight onto the deck; br005_c2: 2 approaches meet at n26229: only the through one is straightened | ok |
+| BR005 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | count:2 | 2 | 4 | 4×164 | bridges | Hernando-Desoto: two ~150 m arches per carriageway ("M"); br005_c1: 2 approaches meet at n18884: only the through one is straightened; br005_c1: approach e3338_0 met the deck at 6°, its end now runs straight onto the deck; br005_c2: 2 approaches meet at n26229: only the through one is straightened | bridge.waterClearance (warning) br005_c1_e1: 6.6 m < 10 m over the water; bridge.waterClearance (warning) br005_c2_e0: 6.3 m < 10 m over the water |
 | BR009 | BXP Truss Arch Bridge - Highway Oneway - 2 Lanes | span:179.2 | 2 | 4 | 4×105 | bridges | green truss arch over the gorge; the owner asked for one edge per carriageway, but the deck chain is 210 m straight (> 1.4 × 128 = 179 m), so two; br009_c1: 2 approaches meet at n11662: only the through one is straightened | ok |
 | BR006 | Truss Arch Bridge - Small Road - 2 Lanes | span:179.2 | 1 | 4 | 4×146 | bridges | red deck arch over the dry valley (round 25: game pillars; variant b's arch objects clear them through the runner's pillars-off step) (vanilla truss arch; BXP equivalent if this name fails) | ok |
 | BR007 | TrussArchBridge01 | fixed:128,128;count:1 | 1 | 1 | 189 | bridges | Ourense: truss arch over the main span, ONE edge abutment to abutment (live rules: fixed 128 + 128 m, edge 153.6–358.4 m); approaches stay Double Train Track | fixed br007_c1_e0: 189 m within 154–358 m (nominal 256) |
@@ -488,10 +488,10 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 | BR017 | BXP Truss Viaduct - Train | span:89.6 | 1 | 4 | 4×68 | bridges | R2USA B0 rail viaduct | ok |
 | BR028 | BXP Truss Viaduct - Train | span:89.6 | 1 | 3 | 3×63 | bridges | R2USA B0 rail viaduct | ok |
 | BR019 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 3 | 3×64 | bridges | gravel trestle | ok |
-| BR020 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 2 | 2×84 | bridges | gravel trestle; br020_c1: CS1 chain curves up to 7 m off the straight line (171 m along, 168 m straight); br020_c1: deck 6.9 m over the water at (1258, 6142) (< 10 m, m_ElevationOnWater [U]) | bridge.waterClearance (warning) br020_c1_e0: 7.0 m < 10 m over the water; bridge.waterClearance (warning) br020_c1_e1: 6.5 m < 10 m over the water |
+| BR020 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 2 | 2×84 | bridges | gravel trestle; br020_c1: CS1 chain curves up to 7 m off the straight line (171 m along, 168 m straight); br020_c1: deck 7.4 m over the water at (1258, 6142) (< 10 m, m_ElevationOnWater [U]) | bridge.waterClearance (warning) br020_c1_e0: 7.3 m < 10 m over the water; bridge.waterClearance (warning) br020_c1_e1: 7.6 m < 10 m over the water |
 | BR044 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 78 | bridges | gravel trestle | ok |
 | BR045 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 2 | 2×63 | bridges | gravel trestle; br045_c1: deck lifted +2.3 m to 8.5 m above the terrain; 1 approach nodes re-graded at ≤ 3 % (track 2 %) | ok |
-| BR049 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 86 | bridges | gravel trestle; br049_c1: deck lifted +6.1 m to 8.5 m above the terrain; 10 approach nodes re-graded at ≤ 3 % (track 2 %) | ok |
+| BR049 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 86 | bridges | gravel trestle; br049_c1: deck lifted +6.1 m to 8.5 m above the terrain; 9 approach nodes re-graded at ≤ 3 % (track 2 %) | ok |
 | BR050 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 81 | bridges | gravel trestle; br050_c1: deck lifted +5.4 m to 8.5 m above the terrain; 13 approach nodes re-graded at ≤ 3 % (track 2 %) | ok |
 | BR053 | Wooden Covered Bridge - 2 lanes | span:89.6 | 1 | 1 | 67 | bridges | gravel trestle; br053_c1: deck lifted +8.1 m to 8.5 m above the terrain; 13 approach nodes re-graded at ≤ 3 % (track 2 %) | ok |
 - Detroit test: BR001 line itself: 43/123 samples of the river part over land; best NW offsets 175 m 40, 200 m 41, 150 m 41, 275 m 43, 375 m 45.

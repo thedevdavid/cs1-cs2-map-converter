@@ -318,6 +318,22 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
     }
 }
 {
+    // Round 32 (owner, CS1 reference shot of interchange 5): CS1 elevated pieces render on pillars in CS2 only at ≥ 8 m; lift them (FlyoverLift.cs).
+    var flyLifts = FlyoverLift.Apply(result, out var flyEdges);
+    var flyMd = new System.Text.StringBuilder("# Flyover lift (round 32)\n\nCS1 elevated (bridge-AI) courses lifted to ≥ 8.5 m above the terrain (output metres), ramped at ≤ 8 % from where they touch ground courses; never lowered.\n\n");
+    flyMd.AppendLine(FormattableString.Invariant($"{flyLifts.Count} nodes lifted, {flyEdges.Count} elevated courses touched; mean lift {(flyLifts.Count > 0 ? flyLifts.Average(l => l.After - l.Before) : 0):F1} m, max {(flyLifts.Count > 0 ? flyLifts.Max(l => l.After - l.Before) : 0):F1} m."));
+    flyMd.AppendLine();
+    flyMd.AppendLine("| edge | CS1 segment | prefab | at | highest end above terrain before → after (m) |");
+    flyMd.AppendLine("|---|---|---|---|---|");
+    foreach (var (e, from, to) in flyEdges.OrderByDescending(x => x.To - x.From))
+    {
+        var m0 = e.Curve.Eval(0.5);
+        flyMd.AppendLine(FormattableString.Invariant($"| {e.Id} | {e.Cs1Segment} | {e.Map.Cs2Prefab} | ({m0.X:F0}, {m0.Z:F0}) | {from:F1} → {to:F1} |"));
+    }
+    File.WriteAllText(Path.Combine(outDir, "flyover-lifts.md"), flyMd.ToString());
+    Console.WriteLine(FormattableString.Invariant($"flyover lift: {flyLifts.Count} nodes lifted on {flyEdges.Count} CS1 elevated courses -> flyover-lifts.md"));
+}
+{
     // Bridge overrides (bridges.tsv): the chosen CS1 bridge decks become CS2 bridge prefabs in import-bridges.json (right after the network
     // import); BR001 merge and the BR022 arches go to import-bridges-fixed.json (fixedIndex; off by default, --bridges-fixed on).
     string FindB(string name) => File.Exists(name) ? name : Path.Combine(AppContext.BaseDirectory, name);

@@ -73,7 +73,7 @@ Not written (pass --retry; entity ids are only valid for the running game sessio
 
 - Hairpins (Bézier length > 1.6 × chord, self-intersection, or a control point behind its end), checked on every imported CS1 segment: **0** found, 0 rebuilt.
 - Exact duplicate edges dropped: **0**.
-- Structure now from node elevation (not the B/E/S/T prefab suffix): 177 imported edges differ from the suffix-based class (Ground→Elevated 171, Elevated→Ground 6).
+- Structure now from node elevation (not the B/E/S/T prefab suffix): 173 imported edges differ from the suffix-based class (Ground→Elevated 171, Elevated→Ground 2).
 - Elevation ramps (Δelevation > 6 m over < 60 m) smoothed to ≤ 8 %: **14** ramps, 18 nodes raised/lowered, 5 still steeper than 12 % (blocked by a junction or the border).
 
 - Node merges refused because the nodes are stacked (height difference ≥ 2 m): **9**.
