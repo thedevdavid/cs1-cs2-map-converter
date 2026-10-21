@@ -1,0 +1,413 @@
+{
+ "name": "test-heights-ic08",
+ "_comment": "0.9.38 height test: CS1 segments 14574, 35648, 17897, 31688 (interchange 8) at their absolute CS1 y (138.9-140.7). Post on a map where they are not built yet (or undo them first); read report.heights (offMoreThan1m should be 0). Undo with POST /import/undo?id=<importId>.",
+ "nodes": [
+  {
+   "id": "n15925",
+   "x": 928.64,
+   "y": 138.93,
+   "z": -4307.76
+  },
+  {
+   "id": "n26813",
+   "x": 1041.45,
+   "y": 140.71,
+   "z": -4132.17
+  },
+  {
+   "id": "e14574_0ad1",
+   "x": 1026.32,
+   "y": 140.5,
+   "z": -4152.11
+  },
+  {
+   "id": "e14574_0d0",
+   "x": 1010,
+   "y": 140.27,
+   "z": -4173.61
+  },
+  {
+   "id": "n19703",
+   "x": 978.56,
+   "y": 139.82,
+   "z": -4215.06
+  },
+  {
+   "id": "e17897_0ad1",
+   "x": 962.1,
+   "y": 139.59,
+   "z": -4236.75
+  },
+  {
+   "id": "e17897_0d0",
+   "x": 943.57,
+   "y": 139.33,
+   "z": -4261.17
+  },
+  {
+   "id": "e17897_0bd1",
+   "x": 926.82,
+   "y": 139.09,
+   "z": -4283.25
+  },
+  {
+   "id": "n16779",
+   "x": 915.67,
+   "y": 138.94,
+   "z": -4297.95
+  },
+  {
+   "id": "n524",
+   "x": 1054.46,
+   "y": 140.71,
+   "z": -4141.92
+  },
+  {
+   "id": "e31688_0ad1",
+   "x": 943.78,
+   "y": 139.15,
+   "z": -4287.81
+  },
+  {
+   "id": "e31688_0d0",
+   "x": 960.09,
+   "y": 139.38,
+   "z": -4266.3
+  },
+  {
+   "id": "e31688_0bd1",
+   "x": 976.41,
+   "y": 139.61,
+   "z": -4244.8
+  },
+  {
+   "id": "n13419",
+   "x": 991.55,
+   "y": 139.82,
+   "z": -4224.84
+  },
+  {
+   "id": "e35648_0d0",
+   "x": 1023.01,
+   "y": 140.27,
+   "z": -4183.38
+  },
+  {
+   "id": "e35648_0bd1",
+   "x": 1039.33,
+   "y": 140.5,
+   "z": -4161.87
+  }
+ ],
+ "edges": [
+  {
+   "id": "e14574_0aa",
+   "a": "n26813",
+   "b": "e14574_0ad1",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     1036.73,
+     281.29,
+     -4138.38
+    ],
+    [
+     1031.62,
+     281.14,
+     -4145.12
+    ]
+   ],
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 14574
+  },
+  {
+   "id": "e14574_0ab",
+   "a": "e14574_0ad1",
+   "b": "e14574_0d0",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     1021.01,
+     280.84,
+     -4159.11
+    ],
+    [
+     1015.51,
+     280.69,
+     -4166.36
+    ]
+   ],
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 14574
+  },
+  {
+   "id": "e14574_0b",
+   "a": "e14574_0d0",
+   "b": "n19703",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     999,
+     280.22,
+     -4188.12
+    ],
+    [
+     987.99,
+     279.91,
+     -4202.62
+    ]
+   ],
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 14574
+  },
+  {
+   "id": "e17897_0aa",
+   "a": "n19703",
+   "b": "e17897_0ad1",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     973.84,
+     279.51,
+     -4221.28
+    ],
+    [
+     968.14,
+     279.35,
+     -4228.79
+    ]
+   ],
+   "noPillars": true,
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 17897
+  },
+  {
+   "id": "e17897_0ab",
+   "a": "e17897_0ad1",
+   "b": "e17897_0d0",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     956.06,
+     279.01,
+     -4244.72
+    ],
+    [
+     949.67,
+     278.83,
+     -4253.14
+    ]
+   ],
+   "noPillars": true,
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 17897
+  },
+  {
+   "id": "e17897_0ba",
+   "a": "e17897_0d0",
+   "b": "e17897_0bd1",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     937.48,
+     278.48,
+     -4269.2
+    ],
+    [
+     931.68,
+     278.32,
+     -4276.84
+    ]
+   ],
+   "noPillars": true,
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 17897
+  },
+  {
+   "id": "e17897_0bb",
+   "a": "e17897_0bd1",
+   "b": "n16779",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     921.96,
+     278.04,
+     -4289.66
+    ],
+    [
+     918.02,
+     277.93,
+     -4294.84
+    ]
+   ],
+   "noPillars": true,
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 17897
+  },
+  {
+   "id": "e31688_0aa",
+   "a": "n15925",
+   "b": "e31688_0ad1",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     933.36,
+     278,
+     -4301.54
+    ],
+    [
+     938.47,
+     278.14,
+     -4294.81
+    ]
+   ],
+   "noPillars": true,
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 31688
+  },
+  {
+   "id": "e31688_0ab",
+   "a": "e31688_0ad1",
+   "b": "e31688_0d0",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     949.08,
+     278.44,
+     -4280.82
+    ],
+    [
+     954.59,
+     278.6,
+     -4273.56
+    ]
+   ],
+   "noPillars": true,
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 31688
+  },
+  {
+   "id": "e31688_0ba",
+   "a": "e31688_0d0",
+   "b": "e31688_0bd1",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     965.6,
+     278.91,
+     -4259.05
+    ],
+    [
+     971.1,
+     279.07,
+     -4251.79
+    ]
+   ],
+   "noPillars": true,
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 31688
+  },
+  {
+   "id": "e31688_0bb",
+   "a": "e31688_0bd1",
+   "b": "n13419",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     981.72,
+     279.37,
+     -4237.8
+    ],
+    [
+     986.83,
+     279.51,
+     -4231.06
+    ]
+   ],
+   "noPillars": true,
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 31688
+  },
+  {
+   "id": "e35648_0a",
+   "a": "n13419",
+   "b": "e35648_0d0",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     1000.99,
+     279.91,
+     -4212.41
+    ],
+    [
+     1012,
+     280.22,
+     -4197.89
+    ]
+   ],
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 35648
+  },
+  {
+   "id": "e35648_0ba",
+   "a": "e35648_0d0",
+   "b": "e35648_0bd1",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     1028.51,
+     280.69,
+     -4176.13
+    ],
+    [
+     1034.02,
+     280.84,
+     -4168.87
+    ]
+   ],
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 35648
+  },
+  {
+   "id": "e35648_0bb",
+   "a": "e35648_0bd1",
+   "b": "n524",
+   "prefab": "Highway Oneway - 3 lanes",
+   "control": [
+    [
+     1044.63,
+     281.14,
+     -4154.88
+    ],
+    [
+     1049.75,
+     281.29,
+     -4148.14
+    ]
+   ],
+   "structure": "elevated",
+   "cs1_prefab": "2452038713.USRP 3L Interstate E",
+   "cs1_segment": 35648
+  }
+ ],
+ "options": {
+  "batchSize": 1,
+  "nodesFirst": true,
+  "heightMode": "absolute",
+  "dryRun": false,
+  "report": "full"
+ }
+}
