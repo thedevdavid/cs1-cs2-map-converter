@@ -1,0 +1,48 @@
+# JP Rock shed (west canyon): CS2 options
+
+**CS1 original:** an 11-piece rock-faced gallery on the west-canyon `USRP 4-Lane National Road`, the "JP Rock shed" from the Workshop collection.
+- **Pieces:** Procedural Objects `2077702761.rock_c_Data`, ids 22, 23, 24 and 215–222.
+- **Extent:** ~440 m along the road, from (−6246, 677) to (−6453, 1069). The road heading is 144–155°, climbing from y 240 to 262 (CS1 m).
+- **Each piece:** 55 × 22 × 59 m, placed every ~43 m. The centre sits 4–6 m off the road axis toward the hill. Its bottom is 6 m below the road and its top 16–17 m above it.
+- **Surroundings:** the terrain 30 m to the hill side is 280–306 m; to the valley side 236–262 m. So the rock shell leans on the slope and covers the road, with the valley side open.
+- CS1 reference: `next-run/shots-cs1/24-po-rocks-cliffs-west.png`. CS1 road: half-width 12.4 m, mapped to `Medium Road` in CS2.
+
+**Searches:**
+- **Mod cache:** every `.Prefab` name in the 703 cached PDX mods, matched on shed, gallery, galerie, canopy, shelter, roof, cover, snow, avalanche, half tunnel, tunnel, portal, overhang, carport, awning, arcade, colonnade and cut and cover. Script: scratchpad `scan2.js`; result in the shared notes `bridges-research/rockshed-scan.tsv`.
+- **Paradox Mods:** English, Japanese and German terms (web pass, see below).
+- **Live prefab list:** not read. The game was not running on 2026-10-21; the queries to run are listed at the end.
+- **Markers:** **[V]** = seen in a file or on a page, **[U]** = unverified.
+
+## Result: no rock shed, avalanche gallery or one-sided-roof road exists for CS2
+
+WEB_RESULT
+
+### Closest local pieces (none is a gallery)
+
+| prefab | mod (id) | in the active playset | kind | why it does not do the job |
+|---|---|---|---|---|
+| `ArtDecoTunnelSmall`, `ArtDecoTunnelLarge` | Art Deco Walls, Tunnels and Bridges (157964) | **yes** [V: `playset_config.json`] | object (portal face) | a decorative arched portal for the face of a tunnel mouth, with no roof run |
+| `TunnelEntrance18`, `TunnelEntrance18Deep32`, `TunnelEntrance18Deep64` | ConcreteSet01 (154132) | **yes** | object | a concrete arch 18 m wide; the "Deep" variants are 32 / 64 m long arched hoods meant to sit over a vanilla tunnel entrance. This is the nearest thing to a roofed road piece: a **closed** arch with no open side, length 32 or 64 m per piece [U sizes] |
+| `BasePlateConcrete16/32/62`, `Wall16x16`, `Wall32x16`, `Wall32x32`, `Wall62x32`, `Pillar1x8`, `Pillar1x16`, `Pillar2x8`, `Pillar2x16`, `Pillar4x8`, `Pillar4x16` | ConcreteSet01 (154132) | yes | objects | kit parts for building a gallery by hand (fallback b) |
+| `Dome Covered Parking 01…04` | Parking Lots By Dome (81336) | no (lessgo only) | building with a parking lot | a car-park canopy with its own lot; it cannot be strung along a road |
+| `dJP-ResProps-Carport-Shelter-A`, `dJP-ResProps-BikeShelter4m` | Japan Pack (94094) | no | props | about 4–6 m house carports |
+| `TramStationShelter`, `TramStationDualShelter` | Tram Stations (137987) | no | props | stop shelters, ~10 m |
+| `BXP PedestrianBridgeCoveredWood01 Revised`, `W7CoveredPath875`, vanilla `Covered Pedestrian Bridge` | 124160, 151418, vanilla | 124160 yes | path nets | covered **path** bridges; they can't carry a 4-lane road and are always elevated |
+| `Wooden Covered Bridge - 2 lanes` | vanilla | – | road bridge net | a roofed **road** net, but 2 lanes, wooden, and bridge-only (`RequireElevated`) |
+
+Vanilla CS2 has no open-sided or covered road composition. A road at −4…−8 m relative to the terrain becomes a walled cut, open on top; at −8 m or deeper it becomes a closed tunnel (decompiled `NetCompositionHelpers.GetElevationFlags`, see cs2-bridge-assets.md §1).
+
+## Fallbacks, ranked
+
+| rank | fallback | how the converter builds it | look | risk / effort |
+|---|---|---|---|---|
+| **1** | **(b) ConcreteSet01 gallery**, rock-faced: a roof of `BasePlateConcrete32` slabs + a valley-side colonnade of `Pillar2x8` / `Pillar2x16` + a hill-side `Wall32x16`, then the existing PO-rock cliff pieces on the roof | objects via `/import/objects` along the CS1 road line, every 32 m (~14 bays over 440 m). Per bay: one slab at y = road + clearance + slab thickness [U, ≥ 6 m clearance], yaw = road heading; 2 pillars on the valley edge (half-width + 1 m from the axis); one wall on the hill edge. The 11 `rock_c` pieces already go out as cliff/rock objects in the PO-rocks layer; keep them on top of the roof so the gallery reads rock-faced as in CS1. Needs Anarchy (in the playset) because slabs and pillars overlap the road | the closest to CS1: a covered road open to the valley, a rock shell above. Concrete slabs instead of a rock canopy | **medium**. Object pitch is not supported, but the road climbs 22 m over 440 m (5 %), so each 32 m slab must step down 1.6 m (stepped roof edge, or use 16 m slabs for smaller steps). Sizes and pivots of all pieces must be measured first with `/prefabs/info` [U] |
+| **2** | **(a) real tunnel section** with portals | lower the 440 m road to ≤ −8 m relative to the terrain by raising the terrain over it (a heightmap ridge along the road, ~12 m above the deck, wider than the road), then emit the road as tunnel edges (elevation −8…−12 m) between two portals. Optionally put `ArtDecoTunnelLarge` or `TunnelEntrance18` portal faces at both ends | a closed tunnel through a rock rib: the road disappears from view, with no valley-side openings. Reads as "road goes into the mountain", not as a gallery | **medium-high**. It needs a terrain edit on the canyon wall (a heightmap stamp along the road), the rock objects must sit on the new ridge, and the CS2 tunnel lighting and portal are vanilla. Simple for the converter once the stamp exists, and fully automatic |
+| 3 | leave it open | nothing; keep the 11 rock pieces as scattered cliff objects | open road under a rock wall | none |
+
+**Recommendation:** fallback (b). It is the only option that keeps the open-sided gallery character, and it can be fully generated from the CS1 road line. Use (a) only if the owner prefers a clean look over fidelity, or if the slab stepping looks bad in the first test.
+
+## Queries to run when the game is up (bridge session)
+
+- `GET /prefabs?category=net&query=Tunnel`, `query=Gallery`, `query=Shed`, `query=Covered`: confirm that no net exists beyond those listed above.
+- `GET /prefabs/info?name=…` for `BasePlateConcrete16`, `BasePlateConcrete32`, `Pillar2x8`, `Pillar2x16`, `Wall32x16`, `TunnelEntrance18Deep64`, `ArtDecoTunnelLarge`: sizes and pivots before the converter writes the gallery objects.
