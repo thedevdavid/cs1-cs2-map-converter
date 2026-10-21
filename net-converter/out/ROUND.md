@@ -744,3 +744,26 @@ The pieces between them are built, so the course alternates between built and mi
 - The roof covers 99.9 % of the road strip from the column line to the wall, sampled at 1 m. The 13 open samples are at the two ends.
 - The wall covers 100 % of the hill edge.
 - Not checked: the CliffRock5 height. If a rock still shows above the wall, lower its y or move it further back.
+
+## Round 38: the avalanche gallery against the reference photos (owner's A-v12 review of 24)
+
+Owner: "24 doesnt look like the example inspo images". Interchange 8 / BR001 are accepted. The reference photos are next-run/ref-gallery-1.webp (inside) and ref-gallery-2.webp (outside). Kept from round 37: roof at the 48 m smoothed profile + 6.5 m, placement by arc length, hill wall flush with the roof.
+
+1. **Colonnade:** a Pillar1x8 (1 × 8 × 1 m, ConcreteSet01) stack every 4 m along the road under the valley slab edge, from the fascia underside down to the terrain. 111 stacks, 111 pieces in x1 (114 at 2×). Was a Pillar2x8 every 8 m.
+2. **Roof cover:**
+   - The 11 CS1 rock_c pieces are back ON the roof as CliffRock5, base (bounds min y −2.57) at the roof top. CliffRock5 is 36 × 17 × 36 m, wider than the 26.5 m roof, so each one is turned to the road and set toward the hill (centre 20.6 m in from the column line): its valley side ends 1.5 m inside the roof edge, and the rest reaches over the wall into the hill.
+   - Over the whole roof top: a jittered 2.5 m scatter, inset 1.5 m from the valley edge.
+     - 1180 GreenBushWild01/02 (kind tree, adult);
+     - 778 stones from the rock-scatter layer's Rock01…Rock30.
+   - Every base sits at the roof top: the highest slab row covering the point, + 0.2 m.
+   - Check: 0 cover pieces reach past the valley edge.
+3. **Fascia:** 4 more BasePlateConcrete16 stacked under each valley-side slab at 0.2 m steps, a 1 m concrete edge (220 objects).
+4. **Foreground:** a new tree-mask rule, the rock shed's open valley side. The ring runs from just under the slab edge out 20 m from the column line, 10 m past each end, and masks 93 trees. The same ring is in out/clear-rock-shed.json and out/x1/clear-rock-shed.json (surfaces format, one polygon, prefab "none (clear area)") for demolishing the trees already placed. It is not a surface import.
+5. **Portals:** left as they are. TunnelEntrance18 (26 × 14 × 16 m, 10 m opening) would have to sink 3.5 m below the road for its opening to meet the roof at + 6.5 m. It would still stand 4 m above the hill wall, which is flush with the roof.
+
+**Counts** (x1): 2438 objects: 110 roof slabs + 220 fascia plates, 28 Wall32x16, 111 Pillar1x8, 11 CliffRock5, 1180 bushes, 778 stones.
+
+**Bounds check** (stats.md):
+- The roof covers 99.9 % of the road strip; the 13 open 1 m samples are at the ends.
+- The largest step between roof rows is 1.49 m in x1 (2.98 m at 2×). The round-37 figure of 2.98 m for x1 was a bug in the check: deduplicating heights skipped a row. It now compares row to row.
+- The wall covers 100 % of the hill edge.
