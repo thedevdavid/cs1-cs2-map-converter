@@ -684,3 +684,12 @@ Owner: "1. it should be built into the mountain side, not on the mountain. 2. do
 4. **Wall pieces off the line** (A-v14 24-06): the end piece came from clamping the last wall to the end, which put a duplicate on the curve's chord, and the walls followed a narrower hill edge. Now there is one wall line at axis + 25 m, a regular 16 m pitch, and an end piece only where the last regular one doesn't reach the end.
 
 **Counts** (x1): 580 objects: 427 BasePlateConcrete16 (183 roof slabs in 61 rows of 3 + 244 fascia), 30 Wall32x16, 123 Pillar1x8. The roof covers 99.9 % of the road strip, and the largest step between rows is 1.49 m in x1.
+
+### Round 40b: every roof row into the cut face
+
+- The axis + 25 m cap is gone. Each row reaches into the terrain (terrain ≥ roof top at its centre and 6 m either side, + 2 m), capped only at axis + 40 m (52.9 m from the column line).
+- **Row depth** from the column line: **min 42.0 m, max 43.5 m** in x1 (40.5–42.0 m at 2×). The face starts 39.5–41.5 m from the column line in x1, widest at row 6 (SE end).
+- All 61 rows reach the face; none stops at the cap.
+- No wall is left: there is no gap anywhere (0 of 492 1 m samples open along the hill edge). The 30 Wall32x16 of round 40 are gone.
+- Unchanged from round 40: the 492 m CS1 length, bare roof, 3 slabs across per row, 4-plate fascia, Pillar1x8 colonnade every 4 m, tree mask.
+- x1: 550 objects: 427 BasePlateConcrete16 (183 roof + 244 fascia), 123 Pillar1x8.

@@ -781,3 +781,24 @@ The colonnade, the portal heads and the hill wall were accepted (24-10, 24-14). 
 3. **Everything else unchanged from round 38**: roof slabs, fascia, walls, Pillar1x8 colonnade, valley tree mask, clear-rock-shed.json.
 
 The gallery file is now 5178 objects in x1 (was 2438): 330 plates, 28 walls, 111 Pillar1x8, 3253 bushes, 1456 stones.
+
+## Round 40: the gallery at the CS1 shell's length, into the hill, bare roof (owner's A-v14 review, dakota-A14b-2048)
+
+Owner: "1. it should be built into the mountain side, not on the mountain. 2. don't need foliage on top. 3. it seems to be too long. 4. look at how it looks in CS1 and how long it is. and replicate it. the only difference is that the sides should be opened like now."
+
+1. **Length = the CS1 shell union.** The roof runs from half a shell (23.5 m; the CS1 shells are 46.7–47.7 m long) before the first rock_c centre to half a shell after the last, measured along the road.
+   - New: 492 m of road, from (−6235.4, 655.3) to (−6462.7, 1077.6).
+   - A-v14: 445 m, from (−6249.8, 673.9) to (−6457.6, 1066.5); the roof ran centre to centre.
+   - CS1 union, by your numbers: about 490 m.
+   - So the new roof is 47 m longer, about 23 m at each end, to match CS1. A-v14 was shorter than CS1, not longer.
+   - The column line and the colonnade follow the new extent. The tree mask is unchanged (still the round-38 strip, 10 m past the shell centres).
+2. **Into the hill.** Each roof row runs from the column line toward the hill until the terrain at its centre and 6 m either side reaches the roof top, + 2 m, capped at the CS1 shell's hill edge (axis + 25 m, 37.9 m from the column line). The 16 m slabs are spread evenly across that width.
+   - **Bench** (playable heightmap 10201528-dktflls-1to1.png): column line → first terrain at roof-top height is **min 39.5 m, max 41.5 m, widest at row 6** (the SE end). The carved bench is flat about 7 m below the roof all the way to there, then the cut face rises.
+   - So no row reaches the face inside the cap. All 61 rows stop at axis + 25 m, 1.6–3.6 m short of the face.
+   - A wall therefore stands at every gap along the whole length: 30 Wall32x16, all on the one axis + 25 m line (centres 25.00–25.29 m from the road axis). Tops are flush with the roof, and the bases go about 9 m into the bench.
+   - The check finds 0 open 1 m samples along the hill edge.
+   - **Option:** raise the cap to about axis + 29 m (one more slab width) and every row runs into the face. Then no walls are needed, and the gallery reads as cut into the slope. Narrowing the bench in hm-rebuild would do the same.
+3. **Bare roof:** no CliffRock5, bushes or stones. Kept: the 4-plate fascia under the valley slabs (5 layers in all), the Pillar1x8 colonnade every 4 m on the valley side, roof at the 48 m smoothed profile + 6.5 m. The converter has never placed portal objects (no TunnelEntrance), so the "portal heads" in the shots are the fascia and slab ends.
+4. **Wall pieces off the line** (A-v14 24-06): the end piece came from clamping the last wall to the end, which put a duplicate on the curve's chord, and the walls followed a narrower hill edge. Now there is one wall line at axis + 25 m, a regular 16 m pitch, and an end piece only where the last regular one doesn't reach the end.
+
+**Counts** (x1): 580 objects: 427 BasePlateConcrete16 (183 roof slabs in 61 rows of 3 + 244 fascia), 30 Wall32x16, 123 Pillar1x8. The roof covers 99.9 % of the road strip, and the largest step between rows is 1.49 m in x1.
