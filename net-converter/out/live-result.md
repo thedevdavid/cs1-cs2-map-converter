@@ -490,3 +490,11 @@ The roof is square plates at road + 6.5 m, each with its valley edge on the colu
 - Counts:
   - x1: 1 × 62 + 4 × 32 + 36 × 16 plates, 14 Wall32x16 (154132), 56 Vertical Pillar every 8 m (y = roof underside), 11 CliffRock5. 122 objects.
   - x2 (doubled heights, steeper): 0 × 62 + 2 × 32 + 50 × 16. 133 objects.
+
+## Round 34h: gallery from the packs only (owner: "use the packs, not the vanilla")
+
+No `Vertical Pillar`, no ITBP. Valley-side columns are ConcreteSet01 Pillar2x16 / Pillar2x8 (pivot centre-bottom), stacked from the slab underside down to the
+terrain: 16 m pieces while more than 8 m remain, then one 8 m piece. The bottom piece goes into the ground by what is left over.
+- Roof (62 / 32 / 16 rule), 14 Wall32x16 and 11 CliffRock5: as in 35f11c8.
+- x1: 1 × BasePlateConcrete62 + 4 × 32 + 36 × 16, 14 Wall32x16, 56 Pillar2x8 (one per column), 11 CliffRock5. 122 objects.
+- x2: 0 × 62 + 2 × 32 + 50 × 16, 14 Wall32x16, 56 columns (1 Pillar2x16 + 55 Pillar2x8), 11 CliffRock5. 133 objects.
