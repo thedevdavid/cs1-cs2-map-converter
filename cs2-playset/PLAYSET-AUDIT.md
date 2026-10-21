@@ -74,7 +74,7 @@ Status key:
 |---|---|---|
 | 144834 | Terrain Textures Pack: Rocks | only in `optional/import-surfaces-rock.json` / `po-rock.json`, which the runner posts only with `--with rock,po-rock` |
 | 144550 | Terrain Textures Pack - Grass | no prefab in any import file |
-| 143898 | Terrain Textures Pack - Ground | only in optional surface files |
+| 143898 | Terrain Textures Pack - Ground | no prefab in any import file, optional ones included |
 | 148077 | Dirty Surfaces Pack | only in `optional/import-surfaces-decals.json` / `sand-smooth-pack.json` (`--with decals,sand-pack`) |
 | 135944 | DIY Stone Arch Rail / Road Bridge Kit | `StoneArchRailBridge` only in `optional/import-po-structure-br006-arches.json` (`--with po-br006-arches`) |
 | 136168 | DIY Artdeco Bridge Kit / LA River Bridges | no prefab placed |
@@ -86,7 +86,14 @@ Status key:
 | 160320 | Bridge Builder | code mod; not used by the runner |
 | local | ImportedData/1424637002, 1698185143, 865402566 | SC44 Pere Marquette train assets (imported); nothing placed |
 
-**If you later re-enable an optional runner step:** `--with rock`, `po-rock`, `decals` or `sand-pack` brings back 144834 / 143898 / 148077, and `--with po-br006-arches` brings back 135944.
+**If you later re-enable an optional runner step** (`net-converter/tools/import-run.mjs --with …`; all are surface paints or objects that are off by default):
+- `rock`: `optional/import-surfaces-rock.json`, 151 patches of `gaga TTP - Pebbles 1L dark` (brown scree) on every slope ≥ 40° of the true-height heightmap (patches ≥ 400 m²). Needs 144834.
+- `po-rock`: `optional/import-surfaces-po-rock.json`, 63 patches of `gaga TTP - Pebbles 2L` over the footprints of the CS1 PO mountains, rock work and falls steps (patches ≥ 100 m²). Needs 144834.
+- `decals`: `optional/import-surfaces-decals.json`, the 41 CS1 R69 Big Decal Dirt/Mud as 16 × 16 m squares: 33 `PDO23 Dirty Surface 01` (dirt) and 8 `PDO23 Soil Surface 01` (mud). Needs 148077.
+- `sand-pack`: `optional/import-surfaces-sand-smooth-pack.json`, 387 patches of `PDO23 Dirty Sand Surface 01`. This is the pack version of the smoothed sand that the default run paints with vanilla `Sand Surface 01`; use one or the other. Needs 148077.
+- `po-br006-arches`: `optional/import-po-structure-br006-arches.json`, BR006 variant b: 7 `StoneArchRailBridge` objects under the deck. The default is variant a, without kit objects. Needs 135944.
+
+Without these steps, the default run uses vanilla only: vanilla rock objects, Sand Surface 01/02, Agriculture and Pavement surfaces, and terrain paint.
 
 ### MISSING
 
