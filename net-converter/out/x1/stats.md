@@ -456,7 +456,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Flat QuaySmall01 edges (cross-slope < 0.4 m at × 1): 21, wall right 11, both 4, left 6; their nodes raised to ≥ 4 m (one side) / ≥ 8 m (both) as the fallback.
 - One-way highway stubs to CS1 dead ends left out: 0 courses.
 - One-way courses pruned after the stub removal (they met head-on at a node with no exit or no entry): 0.
-- Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md, run-20261020-192927.md, run-20261020-193334.md, run-20261020-193751.md, run-20261020-211001.md, run-20261020-231951.md, run-a7.md (33 dropped courses).
+- Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md, run-20261020-192927.md, run-20261020-193334.md, run-20261020-193751.md, run-20261020-211001.md, run-20261020-231951.md, run-20261021-000201.md, run-a7.md (33 dropped courses).
 - e20430_0b clear of its parallel carriageway: e20430_0b Highway Oneway - 3 lanes beside e16466_0a Highway Oneway - 3 lanes (15.5 m; run report: move 0.9 m): moved 1.9 m
 - Courses inside a highway footprint (walls, decor) moved sideways by the two CS2 half-widths + 1 m: 0; impossible (between carriageways) 0.
 - Seaways stay at the riverbed (pass --seaway-at-water to write them at the water surface once the dig test shows digging).

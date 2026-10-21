@@ -70,9 +70,14 @@ public static class DetroitTest
 
         // Round 28 (A-v8 crashed natively during the combined step): one file per option, so each can be tried on its own after verify-end.
         File.Delete(Path.Combine(outDir, "import-detroit-test.json"));
-        foreach (var (file, tag, what) in new[] { ("import-detroit-opt2.json", "dt2_", "option 2, BXP Suspension Bridge - Highway Twoway - 6 Lanes"), ("import-detroit-opt3.json", "dt3_", "option 3, BXP Double Deck Suspension Bridge - Highway + Lower Highway") })
+        // Round 30: opt3 CRASHES the game natively (the BXP Double Deck Suspension Bridge - Highway upper deck alone is enough, reproduced twice): it moves
+        // to optional/ and out of the runner; opt2 imported fine and stays the opt-in test.
+        File.Delete(Path.Combine(outDir, "import-detroit-opt3.json"));
+        var opt = Path.Combine(outDir, "optional"); Directory.CreateDirectory(opt);
+        foreach (var (file, tag, what) in new[] { (Path.Combine(outDir, "import-detroit-opt2.json"), "dt2_", "option 2, BXP Suspension Bridge - Highway Twoway - 6 Lanes"),
+                                                  (Path.Combine(opt, "import-detroit-opt3.json"), "dt3_", "option 3, BXP Double Deck Suspension Bridge - Highway + Lower Highway. CRASHES THE GAME NATIVELY (A-v8, twice, upper deck alone): do not import") })
         {
-            using var fs = File.Create(Path.Combine(outDir, file));
+            using var fs = File.Create(file);
             using var w = new Utf8JsonWriter(fs, Json.Indented);
             w.WriteStartObject();
             w.WriteString("name", Path.GetFileNameWithoutExtension(file).Replace("import-", ""));

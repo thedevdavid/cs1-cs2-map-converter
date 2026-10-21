@@ -1,4 +1,4 @@
-# Conversion outputs (2026-10-20)
+# Conversion outputs (2026-10-21)
 
 Dump: `C:\Users\dleva\AppData\Local\DakotaExport\2972879554_Dakota_Falls-20261019-063123.json`. Run it all with `node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5]`. Import order (bridges: import-bridges.json right after the network; round 10, owner review of A-v4: no quays, retaining walls, PO walls, monorail decor or dam files; dam by hand, see manual-objects.md): network → gaps → power, canals, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → dam (one network edge) after the bridges → … → surfaces (vanilla paint plan: fields, PO pavement, sand, dry grass; grass optional; the pack surfaces rock, PO rock, decals and pack sand are in optional/, runner --with) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
 out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 2048); same nodes and courses in both.
@@ -409,3 +409,9 @@ seeded per feature. `--paint` overrides any layer: brush (sand / dry / dirt / lu
     straightened the curve), and the far end now belongs to two 128 m pieces 8.5 m off (a straight run re-split at the junction).
   These are game-side relocations at acute or folded junctions, not losses. The runner's 2 m re-check is strict on purpose and lists them as missing; bridge 0.9.33
   marks the folds as merged.
+
+## Round 30: Detroit option 3 out
+
+`import-detroit-opt3` crashed the game natively twice, even with the lower deck stripped: the `BXP Double Deck Suspension Bridge - Highway` upper deck alone
+is enough. Its file now lives only in optional/import-detroit-opt3.json, with a CRASHES note, and has no runner step. `import-detroit-opt2` imported fine
+(2 spans created, 2 stubs merged) and stays the opt-in `--with detroit-opt2` step after verify-end.

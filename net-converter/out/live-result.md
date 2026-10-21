@@ -291,3 +291,9 @@ seeded per feature. `--paint` overrides any layer: brush (sand / dry / dirt / lu
     straightened the curve), and the far end now belongs to two 128 m pieces 8.5 m off (a straight run re-split at the junction).
   These are game-side relocations at acute or folded junctions, not losses. The runner's 2 m re-check is strict on purpose and lists them as missing; bridge 0.9.33
   marks the folds as merged.
+
+## Round 30: Detroit option 3 out
+
+`import-detroit-opt3` crashed the game natively twice, even with the lower deck stripped: the `BXP Double Deck Suspension Bridge - Highway` upper deck alone
+is enough. Its file now lives only in optional/import-detroit-opt3.json, with a CRASHES note, and has no runner step. `import-detroit-opt2` imported fine
+(2 spans created, 2 stubs merged) and stays the opt-in `--with detroit-opt2` step after verify-end.

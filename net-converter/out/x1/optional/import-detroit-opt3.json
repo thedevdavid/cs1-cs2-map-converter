@@ -1,6 +1,6 @@
 {
   "name": "detroit-opt3",
-  "_comment": "TEST ONLY, option 3, BXP Double Deck Suspension Bridge - Highway \u002B Lower Highway, next to the current BR001 (owner decides after seeing it). Standalone decks, not connected; undo with POST /import/undo?id=\u003CimportId\u003E. A-v8: the combined test crashed the game natively; run this after verify-end.",
+  "_comment": "TEST ONLY, option 3, BXP Double Deck Suspension Bridge - Highway \u002B Lower Highway. CRASHES THE GAME NATIVELY (A-v8, twice, upper deck alone): do not import, next to the current BR001 (owner decides after seeing it). Standalone decks, not connected; undo with POST /import/undo?id=\u003CimportId\u003E. A-v8: the combined test crashed the game natively; run this after verify-end.",
   "nodes": [
     {
       "id": "dt3_u0",
