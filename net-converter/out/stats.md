@@ -398,10 +398,10 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
 - Terrain paint import-terrain-paint-sand.json: material Sand, CS1 painted sand (all Sand cells): 321 polygons, 0 strokes, 9.94 km², softEdge 20 m.
 - Terrain paint optional\import-terrain-paint-rock.json: material (none: rock is automatic on steep slopes), slope ≥ 40° and the PO rock / cliff footprints: 214 polygons, 0 strokes, 5.39 km², softEdge 0 m, not imported.
-- Terrain paint import-terrain-paint-dry-grass.json: material Dry, dry open ground: east / south-east plains (22503 cells) and south-facing slopes (20824 cells): 426 polygons, 0 strokes, 9.19 km², softEdge 20 m.
+- Terrain paint import-terrain-paint-dry-grass.json: material Dry, dry open ground: east / south-east plains (22502 cells) and south-facing slopes (20824 cells): 426 polygons, 0 strokes, 9.19 km², softEdge 20 m.
 - Terrain paint import-terrain-paint-bare-earth.json: material Dirt, CS1 dirt / mud decals: 0 polygons, 128 strokes, 0.05 km², softEdge 0 m.
-- Terrain paint import-terrain-paint-n1-riparian-lush.json: Lush 0.6, 73 polygons, 1.17 km², 7835 cells (N1 cottonwood / willow bottoms).
-- Terrain paint import-terrain-paint-n12-fertile-dry.json: Dry 0.35, 276 polygons, 15.15 km², 59081 cells (N12 CS1 fertile land (yellower)).
+- Terrain paint import-terrain-paint-n1-riparian-lush.json: Lush 0.6, 73 polygons, 1.17 km², 7834 cells (N1 cottonwood / willow bottoms).
+- Terrain paint import-terrain-paint-n12-fertile-dry.json: Dry 0.35, 276 polygons, 15.15 km², 59080 cells (N12 CS1 fertile land (yellower)).
 - Terrain paint import-terrain-paint-n13-high-ground-dry.json: Dry 0.5, 97 polygons, 11.42 km², 45868 cells (N13 bare high ground above the treeline 588 m).
 - Terrain paint import-terrain-paint-n6-savanna-dry.json: Dry 0.4, 1334 polygons, 41.37 km², 133406 cells (N6 ponderosa savanna floor).
 - Terrain paint import-terrain-paint-n6-savanna-dirt.json: Dirt 0.45, 40029 strokes (N6 bare soil dabs between the pines).
@@ -413,11 +413,11 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Terrain paint import-terrain-paint-n2-pit-banks-sand.json: Sand 0.6, 8 strokes (N2 gravel-pit pond shore).
 - Terrain paint import-terrain-paint-n8-playa-rim-lush.json: Lush 0.5, 70 polygons, 0.58 km², 2802 cells (N8 playa rims (80 playas)).
 - Terrain paint import-terrain-paint-n8-playa-centre-dirt.json: Dirt 0.6, 82 polygons, 0.92 km², 3736 cells (N8 playa centres (dried mud)).
-- Terrain paint N7 eligibility: free 705519, flat plains 237819, no tree within 100 m 13395, fertility < 0.5 1849.
+- Terrain paint N7 eligibility: free 705502, flat plains 237808, no tree within 100 m 13395, fertility < 0.5 1849.
 - Terrain paint import-terrain-paint-n7-prairie-dog-dry.json: Dry 0.8, 1 polygons, 0.05 km², 188 cells (N7 prairie dog towns (1)).
 - Terrain paint import-terrain-paint-n7-prairie-dog-dirt.json: Dirt 0.5, 215 strokes (N7 prairie dog mounds (30 % cover)).
-- Terrain paint import-terrain-paint-n11-ore-dirt.json: Dirt 0.5, 104 polygons, 8.74 km², 34189 cells (N11 CS1 ore ground).
-- Terrain paint import-terrain-paint-n11-oil-dirt.json: Dirt 0.3, 302 polygons, 57.32 km², 226064 cells (N11 CS1 oil ground (well pads)).
+- Terrain paint import-terrain-paint-n11-ore-dirt.json: Dirt 0.5, 104 polygons, 8.74 km², 34188 cells (N11 CS1 ore ground).
+- Terrain paint import-terrain-paint-n11-oil-dirt.json: Dirt 0.3, 302 polygons, 57.32 km², 226055 cells (N11 CS1 oil ground (well pads)).
 - Terrain paint import-terrain-paint-n9-dirt-roads-dirt.json: Dirt 0.5, 12253 strokes (N9 dirt / gravel road and track edges).
 - Terrain paint import-terrain-paint-n10-rail-ballast-dirt.json: Dirt 0.35, 4357 strokes (N10 rail ballast outside towns).
 - Paint plan S1 bank sand: 120 cells, 9 polygons, 0.03 km².
@@ -458,12 +458,14 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Flat QuaySmall01 edges (cross-slope < 0.4 m at × 2): 8, wall both 1, right 4, left 3; their nodes raised to ≥ 4 m (one side) / ≥ 8 m (both) as the fallback.
 - One-way highway stubs to CS1 dead ends left out: 0 courses.
 - One-way courses pruned after the stub removal (they met head-on at a node with no exit or no entry): 0.
-- Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md, run-20261020-192927.md, run-20261020-193334.md, run-20261020-193751.md, run-20261020-211001.md, run-20261020-231951.md, run-20261021-000201.md, run-20261021-025202.md, run-20261021-121517.md, run-20261021-122852.md, run-a7.md (36 dropped courses).
+- Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md, run-20261020-192927.md, run-20261020-193334.md, run-20261020-193751.md, run-20261020-211001.md, run-20261020-231951.md, run-20261021-000201.md, run-20261021-025202.md, run-20261021-121517.md, run-20261021-122852.md, run-20261021-131042.md, run-20261021-134229.md, run-a7.md (36 dropped courses).
 - e20430_0b clear of its parallel carriageway: e20430_0b Highway Oneway - 3 lanes beside e16466_0a Highway Oneway - 3 lanes (15.5 m; run report: move 0.9 m): moved 1.9 m
-- Carriageway spread: pass 1: 17 parallel carriageway pairs closer than their two half-widths, 51 nodes moved apart.
-- Carriageway spread: pass 2: 2 parallel carriageway pairs closer than their two half-widths, 8 nodes moved apart.
-- Carriageway spread: pass 3: 0 parallel carriageway pairs closer than their two half-widths, 2 nodes moved apart.
-- Carriageway spread: pass 4: 0 parallel carriageway pairs closer than their two half-widths, 0 nodes moved apart.
+- Carriageway spread: pass 1: 99 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 227 nodes moved apart.
+- Carriageway spread: pass 2: 14 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 49 nodes moved apart.
+- Carriageway spread: pass 3: 5 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 18 nodes moved apart.
+- Carriageway spread: pass 4: 4 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 14 nodes moved apart.
+- Carriageway spread: pass 5: 4 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 14 nodes moved apart.
+- Carriageway spread: pass 6: 2 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 8 nodes moved apart.
 - Highway course dropped beside its node-sharing sibling e9919_0 (Highway Oneway - 1 lane): e22564_0b's free end e22564_0d0 moved 2.7 m away from it; the shared node n4291 stays.
 - Highway course dropped by the game, no node-sharing 'Highway Oneway - 3 lanes' sibling found, not moved: e31224_0ba.
 - Highway course dropped beside its node-sharing sibling e15395_0a (Highway Oneway - 2 lanes): e31224_0bb's free end e31224_0bd1 moved 2.2 m away from it; the shared node n27662 stays.

@@ -1,6 +1,6 @@
 {
   "name": "terrain-paint-dry-grass",
-  "_comment": "Terrain material paint (editor Terrain \u2192 Materials, POST /import/terrain-paint, bridge 0.9.29): dry open ground: east / south-east plains (22503 cells) and south-facing slopes (20824 cells). CS2 x/z metres, the same at both scales.",
+  "_comment": "Terrain material paint (editor Terrain \u2192 Materials, POST /import/terrain-paint, bridge 0.9.29): dry open ground: east / south-east plains (22502 cells) and south-facing slopes (20824 cells). CS2 x/z metres, the same at both scales.",
   "options": {
     "dryRun": false,
     "strength": 0.45,

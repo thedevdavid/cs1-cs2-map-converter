@@ -9,9 +9,9 @@
   "nodes": [
     {
       "id": "n21662",
-      "x": 464.17,
+      "x": 464.74,
       "y": 115.08,
-      "z": -4518.65,
+      "z": -4518.02,
       "snapToSegment": {
         "radius": 3,
         "prefabContains": "Highway Oneway"
@@ -19,9 +19,9 @@
     },
     {
       "id": "n14559",
-      "x": 413.4,
+      "x": 414.09,
       "y": 113.77,
-      "z": -4472.88,
+      "z": -4472.18,
       "snapToSegment": {
         "radius": 3,
         "prefabContains": "Highway Oneway"
@@ -95,14 +95,14 @@
       "prefab": "Highway Oneway - 3 lanes",
       "control": [
         [
-          448.58,
+          449.15,
           114.64,
-          -4505.29
+          -4504.66
         ],
         [
-          428.14,
+          428.82,
           114.21,
-          -4487.17
+          -4486.47
         ]
       ],
       "note": "e15883_0 as a 3-lane course"

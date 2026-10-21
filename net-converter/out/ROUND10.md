@@ -624,3 +624,47 @@ terrain: 16 m pieces while more than 8 m remain, then one 8 m piece. The bottom 
 - **N7 prairie dogs** were empty in A-v10. Cause: the round-34 tree mask keeps more trees (the playable 93.5 m rule instead of CS1 water / 97.5 m), so the
   open flat plains with no tree within 100 m shrank from 1.0 to 0.47 km², under the 0.5 km² floor for placing at least one town. The floor is now 0.15 km²
   (a town is 3–15 ha): 1 town, 0.05 km² Dry + 215 Dirt mounds.
+
+## Round 35b: runner phases; the A-v10 failures
+
+**Runner phases.** A-v8 and A-v10 both crashed natively seconds after the terrain render settings post on a fresh, unsaved map; loaded saves never did.
+- `--phase build` (default): every import step, settings, look climate + water. No terrain-cs1, no textures.
+- `--phase post-save`: only look terrain-cs1 + textures. It keeps run-state.json (it resumes, never resets).
+- `--phase all`: the old single pass.
+- `--save <name>`: POST /map/save?name= at the end of the build phase. The bridge has only /game/save, which is city-gated (409 in the editor); until /map/save
+  exists the runner prints "not available, save the map by hand now" and goes on.
+- The runbook: build → save → reload → post-save → save. Checked against the mock bridge.
+
+**A-v10 failures** (run-20261021-121517 + -122852, live-graph-20261021-122852-end.json), per course, the nearest live segment of the same prefab at t 0.2 / 0.5 / 0.8:
+- **Spot 14 (817, 4013):** no dead end CS1 does not have. The round-34 sibling move worked.
+- **Spot 15 (608, −4721):** 6 such dead ends: (723, −4579), (782, −4501), (808, −4467), (929, −4308), (960, −4266), (976, −4245).
+- **The BR001 south-approach deck pieces are really missing** (not folded): e16410_0a, e24407_0ba / _0bb, e31688_0aa / _0ab / _0bb, e35437_0b, e35648_0a / _0ba / _0bb.
+  - Nothing of their prefab within 2 m; the nearest is the opposite carriageway, 16.3 m away.
+  - Not an overlap: 16.5 m is more than the bridge's 16 m for two 3-lane carriageways, and the bridge reported no overlap drop for them.
+  - What they share: deck-fit split pieces (`_0a` / `_0b`), 20–110 m up, noPillars (the BR001 piers stand under them), no `elevated` flag since round 33.
+  - They first went missing in A-v9 (bridge 0.9.39, and the first run with control-point y in output metres instead of 2 × node y), and more in A-v10.
+  - **For the bridge session:** the batch log for e35648_0ba / e24407_0ba (does the game reject the definition, e.g. elevation range, or remove it after
+    building?), and whether 0.9.39+ uses the control-point y.
+- **Folded or moved junctions as before:** e31685_0, e34504_0 (2 of 3 points on a live 2-lane piece) and e35131_0 (curve straightened, 0.4 m at t 0.2).
+
+**Carriageway spread** (CarriagewaySpread.cs): parallel one-way highway courses closer than their two CS2 half-widths (the bridge's drop threshold) are pushed
+apart to the half-widths + 0.3 m: 17 pairs, about 55 nodes, converged in 3 passes. It does not touch the BR001 pieces above (16.5 m is enough).
+
+## Round 35c: A-v11 failures; runner save polling
+
+**A-v11** (run-20261021-131042, live-graph-20261021-131042-end.json), the 12 point-check failures:
+- **Present but folded or moved junctions:** e31685_0, e34504_0 (2 of 3 points lie 0.0 m on a live 2-lane piece) and e35131_0 (0.4 m at t 0.2, the
+  curve straightened).
+- **Missing:** e16410_0a, e24407_0ba / _0bb, e31688_0ab / _0bb, e35437_0b, e35648_0a / _0ba / _0bb.
+  - Nothing of any prefab lies within 12 m of their midpoints.
+  - The same set as A-v10, without e31688_0aa (built this time).
+- **Spot 14 (817, 4013):** 0 live dead ends CS1 does not have.
+- **Spot 15 (608, −4721):** 6: (723, −4579), (782, −4501), (808, −4467), (944, −4288), (960, −4266), (976, −4245).
+- **The round-35b carriageway spread** did not touch these pieces (their carriageways are 16.5 m apart, enough), so it cannot fix them.
+- **What changed for them since A-v8**, where they were built: diffing the import files, their nodes, structure and noPillars are identical. The only
+  difference is the control-point y: A-v8 had the old 2 × node y (~280 m), A-v9 on the corrected node y (~140 m). Bridge 0.9.39 arrived at the same
+  time.
+  - Suggested test on the saved map: post one of them (e35648_0ba) with the old and with the new control y, or ask the bridge how its build uses control y.
+
+**Runner `--save`:** a 202 answer is now followed by polling GET /map/save/status every second until done or failed (up to 5 min). It prints the package
+size and the time, e.g. "saved as … (59.3 MB, 2.0 s)" against the mock.

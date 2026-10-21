@@ -43,7 +43,7 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | highways | e15830_0 | Highway Oneway - 3 lanes | Missing | 0/0 | 2615 | 392 |
 | highways | e20175_0 | Highway Oneway - 3 lanes | Missing | 0/0 | 2697 | 458 |
 | highways | e20290_0 | Highway Oneway - 3 lanes | Missing | 0/0 | 2940 | 653 |
-| highways | e20430_0b | Highway Oneway - 3 lanes | Partial | 2/2 | 816 | 4012 |
+| highways | e20430_0b | Highway Oneway - 3 lanes | Partial | 2/2 | 816 | 4013 |
 | highways | e24272_0 | Highway Oneway - 3 lanes | Missing | 0/0 | 2906 | 668 |
 | highways | e28200_0g0a | Highway Oneway - 3 lanes | Missing | 0/0 | 2548 | 389 |
 | highways | e28200_0g0b | Highway Oneway - 3 lanes | Partial | 0/1 | 2524 | 379 |
