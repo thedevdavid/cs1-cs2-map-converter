@@ -237,7 +237,9 @@ public static class TerrainFeatures
             log.Add($"N7 eligibility: free {a}, flat plains {b}, no tree within 100 m {c}, fertility < 0.5 {d}");
         }
         var r7 = Rng("n7"); int towns = (int)Math.Round(elig.Count * cs * cs / 12e6);
-        if (towns == 0 && elig.Count * cs * cs >= 0.5e6) towns = 1;   // the open plains are small on this map (trees almost everywhere): at least one town
+        // At least one town when 0.15 km² qualifies (a town is 3–15 ha). Round 34 kept more trees (the tree mask moved to the playable heightmap), and the
+        // eligible plains fell from 1.0 to 0.47 km², under the earlier 0.5 km² floor; A-v10 got an empty N7 file.
+        if (towns == 0 && elig.Count * cs * cs >= 0.15e6) towns = 1;   // the open plains are small on this map (trees almost everywhere): at least one town
         var n7 = new bool[N]; var dabs7 = new List<(double, double, double)>(); var eligSet = elig.ToHashSet();
         for (int t = 0; t < towns && elig.Count > 0; t++)
         {

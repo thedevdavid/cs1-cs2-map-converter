@@ -498,3 +498,11 @@ terrain: 16 m pieces while more than 8 m remain, then one 8 m piece. The bottom 
 - Roof (62 / 32 / 16 rule), 14 Wall32x16 and 11 CliffRock5: as in 35f11c8.
 - x1: 1 × BasePlateConcrete62 + 4 × 32 + 36 × 16, 14 Wall32x16, 56 Pillar2x8 (one per column), 11 CliffRock5. 122 objects.
 - x2: 0 × 62 + 2 × 32 + 50 × 16, 14 Wall32x16, 56 columns (1 Pillar2x16 + 55 Pillar2x8), 11 CliffRock5. 133 objects.
+
+## Round 35: empty import files; N7 back
+
+- **Runner:** a file with no items (edges, objects, surfaces, polygons, strokes, sources all empty) is skipped with "- step: file is empty, skipped" instead
+  of being posted; the bridge answers 400 to an empty body. Checked against the mock bridge.
+- **N7 prairie dogs** were empty in A-v10. Cause: the round-34 tree mask keeps more trees (the playable 93.5 m rule instead of CS1 water / 97.5 m), so the
+  open flat plains with no tree within 100 m shrank from 1.0 to 0.47 km², under the 0.5 km² floor for placing at least one town. The floor is now 0.15 km²
+  (a town is 3–15 ha): 1 town, 0.05 km² Dry + 215 Dirt mounds.
