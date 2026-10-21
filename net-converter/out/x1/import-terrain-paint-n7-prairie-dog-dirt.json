@@ -9,5 +9,1726 @@
     "maxStamps": 250000
   },
   "polygons": [],
-  "strokes": []
+  "strokes": [
+    {
+      "id": "n7-prairie-dog-dirt_1",
+      "material": "Dirt",
+      "x": -1381.56,
+      "z": -935.59,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_2",
+      "material": "Dirt",
+      "x": -1457.64,
+      "z": -904.28,
+      "radius": 3.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_3",
+      "material": "Dirt",
+      "x": -1349.07,
+      "z": -1005.14,
+      "radius": 3.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_4",
+      "material": "Dirt",
+      "x": -1571.96,
+      "z": -869.7,
+      "radius": 4.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_5",
+      "material": "Dirt",
+      "x": -1520.41,
+      "z": -925.52,
+      "radius": 4.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_6",
+      "material": "Dirt",
+      "x": -1464.89,
+      "z": -1097.11,
+      "radius": 5.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_7",
+      "material": "Dirt",
+      "x": -1388.55,
+      "z": -941.84,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_8",
+      "material": "Dirt",
+      "x": -1499.02,
+      "z": -1067.29,
+      "radius": 5.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_9",
+      "material": "Dirt",
+      "x": -1526.01,
+      "z": -927.21,
+      "radius": 4.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_10",
+      "material": "Dirt",
+      "x": -1515.51,
+      "z": -853.09,
+      "radius": 4.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_11",
+      "material": "Dirt",
+      "x": -1489.87,
+      "z": -957.64,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_12",
+      "material": "Dirt",
+      "x": -1364.77,
+      "z": -828.67,
+      "radius": 4.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_13",
+      "material": "Dirt",
+      "x": -1500.29,
+      "z": -965.01,
+      "radius": 5.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_14",
+      "material": "Dirt",
+      "x": -1567.17,
+      "z": -872.49,
+      "radius": 5.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_15",
+      "material": "Dirt",
+      "x": -1379.83,
+      "z": -968.5,
+      "radius": 4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_16",
+      "material": "Dirt",
+      "x": -1493.84,
+      "z": -861.87,
+      "radius": 5.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_17",
+      "material": "Dirt",
+      "x": -1353.13,
+      "z": -929.77,
+      "radius": 3.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_18",
+      "material": "Dirt",
+      "x": -1436.58,
+      "z": -869.14,
+      "radius": 3.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_19",
+      "material": "Dirt",
+      "x": -1380.03,
+      "z": -955.2,
+      "radius": 3.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_20",
+      "material": "Dirt",
+      "x": -1383.68,
+      "z": -946.39,
+      "radius": 5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_21",
+      "material": "Dirt",
+      "x": -1495.54,
+      "z": -1061.4,
+      "radius": 5.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_22",
+      "material": "Dirt",
+      "x": -1431.51,
+      "z": -894.58,
+      "radius": 4.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_23",
+      "material": "Dirt",
+      "x": -1358.17,
+      "z": -988.67,
+      "radius": 6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_24",
+      "material": "Dirt",
+      "x": -1354.21,
+      "z": -853.69,
+      "radius": 4.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_25",
+      "material": "Dirt",
+      "x": -1546.09,
+      "z": -855.65,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_26",
+      "material": "Dirt",
+      "x": -1357.22,
+      "z": -849.55,
+      "radius": 5.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_27",
+      "material": "Dirt",
+      "x": -1399.3,
+      "z": -904.47,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_28",
+      "material": "Dirt",
+      "x": -1530.38,
+      "z": -853.8,
+      "radius": 5.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_29",
+      "material": "Dirt",
+      "x": -1363.34,
+      "z": -827.01,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_30",
+      "material": "Dirt",
+      "x": -1514.29,
+      "z": -797.54,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_31",
+      "material": "Dirt",
+      "x": -1495.72,
+      "z": -929.93,
+      "radius": 4.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_32",
+      "material": "Dirt",
+      "x": -1493.1,
+      "z": -1066.71,
+      "radius": 5.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_33",
+      "material": "Dirt",
+      "x": -1301.18,
+      "z": -1002.1,
+      "radius": 5.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_34",
+      "material": "Dirt",
+      "x": -1466.15,
+      "z": -770.17,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_35",
+      "material": "Dirt",
+      "x": -1428.95,
+      "z": -892.43,
+      "radius": 3.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_36",
+      "material": "Dirt",
+      "x": -1437.19,
+      "z": -998.09,
+      "radius": 5.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_37",
+      "material": "Dirt",
+      "x": -1367.9,
+      "z": -926.6,
+      "radius": 3.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_38",
+      "material": "Dirt",
+      "x": -1497.44,
+      "z": -997.58,
+      "radius": 4.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_39",
+      "material": "Dirt",
+      "x": -1397.37,
+      "z": -973.69,
+      "radius": 3.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_40",
+      "material": "Dirt",
+      "x": -1386.97,
+      "z": -944.55,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_41",
+      "material": "Dirt",
+      "x": -1399.36,
+      "z": -963.05,
+      "radius": 3.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_42",
+      "material": "Dirt",
+      "x": -1476.64,
+      "z": -788.74,
+      "radius": 4.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_43",
+      "material": "Dirt",
+      "x": -1544.35,
+      "z": -806.26,
+      "radius": 3.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_44",
+      "material": "Dirt",
+      "x": -1422.83,
+      "z": -979.23,
+      "radius": 3.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_45",
+      "material": "Dirt",
+      "x": -1502.79,
+      "z": -830.21,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_46",
+      "material": "Dirt",
+      "x": -1531.05,
+      "z": -881.91,
+      "radius": 5.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_47",
+      "material": "Dirt",
+      "x": -1344.39,
+      "z": -1028.6,
+      "radius": 4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_48",
+      "material": "Dirt",
+      "x": -1382.89,
+      "z": -967.36,
+      "radius": 3.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_49",
+      "material": "Dirt",
+      "x": -1370.38,
+      "z": -866.13,
+      "radius": 4.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_50",
+      "material": "Dirt",
+      "x": -1431.3,
+      "z": -930.86,
+      "radius": 5.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_51",
+      "material": "Dirt",
+      "x": -1383.31,
+      "z": -862.5,
+      "radius": 4.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_52",
+      "material": "Dirt",
+      "x": -1386.09,
+      "z": -859.85,
+      "radius": 3.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_53",
+      "material": "Dirt",
+      "x": -1344.33,
+      "z": -841.65,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_54",
+      "material": "Dirt",
+      "x": -1432.55,
+      "z": -971.56,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_55",
+      "material": "Dirt",
+      "x": -1582.15,
+      "z": -879.19,
+      "radius": 3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_56",
+      "material": "Dirt",
+      "x": -1466.09,
+      "z": -778.83,
+      "radius": 4.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_57",
+      "material": "Dirt",
+      "x": -1515.24,
+      "z": -807.09,
+      "radius": 5.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_58",
+      "material": "Dirt",
+      "x": -1435.55,
+      "z": -963.23,
+      "radius": 4.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_59",
+      "material": "Dirt",
+      "x": -1514.49,
+      "z": -948.85,
+      "radius": 3.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_60",
+      "material": "Dirt",
+      "x": -1403.06,
+      "z": -961.73,
+      "radius": 5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_61",
+      "material": "Dirt",
+      "x": -1398.87,
+      "z": -872.51,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_62",
+      "material": "Dirt",
+      "x": -1306.85,
+      "z": -990.26,
+      "radius": 3.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_63",
+      "material": "Dirt",
+      "x": -1392.59,
+      "z": -994.23,
+      "radius": 3.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_64",
+      "material": "Dirt",
+      "x": -1314.96,
+      "z": -915.68,
+      "radius": 4.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_65",
+      "material": "Dirt",
+      "x": -1380.22,
+      "z": -965.86,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_66",
+      "material": "Dirt",
+      "x": -1352.36,
+      "z": -849.03,
+      "radius": 4.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_67",
+      "material": "Dirt",
+      "x": -1503.32,
+      "z": -960.58,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_68",
+      "material": "Dirt",
+      "x": -1484.37,
+      "z": -852.99,
+      "radius": 4.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_69",
+      "material": "Dirt",
+      "x": -1369.68,
+      "z": -971.36,
+      "radius": 4.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_70",
+      "material": "Dirt",
+      "x": -1486.7,
+      "z": -829.05,
+      "radius": 4.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_71",
+      "material": "Dirt",
+      "x": -1483.24,
+      "z": -964.67,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_72",
+      "material": "Dirt",
+      "x": -1543.24,
+      "z": -914.22,
+      "radius": 4.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_73",
+      "material": "Dirt",
+      "x": -1355.79,
+      "z": -898.71,
+      "radius": 4.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_74",
+      "material": "Dirt",
+      "x": -1529.8,
+      "z": -866.5,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_75",
+      "material": "Dirt",
+      "x": -1393.91,
+      "z": -895.03,
+      "radius": 3.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_76",
+      "material": "Dirt",
+      "x": -1451.99,
+      "z": -936.16,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_77",
+      "material": "Dirt",
+      "x": -1447.84,
+      "z": -959.57,
+      "radius": 3.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_78",
+      "material": "Dirt",
+      "x": -1498.5,
+      "z": -903.49,
+      "radius": 3.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_79",
+      "material": "Dirt",
+      "x": -1423.71,
+      "z": -906.95,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_80",
+      "material": "Dirt",
+      "x": -1476.91,
+      "z": -861.28,
+      "radius": 4.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_81",
+      "material": "Dirt",
+      "x": -1495.61,
+      "z": -971.46,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_82",
+      "material": "Dirt",
+      "x": -1340.65,
+      "z": -933.19,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_83",
+      "material": "Dirt",
+      "x": -1423.18,
+      "z": -899.34,
+      "radius": 3.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_84",
+      "material": "Dirt",
+      "x": -1375.13,
+      "z": -1035.88,
+      "radius": 5.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_85",
+      "material": "Dirt",
+      "x": -1362.22,
+      "z": -848.51,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_86",
+      "material": "Dirt",
+      "x": -1507.79,
+      "z": -897.37,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_87",
+      "material": "Dirt",
+      "x": -1348.93,
+      "z": -865.17,
+      "radius": 5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_88",
+      "material": "Dirt",
+      "x": -1402.74,
+      "z": -1000.49,
+      "radius": 5.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_89",
+      "material": "Dirt",
+      "x": -1417.17,
+      "z": -864.81,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_90",
+      "material": "Dirt",
+      "x": -1520.25,
+      "z": -792.78,
+      "radius": 3.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_91",
+      "material": "Dirt",
+      "x": -1532.96,
+      "z": -839.25,
+      "radius": 4.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_92",
+      "material": "Dirt",
+      "x": -1415.82,
+      "z": -910.1,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_93",
+      "material": "Dirt",
+      "x": -1513.97,
+      "z": -852.69,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_94",
+      "material": "Dirt",
+      "x": -1371.81,
+      "z": -878.18,
+      "radius": 4.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_95",
+      "material": "Dirt",
+      "x": -1487.14,
+      "z": -883.61,
+      "radius": 5.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_96",
+      "material": "Dirt",
+      "x": -1423.7,
+      "z": -947.77,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_97",
+      "material": "Dirt",
+      "x": -1554.4,
+      "z": -891.03,
+      "radius": 4.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_98",
+      "material": "Dirt",
+      "x": -1305.23,
+      "z": -992.45,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_99",
+      "material": "Dirt",
+      "x": -1553.57,
+      "z": -926.82,
+      "radius": 4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_100",
+      "material": "Dirt",
+      "x": -1400.94,
+      "z": -965.16,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_101",
+      "material": "Dirt",
+      "x": -1353.13,
+      "z": -897.66,
+      "radius": 5.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_102",
+      "material": "Dirt",
+      "x": -1447.02,
+      "z": -892.53,
+      "radius": 4.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_103",
+      "material": "Dirt",
+      "x": -1335.5,
+      "z": -956.41,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_104",
+      "material": "Dirt",
+      "x": -1412.05,
+      "z": -963.46,
+      "radius": 5.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_105",
+      "material": "Dirt",
+      "x": -1514.81,
+      "z": -913.73,
+      "radius": 5.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_106",
+      "material": "Dirt",
+      "x": -1447.59,
+      "z": -969.72,
+      "radius": 4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_107",
+      "material": "Dirt",
+      "x": -1569.85,
+      "z": -920.03,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_108",
+      "material": "Dirt",
+      "x": -1475.47,
+      "z": -972.78,
+      "radius": 3.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_109",
+      "material": "Dirt",
+      "x": -1399.13,
+      "z": -941.9,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_110",
+      "material": "Dirt",
+      "x": -1502.88,
+      "z": -982.39,
+      "radius": 3.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_111",
+      "material": "Dirt",
+      "x": -1394.21,
+      "z": -891.52,
+      "radius": 4.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_112",
+      "material": "Dirt",
+      "x": -1455.05,
+      "z": -966.19,
+      "radius": 5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_113",
+      "material": "Dirt",
+      "x": -1499.88,
+      "z": -977.53,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_114",
+      "material": "Dirt",
+      "x": -1408.4,
+      "z": -911.69,
+      "radius": 3.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_115",
+      "material": "Dirt",
+      "x": -1351.05,
+      "z": -1019.36,
+      "radius": 5.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_116",
+      "material": "Dirt",
+      "x": -1433.7,
+      "z": -1003.84,
+      "radius": 4.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_117",
+      "material": "Dirt",
+      "x": -1535.11,
+      "z": -935.41,
+      "radius": 5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_118",
+      "material": "Dirt",
+      "x": -1457.1,
+      "z": -884.9,
+      "radius": 4.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_119",
+      "material": "Dirt",
+      "x": -1362.06,
+      "z": -878.89,
+      "radius": 4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_120",
+      "material": "Dirt",
+      "x": -1554.9,
+      "z": -957.79,
+      "radius": 4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_121",
+      "material": "Dirt",
+      "x": -1458.64,
+      "z": -948.73,
+      "radius": 5.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_122",
+      "material": "Dirt",
+      "x": -1547.06,
+      "z": -822.09,
+      "radius": 4.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_123",
+      "material": "Dirt",
+      "x": -1470.66,
+      "z": -898.94,
+      "radius": 4.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_124",
+      "material": "Dirt",
+      "x": -1442.2,
+      "z": -848.69,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_125",
+      "material": "Dirt",
+      "x": -1492,
+      "z": -892.1,
+      "radius": 3.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_126",
+      "material": "Dirt",
+      "x": -1488.68,
+      "z": -911.25,
+      "radius": 3.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_127",
+      "material": "Dirt",
+      "x": -1367.22,
+      "z": -909.31,
+      "radius": 5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_128",
+      "material": "Dirt",
+      "x": -1461.11,
+      "z": -819.17,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_129",
+      "material": "Dirt",
+      "x": -1520.9,
+      "z": -920.53,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_130",
+      "material": "Dirt",
+      "x": -1482.73,
+      "z": -869.58,
+      "radius": 3.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_131",
+      "material": "Dirt",
+      "x": -1501.83,
+      "z": -926.07,
+      "radius": 4.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_132",
+      "material": "Dirt",
+      "x": -1517.91,
+      "z": -982.78,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_133",
+      "material": "Dirt",
+      "x": -1362.71,
+      "z": -820.21,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_134",
+      "material": "Dirt",
+      "x": -1568.09,
+      "z": -882.82,
+      "radius": 3.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_135",
+      "material": "Dirt",
+      "x": -1415.72,
+      "z": -858.14,
+      "radius": 4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_136",
+      "material": "Dirt",
+      "x": -1392.93,
+      "z": -984.07,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_137",
+      "material": "Dirt",
+      "x": -1430.42,
+      "z": -957.74,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_138",
+      "material": "Dirt",
+      "x": -1332.35,
+      "z": -935.2,
+      "radius": 3.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_139",
+      "material": "Dirt",
+      "x": -1324.44,
+      "z": -996.68,
+      "radius": 4.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_140",
+      "material": "Dirt",
+      "x": -1511.77,
+      "z": -846.84,
+      "radius": 4.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_141",
+      "material": "Dirt",
+      "x": -1515.1,
+      "z": -787.78,
+      "radius": 3.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_142",
+      "material": "Dirt",
+      "x": -1499.1,
+      "z": -805.73,
+      "radius": 4.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_143",
+      "material": "Dirt",
+      "x": -1501.55,
+      "z": -984.94,
+      "radius": 3.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_144",
+      "material": "Dirt",
+      "x": -1530.87,
+      "z": -785.92,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_145",
+      "material": "Dirt",
+      "x": -1387.75,
+      "z": -891.99,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_146",
+      "material": "Dirt",
+      "x": -1476.15,
+      "z": -776.55,
+      "radius": 3.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_147",
+      "material": "Dirt",
+      "x": -1432.56,
+      "z": -953.64,
+      "radius": 4.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_148",
+      "material": "Dirt",
+      "x": -1417.01,
+      "z": -952.37,
+      "radius": 3.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_149",
+      "material": "Dirt",
+      "x": -1457.07,
+      "z": -922.27,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_150",
+      "material": "Dirt",
+      "x": -1513.27,
+      "z": -961.42,
+      "radius": 5.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_151",
+      "material": "Dirt",
+      "x": -1460.58,
+      "z": -804.56,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_152",
+      "material": "Dirt",
+      "x": -1401.95,
+      "z": -955.05,
+      "radius": 5.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_153",
+      "material": "Dirt",
+      "x": -1500.59,
+      "z": -932.05,
+      "radius": 4.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_154",
+      "material": "Dirt",
+      "x": -1479.1,
+      "z": -952.9,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_155",
+      "material": "Dirt",
+      "x": -1494.76,
+      "z": -835.29,
+      "radius": 4.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_156",
+      "material": "Dirt",
+      "x": -1467.38,
+      "z": -829.75,
+      "radius": 5.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_157",
+      "material": "Dirt",
+      "x": -1517.31,
+      "z": -868.37,
+      "radius": 3.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_158",
+      "material": "Dirt",
+      "x": -1551.27,
+      "z": -794.94,
+      "radius": 3.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_159",
+      "material": "Dirt",
+      "x": -1467.6,
+      "z": -935.05,
+      "radius": 3.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_160",
+      "material": "Dirt",
+      "x": -1356.44,
+      "z": -1025.62,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_161",
+      "material": "Dirt",
+      "x": -1350.09,
+      "z": -991.82,
+      "radius": 3.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_162",
+      "material": "Dirt",
+      "x": -1473.51,
+      "z": -879.85,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_163",
+      "material": "Dirt",
+      "x": -1341.98,
+      "z": -912.1,
+      "radius": 4.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_164",
+      "material": "Dirt",
+      "x": -1433.07,
+      "z": -894.93,
+      "radius": 5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_165",
+      "material": "Dirt",
+      "x": -1359.5,
+      "z": -902.93,
+      "radius": 3.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_166",
+      "material": "Dirt",
+      "x": -1355.53,
+      "z": -882.95,
+      "radius": 3.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_167",
+      "material": "Dirt",
+      "x": -1495.56,
+      "z": -828.53,
+      "radius": 6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_168",
+      "material": "Dirt",
+      "x": -1469.3,
+      "z": -780.69,
+      "radius": 4.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_169",
+      "material": "Dirt",
+      "x": -1505.72,
+      "z": -874.83,
+      "radius": 3.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_170",
+      "material": "Dirt",
+      "x": -1438.93,
+      "z": -944.09,
+      "radius": 5.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_171",
+      "material": "Dirt",
+      "x": -1346.6,
+      "z": -983.34,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_172",
+      "material": "Dirt",
+      "x": -1492.55,
+      "z": -998.51,
+      "radius": 5.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_173",
+      "material": "Dirt",
+      "x": -1409.73,
+      "z": -964.77,
+      "radius": 6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_174",
+      "material": "Dirt",
+      "x": -1571.53,
+      "z": -875.99,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_175",
+      "material": "Dirt",
+      "x": -1380.56,
+      "z": -861.18,
+      "radius": 3.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_176",
+      "material": "Dirt",
+      "x": -1487.67,
+      "z": -865.72,
+      "radius": 4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_177",
+      "material": "Dirt",
+      "x": -1353.99,
+      "z": -817.25,
+      "radius": 5.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_178",
+      "material": "Dirt",
+      "x": -1523.56,
+      "z": -985.76,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_179",
+      "material": "Dirt",
+      "x": -1347.26,
+      "z": -1008.63,
+      "radius": 5.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_180",
+      "material": "Dirt",
+      "x": -1568.32,
+      "z": -860.09,
+      "radius": 3.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_181",
+      "material": "Dirt",
+      "x": -1531.28,
+      "z": -803.52,
+      "radius": 3.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_182",
+      "material": "Dirt",
+      "x": -1404.6,
+      "z": -912.61,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_183",
+      "material": "Dirt",
+      "x": -1384.84,
+      "z": -888.22,
+      "radius": 4.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_184",
+      "material": "Dirt",
+      "x": -1506.69,
+      "z": -830.7,
+      "radius": 3.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_185",
+      "material": "Dirt",
+      "x": -1500.47,
+      "z": -801.34,
+      "radius": 5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_186",
+      "material": "Dirt",
+      "x": -1394.25,
+      "z": -851.01,
+      "radius": 4.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_187",
+      "material": "Dirt",
+      "x": -1564.87,
+      "z": -896.69,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_188",
+      "material": "Dirt",
+      "x": -1577.02,
+      "z": -845.8,
+      "radius": 5.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_189",
+      "material": "Dirt",
+      "x": -1376.08,
+      "z": -924.36,
+      "radius": 4.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_190",
+      "material": "Dirt",
+      "x": -1315.39,
+      "z": -962.34,
+      "radius": 5.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_191",
+      "material": "Dirt",
+      "x": -1567.64,
+      "z": -926.53,
+      "radius": 5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_192",
+      "material": "Dirt",
+      "x": -1394.77,
+      "z": -950.15,
+      "radius": 3.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_193",
+      "material": "Dirt",
+      "x": -1394.83,
+      "z": -866.09,
+      "radius": 4.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_194",
+      "material": "Dirt",
+      "x": -1430.91,
+      "z": -1001.8,
+      "radius": 3.2,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_195",
+      "material": "Dirt",
+      "x": -1354.41,
+      "z": -918.36,
+      "radius": 3.8,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_196",
+      "material": "Dirt",
+      "x": -1502.36,
+      "z": -958.7,
+      "radius": 3.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_197",
+      "material": "Dirt",
+      "x": -1333.39,
+      "z": -958.52,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_198",
+      "material": "Dirt",
+      "x": -1493.01,
+      "z": -881.65,
+      "radius": 3.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_199",
+      "material": "Dirt",
+      "x": -1436.65,
+      "z": -939.8,
+      "radius": 5.3,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_200",
+      "material": "Dirt",
+      "x": -1485.6,
+      "z": -861.76,
+      "radius": 5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_201",
+      "material": "Dirt",
+      "x": -1571.97,
+      "z": -893.7,
+      "radius": 6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_202",
+      "material": "Dirt",
+      "x": -1366.08,
+      "z": -899.85,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_203",
+      "material": "Dirt",
+      "x": -1485.55,
+      "z": -881.42,
+      "radius": 5.7,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_204",
+      "material": "Dirt",
+      "x": -1494.67,
+      "z": -968.78,
+      "radius": 3.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_205",
+      "material": "Dirt",
+      "x": -1505.82,
+      "z": -810.36,
+      "radius": 4.9,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_206",
+      "material": "Dirt",
+      "x": -1572.47,
+      "z": -854.39,
+      "radius": 3.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_207",
+      "material": "Dirt",
+      "x": -1540.59,
+      "z": -813.58,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_208",
+      "material": "Dirt",
+      "x": -1350.14,
+      "z": -955.09,
+      "radius": 4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_209",
+      "material": "Dirt",
+      "x": -1409.15,
+      "z": -964.93,
+      "radius": 4.5,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_210",
+      "material": "Dirt",
+      "x": -1550.63,
+      "z": -789.78,
+      "radius": 5.1,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_211",
+      "material": "Dirt",
+      "x": -1484.96,
+      "z": -827.39,
+      "radius": 4.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_212",
+      "material": "Dirt",
+      "x": -1471.91,
+      "z": -848.47,
+      "radius": 5.4,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_213",
+      "material": "Dirt",
+      "x": -1504.78,
+      "z": -850.72,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_214",
+      "material": "Dirt",
+      "x": -1399.8,
+      "z": -848.96,
+      "radius": 5.6,
+      "strength": 0.5
+    },
+    {
+      "id": "n7-prairie-dog-dirt_215",
+      "material": "Dirt",
+      "x": -1374.15,
+      "z": -990.89,
+      "radius": 5.6,
+      "strength": 0.5
+    }
+  ]
 }

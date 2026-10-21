@@ -17,8 +17,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (2×) | 200 polygons, 0 strokes | 0.9 MB |
 | 0 | `out\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (2×) | 0 polygons, 40029 strokes | 6.4 MB |
 | 0 | `out\import-terrain-paint-n6-savanna-dry.json` | ROUND 27 terrain paint N6 Dry (2×) | 1903 polygons, 0 strokes | 20.6 MB |
-| 0 | `out\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 ? (2×) | 0 polygons, 0 strokes | 0.0 MB |
-| 0 | `out\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 ? (2×) | 0 polygons, 0 strokes | 0.0 MB |
+| 0 | `out\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 Dirt (2×) | 0 polygons, 215 strokes | 0.0 MB |
+| 0 | `out\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 Dry (2×) | 2 polygons, 0 strokes | 0.0 MB |
 | 0 | `out\import-terrain-paint-n8-playa-centre-dirt.json` | ROUND 27 terrain paint N8 Dirt (2×) | 162 polygons, 0 strokes | 0.6 MB |
 | 0 | `out\import-terrain-paint-n8-playa-rim-lush.json` | ROUND 27 terrain paint N8 Lush (2×) | 191 polygons, 0 strokes | 0.8 MB |
 | 0 | `out\import-terrain-paint-n9-dirt-roads-dirt.json` | ROUND 27 terrain paint N9 Dirt (2×) | 0 polygons, 12253 strokes | 2.0 MB |
@@ -39,8 +39,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\x1\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (1×) | 200 polygons, 0 strokes | 0.9 MB |
 | 0 | `out\x1\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (1×) | 0 polygons, 40029 strokes | 6.4 MB |
 | 0 | `out\x1\import-terrain-paint-n6-savanna-dry.json` | ROUND 27 terrain paint N6 Dry (1×) | 1903 polygons, 0 strokes | 20.6 MB |
-| 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 ? (1×) | 0 polygons, 0 strokes | 0.0 MB |
-| 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 ? (1×) | 0 polygons, 0 strokes | 0.0 MB |
+| 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 Dirt (1×) | 0 polygons, 215 strokes | 0.0 MB |
+| 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 Dry (1×) | 2 polygons, 0 strokes | 0.0 MB |
 | 0 | `out\x1\import-terrain-paint-n8-playa-centre-dirt.json` | ROUND 27 terrain paint N8 Dirt (1×) | 162 polygons, 0 strokes | 0.6 MB |
 | 0 | `out\x1\import-terrain-paint-n8-playa-rim-lush.json` | ROUND 27 terrain paint N8 Lush (1×) | 191 polygons, 0 strokes | 0.8 MB |
 | 0 | `out\x1\import-terrain-paint-n9-dirt-roads-dirt.json` | ROUND 27 terrain paint N9 Dirt (1×) | 0 polygons, 12266 strokes | 2.0 MB |
@@ -608,3 +608,11 @@ The roof is square plates at road + 6.5 m, each with its valley edge on the colu
 - Counts:
   - x1: 1 × 62 + 4 × 32 + 36 × 16 plates, 14 Wall32x16 (154132), 56 Vertical Pillar every 8 m (y = roof underside), 11 CliffRock5. 122 objects.
   - x2 (doubled heights, steeper): 0 × 62 + 2 × 32 + 50 × 16. 133 objects.
+
+## Round 34h: gallery from the packs only (owner: "use the packs, not the vanilla")
+
+No `Vertical Pillar`, no ITBP. Valley-side columns are ConcreteSet01 Pillar2x16 / Pillar2x8 (pivot centre-bottom), stacked from the slab underside down to the
+terrain: 16 m pieces while more than 8 m remain, then one 8 m piece. The bottom piece goes into the ground by what is left over.
+- Roof (62 / 32 / 16 rule), 14 Wall32x16 and 11 CliffRock5: as in 35f11c8.
+- x1: 1 × BasePlateConcrete62 + 4 × 32 + 36 × 16, 14 Wall32x16, 56 Pillar2x8 (one per column), 11 CliffRock5. 122 objects.
+- x2: 0 × 62 + 2 × 32 + 50 × 16, 14 Wall32x16, 56 columns (1 Pillar2x16 + 55 Pillar2x8), 11 CliffRock5. 133 objects.

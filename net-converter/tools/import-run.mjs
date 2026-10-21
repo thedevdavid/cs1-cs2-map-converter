@@ -292,6 +292,9 @@ outer: for (const [name, endpoint, files] of steps) {
   if (endpoint === "verify") { const t0 = Date.now(); const text = await verifyGraph(name.replace("verify-", "")); rows.push({ name, file: "GET /graph/export", status: "ok", secs: (Date.now() - t0) / 1000, text }); continue; }
   for (const file of files) {
     if (!existsSync(file)) { console.log(`- ${name}: ${file} missing, skipped`); rows.push({ name, file, status: "missing" }); continue; }
+    // A-v10: an import file with no items (the bridge answers 400 to an empty body) is skipped, not posted.
+    { const peek = JSON.parse(readFileSync(file, "utf8")); const items = ["edges", "objects", "surfaces", "polygons", "strokes", "sources"].reduce((n, k) => n + (Array.isArray(peek[k]) ? peek[k].length : 0), 0) + (peek.layers ? 1 : 0);
+      if (items === 0) { console.log(`- ${name}: ${file} is empty, skipped`); rows.push({ name, file, status: "empty, skipped" }); continue; } }
     if (done(file)) { const d = done(file); console.log(`- ${name}: ${file} already imported (${d.importId ?? "no id"}, ${d.at}), skipped`); rows.push({ name, file, status: `already imported (${d.importId ?? ""})`, importId: d.importId }); continue; }
     const body = JSON.parse(readFileSync(file, "utf8"));
     body.options ??= {};

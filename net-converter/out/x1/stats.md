@@ -414,8 +414,8 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Terrain paint import-terrain-paint-n8-playa-rim-lush.json: Lush 0.5, 70 polygons, 0.58 km², 2802 cells (N8 playa rims (80 playas)).
 - Terrain paint import-terrain-paint-n8-playa-centre-dirt.json: Dirt 0.6, 82 polygons, 0.92 km², 3736 cells (N8 playa centres (dried mud)).
 - Terrain paint N7 eligibility: free 705506, flat plains 237818, no tree within 100 m 13395, fertility < 0.5 1849.
-- Terrain paint import-terrain-paint-n7-prairie-dog-dry.json: Dry 0.8, 0 polygons, 0.00 km², 0 cells (N7 prairie dog towns (0)).
-- Terrain paint import-terrain-paint-n7-prairie-dog-dirt.json: Dirt 0.5, 0 strokes (N7 prairie dog mounds (30 % cover)).
+- Terrain paint import-terrain-paint-n7-prairie-dog-dry.json: Dry 0.8, 1 polygons, 0.05 km², 188 cells (N7 prairie dog towns (1)).
+- Terrain paint import-terrain-paint-n7-prairie-dog-dirt.json: Dirt 0.5, 215 strokes (N7 prairie dog mounds (30 % cover)).
 - Terrain paint import-terrain-paint-n11-ore-dirt.json: Dirt 0.5, 104 polygons, 8.74 km², 34189 cells (N11 CS1 ore ground).
 - Terrain paint import-terrain-paint-n11-oil-dirt.json: Dirt 0.3, 302 polygons, 57.32 km², 226052 cells (N11 CS1 oil ground (well pads)).
 - Terrain paint import-terrain-paint-n9-dirt-roads-dirt.json: Dirt 0.5, 12266 strokes (N9 dirt / gravel road and track edges).
@@ -458,7 +458,7 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Flat QuaySmall01 edges (cross-slope < 0.4 m at × 1): 21, wall right 11, both 4, left 6; their nodes raised to ≥ 4 m (one side) / ≥ 8 m (both) as the fallback.
 - One-way highway stubs to CS1 dead ends left out: 0 courses.
 - One-way courses pruned after the stub removal (they met head-on at a node with no exit or no entry): 0.
-- Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md, run-20261020-192927.md, run-20261020-193334.md, run-20261020-193751.md, run-20261020-211001.md, run-20261020-231951.md, run-20261021-000201.md, run-20261021-025202.md, run-a7.md (36 dropped courses).
+- Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md, run-20261020-192927.md, run-20261020-193334.md, run-20261020-193751.md, run-20261020-211001.md, run-20261020-231951.md, run-20261021-000201.md, run-20261021-025202.md, run-20261021-121517.md, run-a7.md (36 dropped courses).
 - e20430_0b clear of its parallel carriageway: e20430_0b Highway Oneway - 3 lanes beside e16466_0a Highway Oneway - 3 lanes (15.5 m; run report: move 0.9 m): moved 1.9 m
 - Highway course dropped beside its node-sharing sibling e9919_0 (Highway Oneway - 1 lane): e22564_0b's free end e22564_0d0 moved 2.7 m away from it; the shared node n4291 stays.
 - Highway course dropped beside its node-sharing sibling e15395_0a (Highway Oneway - 2 lanes): e31224_0bb's free end e31224_0bd1 moved 2.2 m away from it; the shared node n27662 stays.
