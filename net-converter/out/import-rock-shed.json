@@ -15,7 +15,7 @@
       "z": 658.46,
       "y": 523.36,
       "rotation": 321.8,
-      "pitch": 19.71,
+      "pitch": -19.71,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -26,7 +26,7 @@
       "z": 666.34,
       "y": 523.36,
       "rotation": 321.8,
-      "pitch": 19.71,
+      "pitch": -19.71,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -37,7 +37,7 @@
       "z": 674.23,
       "y": 523.36,
       "rotation": 321.8,
-      "pitch": 19.71,
+      "pitch": -19.71,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -48,7 +48,7 @@
       "z": 671.23,
       "y": 529.02,
       "rotation": 323.9,
-      "pitch": 16.35,
+      "pitch": -16.35,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -59,7 +59,7 @@
       "z": 678.73,
       "y": 529.02,
       "rotation": 323.9,
-      "pitch": 16.35,
+      "pitch": -16.35,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -70,7 +70,7 @@
       "z": 686.24,
       "y": 529.02,
       "rotation": 323.9,
-      "pitch": 16.35,
+      "pitch": -16.35,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -81,7 +81,7 @@
       "z": 684.16,
       "y": 532.64,
       "rotation": 325.1,
-      "pitch": 12.5,
+      "pitch": -12.5,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -92,7 +92,7 @@
       "z": 691.74,
       "y": 532.64,
       "rotation": 325.1,
-      "pitch": 12.5,
+      "pitch": -12.5,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -103,7 +103,7 @@
       "z": 699.32,
       "y": 532.64,
       "rotation": 325.1,
-      "pitch": 12.5,
+      "pitch": -12.5,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -114,7 +114,7 @@
       "z": 697.28,
       "y": 536.03,
       "rotation": 326.1,
-      "pitch": 12.06,
+      "pitch": -12.06,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -125,7 +125,7 @@
       "z": 704.66,
       "y": 536.03,
       "rotation": 326.1,
-      "pitch": 12.06,
+      "pitch": -12.06,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -136,7 +136,7 @@
       "z": 712.04,
       "y": 536.03,
       "rotation": 326.1,
-      "pitch": 12.06,
+      "pitch": -12.06,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -147,7 +147,7 @@
       "z": 710.52,
       "y": 539.39,
       "rotation": 327,
-      "pitch": 12.22,
+      "pitch": -12.22,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -158,7 +158,7 @@
       "z": 717.47,
       "y": 539.39,
       "rotation": 327,
-      "pitch": 12.22,
+      "pitch": -12.22,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -169,7 +169,7 @@
       "z": 724.42,
       "y": 539.39,
       "rotation": 327,
-      "pitch": 12.22,
+      "pitch": -12.22,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -180,7 +180,7 @@
       "z": 723.89,
       "y": 542.87,
       "rotation": 327.8,
-      "pitch": 10.54,
+      "pitch": -10.54,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -191,7 +191,7 @@
       "z": 730.55,
       "y": 542.87,
       "rotation": 327.8,
-      "pitch": 10.54,
+      "pitch": -10.54,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -202,7 +202,7 @@
       "z": 737.22,
       "y": 542.87,
       "rotation": 327.8,
-      "pitch": 10.54,
+      "pitch": -10.54,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -213,7 +213,7 @@
       "z": 737.38,
       "y": 545.27,
       "rotation": 328.7,
-      "pitch": 4.89,
+      "pitch": -4.89,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -224,7 +224,7 @@
       "z": 743.88,
       "y": 545.27,
       "rotation": 328.7,
-      "pitch": 4.89,
+      "pitch": -4.89,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -235,7 +235,7 @@
       "z": 750.38,
       "y": 545.27,
       "rotation": 328.7,
-      "pitch": 4.89,
+      "pitch": -4.89,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -246,7 +246,7 @@
       "z": 751.01,
       "y": 545.58,
       "rotation": 329.5,
-      "pitch": 1.1,
+      "pitch": -1.1,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -257,7 +257,7 @@
       "z": 757.35,
       "y": 545.58,
       "rotation": 329.5,
-      "pitch": 1.1,
+      "pitch": -1.1,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -268,7 +268,7 @@
       "z": 763.69,
       "y": 545.58,
       "rotation": 329.5,
-      "pitch": 1.1,
+      "pitch": -1.1,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -279,7 +279,7 @@
       "z": 764.71,
       "y": 545.88,
       "rotation": 330.1,
-      "pitch": 1.07,
+      "pitch": -1.07,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -290,7 +290,7 @@
       "z": 771.06,
       "y": 545.88,
       "rotation": 330.1,
-      "pitch": 1.07,
+      "pitch": -1.07,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -301,7 +301,7 @@
       "z": 777.42,
       "y": 545.88,
       "rotation": 330.1,
-      "pitch": 1.07,
+      "pitch": -1.07,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -312,7 +312,7 @@
       "z": 778.47,
       "y": 546.17,
       "rotation": 330.6,
-      "pitch": 1.1,
+      "pitch": -1.1,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -323,7 +323,7 @@
       "z": 784.74,
       "y": 546.17,
       "rotation": 330.6,
-      "pitch": 1.1,
+      "pitch": -1.1,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -334,7 +334,7 @@
       "z": 791,
       "y": 546.17,
       "rotation": 330.6,
-      "pitch": 1.1,
+      "pitch": -1.1,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -345,7 +345,7 @@
       "z": 792.3,
       "y": 546.48,
       "rotation": 331.1,
-      "pitch": 0.79,
+      "pitch": -0.79,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -356,7 +356,7 @@
       "z": 798.47,
       "y": 546.48,
       "rotation": 331.1,
-      "pitch": 0.79,
+      "pitch": -0.79,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -367,7 +367,7 @@
       "z": 804.64,
       "y": 546.48,
       "rotation": 331.1,
-      "pitch": 0.79,
+      "pitch": -0.79,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -378,7 +378,7 @@
       "z": 806.21,
       "y": 546.6,
       "rotation": 331.6,
-      "pitch": -0.55,
+      "pitch": 0.55,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -389,7 +389,7 @@
       "z": 812.15,
       "y": 546.6,
       "rotation": 331.6,
-      "pitch": -0.55,
+      "pitch": 0.55,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -400,7 +400,7 @@
       "z": 818.08,
       "y": 546.6,
       "rotation": 331.6,
-      "pitch": -0.55,
+      "pitch": 0.55,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -411,7 +411,7 @@
       "z": 820.19,
       "y": 546.18,
       "rotation": 332.1,
-      "pitch": -1.94,
+      "pitch": 1.94,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -422,7 +422,7 @@
       "z": 825.91,
       "y": 546.18,
       "rotation": 332.1,
-      "pitch": -1.94,
+      "pitch": 1.94,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -433,7 +433,7 @@
       "z": 831.64,
       "y": 546.18,
       "rotation": 332.1,
-      "pitch": -1.94,
+      "pitch": 1.94,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -444,7 +444,7 @@
       "z": 834.21,
       "y": 545.53,
       "rotation": 332.5,
-      "pitch": -2.29,
+      "pitch": 2.29,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -455,7 +455,7 @@
       "z": 839.87,
       "y": 545.53,
       "rotation": 332.5,
-      "pitch": -2.29,
+      "pitch": 2.29,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -466,7 +466,7 @@
       "z": 845.52,
       "y": 545.53,
       "rotation": 332.5,
-      "pitch": -2.29,
+      "pitch": 2.29,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -477,7 +477,7 @@
       "z": 848.27,
       "y": 544.91,
       "rotation": 332.8,
-      "pitch": -2.26,
+      "pitch": 2.26,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -488,7 +488,7 @@
       "z": 853.86,
       "y": 544.91,
       "rotation": 332.8,
-      "pitch": -2.26,
+      "pitch": 2.26,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -499,7 +499,7 @@
       "z": 859.46,
       "y": 544.91,
       "rotation": 332.8,
-      "pitch": -2.26,
+      "pitch": 2.26,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -510,7 +510,7 @@
       "z": 862.36,
       "y": 544.29,
       "rotation": 333.1,
-      "pitch": -2.35,
+      "pitch": 2.35,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -521,7 +521,7 @@
       "z": 867.9,
       "y": 544.29,
       "rotation": 333.1,
-      "pitch": -2.35,
+      "pitch": 2.35,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -532,7 +532,7 @@
       "z": 873.44,
       "y": 544.29,
       "rotation": 333.1,
-      "pitch": -2.35,
+      "pitch": 2.35,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -543,7 +543,7 @@
       "z": 876.51,
       "y": 543.62,
       "rotation": 333.5,
-      "pitch": -7.62,
+      "pitch": 7.62,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -554,7 +554,7 @@
       "z": 882.2,
       "y": 543.62,
       "rotation": 333.5,
-      "pitch": -7.62,
+      "pitch": 7.62,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -565,7 +565,7 @@
       "z": 887.88,
       "y": 543.62,
       "rotation": 333.5,
-      "pitch": -7.62,
+      "pitch": 7.62,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -576,7 +576,7 @@
       "z": 890.7,
       "y": 540.06,
       "rotation": 333.8,
-      "pitch": -13.07,
+      "pitch": 13.07,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -587,7 +587,7 @@
       "z": 896.32,
       "y": 540.06,
       "rotation": 333.8,
-      "pitch": -13.07,
+      "pitch": 13.07,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -598,7 +598,7 @@
       "z": 901.95,
       "y": 540.06,
       "rotation": 333.8,
-      "pitch": -13.07,
+      "pitch": 13.07,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -609,7 +609,7 @@
       "z": 904.91,
       "y": 536.28,
       "rotation": 334,
-      "pitch": -13.28,
+      "pitch": 13.28,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -620,7 +620,7 @@
       "z": 910.49,
       "y": 536.28,
       "rotation": 334,
-      "pitch": -13.28,
+      "pitch": 13.28,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -631,7 +631,7 @@
       "z": 916.07,
       "y": 536.28,
       "rotation": 334,
-      "pitch": -13.28,
+      "pitch": 13.28,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -642,7 +642,7 @@
       "z": 919.14,
       "y": 532.6,
       "rotation": 334.2,
-      "pitch": -12.88,
+      "pitch": 12.88,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -653,7 +653,7 @@
       "z": 924.68,
       "y": 532.6,
       "rotation": 334.2,
-      "pitch": -12.88,
+      "pitch": 12.88,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -664,7 +664,7 @@
       "z": 930.23,
       "y": 532.6,
       "rotation": 334.2,
-      "pitch": -12.88,
+      "pitch": 12.88,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -675,7 +675,7 @@
       "z": 933.4,
       "y": 529.06,
       "rotation": 334.5,
-      "pitch": -1.08,
+      "pitch": 1.08,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -686,7 +686,7 @@
       "z": 938.9,
       "y": 529.06,
       "rotation": 334.5,
-      "pitch": -1.08,
+      "pitch": 1.08,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -697,7 +697,7 @@
       "z": 944.4,
       "y": 529.06,
       "rotation": 334.5,
-      "pitch": -1.08,
+      "pitch": 1.08,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -708,7 +708,7 @@
       "z": 947.69,
       "y": 532.01,
       "rotation": 334.7,
-      "pitch": 15.55,
+      "pitch": -15.55,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -719,7 +719,7 @@
       "z": 953.14,
       "y": 532.01,
       "rotation": 334.7,
-      "pitch": 15.55,
+      "pitch": -15.55,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -730,7 +730,7 @@
       "z": 958.59,
       "y": 532.01,
       "rotation": 334.7,
-      "pitch": 15.55,
+      "pitch": -15.55,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -741,7 +741,7 @@
       "z": 961.99,
       "y": 537.85,
       "rotation": 334.8,
-      "pitch": 20.17,
+      "pitch": -20.17,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -752,7 +752,7 @@
       "z": 967.31,
       "y": 537.85,
       "rotation": 334.8,
-      "pitch": 20.17,
+      "pitch": -20.17,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -763,7 +763,7 @@
       "z": 972.62,
       "y": 537.85,
       "rotation": 334.8,
-      "pitch": 20.17,
+      "pitch": -20.17,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -774,7 +774,7 @@
       "z": 976.31,
       "y": 543.61,
       "rotation": 334.9,
-      "pitch": 20.36,
+      "pitch": -20.36,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -785,7 +785,7 @@
       "z": 981.71,
       "y": 543.61,
       "rotation": 334.9,
-      "pitch": 20.36,
+      "pitch": -20.36,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -796,7 +796,7 @@
       "z": 987.11,
       "y": 543.61,
       "rotation": 334.9,
-      "pitch": 20.36,
+      "pitch": -20.36,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -807,7 +807,7 @@
       "z": 990.63,
       "y": 549.57,
       "rotation": 335,
-      "pitch": 18.12,
+      "pitch": -18.12,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -818,7 +818,7 @@
       "z": 996.33,
       "y": 549.57,
       "rotation": 335,
-      "pitch": 18.12,
+      "pitch": -18.12,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -829,7 +829,7 @@
       "z": 1002.03,
       "y": 549.57,
       "rotation": 335,
-      "pitch": 18.12,
+      "pitch": -18.12,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -840,7 +840,7 @@
       "z": 1004.96,
       "y": 553.95,
       "rotation": 335.1,
-      "pitch": 7.31,
+      "pitch": -7.31,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -851,7 +851,7 @@
       "z": 1010.44,
       "y": 553.95,
       "rotation": 335.1,
-      "pitch": 7.31,
+      "pitch": -7.31,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -862,7 +862,7 @@
       "z": 1015.91,
       "y": 553.95,
       "rotation": 335.1,
-      "pitch": 7.31,
+      "pitch": -7.31,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -873,7 +873,7 @@
       "z": 1019.32,
       "y": 553.63,
       "rotation": 335.3,
-      "pitch": -2.27,
+      "pitch": 2.27,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -884,7 +884,7 @@
       "z": 1024.65,
       "y": 553.63,
       "rotation": 335.3,
-      "pitch": -2.27,
+      "pitch": 2.27,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -895,7 +895,7 @@
       "z": 1029.99,
       "y": 553.63,
       "rotation": 335.3,
-      "pitch": -2.27,
+      "pitch": 2.27,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -906,7 +906,7 @@
       "z": 1033.68,
       "y": 552.7,
       "rotation": 335.4,
-      "pitch": -3.23,
+      "pitch": 3.23,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -917,7 +917,7 @@
       "z": 1039,
       "y": 552.7,
       "rotation": 335.4,
-      "pitch": -3.23,
+      "pitch": 3.23,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -928,7 +928,7 @@
       "z": 1044.32,
       "y": 552.7,
       "rotation": 335.4,
-      "pitch": -3.23,
+      "pitch": 3.23,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -939,7 +939,7 @@
       "z": 1048.05,
       "y": 551.85,
       "rotation": 335.4,
-      "pitch": -3.15,
+      "pitch": 3.15,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -950,7 +950,7 @@
       "z": 1053.25,
       "y": 551.85,
       "rotation": 335.4,
-      "pitch": -3.15,
+      "pitch": 3.15,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -961,7 +961,7 @@
       "z": 1058.45,
       "y": 551.85,
       "rotation": 335.4,
-      "pitch": -3.15,
+      "pitch": 3.15,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -972,7 +972,7 @@
       "z": 1062.42,
       "y": 550.96,
       "rotation": 335.4,
-      "pitch": -3.57,
+      "pitch": 3.57,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -983,7 +983,7 @@
       "z": 1067.72,
       "y": 550.96,
       "rotation": 335.4,
-      "pitch": -3.57,
+      "pitch": 3.57,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -994,7 +994,7 @@
       "z": 1073.02,
       "y": 550.96,
       "rotation": 335.4,
-      "pitch": -3.57,
+      "pitch": 3.57,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -1005,7 +1005,7 @@
       "z": 1075.53,
       "y": 549.88,
       "rotation": 335.5,
-      "pitch": -3.45,
+      "pitch": 3.45,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -1016,7 +1016,7 @@
       "z": 1080.82,
       "y": 549.88,
       "rotation": 335.5,
-      "pitch": -3.45,
+      "pitch": 3.45,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -1027,7 +1027,7 @@
       "z": 1086.11,
       "y": 549.88,
       "rotation": 335.5,
-      "pitch": -3.45,
+      "pitch": 3.45,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -1038,7 +1038,7 @@
       "z": 1075.53,
       "y": 549.89,
       "rotation": 335.5,
-      "pitch": 0.43,
+      "pitch": -0.43,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -1049,7 +1049,7 @@
       "z": 1080.82,
       "y": 549.89,
       "rotation": 335.5,
-      "pitch": 0.43,
+      "pitch": -0.43,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
@@ -1060,7 +1060,7 @@
       "z": 1086.11,
       "y": 549.89,
       "rotation": 335.5,
-      "pitch": 0.43,
+      "pitch": -0.43,
       "kind": "object",
       "cs1": "JP Rock shed (open gallery)"
     },
