@@ -5,8 +5,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 
 | order | file | content | count | size |
 |---:|---|---|---|---:|
-| 0 | `out\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (2×) | 743 polygons, 0 strokes | 7.1 MB |
-| 0 | `out\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (2×) | 956 polygons, 0 strokes | 5.0 MB |
+| 0 | `out\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (2×) | 574 polygons, 0 strokes | 4.2 MB |
+| 0 | `out\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (2×) | 947 polygons, 0 strokes | 4.8 MB |
 | 0 | `out\import-terrain-paint-bare-earth.json` | ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals) (2×) | 0 polygons, 256 strokes | 0.0 MB |
 | 0 | `out\optional\import-terrain-paint-rock.json` | rock mask, NOT imported (no rock material) (2×) | 214 polygons, 0 strokes | 0.2 MB |
 | 0 | `out\import-terrain-paint-n1-riparian-lush.json` | ROUND 27 terrain paint N1 Lush (2×) | 153 polygons, 0 strokes | 0.7 MB |
@@ -17,8 +17,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (2×) | 200 polygons, 0 strokes | 0.9 MB |
 | 0 | `out\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (2×) | 0 polygons, 40029 strokes | 6.4 MB |
 | 0 | `out\import-terrain-paint-n6-savanna-dry.json` | ROUND 27 terrain paint N6 Dry (2×) | 1903 polygons, 0 strokes | 20.6 MB |
-| 0 | `out\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 Dirt (2×) | 0 polygons, 162 strokes | 0.0 MB |
-| 0 | `out\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 Dry (2×) | 2 polygons, 0 strokes | 0.0 MB |
+| 0 | `out\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 ? (2×) | 0 polygons, 0 strokes | 0.0 MB |
+| 0 | `out\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 ? (2×) | 0 polygons, 0 strokes | 0.0 MB |
 | 0 | `out\import-terrain-paint-n8-playa-centre-dirt.json` | ROUND 27 terrain paint N8 Dirt (2×) | 162 polygons, 0 strokes | 0.6 MB |
 | 0 | `out\import-terrain-paint-n8-playa-rim-lush.json` | ROUND 27 terrain paint N8 Lush (2×) | 191 polygons, 0 strokes | 0.8 MB |
 | 0 | `out\import-terrain-paint-n9-dirt-roads-dirt.json` | ROUND 27 terrain paint N9 Dirt (2×) | 0 polygons, 12253 strokes | 2.0 MB |
@@ -27,8 +27,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\import-terrain-paint-n11-ore-dirt.json` | ROUND 27 terrain paint N11 Dirt (2×) | 196 polygons, 0 strokes | 1.8 MB |
 | 0 | `out\import-terrain-paint-n12-fertile-dry.json` | ROUND 27 terrain paint N12 Dry (2×) | 475 polygons, 0 strokes | 4.3 MB |
 | 0 | `out\import-terrain-paint-n13-high-ground-dry.json` | ROUND 27 terrain paint N13 Dry (2×) | 175 polygons, 0 strokes | 2.7 MB |
-| 0 | `out\x1\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (1×) | 743 polygons, 0 strokes | 7.1 MB |
-| 0 | `out\x1\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (1×) | 956 polygons, 0 strokes | 5.0 MB |
+| 0 | `out\x1\import-terrain-paint-sand.json` | ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m (1×) | 574 polygons, 0 strokes | 4.2 MB |
+| 0 | `out\x1\import-terrain-paint-dry-grass.json` | ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m (1×) | 947 polygons, 0 strokes | 4.8 MB |
 | 0 | `out\x1\import-terrain-paint-bare-earth.json` | ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals) (1×) | 0 polygons, 256 strokes | 0.0 MB |
 | 0 | `out\x1\optional\import-terrain-paint-rock.json` | rock mask, NOT imported (no rock material) (1×) | 214 polygons, 0 strokes | 0.2 MB |
 | 0 | `out\x1\import-terrain-paint-n1-riparian-lush.json` | ROUND 27 terrain paint N1 Lush (1×) | 153 polygons, 0 strokes | 0.7 MB |
@@ -39,8 +39,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\x1\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (1×) | 200 polygons, 0 strokes | 0.9 MB |
 | 0 | `out\x1\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (1×) | 0 polygons, 40029 strokes | 6.4 MB |
 | 0 | `out\x1\import-terrain-paint-n6-savanna-dry.json` | ROUND 27 terrain paint N6 Dry (1×) | 1903 polygons, 0 strokes | 20.6 MB |
-| 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 Dirt (1×) | 0 polygons, 162 strokes | 0.0 MB |
-| 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 Dry (1×) | 2 polygons, 0 strokes | 0.0 MB |
+| 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 ? (1×) | 0 polygons, 0 strokes | 0.0 MB |
+| 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dry.json` | ROUND 27 terrain paint N7 ? (1×) | 0 polygons, 0 strokes | 0.0 MB |
 | 0 | `out\x1\import-terrain-paint-n8-playa-centre-dirt.json` | ROUND 27 terrain paint N8 Dirt (1×) | 162 polygons, 0 strokes | 0.6 MB |
 | 0 | `out\x1\import-terrain-paint-n8-playa-rim-lush.json` | ROUND 27 terrain paint N8 Lush (1×) | 191 polygons, 0 strokes | 0.8 MB |
 | 0 | `out\x1\import-terrain-paint-n9-dirt-roads-dirt.json` | ROUND 27 terrain paint N9 Dirt (1×) | 0 polygons, 12266 strokes | 2.0 MB |
@@ -78,9 +78,9 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 4 | `out\import-connections.json` | outside connections | 25 | 0.0 MB |
 | 4 | `out\x1\import-connections.json` | outside connections | 25 | 0.0 MB |
 | 5 | `out\import-walls-props.json` | barrier props (2×) | 621 | 0.1 MB |
-| 5 | `out\import-objects.json` | objects (2×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
+| 5 | `out\import-objects.json` | objects (2×) | 6119 (prop 3029, building 5, plant 3076, tree 9; 1073 with y) | 1.3 MB |
 | 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
-| 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 248 | 0.1 MB |
+| 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 613 | 0.1 MB |
 | 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17557 | 3.2 MB |
 | 5 | `out\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (2×) | 3 | 0.0 MB |
 | 5 | `out\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (2×) | 201 | 0.0 MB |
@@ -89,9 +89,9 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\import-fort.json` | ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED) (2×) | 112 | 0.0 MB |
 | 5 | `out\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (2×) | 2 | 0.0 MB |
 | 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
-| 5 | `out\x1\import-objects.json` | objects (1×) | 6130 (prop 3040, building 5, plant 3076, tree 9; 1189 with y) | 1.3 MB |
+| 5 | `out\x1\import-objects.json` | objects (1×) | 6119 (prop 3029, building 5, plant 3076, tree 9; 1073 with y) | 1.3 MB |
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
-| 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 248 | 0.1 MB |
+| 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 613 | 0.1 MB |
 | 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17553 | 3.2 MB |
 | 5 | `out\x1\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (1×) | 3 | 0.0 MB |
 | 5 | `out\x1\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (1×) | 131 | 0.0 MB |
@@ -101,18 +101,18 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
 | 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |
 | 6 | `out\x1\import-trees-fixed-01.json` | trees at fixed height, with y (1×) | 50 | 0.0 MB |
-| 6 | `out\trees/import-trees-01.json` … `import-trees-10.json` | trees (both scales) | 496,303 in 10 files | |
+| 6 | `out\trees/import-trees-01.json` … `import-trees-11.json` | trees (both scales) | 504,987 in 11 files | |
 | 7 | `out\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 7 | `out\x1\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 8 | `out\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
-| 8 | `out\import-surfaces-sand.json` | paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots | 112 polygons | 0.3 MB |
+| 8 | `out\import-surfaces-sand.json` | paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots | 99 polygons | 0.3 MB |
 | 8 | `out\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (2×) | 11 polygons | 0.0 MB |
 | 8 | `out\x1\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
-| 8 | `out\x1\import-surfaces-sand.json` | paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots | 112 polygons | 0.3 MB |
+| 8 | `out\x1\import-surfaces-sand.json` | paint plan sand: Sand Surface 01 banks, Sand Surface 02 bare earth + decal spots | 99 polygons | 0.3 MB |
 | 8 | `out\x1\import-po-structures.json` | ROUND 9 pavement tops of the PO paved blocks (1×) | 11 polygons | 0.0 MB |
 | 9 | `out\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
 | 9 | `out\x1\import-surfaces-grass-unmerged.json` | EXPERIMENT: grass clusters, not merged | 53 polygons | 0.0 MB |
-| 9 | `out\trees/experiment-trees-net-corridor-01.json` | EXPERIMENT: trees on ground-net corridors (both scales) | 656 | |
+| 9 | `out\trees/experiment-trees-net-corridor-01.json` | EXPERIMENT: trees on ground-net corridors (both scales) | 726 | |
 
 Reports (both folders): `water-check.md`, `surfaces-summary.md`, `surfaces.geojson`, `manual-objects.md`, `connections-check.md`, `stats.md`.
 
@@ -492,3 +492,20 @@ Detroit: the owner keeps the BXP SuspensionBridge03; import-detroit-opt2.json no
   - Levels at the centre: ground 171–174 m, +1 at 180–187 m, +2 at 189–198 m, a top ramp at 200–201 m (CS1 33741 at 27 m), so 3–4 levels as in CS1.
 - **Cameras:** the owner's (3493, 2152), yaw 0, pitch 50, distance 700. To show the levels: (3493, 2152), yaw 45 (from the south-west, looking north-east
   along the main road at 60°), pitch 30, distance 600.
+
+## Round 33: the A-v9 network failures (run-20261021-025202, 10 against 3 in A-v8)
+
+Diffed against live-graph-20261021-025202-end.json and against the A-v8 files (1a79162):
+- **Dropped as "runs inside the existing segment"** (a new bridge 0.9.39 check; all three were built in A-v8):
+  - e31224_0ba, 4 lanes: a real overlap with the parallel 3-lane carriageway e25_0 (16.3 m apart, 18 m needed). Its run-report drop is now read and it moves
+    3.2 m clear (the asked 2.2 m + 1 m).
+  - e22564_0b, 2 lanes, and e31224_0bb, 4 lanes: the segment the game names is their sibling at the same node, a merge or diverge (e9919_0 1-lane, and the
+    2-lane legs e15395_0a / e27293_0). Moving them would bend the junction; not moved and listed in stats.md for the bridge. This looks like a false positive
+    of the new check at shared nodes. e22564_0b and its sibling also went up 1.6–2.5 m with the round-32 flyover lift.
+- **Point-check 0 or 1 of 3** (e16410_0a, e24407_0ba, e24407_0bb, e35437_0b): high BR001 south-approach pieces (live neighbours 19–41 m up). Their heights are
+  the same as in A-v8, where they were built. The one change is the round-32 `elevated: true` flag, and they are gone from the live graph.
+  - Change: the flag is now written only where an end is below 8 m (where it changes the look). x1: 505 → 155 edges, x2: 479 → 93. None of the four carries it.
+  - For the bridge session: check what the flag does to segments already above 8.05 m.
+- **The three known ones** (e31685_0, e34504_0, e35131_0) are the junctions the game moved (round 29).
+- **The run-report reader:** it now covers highway courses (FootprintShift with the drop messages), only where a separate course of the named prefab is
+  closer than the two half-widths + 0.5 m.

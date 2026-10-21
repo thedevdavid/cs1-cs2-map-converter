@@ -76,7 +76,7 @@ CS1 elevated (bridge-AI) courses lifted to ≥ 8.5 m above the terrain (output m
 | e21812_0ba | 21812 | Highway Oneway - 2 lanes | (-4424, 34) | 17.1 → 17.1 |
 | e21939_0b | 21939 | Highway Oneway - 2 lanes | (3019, 1213) | 10.1 → 10.1 |
 | e22005_0b | 22005 | Highway Oneway - 1 lane | (3608, 2315) | 12.5 → 12.5 |
-| e22564_0a | 22564 | Highway Oneway - 2 lanes | (689, 3916) | 12.0 → 12.0 |
+| e22564_0a | 22564 | Highway Oneway - 2 lanes | (689, 3917) | 12.0 → 12.0 |
 | e22799_0b | 22799 | Highway Oneway - 3 lanes | (6822, 2233) | 12.0 → 12.0 |
 | e23931_0ba | 23931 | Highway Oneway - 2 lanes | (-4537, 128) | 22.4 → 22.4 |
 | e26134_0ba | 26134 | Small Road | (-3679, -2969) | 14.3 → 14.3 |

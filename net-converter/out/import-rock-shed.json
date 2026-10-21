@@ -1,0 +1,297 @@
+{
+  "name": "rock-shed",
+  "_comment": "rotation = yaw in degrees about \u002By, 0 = \u002Bz, clockwise from above, from CS1 m_angle as \u2212angle\u00B7180/\u03C0 (UNVERIFIED sign). y only where the object is clearly on a structure: \u003E 3 m above the CS2 playable heightmap (else \u003E 2 m off the CS1 terrain); never for buildings (CS1 y \u00D7 height factor).",
+  "options": {
+    "dryRun": false,
+    "batchSize": 500,
+    "bypassValidation": true,
+    "report": "compact",
+    "grounding": {
+      "mode": "boundsMin",
+      "sink": 0,
+      "slopeSink": false
+    }
+  },
+  "objects": [
+    {
+      "id": "shed_wall_1",
+      "prefab": "Wall32x16",
+      "x": -6239.25,
+      "z": 682.99,
+      "y": 520.01,
+      "rotation": 54,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_1",
+      "prefab": "Pillar4x16",
+      "x": -6262.14,
+      "z": 666.35,
+      "y": 520.01,
+      "rotation": 144,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_2",
+      "prefab": "Wall32x16",
+      "x": -6257.44,
+      "z": 709.09,
+      "y": 528.08,
+      "rotation": 56.2,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_2",
+      "prefab": "Pillar4x16",
+      "x": -6280.97,
+      "z": 693.37,
+      "y": 528.08,
+      "rotation": 146.2,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_3",
+      "prefab": "Wall32x16",
+      "x": -6274.49,
+      "z": 735.41,
+      "y": 534.88,
+      "rotation": 57.9,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_3",
+      "prefab": "Pillar4x16",
+      "x": -6298.45,
+      "z": 720.36,
+      "y": 534.88,
+      "rotation": 147.9,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_4",
+      "prefab": "Wall32x16",
+      "x": -6290.61,
+      "z": 761.99,
+      "y": 538.86,
+      "rotation": 59.6,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_4",
+      "prefab": "Pillar4x16",
+      "x": -6315.01,
+      "z": 747.66,
+      "y": 538.86,
+      "rotation": 149.6,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_5",
+      "prefab": "Wall32x16",
+      "x": -6306.29,
+      "z": 789.31,
+      "y": 539.46,
+      "rotation": 60.6,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_5",
+      "prefab": "Pillar4x16",
+      "x": -6330.96,
+      "z": 775.43,
+      "y": 539.46,
+      "rotation": 150.6,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_6",
+      "prefab": "Wall32x16",
+      "x": -6321.66,
+      "z": 817.21,
+      "y": 539.81,
+      "rotation": 61.7,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_6",
+      "prefab": "Pillar4x16",
+      "x": -6346.59,
+      "z": 803.82,
+      "y": 539.81,
+      "rotation": 151.7,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_7",
+      "prefab": "Wall32x16",
+      "x": -6337.11,
+      "z": 846.52,
+      "y": 538.46,
+      "rotation": 62.6,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_7",
+      "prefab": "Pillar4x16",
+      "x": -6362.23,
+      "z": 833.49,
+      "y": 538.46,
+      "rotation": 152.6,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_8",
+      "prefab": "Wall32x16",
+      "x": -6351.22,
+      "z": 874.08,
+      "y": 537.2,
+      "rotation": 63.2,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_8",
+      "prefab": "Pillar4x16",
+      "x": -6376.49,
+      "z": 861.33,
+      "y": 537.2,
+      "rotation": 153.2,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_9",
+      "prefab": "Wall32x16",
+      "x": -6365.34,
+      "z": 902.51,
+      "y": 530.59,
+      "rotation": 63.9,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_9",
+      "prefab": "Pillar4x16",
+      "x": -6390.75,
+      "z": 890.05,
+      "y": 530.59,
+      "rotation": 153.9,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_10",
+      "prefab": "Wall32x16",
+      "x": -6379.21,
+      "z": 931.05,
+      "y": 523.12,
+      "rotation": 64.3,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_10",
+      "prefab": "Pillar4x16",
+      "x": -6404.71,
+      "z": 918.78,
+      "y": 523.12,
+      "rotation": 154.3,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_11",
+      "prefab": "Wall32x16",
+      "x": -6392.74,
+      "z": 959.45,
+      "y": 523.93,
+      "rotation": 64.7,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_11",
+      "prefab": "Pillar4x16",
+      "x": -6418.33,
+      "z": 947.37,
+      "y": 523.93,
+      "rotation": 154.7,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_12",
+      "prefab": "Wall32x16",
+      "x": -6406.2,
+      "z": 988.12,
+      "y": 535.64,
+      "rotation": 65,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_12",
+      "prefab": "Pillar4x16",
+      "x": -6431.84,
+      "z": 976.15,
+      "y": 535.64,
+      "rotation": 155,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_13",
+      "prefab": "Wall32x16",
+      "x": -6419.88,
+      "z": 1017.53,
+      "y": 547.2,
+      "rotation": 65.2,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_13",
+      "prefab": "Pillar4x16",
+      "x": -6445.56,
+      "z": 1005.64,
+      "y": 547.2,
+      "rotation": 155.2,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_wall_14",
+      "prefab": "Wall32x16",
+      "x": -6432.87,
+      "z": 1045.75,
+      "y": 545.42,
+      "rotation": 65.4,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    },
+    {
+      "id": "shed_col_14",
+      "prefab": "Pillar4x16",
+      "x": -6458.59,
+      "z": 1033.95,
+      "y": 545.42,
+      "rotation": 155.4,
+      "kind": "object",
+      "cs1": "JP Rock shed stand-in"
+    }
+  ]
+}

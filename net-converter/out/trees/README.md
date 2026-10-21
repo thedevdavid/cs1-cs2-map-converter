@@ -1,6 +1,6 @@
 # Trees for POST /import/objects
 
-Source: points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale). 496,303 trees in 10 files of ≤ 50,000 (import-trees-01.json, import-trees-02.json, import-trees-03.json, import-trees-04.json, import-trees-05.json, import-trees-06.json, import-trees-07.json, import-trees-08.json, import-trees-09.json, import-trees-10.json).
+Source: points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale). 504,987 trees in 11 files of ≤ 50,000 (import-trees-01.json, import-trees-02.json, import-trees-03.json, import-trees-04.json, import-trees-05.json, import-trees-06.json, import-trees-07.json, import-trees-08.json, import-trees-09.json, import-trees-10.json, import-trees-11.json).
 No y: the game samples terrain, so the same files serve the 2× (out/) and the 1× (out/x1/) map.
 
 - Outside ±7168 m (dropped): 158,877
@@ -9,25 +9,25 @@ No y: the game samples terrain, so the same files serve the 2× (out/) and the 1
 - Crop cells (Corn Stalk, for fertility): 138 cells of 64 m
 - FixedHeight trees (on rocks or bridges, with y): 74 in the point file (before clipping and masking), written per scale as import-trees-fixed-NN.json in out/ and out/x1/
 - Tree Control scale → age (trees with scale ≠ 1; the rest use the mapping age profile): elderly 70,104 (scale < 0.6 seedling, < 0.85 sapling, ≤ 1.2 adult, else elderly)
-- Masked, terrain below sea level: 10,093
-- Masked, inside the CS1 water surface: 1,133
-- Masked, on a ground-level net corridor (half width + 2 m): 656
+- Masked, CS2 terrain below sea level 93 m + 0.5: 2,472
+- Masked, inside the CS1 water surface and below 93.5 m: 0
+- Masked, on a ground-level net corridor (half width + 2 m): 726
 
 ## Per CS2 prefab
 
 | CS2 prefab | trees |
 |---|---:|
-| PineTree01 | 199,087 |
-| SpruceTree01 | 90,093 |
-| EuropeanSpruce01 | 75,322 |
-| BirchTree01 | 48,746 |
-| OakTree01 | 29,990 |
-| GreenBushWild01 | 19,933 |
-| GreenBushWild02 | 11,724 |
-| NA_HickoryTree01 | 9,806 |
-| NA_LindenTree01 | 6,594 |
-| FlowerBushWild01 | 2,565 |
-| FlowerBushWild02 | 2,493 |
+| PineTree01 | 200,261 |
+| SpruceTree01 | 91,146 |
+| EuropeanSpruce01 | 76,366 |
+| BirchTree01 | 49,750 |
+| OakTree01 | 30,660 |
+| GreenBushWild01 | 21,675 |
+| GreenBushWild02 | 13,430 |
+| NA_HickoryTree01 | 9,961 |
+| NA_LindenTree01 | 6,708 |
+| FlowerBushWild01 | 2,576 |
+| FlowerBushWild02 | 2,504 |
 
 ## Per CS1 species (decision from tree-mapping.tsv)
 
@@ -68,18 +68,18 @@ No y: the game samples terrain, so the same files serve the 2× (out/) and the 1
 
 ## Exact points vs rasters
 
-Exact: 496,303 placed (outside 158,877). Raster-based: 508,458 placed (outside 158,906). Difference -12,155.
+Exact: 504,987 placed (outside 158,877). Raster-based: 508,458 placed (outside 158,906). Difference -3,471.
 
 | CS2 prefab | exact | rasters |
 |---|---:|---:|
-| PineTree01 | 199,087 | 200,828 |
-| SpruceTree01 | 90,093 | 91,460 |
-| EuropeanSpruce01 | 75,322 | 76,910 |
-| BirchTree01 | 48,746 | 50,370 |
-| OakTree01 | 29,990 | 31,114 |
-| GreenBushWild01 | 19,933 | 21,868 |
-| GreenBushWild02 | 11,724 | 13,962 |
-| NA_HickoryTree01 | 9,806 | 10,020 |
-| NA_LindenTree01 | 6,594 | 6,731 |
-| FlowerBushWild01 | 2,565 | 2,587 |
-| FlowerBushWild02 | 2,493 | 2,608 |
+| PineTree01 | 200,261 | 200,828 |
+| SpruceTree01 | 91,146 | 91,460 |
+| EuropeanSpruce01 | 76,366 | 76,910 |
+| BirchTree01 | 49,750 | 50,370 |
+| OakTree01 | 30,660 | 31,114 |
+| GreenBushWild01 | 21,675 | 21,868 |
+| GreenBushWild02 | 13,430 | 13,962 |
+| NA_HickoryTree01 | 9,961 | 10,020 |
+| NA_LindenTree01 | 6,708 | 6,731 |
+| FlowerBushWild01 | 2,576 | 2,587 |
+| FlowerBushWild02 | 2,504 | 2,608 |

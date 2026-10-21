@@ -1008,7 +1008,7 @@
       "prefab": "ITBP_Pillar Piers 01",
       "x": 875.4,
       "z": -4352.6,
-      "y": 132.76,
+      "y": 132.75,
       "rotation": 37.2,
       "kind": "object",
       "cs1": "PO structure"
@@ -1018,7 +1018,7 @@
       "prefab": "Pillar4x16",
       "x": 875.4,
       "z": -4352.6,
-      "y": 116.76,
+      "y": 116.75,
       "rotation": 37.2,
       "kind": "object",
       "cs1": "PO structure"
@@ -1028,7 +1028,7 @@
       "prefab": "Pillar4x16",
       "x": 875.4,
       "z": -4352.6,
-      "y": 100.76,
+      "y": 100.75,
       "rotation": 37.2,
       "kind": "object",
       "cs1": "PO structure"

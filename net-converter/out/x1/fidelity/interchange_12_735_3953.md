@@ -1,6 +1,6 @@
 # Interchange 12 at (735, 3953), 2 highway junction nodes
 
-OK: layout and heights match CS1 (2 m in plan, 4 m in height)
+CHECK: 0 CS1 segments without live counterpart, 0 live without CS1 source, 3 more than 4 m off the CS1 height, 1 live dead ends CS1 did not have ((709, 3928))
 
 ![](interchange_12_735_3953.svg)
 
@@ -12,3 +12,6 @@ OK: layout and heights match CS1 (2 m in plan, 4 m in height)
 
 | CS1 segment | prefab | CS1 y | live | live − CS1 m |
 |---|---|---:|---|---:|
+| 16619 | USRP 2L Interstate E | 170.2 | 66208:17 Highway Oneway - 2 lanes | 4.4 |
+| 16914 | USRP 2L Interstate E | 169.1 | 66368:19 Highway Oneway - 2 lanes | 4.5 |
+| 29966 | USRP 2L Interstate E | 169.1 | 65079:15 Highway Oneway - 2 lanes | 4.8 |

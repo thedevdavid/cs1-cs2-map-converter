@@ -43,11 +43,11 @@
     },
     {
       "id": "b58",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6941.7,
       "z": -3559.67,
-      "y": 787.52,
-      "rotation": 188,
+      "sink": 0.343,
+      "rotation": 132,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -212,11 +212,11 @@
     },
     {
       "id": "b383",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": -7005.2,
       "z": 7095.48,
-      "y": 863.95,
-      "rotation": 228,
+      "sink": 0.272,
+      "rotation": 248.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -295,10 +295,11 @@
     },
     {
       "id": "b517",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -5933.36,
       "z": -5393.71,
-      "rotation": 261.5,
+      "sink": 0.507,
+      "rotation": 215.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -322,20 +323,21 @@
     },
     {
       "id": "b558",
-      "prefab": "Rock25",
+      "prefab": "CliffStack",
       "x": -6092.13,
       "z": -5140.12,
-      "y": 901.92,
-      "rotation": 200,
+      "sink": 0.368,
+      "rotation": 176.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b567",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6073.7,
       "z": -5099.03,
-      "rotation": 192,
+      "sink": 0.501,
+      "rotation": 165.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -368,10 +370,11 @@
     },
     {
       "id": "b634",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5382.34,
       "z": 7061.01,
-      "rotation": 45.5,
+      "sink": 0.285,
+      "rotation": 110.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -432,10 +435,11 @@
     },
     {
       "id": "b716",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": 1872.29,
       "z": -4169.59,
-      "rotation": 0.5,
+      "sink": 0.447,
+      "rotation": 203.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -608,20 +612,21 @@
     },
     {
       "id": "b1138",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -7147.11,
       "z": -3272.01,
-      "rotation": 218,
+      "sink": 0.299,
+      "rotation": 156.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b1155",
-      "prefab": "Rock13",
+      "prefab": "CliffRock5",
       "x": -4475.8,
       "z": -6775.49,
-      "y": 399.2,
-      "rotation": 204,
+      "sink": 0.754,
+      "rotation": 63.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -819,11 +824,11 @@
     },
     {
       "id": "b1657",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -6308.64,
       "z": -4435.06,
-      "y": 845.73,
-      "rotation": 45.5,
+      "sink": 0.294,
+      "rotation": 99.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -895,10 +900,11 @@
     },
     {
       "id": "b1867",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5297.05,
       "z": 7115.24,
-      "rotation": 17.5,
+      "sink": 0.295,
+      "rotation": 130.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -1193,10 +1199,11 @@
     },
     {
       "id": "b2473",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -2484.37,
       "z": -616.89,
-      "rotation": 261.5,
+      "sink": 0.254,
+      "rotation": 303.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -1286,10 +1293,11 @@
     },
     {
       "id": "b2637",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -1087.69,
       "z": 4526.68,
-      "rotation": 77,
+      "sink": 0.455,
+      "rotation": 323.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -1536,11 +1544,11 @@
     },
     {
       "id": "b3071",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -6137.2,
       "z": -5170.89,
-      "y": 911.2,
-      "rotation": 240,
+      "sink": 0.329,
+      "rotation": 237.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -1592,11 +1600,11 @@
     },
     {
       "id": "b3230",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -6640.61,
       "z": 5585.42,
-      "y": 727.98,
-      "rotation": 202.5,
+      "sink": 0.272,
+      "rotation": 93,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -1611,11 +1619,11 @@
     },
     {
       "id": "b3246",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6126.78,
       "z": -4966.42,
-      "y": 919.07,
-      "rotation": 106,
+      "sink": 0.406,
+      "rotation": 176.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -1702,11 +1710,11 @@
     },
     {
       "id": "b3479",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -4195.48,
       "z": 6874.29,
-      "y": 541.12,
-      "rotation": 126.5,
+      "sink": 0.256,
+      "rotation": 145.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -1974,10 +1982,11 @@
     },
     {
       "id": "b4209",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6258.73,
       "z": 6965.5,
-      "rotation": 289,
+      "sink": 0.34,
+      "rotation": 341.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -2135,11 +2144,11 @@
     },
     {
       "id": "b4354",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": -1645.32,
       "z": -6188.31,
-      "y": 201.37,
-      "rotation": 197.5,
+      "sink": 0.32,
+      "rotation": 32.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -2310,11 +2319,11 @@
     },
     {
       "id": "b4740",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6012.05,
       "z": -5365.18,
-      "y": 811.85,
-      "rotation": 14.5,
+      "sink": 0.434,
+      "rotation": 222.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -2406,11 +2415,11 @@
     },
     {
       "id": "b4898",
-      "prefab": "Rock27",
+      "prefab": "CliffStack",
       "x": -6135.52,
       "z": -5056.36,
-      "y": 929.24,
-      "rotation": 186,
+      "sink": 0.445,
+      "rotation": 163.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -2453,11 +2462,11 @@
     },
     {
       "id": "b4960",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -6283.28,
       "z": -4519.32,
-      "y": 901.02,
-      "rotation": 143,
+      "sink": 0.326,
+      "rotation": 88.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -2500,11 +2509,11 @@
     },
     {
       "id": "b5007",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6591,
       "z": 5766.07,
-      "y": 749.67,
-      "rotation": 30.5,
+      "sink": 0.366,
+      "rotation": 250.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -2718,10 +2727,11 @@
     },
     {
       "id": "b5576",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -7128.85,
       "z": 5283.03,
-      "rotation": 162.5,
+      "sink": 0.284,
+      "rotation": 174.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -2971,11 +2981,11 @@
     },
     {
       "id": "b6214",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -6152.39,
       "z": 6781.82,
-      "y": 823.18,
-      "rotation": 214.5,
+      "sink": 0.346,
+      "rotation": 20.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -2990,11 +3000,11 @@
     },
     {
       "id": "b6237",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -7127.21,
       "z": -7146.7,
-      "y": 913.14,
-      "rotation": 209.5,
+      "sink": 0.384,
+      "rotation": 132.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -3120,19 +3130,21 @@
     },
     {
       "id": "b6534",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -4.94,
       "z": -2776.14,
-      "rotation": 43,
+      "sink": 0.464,
+      "rotation": 279.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b6537",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5822.32,
       "z": 6606.23,
-      "rotation": 43,
+      "sink": 0.258,
+      "rotation": 298.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -3277,10 +3289,11 @@
     },
     {
       "id": "b6854",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6157.32,
       "z": -5012.82,
-      "rotation": 127.5,
+      "sink": 0.448,
+      "rotation": 180.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -3315,11 +3328,11 @@
     },
     {
       "id": "b6931",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6828.19,
       "z": 5524.9,
-      "y": 809.96,
-      "rotation": 285.5,
+      "sink": 0.354,
+      "rotation": 134.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -3334,10 +3347,11 @@
     },
     {
       "id": "b6988",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6646.38,
       "z": -3829.93,
-      "rotation": 161,
+      "sink": 0.25,
+      "rotation": 165.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -3400,11 +3414,11 @@
     },
     {
       "id": "b7058",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -5970.74,
       "z": -5514.11,
-      "y": 792.76,
-      "rotation": 298.5,
+      "sink": 0.481,
+      "rotation": 117.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -3476,10 +3490,11 @@
     },
     {
       "id": "b7202",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -869.35,
       "z": 4249.26,
-      "rotation": 159.5,
+      "sink": 0.416,
+      "rotation": 293.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -3633,11 +3648,11 @@
     },
     {
       "id": "b7763",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -5932.83,
       "z": -5503.88,
-      "y": 773.79,
-      "rotation": 322.5,
+      "sink": 0.475,
+      "rotation": 110.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -3653,10 +3668,11 @@
     },
     {
       "id": "b7815",
-      "prefab": "RZaridrock1",
+      "prefab": "CliffRock5",
       "x": 1714.03,
       "z": -4134.74,
-      "rotation": 124.5,
+      "sink": 0.704,
+      "rotation": 29.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
     },
@@ -3765,11 +3781,11 @@
     },
     {
       "id": "b8214",
-      "prefab": "Rock19",
+      "prefab": "CliffRock5",
       "x": -6634.82,
       "z": 6592.2,
-      "y": 726.04,
-      "rotation": 29.3,
+      "sink": 0.865,
+      "rotation": 204.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -3793,10 +3809,11 @@
     },
     {
       "id": "b8296",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6678.9,
       "z": 5566.15,
-      "rotation": 164.5,
+      "sink": 0.268,
+      "rotation": 98.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -3906,11 +3923,11 @@
     },
     {
       "id": "b8502",
-      "prefab": "Rock25",
+      "prefab": "CliffStack",
       "x": -6646.9,
       "z": -3767.13,
-      "y": 762.24,
-      "rotation": 54,
+      "sink": 0.353,
+      "rotation": 172.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -4058,11 +4075,11 @@
     },
     {
       "id": "b8831",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -6602.09,
       "z": -4192.79,
-      "y": 854.63,
-      "rotation": 126,
+      "sink": 0.3,
+      "rotation": 175.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -4078,11 +4095,11 @@
     },
     {
       "id": "b8842",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -4118.7,
       "z": -3598.18,
-      "y": 312.26,
-      "rotation": 353,
+      "sink": 0.261,
+      "rotation": 198.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -4115,10 +4132,11 @@
     },
     {
       "id": "b8923",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6619.04,
       "z": 5590.89,
-      "rotation": 192.5,
+      "sink": 0.281,
+      "rotation": 95,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -4153,10 +4171,11 @@
     },
     {
       "id": "b9071",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5456.16,
       "z": 26.91,
-      "rotation": 51.5,
+      "sink": 0.363,
+      "rotation": 249.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -4430,10 +4449,11 @@
     },
     {
       "id": "b9817",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6136.25,
       "z": -5576.31,
-      "rotation": 353,
+      "sink": 0.313,
+      "rotation": 140.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -4502,19 +4522,21 @@
     },
     {
       "id": "b9950",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -5566.79,
       "z": 6844.8,
-      "rotation": 267.5,
+      "sink": 0.304,
+      "rotation": 211.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b9978",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6014.56,
       "z": -5215.8,
-      "rotation": 237,
+      "sink": 0.359,
+      "rotation": 198.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -4557,10 +4579,11 @@
     },
     {
       "id": "b10042",
-      "prefab": "RZaridrock1",
+      "prefab": "CliffRock5",
       "x": -1587.79,
       "z": -6257.76,
-      "rotation": 30,
+      "sink": 0.9,
+      "rotation": 273.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -4808,10 +4831,11 @@
     },
     {
       "id": "b10469",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -2215.39,
       "z": -6352.87,
-      "rotation": 161,
+      "sink": 0.263,
+      "rotation": 268.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5041,10 +5065,11 @@
     },
     {
       "id": "b10871",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": 6542.11,
       "z": -1290.9,
-      "rotation": 310,
+      "sink": 0.371,
+      "rotation": 337.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5059,10 +5084,11 @@
     },
     {
       "id": "b10929",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -5502.52,
       "z": 6908.47,
-      "rotation": 226.5,
+      "sink": 0.252,
+      "rotation": 243.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5086,11 +5112,11 @@
     },
     {
       "id": "b10955",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": -5951.65,
       "z": -5316.9,
-      "y": 791.33,
-      "rotation": 286.5,
+      "sink": 0.418,
+      "rotation": 172.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5105,10 +5131,11 @@
     },
     {
       "id": "b10995",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6570.01,
       "z": 5761.21,
-      "rotation": 27.5,
+      "sink": 0.354,
+      "rotation": 248.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5133,11 +5160,11 @@
     },
     {
       "id": "b11051",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -6636.26,
       "z": -4204.89,
-      "y": 871.54,
-      "rotation": 95.5,
+      "sink": 0.256,
+      "rotation": 162,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5161,11 +5188,11 @@
     },
     {
       "id": "b11096",
-      "prefab": "Rock21",
+      "prefab": "CliffStack",
       "x": -6137.02,
       "z": -5132.63,
-      "y": 925.11,
-      "rotation": 209,
+      "sink": 0.255,
+      "rotation": 214.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5209,10 +5236,11 @@
     },
     {
       "id": "b11176",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6601.65,
       "z": -5817.15,
-      "rotation": 111,
+      "sink": 0.439,
+      "rotation": 267,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5227,10 +5255,11 @@
     },
     {
       "id": "b11198",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -4224.45,
       "z": 6965.94,
-      "rotation": 28.5,
+      "sink": 0.262,
+      "rotation": 262.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -5301,10 +5330,11 @@
     },
     {
       "id": "b11270",
-      "prefab": "RZaridrock1",
+      "prefab": "CliffRock5",
       "x": -1122.56,
       "z": 4637.96,
-      "rotation": 352,
+      "sink": 0.9,
+      "rotation": 351.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -5328,10 +5358,11 @@
     },
     {
       "id": "b11304",
-      "prefab": "RZaridrock5",
+      "prefab": "CliffRock5",
       "x": -6648.03,
       "z": -1432.08,
-      "rotation": 0.5,
+      "sink": 0.623,
+      "rotation": 238.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
     },
@@ -5375,11 +5406,11 @@
     },
     {
       "id": "b11354",
-      "prefab": "Rock17",
+      "prefab": "CliffRock5",
       "x": -1353.62,
       "z": 6346.26,
-      "y": 244.41,
-      "rotation": 301,
+      "sink": 0.714,
+      "rotation": 354.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -5412,10 +5443,11 @@
     },
     {
       "id": "b11408",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6008.82,
       "z": 6707.98,
-      "rotation": 124.5,
+      "sink": 0.309,
+      "rotation": 225.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5469,10 +5501,11 @@
     },
     {
       "id": "b11467",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5728,
       "z": 6715.41,
-      "rotation": 303.5,
+      "sink": 0.313,
+      "rotation": 259.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5516,21 +5549,21 @@
     },
     {
       "id": "b11621",
-      "prefab": "Rock21",
+      "prefab": "CliffStack",
       "x": -5890.75,
       "z": -5469.97,
-      "y": 726.85,
-      "rotation": 290,
+      "sink": 0.426,
+      "rotation": 110.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b11626",
-      "prefab": "Rock23",
+      "prefab": "CliffStack",
       "x": -6098.76,
       "z": 6732.29,
-      "y": 827.96,
-      "rotation": 196.5,
+      "sink": 0.253,
+      "rotation": 274.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -5650,10 +5683,11 @@
     },
     {
       "id": "b11788",
-      "prefab": "Rock17",
+      "prefab": "CliffRock5",
       "x": 1843.41,
       "z": -4207.48,
-      "rotation": 122,
+      "sink": 0.617,
+      "rotation": 218.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -5678,21 +5712,21 @@
     },
     {
       "id": "b11824",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -6105.15,
       "z": -2222.92,
-      "y": 449.49,
-      "rotation": 329,
+      "sink": 0.273,
+      "rotation": 108.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b11837",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -7098.15,
       "z": -3240.23,
-      "y": 801.51,
-      "rotation": 333,
+      "sink": 0.266,
+      "rotation": 140.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -6043,11 +6077,11 @@
     },
     {
       "id": "b12519",
-      "prefab": "Rock25",
+      "prefab": "CliffStack",
       "x": -6210.17,
       "z": -5567.55,
-      "y": 929.87,
-      "rotation": 340.5,
+      "sink": 0.275,
+      "rotation": 146.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -6179,10 +6213,11 @@
     },
     {
       "id": "b12727",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6331.46,
       "z": -4641.44,
-      "rotation": 198,
+      "sink": 0.262,
+      "rotation": 73.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -6355,11 +6390,11 @@
     },
     {
       "id": "b13051",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": -6056.4,
       "z": -5206.26,
-      "y": 867.38,
-      "rotation": 216,
+      "sink": 0.339,
+      "rotation": 226.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -6493,11 +6528,11 @@
     },
     {
       "id": "b13387",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -6907.71,
       "z": -5911.48,
-      "y": 924.29,
-      "rotation": 201.5,
+      "sink": 0.259,
+      "rotation": 337.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -6589,10 +6624,11 @@
     },
     {
       "id": "b13495",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6679.4,
       "z": 4479.59,
-      "rotation": 66,
+      "sink": 0.273,
+      "rotation": 129.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -6607,10 +6643,11 @@
     },
     {
       "id": "b13524",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6205,
       "z": -4915.77,
-      "rotation": 31.5,
+      "sink": 0.261,
+      "rotation": 194.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -6720,10 +6757,11 @@
     },
     {
       "id": "b13828",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -7008.14,
       "z": 7103.93,
-      "rotation": 224,
+      "sink": 0.267,
+      "rotation": 248.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -7017,11 +7055,11 @@
     },
     {
       "id": "b14336",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -6665.79,
       "z": 5835.41,
-      "y": 800.41,
-      "rotation": 49.5,
+      "sink": 0.318,
+      "rotation": 278.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -7083,11 +7121,11 @@
     },
     {
       "id": "b14415",
-      "prefab": "Rock15",
+      "prefab": "CliffRock5",
       "x": -4813.58,
       "z": 6373.72,
-      "y": 585.56,
-      "rotation": 183.5,
+      "sink": 0.649,
+      "rotation": 140.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -7167,19 +7205,21 @@
     },
     {
       "id": "b14597",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6098.75,
       "z": -5607.25,
-      "rotation": 335,
+      "sink": 0.285,
+      "rotation": 138.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b14662",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -5577.01,
       "z": 6874.82,
-      "rotation": 208,
+      "sink": 0.294,
+      "rotation": 211.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -7516,10 +7556,11 @@
     },
     {
       "id": "b15374",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6578.65,
       "z": -4183.6,
-      "rotation": 139,
+      "sink": 0.299,
+      "rotation": 181.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -7619,10 +7660,11 @@
     },
     {
       "id": "b15632",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -7019.09,
       "z": -3458.62,
-      "rotation": 64,
+      "sink": 0.891,
+      "rotation": 138.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -7721,10 +7763,11 @@
     },
     {
       "id": "b15841",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -5966.05,
       "z": -5330.56,
-      "rotation": 311.5,
+      "sink": 0.373,
+      "rotation": 192,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -7759,10 +7802,11 @@
     },
     {
       "id": "b15888",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5930.03,
       "z": -990.15,
-      "rotation": 301.5,
+      "sink": 0.273,
+      "rotation": 155.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -7972,11 +8016,11 @@
     },
     {
       "id": "b16277",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -7061.96,
       "z": -7130,
-      "y": 885.6,
-      "rotation": 271,
+      "sink": 0.372,
+      "rotation": 86.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -8268,10 +8312,11 @@
     },
     {
       "id": "b16998",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6060.87,
       "z": -5499.98,
-      "rotation": 271,
+      "sink": 0.378,
+      "rotation": 142.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -8287,10 +8332,11 @@
     },
     {
       "id": "b17026",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -5317.12,
       "z": 7070.75,
-      "rotation": 62.5,
+      "sink": 0.309,
+      "rotation": 130,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -8342,11 +8388,11 @@
     },
     {
       "id": "b17144",
-      "prefab": "Rock25",
+      "prefab": "CliffStack",
       "x": -5926.64,
       "z": -1025.64,
-      "y": 352.87,
-      "rotation": 315,
+      "sink": 0.253,
+      "rotation": 161.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -8416,10 +8462,11 @@
     },
     {
       "id": "b17343",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6914.37,
       "z": 5557.82,
-      "rotation": 337,
+      "sink": 0.327,
+      "rotation": 128.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -8582,11 +8629,11 @@
     },
     {
       "id": "b17725",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -5298.9,
       "z": 7081.68,
-      "y": 731.52,
-      "rotation": 57,
+      "sink": 0.314,
+      "rotation": 133,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -8601,11 +8648,11 @@
     },
     {
       "id": "b17733",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -7143.81,
       "z": -3208.41,
-      "y": 829.17,
-      "rotation": 271.5,
+      "sink": 0.347,
+      "rotation": 176.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -8713,10 +8760,11 @@
     },
     {
       "id": "b17985",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -1112.02,
       "z": 4609.72,
-      "rotation": 292,
+      "sink": 0.487,
+      "rotation": 328,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -8731,20 +8779,21 @@
     },
     {
       "id": "b18113",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6981.14,
       "z": 5583.6,
-      "rotation": 17,
+      "sink": 0.275,
+      "rotation": 135.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b18133",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6122.6,
       "z": -5085.3,
-      "y": 926.75,
-      "rotation": 224,
+      "sink": 0.433,
+      "rotation": 162.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -8759,10 +8808,11 @@
     },
     {
       "id": "b18142",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -7145.57,
       "z": -3250.16,
-      "rotation": 201.5,
+      "sink": 0.34,
+      "rotation": 161.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -8867,15 +8917,6 @@
       "rotation": 1,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Small_Data"
-    },
-    {
-      "id": "b18281",
-      "prefab": "rzrock7",
-      "x": -7095.57,
-      "z": -3240.92,
-      "rotation": 336,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b18287",
@@ -9019,11 +9060,11 @@
     },
     {
       "id": "b18554",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": -6350.58,
       "z": -4636.22,
-      "y": 952.77,
-      "rotation": 190,
+      "sink": 0.27,
+      "rotation": 85.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -9067,11 +9108,11 @@
     },
     {
       "id": "b18623",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -7057.38,
       "z": -3260.45,
-      "y": 798.15,
-      "rotation": 248.5,
+      "sink": 0.257,
+      "rotation": 110.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -9105,21 +9146,13 @@
     },
     {
       "id": "b18706",
-      "prefab": "Rock16",
+      "prefab": "CliffRock5",
       "x": 1444.35,
       "z": 6904.97,
-      "rotation": 40,
+      "sink": 0.683,
+      "rotation": 241.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
-    },
-    {
-      "id": "b18721",
-      "prefab": "rzrock7",
-      "x": -6903.46,
-      "z": -5909.34,
-      "rotation": 182,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b18745",
@@ -9178,10 +9211,11 @@
     },
     {
       "id": "b18844",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5689.24,
       "z": 6802.15,
-      "rotation": 269.5,
+      "sink": 0.346,
+      "rotation": 234.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -9215,10 +9249,11 @@
     },
     {
       "id": "b18895",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6150.19,
       "z": -5598.86,
-      "rotation": 22,
+      "sink": 0.276,
+      "rotation": 144.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -9289,11 +9324,11 @@
     },
     {
       "id": "b19025",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6714.78,
       "z": 5567.82,
-      "y": 742.86,
-      "rotation": 187.5,
+      "sink": 0.273,
+      "rotation": 111.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -9372,15 +9407,6 @@
       "cs1": "Brown Surface Rock A Medium_Data"
     },
     {
-      "id": "b19174",
-      "prefab": "rzrock7",
-      "x": -6566.3,
-      "z": 5765.53,
-      "rotation": 129.5,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock A Large_Data"
-    },
-    {
       "id": "b19188",
       "prefab": "rzrock1",
       "x": -6972.79,
@@ -9447,10 +9473,11 @@
     },
     {
       "id": "b19255",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6753.3,
       "z": 5950.83,
-      "rotation": 300.5,
+      "sink": 0.296,
+      "rotation": 298.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -9721,19 +9748,21 @@
     },
     {
       "id": "b19983",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -7009.14,
       "z": 7054.35,
-      "rotation": 260,
+      "sink": 0.25,
+      "rotation": 256.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b19984",
-      "prefab": "Rock12",
+      "prefab": "CliffRock5",
       "x": -1121.48,
       "z": 4675.37,
-      "rotation": 43.5,
+      "sink": 0.9,
+      "rotation": 7.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -9768,10 +9797,11 @@
     },
     {
       "id": "b20131",
-      "prefab": "RZaridrock5",
+      "prefab": "CliffRock5",
       "x": 6562.07,
       "z": -1204.16,
-      "rotation": 184.5,
+      "sink": 0.645,
+      "rotation": 330.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -9805,11 +9835,11 @@
     },
     {
       "id": "b20235",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -6377.94,
       "z": -4521.76,
-      "y": 891.52,
-      "rotation": 122.5,
+      "sink": 0.28,
+      "rotation": 77.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -9861,10 +9891,11 @@
     },
     {
       "id": "b20275",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -7022.84,
       "z": -3454.84,
-      "rotation": 57,
+      "sink": 0.9,
+      "rotation": 134.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -10007,10 +10038,11 @@
     },
     {
       "id": "b20585",
-      "prefab": "RZaridrock5",
+      "prefab": "CliffRock5",
       "x": 6596.36,
       "z": -1279.29,
-      "rotation": 134.5,
+      "sink": 0.9,
+      "rotation": 44.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -10135,10 +10167,11 @@
     },
     {
       "id": "b20846",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -1330.86,
       "z": 6375.91,
-      "rotation": 297.5,
+      "sink": 0.268,
+      "rotation": 359.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -10219,11 +10252,11 @@
     },
     {
       "id": "b21004",
-      "prefab": "Rock23",
+      "prefab": "CliffStack",
       "x": -6150,
       "z": -5036.47,
-      "y": 937.39,
-      "rotation": 157,
+      "sink": 0.447,
+      "rotation": 174.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -10248,11 +10281,11 @@
     },
     {
       "id": "b21044",
-      "prefab": "Rock15",
+      "prefab": "CliffRock5",
       "x": -769.62,
       "z": 4231.3,
-      "y": 226.93,
-      "rotation": 269.5,
+      "sink": 0.763,
+      "rotation": 261.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -10342,10 +10375,11 @@
     },
     {
       "id": "b21250",
-      "prefab": "RZaridrock1",
+      "prefab": "CliffRock5",
       "x": 6758.05,
       "z": -1121.33,
-      "rotation": 3,
+      "sink": 0.72,
+      "rotation": 109.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
     },
@@ -10379,10 +10413,11 @@
     },
     {
       "id": "b21281",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6102.71,
       "z": -5045.6,
-      "rotation": 181.5,
+      "sink": 0.467,
+      "rotation": 161.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -10636,16 +10671,6 @@
       "rotation": 143,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
-    },
-    {
-      "id": "b21712",
-      "prefab": "Rock21",
-      "x": -7148.82,
-      "z": -3254.49,
-      "y": 840.02,
-      "rotation": 202.5,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b21714",
@@ -11023,11 +11048,11 @@
     },
     {
       "id": "b22486",
-      "prefab": "Rock25",
+      "prefab": "CliffStack",
       "x": -1665.08,
       "z": -6260.12,
-      "y": 200.81,
-      "rotation": 94,
+      "sink": 0.292,
+      "rotation": 337,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -11125,11 +11150,11 @@
     },
     {
       "id": "b22779",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -7011.68,
       "z": 5595.18,
-      "y": 839.5,
-      "rotation": 33.5,
+      "sink": 0.256,
+      "rotation": 140,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -11258,11 +11283,11 @@
     },
     {
       "id": "b22925",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -6938.22,
       "z": 5580.44,
-      "y": 825.02,
-      "rotation": 344,
+      "sink": 0.312,
+      "rotation": 131.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -11444,19 +11469,21 @@
     },
     {
       "id": "b23362",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6661.27,
       "z": -3739.09,
-      "rotation": 19,
+      "sink": 0.348,
+      "rotation": 161.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b23384",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6054.73,
       "z": -5186.92,
-      "rotation": 270,
+      "sink": 0.391,
+      "rotation": 205.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -11519,29 +11546,21 @@
     },
     {
       "id": "b23499",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": 6556.24,
       "z": -1248.29,
-      "rotation": 213,
+      "sink": 0.286,
+      "rotation": 353.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
-      "id": "b23520",
-      "prefab": "rzrock1",
-      "x": -7022.84,
-      "z": -3454.84,
-      "rotation": 57,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock B Large_Data"
-    },
-    {
       "id": "b23538",
-      "prefab": "Rock27",
+      "prefab": "CliffStack",
       "x": -6391.47,
       "z": -4617.38,
-      "y": 939.65,
-      "rotation": 193,
+      "sink": 0.357,
+      "rotation": 83.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -11656,11 +11675,11 @@
     },
     {
       "id": "b23748",
-      "prefab": "Rock21",
+      "prefab": "CliffStack",
       "x": -6933.95,
       "z": -7159.24,
-      "y": 901.18,
-      "rotation": 48.5,
+      "sink": 0.259,
+      "rotation": 116.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -11675,11 +11694,11 @@
     },
     {
       "id": "b23767",
-      "prefab": "Rock25",
+      "prefab": "CliffStack",
       "x": -7044.62,
       "z": 6170.96,
-      "y": 933.59,
-      "rotation": 358,
+      "sink": 0.315,
+      "rotation": 268,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -11797,11 +11816,11 @@
     },
     {
       "id": "b23959",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -5987.49,
       "z": -5378.84,
-      "y": 795.67,
-      "rotation": 6.5,
+      "sink": 0.519,
+      "rotation": 228.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -11946,20 +11965,21 @@
     },
     {
       "id": "b24191",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -7066.97,
       "z": -3278.02,
-      "rotation": 254,
+      "sink": 0.258,
+      "rotation": 116.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b24230",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -6990.42,
       "z": -7140.47,
-      "y": 892.02,
-      "rotation": 350,
+      "sink": 0.32,
+      "rotation": 83.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -12058,16 +12078,6 @@
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
-      "id": "b24391",
-      "prefab": "Rock27",
-      "x": -6013.67,
-      "z": 6705.58,
-      "y": 803.78,
-      "rotation": 141.5,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock A Large_Data"
-    },
-    {
       "id": "b24400",
       "prefab": "rzrock4",
       "x": 1065.73,
@@ -12126,10 +12136,11 @@
     },
     {
       "id": "b24585",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -7067.92,
       "z": -3381.15,
-      "rotation": 59.5,
+      "sink": 0.324,
+      "rotation": 217.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -12181,10 +12192,11 @@
     },
     {
       "id": "b24706",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6166.62,
       "z": -4955.34,
-      "rotation": 80,
+      "sink": 0.553,
+      "rotation": 168.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -12246,10 +12258,11 @@
     },
     {
       "id": "b24842",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6554.63,
       "z": -4217.43,
-      "rotation": 185,
+      "sink": 0.291,
+      "rotation": 151.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -12347,11 +12360,11 @@
     },
     {
       "id": "b25022",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -6083.65,
       "z": -5600.23,
-      "y": 885.92,
-      "rotation": 316.5,
+      "sink": 0.302,
+      "rotation": 135.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -12394,10 +12407,11 @@
     },
     {
       "id": "b25147",
-      "prefab": "RZaridrock1",
+      "prefab": "CliffRock5",
       "x": -4831.15,
       "z": -6741.13,
-      "rotation": 204,
+      "sink": 0.613,
+      "rotation": 113.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -12477,10 +12491,11 @@
     },
     {
       "id": "b25454",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -928.87,
       "z": 4283.58,
-      "rotation": 263.5,
+      "sink": 0.302,
+      "rotation": 340.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -12525,10 +12540,11 @@
     },
     {
       "id": "b25508",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6177.54,
       "z": -4946.87,
-      "rotation": 72,
+      "sink": 0.463,
+      "rotation": 164,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -12553,11 +12569,11 @@
     },
     {
       "id": "b25554",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -5884.04,
       "z": -5437.15,
-      "y": 701.48,
-      "rotation": 319,
+      "sink": 0.36,
+      "rotation": 126.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -12739,10 +12755,11 @@
     },
     {
       "id": "b25871",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6787.24,
       "z": 5959.27,
-      "rotation": 275,
+      "sink": 0.258,
+      "rotation": 280.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -12803,10 +12820,11 @@
     },
     {
       "id": "b25955",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -5980.12,
       "z": 6698.83,
-      "rotation": 119.5,
+      "sink": 0.32,
+      "rotation": 223.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -13043,11 +13061,11 @@
     },
     {
       "id": "b26676",
-      "prefab": "Rock18",
+      "prefab": "CliffRock5",
       "x": -4852.94,
       "z": 4017.24,
-      "y": 493.43,
-      "rotation": 29.5,
+      "sink": 0.747,
+      "rotation": 96.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -13062,11 +13080,11 @@
     },
     {
       "id": "b26744",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": -3414.89,
       "z": -2988.42,
-      "y": 239.08,
-      "rotation": 19.5,
+      "sink": 0.248,
+      "rotation": 210.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -13284,10 +13302,11 @@
     },
     {
       "id": "b27238",
-      "prefab": "Rock15",
+      "prefab": "CliffRock5",
       "x": -936.97,
       "z": 4357.36,
-      "rotation": 200.5,
+      "sink": 0.9,
+      "rotation": 350.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -13492,11 +13511,11 @@
     },
     {
       "id": "b27732",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -5638.34,
       "z": 6750.71,
-      "y": 791.78,
-      "rotation": 320,
+      "sink": 0.282,
+      "rotation": 235.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -13520,10 +13539,11 @@
     },
     {
       "id": "b27746",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6017.63,
       "z": -5250.23,
-      "rotation": 270.5,
+      "sink": 0.31,
+      "rotation": 191.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -13772,11 +13792,11 @@
     },
     {
       "id": "b28255",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6607.04,
       "z": 5830.44,
-      "y": 794.41,
-      "rotation": 38,
+      "sink": 0.358,
+      "rotation": 250.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -13828,11 +13848,11 @@
     },
     {
       "id": "b28355",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -7015.79,
       "z": 6099.22,
-      "y": 891.77,
-      "rotation": 46.5,
+      "sink": 0.304,
+      "rotation": 254.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -13951,20 +13971,21 @@
     },
     {
       "id": "b28572",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6651.85,
       "z": -5843.59,
-      "rotation": 164.5,
+      "sink": 0.324,
+      "rotation": 260.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b28590",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -6954.97,
       "z": -3533.02,
-      "y": 779.85,
-      "rotation": 156,
+      "sink": 0.266,
+      "rotation": 157.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -14149,10 +14170,11 @@
     },
     {
       "id": "b28981",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6530.07,
       "z": 5819.63,
-      "rotation": 87.5,
+      "sink": 0.348,
+      "rotation": 244.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -14213,11 +14235,11 @@
     },
     {
       "id": "b29096",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -4044.12,
       "z": 6788.29,
-      "y": 499.78,
-      "rotation": 186,
+      "sink": 0.306,
+      "rotation": 142,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -14278,11 +14300,11 @@
     },
     {
       "id": "b29234",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -6629.36,
       "z": 5797.78,
-      "y": 773.92,
-      "rotation": 86.5,
+      "sink": 0.364,
+      "rotation": 258.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -14316,11 +14338,11 @@
     },
     {
       "id": "b29253",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -6630.85,
       "z": 5869.67,
-      "y": 819.79,
-      "rotation": 12.5,
+      "sink": 0.307,
+      "rotation": 260.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -14354,10 +14376,11 @@
     },
     {
       "id": "b29367",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": 6579.19,
       "z": -1321.76,
-      "rotation": 239.5,
+      "sink": 0.429,
+      "rotation": 320.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -14372,10 +14395,11 @@
     },
     {
       "id": "b29403",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -6752.2,
       "z": -5847.33,
-      "rotation": 50.5,
+      "sink": 0.35,
+      "rotation": 282.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -14466,11 +14490,11 @@
     },
     {
       "id": "b29558",
-      "prefab": "Rock23",
+      "prefab": "CliffStack",
       "x": 6675.93,
       "z": -1028.57,
-      "y": 163.03,
-      "rotation": 149.5,
+      "sink": 0.274,
+      "rotation": 109.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -14549,11 +14573,11 @@
     },
     {
       "id": "b29725",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": -5635.5,
       "z": 6831.27,
-      "y": 822.58,
-      "rotation": 233,
+      "sink": 0.315,
+      "rotation": 219.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -14694,10 +14718,11 @@
     },
     {
       "id": "b30006",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": 495.4,
       "z": 2232.9,
-      "rotation": 67,
+      "sink": 0.279,
+      "rotation": 337.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -14823,11 +14848,11 @@
     },
     {
       "id": "b30334",
-      "prefab": "Rock18",
+      "prefab": "CliffRock5",
       "x": -5916.9,
       "z": 66.93,
-      "y": 192.76,
-      "rotation": 9.5,
+      "sink": 0.761,
+      "rotation": 296.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -14842,10 +14867,11 @@
     },
     {
       "id": "b30357",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -7081.14,
       "z": -7135.16,
-      "rotation": 254.5,
+      "sink": 0.33,
+      "rotation": 98,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -15051,10 +15077,11 @@
     },
     {
       "id": "b30762",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6568.26,
       "z": -5873.65,
-      "rotation": 78,
+      "sink": 0.333,
+      "rotation": 350.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -15097,10 +15124,11 @@
     },
     {
       "id": "b30871",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6393.1,
       "z": -4560.08,
-      "rotation": 137,
+      "sink": 0.278,
+      "rotation": 82.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -15243,10 +15271,11 @@
     },
     {
       "id": "b31120",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6254.69,
       "z": -4425.42,
-      "rotation": 56,
+      "sink": 0.288,
+      "rotation": 91.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -15298,10 +15327,11 @@
     },
     {
       "id": "b31236",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6298.8,
       "z": 6819.97,
-      "rotation": 208,
+      "sink": 0.257,
+      "rotation": 302,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -15326,11 +15356,11 @@
     },
     {
       "id": "b31320",
-      "prefab": "Rock16",
+      "prefab": "CliffRock5",
       "x": -6616.42,
       "z": -1423.34,
-      "y": 561.11,
-      "rotation": 341,
+      "sink": 0.671,
+      "rotation": 261.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
     },
@@ -15383,11 +15413,11 @@
     },
     {
       "id": "b31458",
-      "prefab": "Rock21",
+      "prefab": "CliffStack",
       "x": -6069.32,
       "z": -5556.13,
-      "y": 866.42,
-      "rotation": 282,
+      "sink": 0.369,
+      "rotation": 132.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -15559,10 +15589,11 @@
     },
     {
       "id": "b31785",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -7072.82,
       "z": -3293.4,
-      "rotation": 262.5,
+      "sink": 0.253,
+      "rotation": 125.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -15698,11 +15729,11 @@
     },
     {
       "id": "b32016",
-      "prefab": "Rock21",
+      "prefab": "CliffStack",
       "x": -5957.04,
       "z": 6686.93,
-      "y": 769.44,
-      "rotation": 102,
+      "sink": 0.322,
+      "rotation": 224.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -15811,11 +15842,11 @@
     },
     {
       "id": "b32363",
-      "prefab": "Rock20",
+      "prefab": "CliffRock5",
       "x": -4900.86,
       "z": 4020.07,
-      "y": 497.24,
-      "rotation": 345,
+      "sink": 0.76,
+      "rotation": 111.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -15840,11 +15871,11 @@
     },
     {
       "id": "b32458",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": -6558.09,
       "z": -4160.8,
-      "y": 830.87,
-      "rotation": 146.5,
+      "sink": 0.282,
+      "rotation": 191.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -15960,11 +15991,11 @@
     },
     {
       "id": "b32734",
-      "prefab": "Rock27",
+      "prefab": "CliffStack",
       "x": 6635.57,
       "z": -1042.78,
-      "y": 168.98,
-      "rotation": 94,
+      "sink": 0.28,
+      "rotation": 89,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -15980,10 +16011,11 @@
     },
     {
       "id": "b32747",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6730.79,
       "z": 5883.37,
-      "rotation": 345.5,
+      "sink": 0.344,
+      "rotation": 283.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -15999,19 +16031,21 @@
     },
     {
       "id": "b32778",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6757.94,
       "z": 5920.42,
-      "rotation": 307,
+      "sink": 0.31,
+      "rotation": 292.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b32787",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5740.87,
       "z": 6705.5,
-      "rotation": 319,
+      "sink": 0.308,
+      "rotation": 264.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -16138,11 +16172,11 @@
     },
     {
       "id": "b33142",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -4404.3,
       "z": 6978.42,
-      "y": 606.69,
-      "rotation": 39.5,
+      "sink": 0.277,
+      "rotation": 253.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -16334,10 +16368,11 @@
     },
     {
       "id": "b33502",
-      "prefab": "RZaridrock2",
+      "prefab": "CliffRock5",
       "x": 6701.69,
       "z": -1042.23,
-      "rotation": 284.5,
+      "sink": 0.624,
+      "rotation": 127.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
     },
@@ -16352,11 +16387,11 @@
     },
     {
       "id": "b33620",
-      "prefab": "Rock18",
+      "prefab": "CliffRock5",
       "x": -1574.54,
       "z": -1717.23,
-      "y": 114.19,
-      "rotation": 203,
+      "sink": 0.806,
+      "rotation": 150.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -16418,10 +16453,11 @@
     },
     {
       "id": "b33792",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5674.81,
       "z": 6798.39,
-      "rotation": 256,
+      "sink": 0.289,
+      "rotation": 233.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -16437,10 +16473,11 @@
     },
     {
       "id": "b33808",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6236.37,
       "z": -4406.71,
-      "rotation": 26,
+      "sink": 0.267,
+      "rotation": 84.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -16502,10 +16539,11 @@
     },
     {
       "id": "b33935",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6061.38,
       "z": 6704.17,
-      "rotation": 173.5,
+      "sink": 0.287,
+      "rotation": 252.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -16558,10 +16596,11 @@
     },
     {
       "id": "b34086",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -7025.48,
       "z": 6126.53,
-      "rotation": 24.5,
+      "sink": 0.299,
+      "rotation": 261.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -16688,11 +16727,11 @@
     },
     {
       "id": "b34543",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -6336.52,
       "z": -4473.27,
-      "y": 869.55,
-      "rotation": 86,
+      "sink": 0.293,
+      "rotation": 88.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -16858,11 +16897,11 @@
     },
     {
       "id": "b34744",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": 714.1,
       "z": -1704.47,
-      "y": 106.56,
-      "rotation": 336.5,
+      "sink": 0.392,
+      "rotation": 2.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17107,11 +17146,11 @@
     },
     {
       "id": "b35291",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -746.06,
       "z": 4234.23,
-      "y": 232.87,
-      "rotation": 324.5,
+      "sink": 0.339,
+      "rotation": 265.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -17127,10 +17166,11 @@
     },
     {
       "id": "b35320",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6753.24,
       "z": 7140.19,
-      "rotation": 117,
+      "sink": 0.254,
+      "rotation": 258.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17174,10 +17214,11 @@
     },
     {
       "id": "b35422",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -475.57,
       "z": 4410.99,
-      "rotation": 118.5,
+      "sink": 0.249,
+      "rotation": 238.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17193,10 +17234,11 @@
     },
     {
       "id": "b35424",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6263.3,
       "z": 6949.85,
-      "rotation": 279.5,
+      "sink": 0.322,
+      "rotation": 350.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17230,10 +17272,11 @@
     },
     {
       "id": "b35549",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6760.65,
       "z": 5579.78,
-      "rotation": 210.5,
+      "sink": 0.305,
+      "rotation": 123.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17314,16 +17357,6 @@
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
-      "id": "b35678",
-      "prefab": "Rock24",
-      "x": -6940.72,
-      "z": -3559.2,
-      "y": 787.1,
-      "rotation": 188.5,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock B Large_Data"
-    },
-    {
       "id": "b35687",
       "prefab": "RZaridrock4",
       "x": -3300.04,
@@ -17343,11 +17376,11 @@
     },
     {
       "id": "b35709",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -6033.18,
       "z": -5535.54,
-      "y": 836.3,
-      "rotation": 298,
+      "sink": 0.419,
+      "rotation": 130.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17363,11 +17396,11 @@
     },
     {
       "id": "b35763",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -6292.75,
       "z": -4475.09,
-      "y": 872.76,
-      "rotation": 93.5,
+      "sink": 0.339,
+      "rotation": 93.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -17438,10 +17471,11 @@
     },
     {
       "id": "b35913",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6734.98,
       "z": -5851.68,
-      "rotation": 357,
+      "sink": 0.278,
+      "rotation": 267.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17549,20 +17583,21 @@
     },
     {
       "id": "b36147",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -7111.46,
       "z": -3236.21,
-      "y": 809.73,
-      "rotation": 319,
+      "sink": 0.296,
+      "rotation": 153.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b36166",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -7007.49,
       "z": -5963.05,
-      "rotation": 224.5,
+      "sink": 0.283,
+      "rotation": 295.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17616,11 +17651,11 @@
     },
     {
       "id": "b36416",
-      "prefab": "Rock30",
+      "prefab": "CliffStack",
       "x": -5934.18,
       "z": 6657.47,
-      "y": 748.89,
-      "rotation": 86,
+      "sink": 0.313,
+      "rotation": 235.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17710,11 +17745,11 @@
     },
     {
       "id": "b36682",
-      "prefab": "Rock23",
+      "prefab": "CliffStack",
       "x": -7017.72,
       "z": -7149.72,
-      "y": 896.39,
-      "rotation": 317.5,
+      "sink": 0.305,
+      "rotation": 93,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17729,11 +17764,11 @@
     },
     {
       "id": "b36715",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -6340.72,
       "z": -4587.62,
-      "y": 928.25,
-      "rotation": 169,
+      "sink": 0.271,
+      "rotation": 75.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -17849,20 +17884,21 @@
     },
     {
       "id": "b37008",
-      "prefab": "Rock23",
+      "prefab": "CliffStack",
       "x": -6669.46,
       "z": 5887.72,
-      "y": 831.62,
-      "rotation": 339,
+      "sink": 0.321,
+      "rotation": 276.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b37021",
-      "prefab": "Rock21",
+      "prefab": "CliffStack",
       "x": -7053.7,
       "z": -3424.57,
-      "rotation": 109,
+      "sink": 0.9,
+      "rotation": 135.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -17877,11 +17913,11 @@
     },
     {
       "id": "b37056",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -6688.34,
       "z": -5844.43,
-      "y": 952.86,
-      "rotation": 206,
+      "sink": 0.365,
+      "rotation": 251.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -18167,10 +18203,11 @@
     },
     {
       "id": "b37958",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6099.98,
       "z": -5189.99,
-      "rotation": 251.5,
+      "sink": 0.371,
+      "rotation": 248.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -18269,10 +18306,11 @@
     },
     {
       "id": "b38080",
-      "prefab": "Rock23",
+      "prefab": "CliffStack",
       "x": -984.1,
       "z": 4411.63,
-      "rotation": 276.5,
+      "sink": 0.649,
+      "rotation": 332.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -18341,10 +18379,11 @@
     },
     {
       "id": "b38251",
-      "prefab": "Rock12",
+      "prefab": "CliffRock5",
       "x": -603.42,
       "z": 4328.6,
-      "rotation": 244.5,
+      "sink": 0.671,
+      "rotation": 261.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
     },
@@ -18359,11 +18398,11 @@
     },
     {
       "id": "b38272",
-      "prefab": "Rock23",
+      "prefab": "CliffStack",
       "x": -7159.38,
       "z": -5900.54,
-      "y": 964,
-      "rotation": 136.5,
+      "sink": 0.322,
+      "rotation": 195.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -18407,10 +18446,11 @@
     },
     {
       "id": "b38445",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5779.86,
       "z": 6677.99,
-      "rotation": 353.5,
+      "sink": 0.304,
+      "rotation": 286.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -18499,10 +18539,11 @@
     },
     {
       "id": "b38600",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6270.37,
       "z": -4439.99,
-      "rotation": 68,
+      "sink": 0.31,
+      "rotation": 95.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -18655,10 +18696,11 @@
     },
     {
       "id": "b38816",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6143.4,
       "z": 6789.14,
-      "rotation": 183.5,
+      "sink": 0.355,
+      "rotation": 21.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -18867,10 +18909,11 @@
     },
     {
       "id": "b39272",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": 1515.65,
       "z": 6950.23,
-      "rotation": 260.5,
+      "sink": 0.307,
+      "rotation": 227,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -18950,10 +18993,11 @@
     },
     {
       "id": "b39323",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -1086.52,
       "z": 4557.36,
-      "rotation": 107.5,
+      "sink": 0.443,
+      "rotation": 328.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -19146,11 +19190,11 @@
     },
     {
       "id": "b39774",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": -6678.77,
       "z": 5882.2,
-      "y": 828.11,
-      "rotation": 342.5,
+      "sink": 0.328,
+      "rotation": 278.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -19268,10 +19312,11 @@
     },
     {
       "id": "b40019",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6611.97,
       "z": 5799.48,
-      "rotation": 97,
+      "sink": 0.372,
+      "rotation": 253.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -19464,11 +19509,11 @@
     },
     {
       "id": "b40550",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6396.93,
       "z": -4602.78,
-      "y": 931.81,
-      "rotation": 173.5,
+      "sink": 0.347,
+      "rotation": 84.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -19548,10 +19593,11 @@
     },
     {
       "id": "b40731",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -5919.87,
       "z": 6620.47,
-      "rotation": 77,
+      "sink": 0.291,
+      "rotation": 237.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -19594,11 +19640,11 @@
     },
     {
       "id": "b40785",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -5955.22,
       "z": 6668.35,
-      "y": 761.24,
-      "rotation": 99,
+      "sink": 0.33,
+      "rotation": 229.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -19660,21 +19706,21 @@
     },
     {
       "id": "b40855",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -6548.09,
       "z": -4126.88,
-      "y": 827.41,
-      "rotation": 43.5,
+      "sink": 0.253,
+      "rotation": 184.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b40884",
-      "prefab": "Rock25",
+      "prefab": "CliffStack",
       "x": -6594.46,
       "z": 5604.21,
-      "y": 714.91,
-      "rotation": 174,
+      "sink": 0.272,
+      "rotation": 101.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -19699,10 +19745,11 @@
     },
     {
       "id": "b40920",
-      "prefab": "RZaridrock1",
+      "prefab": "CliffRock5",
       "x": -4879.79,
       "z": 4012.66,
-      "rotation": 11.5,
+      "sink": 0.77,
+      "rotation": 106.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -19717,10 +19764,11 @@
     },
     {
       "id": "b40951",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6334.43,
       "z": -4510.96,
-      "rotation": 124.5,
+      "sink": 0.295,
+      "rotation": 81.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -19782,20 +19830,21 @@
     },
     {
       "id": "b41130",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6133.38,
       "z": -4989.63,
-      "rotation": 123.5,
+      "sink": 0.465,
+      "rotation": 179.9,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b41156",
-      "prefab": "Rock25",
+      "prefab": "CliffStack",
       "x": -6802.03,
       "z": 5523.79,
-      "y": 798.04,
-      "rotation": 265.5,
+      "sink": 0.34,
+      "rotation": 135.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -19867,11 +19916,11 @@
     },
     {
       "id": "b41249",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -1015.82,
       "z": 4457.44,
-      "y": 234.06,
-      "rotation": 277.5,
+      "sink": 0.686,
+      "rotation": 336.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -19950,11 +19999,11 @@
     },
     {
       "id": "b41369",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -6609.49,
       "z": -6784.34,
-      "y": 708.32,
-      "rotation": 161.5,
+      "sink": 0.293,
+      "rotation": 237.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -19998,15 +20047,6 @@
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
-      "id": "b41456",
-      "prefab": "rzrock7",
-      "x": -7013.46,
-      "z": 5595.85,
-      "rotation": 2,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock A Large_Data"
-    },
-    {
       "id": "b41459",
       "prefab": "Rock04",
       "x": -6185.36,
@@ -20027,10 +20067,11 @@
     },
     {
       "id": "b41495",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6781.01,
       "z": 5563.44,
-      "rotation": 233.5,
+      "sink": 0.334,
+      "rotation": 127.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20189,10 +20230,11 @@
     },
     {
       "id": "b41838",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": 6619.79,
       "z": -1351.02,
-      "rotation": 359.5,
+      "sink": 0.303,
+      "rotation": 267.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20374,10 +20416,11 @@
     },
     {
       "id": "b42239",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6311.3,
       "z": 6872.51,
-      "rotation": 246.5,
+      "sink": 0.248,
+      "rotation": 320,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20411,10 +20454,11 @@
     },
     {
       "id": "b42371",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6301.73,
       "z": 6736.6,
-      "rotation": 151,
+      "sink": 0.315,
+      "rotation": 344.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20521,10 +20565,11 @@
     },
     {
       "id": "b42627",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5555.83,
       "z": 6864.07,
-      "rotation": 255.5,
+      "sink": 0.294,
+      "rotation": 214.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20577,10 +20622,11 @@
     },
     {
       "id": "b42731",
-      "prefab": "Rock23",
+      "prefab": "CliffStack",
       "x": -986.3,
       "z": 4442.14,
-      "rotation": 217,
+      "sink": 0.472,
+      "rotation": 330.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20662,10 +20708,11 @@
     },
     {
       "id": "b42911",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -5943.68,
       "z": -5270.21,
-      "rotation": 246,
+      "sink": 0.457,
+      "rotation": 178,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20756,10 +20803,11 @@
     },
     {
       "id": "b42971",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6689.7,
       "z": 5844.9,
-      "rotation": 9.5,
+      "sink": 0.314,
+      "rotation": 284.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20848,11 +20896,11 @@
     },
     {
       "id": "b43224",
-      "prefab": "Rock29",
+      "prefab": "CliffStack",
       "x": -6543.07,
       "z": 5755.26,
-      "y": 727.65,
-      "rotation": 149,
+      "sink": 0.331,
+      "rotation": 247.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20876,11 +20924,11 @@
     },
     {
       "id": "b43265",
-      "prefab": "Rock28",
+      "prefab": "CliffStack",
       "x": -5968.44,
       "z": -5238.08,
-      "y": 808.9,
-      "rotation": 235,
+      "sink": 0.462,
+      "rotation": 194,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20932,10 +20980,11 @@
     },
     {
       "id": "b43322",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -5776.82,
       "z": 6647.65,
-      "rotation": 4,
+      "sink": 0.303,
+      "rotation": 280.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -20978,10 +21027,11 @@
     },
     {
       "id": "b43432",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -7062.62,
       "z": 6124.24,
-      "rotation": 12.5,
+      "sink": 0.304,
+      "rotation": 271.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -21023,11 +21073,11 @@
     },
     {
       "id": "b43555",
-      "prefab": "Rock26",
+      "prefab": "CliffStack",
       "x": -6870.9,
       "z": 5538.88,
-      "y": 819.22,
-      "rotation": 312,
+      "sink": 0.352,
+      "rotation": 129,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -21175,19 +21225,21 @@
     },
     {
       "id": "b43979",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": 6790.02,
       "z": -1080.03,
-      "rotation": 323.5,
+      "sink": 0.344,
+      "rotation": 101.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
     {
       "id": "b44002",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5388.25,
       "z": 666.66,
-      "rotation": 6,
+      "sink": 0.254,
+      "rotation": 303.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -21360,11 +21412,11 @@
     },
     {
       "id": "b44511",
-      "prefab": "Rock13",
+      "prefab": "CliffRock5",
       "x": -6465.83,
       "z": 734.86,
-      "y": 232.11,
-      "rotation": 307,
+      "sink": 0.675,
+      "rotation": 154.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Medium_Data"
     },
@@ -21730,10 +21782,11 @@
     },
     {
       "id": "b45201",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6446.63,
       "z": -2167.28,
-      "rotation": 340.5,
+      "sink": 0.293,
+      "rotation": 214.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -21916,11 +21969,11 @@
     },
     {
       "id": "b45805",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -5963.35,
       "z": -5366.5,
-      "y": 788.94,
-      "rotation": 337.5,
+      "sink": 0.556,
+      "rotation": 228.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -21993,11 +22046,11 @@
     },
     {
       "id": "b45940",
-      "prefab": "Rock25",
+      "prefab": "CliffStack",
       "x": -5968.03,
       "z": 6642.35,
-      "y": 753.7,
-      "rotation": 109.5,
+      "sink": 0.336,
+      "rotation": 230.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22022,20 +22075,21 @@
     },
     {
       "id": "b45970",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6592.48,
       "z": 5840.44,
-      "rotation": 47.5,
+      "sink": 0.358,
+      "rotation": 244.6,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b46025",
-      "prefab": "Rock23",
+      "prefab": "CliffStack",
       "x": -5995.34,
       "z": -5515.24,
-      "y": 808.38,
-      "rotation": 279,
+      "sink": 0.475,
+      "rotation": 127.4,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22108,10 +22162,11 @@
     },
     {
       "id": "b46231",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6445.44,
       "z": -2254.92,
-      "rotation": 64,
+      "sink": 0.28,
+      "rotation": 135.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -22314,11 +22369,11 @@
     },
     {
       "id": "b46713",
-      "prefab": "Rock25",
+      "prefab": "CliffStack",
       "x": -5904.94,
       "z": -5393.09,
-      "y": 730.9,
-      "rotation": 274.5,
+      "sink": 0.501,
+      "rotation": 211.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22435,15 +22490,6 @@
       "cs1": "Brown Surface Rock A Small_Data"
     },
     {
-      "id": "b46995",
-      "prefab": "rzrock7",
-      "x": -6626.76,
-      "z": 5805.33,
-      "rotation": 38,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock A Large_Data"
-    },
-    {
       "id": "b46997",
       "prefab": "CliffRock5",
       "x": -6705.82,
@@ -22463,10 +22509,11 @@
     },
     {
       "id": "b47029",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6185.37,
       "z": -5006.53,
-      "rotation": 127,
+      "sink": 0.387,
+      "rotation": 182.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22490,11 +22537,11 @@
     },
     {
       "id": "b47078",
-      "prefab": "Rock27",
+      "prefab": "CliffStack",
       "x": -6595.15,
       "z": -4216.08,
-      "y": 855.25,
-      "rotation": 152.5,
+      "sink": 0.321,
+      "rotation": 165.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22510,10 +22557,11 @@
     },
     {
       "id": "b47101",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6044.8,
       "z": -5113.55,
-      "rotation": 200,
+      "sink": 0.439,
+      "rotation": 163.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22575,11 +22623,11 @@
     },
     {
       "id": "b47224",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6947.41,
       "z": 6086.19,
-      "y": 872.43,
-      "rotation": 88.5,
+      "sink": 0.291,
+      "rotation": 276.2,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22649,11 +22697,11 @@
     },
     {
       "id": "b47379",
-      "prefab": "Rock27",
+      "prefab": "CliffStack",
       "x": -6962.14,
       "z": -7135.84,
-      "y": 892.61,
-      "rotation": 13,
+      "sink": 0.274,
+      "rotation": 81.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22705,11 +22753,11 @@
     },
     {
       "id": "b47494",
-      "prefab": "Rock21",
+      "prefab": "CliffStack",
       "x": -7096.14,
       "z": 6179.91,
-      "y": 936.1,
-      "rotation": 322.5,
+      "sink": 0.266,
+      "rotation": 273.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22809,16 +22857,6 @@
       "cs1": "Brown Surface Rock B Small_Data"
     },
     {
-      "id": "b47709",
-      "prefab": "Rock25",
-      "x": -6334.41,
-      "z": -4511.4,
-      "y": 891.6,
-      "rotation": 125.5,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock B Large_Data"
-    },
-    {
       "id": "b47715",
       "prefab": "Rock27",
       "x": 769.88,
@@ -22839,10 +22877,11 @@
     },
     {
       "id": "b47757",
-      "prefab": "RZaridrock1",
+      "prefab": "CliffRock5",
       "x": -4185.92,
       "z": 4581.9,
-      "rotation": 206.33,
+      "sink": 0.752,
+      "rotation": 148.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Medium_Data"
     },
@@ -22867,10 +22906,11 @@
     },
     {
       "id": "b47822",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -5608.18,
       "z": 6807.95,
-      "rotation": 264.5,
+      "sink": 0.3,
+      "rotation": 215.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22931,20 +22971,21 @@
     },
     {
       "id": "b48088",
-      "prefab": "Rock24",
+      "prefab": "CliffStack",
       "x": -6996.69,
       "z": 6126.68,
-      "y": 905.99,
-      "rotation": 44,
+      "sink": 0.321,
+      "rotation": 252.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b48102",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6229.81,
       "z": 6741.97,
-      "rotation": 231.5,
+      "sink": 0.405,
+      "rotation": 0.1,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -22984,16 +23025,6 @@
       "rotation": 187.5,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Small_Data"
-    },
-    {
-      "id": "b48175",
-      "prefab": "Rock22",
-      "x": -6694.45,
-      "z": 5853.88,
-      "y": 808.65,
-      "rotation": 22,
-      "kind": "prop",
-      "cs1": "Brown Surface Rock A Large_Data"
     },
     {
       "id": "b48179",
@@ -23045,10 +23076,11 @@
     },
     {
       "id": "b48252",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -4455.58,
       "z": 5139.09,
-      "rotation": 286.1,
+      "sink": 0.251,
+      "rotation": 206.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock B Large_Data"
     },
@@ -23274,11 +23306,11 @@
     },
     {
       "id": "b48641",
-      "prefab": "Rock22",
+      "prefab": "CliffStack",
       "x": -7155.82,
       "z": -5878.23,
-      "y": 966.58,
-      "rotation": 126.5,
+      "sink": 0.352,
+      "rotation": 189.8,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -23374,10 +23406,11 @@
     },
     {
       "id": "b48895",
-      "prefab": "rzrock7",
+      "prefab": "CliffStack",
       "x": -6071.62,
       "z": 6693.55,
-      "rotation": 128.5,
+      "sink": 0.295,
+      "rotation": 260.7,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },
@@ -23504,10 +23537,11 @@
     },
     {
       "id": "b49129",
-      "prefab": "rzrock1",
+      "prefab": "CliffStack",
       "x": -6091.19,
       "z": -5181.42,
-      "rotation": 240.5,
+      "sink": 0.365,
+      "rotation": 242.3,
       "kind": "prop",
       "cs1": "Brown Surface Rock A Large_Data"
     },

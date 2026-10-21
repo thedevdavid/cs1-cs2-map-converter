@@ -65,6 +65,7 @@ public static class PaintPlan
             if (cls[k] != 0) continue;
             var (x, z) = g.Centre(k);
             if (!IsSand(x, z)) continue;
+            if (Water(x, z) != null && T(x, z) >= 95) continue;   // round 34: island tops above the shore band (playable terrain ≥ 95 m) stay grass
             if (Water(x, z) is { } w && w.Depth > 1.5) { cls[k] = S2; continue; }
             var nw = NearWet(k, 6);
             cls[k] = nw is { } q && (q.D <= 25 || T(x, z) <= q.S + 2) ? S1 : S3;

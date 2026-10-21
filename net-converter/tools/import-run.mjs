@@ -141,6 +141,8 @@ const steps = [
   // again right before the piers go in (POST /net/pillars/remove on the live segments within 3 m of a cap).
   ["pillars-off", "pillarsoff", [p("import-po-structure-piers.json"), p(join("optional", "import-po-structure-br006-arches.json"))]],
   ["po-piers", "/import/objects", [p("import-po-structure-piers.json")]],
+  // Round 34: the JP Rock shed stand-in (ConcreteSet01 gallery wall and columns along the National Road at x -6453…-6245).
+  ["rock-shed", "/import/objects", [p("import-rock-shed.json")]],
   ["rock-scatter", "/import/objects", [p("import-rock-scatter.json")]],
   ["fort", "/import/objects", [p("import-fort.json")]],
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],

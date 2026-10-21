@@ -277,7 +277,32 @@ auditLog.AppendLine($"- Short border edges folded into their neighbour (< 10 m):
         }
         var hwAll = result.Edges.Where(e => e.Map.Imported && drops.ContainsKey(e.Id) && e.Map.Cs2Prefab!.StartsWith("Highway")).ToList();
         var hwDropped = hwAll.Where(NearSeparate).ToList();
-        foreach (var e in hwAll.Except(hwDropped)) auditLog.AppendLine($"- Highway course dropped by the game beside a node-sharing sibling, not moved (bridge check to review): {e.Id} {e.Map.Cs2Prefab} vs '{drops[e.Id].Prefab}'.");
+        // Round 34 (owner, A-v9 shots 14/15: the dropped pieces left their neighbours dangling): a piece the game dropped beside its node-sharing sibling (a merge
+        // or diverge) keeps the shared node, and its other (free) end node moves away from the sibling by the asked distance + 1 m. Its neighbours there
+        // follow (a slight bend in the carriageway), and the merge geometry at the shared node stays as CS1 had it.
+        foreach (var e in hwAll.Except(hwDropped))
+        {
+            var (prefab, move) = drops[e.Id];
+            var sib = result.Edges.FirstOrDefault(o => o != e && o.Map.Imported && o.Map.Cs2Prefab == prefab && (o.A == e.A || o.A == e.B || o.B == e.A || o.B == e.B));
+            if (sib == null) { auditLog.AppendLine($"- Highway course dropped by the game, no node-sharing '{prefab}' sibling found, not moved: {e.Id}."); continue; }
+            var shared = sib.A == e.A || sib.B == e.A ? e.A : e.B; var free = shared == e.A ? e.B : e.A;
+            if (free.Border || free.Pinned) { auditLog.AppendLine($"- Highway course dropped beside its sibling {sib.Id}, free end {free.Id} is fixed, not moved: {e.Id}."); continue; }
+            // Direction: from the sibling's nearest point to the free node, in plan.
+            var sp = Enumerable.Range(0, 33).Select(k => sib.Curve.Eval(k / 32.0)).MinBy(p => (p.X - free.Position.X) * (p.X - free.Position.X) + (p.Z - free.Position.Z) * (p.Z - free.Position.Z));
+            double dx = free.Position.X - sp.X, dz = free.Position.Z - sp.Z, dl = Math.Sqrt(dx * dx + dz * dz);
+            if (dl < 0.5)
+            {
+                // On the sibling's line: perpendicular to the dropped piece, on the side away from the sibling's middle.
+                double tx = e.Curve.D.X - e.Curve.A.X, tz = e.Curve.D.Z - e.Curve.A.Z, tl = Math.Sqrt(tx * tx + tz * tz); var sm = sib.Curve.Eval(0.5);
+                dx = -tz / tl; dz = tx / tl; if ((sm.X - free.Position.X) * dx + (sm.Z - free.Position.Z) * dz > 0) { dx = -dx; dz = -dz; } dl = 1;
+            }
+            double s = move + 1; var off = new Vec3(dx / dl * s, 0, dz / dl * s);
+            free.Position = free.Position + off;
+            foreach (var o in result.Edges.Where(o => o.A == free || o.B == free))
+                o.Curve = o == e ? (free == e.B ? e.Curve with { C = e.Curve.C + off, D = free.Position } : e.Curve with { A = free.Position, B = e.Curve.B + off }) : o.Curve.WithEnds(o.A.Position, o.B.Position);
+            auditLog.AppendLine(FormattableString.Invariant($"- Highway course dropped beside its node-sharing sibling {sib.Id} ({prefab}): {e.Id}'s free end {free.Id} moved {s:F1} m away from it; the shared node {shared.Id} stays."));
+            Console.WriteLine(FormattableString.Invariant($"sibling drop: {e.Id} free end {free.Id} moved {s:F1} m away from {sib.Id}"));
+        }
         var hwShift = FootprintShift.Apply(result, hwDropped, topologyFactor, drops);
         Console.WriteLine($"highway courses dropped as overlapping in the run reports: {hwDropped.Count}, moved {hwShift.Shifted.Count}, impossible {hwShift.Impossible.Count}");
         foreach (var l in hwShift.Shifted) auditLog.AppendLine($"- Highway course moved clear of its neighbour (run report drop): {l}");
@@ -776,9 +801,14 @@ void WriteLayers()
                         foreach (var (px, pz, r) in l) if ((px - x) * (px - x) + (pz - z) * (pz - z) <= r * r) return true;
             return false;
         }
+        // Round 34 (owner, A-v9 shot 17: the river islands lost their trees): a tree goes only where the playable CS2 heightmap (the carved inner PNG) is below
+        // the measured sea level 93 m + 0.5. The CS1 water-surface raster covered the islands (they lie inside CS1's water polygon), so it masks only where
+        // that terrain is below 93.5 m too.
+        const double treeSea = 93.5;
+        Func<double, double, double> treeTerr = (x, z) => cs2Terrain != null ? cs2Terrain.Sample(x, z) : cs1Terrain?.Sample(x, z) ?? double.MaxValue;
         var masked = Trees.Mask(trees,
-            ("terrain below sea level", (x, z) => cs1Terrain != null && cs1Terrain.Sample(x, z) < seaLevel),
-            ("inside the CS1 water surface", (x, z) => surfaceEarly != null && surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.05),
+            ("CS2 terrain below sea level 93 m + 0.5", (x, z) => treeTerr(x, z) < treeSea),
+            ("inside the CS1 water surface and below 93.5 m", (x, z) => surfaceEarly != null && surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.05 && treeTerr(x, z) < treeSea),
             (NetCorridorRule, OnNet));
         // EXPERIMENT: the net-corridor trees in their own file, so the game's behaviour (hidden under nets, or fine at the
         // verge) can be tried and undone alone.
@@ -786,6 +816,9 @@ void WriteLayers()
         Console.WriteLine($"tree experiment: {trees.Removed[NetCorridorRule].Count:N0} net-corridor trees -> {string.Join(", ", expFiles)}");
         auditLog.AppendLine($"- EXPERIMENT trees: the {trees.Removed[NetCorridorRule].Count:N0} net-corridor trees are in {string.Join(", ", expFiles)} (import after the main tree files to try them; undo by its name).");
         Console.WriteLine($"tree mask: {string.Join(", ", masked.Select(m => $"{m.Key} {m.Value:N0}"))}");
+        // Round 34 check (A-v9 shot 17, river islands at (4096, -6127)): trees kept and masked within 300 m.
+        bool Isl(double x, double z) => Math.Sqrt((x - 4096) * (x - 4096) + (z + 6127) * (z + 6127)) < 300;
+        auditLog.AppendLine($"- Island check (4096, -6127), 300 m: {trees.Objects.Count(t => Isl(t.X, t.Z))} trees kept; masked {string.Join(", ", trees.Removed.Select(kv => $"{kv.Key} {kv.Value.Count(t => Isl(t.X, t.Z))}"))}.");
         auditLog.AppendLine($"- Trees masked (same set for both scales): {string.Join("; ", masked.Select(m => $"{m.Key} {m.Value:N0}"))}; total {masked.Values.Sum():N0}, {trees.Objects.Count:N0} remain.");
     }
     // FixedHeight trees carry y, so they differ per scale: their own file in each output folder.
@@ -826,7 +859,52 @@ void WriteLayers()
     }
     var grounding = new Objects.Grounding();
     extra.AppendLine($"- Pack rocks: no y (their y was dropped on {grounded}); options.grounding {{mode boundsMin, sink 0.15, slopeSink}} grounds every object without y from its prefab bounds (bridge 0.9.19).");
-    Objects.Write(Path.Combine(outDir, "import-objects.json"), "objects", objs.Objects, grounding);
+    // Round 34 (owner, A-v9 shots 22/24: "missing cliff assets"): the CS1 cliffs at the fort bluff and the canyon are Brown Surface Rock A/B Medium (6 × 7
+    // cells) and Large (8 × 9) assets, which the mapping made small rocks. On a playable slope ≥ 35° they become Cliffs and Rocks pack pieces (Large:
+    // CliffStack, Medium: CliffRock5), one per 16 m cell, yawed along the contour, sunk so the downhill base is ≥ 1.5 m under the terrain, none
+    // on a net corridor (half-width + 2 m) or in water.
+    // The playable heightmap is smoother than the CS1 rock faces the author dressed: at 35° only 61 of ~1 060 surface rocks qualified (1 at the fort bluff,
+    // 0 in the canyon), so the surface rocks, which mark rock faces by themselves, take 25°.
+    const double CliffSlopeSurfaceRock = 25;
+    var objSinks = new Dictionary<string, double>();
+    if (cs2Terrain != null)
+    {
+        double Tt(double x, double z) => cs2Terrain.Sample(x, z);
+        var roadPts = new Dictionary<(int, int), List<(double X, double Z, double R)>>();
+        foreach (var e in result.Edges.Where(e => e.Map.Imported))
+            for (int k = 0; k <= 16; k++) { var p = e.Curve.Eval(k / 16.0); var key = ((int)Math.Floor(p.X / 32), (int)Math.Floor(p.Z / 32)); if (!roadPts.TryGetValue(key, out var l)) roadPts[key] = l = new(); l.Add((p.X, p.Z, FootprintShift.Cs2Half(e) + 2)); }
+        bool NearRoad(double x, double z, double r)
+        {
+            for (int a = -2; a <= 2; a++) for (int b = -2; b <= 2; b++)
+                if (roadPts.TryGetValue(((int)Math.Floor(x / 32) + a, (int)Math.Floor(z / 32) + b), out var l))
+                    foreach (var (px, pz, pr) in l) if ((px - x) * (px - x) + (pz - z) * (pz - z) < (pr + r) * (pr + r)) return true;
+            return false;
+        }
+        var cliffBounds = new Dictionary<string, (double Half, double H)> { ["CliffStack"] = (34, 70.2), ["CliffRock6"] = (30, 9.6), ["CliffRock5"] = (19, 16.9) };
+        var used = new HashSet<(int, int)>(); int cliffs = 0, flat = 0, onRoad = 0, wet = 0, taken = 0;
+        for (int i = 0; i < objs.Objects.Count; i++)
+        {
+            var o = objs.Objects[i];
+            var m = System.Text.RegularExpressions.Regex.Match(o.Cs1 ?? "", "Surface Rock ([AB]) (Medium|Large)");
+            if (!m.Success) continue;
+            double gx = (Tt(o.X + 8, o.Z) - Tt(o.X - 8, o.Z)) / 16, gz = (Tt(o.X, o.Z + 8) - Tt(o.X, o.Z - 8)) / 16, gl = Math.Sqrt(gx * gx + gz * gz);
+            double slope = Math.Atan(gl) * 180 / Math.PI;
+            if (slope < CliffSlopeSurfaceRock) { flat++; continue; }
+            string prefab = m.Groups[2].Value == "Medium" ? "CliffRock5" : "CliffStack";   // CliffRock6 (8.5 m high, 60 m wide) would sink almost whole on a 35° slope
+            var (half, h) = cliffBounds[prefab];
+            if (surfaceEarly != null && surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(o.X, o.Z), out var wc) && wc.Depth > 0.3 && Tt(o.X, o.Z) < 93.5) { wet++; continue; }
+            if (NearRoad(o.X, o.Z, half * 0.6)) { onRoad++; continue; }
+            if (!used.Add(((int)Math.Floor(o.X / 16), (int)Math.Floor(o.Z / 16)))) { taken++; objs.Objects[i] = o with { Prefab = "" }; continue; }
+            double tx = -gz / gl, tz = gx / gl, yaw = ((Math.Atan2(tx, tz) * 180 / Math.PI) % 360 + 360) % 360;
+            objs.Objects[i] = o with { Prefab = prefab, Y = null, Rotation = Math.Round(yaw, 1), Source = o.Source + "; cliff on a ≥ 35° slope (round 34)" };
+            objSinks[o.Id] = Math.Min(0.9, (1.5 + half * Math.Tan(slope * Math.PI / 180)) / h);
+            cliffs++;
+        }
+        objs.Objects.RemoveAll(o => o.Prefab == "");
+        Console.WriteLine($"surface-rock cliffs: {cliffs} CS1 Brown Surface Rock Medium/Large became cliff pieces (≥ {CliffSlopeSurfaceRock}°); kept as rocks: {flat} on gentler slopes, {onRoad} on a net corridor, {wet} in water; {taken} dropped (cell taken)");
+        extra.AppendLine($"- Surface-rock cliffs (round 34): {cliffs} CS1 Brown Surface Rock Medium/Large on a ≥ {CliffSlopeSurfaceRock}° playable slope → CliffStack / CliffRock5 (contour yaw, sunk ≥ 1.5 m downhill); {flat} stay rocks on gentler slopes, {onRoad} near a net, {wet} in water, {taken} dropped as a second piece in a 16 m cell.");
+    }
+    Objects.Write(Path.Combine(outDir, "import-objects.json"), "objects", objs.Objects, grounding, objSinks);
     Console.WriteLine($"objects: {objs.Targeted} placed of {objs.Total} (skip {objs.Skipped}, manual {objs.ManualCount}, unmapped {objs.Unmapped}, outside {objs.Outside}, with y {objs.WithY}; vs the CS1-terrain rule: lost y {objs.LostY}, gained y {objs.GainedY})");
     extra.AppendLine($"- Object y policy: {(cs2Terrain != null ? $"y only > 3 m above the CS2 playable heightmap ({Path.GetFileName(cs2HeightmapPath)})" : "y where > 2 m off the CS1 terrain (no CS2 heightmap)")}, never for buildings: {objs.WithY} with y; against the old CS1-terrain rule {objs.LostY} lose y, {objs.GainedY} gain it.");
     extra.AppendLine($"- Objects: {objs.Targeted} of {objs.Total} CS1 buildings/props got a CS2 target ({100.0 * objs.Targeted / Math.Max(1, objs.Total):F1} %); SKIP {objs.Skipped}, MANUAL {objs.ManualCount}, unmapped {objs.Unmapped}, outside ±7168 m {objs.Outside}; {objs.WithY} carry y.");
@@ -1065,18 +1143,42 @@ void WriteLayers()
                 return false;
             }
             bool InWater(double x, double z) => surfaceEarly != null && surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.3;
-            v2 = v2.Where(p =>
+            // Round 34 (owner, A-v9 shots 22/24: "missing cliff assets"): cliff pieces come back by rule. Only where the playable terrain at the PO position
+            // is ≥ 35° steep, one per 16 m cell (the tallest), yawed along the contour, and sunk so the base sits ≥ 1.5 m under the terrain on the downhill
+            // side (1.5 m + half the footprint × tan slope). No piece on a net corridor or in water, as for the boulders.
+            double Tt(double x, double z) => cs2True?.Invoke(x, z) ?? 0;
+            (double Slope, double Gx, double Gz) Grad(double x, double z) { double gx = (Tt(x + 8, z) - Tt(x - 8, z)) / 16, gz = (Tt(x, z + 8) - Tt(x, z - 8)) / 16; return (Math.Atan(Math.Sqrt(gx * gx + gz * gz)) * 180 / Math.PI, gx, gz); }
+            poRockLog["cliff under 35°"] = 0; poRockLog["cliff, cell taken"] = 0;
+            var cliffCells = new Dictionary<(int, int), PoRocksV2.Placed>();
+            var kept = new List<PoRocksV2.Placed>();
+            foreach (var p in v2)
             {
-                if (!(p.O.Prefab.StartsWith("Boulder") || p.O.Prefab.StartsWith("rzrock"))) { poRockLog["cliff class dropped"]++; return false; }
                 double r = bounds.TryGetValue(p.O.Prefab, out var pb) ? pb.HalfFootprint : 4;
-                if (InWater(p.O.X, p.O.Z)) { poRockLog["water"]++; return false; }
-                if (OnNet(p.O.X, p.O.Z, r)) { poRockLog["net corridor"]++; return false; }
-                return true;
-            }).ToList();
+                bool boulder = p.O.Prefab.StartsWith("Boulder") || p.O.Prefab.StartsWith("rzrock");
+                // Cliff walls rise out of the river (the fort bluff): for them "in water" means the playable terrain at the piece is below the 93 m sea + 0.5.
+                if (boulder ? InWater(p.O.X, p.O.Z) : cs2True != null && cs2True(p.O.X, p.O.Z) < 93.5) { poRockLog["water"]++; continue; }
+                if (OnNet(p.O.X, p.O.Z, r)) { poRockLog["net corridor"]++; continue; }
+                if (boulder) { kept.Add(p); continue; }
+                if (cs2True == null) { poRockLog["cliff class dropped"]++; continue; }
+                // The steepest playable slope within half the footprint (a wall piece stands on the break, not on its centre).
+                var (slope, gx, gz) = new[] { (0.0, 0.0), (0.5, 0.0), (-0.5, 0.0), (0.0, 0.5), (0.0, -0.5), (0.35, 0.35), (-0.35, 0.35), (0.35, -0.35), (-0.35, -0.35) }
+                    .Select(o => Grad(p.O.X + o.Item1 * r * 2, p.O.Z + o.Item2 * r * 2)).MaxBy(g => g.Slope);
+                if (slope < 35) { poRockLog["cliff under 35°"]++; continue; }
+                double gl = Math.Sqrt(gx * gx + gz * gz), tx = -gz / gl, tz = gx / gl;                       // along the contour
+                double yaw = ((Math.Atan2(tx, tz) * 180 / Math.PI) % 360 + 360) % 360;
+                double sink = Math.Max(p.Sink, 1.5 + r * Math.Tan(slope * Math.PI / 180));
+                var q = new PoRocksV2.Placed(p.O with { Rotation = Math.Round(yaw, 1) }, sink);
+                var cell = ((int)Math.Floor(p.O.X / 16), (int)Math.Floor(p.O.Z / 16));
+                double H(PoRocksV2.Placed z) => bounds.TryGetValue(z.O.Prefab, out var b) ? b.Height : 0;
+                if (cliffCells.TryGetValue(cell, out var other)) { poRockLog["cliff, cell taken"]++; if (H(q) > H(other)) cliffCells[cell] = q; continue; }
+                cliffCells[cell] = q;
+            }
+            poRockLog["cliff pieces kept"] = cliffCells.Count;
+            v2 = kept.Concat(cliffCells.Values).ToList();
         }
         // No y: the bridge grounds each piece from its bounds; the per-object "sink" (fraction of the height, (H − v) / H) keeps the v3 visible-height rule.
         var poSinks = new Dictionary<string, double>();
-        foreach (var p in v2) if (bounds.TryGetValue(p.O.Prefab, out var pbb) && pbb.Height > 0) poSinks[p.O.Id] = p.Sink / pbb.Height;
+        foreach (var p in v2) if (bounds.TryGetValue(p.O.Prefab, out var pbb) && pbb.Height > 0) poSinks[p.O.Id] = Math.Min(0.9, p.Sink / pbb.Height);
         Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "po-rocks-v3", v2.Select(p => p.O with { Y = null }), grounding, poSinks);
         var sources = objs.Objects.Where(o => Round8.IsRockLike(o.Prefab)).Concat(cliffs).Select(o => (o.X, o.Z)).ToList();
         Func<double, double, bool>? wet = surfaceEarly == null ? null : (x, z) => surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.5;
@@ -1106,7 +1208,7 @@ void WriteLayers()
             ci($"substation: {sub.Count} ({string.Join(", ", sub.Select(o => $"{o.Id} {o.Prefab} at ({o.X:F0}, {o.Z:F0}), rotation {o.Rotation}, no y"))}) -> import-substation.json"),
             dam is { } d3 ? "dam (network, bridge 0.9.23): " + string.Join("; ", damLog) + " -> import-dam.json" : "dam: no CS1 Dam Electricity building",
             "power ends: " + string.Join("; ", ends.Select(e => ci($"{e.Target}: CS1 end {e.OldEnd.Id} ({e.OldEnd.Position.X:F0}, {e.OldEnd.Position.Z:F0}), replaces {e.Replaces.Id}, new course {e.Anchor.Id} -> ({e.X:F1}, {e.Z:F1}), {Math.Sqrt((e.X - e.Anchor.Position.X) * (e.X - e.Anchor.Position.X) + (e.Z - e.Anchor.Position.Z) * (e.Z - e.Anchor.Position.Z)):F0} m"))) + " -> import-power-ends.json",
-            ci($"PO rocks v4 (boulder class only; left out: {string.Join(", ", poRockLog.Select(kv => $"{kv.Key} {kv.Value}"))}): {v2.Count} objects ({Round8.Counts(v2.Select(p => p.O))}) from {pieces.Count} PO pieces, {v2capped} over the cap of 1500 dropped, {v2big} PO objects > 60 m above their surroundings with CliffSide pieces down the steepest flank, {v2renamed} re-picked for the 80 m prefab/heading rule; with y {v2.Count(p => p.O.Y != null)}; sink depth (mesh bottom below terrain): {PoRocksV2.SinkHistogram(v2)} -> import-po-rocks.json (import name po-rocks-v3)"),
+            ci($"PO rocks v5 (boulders, and cliff pieces on ≥ 35° slopes one per 16 m cell; left out: {string.Join(", ", poRockLog.Select(kv => $"{kv.Key} {kv.Value}"))}): {v2.Count} objects ({Round8.Counts(v2.Select(p => p.O))}) from {pieces.Count} PO pieces, {v2capped} over the cap of 1500 dropped, {v2big} PO objects > 60 m above their surroundings with CliffSide pieces down the steepest flank, {v2renamed} re-picked for the 80 m prefab/heading rule; with y {v2.Count(p => p.O.Y != null)}; sink depth (mesh bottom below terrain): {PoRocksV2.SinkHistogram(v2)} -> import-po-rocks.json (import name po-rocks-v3)"),
             ci($"PO cliffs v1 (not written; their positions feed the rock scatter): {cliffs.Count} objects from {pieces.Count} PO pieces (mountain {pieces.Count(p => p.SubClass == "mountain")}, rock work {pieces.Count(p => p.SubClass == "rock work")}, falls steps {pieces.Count(p => p.SubClass == "falls steps")}); bands {string.Join(", ", bands.Select(b => $"{b.Key} {b.Value}"))}; {capped} over the cap of 2500 dropped -> import-po-rocks.json"),
             ci($"rock scatter: in water left out {sWater}, slopes > 45° left out {sSteep}, slopes 25–45° (lowered by the bridge's slopeSink) {sSunk}; {scatter.Count} (small {scatter.Count(o => Round8.SmallRocks.Contains(o.Prefab))}, medium {scatter.Count(o => Round8.MediumRocks.Contains(o.Prefab))}, boulders {scatter.Count(o => Round8.Boulders.Contains(o.Prefab))}) around {sources.Count} rock/cliff objects (r 60 m) and in {rockPolys.Count} rock polygons; rejected road {rejected["road"]}, spacing {rejected["spacing"]}, water {rejected["water"]}, border {rejected["border"]} -> import-rock-scatter.json"),
         };
@@ -1153,6 +1255,10 @@ void WriteLayers()
         Objects.Write(Path.Combine(OptDir(), "import-po-structure-gantry.json"), "po-structure-gantry", poS.Gantries, poGround);
         File.Delete(Path.Combine(OptDir(), "import-po-structure-piers.json"));
         Objects.Write(Path.Combine(outDir, "import-po-structure-piers.json"), "po-structure-piers", poS.Piers, poGround);
+        // Round 34: the JP Rock shed stand-in (gallery wall + columns along the National Road), its own import (runner step rock-shed).
+        var (shedObjs, shedLog) = RockShed.Build(poRows, result.Edges, cs2True);
+        Objects.Write(Path.Combine(outDir, "import-rock-shed.json"), "rock-shed", shedObjs, poGround);
+        r9.Add(shedLog + " -> import-rock-shed.json");
         foreach (var l in poS.Log) r9.Add("PO structures: " + l);
         r9.Add($"PO structures: {poRows.Count} proposal rows -> import-po-structure-objects.json {poS.Main.Count}, import-po-structure-piers.json {poS.Piers.Count}, optional/import-po-structure-br006-arches.json {poS.Br006Arches.Count}, optional/import-po-structure-gantry.json {poS.Gantries.Count}");
         if (surfaceEarly != null)

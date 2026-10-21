@@ -71,7 +71,8 @@ public static class TerrainPaint
         for (int k = 0; k < n * n; k++)
         {
             var (x, z) = g.Centre(k);
-            if (IsSand(x, z)) { sand[k] = true; continue; }
+            // Round 34: islands (land inside the CS1 water raster, the playable terrain above the 93 m sea) keep sand only on a shore band below 95 m.
+            if (IsSand(x, z)) { if (!(Wet(x, z) && T(x, z) >= 95)) sand[k] = true; continue; }
             if (block[k] || Wet(x, z) || TreesNear(k, 1) > 0 || Fert(x, z) >= 0.5) continue;
             double gx = (T(x + 8, z) - T(x - 8, z)) / 16, gz = (T(x, z + 8) - T(x, z - 8)) / 16;
             double slope = Math.Atan(Math.Sqrt(gx * gx + gz * gz)) * 180 / Math.PI;

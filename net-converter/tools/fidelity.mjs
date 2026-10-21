@@ -48,6 +48,13 @@ for (const f of ["import-all.json", "import-bridges.json", "import-bridges-fixed
     imp.push({ id: e.id, prefab: e.prefab, pts, bb: bbox(pts), file: f, cs1: e.cs1_segment });
   }
 }
+// Dead ends (round 34): live nodes with one segment (not on the border) that CS1 does not have within 30 m.
+const ldeg = new Map(), lpos = new Map();
+for (const s of lg.segments) { if (!s.curve || /Line|Pipe|Seaway|Boatway|Barrier/.test(s.prefab)) continue; for (const [n, p] of [[s.a, s.curve[0]], [s.b, s.curve[3]]]) { ldeg.set(n, (ldeg.get(n) ?? 0) + 1); lpos.set(n, p); } }
+const cdeg = new Map(); for (const s of cs1) for (const n of [s.a, s.b]) cdeg.set(n, (cdeg.get(n) ?? 0) + 1);
+const cs1Dead = [...cdeg].filter(([, k]) => k === 1).map(([id]) => cs1Nodes.get(id)).filter(Boolean).map(n => [n.position[0], n.position[2]]);
+const liveDead = [...ldeg].filter(([, k]) => k === 1).map(([n]) => ({ n, p: lpos.get(n) })).filter(x => Math.abs(x.p[0]) < 7100 && Math.abs(x.p[2]) < 7100)
+  .filter(x => !cs1Dead.some(c => Math.hypot(c[0] - x.p[0], c[1] - x.p[2]) < 30));
 const inBox = (bb, x0, z0, x1, z1) => bb[2] >= x0 && bb[0] <= x1 && bb[3] >= z0 && bb[1] <= z1;
 const segDist = (p, a, b) => { const dx = b[0] - a[0], dz = b[2] - a[2], l2 = dx * dx + dz * dz; const t = l2 > 0 ? Math.max(0, Math.min(1, ((p[0] - a[0]) * dx + (p[2] - a[2]) * dz) / l2)) : 0; return Math.hypot(a[0] + t * dx - p[0], a[2] + t * dz - p[2]); };
 const distTo = (p, s) => { let m = 1e9; for (let i = 1; i < s.pts.length; i++) m = Math.min(m, segDist(p, s.pts[i - 1], s.pts[i])); return m; };
@@ -58,6 +65,7 @@ function compare(name, title, x0, z0, x1, z1) {
   const inside = s => { const p = mid(s); return p[0] >= x0 && p[0] <= x1 && p[2] >= z0 && p[2] <= z1; };
   const missing = c.filter(inside).filter(s => !l.some(q => distTo(mid(s), q) < 2));
   const extra = l.filter(inside).filter(q => !c.some(s => distTo(mid(q), s) < 2));
+  const dead = liveDead.filter(x => x.p[0] >= x0 && x.p[0] <= x1 && x.p[2] >= z0 && x.p[2] <= z1);
   const notInFile = c.filter(inside).filter(s => !m.some(q => distTo(mid(s), q) < 2));
   // A CS1 segment the converter replaced on purpose (bridge override: the merged BR001 deck) is not a fidelity loss.
   const intended = s => /bridge override/.test(fates.get(s.id) ?? "") && !l.some(q => distTo(mid(s), q) < 2);
@@ -76,6 +84,7 @@ function compare(name, title, x0, z0, x1, z1) {
   for (const s of missing) svg.push(`<path d="${path(s)}" stroke="#ff8c00" stroke-width="12" opacity="0.45"><title>MISSING LIVE: CS1 ${s.id} ${s.prefab}</title></path>`);
   for (const h of height) svg.push(`<path d="${path(h.s)}" stroke="#1a1aff" stroke-width="12" opacity="0.35"><title>HEIGHT: CS1 ${h.s.id} ${h.s.prefab} y ${mid(h.s)[1].toFixed(1)}, live ${h.q.id} ${(h.dy > 0 ? "+" : "") + h.dy.toFixed(1)} m</title></path>`);
   for (const s of extra) svg.push(`<path d="${path(s)}" stroke="#d000d0" stroke-width="8" opacity="0.4"><title>NO CS1 SOURCE: live ${s.id} ${s.prefab}</title></path>`);
+  for (const x of dead) svg.push(`<circle cx="${X(x.p)}" cy="${Z(x.p)}" r="9" fill="none" stroke="#000" stroke-width="3"><title>LIVE DEAD END ${x.n}</title></circle>`);
   svg.push(`</g>`);
   const leg = [["#b9b4a6", "CS1 ground"], ["#6b8fbf", "CS1 elevated"], ["#2e8b57", "our import files"], ["#c0392b", "live (dashed = elevated)"], ["#ff8c00", "CS1 without live counterpart"], ["#d000d0", "live without CS1 source"], ["#1a1aff", "height off CS1 by > 4 m"]];
   leg.forEach(([col, t], i) => svg.push(`<rect x="${10 + 140 * i}" y="${W + 60}" width="18" height="10" fill="${col}"/><text x="${32 + 140 * i}" y="${W + 70}">${t}</text>`));
@@ -84,8 +93,8 @@ function compare(name, title, x0, z0, x1, z1) {
   svg.push(`<text x="10" y="${W + 120}">live without CS1 source: ${extra.length} (${extra.slice(0, 6).map(s => s.id).join(", ")}${extra.length > 6 ? " …" : ""})</text>`, `</svg>`);
   writeFileSync(join(outDir, name + ".svg"), svg.join("\n"));
   const lost = missing.filter(s => !intended(s));
-  const verdict = lost.length === 0 && extra.length === 0 && height.length === 0 ? "OK: layout and heights match CS1 (2 m in plan, 4 m in height)"
-    : `CHECK: ${lost.length} CS1 segments without live counterpart${missing.length > lost.length ? ` (+${missing.length - lost.length} replaced by a bridge override)` : ""}, ${extra.length} live without CS1 source, ${height.length} more than 4 m off the CS1 height`;
+  const verdict = lost.length === 0 && extra.length === 0 && height.length === 0 && dead.length === 0 ? "OK: layout and heights match CS1 (2 m in plan, 4 m in height)"
+    : `CHECK: ${lost.length} CS1 segments without live counterpart${missing.length > lost.length ? ` (+${missing.length - lost.length} replaced by a bridge override)` : ""}, ${extra.length} live without CS1 source, ${height.length} more than 4 m off the CS1 height, ${dead.length} live dead ends CS1 did not have${dead.length ? ` (${dead.map(x => `(${x.p[0].toFixed(0)}, ${x.p[2].toFixed(0)})`).join(" ")})` : ""}`;
   const md = [`# ${title}`, "", verdict, "", `![](${name}.svg)`, "", "| CS1 segment | prefab | elevation | in our files | live | converter fate |", "|---|---|---:|---|---|---|",
     ...missing.map(s => `| ${s.id} | ${s.prefab} | ${s.elev} | ${notInFile.includes(s) ? "no" : "yes"} | missing | ${fates.get(s.id) ?? "?"} |`), "",
     "| live segment | prefab | elevation |", "|---|---|---:|", ...extra.map(s => `| ${s.id} | ${s.prefab} | ${s.elev.toFixed(1)} |`), "",

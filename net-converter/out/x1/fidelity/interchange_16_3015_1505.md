@@ -1,6 +1,6 @@
 # Interchange 16 at (3015, 1505), 1 highway junction nodes
 
-OK: layout and heights match CS1 (2 m in plan, 4 m in height)
+CHECK: 0 CS1 segments without live counterpart, 0 live without CS1 source, 1 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have
 
 ![](interchange_16_3015_1505.svg)
 
@@ -12,3 +12,4 @@ OK: layout and heights match CS1 (2 m in plan, 4 m in height)
 
 | CS1 segment | prefab | CS1 y | live | live − CS1 m |
 |---|---|---:|---|---:|
+| 16854 | USRP 1L Interstate Ramp E | 151.6 | 66315:21 Highway Oneway - 1 lane | 5.1 |
