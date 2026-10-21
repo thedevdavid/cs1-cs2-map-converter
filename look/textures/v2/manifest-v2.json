@@ -1,0 +1,29 @@
+[
+  {
+    "file": "Dirt-forestfloor_BaseColor.png",
+    "meanRGB": [
+      83.1,
+      83.6,
+      58.3
+    ],
+    "why": "CS2 shows the base Dirt layer under forest and scattered trees, where CS1 had grass with the forest tint: 60 % Seychelles grass + 40 % Springwood ruined, x1.8, slight desaturation (olive-brown forest floor)"
+  },
+  {
+    "file": "Dirt-lighter_BaseColor.png",
+    "meanRGB": [
+      129.4,
+      114.5,
+      98.6
+    ],
+    "why": "the same Springwood ruined, x2.2 and 20 % desaturated (lighter, less red soil)"
+  },
+  {
+    "file": "Extra3-lighter_BaseColor.png",
+    "meanRGB": [
+      113.1,
+      101.1,
+      91.7
+    ],
+    "why": "Dirt brush (Seychelles gravel) x2.4 and 25 % desaturated: grey-tan gravel/scree as on real talus and gravel-pit banks"
+  }
+]

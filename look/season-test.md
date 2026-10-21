@@ -39,3 +39,18 @@ Record per shot: the temperature on the bottom bar, the weather icon, snow (yes/
 - **No snow at all** in shots 4–8 on the plains.
 - Shots 1, 2 and 9: snow, if any, gone again within a day or two of game time (let the clock run).
 - Temperatures within ±5 °C of the table (each month draws a random spread). If **all** of them read 5–10 °C too hot, the edited climate copy is not the current one. The A-v7 screenshot showing 31 °C at 17:56 in June points that way: re-post `climate.json`, save, reload, read back.
+
+## A-v8 finding: the readout was stale (2026-10-20)
+
+All A-v8 shots S1–S9 read 31 °C and showed no snow. The cause is in the decompiled `Game.dll`:
+- the HUD binds `ClimateSystem.temperature`, and nothing overrides it;
+- that value, plus weather, season and fog, is written only by `ClimateSystem.OnUpdate`, which runs in the EditorSimulation phase;
+- `SimulationSystem` runs that phase **only while the clock runs**. `SnowSystem` also needs running steps.
+
+The shots were taken paused after `POST /map/time`, so every one showed the last value computed before the date change. The test procedure is therefore:
+1. Set the date and hour (`POST /map/time`).
+2. **Run the clock** at speed 1–3 for about 10–20 s of real time; for snow (shots 1, 2, 9), a few game hours.
+3. Pause, then read the values from `GET /map/time` once the bridge returns the live and directly sampled climate values (requested from the bridge session). Do not read the HUD.
+4. Take the screenshot.
+
+A paused clock also freezes snow build-up and melt, so a snow check without running time says nothing.

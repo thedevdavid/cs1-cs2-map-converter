@@ -14,3 +14,6 @@ next-run/shots-a7/
 look/textures/*
 !look/textures/manifest.json
 next-run/shots-a8/
+!look/textures/v2/
+look/textures/v2/*
+!look/textures/v2/manifest-v2.json
