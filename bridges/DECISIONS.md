@@ -4,7 +4,7 @@ Chosen now; the alternatives stay available and may be tried later. Details and 
 
 | # | Item | Chosen | Kept for later |
 |---|---|---|---|
-| 1 | Detroit river crossing (BR001) | **A**: one two-way `BXP SuspensionBridge03 - Six Lane Highway` (124160), carriageways merged onto it, fixed spans 168+320+320+168 m | B: two one-way vanilla 3-lane suspension bridges side by side |
+| 1 | Detroit river crossing (BR001) | **A**: one two-way `BXP SuspensionBridge03 - Six Lane Highway` (124160), carriageways merged onto it, fixed spans 168+320+320+168 m. **Confirmed by the owner on the A-v8 side-by-side (2026-10-20): "vanilla bridge looks better at first"; option 2 (`BXP Suspension Bridge - Highway Twoway - 6 Lanes`, multi-span) stays an optional test file; option 3 (BXP double-deck) crashes the game and is dropped** | B: two one-way vanilla 3-lane suspension bridges side by side (not wanted) |
 | 2 | White multi-arch bridge below the dam (BR022) | **Dropped** (owner review of A-v5, 2026-10-20): the automatic `BXP Arc Pedestrian Bridge Revised` arches read as unwanted footpaths over the highway bridge and by the dam; the dam-crest walkway (BR004, Pedestrian Elevated, 799 m) is dropped too | A: DIY Artdeco Bridge Kit pieces by hand with Move It (if wanted later) |
 | 3 | Red deck arch BR006, Ourense rail viaduct BR007 | **B first**: CS2 through truss arch bridges (`BXP Truss Arch Bridge - …` / vanilla truss arch) | A: plain deck with stone-arch / art-deco kit objects underneath |
 | 4 | Rail girder spans (TRH through girders, R2USA viaducts) | **B first**: `BXP Truss Viaduct - Train` on the spans (Anarchy) | A: plain elevated Double Train Track |
