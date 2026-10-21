@@ -480,3 +480,13 @@ The 56 valley-side columns (every 8 m) are now `Vertical Pillar`, the vanilla ro
 - The rest is unchanged: roof x1 6 + 16 / x2 4 + 20 bays at road + 6.5 m, 14 Wall32x16, 11 CliffRock5 behind the wall, no guardrail.
 - Total 103 objects at x1, 105 at x2.
 - To check at the start of A-v10: the measured size of Vertical Pillar against the 8 m pitch and the 6.5 m roof offset.
+
+## Round 34g: gallery roof from packs 154132 and 153995 (owner)
+
+The roof is square plates at road + 6.5 m, each with its valley edge on the column line (a wider plate reaches back over the wall into the hill):
+- BasePlateConcrete62 (153995, 62.5 m) where the road rises ≤ 1.2 m under it, else two BasePlateConcrete32, else BasePlateConcrete16, two side by side
+  across the 25 m road. The road there climbs about 5–8 %, so mostly 16 m plates.
+- No plate runs past the end of the shed.
+- Counts:
+  - x1: 1 × 62 + 4 × 32 + 36 × 16 plates, 14 Wall32x16 (154132), 56 Vertical Pillar every 8 m (y = roof underside), 11 CliffRock5. 122 objects.
+  - x2 (doubled heights, steeper): 0 × 62 + 2 × 32 + 50 × 16. 133 objects.

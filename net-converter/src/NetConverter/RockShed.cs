@@ -4,8 +4,8 @@ namespace NetConverter;
 /// Round 34e (owner: "use the vanilla pylon props, and make it partially open", next-run/ref-gallery-1/2.webp, alpine avalanche galleries): the CS1 JP Rock
 /// shed (~440 m over the 4-lane National Road at x −6453…−6245, z 677…1069) as an open-sided gallery, one undoable import (`rock-shed`), absolute y, no sink:
 /// - hill side closed: ConcreteSet01 `Wall32x16` (32 × 16 × 1 m, pivot centre-bottom) from road level, every 32 m;
-/// - roof: `BasePlateConcrete32` (32 × 0.2 × 32 m) bays centred over the road at road y + 6.5 m, each at its own height; where two bays would step more than
-///   1 m, two `BasePlateConcrete16` halves;
+/// - roof: square plates at road y + 6.5 m, valley edge on the column line: `BasePlateConcrete62` (153995, 62.5 m) where the road rises ≤ 1.2 m under it,
+///   else `BasePlateConcrete32`, else `BasePlateConcrete16` (two across the road);
 /// - valley side open: a slim column every 8 m on the valley edge, from road level up to the slab underside (<see cref="Column"/>: the vanilla pillar prop,
 ///   Vertical Pillar, the vanilla road stack pillar, y = slab underside);
 /// - the 11 CS1 `rock_c` positions: cliff pieces behind the wall on the hill side (no rock on the roof).
@@ -48,20 +48,33 @@ public static class RockShed
         double Yaw(double tx, double tz) => ((Math.Atan2(tx, tz) * 180 / Math.PI) % 360 + 360) % 360;
         PlacedObject O(string id, string prefab, double x, double z, double y, double yaw, string note) =>
             new(id, prefab, "object", Math.Round(x, 2), Math.Round(z, 2), Math.Round(y, 2), Math.Round(((yaw % 360) + 360) % 360, 1), "JP Rock shed (open gallery)", note);
-        int full = 0, halves = 0, walls = 0, cols = 0;
-        double? prevY = null; var roofAt = new List<(double S0, double S1, double Y)>();
-        for (double s = 0; s < al; s += Bay)
+        int walls = 0, cols = 0;
+        // Roof (owner: packs 154132 and 153995): square plates, the biggest that stays flat enough. A plate of side L over [s0, s0 + L] is used when the road
+        // rises at most 1.2 m under it: BasePlateConcrete62 (62.5 m), else two BasePlateConcrete32 halves, else BasePlateConcrete16 (two side by side
+        // across the 25 m road). Every plate keeps its valley edge on the column line, so a wider plate reaches back over the wall into the hill.
+        var roofAt = new List<(double S0, double S1, double Y)>();
+        var plates = new Dictionary<string, int> { ["BasePlateConcrete62"] = 0, ["BasePlateConcrete32"] = 0, ["BasePlateConcrete16"] = 0 };
+        double Rise(double s0, double s1) { var ys = Enumerable.Range(0, 9).Select(k => At(s0 + (s1 - s0) * k / 8.0).Y).ToList(); return ys.Max() - ys.Min(); }
+        void Roof(double s0, double size)
         {
-            var c = At(s + Bay / 2); double y = c.Y + Clear;
-            if (prevY is { } py && Math.Abs(y - py) > 1)
-                foreach (var hs in new[] { s, s + Bay / 2 })
-                {
-                    var h = At(hs + Bay / 4); double hy = h.Y + Clear;
-                    res.Add(O($"shed_roof_{full + halves + 1}", "BasePlateConcrete16", h.X, h.Z, hy, Yaw(h.Tx, h.Tz), "roof half bay 16 m at road + 6.5 m (step > 1 m)"));
-                    roofAt.Add((hs, hs + Bay / 2, hy)); halves++;
-                }
-            else { res.Add(O($"shed_roof_{full + halves + 1}", "BasePlateConcrete32", c.X, c.Z, y, Yaw(c.Tx, c.Tz), "roof bay 32 m at road + 6.5 m")); roofAt.Add((s, s + Bay, y)); full++; }
-            prevY = y;
+            string prefab = size > 60 ? "BasePlateConcrete62" : size > 30 ? "BasePlateConcrete32" : "BasePlateConcrete16";
+            if (size > 20 && Rise(s0, s0 + size) > 1.2) { double hs = size > 60 ? 32 : 16; Roof(s0, hs); if (s0 + hs < Math.Min(al, s0 + size)) Roof(s0 + hs, size > 60 ? size - hs : hs); return; }
+            var c = At(s0 + size / 2); double y = c.Y + Clear;
+            int across = (int)Math.Ceiling((2 * half + 1) / size);
+            for (int k = 0; k < across; k++)
+            {
+                double off = -(half + 0.5) + size / 2 + k * size;    // from the road centre toward the hill: valley edge on the column line
+                res.Add(O($"shed_roof_{plates.Values.Sum() + 1}", prefab, c.X + nx * off, c.Z + nz * off, y, Yaw(c.Tx, c.Tz), $"roof plate {size:F1} m at road + 6.5 m"));
+                plates[prefab]++;
+            }
+            roofAt.Add((s0, s0 + size, y));
+        }
+        double s62 = 0;
+        for (; s62 + 62.5 <= al + 5; s62 += 62.5) Roof(s62, 62.5);
+        for (double s = s62; s < al - 2; s += 32) Roof(s, 32);   // the remainder: no 62.5 m plate past the end of the shed
+        for (double s = 0; s < al; s += 32)
+        {
+            var c = At(s + 16);
             res.Add(O($"shed_wall_{++walls}", "Wall32x16", c.X + nx * (half + 1), c.Z + nz * (half + 1), c.Y, Yaw(c.Tx, c.Tz) - 90, "hill-side wall from road level (32 m side along the road)"));
         }
         // Valley-side columns every 8 m, base at road level, top at the slab underside (the prop's own height decides; sunk below road level if it is taller).
@@ -78,6 +91,6 @@ public static class RockShed
             res.Add(O($"shed_rock_{r.Id}", "CliffRock5", c.X + nx * (half + 12), c.Z + nz * (half + 12), c.Y + 2.57, Yaw(c.Tx, c.Tz), $"rock behind the hill-side wall at CS1 rock_c {r.Id}"));
             rocks++;
         }
-        return (res, FormattableString.Invariant($"rock shed open gallery over {al:F0} m of {string.Join(", ", road.Select(e => e.Id))}: roof {full} BasePlateConcrete32 + {halves} BasePlateConcrete16 at road + 6.5 m, {walls} Wall32x16 on the hill side, {cols} valley-side columns ({Column}, every 8 m), {rocks} CliffRock5 behind the wall; no guardrail"));
+        return (res, FormattableString.Invariant($"rock shed open gallery over {al:F0} m of {string.Join(", ", road.Select(e => e.Id))}: roof {plates["BasePlateConcrete62"]} BasePlateConcrete62 + {plates["BasePlateConcrete32"]} BasePlateConcrete32 + {plates["BasePlateConcrete16"]} BasePlateConcrete16 at road + 6.5 m, {walls} Wall32x16 on the hill side, {cols} valley-side columns ({Column}, every 8 m), {rocks} CliffRock5 behind the wall; no guardrail"));
     }
 }
