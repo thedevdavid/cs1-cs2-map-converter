@@ -550,7 +550,7 @@ Fidelity on the A-v9 graph (before these fixes): box 14 has 1 such dead end, box
 import-rock-shed.json is one import, name `rock-shed`, runner step after po-piers, on by default. Absolute y, no grounding or sink; ConcreteSet01 pivots are centre-bottom.
 It runs along the CS1 road line over 444 m (e10437_0, e13009_0, e20651_0, e24116_0, e31333_0, e32978_0, e34976_0):
 - **Roof:** BasePlateConcrete32 bays centred over the road at road y + 6 m, each at its own height. Where two bays would step more than 1 m, two
-  BasePlateConcrete16 halves instead: x1 4 full + 20 half bays, x2 6 + 16. The road is steeper than 5 % there, so mostly halves.
+  BasePlateConcrete16 halves instead: x1 6 full + 16 half bays, x2 4 + 20. The road is steeper than 5 % there, so mostly halves.
 - **Valley side:** 15 Pillar2x8 under the slab edges, top at the slab underside; Pillar2x16 where the terrain is more than 8 m below the slab.
 - **Hill side:** 14 Wall32x16 from road level, 32 m side along the road.
 - **Rock face:** 11 CliffRock5 on top of the wall line at the CS1 rock_c positions.
@@ -579,7 +579,7 @@ import-rock-shed.json, the same `rock-shed` import, absolute y, no sink, over 44
 
 import-rock-shed.json, the same `rock-shed` import, absolute y, no sink, over 444 m:
 - **Hill side closed:** 14 Wall32x16 from road level.
-- **Roof:** BasePlateConcrete32 bays at road + 6.5 m, BasePlateConcrete16 halves where a bay would step more than 1 m. x1: 4 full + 20 half bays, x2: 6 + 16.
+- **Roof:** BasePlateConcrete32 bays at road + 6.5 m, BasePlateConcrete16 halves where a bay would step more than 1 m. x1: 6 full + 16 half bays, x2: 4 + 20.
 - **Valley side open:** 56 columns every 8 m on the valley edge, top at the roof underside. The prop is one constant, `RockShed.Column` + `ColumnHeight`
   (src/NetConverter/RockShed.cs). It is ConcreteSet01 `Pillar2x8` until the vanilla pillar prop is confirmed, so the file imports as it is.
 - **Rock:** 11 CliffRock5 behind the wall at the CS1 rock_c positions; no rock roof slabs, no ITBP.
@@ -590,3 +590,11 @@ import-rock-shed.json, the same `rock-shed` import, absolute y, no sink, over 44
     ITBP, ConcreteSet01, Pier01–03 or a *NetPillar of a bridge;
   - wanted: about 1–2 m square and 6–10 m tall, pivot at the base;
   - for the guardrail: any object or net with "Guardrail", "Guard Rail", "Crash Barrier" or "Highway Barrier" in the name.
+
+## Round 34f: gallery columns are the vanilla `Vertical Pillar`
+
+The 56 valley-side columns (every 8 m) are now `Vertical Pillar`, the vanilla road stack pillar (PREFAB_NAMES.md, bridge 0.9.42), set in RockShed.Column.
+- y = the roof slab underside, yaw = road heading. The bridge passes elevation = y − ground, so each reaches the terrain by itself.
+- The rest is unchanged: roof x1 6 + 16 / x2 4 + 20 bays at road + 6.5 m, 14 Wall32x16, 11 CliffRock5 behind the wall, no guardrail.
+- Total 103 objects at x1, 105 at x2.
+- To check at the start of A-v10: the measured size of Vertical Pillar against the 8 m pitch and the 6.5 m roof offset.
