@@ -550,3 +550,50 @@ apart to the half-widths + 0.3 m: 17 pairs, about 55 nodes, converged in 3 passe
 
 **Runner `--save`:** a 202 answer is now followed by polling GET /map/save/status every second until done or failed (up to 5 min). It prints the package
 size and the time, e.g. "saved as … (59.3 MB, 2.0 s)" against the mock.
+
+## Round 36: the BR001 south-approach dead-end chain (A-v11, interchange 8 / Detroit approach)
+
+**Symptom** (live-graph-20261021-135800-end.json, save dakota-A11d-2048). Two sets of dead ends:
+- interchange_08: (723, −4579), (782, −4501), (808, −4467), (944, −4288), (960, −4266), (976, −4245), (1054, −4142);
+- BR001: (1086, −4100), (1117, −4059).
+
+They are the ends of nine pieces on one carriageway of the viaduct, 20–77 m up, that the game never built:
+- e16410_0a, e35437_0b;
+- e31688_0ab / _0bb;
+- e35648_0a / _0ba / _0bb;
+- e24407_0ba / _0bb.
+
+The pieces between them are built, so the course alternates between built and missing.
+
+**Ruled out:**
+- *Control-point y.* The bridge reads only x/z of `control` (RequestHandlers.Import.cs: `new float2(c[0], c[2])`).
+- *A file change.* These edges, and every course within 60 m, are byte-identical between A-v9 (895da65) and A-v10 (a9afdd9). Yet e31688 and e35648 were built in A-v9 and lost in A-v10, so batch order and timing decide which pieces survive.
+- *Height.* The opposite carriageway is built at the same heights, up to 77 m.
+
+**Root cause.** The two carriageways run only 0.3 m clear of each other.
+- CS1 runs the USRP carriageways 16.3 m apart, centre to centre.
+- The two CS2 decks need 16 m of half-widths (3 + 3 lanes: 8 + 8; 4 + 2 lanes: 10 + 6).
+- Every missing piece is the later-built half of such a 0.3 m pair: its opposite piece was posted in an earlier batch (batches of 64, file order).
+- 9 of the 15 pairs at 0.3 m clearance lost the later piece. No pair with 2 m or more lost one. For example, e27498 beside the 2-lane e15395 has 2.3 m, and e10926 beside the 4-lane e31224 has 17.3 m between centres but was posted first.
+- The round-35 spread did not move these pairs, because 16.3 m is more than the 16 m threshold.
+- The bridge gives only "only 0/1/2 of 3 points along the course lie on a segment of this prefab", with no overlap diagnosis. `DescribeOverlap` skips segments of the same prefab, which covers both 3-lane pairs.
+- This is inferred from the import files and the live graph, without a game test. The game was kept on A11d with no imports.
+
+**Fix** (CarriagewaySpread.cs):
+- The opposite carriageways of one road (parallel within 15°, traffic in opposite directions, no shared node) are pushed to the two half-widths + 2 m (`Margin`), each by half.
+- Same-direction pairs (a ramp beside its mainline after a diverge) keep the old rule: moved only when they overlap, to + 0.3 m. Junctions are not bent.
+- x1: 98 pairs in pass 1, 172 nodes moved, the largest 1.71 m (n3337 at (3605, 2554)), most under 1 m. Node and edge sets are unchanged.
+- All nine BR001 pairs are now 18.0 m centre to centre (2.0 m clear), at both scales.
+
+**Dry fidelity check** (`node tools/file-graph.mjs`, then `node tools/fidelity.mjs --live out/x1/file-graph.json --out out/x1/fidelity-files`):
+- New tool, tools/file-graph.mjs: it turns the /import/network files into a /graph/export-shaped graph, keyed by position, so fidelity.mjs can compare CS1 with what we would post.
+- interchange_08 and BR001: 0 dead ends and 0 height errors, as with the previous files. The files never had the gaps; the game made them.
+- Interchange 8 now lists 6 CS1 segments "without counterpart" in our files (was 1: 1403):
+  - 1403, 10926, 11900, 15883, 28471, 31224;
+  - all present, but more than 2 m from the CS1 course in plan: the spread on top of earlier moves (e31224_0ba, + 3.2 m in round 33).
+- BR001: "+26 replaced by a bridge override" (was 28), the same proximity effect.
+- 142 tests pass.
+
+**For A-v12:**
+- Check the nine ids above in the post-network graph. A piece still missing at 2 m clearance would point to something else: pillars of the earlier carriageway, or the game's own merge of collinear pieces.
+- **For the bridge session:** `DescribeOverlap` should not skip same-prefab segments that are not the course's own collinear neighbours. Then a parallel carriageway overlap is named instead of reported as a bare point-check failure.

@@ -25,7 +25,7 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 
 | layer | edge | prefab | status | points mapped/any | x | z |
 |---|---|---|---|---|---:|---:|
-| highways | e3183_0 | Highway Oneway - 2 lanes | WrongPrefab | 3/5 | 2969 | 1097 |
+| highways | e3183_0 | Highway Oneway - 2 lanes | WrongPrefab | 3/5 | 2968 | 1098 |
 | highways | e19786_0 | Highway Oneway - 2 lanes | WrongPrefab | 4/5 | 3411 | 1985 |
 | highways | e32650_0 | Highway Oneway - 1 lane | WrongPrefab | 3/5 | 3671 | 2153 |
 | highways | e34504_0 | Highway Oneway - 2 lanes | WrongPrefab | 3/5 | 3785 | 2295 |
