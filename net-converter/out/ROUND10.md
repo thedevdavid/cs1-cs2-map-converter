@@ -509,3 +509,38 @@ Diffed against live-graph-20261021-025202-end.json and against the A-v8 files (1
 - **The three known ones** (e31685_0, e34504_0, e35131_0) are the junctions the game moved (round 29).
 - **The run-report reader:** it now covers highway courses (FootprintShift with the drop messages), only where a separate course of the named prefab is
   closer than the two half-widths + 0.5 m.
+
+## Round 34: owner's A-v9 review (14 / 15 disconnected ramps, 17 island trees, 22 / 24 cliffs, 24 the covered road)
+
+**A. Dead ends.** The map-wide list from live-graph-20261021-025202-end.json: 21 live degree-1 nodes off the border, 10 of them not dead ends in CS1 (within 30 m).
+The fidelity tool now counts these per box and circles them in the SVG.
+
+| live dead end | cause | fix |
+|---|---|---|
+| (709, 3928) spot 14 | e22564_0b dropped: "inside" its merge sibling e9919_0 (1-lane) | its free end e22564_0d0 moves 2.7 m away from the sibling; the merge node n4291 stays |
+| (884, −4339) spot 15 | e31224_0ba dropped beside the parallel 3-lane carriageway e25_0 (16.3 m, 18 needed) | moved 3.2 m clear (round 33) |
+| e31224_0bb, between them | dropped "inside" its diverge sibling e15395_0a | its free end e31224_0bd1 moves 2.2 m away; the diverge node n27662 stays |
+| (723, −4579), (782, −4501), (808, −4467), (1086, −4100), (1117, −4059) spot 15 | e16410_0a, e35437_0b, e24407_0ba / _0bb vanished in A-v9, the first run with the `elevated` flag on 20–40 m viaduct pieces | the flag is now only on courses with an end below 8 m (round 33); these four no longer carry it |
+| (1431, 4697), (1581, 4564) | the round-26 access roads to the dam plant and the substation end at the buildings | expected |
+| (1440, 2585) | rail e28929_0 built 5.1 m off its line, the same in A-v8 and A-v9 | left; separate case |
+
+Fidelity on the A-v9 graph (before these fixes): box 14 has 1 such dead end, box 15 has 4, 22 and 24 have 0. Verification needs A-v10.
+
+**B. Island trees (17).**
+- A tree is masked only where the playable heightmap (10201528) is below the 93 m sea + 0.5. The CS1 water-surface raster masks only there too, and the old
+  rule (CS1 terrain below 97.5 m, the default sea level) is gone.
+- Within 300 m of (4096, −6127): 23 trees kept, 38 still masked (on terrain below 93.5 m).
+- Sand on islands (CS1 water raster, playable terrain ≥ 95 m) is no longer painted, as an area surface or as terrain paint. Island tops stay grass.
+
+**C. Cliffs (22, 24).**
+- **PO cliff pieces** come back where the playable slope is ≥ 35° (the steepest within half the footprint), one per 16 m cell, yawed along the contour, and sunk
+  1.5 m + half the footprint × tan slope. None on a net corridor; none where the playable terrain is below 93.5 m (cliff walls rise out of the river).
+  365 pieces map-wide: fort bluff 10, canyon 20, the south rock work 32.
+- **CS1 Brown Surface Rock Medium / Large** (the author's rock dressing, mapped to small rocks so far) become CliffStack / CliffRock5 on ≥ 25° slopes, with the same
+  yaw, sink and corridor rules: 249 pieces. 35° qualified only 61 on the smoother playable heightmap.
+
+**D. The covered road (24).**
+- import-rock-shed.json (runner step `rock-shed`): 14 ConcreteSet01 Wall32x16 along the uphill side of the National Road and 14 Pillar4x16 on the downhill
+  side, every 32 m over 444 m, bases at road height, between the first and the last rock_c piece.
+- No CS2 tunnel: hm-rebuild is carving this corridor down to the road (road-terrain-mismatch), so there is no rock cover for one.
+- Wall32x16's long axis along the road is assumed; check in game.

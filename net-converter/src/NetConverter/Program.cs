@@ -1256,8 +1256,8 @@ void WriteLayers()
         File.Delete(Path.Combine(OptDir(), "import-po-structure-piers.json"));
         Objects.Write(Path.Combine(outDir, "import-po-structure-piers.json"), "po-structure-piers", poS.Piers, poGround);
         // Round 34: the JP Rock shed stand-in (gallery wall + columns along the National Road), its own import (runner step rock-shed).
-        var (shedObjs, shedLog) = RockShed.Build(poRows, result.Edges, cs2True);
-        Objects.Write(Path.Combine(outDir, "import-rock-shed.json"), "rock-shed", shedObjs, poGround);
+        var (shedObjs, shedLog) = RockShed.Build(poRows, result.Edges, cs2True, heightFactor);
+        Objects.Write(Path.Combine(outDir, "import-rock-shed.json"), "rock-shed", shedObjs, null);   // absolute y, no grounding / sink
         r9.Add(shedLog + " -> import-rock-shed.json");
         foreach (var l in poS.Log) r9.Add("PO structures: " + l);
         r9.Add($"PO structures: {poRows.Count} proposal rows -> import-po-structure-objects.json {poS.Main.Count}, import-po-structure-piers.json {poS.Piers.Count}, optional/import-po-structure-br006-arches.json {poS.Br006Arches.Count}, optional/import-po-structure-gantry.json {poS.Gantries.Count}");

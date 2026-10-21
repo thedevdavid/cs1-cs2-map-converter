@@ -426,3 +426,14 @@ Fidelity on the A-v9 graph (before these fixes): box 14 has 1 such dead end, box
   side, every 32 m over 444 m, bases at road height, between the first and the last rock_c piece.
 - No CS2 tunnel: hm-rebuild is carving this corridor down to the road (road-terrain-mismatch), so there is no rock cover for one.
 - Wall32x16's long axis along the road is assumed; check in game.
+
+## Round 34b: the rock shed as a ConcreteSet01 gallery (bridges/ROCK-SHED.md fallback (b))
+
+import-rock-shed.json is one import, name `rock-shed`, runner step after po-piers, on by default. Absolute y, no grounding or sink; ConcreteSet01 pivots are centre-bottom.
+It runs along the CS1 road line over 444 m (e10437_0, e13009_0, e20651_0, e24116_0, e31333_0, e32978_0, e34976_0):
+- **Roof:** BasePlateConcrete32 bays centred over the road at road y + 6 m, each at its own height. Where two bays would step more than 1 m, two
+  BasePlateConcrete16 halves instead: x1 4 full + 20 half bays, x2 6 + 16. The road is steeper than 5 % there, so mostly halves.
+- **Valley side:** 15 Pillar2x8 under the slab edges, top at the slab underside; Pillar2x16 where the terrain is more than 8 m below the slab.
+- **Hill side:** 14 Wall32x16 from road level, 32 m side along the road.
+- **Rock face:** 11 CliffRock5 on top of the wall line at the CS1 rock_c positions.
+- No tunnel fallback.
