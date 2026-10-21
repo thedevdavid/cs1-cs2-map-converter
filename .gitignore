@@ -13,3 +13,4 @@ net-converter/out/trees/*.json
 next-run/shots-a7/
 look/textures/*
 !look/textures/manifest.json
+next-run/shots-a8/
