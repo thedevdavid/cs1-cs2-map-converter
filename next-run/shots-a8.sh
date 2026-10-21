@@ -16,6 +16,8 @@ shot 3775 2919 0 20 220 09-covered-bridge-gravel
 shot 1300 4680 180 25 700 10-dam-and-power-lines
 shot 1600 4544 0 35 260 11-substation
 shot 2995 820 0 50 700 12-interchange-oneway-joins
+shot 3493 2152 0 50 700 30-interchange-05-stack
+shot 3350 2000 45 25 500 30b-interchange-05-stack-low
 shot -4224 -60 0 50 500 13-crossing-restored
 shot 817 4013 0 45 420 14-dead-end-fix
 shot 608 -4721 0 35 450 15-interchange-umber-driftwood
