@@ -929,3 +929,33 @@ Owner: "1. the roof should follow the road below. same height calculated from th
 5. **Rocks around the shed** (po-rocks, rock scatter): re-seated on the predicted regraded terrain. po-rocks 2 re-seated, 5 left out; scatter 118 re-seated, 6 left out.
 
 **Counts** (x1): import-rock-shed.json has 211 objects: 96 BasePlateConcrete16, 80 Pillar2x8, 2 Pillar2x16, 22 CliffRock5, 11 CliffRock3. Roof covers 99.9 % of the road strip; no gap at the hill edge.
+
+## Round 43: 4-lane highway, one roof plane, pillars under the roof edge (owner's A-v17 review, dakota-A17b-2048)
+
+Owner: "mostly good but: 1. use 4-lane highway there. 2. still have issues with pole placements and heights as you see on attached images."
+
+1. **Road prefab.**
+   - mapping.tsv now maps `USRP 4-Lane National Road` to **Highway Twoway - 4 lanes** (GET /prefabs on the bridge; /prefabs/info width 20 m, was Medium Road 24 m). It applies to the whole CS1 prefab, so the road has no mid-road transition.
+   - The converter has 11 courses of it (merged from the CS1 segments): 7 under the shed (527 m), and **4 away from it, 336 m at about (−588, −1288)**, near interchange 1. Those become the 4-lane highway too.
+   - The regrade is unchanged (it now finds the road by its CS1 prefab).
+   - The shed is re-derived from the 10 m half width: column line and roof valley edge 10.5 m from the axis (was 12.5), and the rock face 2 m closer.
+2. **Roof plane.**
+   - Every row now lies in **one plane**, the regraded road + 6.5 m at the road's grade (file pitch −1.31°). Before, the end rows followed the unregraded approach edges, which was the seam/step at the SE portal.
+   - Over the off-grade ends the road falls away, so clearance there grows (up to 8.6 m). The plane would be lifted as a whole if any row came within 6.5 m; it was lifted 0.03 m.
+   - Largest step between rows 0.35 m in the converter's level measure; with the pitch applied, the steps at the joints are ≤ 0.075 m (file check, x1).
+3. **Pillars:**
+   - **Centre 1.5 m inside the roof's valley edge.** The pillar is 2 m wide: at 1.0 m its outer face is flush with the edge, which is why they read as standing beside the roof. At 1.5 m the edge overhangs by 0.5 m.
+   - **Top exactly at the roof underside** at the pillar (the plane).
+   - Ground = the lowest terrain under the 2 × 2 m footprint (centre and corners), on the terrain predicted after the regrade.
+   - **Prefab by gap.** Pillar2x8 while roof − ground ≤ 7.7 m, else Pillar2x16 (≤ 15.7 m), else Pillar2x16 stacked. The base is always ≥ 0.3 m in the ground.
+   - **Converter numbers** (x1): 82 columns (78 Pillar2x8 + 4 Pillar2x16); top − roof underside max 0.000 m; base − ground −7.22 … −0.57 m. The deep ones are the Pillar2x16 where the gap is just over 7.7 m.
+   - **Pitch sign.** The A-v17 run kept no tilt report. The runner now records the bridge's `tilt` block in run-*.json, so the sign can be confirmed after the next import.
+4. **Roof edge on the curve:** each row's valley plate has its valley edge on the constant offset (half width + 0.5 m) from the road centreline. Plates overlap on the hill side.
+5. **Self-check from the written file** (`node tools/shed-check.mjs`; SVGs in out/x1/shed-check/top.svg and valley.svg, numbers.txt):
+   - pillar centre → nearest plate edge 1.49 … 1.61 m;
+   - pillar top − plate underside −0.07 … +0.07 m (x1; ±0.14 m at 2×): file rounding of y and pitch, inside the 0.2 m plate;
+   - valley plates' outer edge − offset curve −0.006 … +0.13 m;
+   - underside step at the row joints 0.001 … 0.075 m;
+   - 33 rock pieces.
+
+**Counts** (x1): 96 BasePlateConcrete16, 78 Pillar2x8, 4 Pillar2x16, 22 CliffRock5, 11 CliffRock3.

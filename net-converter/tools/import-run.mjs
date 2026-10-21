@@ -246,6 +246,8 @@ const summary = (endpoint, r) => {
 const compact = v => v == null ? "" : typeof v === "object" ? Object.entries(v).map(([k, x]) => `${k}=${typeof x === "number" ? (Math.round(x * 100) / 100) : typeof x === "object" ? compact(x).replace(/ /g, ",") : x}`).join(" ") : String(v);
 const paintTiming = j => j?.method != null || j?.seconds != null ? `; method=${j.method ?? "?"}, calibration=${typeof j.calibration === "object" ? compact(j.calibration) : (j.calibration ?? "?")}, seconds=${j.seconds ?? "?"}${j.raster ? ` (raster ${compact(j.raster)})` : ""}` : "";
 const objectTiming = j => j?.timing ? `; timing ${compact(j.timing)}` : "";
+// Bridge 0.9.50: objects with pitch / roll / quaternion get a "tilt" block (kept / changed per object against the live Transform). Round 43: kept in run-*.json.
+const objectTilt = j => j?.tilt ? `; tilt ${compact(Object.fromEntries(Object.entries(j.tilt).filter(([, v]) => typeof v !== "object" || v === null)))}` : "";
 const undoOf = (endpoint, r, name) => endpoint === "/import/network" ? `POST /import/undo?id=${r.importId}` : endpoint === "/import/water" ? `POST /import/water/undo?id=${r.importId}`
   : endpoint === "/import/resources" ? "(no undo: re-import the previous layers)" : `POST /import/objects/undo?id=${r.importId}`;
 
@@ -383,8 +385,8 @@ outer: for (const [name, endpoint, files] of steps) {
     markDone(file, r.json.importId, name);
     const ng = r.json.netGuard;
     const guardText = ng ? `; netGuard removed ${ng.segmentsRemoved ?? 0}${ng.geometryGone ? ` (geometry gone ${ng.geometryGone})` : ""}` : "";
-    rows.push({ name, file, status: r.json.completed === false ? `aborted: ${r.json.abortReason}` : "ok", secs: r.json.seconds ?? secs, importId: r.json.importId, undo: undoOf(endpoint, r.json, name), text: s.text + guardText + (endpoint === "/import/objects" ? objectTiming(r.json) : ""), fails,
-      ...(endpoint === "/import/objects" && r.json.timing ? { timing: r.json.timing } : {}) });
+    rows.push({ name, file, status: r.json.completed === false ? `aborted: ${r.json.abortReason}` : "ok", secs: r.json.seconds ?? secs, importId: r.json.importId, undo: undoOf(endpoint, r.json, name), text: s.text + guardText + (endpoint === "/import/objects" ? objectTiming(r.json) + objectTilt(r.json) : ""), fails,
+      ...(endpoint === "/import/objects" && r.json.timing ? { timing: r.json.timing } : {}), ...(endpoint === "/import/objects" && r.json.tilt ? { tilt: r.json.tilt } : {}) });
     // Stop at the first objects / surfaces step that removed built segments (netGuard, bridge 0.9.24).
     if (ng && (ng.segmentsRemoved ?? 0) > 0) {
       console.log(`✗ ${name} ${file}: netGuard: ${ng.segmentsRemoved} segments removed (geometry gone ${ng.geometryGone ?? "?"}); run stopped`);

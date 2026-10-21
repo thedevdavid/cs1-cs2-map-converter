@@ -1,10 +1,10 @@
 {
   "name": "regrade-rock-shed",
   "_comment": "Round 42: the National Road under the JP Rock shed on one straight grade. For hm-rebuild: within halfWidth of the centreline set the terrain to y (true metres); on the hill side (unit vector \u0027hill\u0027, x/z) keep a bench of hillBench metres beyond the half-width at y, then the cut face as it is now, shifted by (y \u2212 oldY). s = arc length from the first CS1 shell centre (negative before it). Points every 8 m, transitions included.",
-  "heightmap": "10201528-dktflls-1to1.png",
+  "heightmap": "10211409-dktflls-1to1.png",
   "grade": 0.02302,
-  "halfWidth": 14.4,
-  "roadHalfWidth": 12.4,
+  "halfWidth": 12,
+  "roadHalfWidth": 10,
   "shells": {
     "first": 0,
     "last": 442.3
@@ -16,7 +16,7 @@
       "z": 626.68,
       "oldY": 246.54,
       "y": 246.54,
-      "hillBench": 13,
+      "hillBench": 17,
       "hill": [
         0.345,
         0.9386
@@ -28,7 +28,7 @@
       "z": 629.19,
       "oldY": 248.03,
       "y": 248.03,
-      "hillBench": 13,
+      "hillBench": 17,
       "hill": [
         0.416,
         0.9094
@@ -40,7 +40,7 @@
       "z": 632.82,
       "oldY": 249.51,
       "y": 249.51,
-      "hillBench": 12.5,
+      "hillBench": 15.5,
       "hill": [
         0.5347,
         0.845
@@ -52,7 +52,7 @@
       "z": 637.4,
       "oldY": 251,
       "y": 251,
-      "hillBench": 12.5,
+      "hillBench": 16,
       "hill": [
         0.6214,
         0.7835
@@ -64,7 +64,7 @@
       "z": 642.75,
       "oldY": 252.49,
       "y": 252.49,
-      "hillBench": 12.5,
+      "hillBench": 16.5,
       "hill": [
         0.684,
         0.7295
@@ -76,7 +76,7 @@
       "z": 648.67,
       "oldY": 253.97,
       "y": 253.97,
-      "hillBench": 12.5,
+      "hillBench": 17,
       "hill": [
         0.7291,
         0.6844
@@ -88,7 +88,7 @@
       "z": 654.98,
       "oldY": 255.46,
       "y": 255.46,
-      "hillBench": 12.5,
+      "hillBench": 16,
       "hill": [
         0.7615,
         0.6482
@@ -100,7 +100,7 @@
       "z": 661.51,
       "oldY": 256.95,
       "y": 256.95,
-      "hillBench": 13,
+      "hillBench": 16,
       "hill": [
         0.7842,
         0.6205
@@ -112,7 +112,7 @@
       "z": 668.07,
       "oldY": 258.44,
       "y": 258.44,
-      "hillBench": 13,
+      "hillBench": 17,
       "hill": [
         0.7992,
         0.6011
@@ -124,7 +124,7 @@
       "z": 674.48,
       "oldY": 259.92,
       "y": 259.92,
-      "hillBench": 13,
+      "hillBench": 16,
       "hill": [
         0.8075,
         0.5899
@@ -136,7 +136,7 @@
       "z": 680.55,
       "oldY": 261.21,
       "y": 260.96,
-      "hillBench": 13.5,
+      "hillBench": 17.5,
       "hill": [
         0.8134,
         0.5817
@@ -148,7 +148,7 @@
       "z": 686.75,
       "oldY": 262.1,
       "y": 261.15,
-      "hillBench": 14,
+      "hillBench": 19,
       "hill": [
         0.8198,
         0.5727
@@ -160,7 +160,7 @@
       "z": 693.29,
       "oldY": 262.98,
       "y": 261.33,
-      "hillBench": 14,
+      "hillBench": 18,
       "hill": [
         0.8256,
         0.5643
@@ -172,7 +172,7 @@
       "z": 700.09,
       "oldY": 263.87,
       "y": 261.52,
-      "hillBench": 14,
+      "hillBench": 19,
       "hill": [
         0.8305,
         0.557
@@ -184,7 +184,7 @@
       "z": 707.04,
       "oldY": 264.76,
       "y": 261.7,
-      "hillBench": 13.5,
+      "hillBench": 18,
       "hill": [
         0.8349,
         0.5503
@@ -196,7 +196,7 @@
       "z": 714.07,
       "oldY": 265.65,
       "y": 261.89,
-      "hillBench": 13,
+      "hillBench": 18,
       "hill": [
         0.839,
         0.5441
@@ -208,7 +208,7 @@
       "z": 721.07,
       "oldY": 266.54,
       "y": 262.07,
-      "hillBench": 13,
+      "hillBench": 18.5,
       "hill": [
         0.8429,
         0.5381
@@ -220,7 +220,7 @@
       "z": 727.95,
       "oldY": 267.43,
       "y": 262.25,
-      "hillBench": 13,
+      "hillBench": 18,
       "hill": [
         0.8467,
         0.532
@@ -232,7 +232,7 @@
       "z": 734.62,
       "oldY": 268.32,
       "y": 262.44,
-      "hillBench": 13,
+      "hillBench": 18.5,
       "hill": [
         0.8507,
         0.5257
@@ -244,7 +244,7 @@
       "z": 741,
       "oldY": 269.21,
       "y": 262.62,
-      "hillBench": 13,
+      "hillBench": 18.5,
       "hill": [
         0.8549,
         0.5188
@@ -256,7 +256,7 @@
       "z": 747.35,
       "oldY": 269.34,
       "y": 262.81,
-      "hillBench": 13,
+      "hillBench": 18.5,
       "hill": [
         0.8588,
         0.5123
@@ -268,7 +268,7 @@
       "z": 754.07,
       "oldY": 269.42,
       "y": 262.99,
-      "hillBench": 13.5,
+      "hillBench": 19,
       "hill": [
         0.862,
         0.5069
@@ -280,7 +280,7 @@
       "z": 761.08,
       "oldY": 269.5,
       "y": 263.17,
-      "hillBench": 13.5,
+      "hillBench": 19,
       "hill": [
         0.8648,
         0.5022
@@ -292,7 +292,7 @@
       "z": 768.27,
       "oldY": 269.58,
       "y": 263.36,
-      "hillBench": 13.5,
+      "hillBench": 19.5,
       "hill": [
         0.8672,
         0.498
@@ -304,7 +304,7 @@
       "z": 775.56,
       "oldY": 269.65,
       "y": 263.54,
-      "hillBench": 13.5,
+      "hillBench": 19.5,
       "hill": [
         0.8694,
         0.494
@@ -316,7 +316,7 @@
       "z": 782.84,
       "oldY": 269.73,
       "y": 263.73,
-      "hillBench": 13.5,
+      "hillBench": 19.5,
       "hill": [
         0.8716,
         0.4902
@@ -328,7 +328,7 @@
       "z": 790.03,
       "oldY": 269.81,
       "y": 263.91,
-      "hillBench": 13.5,
+      "hillBench": 20,
       "hill": [
         0.8737,
         0.4865
@@ -340,7 +340,7 @@
       "z": 797.02,
       "oldY": 269.89,
       "y": 264.1,
-      "hillBench": 13.5,
+      "hillBench": 19,
       "hill": [
         0.8759,
         0.4825
@@ -352,7 +352,7 @@
       "z": 803.72,
       "oldY": 269.97,
       "y": 264.28,
-      "hillBench": 13.5,
+      "hillBench": 19,
       "hill": [
         0.8783,
         0.4782
@@ -364,7 +364,7 @@
       "z": 810.16,
       "oldY": 269.92,
       "y": 264.46,
-      "hillBench": 13.5,
+      "hillBench": 19,
       "hill": [
         0.8807,
         0.4737
@@ -376,7 +376,7 @@
       "z": 816.92,
       "oldY": 269.75,
       "y": 264.65,
-      "hillBench": 13,
+      "hillBench": 18.5,
       "hill": [
         0.8827,
         0.4699
@@ -388,7 +388,7 @@
       "z": 823.99,
       "oldY": 269.59,
       "y": 264.83,
-      "hillBench": 13,
+      "hillBench": 18.5,
       "hill": [
         0.8845,
         0.4666
@@ -400,7 +400,7 @@
       "z": 831.28,
       "oldY": 269.42,
       "y": 265.02,
-      "hillBench": 13,
+      "hillBench": 17.5,
       "hill": [
         0.886,
         0.4637
@@ -412,7 +412,7 @@
       "z": 838.71,
       "oldY": 269.26,
       "y": 265.2,
-      "hillBench": 13,
+      "hillBench": 18,
       "hill": [
         0.8874,
         0.4611
@@ -424,7 +424,7 @@
       "z": 846.16,
       "oldY": 269.1,
       "y": 265.38,
-      "hillBench": 13,
+      "hillBench": 18,
       "hill": [
         0.8887,
         0.4585
@@ -436,7 +436,7 @@
       "z": 853.54,
       "oldY": 268.93,
       "y": 265.57,
-      "hillBench": 12.5,
+      "hillBench": 18,
       "hill": [
         0.89,
         0.456
@@ -448,7 +448,7 @@
       "z": 860.76,
       "oldY": 268.77,
       "y": 265.75,
-      "hillBench": 13,
+      "hillBench": 18,
       "hill": [
         0.8913,
         0.4534
@@ -460,7 +460,7 @@
       "z": 867.72,
       "oldY": 268.6,
       "y": 265.94,
-      "hillBench": 13,
+      "hillBench": 18,
       "hill": [
         0.8927,
         0.4506
@@ -472,7 +472,7 @@
       "z": 874.33,
       "oldY": 268.36,
       "y": 266.12,
-      "hillBench": 13,
+      "hillBench": 18,
       "hill": [
         0.8942,
         0.4476
@@ -484,7 +484,7 @@
       "z": 881.02,
       "oldY": 267.38,
       "y": 266.31,
-      "hillBench": 13.5,
+      "hillBench": 17,
       "hill": [
         0.8956,
         0.4448
@@ -496,7 +496,7 @@
       "z": 888.08,
       "oldY": 266.4,
       "y": 266.49,
-      "hillBench": 13,
+      "hillBench": 17,
       "hill": [
         0.8968,
         0.4425
@@ -508,7 +508,7 @@
       "z": 895.4,
       "oldY": 265.43,
       "y": 266.67,
-      "hillBench": 13,
+      "hillBench": 16.5,
       "hill": [
         0.8977,
         0.4405
@@ -520,7 +520,7 @@
       "z": 902.88,
       "oldY": 264.45,
       "y": 266.86,
-      "hillBench": 13,
+      "hillBench": 16.5,
       "hill": [
         0.8986,
         0.4387
@@ -532,7 +532,7 @@
       "z": 910.43,
       "oldY": 263.47,
       "y": 267.04,
-      "hillBench": 13,
+      "hillBench": 0,
       "hill": [
         0.8994,
         0.437
@@ -544,7 +544,7 @@
       "z": 917.94,
       "oldY": 262.5,
       "y": 267.23,
-      "hillBench": 13,
+      "hillBench": 0,
       "hill": [
         0.9002,
         0.4354
@@ -556,7 +556,7 @@
       "z": 925.33,
       "oldY": 261.52,
       "y": 267.41,
-      "hillBench": 13,
+      "hillBench": 0,
       "hill": [
         0.901,
         0.4338
@@ -568,7 +568,7 @@
       "z": 932.49,
       "oldY": 260.54,
       "y": 267.6,
-      "hillBench": 13,
+      "hillBench": 0,
       "hill": [
         0.9018,
         0.4321
@@ -580,7 +580,7 @@
       "z": 939.32,
       "oldY": 259.57,
       "y": 267.78,
-      "hillBench": 13,
+      "hillBench": 0,
       "hill": [
         0.9027,
         0.4302
@@ -592,7 +592,7 @@
       "z": 945.95,
       "oldY": 260.31,
       "y": 267.96,
-      "hillBench": 13,
+      "hillBench": 0,
       "hill": [
         0.9036,
         0.4284
@@ -604,7 +604,7 @@
       "z": 952.93,
       "oldY": 261.84,
       "y": 268.15,
-      "hillBench": 13,
+      "hillBench": 0,
       "hill": [
         0.9043,
         0.427
@@ -616,7 +616,7 @@
       "z": 960.21,
       "oldY": 263.37,
       "y": 268.33,
-      "hillBench": 13,
+      "hillBench": 0,
       "hill": [
         0.9048,
         0.4258
@@ -628,7 +628,7 @@
       "z": 967.7,
       "oldY": 264.89,
       "y": 268.52,
-      "hillBench": 13,
+      "hillBench": 0,
       "hill": [
         0.9053,
         0.4248
@@ -640,7 +640,7 @@
       "z": 975.29,
       "oldY": 266.42,
       "y": 268.7,
-      "hillBench": 13,
+      "hillBench": 15.5,
       "hill": [
         0.9057,
         0.4239
@@ -652,7 +652,7 @@
       "z": 982.88,
       "oldY": 267.95,
       "y": 268.88,
-      "hillBench": 13.5,
+      "hillBench": 16.5,
       "hill": [
         0.9061,
         0.4232
@@ -664,7 +664,7 @@
       "z": 990.38,
       "oldY": 269.48,
       "y": 269.07,
-      "hillBench": 13.5,
+      "hillBench": 17.5,
       "hill": [
         0.9064,
         0.4225
@@ -676,7 +676,7 @@
       "z": 997.7,
       "oldY": 271,
       "y": 269.25,
-      "hillBench": 13.5,
+      "hillBench": 17.5,
       "hill": [
         0.9067,
         0.4218
@@ -688,7 +688,7 @@
       "z": 1004.72,
       "oldY": 272.53,
       "y": 269.44,
-      "hillBench": 13.5,
+      "hillBench": 18,
       "hill": [
         0.907,
         0.4212
@@ -700,7 +700,7 @@
       "z": 1011.41,
       "oldY": 273.61,
       "y": 269.62,
-      "hillBench": 13.5,
+      "hillBench": 18.5,
       "hill": [
         0.9075,
         0.4201
@@ -712,7 +712,7 @@
       "z": 1018.72,
       "oldY": 273.36,
       "y": 269.81,
-      "hillBench": 13.5,
+      "hillBench": 18,
       "hill": [
         0.9081,
         0.4188
@@ -724,7 +724,7 @@
       "z": 1026.79,
       "oldY": 273.1,
       "y": 269.99,
-      "hillBench": 13.5,
+      "hillBench": 18,
       "hill": [
         0.9085,
         0.4178
@@ -736,7 +736,7 @@
       "z": 1035.3,
       "oldY": 272.85,
       "y": 270.17,
-      "hillBench": 13.5,
+      "hillBench": 18.5,
       "hill": [
         0.9089,
         0.4171
@@ -748,7 +748,7 @@
       "z": 1043.93,
       "oldY": 272.59,
       "y": 270.36,
-      "hillBench": 13.5,
+      "hillBench": 18,
       "hill": [
         0.9091,
         0.4166
@@ -760,7 +760,7 @@
       "z": 1052.34,
       "oldY": 272.33,
       "y": 270.54,
-      "hillBench": 13.5,
+      "hillBench": 18,
       "hill": [
         0.9093,
         0.4162
@@ -772,7 +772,7 @@
       "z": 1060.21,
       "oldY": 272.08,
       "y": 270.73,
-      "hillBench": 13.5,
+      "hillBench": 18,
       "hill": [
         0.9094,
         0.4158
@@ -784,7 +784,7 @@
       "z": 1067.21,
       "oldY": 271.82,
       "y": 270.91,
-      "hillBench": 13.5,
+      "hillBench": 17.5,
       "hill": [
         0.9096,
         0.4156
@@ -796,7 +796,7 @@
       "z": 1073.02,
       "oldY": 271.57,
       "y": 271.09,
-      "hillBench": 13.5,
+      "hillBench": 18.5,
       "hill": [
         0.9097,
         0.4153
@@ -808,7 +808,7 @@
       "z": 1077.3,
       "oldY": 271.31,
       "y": 271.28,
-      "hillBench": 13.5,
+      "hillBench": 18,
       "hill": [
         0.9097,
         0.4152

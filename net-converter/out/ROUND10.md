@@ -14,7 +14,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\import-terrain-paint-n2-pit-banks-sand.json` | ROUND 27 terrain paint N2 Sand (2×) | 0 polygons, 8 strokes | 0.0 MB |
 | 0 | `out\import-terrain-paint-n3-drawdown-dirt.json` | ROUND 27 terrain paint N3 Dirt (2×) | 0 polygons, 134 strokes | 0.0 MB |
 | 0 | `out\import-terrain-paint-n4-hogback-sand.json` | ROUND 27 terrain paint N4 Sand (2×) | 0 polygons, 31644 strokes | 5.1 MB |
-| 0 | `out\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (2×) | 200 polygons, 0 strokes | 0.9 MB |
+| 0 | `out\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (2×) | 199 polygons, 0 strokes | 0.9 MB |
 | 0 | `out\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (2×) | 0 polygons, 40027 strokes | 6.4 MB |
 | 0 | `out\import-terrain-paint-n6-savanna-dry.json` | ROUND 27 terrain paint N6 Dry (2×) | 1903 polygons, 0 strokes | 20.6 MB |
 | 0 | `out\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 Dirt (2×) | 0 polygons, 215 strokes | 0.0 MB |
@@ -36,7 +36,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\x1\import-terrain-paint-n2-pit-banks-sand.json` | ROUND 27 terrain paint N2 Sand (1×) | 0 polygons, 8 strokes | 0.0 MB |
 | 0 | `out\x1\import-terrain-paint-n3-drawdown-dirt.json` | ROUND 27 terrain paint N3 Dirt (1×) | 0 polygons, 134 strokes | 0.0 MB |
 | 0 | `out\x1\import-terrain-paint-n4-hogback-sand.json` | ROUND 27 terrain paint N4 Sand (1×) | 0 polygons, 31644 strokes | 5.1 MB |
-| 0 | `out\x1\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (1×) | 200 polygons, 0 strokes | 0.9 MB |
+| 0 | `out\x1\import-terrain-paint-n5-scree-dirt.json` | ROUND 27 terrain paint N5 Dirt (1×) | 199 polygons, 0 strokes | 0.9 MB |
 | 0 | `out\x1\import-terrain-paint-n6-savanna-dirt.json` | ROUND 27 terrain paint N6 Dirt (1×) | 0 polygons, 40027 strokes | 6.4 MB |
 | 0 | `out\x1\import-terrain-paint-n6-savanna-dry.json` | ROUND 27 terrain paint N6 Dry (1×) | 1903 polygons, 0 strokes | 20.6 MB |
 | 0 | `out\x1\import-terrain-paint-n7-prairie-dog-dirt.json` | ROUND 27 terrain paint N7 Dirt (1×) | 0 polygons, 215 strokes | 0.0 MB |
@@ -80,8 +80,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\import-walls-props.json` | barrier props (2×) | 621 | 0.1 MB |
 | 5 | `out\import-objects.json` | objects (2×) | 6119 (prop 3029, building 5, plant 3076, tree 9; 1073 with y) | 1.3 MB |
 | 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
-| 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 608 | 0.1 MB |
-| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17551 | 3.2 MB |
+| 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 606 | 0.1 MB |
+| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17552 | 3.2 MB |
 | 5 | `out\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (2×) | 3 | 0.0 MB |
 | 5 | `out\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (2×) | 201 | 0.0 MB |
 | 5 | `out\optional\import-po-structure-br006-arches.json` | ROUND 22 BR006 variant b: 7 StoneArchRailBridge (135944) under the deck, runner --with po-br006-arches (2×) | 7 | 0.0 MB |
@@ -91,7 +91,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
 | 5 | `out\x1\import-objects.json` | objects (1×) | 6119 (prop 3029, building 5, plant 3076, tree 9; 1073 with y) | 1.3 MB |
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
-| 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 608 | 0.1 MB |
+| 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 606 | 0.1 MB |
 | 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17547 | 3.2 MB |
 | 5 | `out\x1\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (1×) | 3 | 0.0 MB |
 | 5 | `out\x1\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (1×) | 131 | 0.0 MB |
@@ -101,7 +101,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
 | 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |
 | 6 | `out\x1\import-trees-fixed-01.json` | trees at fixed height, with y (1×) | 50 | 0.0 MB |
-| 6 | `out\trees/import-trees-01.json` … `import-trees-11.json` | trees (both scales) | 504,894 in 11 files | |
+| 6 | `out\trees/import-trees-01.json` … `import-trees-11.json` | trees (both scales) | 504,909 in 11 files | |
 | 7 | `out\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 7 | `out\x1\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 8 | `out\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
@@ -1014,3 +1014,36 @@ Owner: "1. top looks staggered. it should look smooth. 2. cliffs ar positioned r
 | 31 | (-6462, 1065) | 279.11 | 272.10 | 7.01 | 0.9 |
 | 32 | (-6467, 1076) | 279.00 | 271.68 | 7.32 | 0.43 |
 - Colonnade: 82 stacks every 6 m, 135 Pillar1x8 in x1. Taller where the roof bridges the dip.
+
+## Round 42: regraded road under the shed, roof at road + 6.5 m, rock face, bulkier pillars (owner's A-v16 review, dakota-A16b-2048)
+
+Owner: "1. the roof should follow the road below. same height calculated from the road always. to make this easy and good looking, you can slope or straighten that section of land & road. 2. cliffs now not there at all. look at the fucking CS1 screenshot. It clearly has cliffs placed all along that section. do it right. 3. use different concrete pillars there. Bulkier ones from the same package. These look funky."
+
+1. **Road regrade (RoadRegrade.cs)**, before any network file is written, so import-all.json and import-roads.json (the only files carrying this road) and the rock shed all use the same node heights.
+   - **Why no 120 m transitions.** The National Road under the shed is 7 edges, 529 m (e24116_0 … e34976_0). It ends in junctions with one-way highway ramps at both ends: n9988 70 m before the first shell, n11611 16 m after the last. A least-squares line with transitions would have lifted the SE junction 9.8 m against its ramps.
+   - **The line.** It runs through the outermost nodes under the roof, n34 (end of the SE approach edge) and the junction n11611. Both keep their heights, and the 5 nodes between go on the line: **grade 2.30 %** (1.32°), true metres.
+   - **Cut / fill.** Max cut **6.6 m** (the old hump at n29512 / n5888), max fill **8.6 m** (the old dip at n2037). Nothing outside the stretch moves.
+   - **Heights at the shell ends.** First shell centre: 259.92 → 259.92 m (on the SE approach edge, unchanged). Last shell centre: 271.82 → 270.91 m.
+   - **The ends of the roof.** Its first 31 m lies over the unchanged SE approach edge e24116_0 (−18.9 %); its last 7 m over the junction.
+   - **Corridor for hm-rebuild: out/x1/regrade-rock-shed.json** (and out/).
+     - Centreline every 8 m (67 points, s = arc length from the first shell), with old and new y in true metres.
+     - halfWidth 14.4 m to flatten to y (road half width + 2).
+     - Per point the hill-side unit vector and hillBench, the current bench beyond the road edge (12.5–14 m), so the cut face can move with the road by (y − oldY).
+     - grade 0.02302. Heightmap 10201528-dktflls-1to1.png.
+   - **Is the terrain change needed? Yes.** CS2 does not reshape the terrain to a road placed off it. A ground road whose nodes sit above or below the terrain gets retaining walls / embankment or is sunk (that was the round-26 road-terrain-mismatch finding). The regraded stretch is up to 6.6 m below and 8.6 m above today's heightmap. Without the corridor it would show walls in the cut and a raised embankment over the dip, and the shed's columns and rocks (placed on the regraded terrain, below) would be buried or float.
+2. **Roof:**
+   - Every row is at road + 6.5 m at its centre, all at the road's grade: **file pitch −1.31° on every slab** (0.9.50 sign), rows butting, one layer.
+   - The 4 rows over the off-grade road at the two ends (the SE approach edge, the junction) are raised up to 1.25 m so the tilted plate keeps 6.5 m.
+   - Clearance with the tilt: 6.50 m at every row.
+3. **Rock face on the hill side**, over the full 492 m in the rhythm of the 11 CS1 rock_c shells:
+   - per shell two **CliffRock5** (36 × 17 × 36 m) at ±11 m from its centre (22 m pitch, 14 m overlap: no gap), and one **CliffRock3** (77 × 31 × 91 m) behind, up the cut face;
+   - turned with the road (alternately 180° about), bases (mesh bottom) at the roof top;
+   - set back so that no part reaches past the roof's hill-side third or over the road strip (road half width + 1 m); the valley half of the roof and the road stay clear;
+   - **33 pieces: 22 CliffRock5, each 16.9 m above the roof; 11 CliffRock3, each 31.0 m above the roof.** Their lower parts are in the slope.
+4. **Pillars:**
+   - **Pillar2x8** (2 m square) every 6 m under the slab edge, from the terrain to the roof underside. The terrain is the predicted regraded one: the road height inside the flatten corridor, so about 6.5 m below the roof.
+   - Each 8 m piece goes about 1.5 m into the ground. Where the roof is more than 8 m above the ground, **Pillar2x16**, sunk by what it is too long.
+   - x1: 80 Pillar2x8 + 2 Pillar2x16.
+5. **Rocks around the shed** (po-rocks, rock scatter): re-seated on the predicted regraded terrain. po-rocks 2 re-seated, 5 left out; scatter 118 re-seated, 6 left out.
+
+**Counts** (x1): import-rock-shed.json has 211 objects: 96 BasePlateConcrete16, 80 Pillar2x8, 2 Pillar2x16, 22 CliffRock5, 11 CliffRock3. Roof covers 99.9 % of the road strip; no gap at the hill edge.

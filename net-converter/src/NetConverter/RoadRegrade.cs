@@ -25,7 +25,7 @@ public static class RoadRegrade
     {
         var shed = rows.Where(r => r.Role.Contains("Rock shed", StringComparison.OrdinalIgnoreCase)).ToList();
         if (shed.Count == 0) return null;
-        bool Road(OutEdge e) => e.Map.Imported && e.Map.Cs2Prefab == "Medium Road";
+        bool Road(OutEdge e) => RockShed.IsShedRoad(e);
         double Near(OutEdge e, double x, double z) => Enumerable.Range(0, 17).Min(k => e.Curve.Eval(k / 16.0).DistXZ(new Vec3(x, 0, z)));
         var chain = res.Edges.Where(e => Road(e) && shed.Any(r => Near(e, r.X, r.Z) < 40)).ToList();
         if (chain.Count == 0) return null;

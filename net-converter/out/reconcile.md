@@ -14,12 +14,13 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | highways | Highway Oneway - 4 lanes | 29 | 29 | 0 | 0 | 0 | 0 |
 | rail | Double Train Track | 410 | 409 | 0 | 1 | 0 | 0 |
 | roads | Gravel Road | 1257 | 1257 | 0 | 0 | 0 | 0 |
-| roads | Medium Road | 39 | 39 | 0 | 0 | 0 | 0 |
+| roads | Highway Twoway - 4 lanes | 11 | 0 | 11 | 0 | 0 | 0 |
+| roads | Medium Road | 28 | 28 | 0 | 0 | 0 | 0 |
 | roads | Pavement Path | 15 | 0 | 0 | 1 | 14 | 15 |
 | roads | Small Road | 308 | 308 | 0 | 0 | 0 | 0 |
 | **highways** | **all** | 1752 | 1748 | 4 | 0 | 0 | 0 |
 | **rail** | **all** | 410 | 409 | 0 | 1 | 0 | 0 |
-| **roads** | **all** | 1619 | 1604 | 0 | 1 | 14 | 15 |
+| **roads** | **all** | 1619 | 1593 | 11 | 1 | 14 | 15 |
 
 ### Edges not fully covered
 
@@ -31,20 +32,31 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | highways | e34504_0 | Highway Oneway - 2 lanes | WrongPrefab | 3/5 | 3785 | 2295 |
 | rail | e25368_0 | Double Train Track | Partial | 4/4 | -182 | 2388 |
 | roads | e512_0 | Pavement Path | Partial | 0/1 | 32 | -2425 |
+| roads | e970_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -590 | -1283 |
 | roads | e4485_0 | Pavement Path | Missing | 0/0 | 33 | -2679 |
 | roads | e6055_0 | Pavement Path | Missing | 0/0 | 16 | -2686 |
 | roads | e7126_0 | Pavement Path | Missing | 0/0 | 367 | -3024 |
 | roads | e9800_0 | Pavement Path | Missing | 0/0 | 37 | -2642 |
+| roads | e10437_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6274 | 710 |
+| roads | e13009_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6416 | 976 |
+| roads | e13504_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -534 | -1384 |
 | roads | e14627_0 | Pavement Path | Missing | 0/0 | 16 | -2563 |
 | roads | e18414_0 | Pavement Path | Missing | 0/0 | 4785 | -696 |
 | roads | e18960_0 | Pavement Path | Missing | 0/0 | 302 | -3028 |
+| roads | e20651_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6383 | 907 |
+| roads | e24116_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6229 | 648 |
 | roads | e24853_0 | Pavement Path | Missing | 0/0 | -9 | -2665 |
 | roads | e25471_0 | Pavement Path | Missing | 0/0 | 19 | -2600 |
 | roads | e25631_0 | Pavement Path | Missing | 0/0 | 40 | -2472 |
 | roads | e28443_0 | Pavement Path | Missing | 0/0 | -21 | -2605 |
 | roads | e28940_0 | Pavement Path | Missing | 0/0 | 335 | -3032 |
+| roads | e29367_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -496 | -1453 |
 | roads | e29443_0 | Pavement Path | Missing | 0/0 | -10 | -2572 |
+| roads | e31333_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6314 | 774 |
 | roads | e31425_0 | Pavement Path | Missing | 0/0 | 43 | -2515 |
+| roads | e32978_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6349 | 840 |
+| roads | e34353_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -628 | -1215 |
+| roads | e34976_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6449 | 1047 |
 
 ### Retry files
 

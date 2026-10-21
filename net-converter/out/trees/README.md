@@ -1,6 +1,6 @@
 # Trees for POST /import/objects
 
-Source: points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale). 504,894 trees in 11 files of ≤ 50,000 (import-trees-01.json, import-trees-02.json, import-trees-03.json, import-trees-04.json, import-trees-05.json, import-trees-06.json, import-trees-07.json, import-trees-08.json, import-trees-09.json, import-trees-10.json, import-trees-11.json).
+Source: points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale). 504,909 trees in 11 files of ≤ 50,000 (import-trees-01.json, import-trees-02.json, import-trees-03.json, import-trees-04.json, import-trees-05.json, import-trees-06.json, import-trees-07.json, import-trees-08.json, import-trees-09.json, import-trees-10.json, import-trees-11.json).
 No y: the game samples terrain, so the same files serve the 2× (out/) and the 1× (out/x1/) map.
 
 - Outside ±7168 m (dropped): 158,877
@@ -12,14 +12,14 @@ No y: the game samples terrain, so the same files serve the 2× (out/) and the 1
 - Masked, CS2 terrain below sea level 93 m + 0.5: 2,472
 - Masked, inside the CS1 water surface and below 93.5 m: 0
 - Masked, on a ground-level net corridor (half width + 2 m): 726
-- Masked, the rock shed's open valley side (20 m strip, 10 m past each end): 93
+- Masked, the rock shed's open valley side (20 m strip, 10 m past each end): 78
 
 ## Per CS2 prefab
 
 | CS2 prefab | trees |
 |---|---:|
-| PineTree01 | 200,195 |
-| SpruceTree01 | 91,127 |
+| PineTree01 | 200,207 |
+| SpruceTree01 | 91,130 |
 | EuropeanSpruce01 | 76,358 |
 | BirchTree01 | 49,750 |
 | OakTree01 | 30,660 |
@@ -69,12 +69,12 @@ No y: the game samples terrain, so the same files serve the 2× (out/) and the 1
 
 ## Exact points vs rasters
 
-Exact: 504,894 placed (outside 158,877). Raster-based: 508,458 placed (outside 158,906). Difference -3,564.
+Exact: 504,909 placed (outside 158,877). Raster-based: 508,458 placed (outside 158,906). Difference -3,549.
 
 | CS2 prefab | exact | rasters |
 |---|---:|---:|
-| PineTree01 | 200,195 | 200,828 |
-| SpruceTree01 | 91,127 | 91,460 |
+| PineTree01 | 200,207 | 200,828 |
+| SpruceTree01 | 91,130 | 91,460 |
 | EuropeanSpruce01 | 76,358 | 76,910 |
 | BirchTree01 | 49,750 | 50,370 |
 | OakTree01 | 30,660 | 31,114 |

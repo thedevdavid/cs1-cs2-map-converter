@@ -14,12 +14,13 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | highways | Highway Oneway - 4 lanes | 29 | 29 | 0 | 0 | 0 | 0 |
 | rail | Double Train Track | 403 | 396 | 5 | 1 | 1 | 1 |
 | roads | Gravel Road | 1261 | 1260 | 0 | 1 | 0 | 0 |
-| roads | Medium Road | 39 | 39 | 0 | 0 | 0 | 0 |
+| roads | Highway Twoway - 4 lanes | 11 | 0 | 11 | 0 | 0 | 0 |
+| roads | Medium Road | 28 | 28 | 0 | 0 | 0 | 0 |
 | roads | Pavement Path | 15 | 15 | 0 | 0 | 0 | 0 |
 | roads | Small Road | 308 | 308 | 0 | 0 | 0 | 0 |
 | **highways** | **all** | 1767 | 1736 | 0 | 6 | 25 | 31 |
 | **rail** | **all** | 403 | 396 | 5 | 1 | 1 | 1 |
-| **roads** | **all** | 1623 | 1622 | 0 | 1 | 0 | 0 |
+| **roads** | **all** | 1623 | 1611 | 11 | 1 | 0 | 0 |
 
 ### Edges not fully covered
 
@@ -63,6 +64,17 @@ Statuses: covered = all 5 points on a live segment of the mapped prefab; wrong p
 | rail | e30706_0g1 | Double Train Track | WrongPrefab | 0/5 | -1435 | 4317 |
 | rail | e30706_0g2a | Double Train Track | WrongPrefab | 0/5 | -1450 | 4354 |
 | rail | e30706_0g2b | Double Train Track | WrongPrefab | 2/5 | -1465 | 4392 |
+| roads | e970_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -590 | -1283 |
+| roads | e10437_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6274 | 710 |
+| roads | e13009_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6416 | 976 |
+| roads | e13504_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -534 | -1384 |
+| roads | e20651_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6383 | 907 |
+| roads | e24116_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6229 | 648 |
+| roads | e29367_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -496 | -1453 |
+| roads | e31333_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6314 | 774 |
+| roads | e32978_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6349 | 840 |
+| roads | e34353_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -628 | -1215 |
+| roads | e34976_0 | Highway Twoway - 4 lanes | WrongPrefab | 0/5 | -6449 | 1047 |
 | roads | e35131_0 | Gravel Road | Partial | 4/4 | 6875 | 2817 |
 
 ### Retry files
