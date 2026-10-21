@@ -316,6 +316,8 @@ outer: for (const [name, endpoint, files] of steps) {
     body.options ??= {};
     if (endpoint === "/import/network") { body.options.nodesFirst = true; body.options.bypassValidation = true; }
     if (endpoint === "/import/objects" || endpoint === "/import/surfaces") body.options.bypassValidation = true;
+    // Bridge 0.9.45 (the Workspace panel no longer rebuilds per created object): 3 settle frames instead of 100 for the object bodies.
+    if (endpoint === "/import/objects" && body.options.bypassValidation) body.options.settleFrames = 3;
     if (dryRun) { body.options.dryRun = true; body.dryRun = true; }
     body.name ??= file.split(/[\\/]/).pop().replace(/\.json$/, "");
     if (endpoint === "/import/terrain-paint") {
