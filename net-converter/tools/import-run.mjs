@@ -241,6 +241,11 @@ const summary = (endpoint, r) => {
   if (endpoint === "/import/resources") { const l = r.layers ?? []; return { created: l.length, merged: 0, failed: 0, text: `layers ${l.map(x => `${x.layer} ${x.cellsNonZero ?? "?"} non-zero`).join(", ")}` }; }
   const o = r.objects ?? {}; return { created: o.created ?? 0, merged: 0, failed: o.failed ?? 0, text: `objects ${o.requested ?? "?"}: created ${o.created ?? 0}, failed ${o.failed ?? 0}${o.notRun ? `, not run ${o.notRun}` : ""}` };
 };
+// Bridge 0.9.44: per-step timing. Terrain paint answers method (raster | stamp), calibration, raster (per-group times) and seconds; objects reports carry
+// a timing block (per-stage times). One line on the console and in run-*.md, the full blocks in run-*.json.
+const compact = v => v == null ? "" : typeof v === "object" ? Object.entries(v).map(([k, x]) => `${k}=${typeof x === "number" ? (Math.round(x * 100) / 100) : typeof x === "object" ? compact(x).replace(/ /g, ",") : x}`).join(" ") : String(v);
+const paintTiming = j => j?.method != null || j?.seconds != null ? `; method=${j.method ?? "?"}, calibration=${typeof j.calibration === "object" ? compact(j.calibration) : (j.calibration ?? "?")}, seconds=${j.seconds ?? "?"}${j.raster ? ` (raster ${compact(j.raster)})` : ""}` : "";
+const objectTiming = j => j?.timing ? `; timing ${compact(j.timing)}` : "";
 const undoOf = (endpoint, r, name) => endpoint === "/import/network" ? `POST /import/undo?id=${r.importId}` : endpoint === "/import/water" ? `POST /import/water/undo?id=${r.importId}`
   : endpoint === "/import/resources" ? "(no undo: re-import the previous layers)" : `POST /import/objects/undo?id=${r.importId}`;
 
@@ -343,9 +348,10 @@ outer: for (const [name, endpoint, files] of steps) {
           rows.push({ name, file, status: `HTTP ${r.status}`, secs }); stopped = `${name} (${file}) part ${ci + 1}`; break outer;
         }
         const ng = r.json.netGuard;
-        const text = `part ${ci + 1}/${chunks.length}: items ${r.json.items}, stamps ${r.json.stamps}${ng ? `; netGuard removed ${ng.segmentsRemoved ?? 0}` : ""}`;
+        const text = `part ${ci + 1}/${chunks.length}: items ${r.json.items}, stamps ${r.json.stamps}${paintTiming(r.json)}${ng ? `; netGuard removed ${ng.segmentsRemoved ?? 0}` : ""}`;
         console.log(`✓ ${name} ${file.split(/[\\/]/).pop()} ${text} (${fmt(secs)})`);
-        rows.push({ name, file, status: "ok", secs, importId: r.json.importId, undo: "POST /import/terrain-paint/undo (newest first, last 3 kept)", text });
+        rows.push({ name, file, status: "ok", secs, importId: r.json.importId, undo: "POST /import/terrain-paint/undo (newest first, last 3 kept)", text,
+          paint: { method: r.json.method ?? null, calibration: r.json.calibration ?? null, raster: r.json.raster ?? null, seconds: r.json.seconds ?? null } });
         if (ng && (ng.segmentsRemoved ?? 0) > 0) { guardStop = { name, file, netGuard: ng }; stopped = `${name} (${file}): netGuard removed ${ng.segmentsRemoved} segments`; break outer; }
       }
       markDone(file, null, name);
@@ -371,11 +377,12 @@ outer: for (const [name, endpoint, files] of steps) {
     const s = summary(endpoint, r.json);
     if (endpoint === "/import/network") for (const e of body.edges ?? []) imported[e.prefab] = (imported[e.prefab] ?? 0) + 1;
     const fails = (r.json.failedEdges ?? r.json.failedObjects ?? []).slice(0, 20);
-    console.log(`${s.failed ? "!" : "✓"} ${name} ${file.split(/[\\/]/).pop()}: ${s.text} (${fmt(r.json.seconds ?? secs)})${r.json.completed === false ? ` ABORTED: ${r.json.abortReason}` : ""}`);
+    console.log(`${s.failed ? "!" : "✓"} ${name} ${file.split(/[\\/]/).pop()}: ${s.text}${endpoint === "/import/objects" ? objectTiming(r.json) : ""} (${fmt(r.json.seconds ?? secs)})${r.json.completed === false ? ` ABORTED: ${r.json.abortReason}` : ""}`);
     markDone(file, r.json.importId, name);
     const ng = r.json.netGuard;
     const guardText = ng ? `; netGuard removed ${ng.segmentsRemoved ?? 0}${ng.geometryGone ? ` (geometry gone ${ng.geometryGone})` : ""}` : "";
-    rows.push({ name, file, status: r.json.completed === false ? `aborted: ${r.json.abortReason}` : "ok", secs: r.json.seconds ?? secs, importId: r.json.importId, undo: undoOf(endpoint, r.json, name), text: s.text + guardText, fails });
+    rows.push({ name, file, status: r.json.completed === false ? `aborted: ${r.json.abortReason}` : "ok", secs: r.json.seconds ?? secs, importId: r.json.importId, undo: undoOf(endpoint, r.json, name), text: s.text + guardText + (endpoint === "/import/objects" ? objectTiming(r.json) : ""), fails,
+      ...(endpoint === "/import/objects" && r.json.timing ? { timing: r.json.timing } : {}) });
     // Stop at the first objects / surfaces step that removed built segments (netGuard, bridge 0.9.24).
     if (ng && (ng.segmentsRemoved ?? 0) > 0) {
       console.log(`✗ ${name} ${file}: netGuard: ${ng.segmentsRemoved} segments removed (geometry gone ${ng.geometryGone ?? "?"}); run stopped`);
