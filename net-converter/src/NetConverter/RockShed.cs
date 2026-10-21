@@ -24,7 +24,8 @@ namespace NetConverter;
 public static class RockShed
 {
     public const double RoofStep = 8, WallStep = 16, ColumnStep = 4, Clear = 6.5, Slab = 16, WallLength = 32, WallHeight = 16, Plate = 0.2,
-        CoverStep = 1.6, StripWidth = 20, StripEnds = 10;
+        StripWidth = 20, StripEnds = 10,
+        ShellHalf = 23.5, HillCap = 25, BenchSearch = 100;   // round 40: CS1 rock_c shells 46.7–47.7 m long; their hill side reaches 25 m from the road axis
     public const int FasciaPlates = 4;
 
     /// <summary>The road under the shed as one polyline with arc length, the shed's range on it and its hill side.</summary>
@@ -107,55 +108,78 @@ public static class RockShed
         return inside;
     }
 
-    public static (List<PlacedObject> Objects, string Log) Build(List<PoStructures.Row> rows, IEnumerable<OutEdge> edges, Func<double, double, double>? terrainTrue, double heightFactor, int seed = 38)
+    public static (List<PlacedObject> Objects, string Log) Build(List<PoStructures.Row> rows, IEnumerable<OutEdge> edges, Func<double, double, double>? terrainTrue, double heightFactor)
     {
         var shed = rows.Where(r => r.Role.Contains("Rock shed", StringComparison.OrdinalIgnoreCase)).ToList();
         var res = new List<PlacedObject>();
         if (shed.Count == 0) return (res, "rock shed: no shed pieces in the proposal");
         var c = Make(shed, edges, terrainTrue);
         if (c == null) return (res, "rock shed: no National Road course under the shed");
-        double l0 = c.L0, l1 = c.L1, len = c.Len, valley = c.Valley, hill = c.Hill;
+        // Round 40: the CS1 union of the 11 shells, half a shell (ShellHalf) before the first centre and after the last.
+        double r0 = c.L0 - ShellHalf, r1 = c.L1 + ShellHalf, valley = c.Valley, hill = c.Hill;
         double Terr(double x, double z) => terrainTrue != null ? terrainTrue(x, z) * heightFactor : double.MinValue;
+        double TerrAt(double l, double d) { var (x, z) = c.Off(l, d); return Terr(x, z); }
         double Yaw(double tx, double tz) => ((Math.Atan2(tx, tz) * 180 / Math.PI) % 360 + 360) % 360;
-        PlacedObject O(string id, string prefab, double x, double z, double y, double yaw, string note, string kind = "object") =>
-            new(id, prefab, kind, Math.Round(x, 2), Math.Round(z, 2), Math.Round(y, 2), Math.Round(((yaw % 360) + 360) % 360, 1), "JP Rock shed (open gallery)", note);
+        PlacedObject O(string id, string prefab, double x, double z, double y, double yaw, string note) =>
+            new(id, prefab, "object", Math.Round(x, 2), Math.Round(z, 2), Math.Round(y, 2), Math.Round(((yaw % 360) + 360) % 360, 1), "JP Rock shed (open gallery)", note);
 
-        // Roof: two 16 m slabs across, one with its valley edge on the column line, one with its hill edge on the wall; they overlap in the middle.
-        // The valley one carries the fascia: FasciaPlates more plates stacked under it at 0.2 m steps.
-        int rowsN = (int)Math.Ceiling((len - Slab) / RoofStep) + 1, slabs = 0, fascia = 0;
-        var rowAt = new List<(double L, double Y)>();
-        var across = new[] { valley + Slab / 2, hill - Slab / 2 };
+        // Roof rows every 8 m over the CS1 extent. Each row reaches from the column line toward the hill until its slabs are inside the terrain (terrain
+        // >= roof top along the row's centre and 6 m either side), + 2 m, capped at the CS1 shell's hill edge (HillCap); 16 m slabs spread evenly across
+        // that width, the valley one on the column line with the fascia under it.
+        int rowsN = (int)Math.Ceiling((r1 - r0 - Slab) / RoofStep) + 1, slabs = 0, fascia = 0, capped = 0;
+        var rowAt = new List<(double L, double Y, double Edge)>();
+        var bench = new List<double>();   // column line → first terrain at or above the roof top, per row
         for (int i = 0; i < rowsN; i++)
         {
-            double l = Math.Min(l0 + Slab / 2 + i * RoofStep, l1 - Slab / 2);
-            var t = c.At(l); double y = c.RoofY(l);
-            rowAt.Add((l, y));
-            foreach (var d in across)
+            double l = Math.Min(r0 + Slab / 2 + i * RoofStep, r1 - Slab / 2);
+            var t = c.At(l); double y = c.RoofY(l), top = y + Plate;
+            double? meet = null, first = null;
+            for (double d = valley; d <= HillCap + 0.01; d += 0.5)
+                if (d >= hill && meet == null && new[] { -6.0, 0, 6 }.All(k => TerrAt(l + k, d) >= top)) meet = d;
+            for (double d = valley; d <= valley + BenchSearch && first == null; d += 0.5)   // reported beyond the cap too: where the bench ends
+                if (TerrAt(l, d) >= top) first = d;
+            bench.Add(first is double f ? f - valley : double.PositiveInfinity);
+            double edge = meet is double m ? Math.Min(Math.Max(m + 2, hill), HillCap) : HillCap;
+            if (meet == null) capped++;
+            rowAt.Add((l, y, edge));
+            int n = Math.Max(2, (int)Math.Ceiling((edge - valley) / Slab));
+            for (int k = 0; k < n; k++)
             {
+                double d = valley + Slab / 2 + (edge - valley - Slab) * k / (n - 1);
                 var (x, z) = c.Off(l, d);
-                res.Add(O($"shed_roof_{++slabs}", "BasePlateConcrete16", x, z, y, Yaw(t.Tx, t.Tz), $"roof slab, row {i + 1} at road + {Clear} m (48 m smoothed)"));
+                res.Add(O($"shed_roof_{++slabs}", "BasePlateConcrete16", x, z, y, Yaw(t.Tx, t.Tz), $"roof slab {k + 1}/{n}, row {i + 1} at road + {Clear} m (48 m smoothed), into the hill to {edge - valley:F1} m from the column line"));
             }
-            var (fx, fz) = c.Off(l, across[0]);
+            var (fx, fz) = c.Off(l, valley + Slab / 2);
             for (int k = 1; k <= FasciaPlates; k++)
                 res.Add(O($"shed_fascia_{i + 1}_{k}", "BasePlateConcrete16", fx, fz, y - k * Plate, Yaw(t.Tx, t.Tz), $"valley-edge fascia, plate {k} under row {i + 1}"));
             fascia += FasciaPlates;
         }
-        // The visible roof top at arc length l: the highest row covering it, plus the plate.
         double RoofTop(double l) => rowAt.Where(r => Math.Abs(r.L - l) <= Slab / 2 + 0.01).Select(r => r.Y).DefaultIfEmpty(c.RoofY(l)).Max() + Plate;
 
-        // Hill-side wall: each 32 m piece on the chord of the hill edge between its ends, top flush with the roof.
-        int walls = 0;
-        for (double l = l0; l < l1 - 1; l += WallStep)
+        // Hill-side wall only where the terrain at the capped roof edge stays below the roof (a visible gap), all on the one line HillCap, every 16 m with
+        // half overlap; top flush with the roof, Wall32x16, or Wall32x32 where 16 m would not reach the ground.
+        int w16 = 0, w32 = 0;
+        var centres = new List<double>();
+        for (double lc = r0 + WallLength / 2; lc < r1 - WallLength / 2; lc += WallStep) centres.Add(lc);
+        centres.Add(r1 - WallLength / 2);
+        double covered = double.MinValue;
+        foreach (double lc in centres)
         {
-            double lc = Math.Min(l + WallLength / 2, l1 - WallLength / 2);
-            var p = c.Off(lc - WallLength / 2, hill); var q = c.Off(lc + WallLength / 2, hill);
-            double y = c.RoofY(lc) + Plate - WallHeight;
-            // Wall32x16 runs along its local x: local x → (cos yaw, −sin yaw), so yaw = bearing − 90.
-            res.Add(O($"shed_wall_{++walls}", "Wall32x16", (p.X + q.X) / 2, (p.Z + q.Z) / 2, y, Yaw(q.X - p.X, q.Z - p.Z) - 90, "hill-side wall, top flush with the roof"));
+            if (lc + WallLength / 2 <= covered + 0.01) continue;   // the end piece when the last regular one already reaches the end
+            var span = Enumerable.Range(0, 9).Select(k => lc - WallLength / 2 + k * WallLength / 8).ToList();
+            if (!span.Any(l => TerrAt(l, HillCap + 0.5) < RoofTop(l) - 0.3)) continue;
+            covered = lc + WallLength / 2;
+            var p = c.Off(lc - WallLength / 2, HillCap); var q = c.Off(lc + WallLength / 2, HillCap);
+            double topY = c.RoofY(lc) + Plate, ground = span.Min(l => TerrAt(l, HillCap));
+            bool tall = ground < topY - WallHeight;
+            if (tall) w32++; else w16++;
+            // Wall32xNN runs along its local x: local x → (cos yaw, −sin yaw), so yaw = bearing − 90.
+            res.Add(O($"shed_wall_{w16 + w32}", tall ? "Wall32x32" : "Wall32x16", (p.X + q.X) / 2, (p.Z + q.Z) / 2, topY - (tall ? 32 : WallHeight), Yaw(q.X - p.X, q.Z - p.Z) - 90,
+                FormattableString.Invariant($"hill-side wall where the terrain stays below the roof, top flush, base {(tall ? 32 : WallHeight) - (topY - ground):F1} m into the ground")));
         }
         // Valley-side colonnade every 4 m of road: Pillar1x8 stacked from the roof underside (under the fascia) down to the terrain; the lowest goes into the ground.
         int stacks = 0, p8 = 0;
-        for (double l = l0 + 1; l <= l1 - 1 + 0.01; l += ColumnStep)
+        for (double l = r0 + 1; l <= r1 - 1 + 0.01; l += ColumnStep)
         {
             var t = c.At(l); var (px, pz) = c.Off(l, valley + 0.5);
             double top = rowAt.Where(r => Math.Abs(r.L - l) <= Slab / 2 + 0.01).Select(r => r.Y).DefaultIfEmpty(c.RoofY(l)).Min() - FasciaPlates * Plate;
@@ -166,38 +190,21 @@ public static class RockShed
                 p8++; top -= 8; left -= 8;
             }
         }
-        // Round 39 (A-v13 shots 24-01/06/14): no CliffRock5. Each one is about 30 m across and 10 m high and read as a giant boulder on a shelf; the cover is
-        // the low scatter only, and the steep hill cut above the wall reads as cliff without them.
-        // Scatter over the roof top: a jittered 1.6 m grid, 70 % bushes, 30 % small rocks (the rock-scatter layer's Rock01…Rock30, about 1 × 0.6 × 1 m), 1.5 m clear of
-        // the valley edge. Round 39: was 2.5 m and 60 %; denser so that from above at most about a third of the plate shows (see the cover estimate in Check).
-        var rng = new Random(seed);
-        int bushes = 0, stones = 0;
-        for (double l = l0 + 1; l <= l1 - 1; l += CoverStep)
-            for (double d = valley + 1.5; d <= hill + 1; d += CoverStep)
-            {
-                double jl = Math.Clamp(l + (rng.NextDouble() - 0.5) * CoverStep * 0.8, l0 + 1, l1 - 1), jd = Math.Max(valley + 1.5, d + (rng.NextDouble() - 0.5) * CoverStep * 0.8);
-                var (x, z) = c.Off(jl, jd); double top = RoofTop(jl), yaw = rng.NextDouble() * 360;
-                if (rng.NextDouble() < 0.7)
-                {
-                    res.Add(O($"shed_bush_{++bushes}", rng.NextDouble() < 0.5 ? "GreenBushWild01" : "GreenBushWild02", x, z, top, yaw, "roof cover bush", "tree"));
-                }
-                else
-                {
-                    int k = rng.Next(1, 31);
-                    // Rock01…Rock30 have their pivot at the centre, about 0.3 m above their base.
-                    res.Add(O($"shed_stone_{++stones}", $"Rock{k:00}", x, z, top + 0.3, yaw, "roof cover stone"));
-                }
-            }
-        var check = Check(res, c);
-        return (res, FormattableString.Invariant($"rock shed open gallery over {len:F0} m of road ({string.Join(", ", c.Road.Select(e => e.Id))}): {slabs} BasePlateConcrete16 ({rowsN} rows of 2, every {RoofStep} m) at road + {Clear} m on a 48 m smoothed profile + {fascia} fascia plates ({FasciaPlates} under each valley slab), {walls} Wall32x16 on the hill side (every {WallStep} m, top flush with the roof), {stacks} valley-side columns every {ColumnStep} m ({p8} Pillar1x8), roof cover {bushes} bushes + {stones} stones (no CliffRock5); no portals (TunnelEntrance18 would stand 4 m above the hill wall); {check}"));
+        // Round 39–40: nothing on the roof (no CliffRock5, no bushes, no stones); the bare plates run into the hill instead.
+        string P((double X, double Z, double Y, double Tx, double Tz) p) => FormattableString.Invariant($"({p.X:F1}, {p.Z:F1})");
+        var fin = bench.Where(double.IsFinite).ToList();
+        int widest = fin.Count > 0 ? bench.IndexOf(fin.Max()) + 1 : 0;
+        string benchText = FormattableString.Invariant($"column line → terrain at the roof top per row: min {(fin.Count > 0 ? fin.Min() : double.NaN):F1} m, max {(fin.Count > 0 ? fin.Max() : double.NaN):F1} m (widest at row {widest}), the shell's hill edge at {HillCap - valley:F1} m{(fin.Count < bench.Count ? $", {bench.Count - fin.Count} rows not within {BenchSearch:F0} m" : "")}");
+        var check = Check(res, c, r0, r1, rowAt, TerrAt, RoofTop);
+        return (res, FormattableString.Invariant($"rock shed open gallery, CS1 shell extent {r1 - r0:F0} m of road from {P(c.At(r0))} to {P(c.At(r1))} (A-v14: {c.L1 - c.L0:F0} m from {P(c.At(c.L0))} to {P(c.At(c.L1))}) ({string.Join(", ", c.Road.Select(e => e.Id))}): {slabs} BasePlateConcrete16 in {rowsN} rows every {RoofStep} m at road + {Clear} m on a 48 m smoothed profile, into the hill ({capped} rows capped at the shell's hill edge {HillCap} m from the axis) + {fascia} fascia plates; {benchText}; hill-side wall only at gaps: {w16} Wall32x16 + {w32} Wall32x32 on the {HillCap} m line; {stacks} valley-side columns every {ColumnStep} m ({p8} Pillar1x8); bare roof; no portals; {check}"));
     }
 
     /// <summary>
-    /// Bounds check (next-run/concreteset01-bounds.txt): roof cover of the road strip from the column line to the wall, sampled every 1 m along and 1 m
-    /// across; the largest height step between neighbouring roof rows; the hill edge covered by a wall (within 1 m of a wall's centre plane), every 1 m;
-    /// roof-cover pieces past the valley edge.
+    /// Bounds check (next-run/concreteset01-bounds.txt): roof cover of the road strip from the column line to the road's hill side, sampled every 1 m along
+    /// and 1 m across; the largest height step between neighbouring roof rows; open gaps at the hill edge (terrain below the roof top behind the row's edge
+    /// with no wall there), every 1 m.
     /// </summary>
-    static string Check(List<PlacedObject> objs, Course c)
+    static string Check(List<PlacedObject> objs, Course c, double r0, double r1, List<(double L, double Y, double Edge)> rowAt, Func<double, double, double> terrAt, Func<double, double> roofTop)
     {
         static (double U, double V) Local(PlacedObject o, double x, double z)
         {
@@ -206,46 +213,22 @@ public static class RockShed
         }
         var slabs = objs.Where(o => o.Id.StartsWith("shed_roof_")).ToList();
         int samples = 0, open = 0;
-        for (double l = c.L0; l <= c.L1; l += 1)
+        for (double l = r0; l <= r1; l += 1)
             for (double d = c.Valley + 0.5; d <= c.Hill - 0.5; d += 1)
             {
                 var (x, z) = c.Off(l, d); samples++;
                 if (!slabs.Any(o => { var (u, v) = Local(o, x, z); return Math.Abs(u) <= Slab / 2 && Math.Abs(v) <= Slab / 2; })) open++;
             }
-        var ys = slabs.Where((o, i) => i % 2 == 0).Select(o => o.Y ?? 0).ToList();   // one per row, in row order (two slabs per row)
-        double step = ys.Count < 2 ? 0 : ys.Zip(ys.Skip(1), (p, q) => Math.Abs(q - p)).Max();
-        var walls = objs.Where(o => o.Prefab == "Wall32x16").ToList();
-        int wallSamples = 0, wallOpen = 0;
-        for (double l = c.L0; l <= c.L1; l += 1)
+        double step = rowAt.Count < 2 ? 0 : rowAt.Zip(rowAt.Skip(1), (p, q) => Math.Abs(q.Y - p.Y)).Max();
+        var walls = objs.Where(o => o.Prefab.StartsWith("Wall32x")).ToList();
+        int edgeSamples = 0, gaps = 0;
+        for (double l = r0; l <= r1; l += 1)
         {
-            var (x, z) = c.Off(l, c.Hill); wallSamples++;
-            if (!walls.Any(o => { var (u, v) = Local(o, x, z); return Math.Abs(u) <= WallLength / 2 && Math.Abs(v) <= 1; })) wallOpen++;
+            double edge = rowAt.Where(r => Math.Abs(r.L - l) <= Slab / 2 + 0.01).Select(r => r.Edge).DefaultIfEmpty(c.Hill).Max(); edgeSamples++;
+            if (terrAt(l, edge + 0.5) >= roofTop(l) - 0.3) continue;
+            var (x, z) = c.Off(l, HillCap);
+            if (!walls.Any(o => { var (u, v) = Local(o, x, z); return Math.Abs(u) <= WallLength / 2 && Math.Abs(v) <= 1; })) gaps++;
         }
-        double worstStep = walls.Count < 2 ? 0 : walls.Zip(walls.Skip(1), (p, q) => Math.Abs((q.Y ?? 0) - (p.Y ?? 0))).Max();
-        // Cover past the valley edge: signed distance across the road (toward the hill > 0) of each cover piece's valley-most reach.
-        int over = 0;
-        foreach (var o in objs.Where(o => o.Id.StartsWith("shed_rock_") || o.Id.StartsWith("shed_bush_") || o.Id.StartsWith("shed_stone_")))
-        {
-            double l = c.LOf(o.X, o.Z); var t = c.At(l);
-            double d = ((o.X - t.X) * -t.Tz + (o.Z - t.Z) * t.Tx) * c.Side;
-            double reach = o.Prefab == "CliffRock5" ? 19.1 : o.Prefab.StartsWith("GreenBush") ? 1.5 : 0.5;
-            if (d - reach < c.Valley - 0.01) over++;
-        }
-        // Plan-view cover estimate of the roof top from above (round 39): a 0.5 m sample counts as hidden within BushCrown of a bush or 0.45 m of a stone.
-        // BushCrown is an assumption (adult GreenBushWild crowns looked about 2.5–3 m across in the A-v13 close shot 24-06); no bounds for it in the repo.
-        const double BushCrown = 1.2;
-        var cover = objs.Where(o => o.Id.StartsWith("shed_bush_") || o.Id.StartsWith("shed_stone_")).Select(o => (o.X, o.Z, R: o.Id.StartsWith("shed_bush_") ? BushCrown : 0.45)).ToList();
-        var grid = new Dictionary<(long, long), List<(double X, double Z, double R)>>();
-        foreach (var p in cover) { var k = ((long)Math.Floor(p.X / 4), (long)Math.Floor(p.Z / 4)); if (!grid.TryGetValue(k, out var gl)) grid[k] = gl = new(); gl.Add(p); }
-        int topSamples = 0, bare = 0;
-        for (double l = c.L0 + 2; l <= c.L1 - 2; l += 0.5)
-            for (double d = c.Valley + 0.25; d <= c.Hill - 0.25; d += 0.5)
-            {
-                var (x, z) = c.Off(l, d); topSamples++; long gx = (long)Math.Floor(x / 4), gz = (long)Math.Floor(z / 4); bool hid = false;
-                for (long a = -1; a <= 1 && !hid; a++) for (long b = -1; b <= 1 && !hid; b++)
-                        if (grid.TryGetValue((gx + a, gz + b), out var gl)) hid = gl.Any(p => (p.X - x) * (p.X - x) + (p.Z - z) * (p.Z - z) <= p.R * p.R);
-                if (!hid) bare++;
-            }
-        return FormattableString.Invariant($"cover estimate from above: {100.0 * bare / topSamples:F0} % of the roof top bare (bush crown {BushCrown} m radius assumed); check: roof covers {100.0 * (samples - open) / samples:F1} % of the road strip ({open} of {samples} 1 m samples open), largest step between roof rows {step:F2} m, the wall covers {100.0 * (wallSamples - wallOpen) / wallSamples:F1} % of the hill edge ({wallOpen} of {wallSamples} 1 m samples open), largest wall height step {worstStep:F2} m, {over} roof-cover pieces reach past the valley edge");
+        return FormattableString.Invariant($"check: roof covers {100.0 * (samples - open) / samples:F1} % of the road strip ({open} of {samples} 1 m samples open), largest step between roof rows {step:F2} m, {gaps} of {edgeSamples} 1 m samples along the hill edge open (terrain below the roof, no wall)");
     }
 }
