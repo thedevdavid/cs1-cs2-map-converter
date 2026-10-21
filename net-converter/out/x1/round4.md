@@ -85,10 +85,10 @@
 | e26452_0 | Highway Oneway - 1 lane | e20364_0 | Highway Oneway - 2 lanes | -1685 | -1825 | 15.3 | 12.7 | 16.0 | upper raised at the crossing |
 | e30706_0 | Double Train Track | e25337_0 | Highway Oneway - 3 lanes | -1441 | 4331 | 24.3 | 3.5 | 16.0 | upper raised at the crossing |
 | e30706_0 | Double Train Track | e19619_0 | Highway Oneway - 3 lanes | -1429 | 4302 | 24.2 | 3.3 | 16.0 | upper raised at the crossing |
-| e25462_0 | Highway Oneway - 1 lane | e970_0 | Medium Road | -572 | -1317 | 13.7 | 9.5 | 16.0 | upper raised at the crossing |
-| e23601_0 | Highway Oneway - 2 lanes | e970_0 | Medium Road | -566 | -1328 | 14.0 | 9.5 | 16.0 | upper raised at the crossing |
-| e9348_0 | Highway Oneway - 2 lanes | e13504_0 | Medium Road | -558 | -1341 | 13.9 | 9.4 | 16.0 | upper raised at the crossing |
-| e4316_0 | Highway Oneway - 1 lane | e13504_0 | Medium Road | -552 | -1352 | 13.5 | 9.3 | 16.0 | upper raised at the crossing |
+| e25462_0 | Highway Oneway - 1 lane | e970_0 | Highway Twoway - 4 lanes | -572 | -1317 | 13.7 | 9.5 | 16.0 | upper raised at the crossing |
+| e23601_0 | Highway Oneway - 2 lanes | e970_0 | Highway Twoway - 4 lanes | -566 | -1328 | 14.0 | 9.5 | 16.0 | upper raised at the crossing |
+| e9348_0 | Highway Oneway - 2 lanes | e13504_0 | Highway Twoway - 4 lanes | -558 | -1341 | 13.9 | 9.4 | 16.0 | upper raised at the crossing |
+| e4316_0 | Highway Oneway - 1 lane | e13504_0 | Highway Twoway - 4 lanes | -552 | -1352 | 13.5 | 9.3 | 16.0 | upper raised at the crossing |
 | e14974_0 | Highway Oneway - 2 lanes | e35381_0 | Highway Oneway - 1 lane | 77 | 3755 | 13.6 | 14.8 | 16.0 | upper raised at the crossing |
 | e21918_0 | Highway Oneway - 1 lane | e501_0 | Highway Oneway - 1 lane | 90 | 43 | 15.3 | 8.7 | 16.0 | upper raised at the crossing |
 | e21918_0 | Highway Oneway - 1 lane | e13450_0 | Highway Oneway - 1 lane | 93 | 42 | 15.3 | 8.7 | 16.0 | upper raised at the crossing |

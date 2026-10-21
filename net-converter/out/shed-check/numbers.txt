@@ -1,0 +1,6 @@
+pillar stacks 82 (83 pieces)
+pillar centre → nearest plate edge (inset) 1.490 … 1.605 m
+pillar top − plate underside -0.130 … 0.140 m
+valley plates' outer edge − (road centreline offset 10.5 m) -0.006 … 0.130 m
+underside step between neighbouring rows (at their joint) 0.002 … 0.150 m
+rock pieces 33

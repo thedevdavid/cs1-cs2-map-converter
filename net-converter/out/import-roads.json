@@ -11484,7 +11484,7 @@
       "id": "e970_0",
       "a": "n13681",
       "b": "n27347",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -577.16,
@@ -20055,7 +20055,7 @@
       "id": "e10437_0",
       "a": "n29512",
       "b": "n34",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -6282.82,
@@ -22680,7 +22680,7 @@
       "id": "e13009_0",
       "a": "n17121",
       "b": "n2037",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -6422.06,
@@ -23016,7 +23016,7 @@
       "id": "e13504_0",
       "a": "n13681",
       "b": "n18254",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -546.76,
@@ -30199,7 +30199,7 @@
       "id": "e20651_0",
       "a": "n2037",
       "b": "n2921",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -6389.85,
@@ -33517,7 +33517,7 @@
       "id": "e24116_0",
       "a": "n34",
       "b": "n9988",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -6239.17,
@@ -38284,7 +38284,7 @@
       "id": "e29367_0",
       "a": "n15862",
       "b": "n18254",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -484.76,
@@ -39964,7 +39964,7 @@
       "id": "e31333_0",
       "a": "n5888",
       "b": "n29512",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -6321.1,
@@ -41245,7 +41245,7 @@
       "id": "e32978_0",
       "a": "n2921",
       "b": "n5888",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -6356.45,
@@ -42274,7 +42274,7 @@
       "id": "e34353_0",
       "a": "n24171",
       "b": "n27347",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -638.86,
@@ -42967,7 +42967,7 @@
       "id": "e34976_0",
       "a": "n11611",
       "b": "n17121",
-      "prefab": "Medium Road",
+      "prefab": "Highway Twoway - 4 lanes",
       "control": [
         [
           -6458.05,

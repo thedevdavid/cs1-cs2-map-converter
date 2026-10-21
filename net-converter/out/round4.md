@@ -22,10 +22,10 @@
 | e26236_0 | Gravel Road | e36046_0 | Highway Oneway - 3 lanes | -1550 | 4376 | 22.3 | 18.4 | 18.4 | separated |
 | e15_0 | Highway Oneway - 2 lanes | e24921_0 | Small Road | -1523 | -1533 | 18.9 | 18.1 | 18.1 | separated |
 | e20664_0 | Highway Oneway - 2 lanes | e24921_0 | Small Road | -1512 | -1544 | 18.6 | 17.7 | 17.7 | separated |
-| e25462_0 | Highway Oneway - 1 lane | e970_0 | Medium Road | -572 | -1317 | 13.7 | 9.5 | 9.5 | separated |
-| e23601_0 | Highway Oneway - 2 lanes | e970_0 | Medium Road | -566 | -1328 | 14.0 | 9.5 | 9.5 | separated |
-| e9348_0 | Highway Oneway - 2 lanes | e13504_0 | Medium Road | -558 | -1341 | 13.9 | 9.4 | 9.4 | separated |
-| e4316_0 | Highway Oneway - 1 lane | e13504_0 | Medium Road | -552 | -1352 | 13.5 | 9.3 | 9.3 | separated |
+| e25462_0 | Highway Oneway - 1 lane | e970_0 | Highway Twoway - 4 lanes | -572 | -1317 | 13.7 | 9.5 | 9.5 | separated |
+| e23601_0 | Highway Oneway - 2 lanes | e970_0 | Highway Twoway - 4 lanes | -566 | -1328 | 14.0 | 9.5 | 9.5 | separated |
+| e9348_0 | Highway Oneway - 2 lanes | e13504_0 | Highway Twoway - 4 lanes | -558 | -1341 | 13.9 | 9.4 | 9.4 | separated |
+| e4316_0 | Highway Oneway - 1 lane | e13504_0 | Highway Twoway - 4 lanes | -552 | -1352 | 13.5 | 9.3 | 9.3 | separated |
 | e27153_0 | Double Train Track | e11658_0 | Highway Oneway - 2 lanes | -359 | -2952 | 24.3 | 19.5 | 19.5 | separated |
 | e10855_0 | Double Train Track | e23716_0 | Highway Oneway - 2 lanes | -351 | -2900 | 29.6 | 28.7 | 28.7 | separated |
 | e14974_0 | Highway Oneway - 2 lanes | e35381_0 | Highway Oneway - 1 lane | 77 | 3755 | 13.6 | 14.8 | 14.8 | separated |

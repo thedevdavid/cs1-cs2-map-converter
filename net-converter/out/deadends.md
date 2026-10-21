@@ -37,7 +37,7 @@ Live graph `out\live-graph.json` (2973 nodes).
 | reason | ends | stub prefabs |
 |---|---:|---|
 | connected in the data, not joined in the game | 40 | Double Train Track 18, Gravel Road 15, Highway Oneway - 2 lanes 5, Small Road 2 |
-| CS1 dead end (genuine) | 12 | Gravel Road 4, Pavement Path 4, Highway Oneway - 3 lanes 2, Medium Road 2 |
+| CS1 dead end (genuine) | 12 | Gravel Road 4, Pavement Path 4, Highway Oneway - 3 lanes 2, Highway Twoway - 4 lanes 2 |
 | no CS1 node here (game split, or merged/moved by the converter) | 6 | Highway Oneway - 3 lanes 5, Highway Oneway - 4 lanes 1 |
 | neighbour collapsed (< 4 m) | 1 | Gravel Road 1 |
 
