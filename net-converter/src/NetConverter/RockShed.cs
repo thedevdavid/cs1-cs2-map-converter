@@ -4,7 +4,7 @@ namespace NetConverter;
 /// Round 34e (owner: "use the vanilla pylon props, and make it partially open", next-run/ref-gallery-1/2.webp, alpine avalanche galleries): the CS1 JP Rock
 /// shed (~440 m over the 4-lane National Road at x −6453…−6245, z 677…1069) as an open-sided gallery, one undoable import (`rock-shed`), absolute y, no sink:
 /// - hill side closed: ConcreteSet01 `Wall32x16` (32 × 16 × 1 m, pivot centre-bottom) from road level, every 32 m;
-/// - roof: square plates at road y + 6.5 m, valley edge on the column line: `BasePlateConcrete62` (153995, 62.5 m) where the road rises ≤ 1.2 m under it,
+/// - roof: square plates at road y + 6.5 m, valley edge on the column line: `BasePlateConcrete62` (ConcreteSet01 154132, 62.5 m) where the road rises ≤ 1.2 m under it,
 ///   else `BasePlateConcrete32`, else `BasePlateConcrete16` (two across the road);
 /// - valley side open: a column every 8 m on the valley edge from the terrain to the slab underside, ConcreteSet01 Pillar2x16 / Pillar2x8 stacked (owner:
 ///   "use the packs, not the vanilla");
@@ -44,7 +44,7 @@ public static class RockShed
         PlacedObject O(string id, string prefab, double x, double z, double y, double yaw, string note) =>
             new(id, prefab, "object", Math.Round(x, 2), Math.Round(z, 2), Math.Round(y, 2), Math.Round(((yaw % 360) + 360) % 360, 1), "JP Rock shed (open gallery)", note);
         int walls = 0, cols = 0;
-        // Roof (owner: packs 154132 and 153995): square plates, the biggest that stays flat enough. A plate of side L over [s0, s0 + L] is used when the road
+        // Roof (owner: ConcreteSet01 154132, which includes BasePlateConcrete62): square plates, the biggest that stays flat enough. A plate of side L over [s0, s0 + L] is used when the road
         // rises at most 1.2 m under it: BasePlateConcrete62 (62.5 m), else two BasePlateConcrete32 halves, else BasePlateConcrete16 (two side by side
         // across the 25 m road). Every plate keeps its valley edge on the column line, so a wider plate reaches back over the wall into the hill.
         var roofAt = new List<(double S0, double S1, double Y)>();

@@ -481,10 +481,10 @@ The 56 valley-side columns (every 8 m) are now `Vertical Pillar`, the vanilla ro
 - Total 103 objects at x1, 105 at x2.
 - To check at the start of A-v10: the measured size of Vertical Pillar against the 8 m pitch and the 6.5 m roof offset.
 
-## Round 34g: gallery roof from packs 154132 and 153995 (owner)
+## Round 34g: gallery roof from ConcreteSet01 (154132; BasePlateConcrete62 is part of it, no separate mod)
 
 The roof is square plates at road + 6.5 m, each with its valley edge on the column line (a wider plate reaches back over the wall into the hill):
-- BasePlateConcrete62 (153995, 62.5 m) where the road rises ≤ 1.2 m under it, else two BasePlateConcrete32, else BasePlateConcrete16, two side by side
+- BasePlateConcrete62 (ConcreteSet01, 62.5 m) where the road rises ≤ 1.2 m under it, else two BasePlateConcrete32, else BasePlateConcrete16, two side by side
   across the 25 m road. The road there climbs about 5–8 %, so mostly 16 m plates.
 - No plate runs past the end of the shed.
 - Counts:
