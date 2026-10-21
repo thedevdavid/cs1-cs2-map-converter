@@ -351,7 +351,11 @@ public static class Trees
 
 // =================================================================================================== objects
 
-public sealed record PlacedObject(string Id, string Prefab, string Kind, double X, double Z, double? Y, double Rotation, string Cs1, string Source);
+public sealed record PlacedObject(string Id, string Prefab, string Kind, double X, double Z, double? Y, double Rotation, string Cs1, string Source)
+{
+    /// <summary>Round 41: tilt about the local x axis in degrees, + = the local +z end up (bridge 0.9.50 "pitch"; older bridges ignore it).</summary>
+    public double? Pitch { get; init; }
+}
 public sealed record ManualObject(string Cs1, string Source, double X, double Y, double Z, double Rotation, string Note);
 
 public sealed class ObjectResult
@@ -474,6 +478,7 @@ public static class Objects
             if (o.Y is double y) w.WriteNumber("y", y);
             if (sinks != null && sinks.TryGetValue(o.Id, out var sk)) w.WriteNumber("sink", Math.Round(sk, 3));
             w.WriteNumber("rotation", o.Rotation);
+            if (o.Pitch is double pitch) w.WriteNumber("pitch", pitch);
             w.WriteString("kind", o.Kind);
             if (o.Kind is "plant" or "tree") w.WriteString("age", "adult");
             w.WriteString("cs1", Json.Short(o.Cs1));

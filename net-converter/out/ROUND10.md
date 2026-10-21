@@ -80,8 +80,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\import-walls-props.json` | barrier props (2×) | 621 | 0.1 MB |
 | 5 | `out\import-objects.json` | objects (2×) | 6119 (prop 3029, building 5, plant 3076, tree 9; 1073 with y) | 1.3 MB |
 | 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
-| 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 613 | 0.1 MB |
-| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17557 | 3.2 MB |
+| 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 607 | 0.1 MB |
+| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17551 | 3.2 MB |
 | 5 | `out\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (2×) | 3 | 0.0 MB |
 | 5 | `out\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (2×) | 201 | 0.0 MB |
 | 5 | `out\optional\import-po-structure-br006-arches.json` | ROUND 22 BR006 variant b: 7 StoneArchRailBridge (135944) under the deck, runner --with po-br006-arches (2×) | 7 | 0.0 MB |
@@ -91,8 +91,8 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
 | 5 | `out\x1\import-objects.json` | objects (1×) | 6119 (prop 3029, building 5, plant 3076, tree 9; 1073 with y) | 1.3 MB |
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
-| 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 613 | 0.1 MB |
-| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17553 | 3.2 MB |
+| 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 607 | 0.1 MB |
+| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17547 | 3.2 MB |
 | 5 | `out\x1\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (1×) | 3 | 0.0 MB |
 | 5 | `out\x1\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (1×) | 131 | 0.0 MB |
 | 5 | `out\x1\optional\import-po-structure-br006-arches.json` | ROUND 22 BR006 variant b: 7 StoneArchRailBridge (135944) under the deck, runner --with po-br006-arches (1×) | 7 | 0.0 MB |
@@ -802,3 +802,12 @@ Owner: "1. it should be built into the mountain side, not on the mountain. 2. do
 4. **Wall pieces off the line** (A-v14 24-06): the end piece came from clamping the last wall to the end, which put a duplicate on the curve's chord, and the walls followed a narrower hill edge. Now there is one wall line at axis + 25 m, a regular 16 m pitch, and an end piece only where the last regular one doesn't reach the end.
 
 **Counts** (x1): 580 objects: 427 BasePlateConcrete16 (183 roof slabs in 61 rows of 3 + 244 fascia), 30 Wall32x16, 123 Pillar1x8. The roof covers 99.9 % of the road strip, and the largest step between rows is 1.49 m in x1.
+
+### Round 40b: every roof row into the cut face
+
+- The axis + 25 m cap is gone. Each row reaches into the terrain (terrain ≥ roof top at its centre and 6 m either side, + 2 m), capped only at axis + 40 m (52.9 m from the column line).
+- **Row depth** from the column line: **min 42.0 m, max 43.5 m** in x1 (40.5–42.0 m at 2×). The face starts 39.5–41.5 m from the column line in x1, widest at row 6 (SE end).
+- All 61 rows reach the face; none stops at the cap.
+- No wall is left: there is no gap anywhere (0 of 492 1 m samples open along the hill edge). The 30 Wall32x16 of round 40 are gone.
+- Unchanged from round 40: the 492 m CS1 length, bare roof, 3 slabs across per row, 4-plate fascia, Pillar1x8 colonnade every 4 m, tree mask.
+- x1: 550 objects: 427 BasePlateConcrete16 (183 roof + 244 fascia), 123 Pillar1x8.
