@@ -160,3 +160,16 @@ dotnet run -c Release -- roads "$H\10190843-dktflls-1to1.png" out\10190843\10190
 - **River bed:** pixels whose terrain is below 93 m (`--water`) are left untouched unless the road itself is lower, and a cut never goes below 93 m.
 - **Guarantee:** pixels outside the corridors are bit-identical; this is asserted on every run.
 - **Stats:** `<prefix>-<name>_stats.md` gives per-edge residuals |terrain − road| at the course points, before and after.
+
+## `regrade`: re-profile a road along a centreline (ticket 31, JP Rock shed)
+
+```powershell
+dotnet run -c Release -- regrade "$H\10201528-dktflls-1to1.png" --spec ..\net-converter\out\x1\regrade-rock-shed.json --install $H --table <notes>\hm-rebuild-regrade-rock-shed.md
+```
+
+- **Spec points:** `s, x, z, oldY, y, hillBench, hill` (unit vector towards the hill side), plus `halfWidth`.
+- **Road band:** set to y within halfWidth of the centreline.
+- **Hill side:** a bench of `hillBench` m at y. Beyond it, the existing cut face is shifted by (y − oldY) for 20 m (`--face`), then tapered back to the existing terrain over 20 m (`--face-taper`).
+- **Valley side:** an apron of 10 m (`--apron`) blends y into the existing terrain.
+- **Ends:** a 10 m taper beyond the first and last points (`--end-taper`).
+- **Guarantee:** bit-identical outside the zone, asserted. Only the playable map is written; the world map is left alone.
