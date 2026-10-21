@@ -331,7 +331,7 @@ else auditLog.AppendLine("- Seaways stay at the riverbed (pass --seaway-at-water
         flyMd.AppendLine(FormattableString.Invariant($"| {e.Id} | {e.Cs1Segment} | {e.Map.Cs2Prefab} | ({m0.X:F0}, {m0.Z:F0}) | {from:F1} → {to:F1} |"));
     }
     File.WriteAllText(Path.Combine(outDir, "flyover-lifts.md"), flyMd.ToString());
-    Console.WriteLine(FormattableString.Invariant($"flyover lift: {flyLifts.Count} nodes lifted on {flyEdges.Count} CS1 elevated courses -> flyover-lifts.md"));
+    Console.WriteLine(FormattableString.Invariant($"flyover lift: {flyLifts.Count} nodes lifted on {flyEdges.Count} CS1 elevated courses, clearance guard at {FlyoverLift.GuardedCrossings} crossings -> flyover-lifts.md"));
 }
 {
     // Bridge overrides (bridges.tsv): the chosen CS1 bridge decks become CS2 bridge prefabs in import-bridges.json (right after the network

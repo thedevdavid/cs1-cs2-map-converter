@@ -360,3 +360,17 @@ Detroit: the owner keeps the BXP SuspensionBridge03; import-detroit-opt2.json no
 - **Control-point y:** written in output metres like the nodes. They were topology heights before (2 × the node y at x1); the ratio is now 1.000 at both scales.
   The BR001 fork control points in import-bridges-fixed.json no longer have y 0: they sit on the straight grade between the ends. The bridge ignores control
   y today.
+
+## Round 32c: interchange 5 check, clearance guard, dump pinned
+
+- **Dump:** run-all picked the newest JSON in DakotaExport. Since 2026-10-20 18:37 that was a CS1 autosave from the owner's shot session (38 segments differ from
+  the map dump), so commits 63962cf and 6a98d1e were generated from it. run-all now takes only `<id>_Dakota_Falls-<stamp>.json`; this round is regenerated
+  from 2972879554_Dakota_Falls-20261019-063123.json again.
+- **Clearance guard (FlyoverLift):** a lifted course keeps min(its CS1 clearance, 7 m) under any course crossing above it, at 7 crossings at x1.
+- **Interchange 5** (3493, 2152), full tables in out/x1/fidelity/interchange-5-ramps.md:
+  - 77 of its 178 highway edges carry `elevated: true`.
+  - 38 crossings without a shared node: the least clearance is now 7.0 m (e6041_0b over e12097_0 at (3646, 2130); CS1 7.7 m, before the guard 5.8 m). None is
+    under 6 m.
+  - Levels at the centre: ground 171–174 m, +1 at 180–187 m, +2 at 189–198 m, a top ramp at 200–201 m (CS1 33741 at 27 m), so 3–4 levels as in CS1.
+- **Cameras:** the owner's (3493, 2152), yaw 0, pitch 50, distance 700. To show the levels: (3493, 2152), yaw 45 (from the south-west, looking north-east
+  along the main road at 60°), pitch 30, distance 600.

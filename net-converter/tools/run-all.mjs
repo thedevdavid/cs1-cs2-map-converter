@@ -1,6 +1,6 @@
 // One command for a full conversion: both scales, then out/ROUND.md (file list, counts, import order).
 // node tools/run-all.mjs [dump.json] [--heightmap ../hm-rebuild/out/DakotaFalls-1to1-4096.png] [--out out] [--water-variant 93.0]
-// Default dump: the newest *.json in %LOCALAPPDATA%\DakotaExport that is not a -trees/-po sibling.
+// Default dump: the newest <id>_Dakota_Falls-<stamp>.json in %LOCALAPPDATA%\DakotaExport.
 import { execFileSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -13,7 +13,9 @@ const waterVariant = opt("--water-variant", "93.0"); // second sea level (CS1 m)
 let dump = args[0];
 if (!dump) {
   const dir = join(process.env.LOCALAPPDATA ?? "", "DakotaExport");
-  dump = readdirSync(dir).filter(f => f.endsWith(".json") && !/-(trees|po)\.json$/.test(f))
+  // Round 32: only the Dakota Falls map dumps (<workshop id>_Dakota_Falls-<stamp>.json). A CS1 autosave or another tool's JSON in the folder
+  // (camera.done.json) must not become the source; pass a dump explicitly to use one.
+  dump = readdirSync(dir).filter(f => /^\d+_Dakota_Falls-\d{8}-\d{6}\.json$/.test(f))
     .map(f => join(dir, f)).sort((a, b) => statSync(b).mtimeMs - statSync(a).mtimeMs)[0];
 }
 console.log(`dump ${dump}`);

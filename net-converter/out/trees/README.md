@@ -1,6 +1,6 @@
 # Trees for POST /import/objects
 
-Source: points (2972879554_AutoSave-20261020-183735-trees.json, trees/v2: y, flags, scale). 496,303 trees in 10 files of ≤ 50,000 (import-trees-01.json, import-trees-02.json, import-trees-03.json, import-trees-04.json, import-trees-05.json, import-trees-06.json, import-trees-07.json, import-trees-08.json, import-trees-09.json, import-trees-10.json).
+Source: points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale). 496,303 trees in 10 files of ≤ 50,000 (import-trees-01.json, import-trees-02.json, import-trees-03.json, import-trees-04.json, import-trees-05.json, import-trees-06.json, import-trees-07.json, import-trees-08.json, import-trees-09.json, import-trees-10.json).
 No y: the game samples terrain, so the same files serve the 2× (out/) and the 1× (out/x1/) map.
 
 - Outside ±7168 m (dropped): 158,877
