@@ -1,0 +1,2496 @@
+27 nodes, 68 connections, 39 arrow lanes -> D:\work\mods\csl2-editor\cs2mcp\out\tmpe-import-request.json
+report -> D:\work\mods\csl2-editor\cs2mcp\out\tmpe-import-report.json, D:\work\mods\csl2-editor\cs2mcp\out\tmpe-import-report.md
+{
+  "importId": null,
+  "dryRun": true,
+  "trafficVersion": "0.2.13+ce1551f19d0341d7a4a6bb126daa515c6c021b43",
+  "pinnedTrafficVersion": "0.2.13+ce1551f",
+  "summary": {
+    "nodes": {
+      "requested": 27,
+      "matched": 15,
+      "skipped": 12
+    },
+    "connections": {
+      "requested": 68,
+      "byStatus": {
+        "notNeeded": 30,
+        "mapped": 38
+      }
+    },
+    "arrows": {
+      "requested": 39,
+      "byStatus": {
+        "superseded": 37,
+        "unchanged": 2
+      }
+    },
+    "traffic": {
+      "nodes": 14,
+      "modifiedSourceLanes": 37,
+      "generatedConnections": 38,
+      "note": "dry run: nothing written"
+    }
+  },
+  "nodes": [
+    {
+      "id": "n527",
+      "cs1Node": 527,
+      "cs2Node": null,
+      "distance": -1,
+      "match": "1/2 CS1 segments matched by edges",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "n1635",
+      "cs1Node": 1635,
+      "cs2Node": "54835:1",
+      "distance": 0,
+      "match": "2/2 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n1884",
+      "cs1Node": 1884,
+      "cs2Node": "54263:1",
+      "distance": 0,
+      "match": "2/2 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n4291",
+      "cs1Node": 4291,
+      "cs2Node": "54697:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n4378",
+      "cs1Node": 4378,
+      "cs2Node": "54264:1",
+      "distance": 0,
+      "match": "2/2 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n4801",
+      "cs1Node": 4801,
+      "cs2Node": null,
+      "distance": -1,
+      "match": "0/2 CS1 segments matched by edges",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "n6802",
+      "cs1Node": 6802,
+      "cs2Node": null,
+      "distance": -1,
+      "match": "1/2 CS1 segments matched by edges",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "n7849",
+      "cs1Node": 7849,
+      "cs2Node": "56021:1",
+      "distance": 0,
+      "match": "2/2 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n9988",
+      "cs1Node": 9988,
+      "cs2Node": "55979:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n10346",
+      "cs1Node": 10346,
+      "cs2Node": null,
+      "distance": -1,
+      "match": "1/2 CS1 segments matched by edges",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "n10611",
+      "cs1Node": 10611,
+      "cs2Node": null,
+      "distance": -1,
+      "match": "1/2 CS1 segments matched by edges",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "n11611",
+      "cs1Node": 11611,
+      "cs2Node": "55487:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n12156",
+      "cs1Node": 12156,
+      "cs2Node": "54851:1",
+      "distance": 24,
+      "match": "2/2 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n12773",
+      "cs1Node": 12773,
+      "cs2Node": "54735:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n12950",
+      "cs1Node": 12950,
+      "cs2Node": "55657:1",
+      "distance": 0,
+      "match": "2/2 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n13892",
+      "cs1Node": 13892,
+      "cs2Node": "53188:1",
+      "distance": 0,
+      "match": "2/2 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n14204",
+      "cs1Node": 14204,
+      "cs2Node": "53189:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n14407",
+      "cs1Node": 14407,
+      "cs2Node": "54265:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n15971",
+      "cs1Node": 15971,
+      "cs2Node": "53028:1",
+      "distance": 0,
+      "match": "2/2 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n17002",
+      "cs1Node": 17002,
+      "cs2Node": "53183:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n17387",
+      "cs1Node": 17387,
+      "cs2Node": "53169:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n18884",
+      "cs1Node": 18884,
+      "cs2Node": "61527:5",
+      "distance": 7.31,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n21201",
+      "cs1Node": 21201,
+      "cs2Node": "53164:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n21320",
+      "cs1Node": 21320,
+      "cs2Node": "54548:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n23859",
+      "cs1Node": 23859,
+      "cs2Node": "56023:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n27056",
+      "cs1Node": 27056,
+      "cs2Node": "53048:1",
+      "distance": 0,
+      "match": "3/3 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    },
+    {
+      "id": "n27789",
+      "cs1Node": 27789,
+      "cs2Node": "55659:1",
+      "distance": 0,
+      "match": "2/2 CS1 segments matched by edges",
+      "status": "matched",
+      "reason": null
+    }
+  ],
+  "selfCheck": [
+    {
+      "id": "n1635",
+      "cs2Node": "54835:1",
+      "curveMeetingPoint": [
+        867.61,
+        4039.84
+      ],
+      "cs1Position": [
+        867.61,
+        4039.84
+      ],
+      "connectedEdges": [
+        "66602:17",
+        "65206:7"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 10900,
+          "cs1Prefab": "2452038713.USRP 2L Interstate E",
+          "cs1LaneCount": 2,
+          "cs2Edge": "65206:7",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2,
+            3
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 20430,
+          "cs1Prefab": "2452038713.USRP 3L Interstate E",
+          "cs1LaneCount": 3,
+          "cs2Edge": "66602:17",
+          "viaStubTo": null,
+          "distance": 0.01,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n4291",
+      "cs2Node": "54697:1",
+      "curveMeetingPoint": [
+        739.26,
+        3945.99
+      ],
+      "cs1Position": [
+        739.26,
+        3945.99
+      ],
+      "connectedEdges": [
+        "65263:3",
+        "65100:11",
+        "64760:9"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 22564,
+          "cs1Prefab": "2452038713.USRP 2L Interstate E",
+          "cs1LaneCount": 2,
+          "cs2Edge": "65100:11",
+          "viaStubTo": null,
+          "distance": 0.01,
+          "cs2LanesIntoNode": [
+            2,
+            3
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 22842,
+          "cs1Prefab": "2452038713.USRP 3L Interstate E",
+          "cs1LaneCount": 3,
+          "cs2Edge": "65263:3",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "cs1Segment": 9919,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp E",
+          "cs1LaneCount": 1,
+          "cs2Edge": "64760:9",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2
+          ],
+          "cs2LanesOutOfNode": []
+        }
+      ]
+    },
+    {
+      "id": "n9988",
+      "cs2Node": "55979:1",
+      "curveMeetingPoint": [
+        -6197.74,
+        626.68
+      ],
+      "cs1Position": [
+        -6197.74,
+        626.68
+      ],
+      "connectedEdges": [
+        "65758:9",
+        "65500:5",
+        "98183:19"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 24116,
+          "cs1Prefab": "2097539846.USRP 4-Lane National Road_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "98183:19",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            4,
+            5
+          ],
+          "cs2LanesOutOfNode": [
+            3,
+            2
+          ]
+        },
+        {
+          "cs1Segment": 24828,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "65500:5",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3
+          ]
+        },
+        {
+          "cs1Segment": 19095,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "65758:9",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2,
+            3
+          ],
+          "cs2LanesOutOfNode": []
+        }
+      ]
+    },
+    {
+      "id": "n11611",
+      "cs2Node": "55487:1",
+      "curveMeetingPoint": [
+        -6462.7,
+        1077.56
+      ],
+      "cs1Position": [
+        -6462.7,
+        1077.56
+      ],
+      "connectedEdges": [
+        "64635:13",
+        "65188:5",
+        "97296:23"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 34976,
+          "cs1Prefab": "2097539846.USRP 4-Lane National Road_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "97296:23",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            3,
+            2
+          ],
+          "cs2LanesOutOfNode": [
+            4,
+            5
+          ]
+        },
+        {
+          "cs1Segment": 15154,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "65188:5",
+          "viaStubTo": null,
+          "distance": 0.01,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3
+          ]
+        },
+        {
+          "cs1Segment": 31696,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "64635:13",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2,
+            3
+          ],
+          "cs2LanesOutOfNode": []
+        }
+      ]
+    },
+    {
+      "id": "n12773",
+      "cs2Node": "54735:1",
+      "curveMeetingPoint": [
+        78.46,
+        -41.12
+      ],
+      "cs1Position": [
+        78.46,
+        -41.12
+      ],
+      "connectedEdges": [
+        "64675:25",
+        "65102:5",
+        "66392:3"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 25952,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "66392:3",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2,
+            3
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 10600,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "65102:5",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2
+          ]
+        },
+        {
+          "cs1Segment": 31983,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "64675:25",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n14204",
+      "cs2Node": "53189:1",
+      "curveMeetingPoint": [
+        280.17,
+        3404.06
+      ],
+      "cs1Position": [
+        280.17,
+        3404.06
+      ],
+      "connectedEdges": [
+        "64669:33",
+        "64970:9",
+        "61512:1"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 1054,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "61512:1",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2,
+            3
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 31965,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "64669:33",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2
+          ]
+        },
+        {
+          "cs1Segment": 28080,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "64970:9",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n14407",
+      "cs2Node": "54265:1",
+      "curveMeetingPoint": [
+        223.71,
+        3457.89
+      ],
+      "cs1Position": [
+        223.71,
+        3457.89
+      ],
+      "connectedEdges": [
+        "65680:15",
+        "64051:9",
+        "65354:3"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 7747,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "64051:9",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 12566,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "65354:3",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3
+          ]
+        },
+        {
+          "cs1Segment": 23246,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "65680:15",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2
+          ],
+          "cs2LanesOutOfNode": []
+        }
+      ]
+    },
+    {
+      "id": "n17002",
+      "cs2Node": "53183:1",
+      "curveMeetingPoint": [
+        99.05,
+        243.1
+      ],
+      "cs1Position": [
+        99.05,
+        243.1
+      ],
+      "connectedEdges": [
+        "64691:25",
+        "61509:1",
+        "61692:3"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 2218,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "61692:3",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 32183,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "64691:25",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3
+          ]
+        },
+        {
+          "cs1Segment": 1009,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "61509:1",
+          "viaStubTo": null,
+          "distance": 0.01,
+          "cs2LanesIntoNode": [
+            2
+          ],
+          "cs2LanesOutOfNode": []
+        }
+      ]
+    },
+    {
+      "id": "n17387",
+      "cs2Node": "53169:1",
+      "curveMeetingPoint": [
+        -203.5,
+        3828.32
+      ],
+      "cs1Position": [
+        -203.5,
+        3828.32
+      ],
+      "connectedEdges": [
+        "61502:1",
+        "64763:9",
+        "65412:3"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 822,
+          "cs1Prefab": "2452038713.USRP 3L Interstate_Data",
+          "cs1LaneCount": 3,
+          "cs2Edge": "61502:1",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2,
+            3,
+            4
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 14787,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "65412:3",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2
+          ]
+        },
+        {
+          "cs1Segment": 9948,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "64763:9",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n18884",
+      "cs2Node": "61527:5",
+      "curveMeetingPoint": [
+        272.28,
+        143.19
+      ],
+      "cs1Position": [
+        279.2,
+        145.53
+      ],
+      "connectedEdges": [
+        "64391:41",
+        "62379:3",
+        "62905:3"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 36804,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "64391:41",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 18923,
+          "cs1Prefab": "2452038713.USRP 2L Interstate B",
+          "cs1LaneCount": null,
+          "cs2Edge": "62905:3",
+          "viaStubTo": "71107:5",
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2
+          ]
+        },
+        {
+          "cs1Segment": 3338,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "62379:3",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2
+          ],
+          "cs2LanesOutOfNode": []
+        }
+      ]
+    },
+    {
+      "id": "n21201",
+      "cs2Node": "53164:1",
+      "curveMeetingPoint": [
+        83.83,
+        239.69
+      ],
+      "cs1Position": [
+        83.83,
+        239.69
+      ],
+      "connectedEdges": [
+        "66178:17",
+        "66012:17",
+        "65593:9"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 784,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "65593:9",
+          "viaStubTo": null,
+          "distance": 0.01,
+          "cs2LanesIntoNode": [
+            2,
+            3
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 16556,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "66178:17",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2
+          ]
+        },
+        {
+          "cs1Segment": 15937,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "66012:17",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n21320",
+      "cs2Node": "54548:1",
+      "curveMeetingPoint": [
+        -331.35,
+        3888.39
+      ],
+      "cs1Position": [
+        -331.35,
+        3888.39
+      ],
+      "connectedEdges": [
+        "64426:35",
+        "65093:3",
+        "64580:5"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 35218,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "64426:35",
+          "viaStubTo": null,
+          "distance": 0.04,
+          "cs2LanesIntoNode": [
+            2,
+            3
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 8915,
+          "cs1Prefab": "2452038713.USRP 3L Interstate_Data",
+          "cs1LaneCount": 3,
+          "cs2Edge": "64580:5",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "cs1Segment": 12088,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "65093:3",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2
+          ],
+          "cs2LanesOutOfNode": []
+        }
+      ]
+    },
+    {
+      "id": "n23859",
+      "cs2Node": "56023:1",
+      "curveMeetingPoint": [
+        730.75,
+        3959.89
+      ],
+      "cs1Position": [
+        730.75,
+        3959.89
+      ],
+      "connectedEdges": [
+        "67159:27",
+        "66704:7",
+        "66222:15"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 20118,
+          "cs1Prefab": "2452038713.USRP 3L Interstate E",
+          "cs1LaneCount": 3,
+          "cs2Edge": "66222:15",
+          "viaStubTo": null,
+          "distance": 0.01,
+          "cs2LanesIntoNode": [
+            2,
+            3,
+            4
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 26394,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp E",
+          "cs1LaneCount": 1,
+          "cs2Edge": "67159:27",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2
+          ]
+        },
+        {
+          "cs1Segment": 25731,
+          "cs1Prefab": "2452038713.USRP 2L Interstate E",
+          "cs1LaneCount": 2,
+          "cs2Edge": "66704:7",
+          "viaStubTo": null,
+          "distance": 0.01,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n27056",
+      "cs2Node": "53048:1",
+      "curveMeetingPoint": [
+        83.07,
+        20.36
+      ],
+      "cs1Position": [
+        83.07,
+        20.36
+      ],
+      "connectedEdges": [
+        "65286:3",
+        "61483:1",
+        "66619:3"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 13450,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "65286:3",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 14444,
+          "cs1Prefab": "2452038713.USRP 2L Interstate_Data",
+          "cs1LaneCount": 2,
+          "cs2Edge": "66619:3",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3
+          ]
+        },
+        {
+          "cs1Segment": 501,
+          "cs1Prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+          "cs1LaneCount": 1,
+          "cs2Edge": "61483:1",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2
+          ],
+          "cs2LanesOutOfNode": []
+        }
+      ]
+    },
+    {
+      "id": "n27789",
+      "cs2Node": "55659:1",
+      "curveMeetingPoint": [
+        875.14,
+        4026.19
+      ],
+      "cs1Position": [
+        875.14,
+        4026.19
+      ],
+      "connectedEdges": [
+        "66309:3",
+        "66175:17"
+      ],
+      "segments": [
+        {
+          "cs1Segment": 16466,
+          "cs1Prefab": "2452038713.USRP 3L Interstate E",
+          "cs1LaneCount": 3,
+          "cs2Edge": "66175:17",
+          "viaStubTo": null,
+          "distance": 0,
+          "cs2LanesIntoNode": [
+            2,
+            3,
+            4
+          ],
+          "cs2LanesOutOfNode": []
+        },
+        {
+          "cs1Segment": 25138,
+          "cs1Prefab": "2452038713.USRP 2L Interstate E",
+          "cs1LaneCount": 2,
+          "cs2Edge": "66309:3",
+          "viaStubTo": null,
+          "distance": 0.01,
+          "cs2LanesIntoNode": [],
+          "cs2LanesOutOfNode": [
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "c59",
+      "node": "n527",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c60",
+      "node": "n527",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c9",
+      "node": "n1635",
+      "source": {
+        "segment": 10900,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "65206:7",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 20430,
+        "cs1LaneIndex": 4,
+        "cs2Edge": "66602:17",
+        "cs2Lane": 2,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c14",
+      "node": "n1635",
+      "source": {
+        "segment": 10900,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65206:7",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 20430,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "66602:17",
+        "cs2Lane": 3,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c15",
+      "node": "n1635",
+      "source": {
+        "segment": 10900,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65206:7",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 20430,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "66602:17",
+        "cs2Lane": 4,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c34",
+      "node": "n1884",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c35",
+      "node": "n1884",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c36",
+      "node": "n1884",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c16",
+      "node": "n4291",
+      "source": {
+        "segment": 22564,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65100:11",
+        "cs2Lane": 3,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.16,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 22842,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "65263:3",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c17",
+      "node": "n4291",
+      "source": {
+        "segment": 22564,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "65100:11",
+        "cs2Lane": 2,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.16,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 22842,
+        "cs1LaneIndex": 4,
+        "cs2Edge": "65263:3",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c18",
+      "node": "n4291",
+      "source": {
+        "segment": 9919,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64760:9",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 22842,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65263:3",
+        "cs2Lane": 4,
+        "edgeDistance": 0,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c37",
+      "node": "n4378",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c38",
+      "node": "n4378",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c39",
+      "node": "n4378",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c64",
+      "node": "n4801",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c65",
+      "node": "n4801",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c52",
+      "node": "n6802",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c53",
+      "node": "n6802",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c43",
+      "node": "n7849",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c44",
+      "node": "n7849",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c45",
+      "node": "n7849",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c4",
+      "node": "n9988",
+      "source": {
+        "segment": 24116,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "98183:19",
+        "cs2Lane": 4,
+        "edgeDistance": 0,
+        "offsetDelta": 0.35,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 24828,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "65500:5",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c5",
+      "node": "n9988",
+      "source": {
+        "segment": 24116,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "98183:19",
+        "cs2Lane": 5,
+        "edgeDistance": 0,
+        "offsetDelta": 0.35,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 24828,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65500:5",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c6",
+      "node": "n9988",
+      "source": {
+        "segment": 19095,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65758:9",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 24116,
+        "cs1LaneIndex": 3,
+        "cs2Edge": "98183:19",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.35,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c7",
+      "node": "n9988",
+      "source": {
+        "segment": 19095,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "65758:9",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 24116,
+        "cs1LaneIndex": 2,
+        "cs2Edge": "98183:19",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.35,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c31",
+      "node": "n10346",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c32",
+      "node": "n10346",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c33",
+      "node": "n10346",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c57",
+      "node": "n10611",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c58",
+      "node": "n10611",
+      "status": "notNeeded",
+      "reason": "no CS2 node here: the game joined the two collinear CS1 segments into one, and every TM:PE connection at this node is lane i -> lane i straight through (the game's default), so there is nothing to write"
+    },
+    {
+      "id": "c0",
+      "node": "n11611",
+      "source": {
+        "segment": 34976,
+        "cs1LaneIndex": 2,
+        "cs2Edge": "97296:23",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.35,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 15154,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "65188:5",
+        "cs2Lane": 2,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.14,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c1",
+      "node": "n11611",
+      "source": {
+        "segment": 34976,
+        "cs1LaneIndex": 3,
+        "cs2Edge": "97296:23",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.35,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 15154,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65188:5",
+        "cs2Lane": 3,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.14,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c2",
+      "node": "n11611",
+      "source": {
+        "segment": 31696,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64635:13",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.14,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 34976,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "97296:23",
+        "cs2Lane": 5,
+        "edgeDistance": 0,
+        "offsetDelta": 0.35,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c3",
+      "node": "n11611",
+      "source": {
+        "segment": 31696,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "64635:13",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.14,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 34976,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "97296:23",
+        "cs2Lane": 4,
+        "edgeDistance": 0,
+        "offsetDelta": 0.35,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c66",
+      "node": "n12156",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c67",
+      "node": "n12156",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c55",
+      "node": "n12773",
+      "source": {
+        "segment": 25952,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "66392:3",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 10600,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65102:5",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c56",
+      "node": "n12773",
+      "source": {
+        "segment": 25952,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "66392:3",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 31983,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64675:25",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c40",
+      "node": "n12950",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c41",
+      "node": "n12950",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c42",
+      "node": "n12950",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c50",
+      "node": "n13892",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c51",
+      "node": "n13892",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c48",
+      "node": "n14204",
+      "source": {
+        "segment": 1054,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "61512:1",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 31965,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64669:33",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c49",
+      "node": "n14204",
+      "source": {
+        "segment": 1054,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "61512:1",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 28080,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64970:9",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c46",
+      "node": "n14407",
+      "source": {
+        "segment": 7747,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64051:9",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 12566,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65354:3",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c47",
+      "node": "n14407",
+      "source": {
+        "segment": 23246,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65680:15",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 12566,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "65354:3",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c28",
+      "node": "n15971",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c29",
+      "node": "n15971",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c30",
+      "node": "n15971",
+      "status": "notNeeded",
+      "reason": "a straight two-edge node whose TM:PE connections are all lane i -> lane i (the game's default); nothing to write"
+    },
+    {
+      "id": "c10",
+      "node": "n17002",
+      "source": {
+        "segment": 2218,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "61692:3",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 32183,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "64691:25",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c61",
+      "node": "n17002",
+      "source": {
+        "segment": 1009,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "61509:1",
+        "cs2Lane": 2,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 32183,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64691:25",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c22",
+      "node": "n17387",
+      "source": {
+        "segment": 822,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "61502:1",
+        "cs2Lane": 4,
+        "edgeDistance": 0,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 14787,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65412:3",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c23",
+      "node": "n17387",
+      "source": {
+        "segment": 822,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "61502:1",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 9948,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64763:9",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c24",
+      "node": "n17387",
+      "source": {
+        "segment": 822,
+        "cs1LaneIndex": 4,
+        "cs2Edge": "61502:1",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 9948,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "64763:9",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c62",
+      "node": "n21201",
+      "source": {
+        "segment": 784,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65593:9",
+        "cs2Lane": 3,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 16556,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "66178:17",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c63",
+      "node": "n21201",
+      "source": {
+        "segment": 784,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "65593:9",
+        "cs2Lane": 2,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 15937,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "66012:17",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c25",
+      "node": "n21320",
+      "source": {
+        "segment": 35218,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64426:35",
+        "cs2Lane": 3,
+        "edgeDistance": 0.04,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 8915,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "64580:5",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c26",
+      "node": "n21320",
+      "source": {
+        "segment": 35218,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "64426:35",
+        "cs2Lane": 2,
+        "edgeDistance": 0.04,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 8915,
+        "cs1LaneIndex": 4,
+        "cs2Edge": "64580:5",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c27",
+      "node": "n21320",
+      "source": {
+        "segment": 12088,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65093:3",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 8915,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64580:5",
+        "cs2Lane": 4,
+        "edgeDistance": 0,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c19",
+      "node": "n23859",
+      "source": {
+        "segment": 20118,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "66222:15",
+        "cs2Lane": 4,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 26394,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "67159:27",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c20",
+      "node": "n23859",
+      "source": {
+        "segment": 20118,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "66222:15",
+        "cs2Lane": 3,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 25731,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "66704:7",
+        "cs2Lane": 3,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c21",
+      "node": "n23859",
+      "source": {
+        "segment": 20118,
+        "cs1LaneIndex": 4,
+        "cs2Edge": "66222:15",
+        "cs2Lane": 2,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 25731,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "66704:7",
+        "cs2Lane": 2,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c13",
+      "node": "n27056",
+      "source": {
+        "segment": 13450,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "65286:3",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 14444,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "66619:3",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c54",
+      "node": "n27056",
+      "source": {
+        "segment": 501,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "61483:1",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 14444,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "66619:3",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c8",
+      "node": "n27789",
+      "source": {
+        "segment": 16466,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "66175:17",
+        "cs2Lane": 4,
+        "edgeDistance": 0,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 25138,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "66309:3",
+        "cs2Lane": 3,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c11",
+      "node": "n27789",
+      "source": {
+        "segment": 16466,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "66175:17",
+        "cs2Lane": 3,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 25138,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "66309:3",
+        "cs2Lane": 3,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    },
+    {
+      "id": "c12",
+      "node": "n27789",
+      "source": {
+        "segment": 16466,
+        "cs1LaneIndex": 4,
+        "cs2Edge": "66175:17",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0.3,
+        "rankAgrees": true
+      },
+      "target": {
+        "segment": 25138,
+        "cs1LaneIndex": 1,
+        "cs2Edge": "66309:3",
+        "cs2Lane": 2,
+        "edgeDistance": 0.01,
+        "offsetDelta": 0.15,
+        "rankAgrees": true
+      },
+      "status": "mapped"
+    }
+  ],
+  "arrows": [
+    {
+      "id": "a3",
+      "node": "n1635",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a20",
+      "node": "n1635",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a7",
+      "node": "n4291",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a31",
+      "node": "n4291",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a34",
+      "node": "n4291",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a15",
+      "node": "n9988",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a25",
+      "node": "n9988",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a29",
+      "node": "n9988",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a37",
+      "node": "n9988",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a0",
+      "node": "n11611",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a8",
+      "node": "n11611",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a16",
+      "node": "n11611",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a28",
+      "node": "n11611",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a6",
+      "node": "n12773",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a24",
+      "node": "n12773",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a19",
+      "node": "n14204",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a21",
+      "node": "n14204",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a11",
+      "node": "n14407",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a38",
+      "node": "n14407",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a4",
+      "node": "n17002",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a18",
+      "node": "n17002",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a14",
+      "node": "n17387",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a17",
+      "node": "n17387",
+      "arrows": "Right",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a33",
+      "node": "n17387",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a22",
+      "node": "n18884",
+      "arrows": "Forward",
+      "source": {
+        "segment": 36804,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "64391:41",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "targets": [
+        {
+          "segment": 18923,
+          "arrow": "Forward",
+          "allowed": true,
+          "cs2Edge": "62905:3",
+          "distance": 0
+        }
+      ],
+      "cs2Default": [
+        "62905:3:2"
+      ],
+      "cs2Kept": [
+        "62905:3:2"
+      ],
+      "status": "unchanged",
+      "reason": "CS2's default connections already follow the arrows; nothing to write"
+    },
+    {
+      "id": "a26",
+      "node": "n18884",
+      "arrows": "Forward",
+      "source": {
+        "segment": 3338,
+        "cs1LaneIndex": 0,
+        "cs2Edge": "62379:3",
+        "cs2Lane": 2,
+        "edgeDistance": 0,
+        "offsetDelta": 0,
+        "rankAgrees": true
+      },
+      "targets": [
+        {
+          "segment": 18923,
+          "arrow": "Forward",
+          "allowed": true,
+          "cs2Edge": "62905:3",
+          "distance": 0
+        }
+      ],
+      "cs2Default": [
+        "62905:3:2"
+      ],
+      "cs2Kept": [
+        "62905:3:2"
+      ],
+      "status": "unchanged",
+      "reason": "CS2's default connections already follow the arrows; nothing to write"
+    },
+    {
+      "id": "a5",
+      "node": "n21201",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a36",
+      "node": "n21201",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a9",
+      "node": "n21320",
+      "arrows": "Right",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a10",
+      "node": "n21320",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a27",
+      "node": "n21320",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a13",
+      "node": "n23859",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a30",
+      "node": "n23859",
+      "arrows": "Right",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a32",
+      "node": "n23859",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a12",
+      "node": "n27056",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a35",
+      "node": "n27056",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a1",
+      "node": "n27789",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a2",
+      "node": "n27789",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    },
+    {
+      "id": "a23",
+      "node": "n27789",
+      "arrows": "Forward",
+      "status": "superseded",
+      "reason": "the lane has TM:PE lane connections, which TM:PE applies instead of its arrows"
+    }
+  ]
+}
