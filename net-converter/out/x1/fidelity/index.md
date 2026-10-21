@@ -1,4 +1,4 @@
-# Fidelity check: CS1 vs live (live-graph-20261021-135800-end.json) vs our files
+# Fidelity check: CS1 vs live (live-graph-20261021-144500-end.json) vs our files
 
 Each image: CS1 segments wide and pale (blue = elevated), our import files green, the live game thin red (dashed = elevated); orange = a CS1 segment with no live
 segment within 2 m of its midpoint, magenta = a live segment with no CS1 segment within 2 m. Hover a line for its id and prefab.
@@ -12,16 +12,16 @@ segment within 2 m of its midpoint, magenta = a live segment with no CS1 segment
 | [Interchange 5 at (3493, 2152), 15 highway junction nodes](interchange_05_3493_2152.md) | OK: layout and heights match CS1 (2 m in plan, 4 m in height) |
 | [Interchange 6 at (-1675, -1796), 6 highway junction nodes](interchange_06_-1675_-1796.md) | OK: layout and heights match CS1 (2 m in plan, 4 m in height) |
 | [Interchange 7 at (252, 3431), 2 highway junction nodes](interchange_07_252_3431.md) | OK: layout and heights match CS1 (2 m in plan, 4 m in height) |
-| [Interchange 8 at (662, -4494), 4 highway junction nodes](interchange_08_662_-4494.md) | CHECK: 2 CS1 segments without live counterpart, 1 live without CS1 source, 0 more than 4 m off the CS1 height, 7 live dead ends CS1 did not have ((944, -4288) (808, -4467) (723, -4579) (960, -4266) (976, -4245) (1054, -4142) (782, -4501)) |
-| [Interchange 9 at (2872, 913), 5 highway junction nodes](interchange_09_2872_913.md) | CHECK: 1 CS1 segments without live counterpart, 0 live without CS1 source, 0 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
+| [Interchange 8 at (662, -4494), 4 highway junction nodes](interchange_08_662_-4494.md) | CHECK: 6 CS1 segments without live counterpart, 8 live without CS1 source, 0 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
+| [Interchange 9 at (2872, 913), 5 highway junction nodes](interchange_09_2872_913.md) | CHECK: 3 CS1 segments without live counterpart, 2 live without CS1 source, 0 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
 | [Interchange 10 at (682, -5037), 2 highway junction nodes](interchange_10_682_-5037.md) | OK: layout and heights match CS1 (2 m in plan, 4 m in height) |
 | [Interchange 11 at (-4155, -75), 6 highway junction nodes](interchange_11_-4155_-75.md) | CHECK: 0 CS1 segments without live counterpart, 0 live without CS1 source, 2 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
-| [Interchange 12 at (735, 3953), 2 highway junction nodes](interchange_12_735_3953.md) | CHECK: 1 CS1 segments without live counterpart, 0 live without CS1 source, 3 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
+| [Interchange 12 at (735, 3953), 2 highway junction nodes](interchange_12_735_3953.md) | CHECK: 2 CS1 segments without live counterpart, 1 live without CS1 source, 3 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
 | [Interchange 13 at (4063, 5043), 2 highway junction nodes](interchange_13_4063_5043.md) | OK: layout and heights match CS1 (2 m in plan, 4 m in height) |
 | [Interchange 14 at (-6463, 1078), 1 highway junction nodes](interchange_14_-6463_1078.md) | CHECK: 0 CS1 segments without live counterpart, 0 live without CS1 source, 9 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
 | [Interchange 15 at (-6198, 627), 1 highway junction nodes](interchange_15_-6198_627.md) | CHECK: 0 CS1 segments without live counterpart, 0 live without CS1 source, 8 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
 | [Interchange 16 at (3015, 1505), 1 highway junction nodes](interchange_16_3015_1505.md) | CHECK: 0 CS1 segments without live counterpart, 0 live without CS1 source, 1 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
-| [Bridge BR001 and its approaches at (1532, -3499)](bridge_BR001_1532_-3499.md) | CHECK: 1 CS1 segments without live counterpart (+28 replaced by a bridge override), 8 live without CS1 source, 0 more than 4 m off the CS1 height, 3 live dead ends CS1 did not have ((1117, -4059) (1054, -4142) (1086, -4100)) |
+| [Bridge BR001 and its approaches at (1532, -3499)](bridge_BR001_1532_-3499.md) | CHECK: 0 CS1 segments without live counterpart (+26 replaced by a bridge override), 8 live without CS1 source, 0 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
 | [Bridge BR005 and its approaches at (435, 197)](bridge_BR005_435_197.md) | OK: layout and heights match CS1 (2 m in plan, 4 m in height) |
 | [Bridge BR006 and its approaches at (-3525, -3181)](bridge_BR006_-3525_-3181.md) | CHECK: 0 CS1 segments without live counterpart, 0 live without CS1 source, 1 more than 4 m off the CS1 height, 0 live dead ends CS1 did not have |
 | [Bridge BR007 and its approaches at (778, 2666)](bridge_BR007_778_2666.md) | OK: layout and heights match CS1 (2 m in plan, 4 m in height) |
