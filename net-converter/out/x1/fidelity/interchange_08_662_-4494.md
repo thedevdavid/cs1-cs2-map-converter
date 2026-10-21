@@ -1,20 +1,17 @@
 # Interchange 8 at (662, -4494), 4 highway junction nodes
 
-CHECK: 1 CS1 segments without live counterpart, 1 live without CS1 source, 4 more than 4 m off the CS1 height, 4 live dead ends CS1 did not have ((808, -4467) (723, -4579) (884, -4339) (782, -4501))
+CHECK: 2 CS1 segments without live counterpart, 1 live without CS1 source, 0 more than 4 m off the CS1 height, 7 live dead ends CS1 did not have ((944, -4288) (808, -4467) (723, -4579) (960, -4266) (976, -4245) (1054, -4142) (782, -4501))
 
 ![](interchange_08_662_-4494.svg)
 
 | CS1 segment | prefab | elevation | in our files | live | converter fate |
 |---|---|---:|---|---|---|
-| 15883 | USRP 4L Interstate | 0 | no | missing | imported |
+| 1403 | USRP 4L Interstate | 0 | no | missing | imported |
+| 35648 | USRP 3L Interstate E | 48 | yes | missing | imported |
 
 | live segment | prefab | elevation |
 |---|---|---:|
-| 109218:13 | Highway Oneway - 3 lanes | 0.0 |
+| 1667685:1 | Highway Oneway - 4 lanes | 0.0 |
 
 | CS1 segment | prefab | CS1 y | live | live − CS1 m |
 |---|---|---:|---|---:|
-| 14574 | USRP 3L Interstate E | 140.3 | 65190:3 Highway Oneway - 3 lanes | 37.7 |
-| 17897 | USRP 3L Interstate E | 139.3 | 65379:5 Highway Oneway - 3 lanes | 13.1 |
-| 31688 | USRP 3L Interstate E | 139.4 | 64698:33 Highway Oneway - 3 lanes | 12.8 |
-| 35648 | USRP 3L Interstate E | 140.3 | 65100:33 Highway Oneway - 3 lanes | 38.0 |

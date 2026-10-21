@@ -1,0 +1,558 @@
+{
+  "stamp": "20261021T1141",
+  "allPass": false,
+  "checks": [
+    {
+      "name": "current climate is the edited copy",
+      "ok": true,
+      "detail": "TemperateWaterwayPassClimate (copy)"
+    },
+    {
+      "name": "daysPerYear is 12",
+      "ok": true,
+      "detail": "12"
+    },
+    {
+      "name": "temperature curve rebuilt (288 keys)",
+      "ok": false,
+      "detail": "289"
+    },
+    {
+      "name": "curve noon month 1",
+      "ok": true,
+      "detail": "11.8 °C (design 9.3 ±7)"
+    },
+    {
+      "name": "curve noon month 2",
+      "ok": true,
+      "detail": "14.4 °C (design 12 ±7)"
+    },
+    {
+      "name": "curve noon month 3",
+      "ok": true,
+      "detail": "14.1 °C (design 14.7 ±7)"
+    },
+    {
+      "name": "curve noon month 4",
+      "ok": true,
+      "detail": "18.0 °C (design 18.3 ±7)"
+    },
+    {
+      "name": "curve noon month 5",
+      "ok": true,
+      "detail": "25.7 °C (design 22 ±7)"
+    },
+    {
+      "name": "curve noon month 6",
+      "ok": true,
+      "detail": "26.4 °C (design 25.6 ±7)"
+    },
+    {
+      "name": "curve noon month 7",
+      "ok": true,
+      "detail": "28.6 °C (design 28 ±7)"
+    },
+    {
+      "name": "curve noon month 8",
+      "ok": true,
+      "detail": "27.3 °C (design 24.2 ±7)"
+    },
+    {
+      "name": "curve noon month 9",
+      "ok": true,
+      "detail": "23.3 °C (design 20.5 ±7)"
+    },
+    {
+      "name": "curve noon month 10",
+      "ok": true,
+      "detail": "17.0 °C (design 16.8 ±7)"
+    },
+    {
+      "name": "curve noon month 11",
+      "ok": true,
+      "detail": "14.3 °C (design 13 ±7)"
+    },
+    {
+      "name": "curve noon month 12",
+      "ok": true,
+      "detail": "10.5 °C (design 9.7 ±7)"
+    },
+    {
+      "name": "no plains snow possible in month 4",
+      "ok": true,
+      "detail": "midnight 2.6 °C, precip 0.03"
+    },
+    {
+      "name": "no plains snow possible in month 5",
+      "ok": true,
+      "detail": "midnight 6.8 °C, precip 0.00"
+    },
+    {
+      "name": "no plains snow possible in month 6",
+      "ok": true,
+      "detail": "midnight 12.2 °C, precip 0.00"
+    },
+    {
+      "name": "no plains snow possible in month 7",
+      "ok": true,
+      "detail": "midnight 11.0 °C, precip 0.19"
+    },
+    {
+      "name": "no plains snow possible in month 8",
+      "ok": true,
+      "detail": "midnight 11.3 °C, precip 0.05"
+    },
+    {
+      "name": "no plains snow possible in month 9",
+      "ok": true,
+      "detail": "midnight 10.9 °C, precip 0.00"
+    },
+    {
+      "name": "no plains snow possible in month 10",
+      "ok": true,
+      "detail": "midnight 1.5 °C, precip 0.00"
+    }
+  ],
+  "snowOutlook": [
+    {
+      "month": 1,
+      "midnight": -1.9,
+      "noon": 11.8,
+      "precipitation": 0,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 2,
+      "midnight": -3.3,
+      "noon": 14.4,
+      "precipitation": 0.01,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 3,
+      "midnight": -0.1,
+      "noon": 14.1,
+      "precipitation": 0,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 4,
+      "midnight": 2.6,
+      "noon": 18,
+      "precipitation": 0.03,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 5,
+      "midnight": 6.8,
+      "noon": 25.7,
+      "precipitation": 0,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 6,
+      "midnight": 12.2,
+      "noon": 26.4,
+      "precipitation": 0,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 7,
+      "midnight": 11,
+      "noon": 28.6,
+      "precipitation": 0.19,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 8,
+      "midnight": 11.3,
+      "noon": 27.3,
+      "precipitation": 0.05,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 9,
+      "midnight": 10.9,
+      "noon": 23.3,
+      "precipitation": 0,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 10,
+      "midnight": 1.5,
+      "noon": 17,
+      "precipitation": 0,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 11,
+      "midnight": 5.2,
+      "noon": 14.3,
+      "precipitation": 0,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    },
+    {
+      "month": 12,
+      "midnight": -1.9,
+      "noon": 10.5,
+      "precipitation": 0,
+      "plainsSnowPossible": false,
+      "peakSnowPossible": false
+    }
+  ],
+  "rows": [
+    {
+      "id": "S1",
+      "month": 1,
+      "hour": 12,
+      "expect": 9.3,
+      "snowAllowed": true,
+      "settle": 120,
+      "note": "mid-winter noon",
+      "date": 0.0417,
+      "live": {
+        "temperature": 11.7748089,
+        "temperatureOverridden": false,
+        "precipitation": 0,
+        "fog": 0,
+        "aurora": 0,
+        "isRaining": false,
+        "isSnowing": false,
+        "isPrecipitating": false,
+        "season": "SeasonSummer",
+        "freezingTemperature": 0,
+        "averageTemperature": 10.9817848,
+        "temperatureBaseHeight": 142.5899,
+        "classification": "Few"
+      },
+      "sample": {
+        "temperature": 11.77,
+        "precipitation": 0,
+        "cloudiness": 0.156,
+        "aurora": 0,
+        "fog": 0
+      },
+      "shots": {
+        "A": "S1-m1-h12-A.png",
+        "C": "S1-m1-h12-C.png"
+      },
+      "pass": true,
+      "fails": []
+    },
+    {
+      "id": "S2",
+      "month": 1,
+      "hour": 6,
+      "expect": 2.1,
+      "snowAllowed": true,
+      "settle": 120,
+      "note": "mid-winter dawn",
+      "date": 0.0208,
+      "live": {
+        "temperature": 4.767419,
+        "temperatureOverridden": false,
+        "precipitation": 0.006083649,
+        "fog": 0,
+        "aurora": 0,
+        "isRaining": true,
+        "isSnowing": false,
+        "isPrecipitating": true,
+        "season": "SeasonSummer",
+        "freezingTemperature": 0,
+        "averageTemperature": 10.9817848,
+        "temperatureBaseHeight": 142.5899,
+        "classification": "Scattered"
+      },
+      "sample": {
+        "temperature": 4.77,
+        "precipitation": 0.006,
+        "cloudiness": 0.268,
+        "aurora": 0,
+        "fog": 0
+      },
+      "shots": {
+        "A": "S2-m1-h6-A.png",
+        "C": "S2-m1-h6-C.png"
+      },
+      "pass": true,
+      "fails": []
+    },
+    {
+      "id": "S3",
+      "month": 3,
+      "hour": 12,
+      "expect": 14.7,
+      "snowAllowed": true,
+      "settle": 20,
+      "note": "early spring",
+      "date": 0.2083,
+      "live": {
+        "temperature": 14.05111,
+        "temperatureOverridden": false,
+        "precipitation": 0,
+        "fog": 0,
+        "aurora": 0,
+        "isRaining": false,
+        "isSnowing": false,
+        "isPrecipitating": false,
+        "season": "SeasonSummer",
+        "freezingTemperature": 0,
+        "averageTemperature": 10.9817848,
+        "temperatureBaseHeight": 142.5899,
+        "classification": "Scattered"
+      },
+      "sample": {
+        "temperature": 14.05,
+        "precipitation": 0,
+        "cloudiness": 0.417,
+        "aurora": 0,
+        "fog": 0
+      },
+      "shots": {
+        "A": "S3-m3-h12-A.png",
+        "C": "S3-m3-h12-C.png"
+      },
+      "pass": true,
+      "fails": []
+    },
+    {
+      "id": "S4",
+      "month": 5,
+      "hour": 12,
+      "expect": 22,
+      "snowAllowed": false,
+      "settle": 20,
+      "note": "late spring",
+      "date": 0.375,
+      "live": {
+        "temperature": 25.7139511,
+        "temperatureOverridden": false,
+        "precipitation": 0,
+        "fog": 0,
+        "aurora": 0,
+        "isRaining": false,
+        "isSnowing": false,
+        "isPrecipitating": false,
+        "season": "SeasonSummer",
+        "freezingTemperature": 0,
+        "averageTemperature": 10.9817848,
+        "temperatureBaseHeight": 142.5899,
+        "classification": "Few"
+      },
+      "sample": {
+        "temperature": 25.71,
+        "precipitation": 0,
+        "cloudiness": 0.147,
+        "aurora": 0,
+        "fog": 0
+      },
+      "shots": {
+        "A": "S4-m5-h12-A.png",
+        "C": "S4-m5-h12-C.png"
+      },
+      "pass": true,
+      "fails": []
+    },
+    {
+      "id": "S5",
+      "month": 7,
+      "hour": 12,
+      "expect": 28,
+      "snowAllowed": false,
+      "settle": 20,
+      "note": "midsummer noon",
+      "date": 0.5417,
+      "live": {
+        "temperature": 28.5654163,
+        "temperatureOverridden": false,
+        "precipitation": 0.189868391,
+        "fog": 0,
+        "aurora": 0,
+        "isRaining": true,
+        "isSnowing": false,
+        "isPrecipitating": true,
+        "season": "SeasonSummer",
+        "freezingTemperature": 0,
+        "averageTemperature": 10.9817848,
+        "temperatureBaseHeight": 142.5899,
+        "classification": "Broken"
+      },
+      "sample": {
+        "temperature": 28.57,
+        "precipitation": 0.19,
+        "cloudiness": 0.484,
+        "aurora": 0,
+        "fog": 0
+      },
+      "shots": {
+        "A": "S5-m7-h12-A.png",
+        "C": "S5-m7-h12-C.png"
+      },
+      "pass": true,
+      "fails": []
+    },
+    {
+      "id": "S6",
+      "month": 7,
+      "hour": 20,
+      "expect": 14.9,
+      "snowAllowed": false,
+      "settle": 20,
+      "note": "summer evening (fog possible)",
+      "date": 0.5694,
+      "live": {
+        "temperature": 16.9737015,
+        "temperatureOverridden": false,
+        "precipitation": 0.07386982,
+        "fog": 0.58,
+        "aurora": 0,
+        "isRaining": true,
+        "isSnowing": false,
+        "isPrecipitating": true,
+        "season": "SeasonSummer",
+        "freezingTemperature": 0,
+        "averageTemperature": 10.9817848,
+        "temperatureBaseHeight": 142.5899,
+        "classification": "Scattered"
+      },
+      "sample": {
+        "temperature": 16.97,
+        "precipitation": 0.074,
+        "cloudiness": 0.417,
+        "aurora": 0,
+        "fog": 0.58
+      },
+      "shots": {
+        "A": "S6-m7-h20-A.png",
+        "C": "S6-m7-h20-C.png"
+      },
+      "pass": true,
+      "fails": []
+    },
+    {
+      "id": "S7",
+      "month": 9,
+      "hour": 12,
+      "expect": 20.5,
+      "snowAllowed": false,
+      "settle": 20,
+      "note": "early autumn",
+      "date": 0.7083,
+      "live": {
+        "temperature": 23.281395,
+        "temperatureOverridden": false,
+        "precipitation": 0,
+        "fog": 0,
+        "aurora": 0,
+        "isRaining": false,
+        "isSnowing": false,
+        "isPrecipitating": false,
+        "season": "SeasonSummer",
+        "freezingTemperature": 0,
+        "averageTemperature": 10.9817848,
+        "temperatureBaseHeight": 142.5899,
+        "classification": "Few"
+      },
+      "sample": {
+        "temperature": 23.28,
+        "precipitation": 0,
+        "cloudiness": 0.064,
+        "aurora": 0,
+        "fog": 0
+      },
+      "shots": {
+        "A": "S7-m9-h12-A.png",
+        "C": "S7-m9-h12-C.png"
+      },
+      "pass": true,
+      "fails": []
+    },
+    {
+      "id": "S8",
+      "month": 11,
+      "hour": 12,
+      "expect": 13,
+      "snowAllowed": false,
+      "settle": 20,
+      "note": "late autumn",
+      "date": 0.875,
+      "live": {
+        "temperature": 14.2665358,
+        "temperatureOverridden": false,
+        "precipitation": 0,
+        "fog": 0,
+        "aurora": 0,
+        "isRaining": false,
+        "isSnowing": false,
+        "isPrecipitating": false,
+        "season": "SeasonSummer",
+        "freezingTemperature": 0,
+        "averageTemperature": 10.9817848,
+        "temperatureBaseHeight": 142.5899,
+        "classification": "Few"
+      },
+      "sample": {
+        "temperature": 14.27,
+        "precipitation": 0,
+        "cloudiness": 0.216,
+        "aurora": 0,
+        "fog": 0
+      },
+      "shots": {
+        "A": "S8-m11-h12-A.png",
+        "C": "S8-m11-h12-C.png"
+      },
+      "pass": true,
+      "fails": []
+    },
+    {
+      "id": "S9",
+      "month": 12,
+      "hour": 12,
+      "expect": 9.7,
+      "snowAllowed": true,
+      "settle": 120,
+      "note": "early winter",
+      "date": 0.9583,
+      "live": {
+        "temperature": 10.4814682,
+        "temperatureOverridden": false,
+        "precipitation": 0,
+        "fog": 0,
+        "aurora": 0,
+        "isRaining": false,
+        "isSnowing": false,
+        "isPrecipitating": false,
+        "season": "SeasonSummer",
+        "freezingTemperature": 0,
+        "averageTemperature": 10.9817848,
+        "temperatureBaseHeight": 142.5899,
+        "classification": "Few"
+      },
+      "sample": {
+        "temperature": 10.48,
+        "precipitation": 0,
+        "cloudiness": 0.237,
+        "aurora": 0,
+        "fog": 0
+      },
+      "shots": {
+        "A": "S9-m12-h12-A.png",
+        "C": "S9-m12-h12-C.png"
+      },
+      "pass": true,
+      "fails": []
+    }
+  ]
+}
