@@ -1,18 +1,20 @@
 namespace NetConverter;
 
 /// <summary>
-/// Round 34 (owner, A-v9 shot 24: the covered road): the CS1 JP Rock shed (11 `rock_c` PO pieces, a ~440 m rock-faced gallery over the 4-lane National
-/// Road at x −6453…−6245, z 677…1069) has no CS2 asset (bridges/ROCK-SHED.md: no rock shed, gallery or open-side tunnel net), so it is built as a ConcreteSet01
-/// gallery along the CS1 road line, one undoable import (`rock-shed`), absolute y, no sink. All ConcreteSet01 pivots are centre-bottom (boundsMin y 0).
-/// - roof: `BasePlateConcrete32` (32 × 0.2 × 32 m) bays centred over the road at road y + 6 m, each bay at its own height along the grade; where two bays
-///   would step more than 1 m, two `BasePlateConcrete16` halves instead;
-/// - valley side: `Pillar2x8` under each slab edge (top at the slab underside), `Pillar2x16` where the terrain there is more than 8 m below the slab;
-/// - hill side: `Wall32x16` (32 × 16 × 1 m) from road level, between slab and terrain;
-/// - the 11 `rock_c` positions: a `CliffRock5` on top of the wall line at each, the rock face of the CS1 shed.
+/// Round 34c (owner: "the covered road … should be custom made out of pylon props"): the CS1 JP Rock shed (11 `rock_c` PO pieces, a ~440 m gallery of rock
+/// slabs cantilevered over the 4-lane National Road at x −6453…−6245, z 677…1069, held by dark posts on the valley edge) rebuilt from pylon props, one
+/// undoable import (`rock-shed`), absolute y, no sink (next-run/pylon-props.txt for the bounds):
+/// - posts: Island-Type Bridge Pier `ITBP_Single-Sided Beam 01` (15.2 × 21.5 × 4 m, an L-shaped post with a one-sided cantilever, pivot at the post top,
+///   beam toward local +x up to 13.2 m) every 16 m on the valley edge, beam pointing uphill over the road, post top at road y + 6.5 m. Where the road is
+///   wider than the cantilever reaches, `ITBP_Pillar Median 01` (27 m T-pier, pivot at the top) on the centreline instead. Variants 02–05 are unmeasured,
+///   so 01 throughout; the 21.5 m post goes into the slope where the valley is shallower.
+/// - roof: rock slabs resting on the beams at road y + 7 m, long axis along the road, one per 12 m over the whole length (the 11 CS1 positions
+///   duplicated): `CliffRock6` (60.7 × 8.5 × 55.3 flat slab, min y −1.1), every third a `CliffRock5`.
+/// - back: a `CliffStack` every 32 m on the hill side, base at road level, closing the gallery with rock.
 /// </summary>
 public static class RockShed
 {
-    public const double Bay = 32, Clear = 6;
+    public const double PostStep = 16, SlabStep = 12, PostTop = 6.5, SlabBase = 7, BeamReach = 13.2, PostLength = 21.5;
 
     public static (List<PlacedObject> Objects, string Log) Build(List<PoStructures.Row> rows, IEnumerable<OutEdge> edges, Func<double, double, double>? terrainTrue, double heightFactor)
     {
@@ -37,51 +39,46 @@ public static class RockShed
         (double X, double Z, double Y, double Tx, double Tz) At(double s) => along.MinBy(q => Math.Abs(q.S - s)).P;
         double half = FootprintShift.Cs2Half(road[0]);
         double Terr(double x, double z) => terrainTrue != null ? terrainTrue(x, z) * heightFactor : double.MinValue;
-        // Which side is uphill (the same along the shed: the hillside of the canyon).
-        var m0 = At(al / 2); double nx = -m0.Tz, nz = m0.Tx;
+        var m0 = At(al / 2); double nx = -m0.Tz, nz = m0.Tx;   // uphill normal
         if (terrainTrue != null && Terr(m0.X + nx * 30, m0.Z + nz * 30) < Terr(m0.X - nx * 30, m0.Z - nz * 30)) { nx = -nx; nz = -nz; }
         double Yaw(double tx, double tz) => ((Math.Atan2(tx, tz) * 180 / Math.PI) % 360 + 360) % 360;
-        int slabs = 0, halves = 0, pillars = 0, walls = 0, k2 = 0;
         PlacedObject O(string id, string prefab, double x, double z, double y, double yaw, string note) =>
-            new(id, prefab, "object", Math.Round(x, 2), Math.Round(z, 2), Math.Round(y, 2), Math.Round(((yaw % 360) + 360) % 360, 1), "JP Rock shed stand-in", note);
-        void Pillar(double s, double slabY)
+            new(id, prefab, "object", Math.Round(x, 2), Math.Round(z, 2), Math.Round(y, 2), Math.Round(((yaw % 360) + 360) % 360, 1), "JP Rock shed (pylon props)", note);
+        // Posts: the beam's local +x has to point uphill: local +x = (cos r, −sin r) in (x, z), so r = atan2(−nz, nx).
+        double beamYaw = Math.Atan2(-nz, nx) * 180 / Math.PI;
+        bool median = 2 * half + 1 > BeamReach;
+        int posts = 0, floating = 0, sunk = 0;
+        for (double s = 0; s <= al + 0.01; s += PostStep)
         {
-            var c = At(s); double px = c.X - nx * (half + 1), pz = c.Z - nz * (half + 1), under = slabY;
-            bool tall = Terr(px, pz) < under - 8;
-            res.Add(O($"shed_pillar_{++pillars}", tall ? "Pillar2x16" : "Pillar2x8", px, pz, under - (tall ? 16 : 8), Yaw(c.Tx, c.Tz), "valley-side column under the roof edge"));
-        }
-        double? prevY = null;
-        for (double s = 0; s < al; s += Bay)
-        {
-            var c = At(s + Bay / 2); double y = c.Y + Clear;
-            bool step = prevY is { } py && Math.Abs(y - py) > 1;
-            k2++;
-            if (!step)
+            var c = At(s); double top = c.Y + PostTop;
+            if (median)
             {
-                res.Add(O($"shed_roof_{k2}", "BasePlateConcrete32", c.X, c.Z, y, Yaw(c.Tx, c.Tz), "roof bay 32 m at road + 6 m"));
-                slabs++;
+                res.Add(O($"shed_post_{++posts}", "ITBP_Pillar Median 01", c.X, c.Z, top, Yaw(c.Tx, c.Tz) + 90, "T-pier on the centreline (road wider than the cantilever)"));
+                double gap = Terr(c.X, c.Z) - (top - PostLength); if (gap < -1) floating++; else if (gap > 0.5) sunk++;
             }
             else
-                foreach (var hs in new[] { s + Bay / 4, s + 3 * Bay / 4 })
-                {
-                    var h = At(hs);
-                    res.Add(O($"shed_roof_{k2}_{(hs < s + Bay / 2 ? "a" : "b")}", "BasePlateConcrete16", h.X, h.Z, h.Y + Clear, Yaw(h.Tx, h.Tz), "roof half bay 16 m (step > 1 m)"));
-                    halves++;
-                }
-            prevY = y;
-            Pillar(s, At(s).Y + Clear);
-            res.Add(O($"shed_wall_{k2}", "Wall32x16", c.X + nx * (half + 1), c.Z + nz * (half + 1), c.Y, Yaw(c.Tx, c.Tz) - 90, "hill-side wall from road level (32 m side along the road)"));
-            walls++;
+            {
+                double px = c.X - nx * (half + 1), pz = c.Z - nz * (half + 1);
+                res.Add(O($"shed_post_{++posts}", "ITBP_Single-Sided Beam 01", px, pz, top, beamYaw, "valley-edge post, beam over the road toward the hill"));
+                double gap = Terr(px, pz) - (top - PostLength); if (gap < -1) floating++; else if (gap > 0.5) sunk++;
+            }
         }
-        Pillar(al, At(al).Y + Clear);
-        // The rock face: a cliff piece on top of the wall line at each CS1 rock_c position.
-        int rocks = 0;
-        foreach (var r in shed)
+        // Roof slabs: long axis (local x) along the road: local +x = (cos r, −sin r) = (tx, tz) → r = atan2(−tz, tx).
+        int slabs = 0;
+        for (double s = 0; s <= al + 0.01; s += SlabStep)
         {
-            var c = At(S(r.X, r.Z));
-            res.Add(O($"shed_rock_{r.Id}", "CliffRock5", c.X + nx * (half + 4), c.Z + nz * (half + 4), c.Y + Clear, Yaw(c.Tx, c.Tz), $"rock face at CS1 rock_c {r.Id}, on the wall line"));
-            rocks++;
+            var c = At(s); slabs++;
+            string prefab = slabs % 3 == 0 ? "CliffRock5" : "CliffRock6";
+            double minY = prefab == "CliffRock6" ? -1.10 : -2.57;
+            res.Add(O($"shed_slab_{slabs}", prefab, c.X + nx * 2, c.Z + nz * 2, c.Y + SlabBase - minY, Math.Atan2(-c.Tz, c.Tx) * 180 / Math.PI, "rock slab on the beams, long axis along the road"));
         }
-        return (res, FormattableString.Invariant($"rock shed gallery over {al:F0} m of {string.Join(", ", road.Select(e => e.Id))}: {slabs} BasePlateConcrete32 + {halves} BasePlateConcrete16 roof at road + 6 m, {pillars} valley-side pillars, {walls} Wall32x16, {rocks} CliffRock5 at the rock_c positions"));
+        // Back: CliffStack (60.97 × 48.59 × 67.9, min y −21.62) on the hill side every 32 m, base at road level.
+        int backs = 0;
+        for (double s = 0; s <= al + 0.01; s += 32)
+        {
+            var c = At(s);
+            res.Add(O($"shed_back_{++backs}", "CliffStack", c.X + nx * (half + 18), c.Z + nz * (half + 18), c.Y + 21.62, Math.Atan2(-c.Tz, c.Tx) * 180 / Math.PI, "hill-side rock closing the gallery"));
+        }
+        return (res, FormattableString.Invariant($"rock shed from pylon props over {al:F0} m of {string.Join(", ", road.Select(e => e.Id))}: {posts} {(median ? "ITBP_Pillar Median 01 on the centreline (road " + (2 * half).ToString("F0") + " m wider than the 13.2 m cantilever)" : "ITBP_Single-Sided Beam 01")} (post base vs terrain: {floating} short by > 1 m, {sunk} sunk > 0.5 m), {slabs} roof slabs (CliffRock6 / CliffRock5) at road + 7 m, {backs} CliffStack on the hill side"));
     }
 }
