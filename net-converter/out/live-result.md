@@ -597,3 +597,32 @@ The pieces between them are built, so the course alternates between built and mi
 **For A-v12:**
 - Check the nine ids above in the post-network graph. A piece still missing at 2 m clearance would point to something else: pillars of the earlier carriageway, or the game's own merge of collinear pieces.
 - **For the bridge session:** `DescribeOverlap` should not skip same-prefab segments that are not the course's own collinear neighbours. Then a parallel carriageway overlap is named instead of reported as a bare point-check failure.
+
+## Round 37: the ConcreteSet01 avalanche gallery (owner's A-v11 review, next-run/shots-a11/fix/24-01..07)
+
+**What was wrong:**
+- The yaw sign was right. In 24-01 the asymmetric Wall32x16 pieces and the 62.5 m plate's edges run along the road, which matches the bridge's `quaternion.RotateY(yaw)` (local +z → (sin, cos)). The yaw is now derived per piece, as asked.
+- The layout was the problem:
+  - The 62.5 m plate is 2.5 times the road strip, so it reached over the cliff and into the hill.
+  - Every plate took the unsmoothed road y at its own centre, positioned by a chord projection instead of along the road. That gave steps, gaps on the outer side of the curve, and mixed 16 / 32 / 62 m sizes.
+  - The 16 m walls stood on the road, so they rose 9.5 m above the roof at 6.5 m. They were 32 m long at a 32 m pitch, which left gaps on the curve.
+  - The rocks were set at road + 2.6 m and showed above the wall and roof.
+
+**New layout** (RockShed.cs, ConcreteSet01 only, all pivot centre-bottom per next-run/concreteset01-bounds.txt):
+- **Placement along the road.** Every piece is placed by its arc length along the road and turned to the road bearing at its centre (walls: the chord of the hill edge between their ends).
+- **One height profile.** The road y is smoothed over 48 m. Roof = profile + 6.5 m; columns, walls and rocks take their heights from it.
+- **Roof.** BasePlateConcrete16 only (no 62.5 m plate), two across:
+  - one slab with its valley edge on the column line, one with its hill edge on the wall;
+  - they overlap in the middle;
+  - a row every 8 m, overlapping 8 m along.
+  - The road really climbs and drops about 10 m under the shed (x1 260 → 270 → 259 → 274 m), and slabs can only turn about Y, so the roof is terraced. The largest step between rows is 1.49 m in x1 (2.98 m at 2×).
+- **Hill-side wall.** Wall32x16 every 16 m (half overlap), top flush with the roof. The rest goes down into the hill cut.
+- **Valley side.** A Pillar2x16 / Pillar2x8 stack every 8 m of road under the slab's valley edge, from the roof underside to the terrain.
+- **Rocks.** The 11 CliffRock5 sit on the terrain 7 m behind the wall, at most roof − 4 m. In x1 they are 7–9 m below the roof.
+
+**Counts** (x1): 110 BasePlateConcrete16, 28 Wall32x16, 55 Pillar2x8, 1 Pillar2x16, 11 CliffRock5. The extent is x −6467 … −6233, z 668 … 1075, y 252 … 279.
+
+**Bounds check** (written into stats.md):
+- The roof covers 99.9 % of the road strip from the column line to the wall, sampled at 1 m. The 13 open samples are at the two ends.
+- The wall covers 100 % of the hill edge.
+- Not checked: the CliffRock5 height. If a rock still shows above the wall, lower its y or move it further back.
