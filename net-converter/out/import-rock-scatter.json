@@ -79416,7 +79416,8 @@
       "prefab": "Rock04",
       "x": -6404.7,
       "z": 622.82,
-      "rotation": 0.8,
+      "y": 419.31,
+      "rotation": 156.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79425,7 +79426,8 @@
       "prefab": "Rock10",
       "x": -6242.38,
       "z": 630.08,
-      "rotation": 229.8,
+      "y": 505.65,
+      "rotation": 168.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79506,7 +79508,8 @@
       "prefab": "Rock03",
       "x": -6451.59,
       "z": 637.72,
-      "rotation": 44.8,
+      "y": 482.9,
+      "rotation": 167,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79515,7 +79518,8 @@
       "prefab": "Rock18",
       "x": -6439.09,
       "z": 638.93,
-      "rotation": 297.6,
+      "y": 466.06,
+      "rotation": 158.2,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79524,7 +79528,8 @@
       "prefab": "Rock04",
       "x": -6421.74,
       "z": 637.24,
-      "rotation": 64.1,
+      "y": 440.18,
+      "rotation": 157.3,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79533,7 +79538,8 @@
       "prefab": "Rock02",
       "x": -6352.5,
       "z": 637.98,
-      "rotation": 342.3,
+      "y": 407.95,
+      "rotation": 242.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79605,7 +79611,8 @@
       "prefab": "Boulder07",
       "x": -6456.52,
       "z": 649.25,
-      "rotation": 148.1,
+      "y": 481.5,
+      "rotation": 62.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79614,7 +79621,8 @@
       "prefab": "Rock01",
       "x": -6351.69,
       "z": 651.53,
-      "rotation": 128.4,
+      "y": 412.36,
+      "rotation": 245.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79677,7 +79685,8 @@
       "prefab": "Rock01",
       "x": -6447.51,
       "z": 660.22,
-      "rotation": 34.4,
+      "y": 461.34,
+      "rotation": 55.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79686,7 +79695,8 @@
       "prefab": "Rock06",
       "x": -6426,
       "z": 656.02,
-      "rotation": 235,
+      "y": 431.15,
+      "rotation": 153.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79803,16 +79813,8 @@
       "prefab": "Rock30",
       "x": -6350.18,
       "z": 668.21,
-      "rotation": 4.8,
-      "kind": "prop",
-      "cs1": "rock scatter"
-    },
-    {
-      "id": "scatter10182",
-      "prefab": "Rock13",
-      "x": -6219.1,
-      "z": 671.42,
-      "rotation": 284.8,
+      "y": 419.11,
+      "rotation": 241,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79929,7 +79931,8 @@
       "prefab": "Rock10",
       "x": -6451.46,
       "z": 679.59,
-      "rotation": 286.3,
+      "y": 448.49,
+      "rotation": 61.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -79938,7 +79941,8 @@
       "prefab": "Rock01",
       "x": -6287.53,
       "z": 679.11,
-      "rotation": 140.4,
+      "y": 519.81,
+      "rotation": 229.8,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80064,7 +80068,8 @@
       "prefab": "Rock06",
       "x": -6488.63,
       "z": 685.3,
-      "rotation": 0.7,
+      "y": 490.85,
+      "rotation": 145.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80127,7 +80132,8 @@
       "prefab": "Rock11",
       "x": -6501.15,
       "z": 692.14,
-      "rotation": 66,
+      "y": 497.44,
+      "rotation": 56.8,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80136,7 +80142,8 @@
       "prefab": "Rock28",
       "x": -6488.5,
       "z": 695.27,
-      "rotation": 26.4,
+      "y": 483.72,
+      "rotation": 143.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80145,7 +80152,8 @@
       "prefab": "Rock22",
       "x": -6345.21,
       "z": 700.53,
-      "rotation": 352.3,
+      "y": 438.09,
+      "rotation": 234.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80217,7 +80225,8 @@
       "prefab": "Rock02",
       "x": -6511.19,
       "z": 705.66,
-      "rotation": 216.3,
+      "y": 498.34,
+      "rotation": 56.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80226,7 +80235,8 @@
       "prefab": "Rock04",
       "x": -6489.24,
       "z": 711.37,
-      "rotation": 185.7,
+      "y": 470.75,
+      "rotation": 145.8,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80235,7 +80245,8 @@
       "prefab": "Rock02",
       "x": -6463.9,
       "z": 709.31,
-      "rotation": 314.4,
+      "y": 439.4,
+      "rotation": 60.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80244,7 +80255,8 @@
       "prefab": "Rock07",
       "x": -6453.46,
       "z": 706.67,
-      "rotation": 135.5,
+      "y": 430.86,
+      "rotation": 53.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80253,7 +80265,8 @@
       "prefab": "Rock05",
       "x": -6374.81,
       "z": 709.4,
-      "rotation": 88.3,
+      "y": 415.83,
+      "rotation": 247.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80262,7 +80275,8 @@
       "prefab": "Rock04",
       "x": -6329.66,
       "z": 708.81,
-      "rotation": 324.3,
+      "y": 459.35,
+      "rotation": 325.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80271,7 +80285,8 @@
       "prefab": "Rock09",
       "x": -6203.93,
       "z": 709.86,
-      "rotation": 241.3,
+      "y": 595.46,
+      "rotation": 188.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80280,7 +80295,8 @@
       "prefab": "Rock28",
       "x": -6196.19,
       "z": 710.8,
-      "rotation": 94.7,
+      "y": 596.58,
+      "rotation": 268.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80379,7 +80395,8 @@
       "prefab": "Rock01",
       "x": -6370.65,
       "z": 719.89,
-      "rotation": 53.1,
+      "y": 426.88,
+      "rotation": 243,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80388,7 +80405,8 @@
       "prefab": "Rock04",
       "x": -6359.82,
       "z": 715.69,
-      "rotation": 326.3,
+      "y": 434.49,
+      "rotation": 323.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80397,7 +80415,8 @@
       "prefab": "Rock08",
       "x": -6187.83,
       "z": 715.63,
-      "rotation": 91.3,
+      "y": 599.06,
+      "rotation": 163.8,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80478,7 +80497,8 @@
       "prefab": "Rock20",
       "x": -6509.41,
       "z": 727.68,
-      "rotation": 80.1,
+      "y": 482.89,
+      "rotation": 150.2,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80487,7 +80507,8 @@
       "prefab": "Rock08",
       "x": -6478.12,
       "z": 731.76,
-      "rotation": 159,
+      "y": 440.78,
+      "rotation": 62.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80496,16 +80517,8 @@
       "prefab": "Rock03",
       "x": -6342.16,
       "z": 729.91,
-      "rotation": 78.8,
-      "kind": "prop",
-      "cs1": "rock scatter"
-    },
-    {
-      "id": "scatter10262",
-      "prefab": "Rock06",
-      "x": -6259.41,
-      "z": 724.98,
-      "rotation": 357,
+      "y": 461.46,
+      "rotation": 326,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80514,7 +80527,8 @@
       "prefab": "Rock27",
       "x": -6185.19,
       "z": 728.95,
-      "rotation": 349.3,
+      "y": 605.59,
+      "rotation": 235.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80568,7 +80582,8 @@
       "prefab": "Rock12",
       "x": -6506.55,
       "z": 734.4,
-      "rotation": 90.1,
+      "y": 474.8,
+      "rotation": 62.3,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80577,7 +80592,8 @@
       "prefab": "Rock03",
       "x": -6390.48,
       "z": 737.18,
-      "rotation": 100.1,
+      "y": 416.96,
+      "rotation": 340.2,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80586,7 +80602,8 @@
       "prefab": "Rock09",
       "x": -6371.7,
       "z": 736.76,
-      "rotation": 186.5,
+      "y": 435.96,
+      "rotation": 236.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80622,7 +80639,8 @@
       "prefab": "Rock08",
       "x": -6368.12,
       "z": 744.72,
-      "rotation": 84.5,
+      "y": 443.93,
+      "rotation": 238.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80631,7 +80649,8 @@
       "prefab": "Rock02",
       "x": -6354.71,
       "z": 745.12,
-      "rotation": 175,
+      "y": 458.69,
+      "rotation": 237.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80640,7 +80659,8 @@
       "prefab": "Rock09",
       "x": -6249.21,
       "z": 751.65,
-      "rotation": 176.8,
+      "y": 634.21,
+      "rotation": 114.2,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80649,7 +80669,8 @@
       "prefab": "Rock01",
       "x": -6233.73,
       "z": 746.29,
-      "rotation": 86.1,
+      "y": 617.06,
+      "rotation": 129.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80703,7 +80724,8 @@
       "prefab": "Rock01",
       "x": -6510.46,
       "z": 752.17,
-      "rotation": 84,
+      "y": 469.26,
+      "rotation": 66.2,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80712,7 +80734,8 @@
       "prefab": "Rock01",
       "x": -6493.4,
       "z": 757.7,
-      "rotation": 200.4,
+      "y": 445.4,
+      "rotation": 70.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80721,7 +80744,8 @@
       "prefab": "Rock04",
       "x": -6242.19,
       "z": 759.28,
-      "rotation": 98.8,
+      "y": 631,
+      "rotation": 197.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80730,7 +80754,8 @@
       "prefab": "Rock06",
       "x": -6217.85,
       "z": 760.65,
-      "rotation": 89.6,
+      "y": 618.44,
+      "rotation": 224.8,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80766,7 +80791,8 @@
       "prefab": "Rock07",
       "x": -6482.58,
       "z": 762.53,
-      "rotation": 161.1,
+      "y": 434.54,
+      "rotation": 73.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80775,7 +80801,8 @@
       "prefab": "Rock06",
       "x": -6397.31,
       "z": 765.3,
-      "rotation": 309.8,
+      "y": 421.31,
+      "rotation": 330.3,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80784,7 +80811,8 @@
       "prefab": "Rock16",
       "x": -6377.56,
       "z": 764.54,
-      "rotation": 242.2,
+      "y": 446.82,
+      "rotation": 239,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80811,7 +80839,8 @@
       "prefab": "Rock16",
       "x": -6518.86,
       "z": 773.7,
-      "rotation": 279.4,
+      "y": 465.57,
+      "rotation": 53.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80820,7 +80849,8 @@
       "prefab": "Rock25",
       "x": -6498.24,
       "z": 781.87,
-      "rotation": 112.3,
+      "y": 442.71,
+      "rotation": 71.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80829,7 +80859,8 @@
       "prefab": "Rock26",
       "x": -6395.43,
       "z": 781.08,
-      "rotation": 266.7,
+      "y": 436.96,
+      "rotation": 232.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80838,7 +80869,8 @@
       "prefab": "Rock04",
       "x": -6245.66,
       "z": 780.79,
-      "rotation": 16.5,
+      "y": 625.08,
+      "rotation": 38.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80892,7 +80924,8 @@
       "prefab": "Rock01",
       "x": -6511.1,
       "z": 790.26,
-      "rotation": 240,
+      "y": 450.68,
+      "rotation": 67.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80901,7 +80934,8 @@
       "prefab": "Rock19",
       "x": -6480.65,
       "z": 788.98,
-      "rotation": 258.8,
+      "y": 424.9,
+      "rotation": 62.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80910,7 +80944,8 @@
       "prefab": "Rock02",
       "x": -6232.88,
       "z": 791.17,
-      "rotation": 340.4,
+      "y": 624.63,
+      "rotation": 0.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -80964,7 +80999,8 @@
       "prefab": "Rock27",
       "x": -6252.46,
       "z": 799.03,
-      "rotation": 221.7,
+      "y": 621.28,
+      "rotation": 132.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81054,7 +81090,8 @@
       "prefab": "Rock05",
       "x": -6420.17,
       "z": 809.67,
-      "rotation": 148,
+      "y": 426.67,
+      "rotation": 246,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81126,7 +81163,8 @@
       "prefab": "Rock09",
       "x": -6271.68,
       "z": 812.59,
-      "rotation": 28.9,
+      "y": 620.38,
+      "rotation": 246.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81189,7 +81227,8 @@
       "prefab": "Rock03",
       "x": -6516.79,
       "z": 825.01,
-      "rotation": 127.3,
+      "y": 449.85,
+      "rotation": 176.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81198,6 +81237,7 @@
       "prefab": "Rock04",
       "x": -6362.98,
       "z": 825.98,
+      "y": 538.26,
       "rotation": 82.7,
       "kind": "prop",
       "cs1": "rock scatter"
@@ -81207,7 +81247,8 @@
       "prefab": "Rock02",
       "x": -6256.72,
       "z": 826.39,
-      "rotation": 341.7,
+      "y": 620.54,
+      "rotation": 109,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81279,7 +81320,8 @@
       "prefab": "Rock08",
       "x": -6418.2,
       "z": 832.87,
-      "rotation": 77.8,
+      "y": 442.23,
+      "rotation": 250,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81288,7 +81330,8 @@
       "prefab": "Rock10",
       "x": -6299.19,
       "z": 833,
-      "rotation": 219.8,
+      "y": 612.81,
+      "rotation": 230.8,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81297,7 +81340,8 @@
       "prefab": "Rock26",
       "x": -6269.65,
       "z": 833.32,
-      "rotation": 12.2,
+      "y": 623.19,
+      "rotation": 172,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81306,7 +81350,8 @@
       "prefab": "Rock01",
       "x": -6238.17,
       "z": 840.56,
-      "rotation": 123.5,
+      "y": 617.33,
+      "rotation": 126.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81378,7 +81423,8 @@
       "prefab": "Rock08",
       "x": -6512.5,
       "z": 851.34,
-      "rotation": 88.5,
+      "y": 441.74,
+      "rotation": 83.8,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81387,7 +81433,8 @@
       "prefab": "Rock15",
       "x": -6379.52,
       "z": 845.54,
-      "rotation": 158.4,
+      "y": 535.78,
+      "rotation": 250.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81396,7 +81443,8 @@
       "prefab": "Rock29",
       "x": -6282.18,
       "z": 851.85,
-      "rotation": 102.9,
+      "y": 626.56,
+      "rotation": 222,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81621,16 +81669,8 @@
       "prefab": "Rock01",
       "x": -6418.54,
       "z": 869.76,
-      "rotation": 116.5,
-      "kind": "prop",
-      "cs1": "rock scatter"
-    },
-    {
-      "id": "scatter10394",
-      "prefab": "Rock17",
-      "x": -6343.54,
-      "z": 871.02,
-      "rotation": 15.9,
+      "y": 462.88,
+      "rotation": 241.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81639,7 +81679,8 @@
       "prefab": "Rock01",
       "x": -6284.87,
       "z": 868.57,
-      "rotation": 69.1,
+      "y": 627.72,
+      "rotation": 271.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81765,7 +81806,8 @@
       "prefab": "Rock05",
       "x": -6389.74,
       "z": 872.07,
-      "rotation": 50.6,
+      "y": 533.89,
+      "rotation": 299.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81774,7 +81816,8 @@
       "prefab": "Rock07",
       "x": -6305.97,
       "z": 876.62,
-      "rotation": 282.8,
+      "y": 617.05,
+      "rotation": 270.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -81783,7 +81826,8 @@
       "prefab": "Rock04",
       "x": -6279.15,
       "z": 881.8,
-      "rotation": 350.6,
+      "y": 627.89,
+      "rotation": 38.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82017,7 +82061,8 @@
       "prefab": "Rock04",
       "x": -6453.08,
       "z": 895.62,
-      "rotation": 271.5,
+      "y": 440.04,
+      "rotation": 334.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82026,7 +82071,8 @@
       "prefab": "Rock04",
       "x": -6440.5,
       "z": 894.05,
-      "rotation": 59.9,
+      "y": 453.76,
+      "rotation": 323.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82035,7 +82081,8 @@
       "prefab": "Boulder05",
       "x": -6321.12,
       "z": 901.85,
-      "rotation": 49,
+      "y": 609.51,
+      "rotation": 62.3,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82044,7 +82091,8 @@
       "prefab": "Rock18",
       "x": -6317.97,
       "z": 895.28,
-      "rotation": 49.3,
+      "y": 611.33,
+      "rotation": 33.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82053,7 +82101,8 @@
       "prefab": "Rock30",
       "x": -6279.01,
       "z": 896.97,
-      "rotation": 136.6,
+      "y": 625.84,
+      "rotation": 307.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82242,7 +82291,8 @@
       "prefab": "Rock03",
       "x": -6467.56,
       "z": 913.21,
-      "rotation": 350.4,
+      "y": 435.83,
+      "rotation": 320.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82251,7 +82301,8 @@
       "prefab": "Boulder02",
       "x": -6454.05,
       "z": 916.82,
-      "rotation": 4.8,
+      "y": 451.79,
+      "rotation": 240.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82260,7 +82311,8 @@
       "prefab": "Rock16",
       "x": -6300.09,
       "z": 917.26,
-      "rotation": 122,
+      "y": 616.26,
+      "rotation": 269.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82350,7 +82402,8 @@
       "prefab": "Rock04",
       "x": -6303.23,
       "z": 930.26,
-      "rotation": 169.1,
+      "y": 615.94,
+      "rotation": 339.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82427,20 +82480,12 @@
       "cs1": "rock scatter"
     },
     {
-      "id": "scatter10486",
-      "prefab": "Boulder03",
-      "x": -6370.36,
-      "z": 934.24,
-      "rotation": 241.4,
-      "kind": "prop",
-      "cs1": "rock scatter"
-    },
-    {
       "id": "scatter10487",
       "prefab": "Rock11",
       "x": -6350.68,
       "z": 932.95,
-      "rotation": 215.2,
+      "y": 597.24,
+      "rotation": 250.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82449,7 +82494,8 @@
       "prefab": "Rock02",
       "x": -6329.01,
       "z": 937.07,
-      "rotation": 163.2,
+      "y": 606.58,
+      "rotation": 230.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82458,7 +82504,8 @@
       "prefab": "Rock03",
       "x": -6308.72,
       "z": 932.84,
-      "rotation": 283.7,
+      "y": 613.99,
+      "rotation": 333.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82557,7 +82604,8 @@
       "prefab": "Rock03",
       "x": -6319.8,
       "z": 949.93,
-      "rotation": 234.6,
+      "y": 614.84,
+      "rotation": 314.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82611,7 +82659,8 @@
       "prefab": "Rock08",
       "x": -6470.77,
       "z": 952.5,
-      "rotation": 184.1,
+      "y": 455.64,
+      "rotation": 237.8,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82620,7 +82669,8 @@
       "prefab": "Boulder05",
       "x": -6330,
       "z": 959.09,
-      "rotation": 116.2,
+      "y": 614.31,
+      "rotation": 317.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82773,16 +82823,8 @@
       "prefab": "Boulder06",
       "x": -6468.46,
       "z": 975.77,
-      "rotation": 309.5,
-      "kind": "prop",
-      "cs1": "rock scatter"
-    },
-    {
-      "id": "scatter10528",
-      "prefab": "Rock02",
-      "x": -6392.66,
-      "z": 977.45,
-      "rotation": 298.3,
+      "y": 473.92,
+      "rotation": 234.8,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82980,7 +83022,8 @@
       "prefab": "Rock03",
       "x": -6381.94,
       "z": 1000.23,
-      "rotation": 70.9,
+      "y": 601.55,
+      "rotation": 327.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -82989,7 +83032,8 @@
       "prefab": "Rock09",
       "x": -6350.89,
       "z": 994.07,
-      "rotation": 169,
+      "y": 613.55,
+      "rotation": 274.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83070,7 +83114,8 @@
       "prefab": "Rock05",
       "x": -6329.1,
       "z": 1005.5,
-      "rotation": 82.9,
+      "y": 627.17,
+      "rotation": 268.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83232,7 +83277,8 @@
       "prefab": "Rock03",
       "x": -6386.38,
       "z": 1025.04,
-      "rotation": 244.4,
+      "y": 611.05,
+      "rotation": 113.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83241,7 +83287,8 @@
       "prefab": "Rock08",
       "x": -6192.34,
       "z": 1031.73,
-      "rotation": 22.1,
+      "y": 607.57,
+      "rotation": 54.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83250,7 +83297,8 @@
       "prefab": "Rock30",
       "x": -6180.79,
       "z": 1031.08,
-      "rotation": 211.9,
+      "y": 601.71,
+      "rotation": 49.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83331,7 +83379,8 @@
       "prefab": "Rock09",
       "x": -6472.19,
       "z": 1039.87,
-      "rotation": 190.9,
+      "y": 543.58,
+      "rotation": 255.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83340,7 +83389,8 @@
       "prefab": "Rock08",
       "x": -6378.21,
       "z": 1033.83,
-      "rotation": 114.8,
+      "y": 608.28,
+      "rotation": 304.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83430,7 +83480,8 @@
       "prefab": "Boulder07",
       "x": -6498.66,
       "z": 1051.23,
-      "rotation": 328.9,
+      "y": 487.08,
+      "rotation": 257.3,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83439,7 +83490,8 @@
       "prefab": "Rock02",
       "x": -6351.88,
       "z": 1044.64,
-      "rotation": 275.2,
+      "y": 617.35,
+      "rotation": 239.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83448,7 +83500,8 @@
       "prefab": "Rock08",
       "x": -6181.91,
       "z": 1049.07,
-      "rotation": 202.8,
+      "y": 595.5,
+      "rotation": 65.3,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83520,7 +83573,8 @@
       "prefab": "Rock30",
       "x": -6362.04,
       "z": 1061.74,
-      "rotation": 217.8,
+      "y": 616.67,
+      "rotation": 247.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83529,7 +83583,8 @@
       "prefab": "Rock11",
       "x": -6235.32,
       "z": 1052.58,
-      "rotation": 294,
+      "y": 626.86,
+      "rotation": 108.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83592,16 +83647,8 @@
       "prefab": "Rock19",
       "x": -6487.48,
       "z": 1070.46,
-      "rotation": 204.7,
-      "kind": "prop",
-      "cs1": "rock scatter"
-    },
-    {
-      "id": "scatter10633",
-      "prefab": "Rock23",
-      "x": -6431.07,
-      "z": 1066.98,
-      "rotation": 42.3,
+      "y": 537.7,
+      "rotation": 254.2,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83610,7 +83657,8 @@
       "prefab": "Rock04",
       "x": -6386.47,
       "z": 1071.86,
-      "rotation": 344.9,
+      "y": 608.32,
+      "rotation": 338.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83619,7 +83667,8 @@
       "prefab": "Rock01",
       "x": -6223.36,
       "z": 1063.65,
-      "rotation": 274.9,
+      "y": 621.97,
+      "rotation": 101.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83664,7 +83713,8 @@
       "prefab": "Rock10",
       "x": -6237.98,
       "z": 1081.41,
-      "rotation": 275,
+      "y": 634.35,
+      "rotation": 109.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83673,7 +83723,8 @@
       "prefab": "Rock06",
       "x": -6201.51,
       "z": 1078.52,
-      "rotation": 11.6,
+      "y": 606.32,
+      "rotation": 180.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83772,7 +83823,8 @@
       "prefab": "Rock17",
       "x": -6192.54,
       "z": 1088.59,
-      "rotation": 199.5,
+      "y": 598.66,
+      "rotation": 89.9,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83880,7 +83932,8 @@
       "prefab": "Rock22",
       "x": -6408.71,
       "z": 1098.27,
-      "rotation": 257.1,
+      "y": 605.05,
+      "rotation": 230.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83889,7 +83942,8 @@
       "prefab": "Boulder02",
       "x": -6231.62,
       "z": 1098.35,
-      "rotation": 240.5,
+      "y": 632.33,
+      "rotation": 95.3,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83934,7 +83988,8 @@
       "prefab": "Rock25",
       "x": -6426.62,
       "z": 1108.68,
-      "rotation": 344.1,
+      "y": 597.01,
+      "rotation": 241.4,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83943,7 +83998,8 @@
       "prefab": "Rock06",
       "x": -6198.21,
       "z": 1109.32,
-      "rotation": 116.1,
+      "y": 604.03,
+      "rotation": 181.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -83952,7 +84008,8 @@
       "prefab": "Rock01",
       "x": -6186.83,
       "z": 1107.1,
-      "rotation": 30.1,
+      "y": 594.42,
+      "rotation": 93.5,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -84015,7 +84072,8 @@
       "prefab": "Rock30",
       "x": -6507.98,
       "z": 1118.27,
-      "rotation": 234.6,
+      "y": 527.28,
+      "rotation": 284.2,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -84024,7 +84082,8 @@
       "prefab": "Rock10",
       "x": -6420.24,
       "z": 1116.94,
-      "rotation": 109.3,
+      "y": 607.25,
+      "rotation": 238.8,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -84033,7 +84092,8 @@
       "prefab": "Rock09",
       "x": -6202.46,
       "z": 1120.02,
-      "rotation": 26.6,
+      "y": 608.01,
+      "rotation": 92.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -84042,7 +84102,8 @@
       "prefab": "Rock02",
       "x": -6181.05,
       "z": 1113.46,
-      "rotation": 292.8,
+      "y": 590.55,
+      "rotation": 96.6,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -84132,7 +84193,8 @@
       "prefab": "Rock01",
       "x": -6419.44,
       "z": 1124.8,
-      "rotation": 225.3,
+      "y": 611.79,
+      "rotation": 245.7,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -84141,7 +84203,8 @@
       "prefab": "Rock10",
       "x": -6214.52,
       "z": 1127.36,
-      "rotation": 174.4,
+      "y": 618.46,
+      "rotation": 91.3,
       "kind": "prop",
       "cs1": "rock scatter"
     },
@@ -84150,7 +84213,8 @@
       "prefab": "Rock09",
       "x": -6197.16,
       "z": 1127.45,
-      "rotation": 199.4,
+      "y": 603.96,
+      "rotation": 95.1,
       "kind": "prop",
       "cs1": "rock scatter"
     },

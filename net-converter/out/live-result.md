@@ -693,3 +693,91 @@ Owner: "1. it should be built into the mountain side, not on the mountain. 2. do
 - No wall is left: there is no gap anywhere (0 of 492 1 m samples open along the hill edge). The 30 Wall32x16 of round 40 are gone.
 - Unchanged from round 40: the 492 m CS1 length, bare roof, 3 slabs across per row, 4-plate fascia, Pillar1x8 colonnade every 4 m, tree mask.
 - x1: 550 objects: 427 BasePlateConcrete16 (183 roof + 244 fascia), 123 Pillar1x8.
+
+## Round 41: smooth top, real clearance, open colonnade, rocks at the shed (owner's A-v15 review, dakota-A15b-2048)
+
+Owner: "1. top looks staggered. it should look smooth. 2. cliffs ar positioned really shitty there. wrong height, wrong orientation, etc. 3. some spots all the structure is placed too low. 4. sides should look open with the pillars with gaps. as in the inspo photos. 5. you can see on the screenshot, that CS1 is NOT filled with terrain over the top."
+
+1. **Smooth top:**
+   - **Layout.** One layer of rows every 15.8 m (the 16 m slabs butt with 0.2 m overlap), 3 slabs across, 32 rows. The 4-plate fascia stack is gone.
+   - **Pitch field.** Each slab now carries `"pitch"` in degrees: + means its local +z end up, and local +z is the road's arc-length direction (UNCONFIRMED against the bridge's 0.9.50 note). The pitch is the slope between the row's neighbours.
+   - **Real grade.** The grade is not 2 %. The road climbs and falls up to about 19 % under the shed, so x1 pitches run −6.7° to +10.5° (2×: −13.3° to +20.4°).
+   - **Level fallback.** On a bridge without pitch the rows lie level and shingled: the uphill row is higher and covers the downhill row's uphill edge, with its lip facing downhill. Steps are then up to 2.98 m in x1 at the steep ends. Only pitch makes the top smooth there.
+2. **Rocks at the shed** (x −6520…−6180, z 620…1130):
+   - **Method.** Each piece gets an explicit y (no bridge grounding): mesh bottom 0.75 m under the lowest terrain in its footprint (5 × 5 samples of the prefab bounds). Its yaw puts the long side along the local contour of the cut face. Any piece whose footprint touches a roof slab or the road (axis ± half width + 1 m) is left out.
+   - **import-po-rocks.json:** 7 in the box; 1 re-seated, 6 left out (on the roof or road).
+   - **import-rock-scatter.json:** 124 in the box; 118 re-seated, 6 left out.
+3. **Clearance:**
+   - **Rule.** Each row's underside is ≥ 6.5 m (+ 0.1 m margin) above the highest point of the actual road under its 16 m span (node heights, not the 48 m mean), and never below the smoothed profile + 6.5 m. Pitched rows are raised until their downhill end also clears.
+   - **New file.** Clearance min 6.60 m level and 6.61 m pitched (converter). An independent check from the file gives min 6.56 m.
+   - **Old file.** The A-v15 file had 60 of 61 rows below 6.5 m:
+     old (HEAD, A-v15 file): 61 rows, clearance min 4.43 max 7.22; below 6.5 m: 60
+     | old row | at (x, z) | roof underside | highest road under it | clearance |
+     |---:|---|---:|---:|---:|
+     | 1 | (-6244, 658) | 263.48 | 258.32 | 5.16 |
+     | 2 | (-6249, 665) | 264.84 | 259.82 | 5.02 |
+     | 3 | (-6254, 671) | 266.13 | 261.23 | 4.90 |
+     | 4 | (-6259, 678) | 267.34 | 262.16 | 5.18 |
+     | 5 | (-6263, 684) | 268.45 | 263.03 | 5.42 |
+     | 6 | (-6268, 691) | 269.48 | 263.91 | 5.57 |
+     | 7 | (-6272, 698) | 270.40 | 264.75 | 5.65 |
+     | 8 | (-6277, 704) | 271.27 | 265.59 | 5.68 |
+     | 9 | (-6281, 711) | 272.14 | 266.47 | 5.67 |
+     | 10 | (-6286, 718) | 273.01 | 267.34 | 5.67 |
+     | 11 | (-6290, 725) | 273.81 | 268.22 | 5.59 |
+     | 12 | (-6294, 732) | 274.49 | 269.19 | 5.30 |
+     | 13 | (-6298, 738) | 275.05 | 269.35 | 5.70 |
+     | 14 | (-6303, 745) | 275.49 | 269.42 | 6.07 |
+     | 15 | (-6307, 752) | 275.81 | 269.50 | 6.31 |
+     | 16 | (-6311, 759) | 276.00 | 269.58 | 6.42 |
+     | 17 | (-6315, 766) | 276.08 | 269.65 | 6.43 |
+     | 18 | (-6319, 773) | 276.15 | 269.72 | 6.43 |
+     | 19 | (-6323, 780) | 276.23 | 269.80 | 6.43 |
+     | 20 | (-6327, 787) | 276.30 | 269.88 | 6.42 |
+     | 21 | (-6330, 794) | 276.32 | 269.96 | 6.36 |
+     | 22 | (-6334, 801) | 276.32 | 270.00 | 6.32 |
+     | 23 | (-6338, 808) | 276.27 | 270.00 | 6.27 |
+     | 24 | (-6342, 815) | 276.19 | 269.91 | 6.28 |
+     | 25 | (-6346, 822) | 276.07 | 269.73 | 6.34 |
+     | 26 | (-6349, 829) | 275.92 | 269.57 | 6.35 |
+     | 27 | (-6353, 837) | 275.76 | 269.41 | 6.35 |
+     | 28 | (-6357, 844) | 275.60 | 269.25 | 6.35 |
+     | 29 | (-6360, 851) | 275.43 | 269.10 | 6.33 |
+     | 30 | (-6364, 858) | 275.15 | 268.95 | 6.20 |
+     | 31 | (-6368, 865) | 274.74 | 268.78 | 5.96 |
+     | 32 | (-6371, 872) | 274.21 | 268.61 | 5.60 |
+     | 33 | (-6375, 879) | 273.55 | 268.32 | 5.23 |
+     | 34 | (-6378, 887) | 272.78 | 267.26 | 5.52 |
+     | 35 | (-6382, 894) | 271.89 | 266.30 | 5.59 |
+     | 36 | (-6386, 901) | 270.93 | 265.33 | 5.60 |
+     | 37 | (-6389, 908) | 269.98 | 264.41 | 5.57 |
+     | 38 | (-6393, 915) | 269.02 | 263.45 | 5.57 |
+     | 39 | (-6396, 923) | 268.24 | 262.53 | 5.71 |
+     | 40 | (-6399, 930) | 267.84 | 261.56 | 6.28 |
+     | 42 | (-6406, 944) | 268.16 | 261.93 | 6.23 |
+     | 43 | (-6410, 951) | 268.89 | 263.44 | 5.45 |
+     | 44 | (-6413, 959) | 269.99 | 264.96 | 5.03 |
+     | 45 | (-6417, 966) | 271.43 | 266.40 | 5.03 |
+     | 46 | (-6420, 973) | 272.92 | 267.84 | 5.08 |
+     | 47 | (-6423, 980) | 274.41 | 269.35 | 5.06 |
+     | 48 | (-6427, 988) | 275.89 | 270.87 | 5.02 |
+     | 49 | (-6430, 995) | 277.13 | 272.38 | 4.75 |
+     | 50 | (-6434, 1002) | 278.11 | 273.68 | 4.43 |
+     | 51 | (-6437, 1010) | 278.84 | 273.68 | 5.16 |
+     | 52 | (-6440, 1017) | 279.30 | 273.61 | 5.69 |
+     | 53 | (-6444, 1024) | 279.50 | 273.35 | 6.15 |
+     | 54 | (-6447, 1031) | 279.41 | 273.12 | 6.29 |
+     | 55 | (-6450, 1039) | 279.18 | 272.90 | 6.28 |
+     | 56 | (-6454, 1046) | 278.95 | 272.69 | 6.26 |
+     | 57 | (-6457, 1053) | 278.70 | 272.46 | 6.24 |
+     | 58 | (-6460, 1060) | 278.46 | 272.23 | 6.23 |
+     | 59 | (-6464, 1068) | 278.26 | 272.00 | 6.26 |
+     | 60 | (-6467, 1075) | 278.08 | 271.71 | 6.37 |
+     | 61 | (-6467, 1076) | 278.01 | 271.68 | 6.33 |
+     new: 32 rows, clearance (level) min 6.56 max 6.68
+4. **Open sides:**
+   - **Colonnade.** Pillar1x8 every 6 m (was 4 m), 82 stacks, 117 pieces in x1. Each stack runs from 0.5 m in the ground to the roof underside; taller stacks overlap so the top piece ends at the underside. Nothing else closes the valley side.
+   - **Buried pieces.** Where the underside is under 7.5 m above the terrain, the single 8 m piece has to go deeper: 47 stacks, up to 1.4 m. Pillar1x8 is the pack's only 1 m column.
+5. **No terrain over the top:** the roof still reaches into the cut face as in 40b (row depth 42.0–44.0 m from the column line in x1). No fill and no walls.
+
+**Counts** (x1): import-rock-shed.json has 213 objects: 96 BasePlateConcrete16, all with pitch, and 117 Pillar1x8. The tree mask is unchanged.

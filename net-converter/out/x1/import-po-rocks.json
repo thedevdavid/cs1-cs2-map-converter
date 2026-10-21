@@ -5594,16 +5594,6 @@
       "cs1": "PO falls steps"
     },
     {
-      "id": "porock554_0",
-      "prefab": "CliffRock6",
-      "x": -6180.68,
-      "z": 670.57,
-      "sink": 0.9,
-      "rotation": 313.2,
-      "kind": "prop",
-      "cs1": "PO rock work"
-    },
-    {
       "id": "porock581_0",
       "prefab": "CliffRock6",
       "x": -6439.75,
@@ -5798,20 +5788,11 @@
       "prefab": "CliffRock5",
       "x": -6379.36,
       "z": 1022.85,
+      "y": 298.36,
       "sink": 0.9,
-      "rotation": 322,
+      "rotation": 151,
       "kind": "prop",
       "cs1": "PO rock work"
-    },
-    {
-      "id": "porock561_0",
-      "prefab": "CliffRock6",
-      "x": -6284.22,
-      "z": 806.22,
-      "sink": 0.9,
-      "rotation": 324.6,
-      "kind": "prop",
-      "cs1": "PO mountain"
     },
     {
       "id": "porock121_0",
@@ -5840,16 +5821,6 @@
       "z": -2677.99,
       "sink": 0.55,
       "rotation": 243.8,
-      "kind": "prop",
-      "cs1": "PO rock work"
-    },
-    {
-      "id": "porock580_0",
-      "prefab": "CliffStack",
-      "x": -6394.45,
-      "z": 1049.22,
-      "sink": 0.763,
-      "rotation": 328,
       "kind": "prop",
       "cs1": "PO rock work"
     },
@@ -5934,16 +5905,6 @@
       "cs1": "PO falls steps"
     },
     {
-      "id": "porock566_0",
-      "prefab": "CliffRock6",
-      "x": -6301.82,
-      "z": 849.09,
-      "sink": 0.9,
-      "rotation": 325.9,
-      "kind": "prop",
-      "cs1": "PO rock work"
-    },
-    {
       "id": "porock139_0",
       "prefab": "CliffStack",
       "x": -6653.87,
@@ -5964,16 +5925,6 @@
       "cs1": "PO mountain"
     },
     {
-      "id": "porock565_0",
-      "prefab": "CliffRock5",
-      "x": -6320.56,
-      "z": 893.66,
-      "sink": 0.9,
-      "rotation": 328.4,
-      "kind": "prop",
-      "cs1": "PO rock work"
-    },
-    {
       "id": "porock81_0",
       "prefab": "CliffRock6",
       "x": 664.26,
@@ -5982,16 +5933,6 @@
       "rotation": 357.1,
       "kind": "prop",
       "cs1": "PO falls steps"
-    },
-    {
-      "id": "porock574_0",
-      "prefab": "CliffRock6",
-      "x": -6358.38,
-      "z": 954.43,
-      "sink": 0.9,
-      "rotation": 325.6,
-      "kind": "prop",
-      "cs1": "PO rock work"
     },
     {
       "id": "porock534_0",

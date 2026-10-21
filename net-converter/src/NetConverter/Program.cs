@@ -1185,7 +1185,12 @@ void WriteLayers()
         // No y: the bridge grounds each piece from its bounds; the per-object "sink" (fraction of the height, (H − v) / H) keeps the v3 visible-height rule.
         var poSinks = new Dictionary<string, double>();
         foreach (var p in v2) if (bounds.TryGetValue(p.O.Prefab, out var pbb) && pbb.Height > 0) poSinks[p.O.Id] = Math.Min(0.9, p.Sink / pbb.Height);
-        Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "po-rocks-v3", v2.Select(p => p.O with { Y = null }), grounding, poSinks);
+        // Round 41 (owner's A-v15 review): around the rock shed the rocks get an explicit y and a yaw along the cut face, and none on the roof or the road.
+        var shedRowsR = PoStructures.Load(Find(Path.Combine("..", "bridges", "data", "po-structures-proposal.json")));
+        var (shedNow, _) = RockShed.Build(shedRowsR, result.Edges, cs2True, heightFactor);
+        var (poRocksOut, poReseat) = RockShed.Reseat(v2.Select(p => p.O with { Y = null }), shedNow, shedRowsR, result.Edges, cs2True, heightFactor, bounds);
+        Console.WriteLine("po rocks at the rock shed: " + poReseat);
+        Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "po-rocks-v3", poRocksOut, grounding, poSinks);
         var sources = objs.Objects.Where(o => Round8.IsRockLike(o.Prefab)).Concat(cliffs).Select(o => (o.X, o.Z)).ToList();
         Func<double, double, bool>? wet = surfaceEarly == null ? null : (x, z) => surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.5;
         var (scatter, rejected) = Round8.Scatter(sources, rockPolys.Select(p => p.Ring), result.Edges.Where(e => e.Map.Imported), wet, 7168, treeSeed + 9);
@@ -1207,6 +1212,9 @@ void WriteLayers()
             }
             scatter = keptS;
         }
+        var (scatterOut, scatterReseat) = RockShed.Reseat(scatter, shedNow, shedRowsR, result.Edges, cs2True, heightFactor, bounds);
+        Console.WriteLine("rock scatter at the rock shed: " + scatterReseat);
+        scatter = scatterOut;
         Objects.Write(Path.Combine(outDir, "import-rock-scatter.json"), "rock scatter", scatter, grounding);
         string ci(FormattableString f) => FormattableString.Invariant(f);
         var r8 = new List<string>
@@ -1214,9 +1222,9 @@ void WriteLayers()
             ci($"substation: {sub.Count} ({string.Join(", ", sub.Select(o => $"{o.Id} {o.Prefab} at ({o.X:F0}, {o.Z:F0}), rotation {o.Rotation}, no y"))}) -> import-substation.json"),
             dam is { } d3 ? "dam (network, bridge 0.9.23): " + string.Join("; ", damLog) + " -> import-dam.json" : "dam: no CS1 Dam Electricity building",
             "power ends: " + string.Join("; ", ends.Select(e => ci($"{e.Target}: CS1 end {e.OldEnd.Id} ({e.OldEnd.Position.X:F0}, {e.OldEnd.Position.Z:F0}), replaces {e.Replaces.Id}, new course {e.Anchor.Id} -> ({e.X:F1}, {e.Z:F1}), {Math.Sqrt((e.X - e.Anchor.Position.X) * (e.X - e.Anchor.Position.X) + (e.Z - e.Anchor.Position.Z) * (e.Z - e.Anchor.Position.Z)):F0} m"))) + " -> import-power-ends.json",
-            ci($"PO rocks v5 (boulders, and cliff pieces on ≥ 35° slopes one per 16 m cell; left out: {string.Join(", ", poRockLog.Select(kv => $"{kv.Key} {kv.Value}"))}): {v2.Count} objects ({Round8.Counts(v2.Select(p => p.O))}) from {pieces.Count} PO pieces, {v2capped} over the cap of 1500 dropped, {v2big} PO objects > 60 m above their surroundings with CliffSide pieces down the steepest flank, {v2renamed} re-picked for the 80 m prefab/heading rule; with y {v2.Count(p => p.O.Y != null)}; sink depth (mesh bottom below terrain): {PoRocksV2.SinkHistogram(v2)} -> import-po-rocks.json (import name po-rocks-v3)"),
+            ci($"PO rocks v5 (boulders, and cliff pieces on ≥ 35° slopes one per 16 m cell; left out: {string.Join(", ", poRockLog.Select(kv => $"{kv.Key} {kv.Value}"))}): {poRocksOut.Count} objects ({Round8.Counts(poRocksOut)}; at the rock shed {poReseat}) from {pieces.Count} PO pieces, {v2capped} over the cap of 1500 dropped, {v2big} PO objects > 60 m above their surroundings with CliffSide pieces down the steepest flank, {v2renamed} re-picked for the 80 m prefab/heading rule; with y {v2.Count(p => p.O.Y != null)}; sink depth (mesh bottom below terrain): {PoRocksV2.SinkHistogram(v2)} -> import-po-rocks.json (import name po-rocks-v3)"),
             ci($"PO cliffs v1 (not written; their positions feed the rock scatter): {cliffs.Count} objects from {pieces.Count} PO pieces (mountain {pieces.Count(p => p.SubClass == "mountain")}, rock work {pieces.Count(p => p.SubClass == "rock work")}, falls steps {pieces.Count(p => p.SubClass == "falls steps")}); bands {string.Join(", ", bands.Select(b => $"{b.Key} {b.Value}"))}; {capped} over the cap of 2500 dropped -> import-po-rocks.json"),
-            ci($"rock scatter: in water left out {sWater}, slopes > 45° left out {sSteep}, slopes 25–45° (lowered by the bridge's slopeSink) {sSunk}; {scatter.Count} (small {scatter.Count(o => Round8.SmallRocks.Contains(o.Prefab))}, medium {scatter.Count(o => Round8.MediumRocks.Contains(o.Prefab))}, boulders {scatter.Count(o => Round8.Boulders.Contains(o.Prefab))}) around {sources.Count} rock/cliff objects (r 60 m) and in {rockPolys.Count} rock polygons; rejected road {rejected["road"]}, spacing {rejected["spacing"]}, water {rejected["water"]}, border {rejected["border"]} -> import-rock-scatter.json"),
+            ci($"rock scatter: in water left out {sWater}, slopes > 45° left out {sSteep}, slopes 25–45° (lowered by the bridge's slopeSink) {sSunk}; at the rock shed {scatterReseat}; {scatter.Count} (small {scatter.Count(o => Round8.SmallRocks.Contains(o.Prefab))}, medium {scatter.Count(o => Round8.MediumRocks.Contains(o.Prefab))}, boulders {scatter.Count(o => Round8.Boulders.Contains(o.Prefab))}) around {sources.Count} rock/cliff objects (r 60 m) and in {rockPolys.Count} rock polygons; rejected road {rejected["road"]}, spacing {rejected["spacing"]}, water {rejected["water"]}, border {rejected["border"]} -> import-rock-scatter.json"),
         };
         foreach (var l in r8) { Console.WriteLine("round 8 " + l); extra.AppendLine($"- Round 8 {l}."); }
     }
