@@ -33,6 +33,7 @@ public static class SelfTest
             PeaksVariantV2b();
             StampTest.Run(Check, dir);
             RoadsTest.Run(Check);
+            RegradeTest.Run(Check);
         }
         finally { if (keepDir == null) Directory.Delete(dir, true); }
         Console.WriteLine(failures == 0 ? "ALL TESTS PASSED" : $"{failures} TEST(S) FAILED");
