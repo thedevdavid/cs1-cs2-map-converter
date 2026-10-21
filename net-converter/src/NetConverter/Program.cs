@@ -574,6 +574,21 @@ if (false)
     foreach (var l in isoKept) auditLog.AppendLine($"  - isolated, kept: {l}");
     Console.WriteLine($"road QA fixes: snapped {snapped.Count}, stubs left out {removedStubs.Count}, residual {residual.Count}, isolated left out {isoDropped.Count}, kept {isoKept.Count}");
 }
+RoadRegrade.Result? shedRegrade = null;
+// Round 42 (owner, A-v16 review: the gallery roof follows the road at one height): the National Road under the JP Rock shed on one straight grade,
+// before any network file is written, so every file and the rock shed (which samples the road from the nodes) see the same heights.
+{
+    var regradeName = Path.Combine("..", "bridges", "data", "po-structures-proposal.json");
+    var regradePo = File.Exists(regradeName) ? regradeName : Path.Combine(AppContext.BaseDirectory, regradeName);
+    var rg = File.Exists(regradePo) ? RoadRegrade.Apply(result, PoStructures.Load(regradePo), cs2Terrain == null ? null : cs2Terrain.Sample, topologyFactor) : null;
+    shedRegrade = rg;
+    if (rg != null)
+    {
+        RoadRegrade.WriteCorridor(Path.Combine(outDir, "regrade-rock-shed.json"), rg, cs2Terrain == null ? null : cs2Terrain.Sample, topologyFactor, Path.GetFileName(cs2HeightmapPath ?? ""));
+        Console.WriteLine("rock shed road regrade: " + rg.Log + " -> regrade-rock-shed.json");
+        auditLog.AppendLine($"- Rock shed road regrade (round 42): {rg.Log}; corridor for hm-rebuild in regrade-rock-shed.json.");
+    }
+}
 Outputs.WriteImport(Path.Combine(outDir, "import-highways.json"), "Dakota Falls highways", result.Layer(Layers.Highways).ToList(), absolute);
 Outputs.WriteImport(Path.Combine(outDir, "import-rail.json"), "Dakota Falls rail", result.Layer(Layers.Rail).ToList(), absolute);
 Outputs.WriteImport(Path.Combine(outDir, "import-roads.json"), "Dakota Falls roads", result.Layer(Layers.Roads).ToList(), absolute);
@@ -1187,8 +1202,10 @@ void WriteLayers()
         foreach (var p in v2) if (bounds.TryGetValue(p.O.Prefab, out var pbb) && pbb.Height > 0) poSinks[p.O.Id] = Math.Min(0.9, p.Sink / pbb.Height);
         // Round 41 (owner's A-v15 review): around the rock shed the rocks get an explicit y and a yaw along the cut face, and none on the roof or the road.
         var shedRowsR = PoStructures.Load(Find(Path.Combine("..", "bridges", "data", "po-structures-proposal.json")));
-        var (shedNow, _) = RockShed.Build(shedRowsR, result.Edges, cs2True, heightFactor);
-        var (poRocksOut, poReseat) = RockShed.Reseat(v2.Select(p => p.O with { Y = null }), shedNow, shedRowsR, result.Edges, cs2True, heightFactor, bounds);
+        // Round 42: on the terrain as it will be after the road regrade (regrade-rock-shed.json).
+        var shedTerr = shedRegrade != null && cs2True != null ? RoadRegrade.PredictTerrain(shedRegrade, cs2True, topologyFactor) : cs2True;
+        var (shedNow, _) = RockShed.Build(shedRowsR, result.Edges, shedTerr, heightFactor);
+        var (poRocksOut, poReseat) = RockShed.Reseat(v2.Select(p => p.O with { Y = null }), shedNow, shedRowsR, result.Edges, shedTerr, heightFactor, bounds);
         Console.WriteLine("po rocks at the rock shed: " + poReseat);
         Objects.Write(Path.Combine(outDir, "import-po-rocks.json"), "po-rocks-v3", poRocksOut, grounding, poSinks);
         var sources = objs.Objects.Where(o => Round8.IsRockLike(o.Prefab)).Concat(cliffs).Select(o => (o.X, o.Z)).ToList();
@@ -1212,7 +1229,7 @@ void WriteLayers()
             }
             scatter = keptS;
         }
-        var (scatterOut, scatterReseat) = RockShed.Reseat(scatter, shedNow, shedRowsR, result.Edges, cs2True, heightFactor, bounds);
+        var (scatterOut, scatterReseat) = RockShed.Reseat(scatter, shedNow, shedRowsR, result.Edges, shedTerr, heightFactor, bounds);
         Console.WriteLine("rock scatter at the rock shed: " + scatterReseat);
         scatter = scatterOut;
         Objects.Write(Path.Combine(outDir, "import-rock-scatter.json"), "rock scatter", scatter, grounding);
@@ -1270,7 +1287,7 @@ void WriteLayers()
         File.Delete(Path.Combine(OptDir(), "import-po-structure-piers.json"));
         Objects.Write(Path.Combine(outDir, "import-po-structure-piers.json"), "po-structure-piers", poS.Piers, poGround);
         // Round 34: the JP Rock shed stand-in (gallery wall + columns along the National Road), its own import (runner step rock-shed).
-        var (shedObjs, shedLog) = RockShed.Build(poRows, result.Edges, cs2True, heightFactor);
+        var (shedObjs, shedLog) = RockShed.Build(poRows, result.Edges, shedRegrade != null && cs2True != null ? RoadRegrade.PredictTerrain(shedRegrade, cs2True, topologyFactor) : cs2True, heightFactor);
         Objects.Write(Path.Combine(outDir, "import-rock-shed.json"), "rock-shed", shedObjs, null);   // absolute y, no grounding / sink
         r9.Add(shedLog + " -> import-rock-shed.json");
         // Round 38: the same valley strip as the tree mask, for clearing trees already placed on an open map (not a surface to import).

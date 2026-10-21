@@ -896,3 +896,36 @@ Owner: "1. top looks staggered. it should look smooth. 2. cliffs ar positioned r
 | 31 | (-6462, 1065) | 279.11 | 272.10 | 7.01 | 0.9 |
 | 32 | (-6467, 1076) | 279.00 | 271.68 | 7.32 | 0.43 |
 - Colonnade: 82 stacks every 6 m, 135 Pillar1x8 in x1. Taller where the roof bridges the dip.
+
+## Round 42: regraded road under the shed, roof at road + 6.5 m, rock face, bulkier pillars (owner's A-v16 review, dakota-A16b-2048)
+
+Owner: "1. the roof should follow the road below. same height calculated from the road always. to make this easy and good looking, you can slope or straighten that section of land & road. 2. cliffs now not there at all. look at the fucking CS1 screenshot. It clearly has cliffs placed all along that section. do it right. 3. use different concrete pillars there. Bulkier ones from the same package. These look funky."
+
+1. **Road regrade (RoadRegrade.cs)**, before any network file is written, so import-all.json and import-roads.json (the only files carrying this road) and the rock shed all use the same node heights.
+   - **Why no 120 m transitions.** The National Road under the shed is 7 edges, 529 m (e24116_0 … e34976_0). It ends in junctions with one-way highway ramps at both ends: n9988 70 m before the first shell, n11611 16 m after the last. A least-squares line with transitions would have lifted the SE junction 9.8 m against its ramps.
+   - **The line.** It runs through the outermost nodes under the roof, n34 (end of the SE approach edge) and the junction n11611. Both keep their heights, and the 5 nodes between go on the line: **grade 2.30 %** (1.32°), true metres.
+   - **Cut / fill.** Max cut **6.6 m** (the old hump at n29512 / n5888), max fill **8.6 m** (the old dip at n2037). Nothing outside the stretch moves.
+   - **Heights at the shell ends.** First shell centre: 259.92 → 259.92 m (on the SE approach edge, unchanged). Last shell centre: 271.82 → 270.91 m.
+   - **The ends of the roof.** Its first 31 m lies over the unchanged SE approach edge e24116_0 (−18.9 %); its last 7 m over the junction.
+   - **Corridor for hm-rebuild: out/x1/regrade-rock-shed.json** (and out/).
+     - Centreline every 8 m (67 points, s = arc length from the first shell), with old and new y in true metres.
+     - halfWidth 14.4 m to flatten to y (road half width + 2).
+     - Per point the hill-side unit vector and hillBench, the current bench beyond the road edge (12.5–14 m), so the cut face can move with the road by (y − oldY).
+     - grade 0.02302. Heightmap 10201528-dktflls-1to1.png.
+   - **Is the terrain change needed? Yes.** CS2 does not reshape the terrain to a road placed off it. A ground road whose nodes sit above or below the terrain gets retaining walls / embankment or is sunk (that was the round-26 road-terrain-mismatch finding). The regraded stretch is up to 6.6 m below and 8.6 m above today's heightmap. Without the corridor it would show walls in the cut and a raised embankment over the dip, and the shed's columns and rocks (placed on the regraded terrain, below) would be buried or float.
+2. **Roof:**
+   - Every row is at road + 6.5 m at its centre, all at the road's grade: **file pitch −1.31° on every slab** (0.9.50 sign), rows butting, one layer.
+   - The 4 rows over the off-grade road at the two ends (the SE approach edge, the junction) are raised up to 1.25 m so the tilted plate keeps 6.5 m.
+   - Clearance with the tilt: 6.50 m at every row.
+3. **Rock face on the hill side**, over the full 492 m in the rhythm of the 11 CS1 rock_c shells:
+   - per shell two **CliffRock5** (36 × 17 × 36 m) at ±11 m from its centre (22 m pitch, 14 m overlap: no gap), and one **CliffRock3** (77 × 31 × 91 m) behind, up the cut face;
+   - turned with the road (alternately 180° about), bases (mesh bottom) at the roof top;
+   - set back so that no part reaches past the roof's hill-side third or over the road strip (road half width + 1 m); the valley half of the roof and the road stay clear;
+   - **33 pieces: 22 CliffRock5, each 16.9 m above the roof; 11 CliffRock3, each 31.0 m above the roof.** Their lower parts are in the slope.
+4. **Pillars:**
+   - **Pillar2x8** (2 m square) every 6 m under the slab edge, from the terrain to the roof underside. The terrain is the predicted regraded one: the road height inside the flatten corridor, so about 6.5 m below the roof.
+   - Each 8 m piece goes about 1.5 m into the ground. Where the roof is more than 8 m above the ground, **Pillar2x16**, sunk by what it is too long.
+   - x1: 80 Pillar2x8 + 2 Pillar2x16.
+5. **Rocks around the shed** (po-rocks, rock scatter): re-seated on the predicted regraded terrain. po-rocks 2 re-seated, 5 left out; scatter 118 re-seated, 6 left out.
+
+**Counts** (x1): import-rock-shed.json has 211 objects: 96 BasePlateConcrete16, 80 Pillar2x8, 2 Pillar2x16, 22 CliffRock5, 11 CliffRock3. Roof covers 99.9 % of the road strip; no gap at the hill edge.

@@ -5788,9 +5788,9 @@
       "prefab": "CliffRock5",
       "x": -6379.36,
       "z": 1022.85,
-      "y": 594.89,
+      "y": 591.27,
       "sink": 0.9,
-      "rotation": 151,
+      "rotation": 65.3,
       "kind": "prop",
       "cs1": "PO rock work"
     },
@@ -5923,6 +5923,17 @@
       "rotation": 274.5,
       "kind": "prop",
       "cs1": "PO mountain"
+    },
+    {
+      "id": "porock565_0",
+      "prefab": "CliffRock5",
+      "x": -6320.56,
+      "z": 893.66,
+      "y": 570.83,
+      "sink": 0.9,
+      "rotation": 328.4,
+      "kind": "prop",
+      "cs1": "PO rock work"
     },
     {
       "id": "porock81_0",
