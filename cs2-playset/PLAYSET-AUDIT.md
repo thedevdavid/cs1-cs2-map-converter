@@ -66,7 +66,7 @@ Status key:
 |---|---|---|
 | 94394 | Lumina | lighting/LUT |
 | 161533 | Enhanced Graphics and Textures | rendering |
-| 88893 | Time & Weather Anarchy | Reported: its "desert" profile pinned the climate at 31 °C. Keep it on the Main profile, or remove it with I18n 75426. I did not re-check the setting file |
+| 88893 | Time & Weather Anarchy | Its "desert" profile (`ModsSettingsTimeWeatherAnarchyProfiles22e0d9….json`) has `EnableCustomTemperature: true` and `Temperature: 31`, which pins the climate at 31 °C. The active profile is not stored in those files. Keep it on the Main profile, or remove it with I18n 75426 |
 
 ### REMOVABLE now (nothing in A-v10 comes from it, and no dependency)
 
