@@ -1,6 +1,6 @@
 // Whole fresh-map import against the CS2MCP bridge, in the ROUND order, one command.
 // node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5] [--skip step,...] [--only step,...] [--with step,...] [--climate <name>] [--dry-run]
-//   [--no-verify] [--resume | --fresh] [--verify-only] [--po-structures] [--bridge http://127.0.0.1:8642] [--out out]
+//   [--no-verify] [--resume | --fresh] [--verify-only] [--po-structures] [--phase build|post-save|all] [--save <name>] [--bridge http://127.0.0.1:8642] [--out out]
 // --po-structures (round 20/22): the BR022 pads (ConcreteSet01 154132; BR006 variant a = no kit objects there) after po-rocks; same as --with po-structures.
 //   Optional: --with po-br006-arches (BR006 variant b, DIY Stone Arch 135944), po-gantry (Truss Gantry 132188).
 //   Default: pillars-off + po-piers (BR001 / BR003 ITBP caps 140978 on Pillar4x16 stacks 154132).
@@ -153,8 +153,19 @@ const steps = [
   ["detroit-opt2", "/import/network", [p(join("optional", "import-detroit-opt2.json"))], true],   // round 31: owner keeps BR001; file in optional/
 ];
 const optional = new Set(steps.filter(s => s[3]).map(s => s[0]));
-const wanted = name => (only.size === 0 ? (!optional.has(name) || withOpt.has(name)) : only.has(name)) && !skip.has(name)
+// Round 35 (A-v8 and A-v10 crashed natively seconds after the terrain render settings post on a fresh, unsaved map; loaded saves never did):
+//   --phase build (default): every import step, settings, look climate + water; no terrain-cs1, no textures.
+//   --phase post-save: only look terrain-cs1 and textures (after build → save → reload).
+//   --phase all: the old single pass.
+// Runbook: build → save → reload → post-save → save.  --save <name>: POST /map/save?name=<name> at the end of the build phase (bridge endpoint asked for;
+// when it is not there the runner says so and goes on).
+const phase = opt("--phase", "build");
+if (!["build", "post-save", "all"].includes(phase)) { console.error(`--phase must be build, post-save or all`); process.exit(2); }
+const saveName = opt("--save", null);
+const wantedBase = name => (only.size === 0 ? (!optional.has(name) || withOpt.has(name)) : only.has(name)) && !skip.has(name)
   && (!name.startsWith("verify") || (verify && !dryRun)) && (name !== "net-count" || !dryRun);
+const wanted = name => phase === "post-save" ? (name === "look" || name === "textures") && wantedBase(name)
+  : phase === "build" && name === "textures" ? false : wantedBase(name);
 for (const n of [...skip, ...only, ...withOpt]) if (![...steps.map(s => s[0]), "settings", "look", "textures"].includes(n)) { console.error(`unknown step: ${n}`); process.exit(2); }
 
 // Graph check: the bridge's export per prefab against the network import files run so far (A-v4 lost 297 built segments after the import).
@@ -272,7 +283,7 @@ let netBaseline = null, netEnd = null, guardStop = null;
 // Idempotence (A-v5: the substation was imported twice on a resumed run): run-state.json in the scale folder records every file imported on this
 // map with its importId. A resumed run (--skip / --only / --resume) skips the files already there; a plain run starts a new map state (--fresh forces it).
 const statePath = join(dir, "run-state.json");
-const resume = (skip.size > 0 || only.size > 0 || flag("--resume")) && !flag("--fresh");
+const resume = (skip.size > 0 || only.size > 0 || flag("--resume") || phase === "post-save") && !flag("--fresh");   // post-save keeps the build's state
 let state = { scale, started: new Date().toISOString(), files: {} };
 if (resume && existsSync(statePath)) state = JSON.parse(readFileSync(statePath, "utf8"));
 else if (!dryRun) writeFileSync(statePath, JSON.stringify(state, null, 1));
@@ -401,7 +412,7 @@ if (!stopped && wanted("look")) {
   const sources = [];
   // Round 29 (A-v8): terrain-cs1.json, not terrain.json. terrain.json selects the read-only vanilla DefaultTerrainRenderSettings and so throws away the
   // editable CS1 copy and its textures; terrain-cs1.json makes / edits the copy (legacy texture format, CS1 tiling).
-  for (const name of ["climate", "water", "terrain-cs1"]) {
+  for (const name of (phase === "build" ? ["climate", "water"] : phase === "post-save" ? ["terrain-cs1"] : ["climate", "water", "terrain-cs1"])) {
     const file = [join(toolDir, "..", "..", "look", `${name}.json`), join(toolDir, "..", "look", `${name}.json`)].find(existsSync);
     if (file) sources.push([name, file]);
   }
@@ -424,6 +435,15 @@ if (!stopped && wanted("look")) {
   if (sources.length === 0) lines.push("no look/*.json found");
   rows.push({ name: "look", file: "POST /map/settings (look)", status: "ok", secs: (Date.now() - t0) / 1000, text: lines.join(" | ") });
 }
+
+if (!stopped && saveName && phase !== "post-save" && !dryRun) {
+  // --save: right after the build (before any render-settings step of a later post-save pass).
+  const r = await request("POST", `/map/save?name=${encodeURIComponent(saveName)}`).catch(e => ({ status: 0, json: { error: String(e) } }));
+  const text = r.status === 200 ? `saved as ${saveName}: ${JSON.stringify(r.json).slice(0, 200)}` : `POST /map/save HTTP ${r.status} (${JSON.stringify(r.json).slice(0, 160)}): not available, save the map by hand now`;
+  console.log(`${r.status === 200 ? "✓" : "!"} save ${text}`);
+  rows.push({ name: "save", file: "POST /map/save", status: r.status === 200 ? "ok" : `HTTP ${r.status}`, text });
+}
+if (phase === "build" && !stopped) console.log("build phase done: save the map, reload it, then run with --phase post-save (terrain-cs1 + textures), then save again");
 
 if (!stopped && wanted("textures")) {
   // Round 29: the 14 CS1 terrain textures (look/README.md "A-v8 file list") into the terrain render settings copy, right after the look step:
