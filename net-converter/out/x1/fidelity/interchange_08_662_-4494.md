@@ -15,14 +15,14 @@ CHECK: 6 CS1 segments without live counterpart, 8 live without CS1 source, 0 mor
 
 | live segment | prefab | elevation |
 |---|---|---:|
-| 1075483:5 | Highway Oneway - 4 lanes | 32.7 |
-| 1075599:5 | Highway Oneway - 3 lanes | 33.9 |
-| 1075664:5 | Highway Oneway - 4 lanes | 32.1 |
-| 1075997:5 | Highway Oneway - 3 lanes | 29.9 |
-| 1074590:5 | Highway Oneway - 3 lanes | 0.0 |
-| 1075153:5 | Highway Oneway - 4 lanes | 0.0 |
-| 1075229:5 | Highway Oneway - 3 lanes | 0.0 |
-| 1075422:5 | Highway Oneway - 4 lanes | 0.0 |
+| 60534:3 | Highway Oneway - 4 lanes | 0.0 |
+| 61018:5 | Highway Oneway - 3 lanes | 0.0 |
+| 61019:3 | Highway Oneway - 3 lanes | 0.0 |
+| 61280:5 | Highway Oneway - 4 lanes | 0.0 |
+| 91573:5 | Highway Oneway - 3 lanes | 33.9 |
+| 91636:3 | Highway Oneway - 4 lanes | 32.1 |
+| 91970:5 | Highway Oneway - 3 lanes | 29.9 |
+| 91989:5 | Highway Oneway - 4 lanes | 32.7 |
 
 | CS1 segment | prefab | CS1 y | live | live − CS1 m |
 |---|---|---:|---|---:|
