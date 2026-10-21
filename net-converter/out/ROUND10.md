@@ -45,7 +45,7 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 0 | `out\x1\import-terrain-paint-n8-playa-rim-lush.json` | ROUND 27 terrain paint N8 Lush (1×) | 191 polygons, 0 strokes | 0.8 MB |
 | 0 | `out\x1\import-terrain-paint-n9-dirt-roads-dirt.json` | ROUND 27 terrain paint N9 Dirt (1×) | 0 polygons, 12266 strokes | 2.0 MB |
 | 0 | `out\x1\import-terrain-paint-n10-rail-ballast-dirt.json` | ROUND 27 terrain paint N10 Dirt (1×) | 0 polygons, 4418 strokes | 0.7 MB |
-| 0 | `out\x1\import-terrain-paint-n11-oil-dirt.json` | ROUND 27 terrain paint N11 Dirt (1×) | 425 polygons, 0 strokes | 8.5 MB |
+| 0 | `out\x1\import-terrain-paint-n11-oil-dirt.json` | ROUND 27 terrain paint N11 Dirt (1×) | 428 polygons, 0 strokes | 8.5 MB |
 | 0 | `out\x1\import-terrain-paint-n11-ore-dirt.json` | ROUND 27 terrain paint N11 Dirt (1×) | 196 polygons, 0 strokes | 1.8 MB |
 | 0 | `out\x1\import-terrain-paint-n12-fertile-dry.json` | ROUND 27 terrain paint N12 Dry (1×) | 475 polygons, 0 strokes | 4.3 MB |
 | 0 | `out\x1\import-terrain-paint-n13-high-ground-dry.json` | ROUND 27 terrain paint N13 Dry (1×) | 175 polygons, 0 strokes | 2.7 MB |
@@ -616,3 +616,11 @@ terrain: 16 m pieces while more than 8 m remain, then one 8 m piece. The bottom 
 - Roof (62 / 32 / 16 rule), 14 Wall32x16 and 11 CliffRock5: as in 35f11c8.
 - x1: 1 × BasePlateConcrete62 + 4 × 32 + 36 × 16, 14 Wall32x16, 56 Pillar2x8 (one per column), 11 CliffRock5. 122 objects.
 - x2: 0 × 62 + 2 × 32 + 50 × 16, 14 Wall32x16, 56 columns (1 Pillar2x16 + 55 Pillar2x8), 11 CliffRock5. 133 objects.
+
+## Round 35: empty import files; N7 back
+
+- **Runner:** a file with no items (edges, objects, surfaces, polygons, strokes, sources all empty) is skipped with "- step: file is empty, skipped" instead
+  of being posted; the bridge answers 400 to an empty body. Checked against the mock bridge.
+- **N7 prairie dogs** were empty in A-v10. Cause: the round-34 tree mask keeps more trees (the playable 93.5 m rule instead of CS1 water / 97.5 m), so the
+  open flat plains with no tree within 100 m shrank from 1.0 to 0.47 km², under the 0.5 km² floor for placing at least one town. The floor is now 0.15 km²
+  (a town is 3–15 ha): 1 town, 0.05 km² Dry + 215 Dirt mounds.

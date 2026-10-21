@@ -263,6 +263,8 @@ auditLog.AppendLine($"- Short border edges folded into their neighbour (< 10 m):
     // original or as a separate rebuild. Move it (and its end nodes) 1.9 m away in the network itself.
     var e204 = FootprintShift.Apply(result, result.Edges.Where(e => e.Id == "e20430_0b"), topologyFactor, new Dictionary<string, (string Prefab, double Move)> { ["e20430_0b"] = ("Highway Oneway - 3 lanes", 0.9) });
     foreach (var l in e204.Shifted.Concat(e204.Impossible)) auditLog.AppendLine($"- e20430_0b clear of its parallel carriageway: {l}");
+    // Round 35: parallel one-way carriageways closer than their two CS2 half-widths (the bridge drop threshold) pushed apart.
+    foreach (var l in CarriagewaySpread.Apply(result)) { Console.WriteLine("carriageway spread: " + l); auditLog.AppendLine($"- Carriageway spread: {l}."); }
     // A-v9 (bridge 0.9.39 drops a course that runs inside an existing segment): highway courses the run reports name are moved sideways the asked distance
     // + 1 m from the named neighbour (e22564_0b, e31224_0ba, e31224_0bb in run-20261021-025202).
     if (drops != null)

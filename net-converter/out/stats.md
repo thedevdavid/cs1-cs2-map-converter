@@ -23,7 +23,7 @@ Only highways, rail and roads are written as import files. power, skip and unmap
 
 | layer | CS2 prefab | edges | length km | from CS1 prefabs |
 |---|---|---:|---:|---|
-| highways | Highway Oneway - 1 lane | 282 | 15.9 | 2452038713.USRP 1L Interstate Ramp_Data, 2452038713.USRP 1L Interstate Ramp E |
+| highways | Highway Oneway - 1 lane | 282 | 15.8 | 2452038713.USRP 1L Interstate Ramp_Data, 2452038713.USRP 1L Interstate Ramp E |
 | highways | Highway Oneway - 2 lanes | 901 | 59.7 | 2452038713.USRP 2L Interstate E, 2452038713.USRP 2L Interstate_Data, 2452038713.USRP 2L Interstate B, 2452038713.USRP 2L Interstate T, 2452038713.USRP 2L Interstate S |
 | highways | Highway Oneway - 3 lanes | 540 | 40.7 | 2452038713.USRP 3L Interstate_Data, 2452038713.USRP 3L Interstate E, 2452038713.USRP 3L Interstate B, 2452038713.USRP 3L Interstate S |
 | highways | Highway Oneway - 4 lanes | 29 | 1.8 | 2452038713.USRP 4L Interstate_Data, 2452038713.USRP 4L Interstate E |
@@ -392,13 +392,13 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Round 9 lake lake11: centre terrain 135.55 m vs level 135.84 m, moved to (6944, 2640) terrain 134.79 m.
 - Round 9 lake lake16: centre terrain 138.44 m vs level 138.91 m, moved to (640, 1008) terrain 136.86 m.
 - Round 9 lakes: 26 wet bodies above sea level 97.5 + 1 m with no CS1 source within 400 m; 18 sources (outside the map 4, single cells 4) -> import-water-lakes.json (append after import-water*.json).
-- Round 9 gaps: 4 edges -> import-gaps.json, written before the network (e15883_0; bowed 4.5 m away from e1403_0 Highway Oneway - 4 lanes (15.6 m, needs 18.0); e15883_0: 3-lane course 68 m (alternative: 4-lane taper 12 m + 3-lane, import-gaps-e15883-taper.json); gravel gap n895–n26596: 80 m; e25579_0: rebuilt, junction end snaps radius 6; e36563_0: rebuilt, junction end snaps radius 6; path stub n7811: 9.3 m, inside the road footprint; left to its snapToSegment in import-all.json; 3 originals left out of import-all.json (e15883_0, e25579_0, e36563_0)).
+- Round 9 gaps: 4 edges -> import-gaps.json, written before the network (e15883_0: 3-lane course 68 m (alternative: 4-lane taper 12 m + 3-lane, import-gaps-e15883-taper.json); gravel gap n895–n26596: 80 m; e25579_0: rebuilt, junction end snaps radius 6; e36563_0: rebuilt, junction end snaps radius 6; path stub n7811: 9.3 m, inside the road footprint; left to its snapToSegment in import-all.json; 3 originals left out of import-all.json (e15883_0, e25579_0, e36563_0)).
 - Decal surfaces (import-surfaces-decals.json; PDO23 Dirty Surface 01 / PDO23 Soil Surface 01): 41 polygons, 0.022 km², max 298 points.
 - Sand: the 16 m-cell surfaces are dropped (owner review of A-v4); optional import-surfaces-sand-smooth.json: 387 blobs from 610 of 905 patches >= 2000 m² (21.54 km²).
 - Terrain surfaces (import-surfaces.json): 479 polygons, 16.935 km², max 323 points: Sand → PDO23 Dirty Sand Surface 01 (479 polygons).
 - Terrain paint import-terrain-paint-sand.json: material Sand, CS1 painted sand (all Sand cells): 321 polygons, 0 strokes, 9.94 km², softEdge 20 m.
 - Terrain paint optional\import-terrain-paint-rock.json: material (none: rock is automatic on steep slopes), slope ≥ 40° and the PO rock / cliff footprints: 214 polygons, 0 strokes, 5.39 km², softEdge 0 m, not imported.
-- Terrain paint import-terrain-paint-dry-grass.json: material Dry, dry open ground: east / south-east plains (22502 cells) and south-facing slopes (20824 cells): 426 polygons, 0 strokes, 9.19 km², softEdge 20 m.
+- Terrain paint import-terrain-paint-dry-grass.json: material Dry, dry open ground: east / south-east plains (22503 cells) and south-facing slopes (20824 cells): 426 polygons, 0 strokes, 9.19 km², softEdge 20 m.
 - Terrain paint import-terrain-paint-bare-earth.json: material Dirt, CS1 dirt / mud decals: 0 polygons, 128 strokes, 0.05 km², softEdge 0 m.
 - Terrain paint import-terrain-paint-n1-riparian-lush.json: Lush 0.6, 73 polygons, 1.17 km², 7835 cells (N1 cottonwood / willow bottoms).
 - Terrain paint import-terrain-paint-n12-fertile-dry.json: Dry 0.35, 276 polygons, 15.15 km², 59081 cells (N12 CS1 fertile land (yellower)).
@@ -413,11 +413,11 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Terrain paint import-terrain-paint-n2-pit-banks-sand.json: Sand 0.6, 8 strokes (N2 gravel-pit pond shore).
 - Terrain paint import-terrain-paint-n8-playa-rim-lush.json: Lush 0.5, 70 polygons, 0.58 km², 2802 cells (N8 playa rims (80 playas)).
 - Terrain paint import-terrain-paint-n8-playa-centre-dirt.json: Dirt 0.6, 82 polygons, 0.92 km², 3736 cells (N8 playa centres (dried mud)).
-- Terrain paint N7 eligibility: free 705521, flat plains 237820, no tree within 100 m 13395, fertility < 0.5 1849.
+- Terrain paint N7 eligibility: free 705519, flat plains 237819, no tree within 100 m 13395, fertility < 0.5 1849.
 - Terrain paint import-terrain-paint-n7-prairie-dog-dry.json: Dry 0.8, 1 polygons, 0.05 km², 188 cells (N7 prairie dog towns (1)).
 - Terrain paint import-terrain-paint-n7-prairie-dog-dirt.json: Dirt 0.5, 215 strokes (N7 prairie dog mounds (30 % cover)).
 - Terrain paint import-terrain-paint-n11-ore-dirt.json: Dirt 0.5, 104 polygons, 8.74 km², 34189 cells (N11 CS1 ore ground).
-- Terrain paint import-terrain-paint-n11-oil-dirt.json: Dirt 0.3, 302 polygons, 57.32 km², 226065 cells (N11 CS1 oil ground (well pads)).
+- Terrain paint import-terrain-paint-n11-oil-dirt.json: Dirt 0.3, 302 polygons, 57.32 km², 226064 cells (N11 CS1 oil ground (well pads)).
 - Terrain paint import-terrain-paint-n9-dirt-roads-dirt.json: Dirt 0.5, 12253 strokes (N9 dirt / gravel road and track edges).
 - Terrain paint import-terrain-paint-n10-rail-ballast-dirt.json: Dirt 0.35, 4357 strokes (N10 rail ballast outside towns).
 - Paint plan S1 bank sand: 120 cells, 9 polygons, 0.03 km².
@@ -458,11 +458,15 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Flat QuaySmall01 edges (cross-slope < 0.4 m at × 2): 8, wall both 1, right 4, left 3; their nodes raised to ≥ 4 m (one side) / ≥ 8 m (both) as the fallback.
 - One-way highway stubs to CS1 dead ends left out: 0 courses.
 - One-way courses pruned after the stub removal (they met head-on at a node with no exit or no entry): 0.
-- Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md, run-20261020-192927.md, run-20261020-193334.md, run-20261020-193751.md, run-20261020-211001.md, run-20261020-231951.md, run-20261021-000201.md, run-20261021-025202.md, run-20261021-121517.md, run-a7.md (36 dropped courses).
+- Run reports read for game drops: run-20261019-165751.md, run-20261019-165831.md, run-20261019-215737.md, run-20261020-140800.md, run-20261020-140845.md, run-20261020-140910.md, run-20261020-192927.md, run-20261020-193334.md, run-20261020-193751.md, run-20261020-211001.md, run-20261020-231951.md, run-20261021-000201.md, run-20261021-025202.md, run-20261021-121517.md, run-20261021-122852.md, run-a7.md (36 dropped courses).
 - e20430_0b clear of its parallel carriageway: e20430_0b Highway Oneway - 3 lanes beside e16466_0a Highway Oneway - 3 lanes (15.5 m; run report: move 0.9 m): moved 1.9 m
+- Carriageway spread: pass 1: 17 parallel carriageway pairs closer than their two half-widths, 51 nodes moved apart.
+- Carriageway spread: pass 2: 2 parallel carriageway pairs closer than their two half-widths, 8 nodes moved apart.
+- Carriageway spread: pass 3: 0 parallel carriageway pairs closer than their two half-widths, 2 nodes moved apart.
+- Carriageway spread: pass 4: 0 parallel carriageway pairs closer than their two half-widths, 0 nodes moved apart.
 - Highway course dropped beside its node-sharing sibling e9919_0 (Highway Oneway - 1 lane): e22564_0b's free end e22564_0d0 moved 2.7 m away from it; the shared node n4291 stays.
+- Highway course dropped by the game, no node-sharing 'Highway Oneway - 3 lanes' sibling found, not moved: e31224_0ba.
 - Highway course dropped beside its node-sharing sibling e15395_0a (Highway Oneway - 2 lanes): e31224_0bb's free end e31224_0bd1 moved 2.2 m away from it; the shared node n27662 stays.
-- Highway course moved clear of its neighbour (run report drop): e31224_0ba Highway Oneway - 4 lanes beside e25_0 Highway Oneway - 3 lanes (16.3 m; run report: move 2.2 m): moved 3.2 m
 - Courses inside a highway footprint (walls, decor) moved sideways by the two CS2 half-widths + 1 m: 0; impossible (between carriageways) 0.
 - Seaways stay at the riverbed (pass --seaway-at-water to write them at the water surface once the dig test shows digging).
 - Pavement Path dead ends snapped onto the segment beside them (snapToSegment, ≤ 20 m, Δy ≤ 3 m): 3: n7811 (4783, -683) → e17505_0 Small Road, 9.3 m, Δy 0.0 m, radius 11; n21342 (737, 4853) → e36560_0 Gravel Road, 12.8 m, Δy 0.0 m, radius 15; n13342 (1577, 4694) → e21878_0 Gravel Road, 9.6 m, Δy 0.1 m, radius 12.
