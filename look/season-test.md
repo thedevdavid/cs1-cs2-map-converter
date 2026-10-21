@@ -32,15 +32,15 @@ Exit code 0 = all pass, 2 = something failed. Output in the `--out` folder:
 
 A-v8 and A-v9 read a flat 31 °C and zero precipitation. Not the climate: the mod **Time & Weather Anarchy** (PDX 88893) did it.
 - It writes `ClimateSystem.temperature/precipitation/cloudiness/fog/aurora` overrides from its selected profile. Here that is **"desert": temperature 31, custom precipitation, lat 40.77 / lon 116.05**, from `ModsSettings/TimeWeatherAnarchy`.
-- It applies the profile in the main menu. When the editor loads, it stops updating but **never clears** the overrides, so they stay for the whole editor session. The HUD and `sampleAtDate` both show the override.
+- The overrides win everywhere: the HUD, `sampleAtDate` and the weather. The bridge session reports (0.9.40) that the mod re-applies its profile every frame, so no bridge call can clear it. Its profile there: custom temperature 31, custom precipitation 0, TimeOption 3, WeatherOption 2, day of year 193.
 - The saved map is not affected: overrides are runtime state, not part of the climate.
 
-Before the test, do one of:
-- (a) bridge 0.9.40+: the script starts with `POST /map/time {clearOverrides: true}` (requested from the bridge session);
-- (b) in the mod's options, select the profile "Main" (custom temperature/precipitation off) and restart the game;
-- (c) disable Time & Weather Anarchy in the editor playset.
+Before the test (the only fix is the mod setting):
+- (a) in the mod's options, select its **"Main" (default) profile**, which has custom temperature/precipitation off; or
+- (b) disable Time & Weather Anarchy for the editor session.
 
-The script stops with exit code 3 if any override is still on.
+
+The script reads `GET /map/time` → `overrides` (bridge 0.9.40+: date, temperature with its value, precipitation, cloudiness, fog, aurora, plus `timeWeatherAnarchy` with the mod's profile). It stops with exit code 3 if any weather override is on. Per shot it grades `live` (after the settle) against `curveAtDate`, the raw curve value at the date without overrides.
 
 The climate copy's curves are fine. A-v9's live values, each read before its own settle had finished (so they show the previous shot), match the design once shifted: Jan 15 ≈ 11 °C, Mar 1 at midnight ≈ 0, May 1 at midnight ≈ 7, Jul 15 ≈ 28, Sep 15 ≈ 24, Nov 15 ≈ 14. The script reads only after `running` is false again.
 

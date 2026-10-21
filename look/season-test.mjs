@@ -54,13 +54,14 @@ const f2 = x => (x == null || Number.isNaN(+x)) ? '—' : (+x).toFixed(2);
 // ---- 0. mod overrides off, then climate checks (curves, not the HUD) ----
 // Time & Weather Anarchy (PDX 88893) applies its profile in the main menu and never clears it when the editor loads:
 // with the "desert" profile, temperature is pinned to 31 °C and precipitation is overridden (A-v8, A-v9).
-await request('POST', '/map/time', { clearOverrides: true, reset: true });
+await request('POST', '/map/time', { reset: true });
 const t0 = await request('GET', '/map/time');
 {
-  const live = t0.json.live ?? {};
-  const flags = Object.entries(live).filter(([k, v]) => /overrid/i.test(k) && v === true).map(([k]) => k);
+  const ov = t0.json.overrides ?? {};   // bridge 0.9.40+: on/off per value; the mod re-applies its profile every frame
+  const flags = ['temperature', 'precipitation', 'cloudiness', 'fog', 'aurora'].filter(k => ov[k] === true);
+  if (!t0.json.overrides) console.warn('GET /map/time has no overrides block (bridge older than 0.9.40): cannot check mod overrides');
   if (flags.length) {
-    console.error(`ClimateSystem overrides still on: ${flags.join(', ')}. Usually Time & Weather Anarchy's selected profile (Options → Time & Weather Anarchy → select "Main" or turn off its custom temperature/precipitation, or disable the mod in the editor playset), then restart the game. Needs bridge clearOverrides (0.9.40+) to clear them without a restart.`);
+    console.error(`ClimateSystem overrides on: ${flags.join(', ')} (temperature ${ov.temperatureValue}). Time & Weather Anarchy profile: ${JSON.stringify(ov.timeWeatherAnarchy ?? {}).slice(0, 300)}. Select its "Main" (default) profile in Options → Time & Weather Anarchy, or disable the mod; it re-applies the profile every frame, so nothing else clears it.`);
     process.exit(3);
   }
 }
@@ -100,7 +101,7 @@ for (const s of SHOTS) {
   // the settle ran the clock: re-pin the date so both shots see the same sun and climate point
   await request('POST', '/map/time', { date, hour: s.hour });
   t = await request('GET', '/map/time');
-  const live = t.json.live ?? {}, sample = t.json.sampleAtDate ?? {};
+  const live = t.json.live ?? {}, sample = t.json.curveAtDate ?? t.json.sampleAtDate ?? {};   // raw curve at the date (0.9.40+)
   const shots = {};
   if (SHOTS_ON) for (const sp of SPOTS) {
     await request('POST', `/camera/set?x=${sp.x}&z=${sp.z}&angleX=${sp.angleX}&angleY=${sp.angleY}&zoom=${sp.zoom}`);
