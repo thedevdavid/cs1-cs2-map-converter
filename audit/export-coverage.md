@@ -1,5 +1,7 @@
 # DakotaExport coverage audit (v0.3.0, before the last export)
 
+> **Status 2026-10-21:** items 1–8 below were implemented in v0.4.x and the export ran on 2026-10-19 (`2972879554_Dakota_Falls-20261019-063123`, v0.4.2): no section errors, 604 live Procedural Objects plus all **86 failed ones written** (one missing asset group), 22 custom-data blobs dumped. Item 9 was revised for the decision to keep TM:PE and IMT data.
+
 Date: 2026-10-19. Scope: `cs1-exporter/DakotaExport` (v0.3.0, schema `dakota-export/cs1/v3`) against what CS1 1.21.1-f9 and the map's mods store for Dakota Falls (Workshop 2972879554).
 
 How this was checked:
@@ -70,7 +72,7 @@ Absent, so nothing to read: Surface Painter (`SurfaceManager`), Extra Landscapin
 | **Node Controller Renewal** (2472062376) | key `NodeController` (gzip XML: 1 067 nodes, 2 162 segment ends; offset, shift, rotate, slope, twist, stretch, no-markings, collision) | **no** | nothing irrecoverable: decoded offline from the `.crp` | none needed. Mostly not expressible in CS2. |
 | **Intersection Marking Tool** (2140418403) | key `NodeMarkup` (gzip XML: 1 160 marked nodes, 2 875 lines, 91 fillers, crosswalks); uses network `1889660581.Single Steel Barrier - raisable_Data` and prop `2889685220.Sidewalk-003 Decal_Data` | **no** | The **barrier network lines and decal props IMT renders itself** (they are not in NetManager/PropManager); filler areas. The XML is offline, but the geometry needs IMT's entrance-point maths. | Computed trajectories (`IMT.Manager` markings → lines → `ITrajectory`, fillers, crosswalk borders) sampled to polylines: **medium–large**. Value medium-low for CS2. |
 | **Adaptive Networks** (3683231517) | key `AdaptiveRoads`; per-segment/node/lane flags. The session log shows "Serializing 0 lanes" | no | AN toggles on RAILWAY 2 style networks (which props and wires show) | **medium**; low value |
-| **TM:PE** (1637663252) | key `TrafficManager_v1.0` (lane connections, arrows, speed limits, priority signs, timed lights, crosswalks) | no | Traffic rules. They don't matter for a CS2 map, which auto-generates them. | skip (offline BinaryFormatter if ever wanted) |
+| **TM:PE** (1637663252) | key `TrafficManager_v1.0` (lane connections, arrows, speed limits, priority signs, timed lights, crosswalks) | no | Traffic rules. **Kept for reuse in CS2** (TM:PE data importer, decision 2026-10-20). | no exporter work: the raw blob is in `-sdata/` and the `.crp`; decoded offline |
 | **Theme Mixer 2.5** (3031623332) | key `THEME-MIXER-2.5` = mix id; the textures and LUT are in the theme-mix asset | theme base yes (`mapTheme`) | nothing for the map data | skip (audit-theme) |
 | **Extra Landscaping Tools Revisited** (3733110460) | writes vanilla arrays only (sand, resources, terrain) | yes, via vanilla | nothing | – |
 | **Surface Painter** | not in map | – | – | – |
@@ -123,6 +125,6 @@ Verified correct against the decompiled code:
 6. **Keep skipped buildings, flagged** (B5) and add `NetNode.m_building`. This separates CS1-generated pillars from the 112 hand-placed ones.
 7. **Raw custom-data dump**: write every `m_serializableDataStorage` entry to `<base>-sdata/<key>.bin` with an index (key, length). This is insurance only: the same bytes are in the `.crp` (offline extraction proven, see the notes folder), but it pins the exact loaded state next to the dump.
 8. Small extras: `m_sand` and `m_shore` as resource layers; `netPrefabs` variant links (elevated/bridge/slope/tunnel → base), lane props and terrain flags; always-points props (B4); temp-file writes (B6).
-9. **Skip.** TM:PE, Adaptive Networks, Node Controller, Theme Mixer, ACME: low value for a CS2 map, and their raw data stays in the `.crp`; Node Controller and IMT XML decode offline today. IMT computed geometry (barrier lines, fillers) is the only one with visible CS2 value (the steel barriers), at medium–large cost. Do it only if the barriers matter.
+9. **No exporter work, but keep the data.** TM:PE and IMT markings are kept for later CS2 mods (TM:PE importer; a future CS2 IMT rebuild), decided 2026-10-20: never drop them. Their raw blobs are in the v0.4 `-sdata/` dump and the `.crp`, and are decoded offline. Adaptive Networks, Node Controller, Theme Mixer and ACME stay raw-only. IMT computed geometry (barrier lines, fillers) would still need IMT's entrance-point maths, at medium–large cost.
 
 Things the single export does **not** need to capture, because the `.crp` holds them permanently: all 22 mod blobs, the vanilla manager data, the map metadata asset and the preview images.
