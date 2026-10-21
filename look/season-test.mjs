@@ -54,14 +54,15 @@ const f2 = x => (x == null || Number.isNaN(+x)) ? '—' : (+x).toFixed(2);
 // ---- 0. mod overrides off, then climate checks (curves, not the HUD) ----
 // Time & Weather Anarchy (PDX 88893) applies its profile in the main menu and never clears it when the editor loads:
 // with the "desert" profile, temperature is pinned to 31 °C and precipitation is overridden (A-v8, A-v9).
-await request('POST', '/map/time', { reset: true });
+// bridge 0.9.41+: clearOverrides turns the five weather overrides off (the mod does not re-apply them in the editor: its update is guarded by !_isEditor)
+await request('POST', '/map/time', { clearOverrides: true, reset: true });
 const t0 = await request('GET', '/map/time');
 {
   const ov = t0.json.overrides ?? {};   // bridge 0.9.40+: on/off per value; the mod re-applies its profile every frame
   const flags = ['temperature', 'precipitation', 'cloudiness', 'fog', 'aurora'].filter(k => ov[k] === true);
   if (!t0.json.overrides) console.warn('GET /map/time has no overrides block (bridge older than 0.9.40): cannot check mod overrides');
   if (flags.length) {
-    console.error(`ClimateSystem overrides on: ${flags.join(', ')} (temperature ${ov.temperatureValue}). Time & Weather Anarchy profile: ${JSON.stringify(ov.timeWeatherAnarchy ?? {}).slice(0, 300)}. Select its "Main" (default) profile in Options → Time & Weather Anarchy, or disable the mod; it re-applies the profile every frame, so nothing else clears it.`);
+    console.error(`ClimateSystem overrides on: ${flags.join(', ')} (temperature ${ov.temperatureValue}). Time & Weather Anarchy profile: ${JSON.stringify(ov.timeWeatherAnarchy ?? {}).slice(0, 300)}. clearOverrides did not hold (bridge older than 0.9.41?). Select the mod's "Main" (default) profile in Options → Time & Weather Anarchy, or disable the mod, and restart.`);
     process.exit(3);
   }
 }

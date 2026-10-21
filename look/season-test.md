@@ -32,12 +32,12 @@ Exit code 0 = all pass, 2 = something failed. Output in the `--out` folder:
 
 A-v8 and A-v9 read a flat 31 °C and zero precipitation. Not the climate: the mod **Time & Weather Anarchy** (PDX 88893) did it.
 - It writes `ClimateSystem.temperature/precipitation/cloudiness/fog/aurora` overrides from its selected profile. Here that is **"desert": temperature 31, custom precipitation, lat 40.77 / lon 116.05**, from `ModsSettings/TimeWeatherAnarchy`.
-- The overrides win everywhere: the HUD, `sampleAtDate` and the weather. The bridge session reports (0.9.40) that the mod re-applies its profile every frame, so no bridge call can clear it. Its profile there: custom temperature 31, custom precipitation 0, TimeOption 3, WeatherOption 2, day of year 193.
+- The overrides win everywhere: the HUD, `sampleAtDate` and the weather. In the editor the mod does not re-apply them, because its update is guarded by `!_isEditor`; it only leaves behind what it set in the main menu. Its profile there: custom temperature 31, custom precipitation 0, TimeOption 3, WeatherOption 2, day of year 193.
 - The saved map is not affected: overrides are runtime state, not part of the climate.
 
-Before the test (the only fix is the mod setting):
-- (a) in the mod's options, select its **"Main" (default) profile**, which has custom temperature/precipitation off; or
-- (b) disable Time & Weather Anarchy for the editor session.
+Before the test:
+- (a) **bridge 0.9.41+ (after a game restart):** the bridge clears the five weather overrides when the editor loads (with a WARN in CS2MCP.log), and the script also sends `POST /map/time {clearOverrides: true}` first. Nothing else is needed;
+- (b) older bridge: select the mod's **"Main" (default) profile** in its options, or disable the mod, and restart.
 
 
 The script reads `GET /map/time` → `overrides` (bridge 0.9.40+: date, temperature with its value, precipitation, cloudiness, fog, aurora, plus `timeWeatherAnarchy` with the mod's profile). It stops with exit code 3 if any weather override is on. Per shot it grades `live` (after the settle) against `curveAtDate`, the raw curve value at the date without overrides.
