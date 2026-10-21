@@ -1,0 +1,143 @@
+1319 Rock09
+1302 Rock02
+1291 Rock05
+1291 Rock06
+1282 Rock08
+1277 Rock01
+1266 Gravel Road
+1265 Rock03
+1251 Rock07
+1238 Rock10
+1209 Rock04
+905 Highway Oneway - 2 lanes
+706 Grass02 (Styx's)
+621 ConcreteBarrier01
+542 Highway Oneway - 3 lanes
+540 Grass05 (Styx's)
+403 Double Train Track
+378 CliffStack
+346 Grass03 (Styx's)
+319 Grass06 (Styx's)
+308 Small Road
+296 Highway Oneway - 1 lane
+287 gaga - Fern 1
+273 RZaridrock4
+269 Rock18
+267 RZaridrock3
+266 Rock30
+264 Rock20
+259 Rock12
+257 Rock22
+256 Rock14
+255 Rock26
+253 Rock28
+244 Rock25
+243 Rock16
+241 Rock11
+238 Rock23
+234 Rock13
+229 Rock21
+227 Rock27
+226 Rock15
+226 Rock19
+224 Rock24
+219 Rock29
+209 Rock17
+191 gaga - Fern 2
+162 rzrock1
+161 Grass01 (Styx's)
+158 CliffRock5
+155 Grass04 (Styx's)
+150 LogRandom01
+146 rzrock7
+130 CliffRock6
+127 PD-YellowFlower
+127 Boulder01
+123 Boulder03
+122 Boulder08
+119 pd Long Grass
+119 Boulder05
+115 Boulder07
+114 Boulder04
+107 Boulder06
+105 Boulder02
+100 Medium Seaway
+81 Pillar4x16
+66 Log02
+65 Log01
+62 RZaridrock1
+62 High-voltage Line
+58 Log03
+56 rzrock3
+56 rzrock4
+56 Pillar2x8
+55 rzrock8
+52 rzrock2
+52 Log04
+52 ReikUndergrowth02Trimmed
+50 ITBP_Pillar Piers 01
+49 rzrock5
+49 CliffSideTall
+47 RZaridrock2
+47 ReikUndergrowth01Trimmed
+45 CliffSide2
+45 CliffSide2Right
+43 RZaridrock5
+42 CliffSlim
+39 CliffSide2Left
+39 Medium Road
+36 BasePlateConcrete16
+34 RuinsStoneFormation01
+29 RuinsStoneFormation02
+29 Highway Oneway - 4 lanes
+26 pd Bloom
+25 rzrock6
+24 StreetlightSingle01
+24 WarningLight01
+22 FenceResidentialPieceLow01
+21 BXP Truss Viaduct - Train
+18 TrashbagRandom01
+16 RubblePileConcrete01
+15 Pavement Path
+14 Wall32x16
+14 Narrow Boatway
+13 RubblePileConcrete02
+11 RuinsStoneCairns01
+10 RuinsStoneCairns03
+10 Road Outside Connection - Oneway
+9 GreenBushWild02
+8 RuinsStoneCairns02
+8 BXP Truss Arch Bridge - Highway Oneway - 2 Lanes
+8 Wooden Covered Bridge - 2 lanes
+7 RubblePileMixedRandom01
+7 BasePlateConcrete32
+6 Road Outside Connection - Twoway
+5 CliffRock3
+4 StandingStone01
+4 StandingStone05
+4 Train Outside Connection - Twoway
+4 Airplane Outside Connection
+4 Truss Arch Bridge - Small Road - 2 Lanes
+3 RuinsCastle01
+3 GardenBench01
+3 StandingStone07
+3 StandingStone08
+3 StandingStone06
+2 TransformerStation01
+2 NA_StopSign01
+2 StandingStone04
+2 TrussArchBridge01
+2 Sound Barrier
+1 RuinsOldMill01
+1 RubblePileWood02
+1 StreetlightSingle02
+1 ParkSign02
+1 ParkSign01
+1 StandingStone03
+1 StandingStone02
+1 OldCastle01
+1 BasePlateConcrete62
+1 Ship Outside Connection - Twoway
+1 BXP SuspensionBridge03 - Six Lane Highway
+1 Hydroelectric_Power_Plant_01 Dam
+1 HWY Truss Gantry 2L  A
