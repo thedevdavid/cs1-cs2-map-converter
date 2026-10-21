@@ -123,7 +123,7 @@ public class ConverterTests
     [InlineData("2610252544.R2USA W GrWo 2x2 T0", "Double Train Track")]
     [InlineData("Train Connection Track", "Double Train Track")]
     [InlineData("Gravel Road Elevated", "Gravel Road")]
-    [InlineData("2097539846.USRP 4-Lane National Road_Data", "Medium Road")]
+    [InlineData("2097539846.USRP 4-Lane National Road_Data", "Highway Twoway - 4 lanes")]
     [InlineData("2966434181.Retaining Walls - AiO #01_Data", "QuaySmall01")]
     [InlineData("2674210208.Field Wheat Network 3_Data", null)]
     [InlineData("Monorail Oneway Track", "Arc Pedestrian Bridge")]

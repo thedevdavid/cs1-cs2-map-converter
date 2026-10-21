@@ -128,7 +128,7 @@ public static class RockShed
         double TerrAt(double l, double d) { var (x, z) = c.Off(l, d); return Terr(x, z); }
         double Yaw(double tx, double tz) => ((Math.Atan2(tx, tz) * 180 / Math.PI) % 360 + 360) % 360;
         PlacedObject O(string id, string prefab, double x, double z, double y, double yaw, string note) =>
-            new(id, prefab, "object", Math.Round(x, 2), Math.Round(z, 2), Math.Round(y, 2), Math.Round(((yaw % 360) + 360) % 360, 1), "JP Rock shed (open gallery)", note);
+            new(id, prefab, "object", Math.Round(x, 2), Math.Round(z, 2), Math.Round(y, 2), Math.Round(((yaw % 360) + 360) % 360, 1), "JP Rock shed (open gallery)", note) { Pin = true };   // round 45: bridge 0.9.51 pin (A-v18: the game re-grounded the columns)
 
         // Round 41: roof rows every RoofStep (15.8 m: the 16 m slabs butt with 0.2 m overlap) over the CS1 extent, one layer. Each row's underside is at least
         // Clear above the highest point of the actual road under its 16 m span (round 41, item 3) and never below the 48 m smoothed profile + Clear; each row
