@@ -51,8 +51,19 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const f1 = x => (x == null || Number.isNaN(+x)) ? '—' : (+x).toFixed(1);
 const f2 = x => (x == null || Number.isNaN(+x)) ? '—' : (+x).toFixed(2);
 
-// ---- 0. climate checks (curves, not the HUD) ----
+// ---- 0. mod overrides off, then climate checks (curves, not the HUD) ----
+// Time & Weather Anarchy (PDX 88893) applies its profile in the main menu and never clears it when the editor loads:
+// with the "desert" profile, temperature is pinned to 31 °C and precipitation is overridden (A-v8, A-v9).
+await request('POST', '/map/time', { clearOverrides: true, reset: true });
 const t0 = await request('GET', '/map/time');
+{
+  const live = t0.json.live ?? {};
+  const flags = Object.entries(live).filter(([k, v]) => /overrid/i.test(k) && v === true).map(([k]) => k);
+  if (flags.length) {
+    console.error(`ClimateSystem overrides still on: ${flags.join(', ')}. Usually Time & Weather Anarchy's selected profile (Options → Time & Weather Anarchy → select "Main" or turn off its custom temperature/precipitation, or disable the mod in the editor playset), then restart the game. Needs bridge clearOverrides (0.9.40+) to clear them without a restart.`);
+    process.exit(3);
+  }
+}
 if (t0.status !== 200) { console.error('GET /map/time failed', t0.status, JSON.stringify(t0.json).slice(0, 300)); process.exit(1); }
 const clim = t0.json.climate ?? {};
 const checks = [];
