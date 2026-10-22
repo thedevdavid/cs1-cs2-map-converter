@@ -23,7 +23,7 @@ const crp = {
 // grass slot whose source alpha is flat 255, so it takes the Grass value)
 const slots = {
   Grass: { src: [crp.seychelles, 'GrassDiffuseTexture'], uniform: 60, cap: 60 },
-  Cliff: { src: [crp.springwood, 'CliffDiffuseTexture'], uniform: 90, cap: 60 },
+  Cliff: { src: [crp.springwood, 'CliffDiffuseTexture'], uniform: 60, cap: 60 },
   Dirt: { src: [crp.springwood, 'RuinedDiffuseTexture'], uniform: 50, cap: 60 },
   Extra1: { src: [crp.coastal, 'GrassDiffuseTexture'], uniform: 98, cap: 60 },
   Extra2: { src: [crp.springwood, 'GrassDiffuseTexture'], uniform: 60, cap: 60 },
@@ -71,7 +71,7 @@ for (const [slot, s] of Object.entries(slots)) {
   for (let i = 3; i < img.rgba.length; i += 4) { const a = alpha ? alpha[i] : s.uniform; img.rgba[i] = s.cap ? Math.min(a, s.cap) : a; }
   if (s.cap) mode += ` capped at ${s.cap}`;
   writePng(path.join(out, `${slot}_BaseColor.png`), img, 4);
-  fs.copyFileSync(path.join(src, `${slot}_Normal.png`), path.join(out, `${slot}_Normal.png`));
+  fs.copyFileSync(path.join(src, `${slot}_Normal.png`), path.join(out, `${slot}_Normal.png`)); // normals unchanged (24-bit)
   rows.push({ slot, mode });
 }
 // verify from disk: 4 channels, mean alpha
