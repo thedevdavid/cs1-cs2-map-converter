@@ -1069,3 +1069,11 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
 - **Change:** the converter masks trees on the lots of imported buildings by default (today the OldCastle01 keep, ±104 × ±96 m around (4.65, −2618.56)); `--no-mask-building-lots` keeps them.
 - **Fidelity cost:** **CS1 had 354 trees on that lot; we drop 340** (the other 14 were already masked by the net corridor and other rules). 33 deciduous, 116 conifers, 205 bushes.
 - A-v22 builds from the staged round-48b trees (same set). out/ is regenerated in place once that build is done.
+
+### Round 48d: runner sets skipInsideBuildings (bridge 0.9.56)
+
+- tools/import-run.mjs adds `options.skipInsideBuildings = true` to every /import/objects body of the steps **trees, rock-scatter, po-rocks, objects, barriers (walls-props), rock-shed**. The bridge then leaves out objects whose position lies inside an existing building's footprint (rotated prefab bounds), where OverrideSystem and Anarchy loop on them every frame.
+- **Not set** on fort, substation, connections (they create the buildings), nor on po-structures / br006-arches / gantry / piers (they sit on structures).
+- Older bridges ignore the option.
+- The bridge's `skippedInsideBuildings` count goes into the console line, run-*.md and run-*.json.
+- The converter's building-lot tree mask stays the default (48c).

@@ -245,9 +245,12 @@ const summary = (endpoint, r) => {
 // a timing block (per-stage times). One line on the console and in run-*.md, the full blocks in run-*.json.
 const compact = v => v == null ? "" : typeof v === "object" ? Object.entries(v).map(([k, x]) => `${k}=${typeof x === "number" ? (Math.round(x * 100) / 100) : typeof x === "object" ? compact(x).replace(/ /g, ",") : x}`).join(" ") : String(v);
 const paintTiming = j => j?.method != null || j?.seconds != null ? `; method=${j.method ?? "?"}, calibration=${typeof j.calibration === "object" ? compact(j.calibration) : (j.calibration ?? "?")}, seconds=${j.seconds ?? "?"}${j.raster ? ` (raster ${compact(j.raster)})` : ""}` : "";
-const objectTiming = j => j?.timing ? `; timing ${compact(j.timing)}` : "";
+const objectTiming = j => (j?.timing ? `; timing ${compact(j.timing)}` : "") + (j?.skippedInsideBuildings != null ? `; skippedInsideBuildings ${typeof j.skippedInsideBuildings === "object" ? JSON.stringify(j.skippedInsideBuildings).slice(0, 200) : j.skippedInsideBuildings}` : "");
 // Bridge 0.9.50: objects with pitch / roll / quaternion get a "tilt" block (kept / changed per object against the live Transform). Round 43: kept in run-*.json.
 const objectTilt = j => j?.tilt ? `; tilt ${compact(Object.fromEntries(Object.entries(j.tilt).filter(([, v]) => typeof v !== "object" || v === null)))}` : "";
+// Round 48d: /import/objects layers that get skipInsideBuildings (not fort, substation, po-structures / arches / gantry / piers, connections: they place
+// the buildings, or sit on structures rather than near buildings).
+const SKIP_INSIDE_BUILDINGS = new Set(["trees", "rock-scatter", "po-rocks", "objects", "barriers", "rock-shed"]);
 const undoOf = (endpoint, r, name) => endpoint === "/import/network" ? `POST /import/undo?id=${r.importId}` : endpoint === "/import/water" ? `POST /import/water/undo?id=${r.importId}`
   : endpoint === "/import/resources" ? "(no undo: re-import the previous layers)" : `POST /import/objects/undo?id=${r.importId}`;
 
@@ -320,6 +323,10 @@ outer: for (const [name, endpoint, files] of steps) {
     if (endpoint === "/import/objects" || endpoint === "/import/surfaces") body.options.bypassValidation = true;
     // Bridge 0.9.45 (the Workspace panel no longer rebuilds per created object): 3 settle frames instead of 100 for the object bodies.
     if (endpoint === "/import/objects" && body.options.bypassValidation) body.options.settleFrames = 3;
+    // Bridge 0.9.56: objects whose position lies inside an existing building's footprint are left out (reported as skippedInsideBuildings): the game's
+    // OverrideSystem and Anarchy loop on them every frame (trees show it as the checkerboard). On every object layer except the ones that create the
+    // buildings themselves. Older bridges ignore the option.
+    if (endpoint === "/import/objects" && SKIP_INSIDE_BUILDINGS.has(name)) body.options.skipInsideBuildings = true;
     if (dryRun) { body.options.dryRun = true; body.dryRun = true; }
     body.name ??= file.split(/[\\/]/).pop().replace(/\.json$/, "");
     if (endpoint === "/import/terrain-paint") {
