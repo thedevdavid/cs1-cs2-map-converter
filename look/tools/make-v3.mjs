@@ -12,7 +12,11 @@ import { fileURLToPath } from 'node:url';
 import { readCrpTexture, decode, writePng } from './crp-tex.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const W = process.argv[2] || 'D:/SteamLibrary/steamapps/workshop/content/255710';
+const args = process.argv.slice(2).filter((a, i, all) => !a.startsWith('--') && !(i > 0 && all[i - 1].startsWith('--')));
+const flag = (n) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
+const W = args[0] || 'D:/SteamLibrary/steamapps/workshop/content/255710';
+// --max N: scale each slot's CS1 per-pixel alpha so its brightest pixel lands at N (keeps the CS1 gloss pattern) instead of capping; --tag .sNN names the output files
+const MAX = Number(flag('--max')) || 0, TAG = flag('--tag') || '';
 const tex = path.join(here, '..', 'textures');
 const src = path.join(tex, 'current'), out = path.join(tex, 'v3');
 const crp = {
@@ -68,15 +72,17 @@ for (const [slot, s] of Object.entries(slots)) {
     else if (mn === 255) mode += ' (CS1 alpha flat 255)';
     else { alpha = cs1.rgba; mode = 'CS1 alpha per pixel'; }
   } catch (e) { mode += ` (CS1 source unreadable: ${e.message})`; }
-  for (let i = 3; i < img.rgba.length; i += 4) { const a = alpha ? alpha[i] : s.uniform; img.rgba[i] = s.cap ? Math.min(a, s.cap) : a; }
-  if (s.cap) mode += ` capped at ${s.cap}`;
-  writePng(path.join(out, `${slot}_BaseColor.png`), img, 4);
-  fs.copyFileSync(path.join(src, `${slot}_Normal.png`), path.join(out, `${slot}_Normal.png`)); // normals unchanged (24-bit)
+  let mx = 0; if (alpha) for (let i = 3; i < alpha.length; i += 4) if (alpha[i] > mx) mx = alpha[i];
+  const k = MAX && alpha && mx > 0 ? MAX / mx : 1; if (MAX && alpha) mode += ` scaled x${k.toFixed(3)} (CS1 max ${mx} -> ${MAX})`;
+  for (let i = 3; i < img.rgba.length; i += 4) { const a = alpha ? (MAX ? Math.round(alpha[i] * k) : alpha[i]) : s.uniform; img.rgba[i] = !MAX && s.cap ? Math.min(a, s.cap) : a; }
+  if (!MAX && s.cap) mode += ` capped at ${s.cap}`;
+  writePng(path.join(out, `${slot}_BaseColor${TAG}.png`), img, 4);
+  fs.copyFileSync(path.join(src, `${slot}_Normal.png`), path.join(out, `${slot}_Normal${TAG}.png`)); // normals unchanged (24-bit)
   rows.push({ slot, mode });
 }
 // verify from disk: 4 channels, mean alpha
 for (const r of rows) {
-  const v = readPng(path.join(out, `${r.slot}_BaseColor.png`)); let sa = 0;
+  const v = readPng(path.join(out, `${r.slot}_BaseColor${TAG}.png`)); let sa = 0;
   for (let i = 3; i < v.rgba.length; i += 4) sa += v.rgba[i];
   r.size = `${v.w}x${v.h}`; r.channels = v.ch; r.meanA = +(sa / (v.w * v.h)).toFixed(1);
 }
