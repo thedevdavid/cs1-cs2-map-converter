@@ -1158,3 +1158,10 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
 - **Runner:** new step **fort-strip** after fort-props (so after objects and fort-buildings). It POSTs /build/strip-subobjects `{prefabs: [building prefabs in import-fort-buildings.json and import-objects.json from building-bounds.json], kinds: [tree, plant], onlyLooping: false}` and prints matched / removed. Bridge 0.9.58 has no options.stripOwnedPlants on /import/objects, so the separate step is used.
 - **Fort buildings now:** RuinsStoneFormation01 32, RuinsStoneFormation02 27, RuinsStoneCairns01/02/03 11/8/10, RuinsCastle01 1 (keep). The 4 at the dam plant are dropped.
 - The Round9 test now expects the RuinsCastle01 keep; 143 tests pass.
+
+### Round 51b: stripOwnedPlants on the building layers (bridge 0.9.59); out.next re-staged
+
+- **Runner:** sets `options.stripOwnedPlants = true` on **fort-buildings** and **objects** (the 3 CS1 RuinsCastle01). The bridge deletes the created buildings' own trees and plants right after the import. The count is read from the bridge's "stripOwned: deleted N" warning and printed per layer (console, run-*.md, run-*.json). Props are not stripped.
+- **fort-strip** is now only a fallback: it POSTs /build/strip-subobjects `{prefabs, kinds: [tree, plant], onlyLooping: false}` just for a layer whose stripOwned count came back 0 (or that was not imported in this run), else it prints "not needed".
+- **out.next/** is regenerated and identical to out/ (round 51, fbb6b2b): the fort keep is RuinsCastle01; the 63 ruins of 50b are kept (keep-lot clearing is opt-in); 50c's dam plant clearing is kept.
+- **The 19 standing stones do not come back.** They stand inside RuinsStoneFormation footprints (the wall pieces overlap into a solid band, round 50), not inside the old OldCastle01 lot. They would only come back with the formations as non-building props, or by placing them by hand.

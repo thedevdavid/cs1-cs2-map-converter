@@ -147,8 +147,8 @@ const steps = [
   // Round 49: the fort's buildings, then its standing stones with skipInsideBuildings (they stood inside the formations' footprints).
   ["fort-buildings", "/import/objects", [p("import-fort-buildings.json")]],
   ["fort-props", "/import/objects", [p("import-fort-props.json")]],
-  // Round 51: the decorative buildings' own trees and plants render as checkers (OldCastle01, RuinsCastle01): strip them once the fort buildings and the
-  // objects (the 3 CS1 RuinsCastle01) are in. Building prefabs from building-bounds.json that the fort / objects files place.
+  // Round 51: fallback for stripOwnedPlants (bridge 0.9.59 on fort-buildings and objects): if a layer's stripOwned count came back 0, strip the owned
+  // trees and plants of its building prefabs (building-bounds.json) once the fort buildings and the objects (the 3 CS1 RuinsCastle01) are in.
   ["fort-strip", "/build/strip-subobjects", [p("import-fort-buildings.json"), p("import-objects.json")]],
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
   ["resources", "/import/resources", [p("import-resources.json")]],
@@ -256,6 +256,12 @@ const objectTilt = j => j?.tilt ? `; tilt ${compact(Object.fromEntries(Object.en
 // Round 48d/49: /import/objects layers that get skipInsideBuildings (not fort-buildings, substation, po-structures / arches / gantry / piers, connections: they place
 // the buildings, or sit on structures rather than near buildings).
 const SKIP_INSIDE_BUILDINGS = new Set(["trees", "rock-scatter", "po-rocks", "objects", "barriers", "rock-shed", "fort-props"]);
+// Round 51 (bridge 0.9.59): the layers that create decorative buildings get options.stripOwnedPlants, which deletes those buildings' own trees and plants
+// right after the import (they render as placeholders here); the bridge reports it as a "stripOwned: deleted N ..." warning. fort-strip falls back to
+// POST /build/strip-subobjects for any of these layers whose count came back 0.
+const STRIP_OWNED = { "fort-buildings": "import-fort-buildings.json", "objects": "import-objects.json" };
+const stripOwned = {};   // layer -> deleted count (summed over its files)
+const stripCount = j => { const m = JSON.stringify(j ?? {}).match(/stripOwned: deleted (\d+)/); return m ? Number(m[1]) : 0; };
 const undoOf = (endpoint, r, name) => endpoint === "/import/network" ? `POST /import/undo?id=${r.importId}` : endpoint === "/import/water" ? `POST /import/water/undo?id=${r.importId}`
   : endpoint === "/import/resources" ? "(no undo: re-import the previous layers)" : `POST /import/objects/undo?id=${r.importId}`;
 
@@ -311,7 +317,10 @@ outer: for (const [name, endpoint, files] of steps) {
   if (!wanted(name)) continue;
   if (endpoint === "/build/strip-subobjects") {
     const bb = JSON.parse(readFileSync(new URL("../building-bounds.json", import.meta.url), "utf8")).buildings;
-    const prefabs = [...new Set(files.filter(f => existsSync(f)).flatMap(f => JSON.parse(readFileSync(f, "utf8")).objects.map(o => o.prefab)).filter(pf => bb[pf]?.type === "BuildingPrefab"))];
+    // Fallback only: the layers whose stripOwnedPlants removed nothing (or were not imported in this run).
+    const need = Object.entries(STRIP_OWNED).filter(([layer]) => !(stripOwned[layer] > 0)).map(([, fname]) => fname);
+    if (!need.length) { const text = `not needed: stripOwnedPlants deleted ${Object.entries(stripOwned).map(([k, v]) => `${k} ${v}`).join(", ")}`; console.log(`- ${name}: ${text}`); rows.push({ name, file: "POST /build/strip-subobjects", status: "not needed", text }); continue; }
+    const prefabs = [...new Set(files.filter(f => existsSync(f) && need.some(n => f.endsWith(n))).flatMap(f => JSON.parse(readFileSync(f, "utf8")).objects.map(o => o.prefab)).filter(pf => bb[pf]?.type === "BuildingPrefab"))];
     if (!prefabs.length) { console.log(`- ${name}: no building prefabs in ${files.join(", ")}, skipped`); rows.push({ name, file: "POST /build/strip-subobjects", status: "nothing to strip" }); continue; }
     const t0 = Date.now(), body = { prefabs, kinds: ["tree", "plant"], onlyLooping: false, ...(dryRun ? { dryRun: true } : {}) };
     const r = await request("POST", "/build/strip-subobjects", body).catch(e => ({ status: 0, json: { error: String(e) } }));
@@ -343,6 +352,7 @@ outer: for (const [name, endpoint, files] of steps) {
     // OverrideSystem and Anarchy loop on them every frame (trees show it as the checkerboard). On every object layer except the ones that create the
     // buildings themselves. Older bridges ignore the option.
     if (endpoint === "/import/objects" && SKIP_INSIDE_BUILDINGS.has(name)) body.options.skipInsideBuildings = true;
+    if (endpoint === "/import/objects" && STRIP_OWNED[name]) body.options.stripOwnedPlants = true;
     if (dryRun) { body.options.dryRun = true; body.dryRun = true; }
     body.name ??= file.split(/[\\/]/).pop().replace(/\.json$/, "");
     if (endpoint === "/import/terrain-paint") {
@@ -404,11 +414,13 @@ outer: for (const [name, endpoint, files] of steps) {
     const s = summary(endpoint, r.json);
     if (endpoint === "/import/network") for (const e of body.edges ?? []) imported[e.prefab] = (imported[e.prefab] ?? 0) + 1;
     const fails = (r.json.failedEdges ?? r.json.failedObjects ?? []).slice(0, 20);
-    console.log(`${s.failed ? "!" : "✓"} ${name} ${file.split(/[\\/]/).pop()}: ${s.text}${endpoint === "/import/objects" ? objectTiming(r.json) : ""} (${fmt(r.json.seconds ?? secs)})${r.json.completed === false ? ` ABORTED: ${r.json.abortReason}` : ""}`);
+    if (STRIP_OWNED[name]) stripOwned[name] = (stripOwned[name] ?? 0) + stripCount(r.json);
+    const stripText = STRIP_OWNED[name] ? `; stripOwned ${stripCount(r.json)}` : "";
+    console.log(`${s.failed ? "!" : "✓"} ${name} ${file.split(/[\\/]/).pop()}: ${s.text}${endpoint === "/import/objects" ? objectTiming(r.json) + stripText : ""} (${fmt(r.json.seconds ?? secs)})${r.json.completed === false ? ` ABORTED: ${r.json.abortReason}` : ""}`);
     markDone(file, r.json.importId, name);
     const ng = r.json.netGuard;
     const guardText = ng ? `; netGuard removed ${ng.segmentsRemoved ?? 0}${ng.geometryGone ? ` (geometry gone ${ng.geometryGone})` : ""}` : "";
-    rows.push({ name, file, status: r.json.completed === false ? `aborted: ${r.json.abortReason}` : "ok", secs: r.json.seconds ?? secs, importId: r.json.importId, undo: undoOf(endpoint, r.json, name), text: s.text + guardText + (endpoint === "/import/objects" ? objectTiming(r.json) + objectTilt(r.json) : ""), fails,
+    rows.push({ name, file, status: r.json.completed === false ? `aborted: ${r.json.abortReason}` : "ok", secs: r.json.seconds ?? secs, importId: r.json.importId, undo: undoOf(endpoint, r.json, name), text: s.text + guardText + (endpoint === "/import/objects" ? objectTiming(r.json) + objectTilt(r.json) + stripText : ""), fails,
       ...(endpoint === "/import/objects" && r.json.timing ? { timing: r.json.timing } : {}), ...(endpoint === "/import/objects" && r.json.tilt ? { tilt: r.json.tilt } : {}) });
     // Stop at the first objects / surfaces step that removed built segments (netGuard, bridge 0.9.24).
     if (ng && (ng.segmentsRemoved ?? 0) > 0) {
