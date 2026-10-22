@@ -1,5 +1,5 @@
 {
-  "name": "fort ruins (round 11b)",
+  "name": "fort ruins, buildings (round 49)",
   "_comment": "rotation = yaw in degrees about \u002By, 0 = \u002Bz, clockwise from above, from CS1 m_angle as \u2212angle\u00B7180/\u03C0 (UNVERIFIED sign). y only where the object is clearly on a structure: \u003E 3 m above the CS2 playable heightmap (else \u003E 2 m off the CS1 terrain); never for buildings (CS1 y \u00D7 height factor).",
   "options": {
     "dryRun": false,
@@ -68,24 +68,6 @@
       "cs1": "Castle Wall 1"
     },
     {
-      "id": "fort7",
-      "prefab": "StandingStone05",
-      "x": 11.39,
-      "z": -2574.96,
-      "rotation": 287.2,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort8",
-      "prefab": "StandingStone05",
-      "x": 43.72,
-      "z": -2603.25,
-      "rotation": 344.2,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
       "id": "fort9",
       "prefab": "RuinsStoneFormation01",
       "x": -34.64,
@@ -149,24 +131,6 @@
       "cs1": "Castle Wall 1"
     },
     {
-      "id": "fort16",
-      "prefab": "StandingStone07",
-      "x": -34.56,
-      "z": -2540.44,
-      "rotation": 96.5,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort17",
-      "prefab": "StandingStone03",
-      "x": -35.37,
-      "z": -2596.81,
-      "rotation": 65.3,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
       "id": "fort18",
       "prefab": "RuinsStoneFormation01",
       "x": 2.83,
@@ -199,24 +163,6 @@
       "x": 10.79,
       "z": -2696.03,
       "rotation": 10,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort22",
-      "prefab": "StandingStone05",
-      "x": -2.29,
-      "z": -2695.99,
-      "rotation": 239.6,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort23",
-      "prefab": "StandingStone08",
-      "x": 28.41,
-      "z": -2705.5,
-      "rotation": 217.9,
       "kind": "prop",
       "cs1": "Castle Wall 1"
     },
@@ -298,24 +244,6 @@
       "x": 45.94,
       "z": -2671.9,
       "rotation": 161.7,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort33",
-      "prefab": "StandingStone08",
-      "x": 48.26,
-      "z": -2609.18,
-      "rotation": 285.3,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort34",
-      "prefab": "StandingStone06",
-      "x": 51.96,
-      "z": -2675.39,
-      "rotation": 355,
       "kind": "prop",
       "cs1": "Castle Wall 1"
     },
@@ -464,24 +392,6 @@
       "cs1": "Castle Wall 1"
     },
     {
-      "id": "fort51",
-      "prefab": "StandingStone06",
-      "x": 1405.83,
-      "z": 4667.8,
-      "rotation": 82.4,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort52",
-      "prefab": "StandingStone07",
-      "x": 1273.04,
-      "z": 4647.23,
-      "rotation": 104.9,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
       "id": "fort53",
       "prefab": "RuinsStoneFormation01",
       "x": -26.03,
@@ -532,24 +442,6 @@
       "x": -4.93,
       "z": -2566.29,
       "rotation": 116.5,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort59",
-      "prefab": "StandingStone05",
-      "x": -30.37,
-      "z": -2538.42,
-      "rotation": 301.8,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort60",
-      "prefab": "StandingStone06",
-      "x": 4.35,
-      "z": -2568.8,
-      "rotation": 107.9,
       "kind": "prop",
       "cs1": "Castle Wall 1"
     },
@@ -608,24 +500,6 @@
       "cs1": "Castle Wall 3"
     },
     {
-      "id": "fort67",
-      "prefab": "StandingStone04",
-      "x": 43.86,
-      "z": -2603.71,
-      "rotation": 325.3,
-      "kind": "prop",
-      "cs1": "Castle Wall 3"
-    },
-    {
-      "id": "fort68",
-      "prefab": "StandingStone02",
-      "x": 7.78,
-      "z": -2572.05,
-      "rotation": 284.6,
-      "kind": "prop",
-      "cs1": "Castle Wall 3"
-    },
-    {
       "id": "fort69",
       "prefab": "RuinsStoneFormation01",
       "x": -35.35,
@@ -676,15 +550,6 @@
       "x": -30.7,
       "z": -2634.29,
       "rotation": 201.7,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort75",
-      "prefab": "StandingStone07",
-      "x": -35.18,
-      "z": -2649.46,
-      "rotation": 236.2,
       "kind": "prop",
       "cs1": "Castle Wall 1"
     },
@@ -833,15 +698,6 @@
       "cs1": "Castle Wall 1"
     },
     {
-      "id": "fort92",
-      "prefab": "StandingStone08",
-      "x": 1140.75,
-      "z": 4626.74,
-      "rotation": 240,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
       "id": "fort93",
       "prefab": "RuinsStoneFormation01",
       "x": -29.19,
@@ -892,15 +748,6 @@
       "x": -6.79,
       "z": -2684.39,
       "rotation": 217.7,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort99",
-      "prefab": "StandingStone01",
-      "x": -33.04,
-      "z": -2657.35,
-      "rotation": 108.3,
       "kind": "prop",
       "cs1": "Castle Wall 1"
     },
@@ -959,15 +806,6 @@
       "cs1": "Castle Wall 3"
     },
     {
-      "id": "fort106",
-      "prefab": "StandingStone04",
-      "x": -32.16,
-      "z": -2537.01,
-      "rotation": 68.3,
-      "kind": "prop",
-      "cs1": "Castle Wall 3"
-    },
-    {
       "id": "fort107",
       "prefab": "RuinsStoneFormation01",
       "x": 49.04,
@@ -1000,15 +838,6 @@
       "x": 41.11,
       "z": -2683.35,
       "rotation": 172.2,
-      "kind": "prop",
-      "cs1": "Castle Wall 1"
-    },
-    {
-      "id": "fort111",
-      "prefab": "StandingStone01",
-      "x": 34.43,
-      "z": -2703.42,
-      "rotation": 5.1,
       "kind": "prop",
       "cs1": "Castle Wall 1"
     },
