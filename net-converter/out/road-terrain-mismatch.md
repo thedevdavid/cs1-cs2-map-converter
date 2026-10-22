@@ -24,8 +24,8 @@
 | e23853_0 | Gravel Road | (6846, 2792) | 2/8 | 2.1 | terrain above the road (tunnel) |
 | e24652_0 | Gravel Road | (6872, 3457) | 8/8 | 4.0 | terrain above the road (tunnel) |
 | e24804_0 | Gravel Road | (6819, 3553) | 5/9 | 2.5 | terrain above the road (tunnel) |
-| e26099_0 | Small Road | (6871, 2428) | 4/8 | 2.4 | terrain above the road (tunnel) |
-| e26953_0 | Small Road | (6826, 2435) | 3/5 | 2.4 | terrain above the road (tunnel) |
+| e26099_0 | Highway Twoway - 2 lanes | (6871, 2428) | 4/8 | 2.4 | terrain above the road (tunnel) |
+| e26953_0 | Highway Twoway - 2 lanes | (6826, 2435) | 3/5 | 2.4 | terrain above the road (tunnel) |
 | e28281_0 | Gravel Road | (6807, 2689) | 11/12 | 3.2 | terrain above the road (tunnel) |
 | e32558_0 | Highway Oneway - 2 lanes | (-3558, -258) | 3/11 | 8.2 | terrain below the road (pillars) |
 | e33911_0 | Gravel Road | (6741, 3201) | 3/9 | 2.3 | terrain above the road (tunnel) |

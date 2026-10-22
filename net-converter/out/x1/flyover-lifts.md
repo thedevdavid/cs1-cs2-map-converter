@@ -99,13 +99,13 @@ CS1 elevated (bridge-AI) courses lifted to ≥ 8.5 m above the terrain (output m
 | e33311_0b | 33311 | Highway Oneway - 1 lane | (3732, 2175) | 6.9 → 8.5 |
 | e9919_0 | 9919 | Highway Oneway - 1 lane | (722, 3925) | 6.9 → 8.5 |
 | e22564_0b | 22564 | Highway Oneway - 2 lanes | (727, 3939) | 6.9 → 8.5 |
-| e26134_0bb | 26134 | Small Road | (-3692, -2951) | 3.3 → 4.7 |
+| e26134_0bb | 26134 | Highway Twoway - 2 lanes | (-3692, -2951) | 3.3 → 4.7 |
 | e4315_0aa | 4315 | Highway Oneway - 2 lanes | (1494, 4364) | 4.5 → 5.9 |
 | e36304_0bb | 36304 | Highway Oneway - 2 lanes | (1501, 4350) | 4.4 → 5.9 |
 | e28200_0g1ab | 28200 | Highway Oneway - 3 lanes | (2479, 359) | 7.1 → 8.5 |
 | e7805_0g1b | 7805 | Highway Oneway - 3 lanes | (2555, 366) | 4.0 → 5.4 |
 | e7805_0g1ab | 7805 | Highway Oneway - 3 lanes | (2533, 356) | 7.1 → 8.5 |
-| e26134_0ba | 26134 | Small Road | (-3679, -2969) | 7.1 → 8.5 |
+| e26134_0ba | 26134 | Highway Twoway - 2 lanes | (-3679, -2969) | 7.1 → 8.5 |
 | e28200_0g1b | 28200 | Highway Oneway - 3 lanes | (2455, 348) | 3.8 → 5.1 |
 | e9026_0a | 9026 | Highway Oneway - 1 lane | (3672, 2267) | 7.2 → 8.5 |
 | e12830_0a | 12830 | Gravel Road | (-1567, 4470) | 7.2 → 8.5 |
@@ -121,7 +121,7 @@ CS1 elevated (bridge-AI) courses lifted to ≥ 8.5 m above the terrain (output m
 | e19107_0g1b | 19107 | Highway Oneway - 2 lanes | (636, -4641) | 7.5 → 8.5 |
 | e1638_0 | 1638 | Highway Oneway - 1 lane | (3440, 2065) | 7.6 → 8.5 |
 | e34845_0a | 34845 | Highway Oneway - 2 lanes | (3438, 2018) | 3.2 → 4.2 |
-| e12729_0aa | 12729 | Small Road | (-3358, -3411) | 6.4 → 7.3 |
+| e12729_0aa | 12729 | Highway Twoway - 2 lanes | (-3358, -3411) | 6.4 → 7.3 |
 | e14428_0 | 14428 | Highway Oneway - 1 lane | (3654, 2090) | 6.3 → 7.2 |
 | e17815_0bb | 17815 | Highway Oneway - 2 lanes | (280, 162) | 7.7 → 8.5 |
 | e20675_0 | 20675 | Highway Oneway - 1 lane | (3605, 1872) | 7.7 → 8.5 |
@@ -213,7 +213,7 @@ CS1 elevated (bridge-AI) courses lifted to ≥ 8.5 m above the terrain (output m
 | e11693_0ba | 11693 | Highway Oneway - 3 lanes | (6738, 2246) | 11.4 → 11.4 |
 | e12097_0 | 12097 | Highway Oneway - 1 lane | (3633, 2159) | 8.9 → 8.9 |
 | e12418_0 | 12418 | Highway Oneway - 2 lanes | (131, 3746) | 8.5 → 8.5 |
-| e12729_0ab | 12729 | Small Road | (-3372, -3392) | 10.6 → 10.6 |
+| e12729_0ab | 12729 | Highway Twoway - 2 lanes | (-3372, -3392) | 10.6 → 10.6 |
 | e12801_0 | 12801 | Highway Oneway - 1 lane | (565, 3870) | 9.0 → 9.0 |
 | e12830_0b | 12830 | Gravel Road | (-1558, 4417) | 10.6 → 10.6 |
 | e14379_0a | 14379 | Highway Oneway - 3 lanes | (2288, -2518) | 13.4 → 13.4 |
@@ -233,7 +233,7 @@ CS1 elevated (bridge-AI) courses lifted to ≥ 8.5 m above the terrain (output m
 | e23931_0ba | 23931 | Highway Oneway - 2 lanes | (-4537, 128) | 11.2 → 11.2 |
 | e24259_0b | 24259 | Highway Oneway - 2 lanes | (-77, -3553) | 9.3 → 9.3 |
 | e26105_0a | 26105 | Highway Oneway - 1 lane | (3482, 2081) | 8.7 → 8.7 |
-| e26134_0a | 26134 | Small Road | (-3653, -3004) | 15.0 → 15.0 |
+| e26134_0a | 26134 | Highway Twoway - 2 lanes | (-3653, -3004) | 15.0 → 15.0 |
 | e26236_0a | 26236 | Gravel Road | (-1549, 4368) | 10.6 → 10.6 |
 | e26285_0g1 | 26285 | Highway Oneway - 1 lane | (3537, 2059) | 9.7 → 9.7 |
 | e29321_0 | 29321 | Highway Oneway - 2 lanes | (448, 3791) | 8.6 → 8.6 |

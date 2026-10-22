@@ -265,6 +265,14 @@ auditLog.AppendLine($"- Short border edges folded into their neighbour (< 10 m):
     foreach (var l in e204.Shifted.Concat(e204.Impossible)) auditLog.AppendLine($"- e20430_0b clear of its parallel carriageway: {l}");
     // Round 35: parallel one-way carriageways closer than their two CS2 half-widths (the bridge drop threshold) pushed apart.
     foreach (var l in CarriagewaySpread.Apply(result)) { Console.WriteLine("carriageway spread: " + l); auditLog.AppendLine($"- Carriageway spread: {l}."); }
+// Round 47: sidewalked roads outside the starting area became highways (RoadsToHighways, per CS1 segment).
+{
+    var swapped = result.Edges.Where(e => result.Maps.TryGetValue(e.Map.Cs1Prefab, out var pm) && pm.Cs2Prefab != e.Map.Cs2Prefab).ToList();
+    var kept = result.Edges.Where(e => e.Map.Cs2Prefab != null && RoadsToHighways.Targets.ContainsKey(e.Map.Cs2Prefab)).ToList();
+    string line = string.Join("; ", swapped.GroupBy(e => (result.Maps[e.Map.Cs1Prefab].Cs2Prefab, e.Map.Cs2Prefab)).Select(g => $"{g.Key.Item1} → {g.Key.Item2} {g.Count()} courses ({g.Select(e => e.Cs1Segment).Distinct().Count()} CS1 segments)"));
+    Console.WriteLine($"roads to highways: {line}; sidewalked roads kept in the starting area (|x|, |z| <= {RoadsToHighways.StartHalf:F0} m): {kept.Count}");
+    auditLog.AppendLine($"- Round 47 roads to highways (owner: no sidewalked roads outside the starting area): {line}; kept in the starting area: {kept.Count}.");
+}
     // A-v9 (bridge 0.9.39 drops a course that runs inside an existing segment): highway courses the run reports name are moved sideways the asked distance
     // + 1 m from the named neighbour (e22564_0b, e31224_0ba, e31224_0bb in run-20261021-025202).
     if (drops != null)

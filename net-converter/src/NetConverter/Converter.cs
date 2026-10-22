@@ -162,7 +162,8 @@ public static partial class Converter
         {
             st.SegmentsIn++;
             var info = dump.PrefabInfo(seg.Prefab);
-            if (!res.Maps.TryGetValue(seg.Prefab, out var map)) res.Maps[seg.Prefab] = map = mapping.Map(info);
+            if (!res.Maps.TryGetValue(seg.Prefab, out var prefabMap)) res.Maps[seg.Prefab] = prefabMap = mapping.Map(info);
+            var map = RoadsToHighways.Apply(prefabMap, seg.Bezier);   // round 47: sidewalked roads outside the starting area become highways
             dump.Nodes.TryGetValue(seg.StartNode, out var sn);
             dump.Nodes.TryGetValue(seg.EndNode, out var en);
             if (sn == null || en == null) continue;

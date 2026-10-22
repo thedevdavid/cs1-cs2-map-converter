@@ -12,7 +12,7 @@ public static class FootprintShift
     public static double Cs2Half(string? prefab, double fallback) => prefab switch
     {
         "Highway Oneway - 1 lane" => 4, "Highway Oneway - 2 lanes" => 6, "Highway Oneway - 3 lanes" => 8, "Highway Oneway - 4 lanes" => 10,
-        "Highway Twoway - 4 lanes" => 10,   // round 43: GET /prefabs/info width 20 m
+        "Highway Twoway - 4 lanes" => 10, "Highway Twoway - 2 lanes" => 6, "Highway Twoway - 3 lanes" => 8,   // round 43/47: GET /prefabs/info widths 20, 12, 16 m
         "QuaySmall01" or "Arc Pedestrian Bridge" => 1.5,
         _ => fallback,
     };
