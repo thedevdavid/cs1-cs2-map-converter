@@ -21,12 +21,15 @@ No y: the game samples terrain, so the same files serve the 2× (out/) and the 1
 | PineTree01 | 200,207 |
 | SpruceTree01 | 91,130 |
 | EuropeanSpruce01 | 76,358 |
-| BirchTree01 | 49,750 |
 | OakTree01 | 30,660 |
 | GreenBushWild01 | 21,675 |
+| NA_LindenTree01 | 16,762 |
+| NA_HickoryTree01 | 16,703 |
 | GreenBushWild02 | 13,430 |
-| NA_HickoryTree01 | 9,961 |
-| NA_LindenTree01 | 6,708 |
+| NA_LondonPlaneTree01 | 10,112 |
+| EU_AlderTree01 | 10,079 |
+| EU_ChestnutTree01 | 9,918 |
+| EU_PoplarTree01 | 2,845 |
 | FlowerBushWild01 | 2,576 |
 | FlowerBushWild02 | 2,504 |
 
@@ -44,11 +47,11 @@ No y: the game samples terrain, so the same files serve the 2× (out/) and the 1
 | PD Large EverGreen_Data | 43,052 | 0 | EuropeanSpruce01 0.5, SpruceTree01 0.5 |
 | mp9-LiveOaknvl | 42,097 | 0 | OakTree01 1 |
 | PD - pencil pine_Data | 41,944 | 0 | PineTree01 1 |
-| Bare Tree E_Data | 28,301 | 0 | BirchTree01 1 |
-| Bare Tree D_Data | 28,300 | 0 | BirchTree01 1 |
+| Bare Tree E_Data | 28,301 | 0 | EU_ChestnutTree01 0.5, NA_LindenTree01 0.5 |
+| Bare Tree D_Data | 28,300 | 0 | EU_AlderTree01 0.5, NA_LondonPlaneTree01 0.5 |
 | Filler Bush small 1_Data | 14,195 | 0 | GreenBushWild01 0.6, GreenBushWild02 0.4 |
 | Semi Bare Tree Red_Data | 14,108 | 0 | NA_HickoryTree01 1 |
-| Semi Bare Tree Gold_Data | 13,389 | 0 | BirchTree01 1 |
+| Semi Bare Tree Gold_Data | 13,389 | 0 | NA_HickoryTree01 0.7, EU_PoplarTree01 0.3 |
 | Filler Bush Medium 1_Data | 10,237 | 0 | GreenBushWild01 0.6, GreenBushWild02 0.4 |
 | Semi Bare Tree Green_Data | 9,452 | 0 | NA_LindenTree01 1 |
 | pd Aussie Bushes 1_Data | 8,403 | 0 | GreenBushWild01 0.5, FlowerBushWild01 0.25, FlowerBushWild02 0.25 |
@@ -76,11 +79,14 @@ Exact: 504,909 placed (outside 158,877). Raster-based: 508,458 placed (outside 1
 | PineTree01 | 200,207 | 200,828 |
 | SpruceTree01 | 91,130 | 91,460 |
 | EuropeanSpruce01 | 76,358 | 76,910 |
-| BirchTree01 | 49,750 | 50,370 |
 | OakTree01 | 30,660 | 31,114 |
 | GreenBushWild01 | 21,675 | 21,868 |
+| NA_LindenTree01 | 16,762 | 16,835 |
+| NA_HickoryTree01 | 16,703 | 16,708 |
 | GreenBushWild02 | 13,430 | 13,962 |
-| NA_HickoryTree01 | 9,961 | 10,020 |
-| NA_LindenTree01 | 6,708 | 6,731 |
+| NA_LondonPlaneTree01 | 10,112 | 10,218 |
+| EU_AlderTree01 | 10,079 | 10,242 |
+| EU_ChestnutTree01 | 9,918 | 10,238 |
+| EU_PoplarTree01 | 2,845 | 2,880 |
 | FlowerBushWild01 | 2,576 | 2,587 |
 | FlowerBushWild02 | 2,504 | 2,608 |

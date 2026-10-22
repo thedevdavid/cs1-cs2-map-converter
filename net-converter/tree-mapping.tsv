@@ -15,10 +15,14 @@
 (?i)Large EverGreen	SpruceTree01	0.5	default
 # --- Deciduous --------------------------------------------------------------------------------------------
 (?i)LiveOak	OakTree01	1	default
-(?i)Semi Bare Tree Gold	BirchTree01	1	default	autumn gold
+(?i)Semi Bare Tree Gold	NA_HickoryTree01	0.7	default	round 46 (owner, A-v19: BirchTree01 renders near-white): darker deciduous; pd Bloom left out (a 1.3 × 0.9 m flower prop, category object)
+(?i)Semi Bare Tree Gold	EU_PoplarTree01	0.3	default	round 46: accent
 (?i)Semi Bare Tree Red	NA_HickoryTree01	1	default	autumn red
 (?i)Semi Bare Tree Green	NA_LindenTree01	1	default
-(?i)Bare Tree [DE]	BirchTree01	1	old	bare trees -> old birch (CS2 has no placeable dead tree; *Dead01 are age states)
+(?i)Bare Tree D	EU_AlderTree01	0.5	old	round 46: was old BirchTree01 (near-white); CS2 has no placeable dead tree (*Dead01 are age states)
+(?i)Bare Tree D	NA_LondonPlaneTree01	0.5	old	round 46
+(?i)Bare Tree E	EU_ChestnutTree01	0.5	old	round 46: was old BirchTree01
+(?i)Bare Tree E	NA_LindenTree01	0.5	old	round 46
 # --- Bushes and shrubs (CS2 bushes are tree prefabs) -----------------------------------------------------
 (?i)Filler Bush (small|Medium)	GreenBushWild01	0.6	default
 (?i)Filler Bush (small|Medium)	GreenBushWild02	0.4	default
