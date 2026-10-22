@@ -1100,3 +1100,22 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
   - trees (out/trees only): import-trees-02, -03, -04, -07, -10.json;
   - plus the runner (tools/import-run.mjs, committed): steps fort-buildings → fort-props.
 - 143 tests pass.
+
+## Round 50 (staged, no change in effect): the fort's standing stones cannot be moved out within 6 m
+
+- **Tool:** building-footprints.mjs now moves the objects of import-fort-props.json instead of dropping them: the nearest point outside every footprint + 1 m, searched on 0.25 m rings up to 6 m, yaw kept. They are dropped only if no such point exists.
+- **Result: 0 of 19 moved.** Every stone stands inside 1–8 building footprints at once:
+  - The RuinsStoneFormation pieces (16 × 48 m and 32 × 32 m footprints) are laid every 12 m along the wall line, so they overlap into a solid band.
+  - At the fort, the OldCastle01 lot (208 × 192 m) covers the whole interior.
+  - **Nearest free point, per stone** (searched up to 60 m): 9.0 m for the three stones at the dam (fort51, fort52, fort92); 14.0–19.5 m for fort111, fort23, fort22; 34–58 m for eight; none within 60 m for five (fort8, fort17, fort33, fort67, fort75).
+- **So a ruin field with stones needs one of:**
+  - (a) the formations and cairns as plain props instead of BuildingPrefabs (any similar non-building ruin pieces in the playset?), so they have no footprint;
+  - (b) the stones placed by hand where the owner wants them;
+  - (c) accepting the stones as dropped.
+- **The rest of the 105 removals (round 49), besides the 19 stones:**
+  - rock-scatter 55 (about 35 in the OldCastle01 lot, 18 in formation footprints, 2 at the dam plant);
+  - po-rocks 9: CliffStack 6, CliffRock5 2, CliffRock6 1, in the castle lot. These are the largest pieces lost; the castle sits where PO rock work was.
+  - objects 16 StreetlightSingle01 (3 in the keep's lot, 13 inside formations): CS1 lamp posts along the fort wall path;
+  - trees 6 conifers on the RuinsCastle01 footprints.
+  - The ~340 castle-lot trees (round 48b/c) are masked in the converter before this pass and are not part of the 105.
+- **out.next/** is regenerated with this tool and is identical in effect to round 49 (no stone moved).
