@@ -147,6 +147,9 @@ const steps = [
   // Round 49: the fort's buildings, then its standing stones with skipInsideBuildings (they stood inside the formations' footprints).
   ["fort-buildings", "/import/objects", [p("import-fort-buildings.json")]],
   ["fort-props", "/import/objects", [p("import-fort-props.json")]],
+  // Round 51: the decorative buildings' own trees and plants render as checkers (OldCastle01, RuinsCastle01): strip them once the fort buildings and the
+  // objects (the 3 CS1 RuinsCastle01) are in. Building prefabs from building-bounds.json that the fort / objects files place.
+  ["fort-strip", "/build/strip-subobjects", [p("import-fort-buildings.json"), p("import-objects.json")]],
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
   ["resources", "/import/resources", [p("import-resources.json")]],
   ["verify-end", "verify", []],
@@ -306,6 +309,17 @@ console.log(resume ? `resuming: ${Object.keys(state.files).length} files already
 
 outer: for (const [name, endpoint, files] of steps) {
   if (!wanted(name)) continue;
+  if (endpoint === "/build/strip-subobjects") {
+    const bb = JSON.parse(readFileSync(new URL("../building-bounds.json", import.meta.url), "utf8")).buildings;
+    const prefabs = [...new Set(files.filter(f => existsSync(f)).flatMap(f => JSON.parse(readFileSync(f, "utf8")).objects.map(o => o.prefab)).filter(pf => bb[pf]?.type === "BuildingPrefab"))];
+    if (!prefabs.length) { console.log(`- ${name}: no building prefabs in ${files.join(", ")}, skipped`); rows.push({ name, file: "POST /build/strip-subobjects", status: "nothing to strip" }); continue; }
+    const t0 = Date.now(), body = { prefabs, kinds: ["tree", "plant"], onlyLooping: false, ...(dryRun ? { dryRun: true } : {}) };
+    const r = await request("POST", "/build/strip-subobjects", body).catch(e => ({ status: 0, json: { error: String(e) } }));
+    const j = r.json ?? {}, text = `strip owned trees/plants of ${prefabs.join(", ")}: HTTP ${r.status}; matched ${j.matched ?? "?"}, removed ${j.removed ?? j.deleted ?? (j.dryRun ? 0 : j.matched) ?? "?"}${j.perPrefab ? `; ${JSON.stringify(j.perPrefab).slice(0, 200)}` : ""}${j.error ? `; ${j.error}` : ""}`;
+    console.log(`${r.status === 200 ? "✓" : "!"} ${name}: ${text}`);
+    rows.push({ name, file: "POST /build/strip-subobjects", status: r.status === 200 ? "ok" : `HTTP ${r.status}`, secs: (Date.now() - t0) / 1000, text, strip: j });
+    continue;
+  }
   if (endpoint === "netcount") {
     const t0 = Date.now(); netBaseline = await netCount();
     const text = `net count after the network steps: ${countLine(netBaseline)}`; console.log(`  ${text}`);

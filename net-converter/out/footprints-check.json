@@ -1,5 +1,5 @@
 {
- "removed": 105,
+ "removed": 228,
  "left": 0,
  "buildings": [
   {
@@ -186,50 +186,22 @@
   },
   {
    "prefab": "RuinsStoneFormation01",
-   "x": 1399.79,
-   "z": 4666.86,
+   "x": 1339.87,
+   "z": 4651.6,
    "rotation": 261.2,
    "file": "import-fort-buildings.json"
   },
   {
    "prefab": "RuinsStoneFormation02",
-   "x": 1387.72,
-   "z": 4664.99,
+   "x": 1334.54,
+   "z": 4658.49,
    "rotation": 261.2,
    "file": "import-fort-buildings.json"
   },
   {
    "prefab": "RuinsStoneFormation01",
-   "x": 1375.65,
-   "z": 4663.12,
-   "rotation": 261.2,
-   "file": "import-fort-buildings.json"
-  },
-  {
-   "prefab": "RuinsStoneFormation02",
-   "x": 1363.58,
-   "z": 4661.25,
-   "rotation": 261.2,
-   "file": "import-fort-buildings.json"
-  },
-  {
-   "prefab": "RuinsStoneFormation01",
-   "x": 1351.51,
-   "z": 4659.38,
-   "rotation": 261.2,
-   "file": "import-fort-buildings.json"
-  },
-  {
-   "prefab": "RuinsStoneFormation02",
-   "x": 1339.44,
-   "z": 4657.51,
-   "rotation": 261.2,
-   "file": "import-fort-buildings.json"
-  },
-  {
-   "prefab": "RuinsStoneFormation01",
-   "x": 1327.36,
-   "z": 4655.64,
+   "x": 1327.17,
+   "z": 4656.1,
    "rotation": 261.2,
    "file": "import-fort-buildings.json"
   },
@@ -263,15 +235,15 @@
   },
   {
    "prefab": "RuinsStoneCairns01",
-   "x": 1394.31,
-   "z": 4660.45,
+   "x": 1393.48,
+   "z": 4651.99,
    "rotation": 37,
    "file": "import-fort-buildings.json"
   },
   {
    "prefab": "RuinsStoneCairns03",
-   "x": 1368.14,
-   "z": 4666.11,
+   "x": 1357.32,
+   "z": 4657.23,
    "rotation": 207.8,
    "file": "import-fort-buildings.json"
   },
@@ -647,10 +619,10 @@
    "file": "import-fort-buildings.json"
   },
   {
-   "prefab": "OldCastle01",
+   "prefab": "RuinsCastle01",
    "x": 4.65,
    "z": -2618.56,
-   "rotation": 0,
+   "rotation": 90,
    "file": "import-fort-buildings.json"
   },
   {
@@ -704,170 +676,547 @@
   }
  ],
  "report": {
-  "out.next/import-rock-scatter.json | OldCastle01 (4.7, -2618.6)": {
-   "Boulder05": 1,
-   "Rock06": 2,
-   "Boulder03": 1,
-   "Rock05": 2,
-   "Rock01": 2,
-   "Rock04": 2,
-   "Rock11": 1,
-   "Rock03": 4,
-   "Rock10": 2,
-   "Rock07": 2,
-   "Rock12": 2,
-   "Rock02": 3,
-   "Rock09": 2,
-   "Rock30": 1,
-   "Rock16": 3,
-   "Rock23": 1,
-   "Rock25": 2,
-   "Boulder01": 1,
-   "Rock20": 2,
-   "Rock13": 1,
-   "Rock08": 1,
-   "Boulder04": 1,
-   "Rock22": 1
-  },
-  "out.next/import-rock-scatter.json | RuinsStoneFormation01 (2.8, -2697.6)": {
+  "out/import-rock-scatter.json | RuinsStoneFormation01 (2.8, -2697.6)": {
    "Rock05": 1,
    "Rock08": 1,
    "Rock02": 1
   },
-  "out.next/import-rock-scatter.json | RuinsStoneFormation01 (49.0, -2680.1)": {
+  "out/import-rock-scatter.json | RuinsStoneFormation01 (49.0, -2680.1)": {
    "Boulder05": 1
   },
-  "out.next/import-rock-scatter.json | RuinsStoneFormation01 (-29.2, -2662.2)": {
+  "out/import-rock-scatter.json | RuinsCastle01 (-34.8, -2653.8)": {
+   "Rock03": 1,
+   "Rock12": 1,
+   "Rock30": 1,
+   "Rock23": 1
+  },
+  "out/import-rock-scatter.json | RuinsStoneFormation01 (-29.2, -2662.2)": {
    "Rock09": 1,
    "Boulder02": 1
   },
-  "out.next/import-rock-scatter.json | RuinsStoneFormation02 (50.4, -2647.8)": {
+  "out/import-rock-scatter.json | RuinsStoneFormation02 (50.4, -2647.8)": {
    "Rock14": 1
   },
-  "out.next/import-rock-scatter.json | RuinsStoneFormation01 (48.6, -2614.7)": {
-   "Rock07": 1
-  },
-  "out.next/import-rock-scatter.json | RuinsStoneFormation02 (49.2, -2625.7)": {
-   "Rock09": 1
-  },
-  "out.next/import-rock-scatter.json | RuinsStoneFormation01 (-35.4, -2603.4)": {
-   "Rock30": 1
-  },
-  "out.next/import-rock-scatter.json | RuinsStoneFormation01 (-35.3, -2591.2)": {
-   "Rock07": 1
-  },
-  "out.next/import-rock-scatter.json | RuinsStoneFormation02 (39.7, -2599.7)": {
+  "out/import-rock-scatter.json | RuinsCastle01 (4.7, -2618.6)": {
+   "Rock02": 2,
+   "Rock09": 1,
    "Rock10": 1
   },
-  "out.next/import-rock-scatter.json | RuinsStoneFormation01 (15.4, -2578.5)": {
+  "out/import-rock-scatter.json | RuinsStoneFormation01 (48.6, -2614.7)": {
+   "Rock07": 1
+  },
+  "out/import-rock-scatter.json | RuinsStoneFormation02 (49.2, -2625.7)": {
+   "Rock09": 1
+  },
+  "out/import-rock-scatter.json | RuinsStoneFormation01 (-35.4, -2603.4)": {
+   "Rock30": 1
+  },
+  "out/import-rock-scatter.json | RuinsStoneFormation01 (-35.3, -2591.2)": {
+   "Rock07": 1
+  },
+  "out/import-rock-scatter.json | RuinsStoneFormation02 (39.7, -2599.7)": {
+   "Rock10": 1
+  },
+  "out/import-rock-scatter.json | RuinsStoneFormation01 (15.4, -2578.5)": {
    "Rock08": 1
   },
-  "out.next/import-rock-scatter.json | HydroelectricPowerPlant01 (1381.3, 4691.6)": {
+  "out/import-rock-scatter.json | HydroelectricPowerPlant01 (1381.3, 4691.6)": {
    "Rock07": 1,
    "Rock12": 1
   },
-  "out.next/import-po-rocks.json | OldCastle01 (4.7, -2618.6)": {
-   "CliffRock5": 2,
-   "CliffStack": 6,
-   "CliffRock6": 1
-  },
-  "out.next/import-objects.json | OldCastle01 (4.7, -2618.6)": {
-   "StreetlightSingle01": 3
-  },
-  "out.next/import-objects.json | RuinsStoneFormation02 (39.7, -2599.7)": {
+  "out/import-objects.json | RuinsStoneFormation02 (39.7, -2599.7)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-objects.json | RuinsStoneFormation02 (-6.1, -2691.2)": {
+  "out/import-objects.json | RuinsStoneFormation02 (-6.1, -2691.2)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-objects.json | RuinsStoneFormation02 (-35.1, -2579.9)": {
+  "out/import-objects.json | RuinsStoneFormation02 (-35.1, -2579.9)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-objects.json | RuinsStoneFormation02 (13.1, -2700.7)": {
+  "out/import-objects.json | RuinsStoneFormation02 (13.1, -2700.7)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-objects.json | RuinsStoneFormation02 (-35.2, -2642.9)": {
+  "out/import-objects.json | RuinsStoneFormation02 (-35.2, -2642.9)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-objects.json | RuinsStoneFormation02 (-34.8, -2557.3)": {
+  "out/import-objects.json | RuinsStoneFormation02 (-34.8, -2557.3)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-objects.json | RuinsStoneFormation02 (23.5, -2585.6)": {
+  "out/import-objects.json | RuinsStoneFormation02 (23.5, -2585.6)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-objects.json | RuinsStoneFormation02 (-35.3, -2616.6)": {
+  "out/import-objects.json | RuinsStoneFormation02 (-35.3, -2616.6)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-objects.json | RuinsStoneFormation02 (50.4, -2647.8)": {
+  "out/import-objects.json | RuinsStoneFormation02 (50.4, -2647.8)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-objects.json | RuinsStoneFormation01 (15.4, -2578.5)": {
+  "out/import-objects.json | RuinsStoneFormation01 (15.4, -2578.5)": {
    "StreetlightSingle01": 2
   },
-  "out.next/import-objects.json | RuinsStoneFormation02 (-21.5, -2671.8)": {
+  "out/import-objects.json | RuinsStoneFormation02 (-21.5, -2671.8)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-objects.json | RuinsStoneFormation02 (51.6, -2669.9)": {
+  "out/import-objects.json | RuinsStoneFormation02 (51.6, -2669.9)": {
    "StreetlightSingle01": 1
   },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (15.4, -2578.5)": {
+  "out/import-fort-props.json | RuinsStoneFormation01 (15.4, -2578.5)": {
    "StandingStone05": 1,
    "StandingStone06": 1,
    "StandingStone02": 1
   },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (31.6, -2592.6)": {
+  "out/import-fort-props.json | RuinsStoneFormation01 (31.6, -2592.6)": {
    "StandingStone05": 1,
    "StandingStone08": 1,
    "StandingStone04": 1
   },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (-34.6, -2546.1)": {
+  "out/import-fort-props.json | RuinsStoneFormation01 (-34.6, -2546.1)": {
    "StandingStone07": 1,
    "StandingStone05": 1,
    "StandingStone04": 1
   },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (-35.3, -2591.2)": {
+  "out/import-fort-props.json | RuinsStoneFormation01 (-35.3, -2591.2)": {
    "StandingStone03": 1
   },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (2.8, -2697.6)": {
+  "out/import-fort-props.json | RuinsStoneFormation01 (2.8, -2697.6)": {
    "StandingStone05": 1
   },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (23.3, -2703.9)": {
-   "StandingStone08": 1,
-   "StandingStone01": 1
-  },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (51.0, -2658.8)": {
-   "StandingStone06": 1
-  },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (1399.8, 4666.9)": {
-   "StandingStone06": 1
-  },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (1279.1, 4648.2)": {
-   "StandingStone07": 1
-  },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (-35.3, -2629.7)": {
-   "StandingStone07": 1
-  },
-  "out.next/import-fort-props.json | RuinsStoneFormation01 (1146.8, 4627.7)": {
+  "out/import-fort-props.json | RuinsStoneFormation02 (13.1, -2700.7)": {
    "StandingStone08": 1
   },
-  "out.next/import-fort-props.json | RuinsStoneFormation02 (-35.2, -2642.9)": {
+  "out/import-fort-props.json | RuinsStoneFormation01 (51.0, -2658.8)": {
+   "StandingStone06": 1
+  },
+  "out/import-fort-props.json | HydroelectricPowerPlant01 (1381.3, 4691.6)": {
+   "StandingStone06": 1
+  },
+  "out/import-fort-props.json | RuinsStoneFormation01 (1279.1, 4648.2)": {
+   "StandingStone07": 1
+  },
+  "out/import-fort-props.json | RuinsStoneFormation01 (-35.3, -2629.7)": {
+   "StandingStone07": 1
+  },
+  "out/import-fort-props.json | RuinsStoneFormation01 (1146.8, 4627.7)": {
+   "StandingStone08": 1
+  },
+  "out/import-fort-props.json | RuinsStoneFormation02 (-35.2, -2642.9)": {
    "StandingStone01": 1
   },
+  "out/import-fort-props.json | RuinsStoneFormation01 (23.3, -2703.9)": {
+   "StandingStone01": 1
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation01 (-29.2, -2662.2)": {
+   "GreenBushWild01": 2,
+   "FlowerBushWild02": 1
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation02 (0.0, -2565.0)": {
+   "FlowerBushWild02": 1,
+   "GreenBushWild02": 2
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation02 (49.2, -2625.7)": {
+   "GreenBushWild01": 1,
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation01 (-35.0, -2568.6)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-01.json | RuinsCastle01 (-34.8, -2653.8)": {
+   "pd Leafy Tree": 1,
+   "PineTree01": 1
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation02 (13.1, -2700.7)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation02 (-21.5, -2671.8)": {
+   "SpruceTree01": 1
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation01 (-35.3, -2591.2)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation01 (2.8, -2697.6)": {
+   "GreenBushWild01": 2,
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation01 (-35.3, -2629.7)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation02 (-34.8, -2557.3)": {
+   "GreenBushWild01": 1,
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-01.json | RuinsCastle01 (-34.3, -2536.6)": {
+   "EU_AlderTree01": 1,
+   "FlowerBushWild02": 1
+  },
+  "trees/import-trees-01.json | RuinsStoneFormation02 (43.2, -2689.4)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-01.json | RuinsCastle01 (9.6, -2636.5)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation01 (2.8, -2697.6)": {
+   "SpruceTree01": 1,
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation02 (-21.5, -2671.8)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation01 (49.8, -2636.8)": {
+   "GreenBushWild01": 1
+  },
   "trees/import-trees-02.json | RuinsCastle01 (-34.3, -2536.6)": {
+   "SpruceTree01": 2,
+   "PineTree01": 1,
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation02 (23.5, -2585.6)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation02 (-35.1, -2579.9)": {
+   "PineTree01": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation02 (51.6, -2669.9)": {
+   "SpruceTree01": 1,
+   "FlowerBushWild02": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation02 (49.2, -2625.7)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation01 (15.4, -2578.5)": {
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation02 (39.7, -2599.7)": {
+   "GreenBushWild01": 1,
+   "FlowerBushWild02": 1
+  },
+  "trees/import-trees-02.json | RuinsCastle01 (-34.8, -2653.8)": {
+   "pd Leafy Tree": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation01 (-35.3, -2629.7)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-02.json | RuinsStoneFormation02 (13.1, -2700.7)": {
+   "FlowerBushWild02": 1,
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-02.json | RuinsCastle01 (9.6, -2636.5)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-03.json | RuinsStoneFormation01 (2.8, -2697.6)": {
+   "EuropeanSpruce01": 1,
+   "pd Leafy Tree": 1
+  },
+  "trees/import-trees-03.json | RuinsStoneFormation01 (-29.2, -2662.2)": {
+   "GreenBushWild01": 2,
+   "FlowerBushWild01": 1,
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-03.json | RuinsStoneFormation02 (49.2, -2625.7)": {
+   "GreenBushWild02": 1,
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-03.json | RuinsStoneFormation01 (51.0, -2658.8)": {
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-03.json | RuinsStoneFormation02 (-35.2, -2642.9)": {
    "EuropeanSpruce01": 1
   },
   "trees/import-trees-03.json | RuinsCastle01 (-34.3, -2536.6)": {
+   "SpruceTree01": 2,
+   "FlowerBushWild02": 1,
+   "pd Leafy Tree": 1
+  },
+  "trees/import-trees-03.json | RuinsCastle01 (9.6, -2636.5)": {
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-03.json | RuinsStoneFormation01 (49.8, -2636.8)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-03.json | RuinsStoneFormation01 (-35.3, -2629.7)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-03.json | RuinsStoneFormation02 (43.2, -2689.4)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-03.json | RuinsStoneFormation02 (-21.5, -2671.8)": {
    "SpruceTree01": 1
   },
+  "trees/import-trees-04.json | RuinsStoneFormation01 (2.8, -2697.6)": {
+   "GreenBushWild01": 1,
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-04.json | RuinsStoneFormation01 (-35.0, -2568.6)": {
+   "GreenBushWild01": 1
+  },
   "trees/import-trees-04.json | RuinsCastle01 (-34.3, -2536.6)": {
+   "EuropeanSpruce01": 1,
    "PineTree01": 1
   },
-  "trees/import-trees-07.json | RuinsCastle01 (-34.3, -2536.6)": {
+  "trees/import-trees-04.json | RuinsCastle01 (-34.8, -2653.8)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-04.json | RuinsStoneFormation02 (23.5, -2585.6)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-04.json | RuinsStoneFormation01 (31.6, -2592.6)": {
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-04.json | RuinsStoneFormation02 (50.4, -2647.8)": {
+   "pd Leafy Tree": 1
+  },
+  "trees/import-trees-04.json | RuinsStoneFormation01 (-35.3, -2591.2)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-04.json | RuinsStoneFormation02 (-17.4, -2549.8)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-04.json | RuinsStoneFormation01 (-13.8, -2681.5)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-04.json | RuinsStoneFormation01 (49.0, -2680.1)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-05.json | RuinsStoneFormation01 (-26.0, -2542.2)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-05.json | RuinsStoneFormation02 (-35.2, -2642.9)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-05.json | RuinsStoneFormation02 (43.2, -2689.4)": {
+   "SpruceTree01": 1
+  },
+  "trees/import-trees-05.json | RuinsStoneFormation02 (51.6, -2669.9)": {
    "PineTree01": 1
+  },
+  "trees/import-trees-05.json | RuinsStoneFormation01 (-13.8, -2681.5)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-05.json | RuinsStoneFormation02 (49.2, -2625.7)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-05.json | RuinsStoneFormation01 (-35.4, -2603.4)": {
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-05.json | RuinsCastle01 (9.6, -2636.5)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation02 (51.6, -2669.9)": {
+   "GreenBushWild01": 1,
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-06.json | RuinsCastle01 (-34.8, -2653.8)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation01 (-26.0, -2542.2)": {
+   "FlowerBushWild01": 1,
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation01 (-29.2, -2662.2)": {
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation01 (-35.4, -2603.4)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation01 (48.6, -2614.7)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation01 (2.8, -2697.6)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation02 (-35.3, -2616.6)": {
+   "EuropeanSpruce01": 1,
+   "EU_ChestnutTree01": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation01 (-35.3, -2591.2)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-06.json | RuinsCastle01 (9.6, -2636.5)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation02 (39.7, -2599.7)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation01 (-13.8, -2681.5)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation02 (-35.2, -2642.9)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation01 (-34.6, -2546.1)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation02 (13.1, -2700.7)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-06.json | RuinsStoneFormation01 (51.0, -2658.8)": {
+   "FlowerBushWild02": 1
+  },
+  "trees/import-trees-07.json | RuinsStoneFormation02 (39.7, -2599.7)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-07.json | RuinsStoneFormation01 (-34.6, -2546.1)": {
+   "GreenBushWild02": 2
+  },
+  "trees/import-trees-07.json | RuinsStoneFormation02 (49.2, -2625.7)": {
+   "PineTree01": 1
+  },
+  "trees/import-trees-07.json | RuinsStoneFormation02 (-17.4, -2549.8)": {
+   "OakTree01": 1
+  },
+  "trees/import-trees-07.json | RuinsStoneFormation02 (0.0, -2565.0)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-07.json | RuinsStoneFormation02 (-35.3, -2616.6)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-07.json | RuinsCastle01 (-34.3, -2536.6)": {
+   "EuropeanSpruce01": 1,
+   "SpruceTree01": 1,
+   "PineTree01": 1
+  },
+  "trees/import-trees-07.json | RuinsStoneFormation02 (23.5, -2585.6)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-07.json | RuinsStoneFormation01 (2.8, -2697.6)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-07.json | RuinsCastle01 (9.6, -2636.5)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-07.json | RuinsStoneFormation02 (51.6, -2669.9)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-07.json | RuinsStoneFormation01 (31.6, -2592.6)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation02 (51.6, -2669.9)": {
+   "PineTree01": 1,
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation02 (43.2, -2689.4)": {
+   "EuropeanSpruce01": 2,
+   "OakTree01": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation02 (23.5, -2585.6)": {
+   "PineTree01": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation01 (-35.3, -2591.2)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation01 (-34.6, -2546.1)": {
+   "pd Leafy Tree": 1,
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-08.json | RuinsCastle01 (-34.3, -2536.6)": {
+   "SpruceTree01": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation02 (-35.1, -2579.9)": {
+   "FlowerBushWild02": 1,
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation02 (39.7, -2599.7)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation02 (-35.2, -2642.9)": {
+   "pd Leafy Tree": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation02 (-21.5, -2671.8)": {
+   "SpruceTree01": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation02 (-35.3, -2616.6)": {
+   "EU_ChestnutTree01": 1
+  },
+  "trees/import-trees-08.json | RuinsStoneFormation01 (2.8, -2697.6)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation01 (-35.0, -2568.6)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation02 (50.4, -2647.8)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-09.json | RuinsCastle01 (9.6, -2636.5)": {
+   "GreenBushWild01": 2
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation02 (-34.8, -2557.3)": {
+   "EuropeanSpruce01": 1,
+   "pd Leafy Tree": 1,
+   "GreenBushWild01": 1,
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation02 (13.1, -2700.7)": {
+   "SpruceTree01": 2
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation01 (49.0, -2680.1)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation02 (-17.4, -2549.8)": {
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation02 (-21.5, -2671.8)": {
+   "SpruceTree01": 1,
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation01 (-34.6, -2546.1)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation02 (-35.3, -2616.6)": {
+   "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation01 (-29.2, -2662.2)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation01 (2.8, -2697.6)": {
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-09.json | RuinsCastle01 (-34.3, -2536.6)": {
+   "EuropeanSpruce01": 1,
+   "SpruceTree01": 1
+  },
+  "trees/import-trees-09.json | RuinsStoneFormation02 (23.5, -2585.6)": {
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-10.json | RuinsStoneFormation01 (-34.6, -2546.1)": {
+   "SpruceTree01": 1
+  },
+  "trees/import-trees-10.json | RuinsStoneFormation02 (-34.8, -2557.3)": {
+   "EuropeanSpruce01": 1
   },
   "trees/import-trees-10.json | RuinsCastle01 (-34.3, -2536.6)": {
    "EU_AlderTree01": 1,
+   "EuropeanSpruce01": 1,
+   "SpruceTree01": 1
+  },
+  "trees/import-trees-10.json | RuinsStoneFormation01 (49.8, -2636.8)": {
+   "FlowerBushWild02": 1,
+   "GreenBushWild02": 1
+  },
+  "trees/import-trees-10.json | RuinsStoneFormation02 (39.7, -2599.7)": {
+   "PineTree01": 1
+  },
+  "trees/import-trees-10.json | RuinsStoneFormation01 (-35.3, -2629.7)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-10.json | RuinsStoneFormation02 (50.4, -2647.8)": {
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-10.json | RuinsStoneFormation02 (0.0, -2565.0)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-10.json | RuinsStoneFormation01 (49.0, -2680.1)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-10.json | RuinsStoneFormation02 (-21.5, -2671.8)": {
    "EuropeanSpruce01": 1
+  },
+  "trees/import-trees-10.json | RuinsCastle01 (9.6, -2636.5)": {
+   "FlowerBushWild01": 1
+  },
+  "trees/import-trees-11.json | RuinsStoneFormation01 (-26.0, -2542.2)": {
+   "GreenBushWild01": 1
+  },
+  "trees/import-trees-11.json | RuinsStoneFormation01 (-35.0, -2568.6)": {
+   "GreenBushWild01": 1
   }
  }
 }

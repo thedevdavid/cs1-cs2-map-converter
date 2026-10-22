@@ -12,8 +12,8 @@ const heightmap = opt("--heightmap", "../hm-rebuild/out/DakotaFalls-1to1-4096.pn
 const out = opt("--out", "out");
 const waterVariant = opt("--water-variant", "93.0"); // second sea level (CS1 m) next to 97.5
 // Round 48b/c: flags passed to both conversions (--no-mask-building-lots keeps trees on imported building lots; the mask is the default since 48c).
-// Round 50b: flags for tools/building-footprints.mjs (--keep-castle-lot-ruins keeps our buildings inside the OldCastle01 footprint).
-const footprintFlags = ["--keep-castle-lot-ruins"].filter(fl => { const i = args.indexOf(fl); if (i < 0) return false; args.splice(i, 1); return true; });
+// Round 50b/51: flags for tools/building-footprints.mjs (--clear-keep-lot moves / drops our buildings inside the keep's footprint; off by default).
+const footprintFlags = ["--keep-castle-lot-ruins", "--clear-keep-lot"].filter(fl => { const i = args.indexOf(fl); if (i < 0) return false; args.splice(i, 1); return true; });
 const passFlags = ["--mask-building-lots", "--no-mask-building-lots"].filter(fl => { const i = args.indexOf(fl); if (i < 0) return false; args.splice(i, 1); return true; });
 let dump = args[0];
 if (!dump) {

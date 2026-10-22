@@ -88,6 +88,9 @@ public static class Round9
     /// and OldCastle01 at the centroid of the largest wall group as the keep (UNVERIFIED as a placeable object; drop it if a dry run
     /// rejects it). RuinsCastle01 stays in import-objects.json at the CS1 Castle Ruins positions.
     /// </summary>
+    public const string KeepPrefab = "RuinsCastle01";
+    public const double KeepRotation = 90;
+
     public static (List<PlacedObject> Objects, (double X, double Z)? Keep) Fort(Dump dump, Regex wall, double half, ulong seed)
     {
         var segs = dump.Segments.Where(s => wall.IsMatch(s.Prefab)).OrderBy(s => s.Id).ToList();
@@ -143,7 +146,9 @@ public static class Round9
                     Add($"StandingStone0{1 + rng.Next(8)}", e.X, e.Z, rng.NextDouble() * 360, s.Prefab, $"segment {s.Id} end");
         }
         var main = centroid.Values.MaxBy(v => v.N);
-        Add("OldCastle01", main.X, main.Z, 0, "Castle Wall (keep)", "fort centroid");
+        // Round 51 (owner: "Replace OldCastle01 with RuinsCastle01"; OldCastle01's own sub-objects are broken in this playset): the keep is a RuinsCastle01,
+        // turned 90° (fewest overlaps with the wall pieces at the centroid: 29 against 34).
+        Add(KeepPrefab, main.X, main.Z, KeepRotation, "Castle Wall (keep)", "fort centroid");
         return (res, (main.X, main.Z));
     }
 

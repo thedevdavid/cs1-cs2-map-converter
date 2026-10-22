@@ -73,7 +73,10 @@ function pass(dir, treeDir, write) {
 // Round 50b (bridge 0.9.58 on A23c: OldCastle01 owns 914 sub-objects; ours overlapping them loop between OverrideSystem and Anarchy): no other building
 // of our layers may intersect the castle's footprint. Each one that does is moved to the nearest position (rings of 0.5 m up to CASTLE_MOVE) where its
 // footprint is clear of the castle's, yaw kept, else dropped. On by default; --keep-castle-lot-ruins keeps them (the CS1 Castle Wall stood there).
-const CASTLE = "OldCastle01", CASTLE_MOVE = 15, clearCastle = !args.includes("--keep-castle-lot-ruins");
+// Round 51: the keep is now a RuinsCastle01 (found by its cs1 tag "Castle Wall (keep)"); the owner keeps the wall pieces and the 3 CS1 RuinsCastle01, so
+// clearing around the keep is opt-in (--clear-keep-lot) and the default only reports what overlaps it.
+const CASTLE = "Castle Wall (keep)", CASTLE_MOVE = 15, clearCastle = args.includes("--clear-keep-lot");
+const isKeep = o => o.cs1 === CASTLE;
 const corners = (b, x = b.x, z = b.z) => { const bb = bounds[b.prefab], r = (b.rotation ?? 0) * Math.PI / 180, c = Math.cos(r), s = Math.sin(r);
   return [[bb.min[0], bb.min[1]], [bb.max[0], bb.min[1]], [bb.max[0], bb.max[1]], [bb.min[0], bb.max[1]]].map(([u, v]) => [x + u * c + v * s, z - u * s + v * c]); };
 function overlap(p, q) {   // two convex quads (SAT)
@@ -86,13 +89,13 @@ function overlap(p, q) {   // two convex quads (SAT)
 }
 function clearCastleLot(dir) {
   const fb = join(dir, "import-fort-buildings.json"); if (!existsSync(fb)) return null;
-  const castles = J(fb).objects.filter(o => o.prefab === CASTLE); if (!castles.length) return null;
+  const castles = J(fb).objects.filter(isKeep); if (!castles.length) return null;
   const lots = castles.map(c => corners(c)), rep = { moved: [], dropped: [], intersecting: 0 };
   for (const f of ["import-fort-buildings.json", "import-objects.json"]) {
     const p = join(dir, f); if (!existsSync(p)) continue;
     const j = J(p), keep = [];
     for (const o of j.objects) {
-      if (o.prefab === CASTLE || bounds[o.prefab]?.type !== "BuildingPrefab" || !lots.some(l => overlap(l, corners(o)))) { keep.push(o); continue; }
+      if (isKeep(o) || bounds[o.prefab]?.type !== "BuildingPrefab" || !lots.some(l => overlap(l, corners(o)))) { keep.push(o); continue; }
       rep.intersecting++;
       if (!clearCastle) { keep.push(o); continue; }
       let to = null;
@@ -165,13 +168,13 @@ for (const [dir, treeDir] of [[out, join(out, "trees")], [join(out, "x1"), null]
   const castle = clearCastleLot(dir);
   if (castle) {
     const cnt = a => Object.entries(a.reduce((m, q) => (m[q.prefab] = (m[q.prefab] ?? 0) + 1, m), {})).map(([k, v]) => `${k} ${v}`).join(", ") || "none";
-    writeFileSync(join(dir, "castle-lot-check.md"), [`# Buildings of our layers intersecting the ${CASTLE} footprint (round 50b)`, ``,
-      `Switch: ${clearCastle ? "on (default): moved up to " + CASTLE_MOVE + " m out of the castle footprint, else dropped" : "off (--keep-castle-lot-ruins): kept"}.`, ``,
+    writeFileSync(join(dir, "castle-lot-check.md"), [`# Buildings of our layers intersecting the keep's footprint (rounds 50b / 51)`, ``,
+      `Switch: ${clearCastle ? "on (--clear-keep-lot): moved up to " + CASTLE_MOVE + " m out of the keep's footprint, else dropped" : "off (default since round 51): kept, only counted"}.`, ``,
       `Intersecting: **${castle.intersecting}**. Moved: **${castle.moved.length}** (${cnt(castle.moved)}). Dropped: **${castle.dropped.length}** (${cnt(castle.dropped)}).`, ``,
       `| file | id | prefab | from | to | moved m |`, `|---|---|---|---|---|---:|`,
       ...castle.moved.map(m => `| ${m.file} | ${m.id} | ${m.prefab} | (${m.from[0]}, ${m.from[1]}) | (${m.to[0]}, ${m.to[1]}) | ${m.d.toFixed(1)} |`),
       ...castle.dropped.map(m => `| ${m.file} | ${m.id} | ${m.prefab} | (${m.at[0]}, ${m.at[1]}) | dropped | – |`)].join("\n") + "\n");
-    console.log(`castle lot ${dir}: ${castle.intersecting} buildings intersect the ${CASTLE} footprint; ${clearCastle ? `moved ${castle.moved.length}, dropped ${castle.dropped.length}` : "kept (--keep-castle-lot-ruins)"} -> castle-lot-check.md`);
+    console.log(`keep lot ${dir}: ${castle.intersecting} buildings intersect the keep's footprint; ${clearCastle ? `moved ${castle.moved.length}, dropped ${castle.dropped.length}` : "kept (default; --clear-keep-lot clears)"} -> castle-lot-check.md`);
   }
   const first = pass(dir, treeDir, true), again = pass(dir, treeDir, false);
   const byBuilding = {}; for (const b of first.buildings) byBuilding[b.prefab] = (byBuilding[b.prefab] ?? 0) + 1;

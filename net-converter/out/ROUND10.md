@@ -62,11 +62,11 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 1 | `out\x1\import-gaps.json` | ROUND 9 network gaps (snapToSegment onto the live network) (1×) | 4 edges | 0.0 MB |
 | 1 | `out\x1\import-gaps-e15883-taper.json` | ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane (1×) | 2 edges | 0.0 MB |
 | 2 | `out\import-power.json` | power (2×) | 58 edges | 0.0 MB |
-| 2 | `out\import-canals.json` | canals and flood walls (2×) | 16 edges: Narrow Boatway 14, Sound Barrier 2 | 0.0 MB |
+| 2 | `out\import-canals.json` | canals and flood walls (2×) | 14 edges: Narrow Boatway 12, Sound Barrier 2 | 0.0 MB |
 | 2 | `out\import-shippaths.json` | ship paths (2×) | 100 edges: Medium Seaway 100 | 0.1 MB |
 | 2 | `out\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam (A-v6: dam end on the plant marker, extra pylon), connectTo high voltage radius 60 (2×) | 4 edges | 0.0 MB |
 | 2 | `out\x1\import-power.json` | power (1×) | 58 edges | 0.0 MB |
-| 2 | `out\x1\import-canals.json` | canals and flood walls (1×) | 16 edges: Narrow Boatway 14, Sound Barrier 2 | 0.0 MB |
+| 2 | `out\x1\import-canals.json` | canals and flood walls (1×) | 14 edges: Narrow Boatway 12, Sound Barrier 2 | 0.0 MB |
 | 2 | `out\x1\import-shippaths.json` | ship paths (1×) | 100 edges: Medium Seaway 100 | 0.1 MB |
 | 2 | `out\x1\import-power-ends.json` | ROUND 8 power-line ends at the substation and the dam (A-v6: dam end on the plant marker, extra pylon), connectTo high voltage radius 60 (1×) | 4 edges | 0.0 MB |
 | 3 | `out\import-water.json` | water (2×), seaLevel 195 | 41 sources, 0 refined | 0.0 MB |
@@ -78,30 +78,32 @@ out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 204
 | 4 | `out\import-connections.json` | outside connections | 25 | 0.0 MB |
 | 4 | `out\x1\import-connections.json` | outside connections | 25 | 0.0 MB |
 | 5 | `out\import-walls-props.json` | barrier props (2×) | 621 | 0.1 MB |
-| 5 | `out\import-objects.json` | objects (2×) | 6119 (prop 3029, building 5, plant 3076, tree 9; 1073 with y) | 1.3 MB |
+| 5 | `out\import-objects.json` | objects (2×) | 6106 (prop 3016, building 5, plant 3076, tree 9; 1072 with y) | 1.1 MB |
 | 5 | `out\import-substation.json` | ROUND 8 substation building TransformerStation01 (2×) | 1 | 0.0 MB |
 | 5 | `out\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (2×) | 606 | 0.1 MB |
-| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17552 | 3.2 MB |
+| 5 | `out\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (2×) | 17529 | 2.6 MB |
 | 5 | `out\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (2×) | 3 | 0.0 MB |
 | 5 | `out\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (2×) | 201 | 0.0 MB |
 | 5 | `out\optional\import-po-structure-br006-arches.json` | ROUND 22 BR006 variant b: 7 StoneArchRailBridge (135944) under the deck, runner --with po-br006-arches (2×) | 7 | 0.0 MB |
 | 5 | `out\optional\import-po-structure-gantry.json` | ROUND 20 optional gantry HWY Truss Gantry 2L  A (132188), runner --with po-gantry (2×) | 1 | 0.0 MB |
-| 5 | `out\import-fort.json` | ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED) (2×) | 112 | 0.0 MB |
+| 5 | `out\import-fort-buildings.json` | ROUND 49 fort ruins, buildings (OldCastle01 keep, RuinsStoneFormation, RuinsStoneCairns) (2×) | 89 | 0.0 MB |
+| 5 | `out\import-fort-props.json` | ROUND 49 fort standing stones (after the fort buildings, skipInsideBuildings) (2×) | 0 | 0.0 MB |
 | 5 | `out\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (2×) | 2 | 0.0 MB |
 | 5 | `out\x1\import-walls-props.json` | barrier props (1×) | 621 | 0.1 MB |
-| 5 | `out\x1\import-objects.json` | objects (1×) | 6119 (prop 3029, building 5, plant 3076, tree 9; 1073 with y) | 1.3 MB |
+| 5 | `out\x1\import-objects.json` | objects (1×) | 6106 (prop 3016, building 5, plant 3076, tree 9; 1072 with y) | 1.1 MB |
 | 5 | `out\x1\import-substation.json` | ROUND 8 substation building TransformerStation01 (1×) | 1 | 0.0 MB |
 | 5 | `out\x1\import-po-rocks.json` | po-rocks-v3: pack rocks and cliffs at the PO mountains / rock work / falls steps, sunk by their live bounds (1×) | 606 | 0.1 MB |
-| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17547 | 3.2 MB |
+| 5 | `out\x1\import-rock-scatter.json` | ROUND 8 vanilla rock scatter (1×) | 17524 | 2.6 MB |
 | 5 | `out\x1\import-po-structure-objects.json` | ROUND 22 PO structures: BR022 pads (BR006 variant a: no kit objects); runner --po-structures (mod 154132) (1×) | 3 | 0.0 MB |
 | 5 | `out\x1\import-po-structure-piers.json` | ROUND 22 BR001 / BR003 piers: ITBP caps (140978) on Pillar4x16 stacks (154132), after pillars-off; on by default (1×) | 131 | 0.0 MB |
 | 5 | `out\x1\optional\import-po-structure-br006-arches.json` | ROUND 22 BR006 variant b: 7 StoneArchRailBridge (135944) under the deck, runner --with po-br006-arches (1×) | 7 | 0.0 MB |
 | 5 | `out\x1\optional\import-po-structure-gantry.json` | ROUND 20 optional gantry HWY Truss Gantry 2L  A (132188), runner --with po-gantry (1×) | 1 | 0.0 MB |
-| 5 | `out\x1\import-fort.json` | ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED) (1×) | 112 | 0.0 MB |
+| 5 | `out\x1\import-fort-buildings.json` | ROUND 49 fort ruins, buildings (OldCastle01 keep, RuinsStoneFormation, RuinsStoneCairns) (1×) | 89 | 0.0 MB |
+| 5 | `out\x1\import-fort-props.json` | ROUND 49 fort standing stones (after the fort buildings, skipInsideBuildings) (1×) | 0 | 0.0 MB |
 | 5 | `out\x1\import-po-candidates.json` | Procedural Object candidates, UNVERIFIED (1×) | 2 | 0.0 MB |
 | 6 | `out\import-trees-fixed-01.json` | trees at fixed height, with y (2×) | 50 | 0.0 MB |
 | 6 | `out\x1\import-trees-fixed-01.json` | trees at fixed height, with y (1×) | 50 | 0.0 MB |
-| 6 | `out\trees/import-trees-01.json` … `import-trees-11.json` | trees (both scales) | 504,909 in 11 files | |
+| 6 | `out\trees/import-trees-01.json` … `import-trees-11.json` | trees (both scales) | 504,686 in 11 files | |
 | 7 | `out\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 7 | `out\x1\import-resources.json` | natural resources | fertility, ore, oil, groundwater | 2.4 MB |
 | 8 | `out\import-surfaces-fields.json` | field surfaces | 55 polygons | 0.1 MB |
@@ -1155,3 +1157,109 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
 - **TM:PE:** only 2 of the 27 TM:PE nodes sit on the remapped CS1 roads: n9988 and n11611, the shed road's junctions on the 4-Lane National Road. That road went to the 4-lane highway in round 43, and Medium Road and the highway both have 2 + 2 car lanes. No TM:PE node is on a 2- or 3-lane National Road, so round 47 changes no lane mapping. The live lane mapping (cs2mcp/scripts/import-tmpe.mjs, even --dry-run, calls the bridge) can only be re-checked after the A-v20 build.
 - **File fidelity check** (file-graph.mjs + fidelity.mjs on the import files): unchanged. 19 OK, and the same CHECK boxes with the same counts as before: interchange 8 (6/8, the spread offsets), 9, 11, 12, 14, 15, 16.
 - 142 tests pass.
+
+## Round 48: pdelmo's leafy tree for the former birch species
+
+- **tree-mapping.tsv** now has alias lines: `@NAME<TAB>prefab` defines a target once, and rows use `@NAME`. **`@PD_LEAFY_TREE` → `pd Leafy Tree`** (PDX package 131824, cache "pd Leafy Tree_8c7127eb1c4e1dfc2ffc5681fe7e07e1.cok"). The live name is not confirmed yet: `/prefabs?query=Leafy` finds nothing before the restart. If it differs, correct that one line (tree-mapping.tsv, line 10) and regenerate. TargetMapping refuses an undefined alias.
+- **Mapping:**
+  - Bare Tree D_Data (28,300): pd Leafy Tree 0.6, EU_AlderTree01 0.2, NA_LondonPlaneTree01 0.2 (old age profile);
+  - Bare Tree E_Data (28,301): pd Leafy Tree 0.6, EU_ChestnutTree01 0.2, NA_LindenTree01 0.2 (old);
+  - Semi Bare Tree Gold_Data (13,389): pd Leafy Tree 0.5, NA_HickoryTree01 0.5 (EU_PoplarTree01 is no longer used);
+  - OakTree01 (mp9-LiveOaknvl) unchanged; BirchTree01 still 0.
+- **Placed totals** (out/trees/README.md): pd Leafy Tree 28,907, OakTree01 30,660, NA_HickoryTree01 14,704, NA_LindenTree01 10,782, NA_LondonPlaneTree01 4,099, EU_AlderTree01 3,973, EU_ChestnutTree01 3,954.
+- Age profiles, masks and fixed-height files unchanged.
+- **Tests:** the Bare Tree E expectation is updated, and a new test covers the alias lines; 143 tests pass.
+- pd Leafy Tree is written like every tree (kind tree, an age). If the asset turns out to be an object rather than a tree prefab, the bridge's tree/kind check will say so in the import report.
+
+## Round 48b (staged, not the default): tree mask over imported building lots
+
+- **What it is:** an optional tree mask for A-v20's checkerboard trees in the OldCastle01 lot (cause under investigation on the bridge side). `--mask-building-lots` on the converter, passed through by `node tools/run-all.mjs --mask-building-lots`. The lots come from the imported buildings: today OldCastle01 from the fort (Round9.Fort), lot 26 × 24 cells × 8 m around (4.65, −2618.56), rotation 0, i.e. ±104 × ±96 m, turned with the object's rotation. Off by default; every run counts the trees in the lots and logs them in stats.md.
+- **Staged variant:** `out.next/` (`node tools/run-all.mjs --out out.next --mask-building-lots`; out.next/ is git-ignored). **Swap in out.next/trees/import-trees-01…10.json (+ README.md)**. All 10 chunks change, because the 50,000-tree chunks shift. Fixed-height tree files, network and shed files are identical to out/.
+- **Removed:** 340 trees. 354 lie in the lot; 14 of them were already masked by the net corridor or the other masks.
+  - In the lot, by CS2 prefab: GreenBushWild01 105, GreenBushWild02 60, EuropeanSpruce01 55, SpruceTree01 41, FlowerBushWild01 21, PineTree01 20, FlowerBushWild02 19, OakTree01 14, pd Leafy Tree 12, EU_ChestnutTree01 3, NA_LindenTree01 2, EU_AlderTree01 1, NA_LondonPlaneTree01 1. That is 33 deciduous, 116 conifers, 205 bushes.
+  - The orchestrator's count from the game (118 in the box, 72 deciduous) differs. Ours is the converter's point set before import.
+- **CS1 had trees inside the castle walls: yes, 354 points in the lot**, mostly undergrowth and evergreens:
+  - Filler Bush small 77, pd Aussie Bushes 75, PD Large EverGreen 51 / 34 / 11, Filler Bush Medium 43, mp9-LiveOaknvl 14, PD Pine short 11 / regular 9, Filler Bush Large 10;
+  - Bare Tree E 11, Bare Tree D 8.
+  - With the mask the fort loses its planted interior (bushes and conifers); the deciduous share is small (33).
+
+### Round 48c: the building-lot tree mask is the default
+
+- **Why:** the bridge's verdict is that the game never renders a tree inside a building lot. Placing a building clears the plants on its lot; ours survived only through Anarchy's PreventOverride and rendered as the texture placeholder (the A-v20 checkerboard at the fort).
+- **Change:** the converter masks trees on the lots of imported buildings by default (today the OldCastle01 keep, ±104 × ±96 m around (4.65, −2618.56)); `--no-mask-building-lots` keeps them.
+- **Fidelity cost:** **CS1 had 354 trees on that lot; we drop 340** (the other 14 were already masked by the net corridor and other rules). 33 deciduous, 116 conifers, 205 bushes.
+- A-v22 builds from the staged round-48b trees (same set). out/ is regenerated in place once that build is done.
+
+### Round 48d: runner sets skipInsideBuildings (bridge 0.9.56)
+
+- tools/import-run.mjs adds `options.skipInsideBuildings = true` to every /import/objects body of the steps **trees, rock-scatter, po-rocks, objects, barriers (walls-props), rock-shed**. The bridge then leaves out objects whose position lies inside an existing building's footprint (rotated prefab bounds), where OverrideSystem and Anarchy loop on them every frame.
+- **Not set** on fort, substation, connections (they create the buildings), nor on po-structures / br006-arches / gantry / piers (they sit on structures).
+- Older bridges ignore the option.
+- The bridge's `skippedInsideBuildings` count goes into the console line, run-*.md and run-*.json.
+- The converter's building-lot tree mask stays the default (48c).
+
+## Round 49: nothing of the masked layers inside a building footprint; fort split (staged in out.next/)
+
+- **Cause:** bridge 0.9.56 `GET /debug/override-loop` on dakota-A22b-2048 found 96 objects in the OverrideSystem / Anarchy PreventOverride loop (out/x1/override-loop-a22b.json): objects standing inside a building's footprint.
+- **building-bounds.json:** geometry bounds of every building the layers create (GET /prefabs/info, 0.9.56): OldCastle01, RuinsCastle01, RuinsStoneFormation01/02, RuinsStoneCairns01/02/03, RuinsOldMill01, TransformerStation01/02, HydroelectricPowerPlant01.
+- **tools/building-footprints.mjs**, run by run-all after both conversions:
+  - Buildings: the BuildingPrefabs in import-fort-buildings.json, import-objects.json and import-substation.json (100). The dam plant is spawned by the dam course, so it is taken at its live A-v22 centre (1381.35, 4691.62) with the circle through its bounds' corners (rotation not known).
+  - Every non-building object whose position lies inside a footprint (bounds turned with the building's rotation, the bridge's test) is removed from the masked layers: rock-scatter, po-rocks, objects, walls-props, rock-shed, fort-props, the tree chunks and the fixed-height trees.
+  - A second pass checks: **0 left**. Report: footprints-check.md / .json in each folder.
+- **Fort split:** import-fort.json is replaced by **import-fort-buildings.json** (OldCastle01, RuinsStoneFormation*, RuinsStoneCairns*: 94 buildings) and **import-fort-props.json** (the standing stones). The runner imports fort-buildings, then fort-props with skipInsideBuildings (round 48d list + fort-props). The building-lot tree mask (48c) stays the default.
+- **Removed** (out.next/, 2× / and x1 the same except trees):
+  - rock-scatter 55: 35 in the OldCastle01 lot, the rest in formations, 2 at the dam plant;
+  - po-rocks 9 (CliffStack 6, CliffRock5 2, CliffRock6 1 in the OldCastle01 lot);
+  - objects 16 (StreetlightSingle01: 3 in the keep's lot, 13 in RuinsStoneFormation footprints);
+  - fort-props 19 standing stones (inside formations);
+  - trees 6 (the conifers in the RuinsCastle01 footprints; the OldCastle01 lot was already masked).
+  - Total 105 in out.next/ (99 + 6 trees), 99 in out.next/x1/.
+- **Files to swap in from out.next/ before the next build** (both out/ and out/x1/ unless noted):
+  - new: import-fort-buildings.json, import-fort-props.json (import-fort.json is no longer written: remove it); footprints-check.md / .json;
+  - changed: import-objects.json, import-po-rocks.json, import-rock-scatter.json, import-terrain-paint-dry-grass.json, import-terrain-paint-n13-high-ground-dry.json (these two follow the 48c tree mask);
+  - trees (out/trees only): import-trees-02, -03, -04, -07, -10.json;
+  - plus the runner (tools/import-run.mjs, committed): steps fort-buildings → fort-props.
+- 143 tests pass.
+
+## Round 50 (staged, no change in effect): the fort's standing stones cannot be moved out within 6 m
+
+- **Tool:** building-footprints.mjs now moves the objects of import-fort-props.json instead of dropping them: the nearest point outside every footprint + 1 m, searched on 0.25 m rings up to 6 m, yaw kept. They are dropped only if no such point exists.
+- **Result: 0 of 19 moved.** Every stone stands inside 1–8 building footprints at once:
+  - The RuinsStoneFormation pieces (16 × 48 m and 32 × 32 m footprints) are laid every 12 m along the wall line, so they overlap into a solid band.
+  - At the fort, the OldCastle01 lot (208 × 192 m) covers the whole interior.
+  - **Nearest free point, per stone** (searched up to 60 m): 9.0 m for the three stones at the dam (fort51, fort52, fort92); 14.0–19.5 m for fort111, fort23, fort22; 34–58 m for eight; none within 60 m for five (fort8, fort17, fort33, fort67, fort75).
+- **So a ruin field with stones needs one of:**
+  - (a) the formations and cairns as plain props instead of BuildingPrefabs (any similar non-building ruin pieces in the playset?), so they have no footprint;
+  - (b) the stones placed by hand where the owner wants them;
+  - (c) accepting the stones as dropped.
+- **The rest of the 105 removals (round 49), besides the 19 stones:**
+  - rock-scatter 55 (about 35 in the OldCastle01 lot, 18 in formation footprints, 2 at the dam plant);
+  - po-rocks 9: CliffStack 6, CliffRock5 2, CliffRock6 1, in the castle lot. These are the largest pieces lost; the castle sits where PO rock work was.
+  - objects 16 StreetlightSingle01 (3 in the keep's lot, 13 inside formations): CS1 lamp posts along the fort wall path;
+  - trees 6 conifers on the RuinsCastle01 footprints.
+  - The ~340 castle-lot trees (round 48b/c) are masked in the converter before this pass and are not part of the 105.
+- **out.next/** is regenerated with this tool and is identical in effect to round 49 (no stone moved).
+
+## Round 50b (staged in out.next/): no other building of ours inside the OldCastle01 footprint
+
+- **Cause** (bridge 0.9.58, A23c): OldCastle01 owns 914 sub-objects. Ours overlapping them make the OverrideSystem / Anarchy loop: 621 owned objects in loop, 132 of them trees (the checker ring, now stripped on the bridge side), 489 the castle's own props.
+- **building-footprints.mjs, castle-lot step** (before the footprint pass): every BuildingPrefab in import-fort-buildings.json and import-objects.json whose rotated footprint intersects the castle's (208 × 192 m around (4.65, −2618.56), SAT test) is moved to the nearest position up to 15 m where it is clear (yaw kept), else dropped. **On by default; `--keep-castle-lot-ruins`** (run-all passes it through) keeps them. Report: castle-lot-check.md.
+- **Default (on):**
+  - 63 buildings intersect the castle footprint; **0 can be moved within 15 m** (they lie well inside the lot), so **63 dropped**: RuinsStoneFormation01 22, RuinsStoneFormation02 19, RuinsStoneCairns01 7 / 02 4 / 03 8, RuinsCastle01 3.
+  - Kept: the other 32 ruin pieces, **all on the wall line near the dam** (x 1147–1400; none is left at the fort itself), RuinsOldMill01 and OldCastle01.
+  - The footprint pass then removes 99 objects (rock-scatter 55, po-rocks 9, objects 16 street lamps, fort-props 19 stones), still mostly inside the castle footprint itself. No trees: the RuinsCastle01 conifers go with the RuinsCastle01.
+- **Off (`--keep-castle-lot-ruins`):** exactly round 49 (63 ruins kept inside the castle footprint, 105 / 99 objects removed); their overlap with the castle's sub-objects keeps the prop loop (no visual effect after the plant strip).
+- **Surfaces:** no surface polygon intersects the castle lot. The polygons that do are terrain paint (dry-grass 2, n11 ore-dirt 4, n5 scree-dirt 2), which paints the terrain texture and creates no entity, so it cannot take part in the loop; left as they are.
+- **Files to swap in from out.next/** (out/ and out/x1/): import-fort-buildings.json, import-objects.json, plus the round-49 set (import-fort-props.json, import-po-rocks.json, import-rock-scatter.json, the two terrain-paint files, trees 02/03/04/07/10), castle-lot-check.md, footprints-check.md / .json.
+
+## Round 50c (staged in out.next/): nothing of ours in the HydroelectricPowerPlant01 footprint except the power end
+
+- **Cause** (bridge 0.9.58): the plant's own sub-objects loop too (about 31 props: electrical boxes, hydrants, fences, street lights, a container).
+- **building-footprints.mjs, plant step.** The plant is spawned by the dam course: live centre (1381.35, 4691.62), rotation unknown. Its 47.6 × 71.6 m footprint (GET /prefabs/info) counts in both orientations, along the dam course's bearing (79.2°) and across it.
+- **Result** (both scales):
+  - **Fort ruin pieces on the dam wall line overlapping it:** 9. **5 moved** out (0.5–14 m: fort39, 40, 41, 46, 47); **4 dropped** (fort35–38, RuinsStoneFormation01/02, no clear spot within 15 m).
+  - **Narrow Boatway courses through the plant: 2 dropped** (e28383_0 passes 0.9 m from its centre, e1253_0 ends inside), with their orphaned nodes. Boats do not pass the dam anyway.
+  - **Power:** the high-voltage course e32855_0_to_dam_c ends on the plant's marker and stays (connectTo high, radius 60), so the plant stays connected.
+  - **Objects:** no other object or road of ours is within the footprint. The 2 rock-scatter rocks were removed in round 49; the access road does not reach it.
+- **Report:** plant-lot-check.md (both folders).
+- **Files to swap in from out.next/** (out/ and out/x1/), with round 50b: import-fort-buildings.json, import-canals.json, plant-lot-check.md. import-power-ends.json is unchanged.

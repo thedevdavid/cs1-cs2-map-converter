@@ -843,7 +843,8 @@ void WriteLayers()
         var lots = new List<(string Name, double X, double Z, double Rot, double HalfW, double HalfD)>();
         {
             var (fortObjs, _) = Round9.Fort(dump, new System.Text.RegularExpressions.Regex("(?i)Castle Wall"), 7168, treeSeed + 11);
-            foreach (var o in fortObjs.Where(o => o.Prefab == "OldCastle01")) lots.Add(("OldCastle01", o.X, o.Z, o.Rotation, 26 * 8 / 2.0, 24 * 8 / 2.0));   // lot 26 × 24 cells (/prefabs/info)
+            // Round 51: the keep is a RuinsCastle01 (geometry 79.6 × 63.6 m, /prefabs/info; was OldCastle01's 26 × 24-cell lot).
+            foreach (var o in fortObjs.Where(o => o.Cs1 == "Castle Wall (keep)")) lots.Add((o.Prefab, o.X, o.Z, o.Rotation, o.Prefab == "OldCastle01" ? 26 * 8 / 2.0 : 39.8, o.Prefab == "OldCastle01" ? 24 * 8 / 2.0 : 31.8));
         }
         bool InLot(double x, double z) => lots.Any(b =>
         {
@@ -1025,7 +1026,7 @@ void WriteLayers()
             $"The game builds the plant and the dam from the one dam edge in import-dam.json. Fallback by hand: {Round8.DamPrefab} at ({damM.A.X}, {damM.A.Z}), rotation {damM.A.Rotation} (aligns with the CS1 dam axis, bridge live test). Deck: {Round8.DamDeckPrefab} from ({Round8.DamDeckA.X}, {Round8.DamDeckA.Z}) to ({Round8.DamDeckB.X}, {Round8.DamDeckB.Z}) at crest y {Round8.DamCrestTrue * heightFactor} (level). The power line ends at the plant through import-power-ends.json (connectTo high voltage)."));
     man.AppendLine().AppendLine("## Fort (CS1 Castle Wall 1 / 3, 12 segments)").AppendLine();
     man.AppendLine("import-fort.json marks the wall line with ruins (RuinsStoneFormation01/02 every 12 m, StandingStone01–08 at the ends, RuinsStoneCairns01–03 inside the line) " +
-        "and puts OldCastle01 at the fort's centroid as the keep (unverified as a placeable object); RuinsCastle01 stands at the CS1 Castle Ruins positions (import-objects.json). " +
+        "and puts a RuinsCastle01 at the fort's centroid as the keep (round 51; OldCastle01 until round 50); RuinsCastle01 stands at the CS1 Castle Ruins positions (import-objects.json). " +
         "A true rampart needs a wall asset pack from PDX Mods: CS2 has no vanilla stone fort wall (EU_Wall01–09 are 0.9 m garden walls) and none is in the playset.");
     File.WriteAllText(Path.Combine(outDir, "manual-objects.md"), man.ToString());
 
@@ -1300,7 +1301,7 @@ void WriteLayers()
         Objects.Write(Path.Combine(outDir, "import-fort-buildings.json"), "fort ruins, buildings (round 49)", fort.Where(FortBuilding), new Objects.Grounding());
         Objects.Write(Path.Combine(outDir, "import-fort-props.json"), "fort ruins, standing stones (round 49)", fort.Where(o => !FortBuilding(o)), new Objects.Grounding());
         File.Delete(Path.Combine(outDir, "import-fort.json"));
-        r9.Add(ci($"fort: {fort.Count} objects along the 12 CS1 Castle Wall segments ({Round8.Counts(fort)}), keep OldCastle01 at ({keep?.X:F0}, {keep?.Z:F0}) (UNVERIFIED placeable) -> import-fort-buildings.json + import-fort-props.json; RuinsCastle01 stays in import-objects.json"));
+        r9.Add(ci($"fort: {fort.Count} objects along the 12 CS1 Castle Wall segments ({Round8.Counts(fort)}), keep {Round9.KeepPrefab} at ({keep?.X:F0}, {keep?.Z:F0}) (round 51; was OldCastle01) -> import-fort-buildings.json + import-fort-props.json; RuinsCastle01 stays in import-objects.json"));
         var blocks = Round9.LoadPavedBlocks(poOfflinePath);
         string pave = smap.Resolve("pavement")?.FirstOrDefault()?.Prefab ?? "Pavement Surface 01";
         var (ps, pn, pe, tall) = Round9.PavedStructures(blocks, pave, heightFactor, 7168);

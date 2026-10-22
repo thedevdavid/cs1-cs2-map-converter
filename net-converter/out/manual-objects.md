@@ -1165,4 +1165,4 @@ The game builds the plant and the dam from the one dam edge in import-dam.json. 
 
 ## Fort (CS1 Castle Wall 1 / 3, 12 segments)
 
-import-fort.json marks the wall line with ruins (RuinsStoneFormation01/02 every 12 m, StandingStone01–08 at the ends, RuinsStoneCairns01–03 inside the line) and puts OldCastle01 at the fort's centroid as the keep (unverified as a placeable object); RuinsCastle01 stands at the CS1 Castle Ruins positions (import-objects.json). A true rampart needs a wall asset pack from PDX Mods: CS2 has no vanilla stone fort wall (EU_Wall01–09 are 0.9 m garden walls) and none is in the playset.
+import-fort.json marks the wall line with ruins (RuinsStoneFormation01/02 every 12 m, StandingStone01–08 at the ends, RuinsStoneCairns01–03 inside the line) and puts a RuinsCastle01 at the fort's centroid as the keep (round 51; OldCastle01 until round 50); RuinsCastle01 stands at the CS1 Castle Ruins positions (import-objects.json). A true rampart needs a wall asset pack from PDX Mods: CS2 has no vanilla stone fort wall (EU_Wall01–09 are 0.9 m garden walls) and none is in the playset.

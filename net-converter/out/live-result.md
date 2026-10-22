@@ -1143,3 +1143,18 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
   - **Objects:** no other object or road of ours is within the footprint. The 2 rock-scatter rocks were removed in round 49; the access road does not reach it.
 - **Report:** plant-lot-check.md (both folders).
 - **Files to swap in from out.next/** (out/ and out/x1/), with round 50b: import-fort-buildings.json, import-canals.json, plant-lot-check.md. import-power-ends.json is unchanged.
+
+## Round 51: the keep is a RuinsCastle01; runner strips the decorative buildings' own trees (written to out/ directly, no build running)
+
+- **Keep** (owner: "Replace OldCastle01 with RuinsCastle01"; OldCastle01's own sub-objects are broken in this playset): Round9.Fort's keep at the fort centroid (4.65, −2618.56) is now **RuinsCastle01** (KeepPrefab), turned **90°**.
+- **Overlaps:** RuinsCastle01's footprint is 79.6 × 63.6 m, against the keep lot's 208 × 192 m. Even so, the fort's interior is full: at the keep it overlaps 29 of our buildings at 90° (34 at 0°). The best spot anywhere within ±40 / ±60 m still overlaps 12, sitting 35 m west on the wall line.
+  - A composition of 2–4 RuinsCastle01 along the outline would overlap even more. The interior between the wall pieces is only about 60 m wide.
+  - CS1 itself had no keep object: the keep was placed by round 11b at the centroid. The CS1 "Castle Ruins" are the 3 RuinsCastle01 in import-objects.json, one of them 18 m from the keep.
+  - **Alternative:** drop the synthetic keep and let those 3 stand for the castle.
+- **The 29 overlapping buildings** (formations, cairns and 2 of the CS1 RuinsCastle01) are **kept by default**, as asked. building-footprints.mjs only counts them (castle-lot-check.md); `--clear-keep-lot` (run-all passes it) would move them up to 15 m or drop them, as round 50b did.
+- **Converter tree mask** (keep lot, now ±39.8 × ±31.8 m): 50 trees masked (was 340).
+- **Footprint pass** (96 buildings now, incl. the keep): removes 173 more trees inside the formations and RuinsCastle01. Net: **223 trees masked at the fort instead of 340, so 117 come back.** Also removed: rock-scatter 23, objects 13 (street lamps), fort-props 19 (all standing stones, as before). x1: 55 objects. Check after removal: 0 left.
+- **Dam plant (50c), unchanged:** 5 ruin pieces moved, 4 dropped, 2 Narrow Boatway courses dropped, power end kept.
+- **Runner:** new step **fort-strip** after fort-props (so after objects and fort-buildings). It POSTs /build/strip-subobjects `{prefabs: [building prefabs in import-fort-buildings.json and import-objects.json from building-bounds.json], kinds: [tree, plant], onlyLooping: false}` and prints matched / removed. Bridge 0.9.58 has no options.stripOwnedPlants on /import/objects, so the separate step is used.
+- **Fort buildings now:** RuinsStoneFormation01 32, RuinsStoneFormation02 27, RuinsStoneCairns01/02/03 11/8/10, RuinsCastle01 1 (keep). The 4 at the dam plant are dropped.
+- The Round9 test now expects the RuinsCastle01 keep; 143 tests pass.
