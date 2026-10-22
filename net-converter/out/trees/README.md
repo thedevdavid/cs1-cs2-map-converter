@@ -1,6 +1,6 @@
 # Trees for POST /import/objects
 
-Source: points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale). 504,909 trees in 11 files of ≤ 50,000 (import-trees-01.json, import-trees-02.json, import-trees-03.json, import-trees-04.json, import-trees-05.json, import-trees-06.json, import-trees-07.json, import-trees-08.json, import-trees-09.json, import-trees-10.json, import-trees-11.json).
+Source: points (2972879554_Dakota_Falls-20261019-063123-trees.json, trees/v2: y, flags, scale). 504,569 trees in 11 files of ≤ 50,000 (import-trees-01.json, import-trees-02.json, import-trees-03.json, import-trees-04.json, import-trees-05.json, import-trees-06.json, import-trees-07.json, import-trees-08.json, import-trees-09.json, import-trees-10.json, import-trees-11.json).
 No y: the game samples terrain, so the same files serve the 2× (out/) and the 1× (out/x1/) map.
 
 - Outside ±7168 m (dropped): 158,877
@@ -13,25 +13,26 @@ No y: the game samples terrain, so the same files serve the 2× (out/) and the 1
 - Masked, inside the CS1 water surface and below 93.5 m: 0
 - Masked, on a ground-level net corridor (half width + 2 m): 726
 - Masked, the rock shed's open valley side (20 m strip, 10 m past each end): 78
+- Masked, inside the lot of an imported building: 340
 
 ## Per CS2 prefab
 
 | CS2 prefab | trees |
 |---|---:|
-| PineTree01 | 200,207 |
-| SpruceTree01 | 91,130 |
-| EuropeanSpruce01 | 76,358 |
-| OakTree01 | 30,660 |
-| pd Leafy Tree | 28,907 |
-| GreenBushWild01 | 21,675 |
+| PineTree01 | 200,187 |
+| SpruceTree01 | 91,089 |
+| EuropeanSpruce01 | 76,303 |
+| OakTree01 | 30,646 |
+| pd Leafy Tree | 28,895 |
+| GreenBushWild01 | 21,579 |
 | NA_HickoryTree01 | 14,704 |
-| GreenBushWild02 | 13,430 |
-| NA_LindenTree01 | 10,782 |
-| NA_LondonPlaneTree01 | 4,099 |
-| EU_AlderTree01 | 3,973 |
-| EU_ChestnutTree01 | 3,954 |
-| FlowerBushWild01 | 2,576 |
-| FlowerBushWild02 | 2,504 |
+| GreenBushWild02 | 13,374 |
+| NA_LindenTree01 | 10,780 |
+| NA_LondonPlaneTree01 | 4,098 |
+| EU_AlderTree01 | 3,972 |
+| EU_ChestnutTree01 | 3,951 |
+| FlowerBushWild01 | 2,556 |
+| FlowerBushWild02 | 2,485 |
 
 ## Per CS1 species (decision from tree-mapping.tsv)
 
@@ -72,21 +73,21 @@ No y: the game samples terrain, so the same files serve the 2× (out/) and the 1
 
 ## Exact points vs rasters
 
-Exact: 504,909 placed (outside 158,877). Raster-based: 508,458 placed (outside 158,906). Difference -3,549.
+Exact: 504,569 placed (outside 158,877). Raster-based: 508,458 placed (outside 158,906). Difference -3,889.
 
 | CS2 prefab | exact | rasters |
 |---|---:|---:|
-| PineTree01 | 200,207 | 200,828 |
-| SpruceTree01 | 91,130 | 91,460 |
-| EuropeanSpruce01 | 76,358 | 76,910 |
-| OakTree01 | 30,660 | 31,114 |
-| pd Leafy Tree | 28,907 | 29,369 |
-| GreenBushWild01 | 21,675 | 21,868 |
+| PineTree01 | 200,187 | 200,828 |
+| SpruceTree01 | 91,089 | 91,460 |
+| EuropeanSpruce01 | 76,303 | 76,910 |
+| OakTree01 | 30,646 | 31,114 |
+| pd Leafy Tree | 28,895 | 29,369 |
+| GreenBushWild01 | 21,579 | 21,868 |
 | NA_HickoryTree01 | 14,704 | 14,751 |
-| GreenBushWild02 | 13,430 | 13,962 |
-| NA_LindenTree01 | 10,782 | 10,763 |
-| NA_LondonPlaneTree01 | 4,099 | 4,099 |
-| EU_AlderTree01 | 3,973 | 4,107 |
-| EU_ChestnutTree01 | 3,954 | 4,032 |
-| FlowerBushWild01 | 2,576 | 2,587 |
-| FlowerBushWild02 | 2,504 | 2,608 |
+| GreenBushWild02 | 13,374 | 13,962 |
+| NA_LindenTree01 | 10,780 | 10,763 |
+| NA_LondonPlaneTree01 | 4,098 | 4,099 |
+| EU_AlderTree01 | 3,972 | 4,107 |
+| EU_ChestnutTree01 | 3,951 | 4,032 |
+| FlowerBushWild01 | 2,556 | 2,587 |
+| FlowerBushWild02 | 2,485 | 2,608 |

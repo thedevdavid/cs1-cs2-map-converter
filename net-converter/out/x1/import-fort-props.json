@@ -1,0 +1,16 @@
+{
+ "name": "fort ruins, standing stones (round 49)",
+ "_comment": "rotation = yaw in degrees about +y, 0 = +z, clockwise from above, from CS1 m_angle as −angle·180/π (UNVERIFIED sign). y only where the object is clearly on a structure: > 3 m above the CS2 playable heightmap (else > 2 m off the CS1 terrain); never for buildings (CS1 y × height factor).",
+ "options": {
+  "dryRun": false,
+  "batchSize": 500,
+  "bypassValidation": true,
+  "report": "compact",
+  "grounding": {
+   "mode": "boundsMin",
+   "sink": 0.15,
+   "slopeSink": true
+  }
+ },
+ "objects": []
+}
