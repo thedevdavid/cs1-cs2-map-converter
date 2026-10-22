@@ -1,4 +1,4 @@
-# Fidelity check: CS1 vs live (live-graph-a21-end.json) vs our files
+# Fidelity check: CS1 vs live (live-graph-a23-end.json) vs our files
 
 Each image: CS1 segments wide and pale (blue = elevated), our import files green, the live game thin red (dashed = elevated); orange = a CS1 segment with no live
 segment within 2 m of its midpoint, magenta = a live segment with no CS1 segment within 2 m. Hover a line for its id and prefab.
