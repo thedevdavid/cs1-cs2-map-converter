@@ -1,125 +1,102 @@
-# DakotaFalls-E2C playset audit (2026-10-21)
+# DakotaFalls-E2C playset audit: final map dakota-A24d-2048 (2026-10-22)
 
 ## Sources
-- **Placed prefabs:** [prefab-counts-a10.txt](prefab-counts-a10.txt), the A-v10 import set (converter bf4d1a9/0fe9f35, `out/x1`).
-- **Prefab-to-mod mapping:** every installed `pdx_mods` package was scanned with `node scan-assets.mjs --all`, and each prefab name was matched case-insensitively against the `.Prefab` names in the packages' `.cok` bundles. Names that no package contains are vanilla or DLC.
-- **Saved map:** `contentPrerequisites` in `Maps\…\dakota-A9c-2048.cok` (`.MapMetadata`), the newest saved map. A-v10 itself was lost to a crash before it was saved.
-- **Dependencies:** `pdx_mods_cache.json` `dependencies`.
-- **Runner:** `net-converter/tools/import-run.mjs` and the `out/x1/optional/` files (read only).
+- **Final map:** `contentPrerequisites` in `Maps\…\dakota-A24d-2048.cok` (`.MapMetadata`), the accepted run A map (A-v24 build).
+- **Placed prefabs:** every prefab name in `net-converter/out/x1/*.json` and `out/trees/import-trees-01…08.json`, plus `out/x1/optional/import-po-structure-gantry.json`. The po-gantry step was part of the A-v24 build.
+- **Prefab-to-mod mapping:** `node scan-assets.mjs --all` scans every installed `pdx_mods` `.cok` bundle. Each prefab name is matched case-insensitively against the bundles' `.Prefab` names; names that no package contains are vanilla or DLC.
+- **Playset:** `playset_config.json`, DakotaFalls-E2C (active, 41 entries). **Dependencies:** `pdx_mods_cache.json` `dependencies`.
+- **TM:PE:** `setup-plan.md`, A-v24 chain: TM:PE import 38 created / 30 not needed, saved in the map.
 
-The map's prerequisites match the prefab mapping exactly: **BridgesAndPorts DLC + 15 mods**, listed in the first table below.
+The final map's prerequisites and the prefab mapping agree exactly: **Bridges & Ports DLC + 16 mods**, listed in the first table below.
 
 ## Per mod
 
-Status key:
-- **REQUIRED:** a placed prefab or net comes from the mod, or the saved map lists it.
-- **TOOLING:** needed only while building.
-- **DEPENDENCY:** needed by a REQUIRED or TOOLING mod.
-- **OPTIONAL-LOOK:** player-side visuals only.
-- **REMOVABLE:** nothing placed from it, and nothing depends on it.
+### REQUIRED: map content (players need these)
 
-### REQUIRED (map content; players need these)
+| id | Name | Placed in A-v24 (source file) |
+|---|---|---|
+| 92245 | Bridge Expansion Pack | `BXP Truss Viaduct - Train` (rail girder spans), `BXP Truss Arch Bridge - Highway Oneway - 2 Lanes` (BR006/BR007) — import-bridges |
+| 124160 | Bridge Expansion Pack: B&P | `BXP SuspensionBridge03 - Six Lane Highway` (Detroit crossing BR001) — import-bridges-fixed |
+| 140978 | Island-Type Bridge Pier | `ITBP_Pillar Piers 01` — import-po-structure-piers |
+| 154132 | ConcreteSet01 | `Pillar4x16` (piers), `BasePlateConcrete32` (PO structures), `BasePlateConcrete16`, `Pillar2x8`, `Pillar2x16` (rock-shed gallery) |
+| 132188 | Truss Grantry Prop Pack | `HWY Truss Gantry 2L  A` — po-gantry (in the build) |
+| 131824 | Leafy Tree by pdelmo | `pd Leafy Tree`, 28 899 trees — import-trees |
+| 134056 | Asset-Dependency-Pack (Styx's) | `Grass01–06 (Styx's)` — import-objects |
+| 137334 | Cliffs and Rocks Pack | `CliffStack`, `CliffRock3/5/6`, `CliffSide2/Left/Right`, `CliffSideTall`, `CliffSlim` — import-objects, import-po-rocks, import-rock-shed |
+| 146553 | Arid Rocks | `RZaridrock1–5` — import-objects |
+| 140176 | RZ Rocks | `rzrock1–8` — import-objects, import-po-rocks |
+| 146871 | Ferns | `gaga - Fern 1/2` — import-objects |
+| 132403 | pd Long Grass | `pd Long Grass` — import-objects |
+| 134147 | PD-WildFlower | `PD-YellowFlower` — import-objects |
+| 132771 | pd Bloom | `pd Bloom` — import-objects |
+| 159384 | Leafy Undergrowth (Dark) | `ReikUndergrowth02Trimmed` — import-objects |
+| 159309 | Leafy Undergrowth (Light) | `ReikUndergrowth01Trimmed` — import-objects |
+| 80095 | Traffic | No prefab. The map carries the TM:PE lane data (38 nodes). The editor does **not** list it in `contentPrerequisites`; add it by hand |
 
-| id | Name | Category | Placed in A-v10 (count) |
-|---|---|---|---|
-| 92245 | Bridge Expansion Pack | bridges | `BXP Truss Viaduct - Train` ×21, `BXP Truss Arch Bridge - Highway Oneway - 2 Lanes` ×8 |
-| 124160 | Bridge Expansion Pack: B&P | bridges | `BXP SuspensionBridge03 - Six Lane Highway` ×1 |
-| 140978 | Island-Type Bridge Pier | bridge props | `ITBP_Pillar Piers 01` ×50 |
-| 154132 | ConcreteSet01 | concrete props | `Pillar4x16` ×81, `Pillar2x8` ×56, `BasePlateConcrete16` ×36, `Wall32x16` ×14, `BasePlateConcrete32` ×7, `BasePlateConcrete62` ×1 |
-| 132188 | Truss Grantry Prop Pack | road props | `HWY Truss Gantry 2L  A` ×1. Opt-in runner step `--with po-gantry`; drop the mod if that step is dropped |
-| 134056 | Asset-Dependency-Pack (Styx's) | grass | `Grass01–06 (Styx's)`, 2 227 in total |
-| 137334 | Cliffs and Rocks Pack | rocks/cliffs | `CliffStack` ×378, `CliffRock5/6/3`, `CliffSide2/Left/Right`, `CliffSideTall`, `CliffSlim` (891 in total) |
-| 146553 | Arid Rocks | rocks | `RZaridrock1–5`, 692 in total |
-| 140176 | RZ Rocks | rocks | `rzrock1–8`, 601 in total |
-| 146871 | Ferns | vegetation | `gaga - Fern 1/2`, 478 in total |
-| 132403 | pd Long Grass | grass | `pd Long Grass` ×119 |
-| 134147 | PD-WildFlower | vegetation | `PD-YellowFlower` ×127 |
-| 132771 | pd Bloom | vegetation | `pd Bloom` ×26 |
-| 159384 | Leafy Undergrowth (Dark) | vegetation | `ReikUndergrowth02Trimmed` ×52 |
-| 159309 | Leafy Undergrowth (Light) | vegetation | `ReikUndergrowth01Trimmed` ×47 |
-| 80095 | Traffic | data | Nothing placed and **not** a map prerequisite. Keep it for the build: the TM:PE data import goes through it (bridge `cs2_import_tmpe`). Players without it load the map without the lane rules |
+Everything else the build places is **vanilla**: no installed PDX mod contains it, and every name has a base-game locale entry. That covers:
+- rocks `Rock01–30`, `Boulder01–08`, `StandingStone01`
+- the fort: `RuinsCastle01`, `RuinsStoneFormation01/02`, `RuinsStoneCairns01–03`, `RuinsOldMill01`, `OldCastle01`
+- trees `PineTree01`, `SpruceTree01`, `EuropeanSpruce01`, `OakTree01`, `NA_HickoryTree01`, `NA_LindenTree01`, `NA_LondonPlaneTree01`, `EU_AlderTree01`, `EU_ChestnutTree01`, `GreenBushWild01/02`, `FlowerBushWild01/02`
+- `Wooden Covered Bridge - 2 lanes` (gravel trestles), `Truss Arch Bridge - Small Road - 2 Lanes`, `TrussArchBridge01`
+- the hydro dam (`Hydroelectric_Power_Plant_01 Dam` / `HydroelectricPowerPlant01`), `TransformerStation01`
+- all highways, roads, tracks, seaways, power lines and outside connections
+- the surfaces `Agriculture Surface 01`, `Grass Surface 01`, `Pavement Surface 01`, `Sand Surface 01/02`
 
-### TOOLING (build only; players do not need these)
+The pack surfaces (Terrain Textures, Dirty Surfaces) and `StoneArchRailBridge` appear only in `optional/` files that the A-v24 build did not post.
+
+### Build tooling (players do not need these)
 
 | id | Name | Note |
 |---|---|---|
-| local | CS2MCP | the bridge; legacy `Mods\` folder, loads with every playset |
-| 74604 | Anarchy | placement overrides |
-| 74324 | Move It | manual fixes |
-| 77240 | Find It | asset search |
+| local | CS2MCP | the bridge (legacy `Mods\` folder, loads with every playset) |
 | 74285 | Scene Explorer | inspection |
 | 74539 | Image Overlay | reference overlay |
-| 140919 | Earth2Cities | only for the E2C calibration import; remove it once that experiment is closed |
-| local | ImportedData/TextureAssets | imported textures (830 MB, changed 2026-10-20); the map embeds its terrain textures, so players do not need it |
+| 140919 | Earth2Cities | E2C calibration experiment only |
+| 74417 | Unified Icon Library | needed by Anarchy, Move It, Find It |
+| 79634 | Asset Icon Library | needed by Find It (each declares the other) |
+| 75426 | I18n Everywhere | needed by Time & Weather Anarchy |
+| local | ImportedData/TextureAssets | imported textures; the map embeds its 14 terrain textures |
+| 74604 / 74324 / 77240 | Anarchy / Move It / Find It | build tools; recommended to players only for editing |
 
-### DEPENDENCY
-
-| id | Name | Required by |
-|---|---|---|
-| 74417 | Unified Icon Library | Anarchy, Move It, Find It |
-| 79634 | Asset Icon Library | Find It (each declares the other) |
-| 75426 | I18n Everywhere | Time & Weather Anarchy. Removable together with TWA |
-
-### OPTIONAL-LOOK (player-side, not map content)
+### Player-side look (not map content)
 
 | id | Name | Note |
 |---|---|---|
 | 94394 | Lumina | lighting/LUT |
 | 161533 | Enhanced Graphics and Textures | rendering |
-| 88893 | Time & Weather Anarchy | Its "desert" profile (`ModsSettingsTimeWeatherAnarchyProfiles22e0d9….json`) has `EnableCustomTemperature: true` and `Temperature: 31`, which pins the climate at 31 °C. The active profile is not stored in those files. Keep it on the Main profile, or remove it with I18n 75426 |
+| 88893 | Time & Weather Anarchy | The "desert" profile (`ModsSettings\TimeWeatherAnarchy\Profiles\cd22e0d9….json`) has `EnableCustomTemperature: true`, `Temperature: 31`, which pins the climate at 31 °C. The description's "Dakota Falls" profile settings avoid this |
 
-### REMOVABLE now (nothing in A-v10 comes from it, and no dependency)
+### Not used by the final map
 
 | id | Name | Why |
 |---|---|---|
-| 144834 | Terrain Textures Pack: Rocks | only in `optional/import-surfaces-rock.json` / `po-rock.json`, which the runner posts only with `--with rock,po-rock` |
-| 144550 | Terrain Textures Pack - Grass | no prefab in any import file |
-| 143898 | Terrain Textures Pack - Ground | no prefab in any import file, optional ones included |
-| 148077 | Dirty Surfaces Pack | only in `optional/import-surfaces-decals.json` / `sand-smooth-pack.json` (`--with decals,sand-pack`) |
-| 135944 | DIY Stone Arch Rail / Road Bridge Kit | `StoneArchRailBridge` only in `optional/import-po-structure-br006-arches.json` (`--with po-br006-arches`) |
-| 136168 | DIY Artdeco Bridge Kit / LA River Bridges | no prefab placed |
-| 142603 | Generic Arched Truss Bridge | no prefab placed (`PittTrussBridge`, `TrussBridgeHollow`) |
-| 143426 | Classic Rail Truss Bridge Kit | no prefab placed (`RailBridge1–3`, `RailBridgePillar`) |
+| 144834 | Terrain Textures Pack: Rocks | only in optional surface files (`--with rock,po-rock`), not posted |
+| 144550 | Terrain Textures Pack - Grass | no prefab in any import file (disabled in the playset) |
+| 143898 | Terrain Textures Pack - Ground | no prefab in any import file (disabled) |
+| 148077 | Dirty Surfaces Pack | only in optional surface files (`--with decals,sand-pack`), not posted |
+| 135944 | DIY Stone Arch Rail / Road Bridge Kit | only in `optional/import-po-structure-br006-arches.json`, not posted (BR006 is variant a) |
+| 136168 | DIY Artdeco Bridge Kit / LA River Bridges | nothing placed (disabled) |
+| 142603 | Generic Arched Truss Bridge | nothing placed (disabled) |
+| 143426 | Classic Rail Truss Bridge Kit | nothing placed (disabled) |
 | 133250 | Tigons Rail Infrastructure Pack | none of its 177 prefabs placed |
-| 157964 | Art Deco Walls, Tunnels, and Bridges Set | no prefab placed |
-| 162558 | Pillar Spacing | code mod; the imports place pillars through the bridge |
-| 160320 | Bridge Builder | code mod; not used by the runner |
-| local | ImportedData/1424637002, 1698185143, 865402566 | SC44 Pere Marquette train assets (imported); nothing placed |
+| 157964 | Art Deco Walls, Tunnels, and Bridges Set | nothing placed (disabled) |
+| 162558 | Pillar Spacing | code mod, unused (disabled) |
+| 160320 | Bridge Builder | code mod, unused by the runner |
+| local | ImportedData/1424637002, 1698185143, 865402566 | SC44 Pere Marquette train imports; nothing placed |
+| 153995 | BasePlateConcrete62 | not in the playset. ConcreteSet01 ships the same prefab; keep it out to avoid an ambiguous name |
 
-**If you later re-enable an optional runner step** (`net-converter/tools/import-run.mjs --with …`; all are surface paints or objects that are off by default):
-- `rock`: `optional/import-surfaces-rock.json`, 151 patches of `gaga TTP - Pebbles 1L dark` (brown scree) on every slope ≥ 40° of the true-height heightmap (patches ≥ 400 m²). Needs 144834.
-- `po-rock`: `optional/import-surfaces-po-rock.json`, 63 patches of `gaga TTP - Pebbles 2L` over the footprints of the CS1 PO mountains, rock work and falls steps (patches ≥ 100 m²). Needs 144834.
-- `decals`: `optional/import-surfaces-decals.json`, the 41 CS1 R69 Big Decal Dirt/Mud as 16 × 16 m squares: 33 `PDO23 Dirty Surface 01` (dirt) and 8 `PDO23 Soil Surface 01` (mud). Needs 148077.
-- `sand-pack`: `optional/import-surfaces-sand-smooth-pack.json`, 387 patches of `PDO23 Dirty Sand Surface 01`. This is the pack version of the smoothed sand that the default run paints with vanilla `Sand Surface 01`; use one or the other. Needs 148077.
-- `po-br006-arches`: `optional/import-po-structure-br006-arches.json`, BR006 variant b: 7 `StoneArchRailBridge` objects under the deck. The default is variant a, without kit objects. Needs 135944.
+**Optional runner steps, if ever re-enabled** (`net-converter/tools/import-run.mjs --with …`):
+- `rock`: 151 patches of `gaga TTP - Pebbles 1L dark` on slopes ≥ 40°. Needs 144834.
+- `po-rock`: 63 patches of `gaga TTP - Pebbles 2L` on the CS1 PO mountain / rock-work / falls-step footprints. Needs 144834.
+- `decals`: the 41 CS1 dirt/mud decals as 16 × 16 m `PDO23 Dirty Surface 01` / `PDO23 Soil Surface 01` squares. Needs 148077.
+- `sand-pack`: 387 patches of `PDO23 Dirty Sand Surface 01`, instead of the vanilla Sand Surface 01. Needs 148077.
+- `po-br006-arches`: BR006 variant b, 7 `StoneArchRailBridge` under the deck. Needs 135944.
 
-Without these steps, the default run uses vanilla only: vanilla rock objects, Sand Surface 01/02, Agriculture and Pavement surfaces, and terrain paint.
-
-### MISSING
-
-None.
-
-`BasePlateConcrete62` is **not** missing. ConcreteSet01 154132 ships its own `BasePlateConcrete62`, and the saved map lists only 154132. The standalone BasePlateConcrete62 mod 153995 is installed but not needed. Keep it **out** of the playset: both mods define the same prefab name, which would make the name lookup ambiguous.
-
-## Players vs build
-
-**The published map's players need:**
-- The Bridges & Ports DLC.
-- The 15 content mods above: 92245, 124160, 140978, 154132, 132188, 134056, 137334, 146553, 140176, 146871, 132403, 134147, 132771, 159384, 159309.
-
-These are exactly the `contentPrerequisites` the editor writes into the map. Traffic 80095 is recommended but not required.
-
-All other prefabs in the A-v10 set are vanilla. No installed PDX mod contains them, and every one has a base-game locale entry (`Game/Locale.cok`). That includes rocks `Rock01–30`, `Boulder01–08`, `StandingStone*`, `Ruins*`, logs, the vanilla roads, highways, tracks and seaways, `Wooden Covered Bridge - 2 lanes`, `Truss Arch Bridge - Small Road - 2 Lanes` and the dam. Trees (`PineTree01`, `SpruceTree01`, `EuropeanSpruce01`, `BirchTree01`, `OakTree01`, `NA_Hickory`, `NA_Linden`, `GreenBushWild*`, `FlowerBushWild*`) and the surfaces the runner posts (`Agriculture Surface 01`, `Grass Surface 01` (fields file only), `Pavement Surface 01`, `Sand Surface 01/02`) are vanilla too. The PDO23 and gaga TTP pack surfaces appear only in the `optional/` files, which are not posted.
-
-**Only the build needs:** CS2MCP, Anarchy, Move It, Find It, Scene Explorer, Image Overlay, Earth2Cities, Unified Icon Library, Asset Icon Library, ImportedData/TextureAssets, and Traffic (for the TM:PE import). Lumina, EGT and TWA (+ I18n) are personal visuals.
-
-## The three lists
+## The three lists (act on these in Skyve)
 
 Each mod appears in exactly one list.
 
-### 1. Can be deleted
-
-Never used by the map. Items marked *build-time only* stay in the playset until the build is finished; remove them before publishing.
+### 1. Can be deleted from the playset
 
 - 144834 Terrain Textures Pack: Rocks
 - 144550 Terrain Textures Pack - Grass
@@ -134,26 +111,26 @@ Never used by the map. Items marked *build-time only* stay in the playset until 
 - 162558 Pillar Spacing
 - 160320 Bridge Builder
 - local ImportedData 1424637002, 1698185143, 865402566 (SC44 train imports)
-- 153995 BasePlateConcrete62: not in the playset and not needed; ConcreteSet01 ships the same prefab
-- CS2MCP (local): *build-time only, remove before publishing*
-- 74285 Scene Explorer: *build-time only, remove before publishing*
-- 74539 Image Overlay: *build-time only, remove before publishing*
-- 140919 Earth2Cities: *build-time only (E2C calibration), remove before publishing*
-- 74417 Unified Icon Library: *build-time only; players who install Anarchy, Move It or Find It get it automatically*
-- 79634 Asset Icon Library: *build-time only; comes with Find It*
-- 75426 I18n Everywhere: *build-time only; comes with Time & Weather Anarchy*
-- local ImportedData/TextureAssets: *build-time only; the map embeds its textures*
 
-### 2. Must be a dependency on PDX Mods
+Build-time only. Keep them while you still edit the map; they are never published:
+- CS2MCP (local)
+- 74285 Scene Explorer
+- 74539 Image Overlay
+- 140919 Earth2Cities
+- 74417 Unified Icon Library
+- 79634 Asset Icon Library
+- 75426 I18n Everywhere
+- local ImportedData/TextureAssets
 
-The published map needs these to load its content.
+### 2. Must be a dependency on PDX Mods (publish page "Required mods")
 
-- Bridges & Ports DLC (`BridgesAndPorts`, a DLC prerequisite, not a mod)
+The editor adds the Bridges & Ports DLC by itself.
 - 92245 Bridge Expansion Pack
 - 124160 Bridge Expansion Pack: B&P
 - 140978 Island-Type Bridge Pier
 - 154132 ConcreteSet01
-- 132188 Truss Grantry Prop Pack (only while the `po-gantry` step is kept)
+- 132188 Truss Grantry Prop Pack
+- 131824 Leafy Tree by pdelmo
 - 134056 Asset-Dependency-Pack (Styx's)
 - 137334 Cliffs and Rocks Pack
 - 146553 Arid Rocks
@@ -164,15 +141,11 @@ The published map needs these to load its content.
 - 132771 pd Bloom
 - 159384 Leafy Undergrowth (Dark)
 - 159309 Leafy Undergrowth (Light)
-- 80095 Traffic (lane data; the editor does not add it to `contentPrerequisites` itself)
+- 80095 Traffic (lane data; not added by the editor)
 
-### 3. Must be a recommendation in the map description
-
-Player-side look or convenience; the map loads without them.
+### 3. Recommendation in the map description
 
 - 94394 Lumina
 - 161533 Enhanced Graphics and Textures
-- 88893 Time & Weather Anarchy (if kept: Main profile, not "desert")
-- 74604 Anarchy (for players who edit the map)
-- 74324 Move It (for players who edit the map)
-- 77240 Find It (for players who edit the map)
+- 88893 Time & Weather Anarchy (with the description's "Dakota Falls" profile, never "desert")
+- 74604 Anarchy, 74324 Move It, 77240 Find It: only for players who want to edit the map
