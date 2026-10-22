@@ -31,7 +31,7 @@ CS1 elevated (bridge-AI) courses lifted to ≥ 8.5 m above the terrain (output m
 | e2130_0ab | 2130 | Highway Oneway - 2 lanes | (-6, -3719) | 6.8 → 8.5 |
 | e13452_0b | 13452 | Highway Oneway - 3 lanes | (6871, 2199) | 6.9 → 8.5 |
 | e16854_0 | 16854 | Highway Oneway - 1 lane | (2998, 1331) | 7.0 → 8.5 |
-| e26134_0bb | 26134 | Small Road | (-3692, -2951) | 6.5 → 8.0 |
+| e26134_0bb | 26134 | Highway Twoway - 2 lanes | (-3692, -2951) | 6.5 → 8.0 |
 | e6447_0bb | 6447 | Highway Oneway - 2 lanes | (4247, 5970) | 3.5 → 4.8 |
 | e28200_0g1b | 28200 | Highway Oneway - 3 lanes | (2455, 348) | 7.3 → 8.5 |
 | e26316_0aa | 26316 | Gravel Road | (1222, 6137) | 7.3 → 8.4 |
@@ -79,7 +79,7 @@ CS1 elevated (bridge-AI) courses lifted to ≥ 8.5 m above the terrain (output m
 | e22564_0a | 22564 | Highway Oneway - 2 lanes | (689, 3917) | 12.0 → 12.0 |
 | e22799_0b | 22799 | Highway Oneway - 3 lanes | (6822, 2233) | 12.0 → 12.0 |
 | e23931_0ba | 23931 | Highway Oneway - 2 lanes | (-4537, 128) | 22.4 → 22.4 |
-| e26134_0ba | 26134 | Small Road | (-3679, -2969) | 14.3 → 14.3 |
+| e26134_0ba | 26134 | Highway Twoway - 2 lanes | (-3679, -2969) | 14.3 → 14.3 |
 | e26316_0ab | 26316 | Gravel Road | (1237, 6139) | 16.4 → 16.4 |
 | e26316_0ba | 26316 | Gravel Road | (1256, 6142) | 16.4 → 16.4 |
 | e27973_0a | 27973 | Highway Oneway - 1 lane | (3722, 2147) | 16.8 → 16.8 |

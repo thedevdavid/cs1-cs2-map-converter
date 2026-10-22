@@ -18,7 +18,7 @@
       "rotation": 159.34,
       "node": "c1244_0",
       "cs1Building": 33411,
-      "note": "Small Road border node; CS1 Road Connection Small 33411 (1022 m from its border projection)"
+      "note": "Highway Twoway - 2 lanes border node; CS1 Road Connection Small 33411 (1022 m from its border projection)"
     },
     {
       "id": "oc_c3320_0",
@@ -42,7 +42,7 @@
       "rotation": 182.72,
       "node": "c3374_0",
       "cs1Building": 9216,
-      "note": "Small Road border node; CS1 Road Connection Small 9216 (1344 m from its border projection)"
+      "note": "Highway Twoway - 2 lanes border node; CS1 Road Connection Small 9216 (1344 m from its border projection)"
     },
     {
       "id": "oc_c31152_0",
@@ -162,7 +162,7 @@
       "rotation": 77.21,
       "node": "c23437_0",
       "cs1Building": 45251,
-      "note": "Small Road border node; CS1 Road Connection Small 45251 (677 m from its border projection)"
+      "note": "Highway Twoway - 2 lanes border node; CS1 Road Connection Small 45251 (677 m from its border projection)"
     },
     {
       "id": "oc_c16061_0",

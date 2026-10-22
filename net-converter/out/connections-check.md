@@ -20,10 +20,10 @@ A border node is matched by following the CS1 network from its clipped segment o
 | rail | c16061_0 | Double Train Track | 7168 | 2300 | 6789 | 234 |
 | rail | c34544_0 | Double Train Track | 7168 | -6585 | 7993 | 583 |
 | rail | c6866_0 | Double Train Track | -196 | -7168 | 32422 | 216 |
-| roads | c1244_0 | Small Road | -1616 | -7168 | 33411 | 1022 |
-| roads | c23437_0 | Small Road | 7168 | 2425 | 45251 | 677 |
+| roads | c1244_0 | Highway Twoway - 2 lanes | -1616 | -7168 | 33411 | 1022 |
+| roads | c23437_0 | Highway Twoway - 2 lanes | 7168 | 2425 | 45251 | 677 |
 | roads | c31152_0 | Gravel Road | 7168 | 3456 | 45251 | 355 |
-| roads | c3374_0 | Small Road | 5824 | -7168 | 9216 | 1344 |
+| roads | c3374_0 | Highway Twoway - 2 lanes | 5824 | -7168 | 9216 | 1344 |
 | roads | c35664_0 | Gravel Road | 7168 | 2034 | 41809 | 91 |
 | roads | c9707_0 | Gravel Road | 7168 | 1714 | 20804 | 203 |
 

@@ -29,10 +29,9 @@ Only highways, rail and roads are written as import files. power, skip and unmap
 | highways | Highway Oneway - 4 lanes | 29 | 1.8 | 2452038713.USRP 4L Interstate_Data, 2452038713.USRP 4L Interstate E |
 | rail | Double Train Track | 403 | 33.9 | 2610252544.R2USA W GrWo 2x2_Data, 2610252544.R2USA W GrWo 2x2 T0, 2932555116.R2EUR W GrCo 2x2 Pedrido E, 2610252544.R2USA W GrWo 2x2 S0, 2836620152.R2EUR W GrCo 2x2 Ourense SA E, 2610252544.R2USA W GrWo 2x2 E0, 2610252544.R2USA W GrWo 2x2 B0 |
 | roads | Gravel Road | 1261 | 97.3 | Gravel Road, Gravel Road Elevated |
-| roads | Highway Twoway - 4 lanes | 11 | 0.9 | 2097539846.USRP 4-Lane National Road_Data |
-| roads | Medium Road | 28 | 1.6 | 2098643957.USRP 3-Lane National Road_Data, 2098643957.USRP 3-Lane National Road E |
+| roads | Highway Twoway - 2 lanes | 308 | 24.1 | 2097530472.USRP 2-Lane National Road_Data, 2097530472.USRP 2-Lane National Road B |
+| roads | Highway Twoway - 4 lanes | 39 | 2.5 | 2097539846.USRP 4-Lane National Road_Data, 2098643957.USRP 3-Lane National Road_Data, 2098643957.USRP 3-Lane National Road E |
 | roads | Pavement Path | 15 | 0.6 | Pedestrian Gravel |
-| roads | Small Road | 308 | 24.1 | 2097530472.USRP 2-Lane National Road_Data, 2097530472.USRP 2-Lane National Road B |
 
 ## Unmapped CS1 prefabs (need a human decision)
 
@@ -468,12 +467,13 @@ Two edges of one layer leaving the same node almost parallel. CS2 builds a long 
 - Carriageway spread: pass 4: 3 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 10 nodes moved apart.
 - Carriageway spread: pass 5: 3 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 10 nodes moved apart.
 - Carriageway spread: pass 6: 1 parallel carriageway pairs closer than their two half-widths (+ 2 m for opposite carriageways), 4 nodes moved apart.
+- Round 47 roads to highways (owner: no sidewalked roads outside the starting area): Small Road → Highway Twoway - 2 lanes 325 courses (313 CS1 segments); Medium Road → Highway Twoway - 4 lanes 28 courses (25 CS1 segments); kept in the starting area: 0.
 - Highway course dropped beside its node-sharing sibling e9919_0 (Highway Oneway - 1 lane): e22564_0b's free end e22564_0d0 moved 2.7 m away from it; the shared node n4291 stays.
 - Highway course dropped by the game, no node-sharing 'Highway Oneway - 3 lanes' sibling found, not moved: e31224_0ba.
 - Highway course dropped beside its node-sharing sibling e15395_0a (Highway Oneway - 2 lanes): e31224_0bb's free end e31224_0bd1 moved 2.2 m away from it; the shared node n27662 stays.
 - Courses inside a highway footprint (walls, decor) moved sideways by the two CS2 half-widths + 1 m: 0; impossible (between carriageways) 0.
 - Seaways stay at the riverbed (pass --seaway-at-water to write them at the water surface once the dig test shows digging).
-- Pavement Path dead ends snapped onto the segment beside them (snapToSegment, ≤ 20 m, Δy ≤ 3 m): 3: n7811 (4783, -683) → e17505_0 Small Road, 9.3 m, Δy 0.0 m, radius 11; n21342 (737, 4853) → e36560_0 Gravel Road, 12.8 m, Δy 0.0 m, radius 15; n13342 (1577, 4694) → e21878_0 Gravel Road, 9.6 m, Δy 0.1 m, radius 12.
+- Pavement Path dead ends snapped onto the segment beside them (snapToSegment, ≤ 20 m, Δy ≤ 3 m): 3: n7811 (4783, -683) → e17505_0 Highway Twoway - 2 lanes, 9.3 m, Δy 0.0 m, radius 11; n21342 (737, 4853) → e36560_0 Gravel Road, 12.8 m, Δy 0.0 m, radius 15; n13342 (1577, 4694) → e21878_0 Gravel Road, 9.6 m, Δy 0.1 m, radius 12.
 - noPillars dropped (no pier object set behind them; --keep-cs1-nopillars keeps them): 138 CS1 segments: 172, 779, 1387, 1638, 1677, 2029, 2653, 2804, 2886, 3139, 3389, 3500, 3598, 3638, 3944, 4284, 4813, 4838, 5188, 5703, 6031, 6041, 6338, 6801, 7008, 8145, 8322, 8562, 9026, 9203, 9467, 10176, 10238, 10276, 10815, 10906, 11467, 11507, 11661, 11735, 11895, 12548, 12655, 12729, 12774, 12792, 13146, 13697, 14182, 14225, 14397, 14527, 14574, 14892, 15108, 15344, 15414, 15768, 15986, 16165, 16410, 16506, 16555, 17085, 17314, 17372, 17669, 17800, 17815, 18179, 18529, 18755, 18923, 19546, 20401, 20556, 20616, 20675, 21043, 21099, 21338, 21512, 21897, 21906, 22005, 22300, 22886, 22934, 23013, 23795, 24934, 25034, 25769, 26105, 26134, 26240, 26285, 26635, 27061, 27293, 27395, 27612, 27684, 27870, 27973, 27996, 28071, 29014, 29685, 29775, 29898, 29970, 31228, 32165, 32650, 32706, 33197, 33311, 33321, 33371, 33711, 33741, 33803, 33845, 34021, 34083, 34456, 34845, 35437, 35648, 36148, 36355, 36595, 36659, 36686, 36781, 36784, 36861.
 
 ## Bridges (bridges.tsv)
