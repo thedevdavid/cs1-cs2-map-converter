@@ -22,13 +22,13 @@ const crp = {
 // uniform fallback per slot (Grass 60, Dirt 50, Cliff 90, Extra* = manifest CS1 mean alpha clamped 40..110; Extra2 is a
 // grass slot whose source alpha is flat 255, so it takes the Grass value)
 const slots = {
-  Grass: { src: [crp.seychelles, 'GrassDiffuseTexture'], uniform: 60 },
-  Cliff: { src: [crp.springwood, 'CliffDiffuseTexture'], uniform: 90, cap: 110 },
-  Dirt: { src: [crp.springwood, 'RuinedDiffuseTexture'], uniform: 50 },
-  Extra1: { src: [crp.coastal, 'GrassDiffuseTexture'], uniform: 98 },
-  Extra2: { src: [crp.springwood, 'GrassDiffuseTexture'], uniform: 60 },
-  Extra3: { src: [crp.seychelles, 'GravelDiffuseTexture'], uniform: 110, cap: 110 },
-  Extra4: { src: [crp.owl, 'SandDiffuseTexture'], uniform: 110, cap: 110 },
+  Grass: { src: [crp.seychelles, 'GrassDiffuseTexture'], uniform: 60, cap: 60 },
+  Cliff: { src: [crp.springwood, 'CliffDiffuseTexture'], uniform: 90, cap: 60 },
+  Dirt: { src: [crp.springwood, 'RuinedDiffuseTexture'], uniform: 50, cap: 60 },
+  Extra1: { src: [crp.coastal, 'GrassDiffuseTexture'], uniform: 98, cap: 60 },
+  Extra2: { src: [crp.springwood, 'GrassDiffuseTexture'], uniform: 60, cap: 60 },
+  Extra3: { src: [crp.seychelles, 'GravelDiffuseTexture'], uniform: 110, cap: 60 },
+  Extra4: { src: [crp.owl, 'SandDiffuseTexture'], uniform: 110, cap: 60 },
 };
 
 // minimal PNG reader: 8-bit RGB/RGBA, non-interlaced (what crp-tex writePng produces)
