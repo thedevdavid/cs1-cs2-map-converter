@@ -12,5 +12,5 @@ CHECK: 0 CS1 segments without live counterpart, 0 live without CS1 source, 2 mor
 
 | CS1 segment | prefab | CS1 y | live | live − CS1 m |
 |---|---|---:|---|---:|
-| 3118 | USRP 1L Interstate Ramp E | 161.4 | 1644952:5 Highway Oneway - 1 lane | 4.0 |
-| 6254 | USRP 2L Interstate E | 161.4 | 1645369:5 Highway Oneway - 2 lanes | 4.3 |
+| 3118 | USRP 1L Interstate Ramp E | 161.4 | 662152:3 Highway Oneway - 1 lane | 4.0 |
+| 6254 | USRP 2L Interstate E | 161.4 | 662049:3 Highway Oneway - 2 lanes | 4.3 |
