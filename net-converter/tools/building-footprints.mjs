@@ -25,23 +25,38 @@ function buildingsIn(dir) {
   list.push({ ...DAM_PLANT, file: "import-dam.json (spawned plant, live A-v22 position)" });
   return list;
 }
-function inside(b, x, z) {
+function inside(b, x, z, margin = 0) {
   const bb = bounds[b.prefab]; if (!bb) return false;
   const dx = x - b.x, dz = z - b.z;
-  if (b.rotation == null) { const r = Math.hypot(Math.max(-bb.min[0], bb.max[0]), Math.max(-bb.min[1], bb.max[1])); return dx * dx + dz * dz <= r * r; }
+  if (b.rotation == null) { const r = Math.hypot(Math.max(-bb.min[0], bb.max[0]), Math.max(-bb.min[1], bb.max[1])) + margin; return dx * dx + dz * dz <= r * r; }
   const r = b.rotation * Math.PI / 180, u = dx * Math.cos(r) - dz * Math.sin(r), v = dx * Math.sin(r) + dz * Math.cos(r);
-  return u >= bb.min[0] && u <= bb.max[0] && v >= bb.min[1] && v <= bb.max[1];
+  return u >= bb.min[0] - margin && u <= bb.max[0] + margin && v >= bb.min[1] - margin && v <= bb.max[1] + margin;
+}
+// Round 50 (owner's intent: the CS1 ruin field): the fort's standing stones are moved, not dropped: the nearest point outside every footprint
+// with MOVE_MARGIN, searched on rings of 0.25 m up to MOVE_MAX around the CS1 position, yaw kept; dropped only if none is found.
+const MOVE_FILES = new Set(["import-fort-props.json"]), MOVE_MARGIN = 1, MOVE_MAX = 6;
+function moveOut(o, buildings) {
+  for (let rad = 0.25; rad <= MOVE_MAX + 1e-9; rad += 0.25)
+    for (let k = 0; k < 64; k++) {
+      const a = 2 * Math.PI * k / 64, x = o.x + rad * Math.cos(a), z = o.z + rad * Math.sin(a);
+      if (!buildings.some(b => inside(b, x, z, MOVE_MARGIN))) return { x: Math.round(x * 100) / 100, z: Math.round(z * 100) / 100, d: rad };
+    }
+  return null;
 }
 function filter(path, buildings, report, write) {
   if (!existsSync(path)) return 0;
   const j = J(path); if (!Array.isArray(j.objects)) return 0;
-  const keep = [], gone = [];
+  let moved = 0;
+  const keep = [], gone = [], move = MOVE_FILES.has(path.split(/[\\/]/).pop());
   for (const o of j.objects) {
     if (bounds[o.prefab]?.type === "BuildingPrefab") { keep.push(o); continue; }   // the buildings themselves stay
-    const b = buildings.find(b => inside(b, o.x, o.z));
-    if (b) gone.push({ o, b }); else keep.push(o);
+    const b = buildings.find(b => inside(b, o.x, o.z, move ? MOVE_MARGIN : 0));
+    if (!b) { keep.push(o); continue; }
+    const m = move ? moveOut(o, buildings) : null;
+    if (m) { report.moved ??= []; report.moved.push({ file: path.split(/[\\/]/).slice(-2).join("/"), id: o.id, prefab: o.prefab, from: [o.x, o.z], to: [m.x, m.z], d: m.d, building: b.prefab }); keep.push({ ...o, x: m.x, z: m.z }); moved++; }
+    else gone.push({ o, b });
   }
-  if (gone.length && write) { j.objects = keep; writeFileSync(path, JSON.stringify(j, null, path.includes(`${"trees"}`) ? 0 : 1)); }
+  if ((gone.length || moved) && write) { j.objects = keep; writeFileSync(path, JSON.stringify(j, null, path.includes(`${"trees"}`) ? 0 : 1)); }
   for (const { o, b } of gone) {
     const k = `${path.split(/[\\/]/).slice(-2).join("/")} | ${b.prefab} (${b.x.toFixed(1)}, ${b.z.toFixed(1)})`;
     report[k] ??= {}; report[k][o.prefab] = (report[k][o.prefab] ?? 0) + 1;
@@ -59,11 +74,15 @@ for (const [dir, treeDir] of [[out, join(out, "trees")], [join(out, "x1"), null]
   if (!existsSync(dir)) continue;
   const first = pass(dir, treeDir, true), again = pass(dir, treeDir, false);
   const byBuilding = {}; for (const b of first.buildings) byBuilding[b.prefab] = (byBuilding[b.prefab] ?? 0) + 1;
-  const lines = [`# Objects inside building footprints (round 49)`, ``,
+  const lines = [`# Objects inside building footprints (rounds 49–50)`, ``,
     `Buildings (${first.buildings.length}): ${Object.entries(byBuilding).map(([k, v]) => `${k} ${v}`).join(", ")}. Footprint = geometry bounds x/z from building-bounds.json (GET /prefabs/info), turned with the object's rotation; the dam plant (spawned by the dam course) at its live A-v22 centre with the circle through its corners.`,
     ``, `Removed from the masked layers: **${first.n}**. Check after removal: **${again.n}** left.`, ``, `| file | building | removed |`, `|---|---|---|`,
-    ...Object.entries(first.report).map(([k, v]) => { const [f, b] = k.split(" | "); return `| ${f} | ${b} | ${Object.entries(v).map(([p, c]) => `${p} ${c}`).join(", ")} |`; })];
+    ...Object.entries(first.report).filter(([k]) => k !== "moved").map(([k, v]) => { const [f, b] = k.split(" | "); return `| ${f} | ${b} | ${Object.entries(v).map(([p, c]) => `${p} ${c}`).join(", ")} |`; })];
+  const mv = first.report.moved ?? [];
+  lines.push("", `Moved, not dropped (round 50: the fort's standing stones, to the nearest point outside every footprint + ${MOVE_MARGIN} m, at most ${MOVE_MAX} m from the CS1 position, yaw kept): **${mv.length}**`, "",
+    "| stone | prefab | was inside | from | to | moved m |", "|---|---|---|---|---|---:|",
+    ...mv.map(m => `| ${m.id} | ${m.prefab} | ${m.building} | (${m.from[0]}, ${m.from[1]}) | (${m.to[0]}, ${m.to[1]}) | ${m.d.toFixed(2)} |`));
   writeFileSync(join(dir, "footprints-check.md"), lines.join("\n") + "\n");
   writeFileSync(join(dir, "footprints-check.json"), JSON.stringify({ removed: first.n, left: again.n, buildings: first.buildings.map(b => ({ prefab: b.prefab, x: b.x, z: b.z, rotation: b.rotation, file: b.file })), report: first.report }, null, 1));
-  console.log(`building footprints ${dir}: ${first.buildings.length} buildings, ${first.n} objects removed, ${again.n} left -> ${join(dir, "footprints-check.md")}`);
+  console.log(`building footprints ${dir}: ${first.buildings.length} buildings, ${first.n} objects removed, ${(first.report.moved ?? []).length} moved, ${again.n} left -> ${join(dir, "footprints-check.md")}`);
 }
