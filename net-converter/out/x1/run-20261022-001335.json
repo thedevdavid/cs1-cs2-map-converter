@@ -1,0 +1,1406 @@
+{
+ "stamp": "20261022-001335",
+ "scale": "x1",
+ "sea": 93,
+ "netCountAfterNetwork": {
+  "topLevelSegments": 3203,
+  "ownedSegments": 12,
+  "perPrefab": {
+   "BXP SuspensionBridge03 - Six Lane Highway": 4,
+   "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes": 8,
+   "BXP Truss Viaduct - Train": 26,
+   "Double Train Track": 260,
+   "Gravel Road": 840,
+   "High-voltage Line": 114,
+   "Highway Oneway - 1 lane": 291,
+   "Highway Oneway - 2 lanes": 769,
+   "Highway Oneway - 3 lanes": 467,
+   "Highway Oneway - 4 lanes": 26,
+   "Highway Twoway - 2 lanes": 248,
+   "Highway Twoway - 4 lanes": 30,
+   "Medium Seaway": 78,
+   "Narrow Boatway": 7,
+   "Pavement Path": 16,
+   "Sound Barrier": 2,
+   "Truss Arch Bridge - Small Road - 2 Lanes": 4,
+   "TrussArchBridge01": 4,
+   "Wooden Covered Bridge - 2 lanes": 9
+  },
+  "at": "2026-10-22T00:14:58.7319785Z"
+ },
+ "netCountEnd": {
+  "topLevelSegments": 3203,
+  "ownedSegments": 15,
+  "perPrefab": {
+   "BXP SuspensionBridge03 - Six Lane Highway": 4,
+   "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes": 8,
+   "BXP Truss Viaduct - Train": 26,
+   "Double Train Track": 260,
+   "Gravel Road": 840,
+   "High-voltage Line": 114,
+   "Highway Oneway - 1 lane": 291,
+   "Highway Oneway - 2 lanes": 769,
+   "Highway Oneway - 3 lanes": 467,
+   "Highway Oneway - 4 lanes": 26,
+   "Highway Twoway - 2 lanes": 248,
+   "Highway Twoway - 4 lanes": 30,
+   "Medium Seaway": 78,
+   "Narrow Boatway": 7,
+   "Pavement Path": 16,
+   "Sound Barrier": 2,
+   "Truss Arch Bridge - Small Road - 2 Lanes": 4,
+   "TrussArchBridge01": 4,
+   "Wooden Covered Bridge - 2 lanes": 9
+  },
+  "at": "2026-10-22T00:15:33.5154608Z"
+ },
+ "guardStop": null,
+ "rows": [
+  {
+   "name": "surfaces",
+   "file": "out\\x1\\import-surfaces-fields.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "srf-20261022-001335-4",
+   "undo": "POST /import/objects/undo?id=srf-20261022-001335-4",
+   "text": "objects 55: created 55, failed 0; netGuard removed 0",
+   "fails": []
+  },
+  {
+   "name": "surfaces",
+   "file": "out\\x1\\import-po-structures.json",
+   "status": "ok",
+   "secs": 0.1,
+   "importId": "srf-20261022-001335-5",
+   "undo": "POST /import/objects/undo?id=srf-20261022-001335-5",
+   "text": "objects 11: created 11, failed 0; netGuard removed 0",
+   "fails": []
+  },
+  {
+   "name": "surfaces",
+   "file": "out\\x1\\import-surfaces-sand.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "srf-20261022-001335-6",
+   "undo": "POST /import/objects/undo?id=srf-20261022-001335-6",
+   "text": "objects 99: created 99, failed 0; netGuard removed 0",
+   "fails": []
+  },
+  {
+   "name": "terrain-paint",
+   "file": "out\\x1\\import-terrain-paint-sand.json",
+   "status": "ok",
+   "secs": 4.663,
+   "importId": "paint-20261022-001336-22",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 574, stamps 2; method=raster, calibration=cached, seconds=4.37 (raster 0=material=Terrain,Material,Extra,4,strength=0.2,polygons=253,strokes=0,bounds=0=-7195,1=-7195,2=7180.7,3=7195,maskSize=4096,rasterMs=2251,uploadMs=99.4,dispatchMs=0.1 1=material=Terrain,Material,Extra,4,strength=0.45,polygons=321,strokes=0,bounds=0=-7184.1,1=-7187.5,2=7161.3,3=7183.9,maskSize=4096,rasterMs=1922.7,uploadMs=92.4,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 4",
+      "strength": 0.2,
+      "polygons": 253,
+      "strokes": 0,
+      "bounds": [
+       -7195,
+       -7195,
+       7180.7,
+       7195
+      ],
+      "maskSize": 4096,
+      "rasterMs": 2251,
+      "uploadMs": 99.4,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 4",
+      "strength": 0.45,
+      "polygons": 321,
+      "strokes": 0,
+      "bounds": [
+       -7184.1,
+       -7187.5,
+       7161.3,
+       7183.9
+      ],
+      "maskSize": 4096,
+      "rasterMs": 1922.7,
+      "uploadMs": 92.4,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 4.37
+   }
+  },
+  {
+   "name": "terrain-paint",
+   "file": "out\\x1\\import-terrain-paint-dry-grass.json",
+   "status": "ok",
+   "secs": 5.085,
+   "importId": "paint-20261022-001341-23",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 947, stamps 2; method=raster, calibration=cached, seconds=4.9 (raster 0=material=Terrain,Material,Extra,1,strength=0.2,polygons=521,strokes=0,bounds=0=-7195,1=-7195,2=7195,3=7195,maskSize=4096,rasterMs=2495.7,uploadMs=90.3,dispatchMs=0.1 1=material=Terrain,Material,Extra,1,strength=0.45,polygons=426,strokes=0,bounds=0=-7188.2,1=-7186.6,2=7186.8,3=7187.7,maskSize=4096,rasterMs=2223.8,uploadMs=91.6,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 1",
+      "strength": 0.2,
+      "polygons": 521,
+      "strokes": 0,
+      "bounds": [
+       -7195,
+       -7195,
+       7195,
+       7195
+      ],
+      "maskSize": 4096,
+      "rasterMs": 2495.7,
+      "uploadMs": 90.3,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 1",
+      "strength": 0.45,
+      "polygons": 426,
+      "strokes": 0,
+      "bounds": [
+       -7188.2,
+       -7186.6,
+       7186.8,
+       7187.7
+      ],
+      "maskSize": 4096,
+      "rasterMs": 2223.8,
+      "uploadMs": 91.6,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 4.9
+   }
+  },
+  {
+   "name": "terrain-paint",
+   "file": "out\\x1\\import-terrain-paint-bare-earth.json",
+   "status": "ok",
+   "secs": 0.546,
+   "importId": "paint-20261022-001346-24",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 256, stamps 2; method=raster, calibration=cached, seconds=0.52 (raster 0=material=Terrain,Material,Extra,3,strength=0.2,polygons=0,strokes=128,bounds=0=-810.6,1=-3060.5,2=4850.9,3=4932.7,maskSize=2284,rasterMs=223.6,uploadMs=24.1,dispatchMs=0.1 1=material=Terrain,Material,Extra,3,strength=0.45,polygons=0,strokes=128,bounds=0=-800.6,1=-3050.5,2=4840.9,3=4922.7,maskSize=2279,rasterMs=227.2,uploadMs=40.9,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.2,
+      "polygons": 0,
+      "strokes": 128,
+      "bounds": [
+       -810.6,
+       -3060.5,
+       4850.9,
+       4932.7
+      ],
+      "maskSize": 2284,
+      "rasterMs": 223.6,
+      "uploadMs": 24.1,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.45,
+      "polygons": 0,
+      "strokes": 128,
+      "bounds": [
+       -800.6,
+       -3050.5,
+       4840.9,
+       4922.7
+      ],
+      "maskSize": 2279,
+      "rasterMs": 227.2,
+      "uploadMs": 40.9,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 0.52
+   }
+  },
+  {
+   "name": "paint-n1",
+   "file": "out\\x1\\import-terrain-paint-n1-riparian-lush.json",
+   "status": "ok",
+   "secs": 2.518,
+   "importId": "paint-20261022-001346-25",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 153, stamps 2; method=raster, calibration=cached, seconds=2.45 (raster 0=material=Terrain,Material,Extra,2,strength=0.2,polygons=80,strokes=0,bounds=0=-3527.7,1=-7195.7,2=7193.4,3=6524.8,maskSize=3921,rasterMs=1275.6,uploadMs=70.3,dispatchMs=0.1 1=material=Terrain,Material,Extra,2,strength=0.6,polygons=73,strokes=0,bounds=0=-3345.5,1=-7194.5,2=7194,3=6507.8,maskSize=3915,rasterMs=1027.9,uploadMs=80.7,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 2",
+      "strength": 0.2,
+      "polygons": 80,
+      "strokes": 0,
+      "bounds": [
+       -3527.7,
+       -7195.7,
+       7193.4,
+       6524.8
+      ],
+      "maskSize": 3921,
+      "rasterMs": 1275.6,
+      "uploadMs": 70.3,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 2",
+      "strength": 0.6,
+      "polygons": 73,
+      "strokes": 0,
+      "bounds": [
+       -3345.5,
+       -7194.5,
+       7194,
+       6507.8
+      ],
+      "maskSize": 3915,
+      "rasterMs": 1027.9,
+      "uploadMs": 80.7,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 2.45
+   }
+  },
+  {
+   "name": "paint-n12",
+   "file": "out\\x1\\import-terrain-paint-n12-fertile-dry.json",
+   "status": "ok",
+   "secs": 7.959,
+   "importId": "paint-20261022-001349-26",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 475, stamps 2; method=raster, calibration=cached, seconds=7.78 (raster 0=material=Terrain,Material,Extra,1,strength=0.2,polygons=199,strokes=0,bounds=0=-4473.2,1=-7196,2=7197.8,3=7194.7,maskSize=4096,rasterMs=3541.6,uploadMs=102.9,dispatchMs=0.1 1=material=Terrain,Material,Extra,1,strength=0.35,polygons=276,strokes=0,bounds=0=-4449.9,1=-7196.7,2=7195.6,3=7197.4,maskSize=4096,rasterMs=4034,uploadMs=99.2,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 1",
+      "strength": 0.2,
+      "polygons": 199,
+      "strokes": 0,
+      "bounds": [
+       -4473.2,
+       -7196,
+       7197.8,
+       7194.7
+      ],
+      "maskSize": 4096,
+      "rasterMs": 3541.6,
+      "uploadMs": 102.9,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 1",
+      "strength": 0.35,
+      "polygons": 276,
+      "strokes": 0,
+      "bounds": [
+       -4449.9,
+       -7196.7,
+       7195.6,
+       7197.4
+      ],
+      "maskSize": 4096,
+      "rasterMs": 4034,
+      "uploadMs": 99.2,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 7.78
+   }
+  },
+  {
+   "name": "paint-n13",
+   "file": "out\\x1\\import-terrain-paint-n13-high-ground-dry.json",
+   "status": "ok",
+   "secs": 4.459,
+   "importId": "paint-20261022-001357-27",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 175, stamps 2; method=raster, calibration=cached, seconds=4.34 (raster 0=material=Terrain,Material,Extra,1,strength=0.2,polygons=78,strokes=0,bounds=0=-7198.1,1=-7196.5,2=-3099.9,3=7197.1,maskSize=4096,rasterMs=2051.8,uploadMs=77.4,dispatchMs=0.1 1=material=Terrain,Material,Extra,1,strength=0.5,polygons=97,strokes=0,bounds=0=-7197.6,1=-7196.5,2=-3550,3=7198.3,maskSize=4096,rasterMs=2125.6,uploadMs=85.4,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 1",
+      "strength": 0.2,
+      "polygons": 78,
+      "strokes": 0,
+      "bounds": [
+       -7198.1,
+       -7196.5,
+       -3099.9,
+       7197.1
+      ],
+      "maskSize": 4096,
+      "rasterMs": 2051.8,
+      "uploadMs": 77.4,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 1",
+      "strength": 0.5,
+      "polygons": 97,
+      "strokes": 0,
+      "bounds": [
+       -7197.6,
+       -7196.5,
+       -3550,
+       7198.3
+      ],
+      "maskSize": 4096,
+      "rasterMs": 2125.6,
+      "uploadMs": 85.4,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 4.34
+   }
+  },
+  {
+   "name": "paint-n6",
+   "file": "out\\x1\\import-terrain-paint-n6-savanna-dry.json",
+   "status": "ok",
+   "secs": 14.311,
+   "importId": "paint-20261022-001403-28",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 1903, stamps 2; method=raster, calibration=cached, seconds=13.43 (raster 0=material=Terrain,Material,Extra,1,strength=0.2,polygons=569,strokes=0,bounds=0=-7187.8,1=-7187.3,2=7186.3,3=7188.5,maskSize=4096,rasterMs=5699.1,uploadMs=100.3,dispatchMs=0.1 1=material=Terrain,Material,Extra,1,strength=0.4,polygons=1334,strokes=0,bounds=0=-7187.3,1=-7187.8,2=7185,3=7188.3,maskSize=4096,rasterMs=7527.3,uploadMs=104,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 1",
+      "strength": 0.2,
+      "polygons": 569,
+      "strokes": 0,
+      "bounds": [
+       -7187.8,
+       -7187.3,
+       7186.3,
+       7188.5
+      ],
+      "maskSize": 4096,
+      "rasterMs": 5699.1,
+      "uploadMs": 100.3,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 1",
+      "strength": 0.4,
+      "polygons": 1334,
+      "strokes": 0,
+      "bounds": [
+       -7187.3,
+       -7187.8,
+       7185,
+       7188.3
+      ],
+      "maskSize": 4096,
+      "rasterMs": 7527.3,
+      "uploadMs": 104,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 13.43
+   }
+  },
+  {
+   "name": "paint-n6",
+   "file": "out\\x1\\import-terrain-paint-n6-savanna-dirt.json",
+   "status": "ok",
+   "secs": 1.012,
+   "importId": "paint-20261022-001417-29",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 40027, stamps 1; method=raster, calibration=cached, seconds=0.78 (raster 0=material=Terrain,Material,Extra,3,strength=0.45,polygons=0,strokes=40027,bounds=0=-7181.7,1=-7180.3,2=7176.1,3=7181.7,maskSize=4096,rasterMs=695.9,uploadMs=85.8,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.45,
+      "polygons": 0,
+      "strokes": 40027,
+      "bounds": [
+       -7181.7,
+       -7180.3,
+       7176.1,
+       7181.7
+      ],
+      "maskSize": 4096,
+      "rasterMs": 695.9,
+      "uploadMs": 85.8,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 0.78
+   }
+  },
+  {
+   "name": "paint-n4",
+   "file": "out\\x1\\import-terrain-paint-n4-hogback-sand.json",
+   "status": "ok",
+   "secs": 1.041,
+   "importId": "paint-20261022-001419-30",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 31644, stamps 1; method=raster, calibration=cached, seconds=0.79 (raster 0=material=Terrain,Material,Extra,4,strength=0.5,polygons=0,strokes=31644,bounds=0=-7183.1,1=-7191.6,2=7018.2,3=7187.9,maskSize=4096,rasterMs=718.5,uploadMs=75.2,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 4",
+      "strength": 0.5,
+      "polygons": 0,
+      "strokes": 31644,
+      "bounds": [
+       -7183.1,
+       -7191.6,
+       7018.2,
+       7187.9
+      ],
+      "maskSize": 4096,
+      "rasterMs": 718.5,
+      "uploadMs": 75.2,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 0.79
+   }
+  },
+  {
+   "name": "paint-n5",
+   "file": "out\\x1\\import-terrain-paint-n5-scree-dirt.json",
+   "status": "ok",
+   "secs": 1.634,
+   "importId": "paint-20261022-001420-31",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 199, stamps 2; method=raster, calibration=cached, seconds=1.58 (raster 0=material=Terrain,Material,Extra,3,strength=0.2,polygons=119,strokes=0,bounds=0=-7181.7,1=-6977.3,2=6869.6,3=7182.1,maskSize=4046,rasterMs=776.5,uploadMs=72.2,dispatchMs=0.1 1=material=Terrain,Material,Extra,3,strength=0.8,polygons=80,strokes=0,bounds=0=-7177.6,1=-6963,2=6825.9,3=7175.7,maskSize=4040,rasterMs=663.8,uploadMs=68.9,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.2,
+      "polygons": 119,
+      "strokes": 0,
+      "bounds": [
+       -7181.7,
+       -6977.3,
+       6869.6,
+       7182.1
+      ],
+      "maskSize": 4046,
+      "rasterMs": 776.5,
+      "uploadMs": 72.2,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.8,
+      "polygons": 80,
+      "strokes": 0,
+      "bounds": [
+       -7177.6,
+       -6963,
+       6825.9,
+       7175.7
+      ],
+      "maskSize": 4040,
+      "rasterMs": 663.8,
+      "uploadMs": 68.9,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 1.58
+   }
+  },
+  {
+   "name": "paint-n3",
+   "file": "out\\x1\\import-terrain-paint-n3-drawdown-dirt.json",
+   "status": "ok",
+   "secs": 0.042,
+   "importId": "paint-20261022-001421-32",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 134, stamps 1; method=raster, calibration=cached, seconds=0.02 (raster 0=material=Terrain,Material,Extra,3,strength=0.7,polygons=0,strokes=134,bounds=0=937.6,1=4517.3,2=1709.5,3=6502.6,maskSize=568,rasterMs=13.9,uploadMs=1.1,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.7,
+      "polygons": 0,
+      "strokes": 134,
+      "bounds": [
+       937.6,
+       4517.3,
+       1709.5,
+       6502.6
+      ],
+      "maskSize": 568,
+      "rasterMs": 13.9,
+      "uploadMs": 1.1,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 0.02
+   }
+  },
+  {
+   "name": "paint-n2",
+   "file": "out\\x1\\import-terrain-paint-n2-pit-banks-dirt.json",
+   "status": "ok",
+   "secs": 0.322,
+   "importId": "paint-20261022-001421-33",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 13, stamps 1; method=raster, calibration=cached, seconds=0.31 (raster 0=material=Terrain,Material,Extra,3,strength=0.6,polygons=0,strokes=13,bounds=0=199,1=-7037.7,2=4174.7,3=2363.8,maskSize=2687,rasterMs=248.9,uploadMs=58.1,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.6,
+      "polygons": 0,
+      "strokes": 13,
+      "bounds": [
+       199,
+       -7037.7,
+       4174.7,
+       2363.8
+      ],
+      "maskSize": 2687,
+      "rasterMs": 248.9,
+      "uploadMs": 58.1,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 0.31
+   }
+  },
+  {
+   "name": "paint-n2",
+   "file": "out\\x1\\import-terrain-paint-n2-pit-banks-sand.json",
+   "status": "ok",
+   "secs": 0.276,
+   "importId": "paint-20261022-001422-34",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 8, stamps 1; method=raster, calibration=cached, seconds=0.26 (raster 0=material=Terrain,Material,Extra,4,strength=0.6,polygons=0,strokes=8,bounds=0=203.2,1=-6884.3,2=4120.3,3=2359.6,maskSize=2642,rasterMs=236.6,uploadMs=28.2,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 4",
+      "strength": 0.6,
+      "polygons": 0,
+      "strokes": 8,
+      "bounds": [
+       203.2,
+       -6884.3,
+       4120.3,
+       2359.6
+      ],
+      "maskSize": 2642,
+      "rasterMs": 236.6,
+      "uploadMs": 28.2,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 0.26
+   }
+  },
+  {
+   "name": "paint-n8",
+   "file": "out\\x1\\import-terrain-paint-n8-playa-rim-lush.json",
+   "status": "ok",
+   "secs": 1.577,
+   "importId": "paint-20261022-001422-35",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 191, stamps 2; method=raster, calibration=cached, seconds=1.54 (raster 0=material=Terrain,Material,Extra,2,strength=0.2,polygons=121,strokes=0,bounds=0=-4357.5,1=-7064.5,2=7183,3=6816.3,maskSize=3966,rasterMs=751,uploadMs=76.1,dispatchMs=0.1 1=material=Terrain,Material,Extra,2,strength=0.5,polygons=70,strokes=0,bounds=0=-4195.8,1=-7051.8,2=7176.3,3=6803.9,maskSize=3959,rasterMs=631.3,uploadMs=77.7,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 2",
+      "strength": 0.2,
+      "polygons": 121,
+      "strokes": 0,
+      "bounds": [
+       -4357.5,
+       -7064.5,
+       7183,
+       6816.3
+      ],
+      "maskSize": 3966,
+      "rasterMs": 751,
+      "uploadMs": 76.1,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 2",
+      "strength": 0.5,
+      "polygons": 70,
+      "strokes": 0,
+      "bounds": [
+       -4195.8,
+       -7051.8,
+       7176.3,
+       6803.9
+      ],
+      "maskSize": 3959,
+      "rasterMs": 631.3,
+      "uploadMs": 77.7,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 1.54
+   }
+  },
+  {
+   "name": "paint-n8",
+   "file": "out\\x1\\import-terrain-paint-n8-playa-centre-dirt.json",
+   "status": "ok",
+   "secs": 1.38,
+   "importId": "paint-20261022-001424-36",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 162, stamps 2; method=raster, calibration=cached, seconds=1.35 (raster 0=material=Terrain,Material,Extra,3,strength=0.2,polygons=80,strokes=0,bounds=0=-4358.8,1=-7059.6,2=7135.9,3=6767,maskSize=3951,rasterMs=596.6,uploadMs=67,dispatchMs=0.1 1=material=Terrain,Material,Extra,3,strength=0.6,polygons=82,strokes=0,bounds=0=-4335.1,1=-7044.1,2=7125.5,3=6739.8,maskSize=3939,rasterMs=595.9,uploadMs=85.8,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.2,
+      "polygons": 80,
+      "strokes": 0,
+      "bounds": [
+       -4358.8,
+       -7059.6,
+       7135.9,
+       6767
+      ],
+      "maskSize": 3951,
+      "rasterMs": 596.6,
+      "uploadMs": 67,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.6,
+      "polygons": 82,
+      "strokes": 0,
+      "bounds": [
+       -4335.1,
+       -7044.1,
+       7125.5,
+       6739.8
+      ],
+      "maskSize": 3939,
+      "rasterMs": 595.9,
+      "uploadMs": 85.8,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 1.35
+   }
+  },
+  {
+   "name": "paint-n7",
+   "file": "out\\x1\\import-terrain-paint-n7-prairie-dog-dry.json",
+   "status": "ok",
+   "secs": 0.027,
+   "importId": "paint-20261022-001425-37",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 2, stamps 2; method=raster, calibration=cached, seconds=0.01 (raster 0=material=Terrain,Material,Extra,1,strength=0.2,polygons=1,strokes=0,bounds=0=-1630,1=-1136.8,2=-1256.3,3=-726.1,maskSize=118,rasterMs=4.5,uploadMs=0.1,dispatchMs=0.1 1=material=Terrain,Material,Extra,1,strength=0.8,polygons=1,strokes=0,bounds=0=-1613.1,1=-1068.9,2=-1272.4,3=-745.4,maskSize=98,rasterMs=3.4,uploadMs=0.1,dispatchMs=0); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 1",
+      "strength": 0.2,
+      "polygons": 1,
+      "strokes": 0,
+      "bounds": [
+       -1630,
+       -1136.8,
+       -1256.3,
+       -726.1
+      ],
+      "maskSize": 118,
+      "rasterMs": 4.5,
+      "uploadMs": 0.1,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 1",
+      "strength": 0.8,
+      "polygons": 1,
+      "strokes": 0,
+      "bounds": [
+       -1613.1,
+       -1068.9,
+       -1272.4,
+       -745.4
+      ],
+      "maskSize": 98,
+      "rasterMs": 3.4,
+      "uploadMs": 0.1,
+      "dispatchMs": 0
+     }
+    ],
+    "seconds": 0.01
+   }
+  },
+  {
+   "name": "paint-n7",
+   "file": "out\\x1\\import-terrain-paint-n7-prairie-dog-dirt.json",
+   "status": "ok",
+   "secs": 0.02,
+   "importId": "paint-20261022-001425-38",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 215, stamps 1; method=raster, calibration=cached, seconds=0 (raster 0=material=Terrain,Material,Extra,3,strength=0.5,polygons=0,strokes=215,bounds=0=-1594.4,1=-1109.4,2=-1288.4,3=-757.7,maskSize=101,rasterMs=1.1,uploadMs=0.1,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.5,
+      "polygons": 0,
+      "strokes": 215,
+      "bounds": [
+       -1594.4,
+       -1109.4,
+       -1288.4,
+       -757.7
+      ],
+      "maskSize": 101,
+      "rasterMs": 1.1,
+      "uploadMs": 0.1,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 0
+   }
+  },
+  {
+   "name": "paint-n11",
+   "file": "out\\x1\\import-terrain-paint-n11-ore-dirt.json",
+   "status": "ok",
+   "secs": 2.98,
+   "importId": "paint-20261022-001425-39",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 196, stamps 2; method=raster, calibration=cached, seconds=2.91 (raster 0=material=Terrain,Material,Extra,3,strength=0.2,polygons=92,strokes=0,bounds=0=-6738.7,1=-7185.6,2=7186.1,3=7185.2,maskSize=4096,rasterMs=1350.7,uploadMs=210.5,dispatchMs=0.1 1=material=Terrain,Material,Extra,3,strength=0.5,polygons=104,strokes=0,bounds=0=-6719.4,1=-7187,2=7184.7,3=7184.7,maskSize=4096,rasterMs=1263.7,uploadMs=87.7,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.2,
+      "polygons": 92,
+      "strokes": 0,
+      "bounds": [
+       -6738.7,
+       -7185.6,
+       7186.1,
+       7185.2
+      ],
+      "maskSize": 4096,
+      "rasterMs": 1350.7,
+      "uploadMs": 210.5,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.5,
+      "polygons": 104,
+      "strokes": 0,
+      "bounds": [
+       -6719.4,
+       -7187,
+       7184.7,
+       7184.7
+      ],
+      "maskSize": 4096,
+      "rasterMs": 1263.7,
+      "uploadMs": 87.7,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 2.91
+   }
+  },
+  {
+   "name": "paint-n11",
+   "file": "out\\x1\\import-terrain-paint-n11-oil-dirt.json",
+   "status": "ok",
+   "secs": 6.919,
+   "importId": "paint-20261022-001429-40",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 428, stamps 2; method=raster, calibration=cached, seconds=6.6 (raster 0=material=Terrain,Material,Extra,3,strength=0.2,polygons=125,strokes=0,bounds=0=-7188.7,1=-7188.4,2=7186.4,3=7188.2,maskSize=4096,rasterMs=2621.4,uploadMs=109.1,dispatchMs=0.1 1=material=Terrain,Material,Extra,3,strength=0.3,polygons=303,strokes=0,bounds=0=-7186.9,1=-7187.2,2=7187.3,3=7187.9,maskSize=4096,rasterMs=3752.5,uploadMs=113.2,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.2,
+      "polygons": 125,
+      "strokes": 0,
+      "bounds": [
+       -7188.7,
+       -7188.4,
+       7186.4,
+       7188.2
+      ],
+      "maskSize": 4096,
+      "rasterMs": 2621.4,
+      "uploadMs": 109.1,
+      "dispatchMs": 0.1
+     },
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.3,
+      "polygons": 303,
+      "strokes": 0,
+      "bounds": [
+       -7186.9,
+       -7187.2,
+       7187.3,
+       7187.9
+      ],
+      "maskSize": 4096,
+      "rasterMs": 3752.5,
+      "uploadMs": 113.2,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 6.6
+   }
+  },
+  {
+   "name": "paint-n9",
+   "file": "out\\x1\\import-terrain-paint-n9-dirt-roads-dirt.json",
+   "status": "ok",
+   "secs": 0.564,
+   "importId": "paint-20261022-001436-41",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 12266, stamps 1; method=raster, calibration=cached, seconds=0.48 (raster 0=material=Terrain,Material,Extra,3,strength=0.5,polygons=0,strokes=12266,bounds=0=-4053.2,1=-5184.2,2=7184.4,3=6196.7,maskSize=3252,rasterMs=433.7,uploadMs=44.7,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.5,
+      "polygons": 0,
+      "strokes": 12266,
+      "bounds": [
+       -4053.2,
+       -5184.2,
+       7184.4,
+       6196.7
+      ],
+      "maskSize": 3252,
+      "rasterMs": 433.7,
+      "uploadMs": 44.7,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 0.48
+   }
+  },
+  {
+   "name": "paint-n10",
+   "file": "out\\x1\\import-terrain-paint-n10-rail-ballast-dirt.json",
+   "status": "ok",
+   "secs": 0.728,
+   "importId": "paint-20261022-001436-42",
+   "undo": "POST /import/terrain-paint/undo (newest first, last 3 kept)",
+   "text": "part 1/1: items 4418, stamps 1; method=raster, calibration=cached, seconds=0.7 (raster 0=material=Terrain,Material,Extra,3,strength=0.35,polygons=0,strokes=4418,bounds=0=-1913.2,1=-7181.2,2=7183,3=7052.6,maskSize=4067,rasterMs=592.6,uploadMs=102.8,dispatchMs=0.1); netGuard removed 0",
+   "paint": {
+    "method": "raster",
+    "calibration": "cached",
+    "raster": [
+     {
+      "material": "Terrain Material Extra 3",
+      "strength": 0.35,
+      "polygons": 0,
+      "strokes": 4418,
+      "bounds": [
+       -1913.2,
+       -7181.2,
+       7183,
+       7052.6
+      ],
+      "maskSize": 4067,
+      "rasterMs": 592.6,
+      "uploadMs": 102.8,
+      "dispatchMs": 0.1
+     }
+    ],
+    "seconds": 0.7
+   }
+  },
+  {
+   "name": "network",
+   "file": "out\\x1\\import-all.json",
+   "status": "ok",
+   "secs": 18.8,
+   "importId": "imp-20261022-001437-11",
+   "undo": "POST /import/undo?id=imp-20261022-001437-11",
+   "text": "edges 3793: created 2262, merged 1528, failed 3",
+   "fails": [
+    {
+     "id": "e31685_0",
+     "prefab": "Highway Oneway - 2 lanes",
+     "error": "the batch was applied but only 2 of 3 points along the course lie on a segment of this prefab"
+    },
+    {
+     "id": "e34504_0",
+     "prefab": "Highway Oneway - 2 lanes",
+     "error": "the batch was applied but only 2 of 3 points along the course lie on a segment of this prefab"
+    },
+    {
+     "id": "e35131_0",
+     "prefab": "Gravel Road",
+     "error": "the batch was applied but only 1 of 3 points along the course lie on a segment of this prefab"
+    }
+   ]
+  },
+  {
+   "name": "bridges",
+   "file": "out\\x1\\import-bridges.json",
+   "status": "ok",
+   "secs": 0.3,
+   "importId": "imp-20261022-001456-12",
+   "undo": "POST /import/undo?id=imp-20261022-001456-12",
+   "text": "edges 43: created 37, merged 6, failed 0",
+   "fails": []
+  },
+  {
+   "name": "bridges-fixed",
+   "file": "out\\x1\\import-bridges-fixed.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "imp-20261022-001456-13",
+   "undo": "POST /import/undo?id=imp-20261022-001456-13",
+   "text": "edges 5: created 0, merged 5, failed 0",
+   "fails": []
+  },
+  {
+   "name": "dam",
+   "file": "out\\x1\\import-dam.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "imp-20261022-001456-14",
+   "undo": "POST /import/undo?id=imp-20261022-001456-14",
+   "text": "edges 1: created 0, merged 1, failed 0",
+   "fails": []
+  },
+  {
+   "name": "access",
+   "file": "out\\x1\\import-access-roads.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "imp-20261022-001456-15",
+   "undo": "POST /import/undo?id=imp-20261022-001456-15",
+   "text": "edges 2: created 2, merged 0, failed 0",
+   "fails": []
+  },
+  {
+   "name": "gaps",
+   "file": "out\\x1\\import-gaps.json",
+   "status": "ok",
+   "secs": 0.1,
+   "importId": "imp-20261022-001457-16",
+   "undo": "POST /import/undo?id=imp-20261022-001457-16",
+   "text": "edges 4: created 3, merged 1, failed 0",
+   "fails": []
+  },
+  {
+   "name": "power",
+   "file": "out\\x1\\import-power.json",
+   "status": "ok",
+   "secs": 0.3,
+   "importId": "imp-20261022-001457-17",
+   "undo": "POST /import/undo?id=imp-20261022-001457-17",
+   "text": "edges 58: created 7, merged 51, failed 0",
+   "fails": []
+  },
+  {
+   "name": "canals",
+   "file": "out\\x1\\import-canals.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "imp-20261022-001457-18",
+   "undo": "POST /import/undo?id=imp-20261022-001457-18",
+   "text": "edges 16: created 2, merged 14, failed 0",
+   "fails": []
+  },
+  {
+   "name": "shippaths",
+   "file": "out\\x1\\import-shippaths.json",
+   "status": "ok",
+   "secs": 0.4,
+   "importId": "imp-20261022-001457-19",
+   "undo": "POST /import/undo?id=imp-20261022-001457-19",
+   "text": "edges 100: created 70, merged 30, failed 0",
+   "fails": []
+  },
+  {
+   "name": "substation",
+   "file": "out\\x1\\import-substation.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "obj-20261022-001458-24",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001458-24",
+   "text": "objects 1: created 1, failed 0; netGuard removed 0; timing defineMs=1 matchMs=0 applyFrameMs=54 resolveMs=0 protectMs=0 netGuardMs=1 settleFrames=3 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 1,
+    "matchMs": 0,
+    "applyFrameMs": 54,
+    "resolveMs": 0,
+    "protectMs": 0,
+    "netGuardMs": 1,
+    "settleFrames": 3,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "power-ends",
+   "file": "out\\x1\\import-power-ends.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "imp-20261022-001458-20",
+   "undo": "POST /import/undo?id=imp-20261022-001458-20",
+   "text": "edges 4: created 3, merged 1, failed 0",
+   "fails": []
+  },
+  {
+   "name": "net-count",
+   "file": "GET /net/count",
+   "status": "ok",
+   "secs": 0.003,
+   "text": "net count after the network steps: 3203 segments: Gravel Road 840, Highway Oneway - 2 lanes 769, Highway Oneway - 3 lanes 467, Highway Oneway - 1 lane 291, Double Train Track 260, Highway Twoway - 2 lanes 248, High-voltage Line 114, Medium Seaway 78, Highway Twoway - 4 lanes 30, BXP Truss Viaduct - Train 26, Highway Oneway - 4 lanes 26, Pavement Path 16, Wooden Covered Bridge - 2 lanes 9, BXP Truss Arch Bridge - Highway Oneway - 2 Lanes 8, Narrow Boatway 7, BXP SuspensionBridge03 - Six Lane Highway 4, Truss Arch Bridge - Small Road - 2 Lanes 4, TrussArchBridge01 4, Sound Barrier 2"
+  },
+  {
+   "name": "verify-network",
+   "file": "GET /graph/export",
+   "status": "ok",
+   "secs": 0.146,
+   "text": "graph 3203 segments; live/imported edges: Highway Oneway - 2 lanes 769/905, Highway Oneway - 3 lanes 467/542, Highway Oneway - 1 lane 291/296, Highway Oneway - 4 lanes 26/29, Double Train Track 260/403, Gravel Road 840/1266, Highway Twoway - 2 lanes 248/308, Pavement Path 16/15, Highway Twoway - 4 lanes 30/39, BXP Truss Arch Bridge - Highway Oneway - 2 Lanes 8/8, Truss Arch Bridge - Small Road - 2 Lanes 4/4, TrussArchBridge01 4/2, BXP Truss Viaduct - Train 26/21, Wooden Covered Bridge - 2 lanes 9/8, BXP SuspensionBridge03 - Six Lane Highway 4/1, Hydroelectric_Power_Plant_01 Dam 0/1, High-voltage Line 114/62, Narrow Boatway 7/14, Sound Barrier 2/2, Medium Seaway 78/100 (live-graph-20261022-001335-network.json); point-check failures re-checked on the live graph: 0 present, 3 missing (e31685_0, e34504_0, e35131_0)"
+  },
+  {
+   "name": "water",
+   "file": "out\\x1\\import-water-sea93.json",
+   "status": "ok",
+   "secs": 0.084,
+   "importId": "wat-20261022-001458-3",
+   "undo": "POST /import/water/undo?id=wat-20261022-001458-3",
+   "text": "sources 44",
+   "fails": []
+  },
+  {
+   "name": "lakes",
+   "file": "out\\x1\\import-water-lakes.json",
+   "status": "ok",
+   "secs": 0.082,
+   "importId": "wat-20261022-001458-4",
+   "undo": "POST /import/water/undo?id=wat-20261022-001458-4",
+   "text": "sources 18",
+   "fails": []
+  },
+  {
+   "name": "connections",
+   "file": "out\\x1\\import-connections.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "obj-20261022-001459-25",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001459-25",
+   "text": "objects 25: created 25, failed 0; netGuard removed 0; timing defineMs=0 matchMs=0 applyFrameMs=19 resolveMs=0 protectMs=0 netGuardMs=1 settleFrames=3 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 0,
+    "matchMs": 0,
+    "applyFrameMs": 19,
+    "resolveMs": 0,
+    "protectMs": 0,
+    "netGuardMs": 1,
+    "settleFrames": 3,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "objects",
+   "file": "out\\x1\\import-objects.json",
+   "status": "ok",
+   "secs": 1.6,
+   "importId": "obj-20261022-001459-26",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001459-26",
+   "text": "objects 6119: created 6119, failed 0; netGuard removed 0; timing defineMs=8 matchMs=6 applyFrameMs=283 resolveMs=2 protectMs=5 netGuardMs=17 settleFrames=39 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 8,
+    "matchMs": 6,
+    "applyFrameMs": 283,
+    "resolveMs": 2,
+    "protectMs": 5,
+    "netGuardMs": 17,
+    "settleFrames": 39,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "barriers",
+   "file": "out\\x1\\import-walls-props.json",
+   "status": "ok",
+   "secs": 0.3,
+   "importId": "obj-20261022-001501-27",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001501-27",
+   "text": "objects 621: created 621, failed 0; netGuard removed 0; timing defineMs=1 matchMs=1 applyFrameMs=37 resolveMs=0 protectMs=1 netGuardMs=2 settleFrames=6 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 1,
+    "matchMs": 1,
+    "applyFrameMs": 37,
+    "resolveMs": 0,
+    "protectMs": 1,
+    "netGuardMs": 2,
+    "settleFrames": 6,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "po-rocks",
+   "file": "out\\x1\\import-po-rocks.json",
+   "status": "ok",
+   "secs": 0.3,
+   "importId": "obj-20261022-001501-28",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001501-28",
+   "text": "objects 606: created 606, failed 0; netGuard removed 0; timing defineMs=1 matchMs=1 applyFrameMs=38 resolveMs=0 protectMs=1 netGuardMs=2 settleFrames=6 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 1,
+    "matchMs": 1,
+    "applyFrameMs": 38,
+    "resolveMs": 0,
+    "protectMs": 1,
+    "netGuardMs": 2,
+    "settleFrames": 6,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "po-structures",
+   "file": "out\\x1\\import-po-structure-objects.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "obj-20261022-001501-29",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001501-29",
+   "text": "objects 3: created 3, failed 0; netGuard removed 0; timing defineMs=0 matchMs=0 applyFrameMs=17 resolveMs=0 protectMs=0 netGuardMs=1 settleFrames=3 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 0,
+    "matchMs": 0,
+    "applyFrameMs": 17,
+    "resolveMs": 0,
+    "protectMs": 0,
+    "netGuardMs": 1,
+    "settleFrames": 3,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "po-gantry",
+   "file": "out\\x1\\optional\\import-po-structure-gantry.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "obj-20261022-001501-30",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001501-30",
+   "text": "objects 1: created 1, failed 0; netGuard removed 0; timing defineMs=0 matchMs=0 applyFrameMs=20 resolveMs=0 protectMs=1 netGuardMs=1 settleFrames=3 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 0,
+    "matchMs": 0,
+    "applyFrameMs": 20,
+    "resolveMs": 0,
+    "protectMs": 1,
+    "netGuardMs": 1,
+    "settleFrames": 3,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "pillars-off",
+   "file": "POST /net/pillars/remove",
+   "status": "ok",
+   "secs": 0.176,
+   "text": "50 caps, 44 segments: HTTP 200 {\"segments\":44,\"innerNodes\":31,\"pillarsDeleted\":12,\"notFound\":[],\"note\":\"pillars come back when the game updates the segment (an edge or node there is changed)\"}"
+  },
+  {
+   "name": "po-piers",
+   "file": "out\\x1\\import-po-structure-piers.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "obj-20261022-001502-31",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001502-31",
+   "text": "objects 131: created 131, failed 0; netGuard removed 0; timing defineMs=0 matchMs=0 applyFrameMs=21 resolveMs=0 protectMs=1 netGuardMs=1 settleFrames=3 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 0,
+    "matchMs": 0,
+    "applyFrameMs": 21,
+    "resolveMs": 0,
+    "protectMs": 1,
+    "netGuardMs": 1,
+    "settleFrames": 3,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "rock-shed",
+   "file": "out\\x1\\import-rock-shed.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "obj-20261022-001502-32",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001502-32",
+   "text": "objects 210: created 210, failed 0; netGuard removed 0; timing defineMs=0 matchMs=0 applyFrameMs=19 resolveMs=0 protectMs=0 netGuardMs=1 settleFrames=3 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames; tilt requested=95 kept=95 note=objects with pitch/roll/quaternion: the live Transform rotation compared with the request (kept = within 0.5 deg); changed lists those the game re-oriented (forwardY = height of the object's +z axis)",
+   "fails": [],
+   "timing": {
+    "defineMs": 0,
+    "matchMs": 0,
+    "applyFrameMs": 19,
+    "resolveMs": 0,
+    "protectMs": 0,
+    "netGuardMs": 1,
+    "settleFrames": 3,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   },
+   "tilt": {
+    "requested": 95,
+    "kept": 95,
+    "changed": [],
+    "note": "objects with pitch/roll/quaternion: the live Transform rotation compared with the request (kept = within 0.5 deg); changed lists those the game re-oriented (forwardY = height of the object's +z axis)"
+   }
+  },
+  {
+   "name": "rock-scatter",
+   "file": "out\\x1\\import-rock-scatter.json",
+   "status": "ok",
+   "secs": 4.1,
+   "importId": "obj-20261022-001502-33",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001502-33",
+   "text": "objects 17547: created 17547, failed 0; netGuard removed 0; timing defineMs=20 matchMs=17 applyFrameMs=667 resolveMs=5 protectMs=14 netGuardMs=42 settleFrames=108 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 20,
+    "matchMs": 17,
+    "applyFrameMs": 667,
+    "resolveMs": 5,
+    "protectMs": 14,
+    "netGuardMs": 42,
+    "settleFrames": 108,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "fort",
+   "file": "out\\x1\\import-fort.json",
+   "status": "ok",
+   "secs": 0.2,
+   "importId": "obj-20261022-001506-34",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001506-34",
+   "text": "objects 112: created 112, failed 0; netGuard removed 0; timing defineMs=1 matchMs=0 applyFrameMs=32 resolveMs=0 protectMs=1 netGuardMs=1 settleFrames=3 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 1,
+    "matchMs": 0,
+    "applyFrameMs": 32,
+    "resolveMs": 0,
+    "protectMs": 1,
+    "netGuardMs": 1,
+    "settleFrames": 3,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "trees",
+   "file": "out\\trees\\import-trees-01.json",
+   "status": "ok",
+   "secs": 12.4,
+   "importId": "obj-20261022-001507-35",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001507-35",
+   "text": "objects 50000: created 50000, failed 0; netGuard removed 0; timing defineMs=76 matchMs=50 applyFrameMs=2007 resolveMs=16 protectMs=30 netGuardMs=126 settleFrames=300 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 76,
+    "matchMs": 50,
+    "applyFrameMs": 2007,
+    "resolveMs": 16,
+    "protectMs": 30,
+    "netGuardMs": 126,
+    "settleFrames": 300,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "trees",
+   "file": "out\\trees\\import-trees-02.json",
+   "status": "ok",
+   "secs": 12.7,
+   "importId": "obj-20261022-001520-36",
+   "undo": "POST /import/objects/undo?id=obj-20261022-001520-36",
+   "text": "objects 50000: created 50000, failed 0; netGuard removed 0; timing defineMs=82 matchMs=56 applyFrameMs=2098 resolveMs=18 protectMs=31 netGuardMs=133 settleFrames=300 note=bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames",
+   "fails": [],
+   "timing": {
+    "defineMs": 82,
+    "matchMs": 56,
+    "applyFrameMs": 2098,
+    "resolveMs": 18,
+    "protectMs": 31,
+    "netGuardMs": 133,
+    "settleFrames": 300,
+    "note": "bridge milliseconds per stage, summed over batches; applyFrameMs = wall time from Apply to resolve (the game's generate/validate/apply work for the batch); the rest of 'seconds' is settle frames and other game frames"
+   }
+  },
+  {
+   "name": "trees",
+   "file": "out\\trees\\import-trees-03.json",
+   "status": "HTTP 400 rejected",
+   "secs": 0.356
+  },
+  {
+   "name": "net-count-end",
+   "file": "GET /net/count",
+   "status": "ok",
+   "secs": 0,
+   "text": "net count at the end: 3203 segments: Gravel Road 840, Highway Oneway - 2 lanes 769, Highway Oneway - 3 lanes 467, Highway Oneway - 1 lane 291, Double Train Track 260, Highway Twoway - 2 lanes 248, High-voltage Line 114, Medium Seaway 78, Highway Twoway - 4 lanes 30, BXP Truss Viaduct - Train 26, Highway Oneway - 4 lanes 26, Pavement Path 16, Wooden Covered Bridge - 2 lanes 9, BXP Truss Arch Bridge - Highway Oneway - 2 Lanes 8, Narrow Boatway 7, BXP SuspensionBridge03 - Six Lane Highway 4, Truss Arch Bridge - Small Road - 2 Lanes 4, TrussArchBridge01 4, Sound Barrier 2; vs after the network: no change"
+  }
+ ]
+}

@@ -41,14 +41,18 @@ public sealed class TargetMapping
     public static TargetMapping Parse(IEnumerable<string> lines)
     {
         var m = new TargetMapping();
+        var alias = new Dictionary<string, string>(StringComparer.Ordinal);   // round 48: "@NAME<TAB>prefab" defines a target used as @NAME (one place to correct a name)
         int n = 0;
         foreach (var raw in lines)
         {
             n++;
             if (string.IsNullOrWhiteSpace(raw) || raw.TrimStart().StartsWith('#')) continue;
             var c = raw.Split('\t');
+            if (c[0].StartsWith('@')) { if (c.Length < 2) throw new FormatException($"line {n}: alias needs @NAME<TAB>prefab"); alias[c[0].Trim()] = c[1].Trim(); continue; }
             if (c.Length < 3) throw new FormatException($"line {n}: need regex<TAB>target<TAB>weight");
-            var t = new WeightedTarget(c[1].Trim(), double.Parse(c[2], CultureInfo.InvariantCulture),
+            string target = c[1].Trim();
+            if (target.StartsWith('@') && !alias.TryGetValue(target, out target!)) throw new FormatException($"line {n}: unknown alias {c[1].Trim()} (define it above as {c[1].Trim()}<TAB>prefab)");
+            var t = new WeightedTarget(target, double.Parse(c[2], CultureInfo.InvariantCulture),
                 c.Length > 3 ? c[3].Trim() : "", c.Length > 4 ? c[4].Trim() : "");
             var g = m.Groups.FirstOrDefault(x => x.Key == c[0]);
             if (g.Key == null) m.Groups.Add((new Regex(c[0], RegexOptions.CultureInvariant), c[0], new List<WeightedTarget> { t }));
