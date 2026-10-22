@@ -1,5 +1,5 @@
 {
- "removed": 99,
+ "removed": 55,
  "left": 0,
  "buildings": [
   {
@@ -186,50 +186,22 @@
   },
   {
    "prefab": "RuinsStoneFormation01",
-   "x": 1399.79,
-   "z": 4666.86,
+   "x": 1339.87,
+   "z": 4651.6,
    "rotation": 261.2,
    "file": "import-fort-buildings.json"
   },
   {
    "prefab": "RuinsStoneFormation02",
-   "x": 1387.72,
-   "z": 4664.99,
+   "x": 1334.54,
+   "z": 4658.49,
    "rotation": 261.2,
    "file": "import-fort-buildings.json"
   },
   {
    "prefab": "RuinsStoneFormation01",
-   "x": 1375.65,
-   "z": 4663.12,
-   "rotation": 261.2,
-   "file": "import-fort-buildings.json"
-  },
-  {
-   "prefab": "RuinsStoneFormation02",
-   "x": 1363.58,
-   "z": 4661.25,
-   "rotation": 261.2,
-   "file": "import-fort-buildings.json"
-  },
-  {
-   "prefab": "RuinsStoneFormation01",
-   "x": 1351.51,
-   "z": 4659.38,
-   "rotation": 261.2,
-   "file": "import-fort-buildings.json"
-  },
-  {
-   "prefab": "RuinsStoneFormation02",
-   "x": 1339.44,
-   "z": 4657.51,
-   "rotation": 261.2,
-   "file": "import-fort-buildings.json"
-  },
-  {
-   "prefab": "RuinsStoneFormation01",
-   "x": 1327.36,
-   "z": 4655.64,
+   "x": 1327.17,
+   "z": 4656.1,
    "rotation": 261.2,
    "file": "import-fort-buildings.json"
   },
@@ -263,15 +235,15 @@
   },
   {
    "prefab": "RuinsStoneCairns01",
-   "x": 1394.31,
-   "z": 4660.45,
+   "x": 1393.48,
+   "z": 4651.99,
    "rotation": 37,
    "file": "import-fort-buildings.json"
   },
   {
    "prefab": "RuinsStoneCairns03",
-   "x": 1368.14,
-   "z": 4666.11,
+   "x": 1357.32,
+   "z": 4657.23,
    "rotation": 207.8,
    "file": "import-fort-buildings.json"
   },
@@ -647,10 +619,10 @@
    "file": "import-fort-buildings.json"
   },
   {
-   "prefab": "OldCastle01",
+   "prefab": "RuinsCastle01",
    "x": 4.65,
    "z": -2618.56,
-   "rotation": 0,
+   "rotation": 90,
    "file": "import-fort-buildings.json"
   },
   {
@@ -704,31 +676,6 @@
   }
  ],
  "report": {
-  "x1/import-rock-scatter.json | OldCastle01 (4.7, -2618.6)": {
-   "Boulder05": 1,
-   "Rock06": 2,
-   "Boulder03": 1,
-   "Rock05": 2,
-   "Rock01": 2,
-   "Rock04": 2,
-   "Rock11": 1,
-   "Rock03": 4,
-   "Rock10": 2,
-   "Rock07": 2,
-   "Rock12": 2,
-   "Rock02": 3,
-   "Rock09": 2,
-   "Rock30": 1,
-   "Rock16": 3,
-   "Rock23": 1,
-   "Rock25": 2,
-   "Boulder01": 1,
-   "Rock20": 2,
-   "Rock13": 1,
-   "Rock08": 1,
-   "Boulder04": 1,
-   "Rock22": 1
-  },
   "x1/import-rock-scatter.json | RuinsStoneFormation01 (2.8, -2697.6)": {
    "Rock05": 1,
    "Rock08": 1,
@@ -737,12 +684,23 @@
   "x1/import-rock-scatter.json | RuinsStoneFormation01 (49.0, -2680.1)": {
    "Boulder05": 1
   },
+  "x1/import-rock-scatter.json | RuinsCastle01 (-34.8, -2653.8)": {
+   "Rock03": 1,
+   "Rock12": 1,
+   "Rock30": 1,
+   "Rock23": 1
+  },
   "x1/import-rock-scatter.json | RuinsStoneFormation01 (-29.2, -2662.2)": {
    "Rock09": 1,
    "Boulder02": 1
   },
   "x1/import-rock-scatter.json | RuinsStoneFormation02 (50.4, -2647.8)": {
    "Rock14": 1
+  },
+  "x1/import-rock-scatter.json | RuinsCastle01 (4.7, -2618.6)": {
+   "Rock02": 2,
+   "Rock09": 1,
+   "Rock10": 1
   },
   "x1/import-rock-scatter.json | RuinsStoneFormation01 (48.6, -2614.7)": {
    "Rock07": 1
@@ -765,14 +723,6 @@
   "x1/import-rock-scatter.json | HydroelectricPowerPlant01 (1381.3, 4691.6)": {
    "Rock07": 1,
    "Rock12": 1
-  },
-  "x1/import-po-rocks.json | OldCastle01 (4.7, -2618.6)": {
-   "CliffRock5": 2,
-   "CliffStack": 6,
-   "CliffRock6": 1
-  },
-  "x1/import-objects.json | OldCastle01 (4.7, -2618.6)": {
-   "StreetlightSingle01": 3
   },
   "x1/import-objects.json | RuinsStoneFormation02 (39.7, -2599.7)": {
    "StreetlightSingle01": 1
@@ -831,14 +781,13 @@
   "x1/import-fort-props.json | RuinsStoneFormation01 (2.8, -2697.6)": {
    "StandingStone05": 1
   },
-  "x1/import-fort-props.json | RuinsStoneFormation01 (23.3, -2703.9)": {
-   "StandingStone08": 1,
-   "StandingStone01": 1
+  "x1/import-fort-props.json | RuinsStoneFormation02 (13.1, -2700.7)": {
+   "StandingStone08": 1
   },
   "x1/import-fort-props.json | RuinsStoneFormation01 (51.0, -2658.8)": {
    "StandingStone06": 1
   },
-  "x1/import-fort-props.json | RuinsStoneFormation01 (1399.8, 4666.9)": {
+  "x1/import-fort-props.json | HydroelectricPowerPlant01 (1381.3, 4691.6)": {
    "StandingStone06": 1
   },
   "x1/import-fort-props.json | RuinsStoneFormation01 (1279.1, 4648.2)": {
@@ -851,6 +800,9 @@
    "StandingStone08": 1
   },
   "x1/import-fort-props.json | RuinsStoneFormation02 (-35.2, -2642.9)": {
+   "StandingStone01": 1
+  },
+  "x1/import-fort-props.json | RuinsStoneFormation01 (23.3, -2703.9)": {
    "StandingStone01": 1
   }
  }

@@ -24906,6 +24906,15 @@
    "cs1": "Landscape Grass 03_Data"
   },
   {
+   "id": "p2174",
+   "prefab": "StreetlightSingle01",
+   "x": 42.81,
+   "z": -2530.17,
+   "rotation": 333,
+   "kind": "prop",
+   "cs1": "Park Streetlight 01"
+  },
+  {
    "id": "p2182",
    "prefab": "Grass03 (Styx's)",
    "x": -1636.48,
@@ -48166,6 +48175,15 @@
    "cs1": "Landscape Grass 01_Data"
   },
   {
+   "id": "p44580",
+   "prefab": "StreetlightSingle01",
+   "x": 24.81,
+   "z": -2557.88,
+   "rotation": 333,
+   "kind": "prop",
+   "cs1": "Park Streetlight 01"
+  },
+  {
    "id": "p44582",
    "prefab": "Grass04 (Styx's)",
    "x": -1221.62,
@@ -51290,6 +51308,15 @@
    "kind": "plant",
    "age": "adult",
    "cs1": "Landscape Grass 02_Data"
+  },
+  {
+   "id": "p50424",
+   "prefab": "StreetlightSingle01",
+   "x": 33.76,
+   "z": -2545.06,
+   "rotation": 333,
+   "kind": "prop",
+   "cs1": "Park Streetlight 01"
   },
   {
    "id": "p50427",

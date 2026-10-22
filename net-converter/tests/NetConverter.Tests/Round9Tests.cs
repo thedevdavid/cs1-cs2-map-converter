@@ -22,7 +22,7 @@ public class Round9Tests
         var cairns = objs.Where(o => o.Prefab.StartsWith("RuinsStoneCairns")).ToList();
         Assert.Equal(2 + 1, cairns.Count);                                         // every 25 m
         Assert.All(cairns.Take(2), o => Assert.InRange(o.X, 3, 6));                // inside: towards the centroid (+x of the first wall)
-        Assert.Equal("OldCastle01", objs[^1].Prefab);
+        Assert.Equal("RuinsCastle01", objs[^1].Prefab);   // round 51: the keep (was OldCastle01)
         Assert.NotNull(keep);
         Assert.All(objs, o => Assert.Null(o.Y));
     }
