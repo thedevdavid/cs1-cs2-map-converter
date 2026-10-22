@@ -527,14 +527,15 @@ if (!stopped && wanted("textures")) {
   // --skip textures leaves the map's textures alone; --textures-dir <folder> picks another set (default look/textures/current: gain16 with the dirt one step lighter, owner after A-v8;
   // fallbacks look/textures/gain16, look/textures/raw).
   const t0 = Date.now();
+  const ttag = opt("--textures-tag", ""); // 0.9.62 bridge reuses an asset by name+hash that ignores pixel content: tag re-exports, e.g. --textures-tag .a60
   const tdir = opt("--textures-dir", ["current", "gain16", "raw"].map(x => join(toolDir, "..", "..", "look", "textures", x)).find(existsSync) ?? "");
   const slots = [["Rock", "Cliff"], ["Dirt", "Dirt"], ["Grass", "Grass"], ["Extra1", "Extra1"], ["Extra2", "Extra2"], ["Extra3", "Extra3"], ["Extra4", "Extra4"]];
   const textures = [], missing = [];
   for (const [slot, base] of slots) {
     const t = { slot };
     for (const [key, suffix] of [["diffuse", "BaseColor"], ["normal", "Normal"]]) {
-      const file = join(tdir, `${base}_${suffix}.png`);
-      if (existsSync(file)) t[key] = file.replace(/\\/g, "/"); else missing.push(`${base}_${suffix}.png`);
+      const file = join(tdir, `${base}_${suffix}${ttag}.png`);
+      if (existsSync(file)) t[key] = file.replace(/\\/g, "/"); else missing.push(`${base}_${suffix}${ttag}.png`);
     }
     if (t.diffuse || t.normal) textures.push(t);
   }
