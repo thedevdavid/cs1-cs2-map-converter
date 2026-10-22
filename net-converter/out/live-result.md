@@ -1119,3 +1119,15 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
   - trees 6 conifers on the RuinsCastle01 footprints.
   - The ~340 castle-lot trees (round 48b/c) are masked in the converter before this pass and are not part of the 105.
 - **out.next/** is regenerated with this tool and is identical in effect to round 49 (no stone moved).
+
+## Round 50b (staged in out.next/): no other building of ours inside the OldCastle01 footprint
+
+- **Cause** (bridge 0.9.58, A23c): OldCastle01 owns 914 sub-objects. Ours overlapping them make the OverrideSystem / Anarchy loop: 621 owned objects in loop, 132 of them trees (the checker ring, now stripped on the bridge side), 489 the castle's own props.
+- **building-footprints.mjs, castle-lot step** (before the footprint pass): every BuildingPrefab in import-fort-buildings.json and import-objects.json whose rotated footprint intersects the castle's (208 × 192 m around (4.65, −2618.56), SAT test) is moved to the nearest position up to 15 m where it is clear (yaw kept), else dropped. **On by default; `--keep-castle-lot-ruins`** (run-all passes it through) keeps them. Report: castle-lot-check.md.
+- **Default (on):**
+  - 63 buildings intersect the castle footprint; **0 can be moved within 15 m** (they lie well inside the lot), so **63 dropped**: RuinsStoneFormation01 22, RuinsStoneFormation02 19, RuinsStoneCairns01 7 / 02 4 / 03 8, RuinsCastle01 3.
+  - Kept: the fort's other 32 ruin pieces (outside the lot, mostly the wall line near the dam at x 1140–1400), RuinsOldMill01 and OldCastle01.
+  - The footprint pass then removes 99 objects (rock-scatter 55, po-rocks 9, objects 16 street lamps, fort-props 19 stones), still mostly inside the castle footprint itself. No trees: the RuinsCastle01 conifers go with the RuinsCastle01.
+- **Off (`--keep-castle-lot-ruins`):** exactly round 49 (63 ruins kept inside the castle footprint, 105 / 99 objects removed); their overlap with the castle's sub-objects keeps the prop loop (no visual effect after the plant strip).
+- **Surfaces:** no surface polygon intersects the castle lot. The polygons that do are terrain paint (dry-grass 2, n11 ore-dirt 4, n5 scree-dirt 2), which paints the terrain texture and creates no entity, so it cannot take part in the loop; left as they are.
+- **Files to swap in from out.next/** (out/ and out/x1/): import-fort-buildings.json, import-objects.json, plus the round-49 set (import-fort-props.json, import-po-rocks.json, import-rock-scatter.json, the two terrain-paint files, trees 02/03/04/07/10), castle-lot-check.md, footprints-check.md / .json.

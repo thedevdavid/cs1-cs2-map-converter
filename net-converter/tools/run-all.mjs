@@ -12,6 +12,8 @@ const heightmap = opt("--heightmap", "../hm-rebuild/out/DakotaFalls-1to1-4096.pn
 const out = opt("--out", "out");
 const waterVariant = opt("--water-variant", "93.0"); // second sea level (CS1 m) next to 97.5
 // Round 48b/c: flags passed to both conversions (--no-mask-building-lots keeps trees on imported building lots; the mask is the default since 48c).
+// Round 50b: flags for tools/building-footprints.mjs (--keep-castle-lot-ruins keeps our buildings inside the OldCastle01 footprint).
+const footprintFlags = ["--keep-castle-lot-ruins"].filter(fl => { const i = args.indexOf(fl); if (i < 0) return false; args.splice(i, 1); return true; });
 const passFlags = ["--mask-building-lots", "--no-mask-building-lots"].filter(fl => { const i = args.indexOf(fl); if (i < 0) return false; args.splice(i, 1); return true; });
 let dump = args[0];
 if (!dump) {
@@ -29,7 +31,7 @@ const live = join(out, "live-graph.json");
 run(["--out", out, ...(existsSync(live) ? ["--live", live, "--baseline", join(out, "none")] : [])]);
 run(["--out", join(out, "x1"), "--height-factor", "1.0", "--sea-level", "97.5", "--trees-dir", join(out, "trees")]);
 // Round 49: no object of a masked layer inside a building footprint (override loop); rewrites those files and writes footprints-check.md.
-execFileSync("node", ["tools/building-footprints.mjs", "--out", out], { stdio: ["ignore", "inherit", "inherit"] });
+execFileSync("node", ["tools/building-footprints.mjs", "--out", out, ...footprintFlags], { stdio: ["ignore", "inherit", "inherit"] });
 
 // Summary.
 const J = f => JSON.parse(readFileSync(f, "utf8"));
