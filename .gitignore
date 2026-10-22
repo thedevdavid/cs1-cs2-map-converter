@@ -54,3 +54,6 @@ next-run/shots-a24/
 next-run/shots-seasons/a24/*.png
 next-run/shots-seasons/a24/small/
 next-run/publish/
+
+# local third-party binaries (Real-ESRGAN etc.)
+tools-bin/
