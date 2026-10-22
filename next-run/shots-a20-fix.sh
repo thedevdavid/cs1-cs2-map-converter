@@ -1,7 +1,8 @@
 #!/bin/bash
 # A-v20 gallery shots: the 7 A-v11/A-v12 cameras plus reference-style views (inside along the road, from the road at each portal). Output next-run/shots-a20/fix.
 B=http://127.0.0.1:8642; O=next-run/shots-a20/fix; mkdir -p "$O"
-shot(){ curl -s -m 20 "$B/camera/set?x=$1&z=$2&angleX=$3&angleY=$4&zoom=$5" >/dev/null; sleep 2.5; curl -s -m 90 "$B/screenshot" -o "$O/$6.png"; echo "$6 $(stat -c %s "$O/$6.png")"; }
+echo "settle pause 25 s before the first camera jump (crash #4/#5 pattern)"; sleep 25
+shot(){ curl -s -m 20 "$B/camera/set?x=$1&z=$2&angleX=$3&angleY=$4&zoom=$5" >/dev/null; sleep 4; curl -s -m 90 "$B/screenshot" -o "$O/$6.png"; echo "$6 $(stat -c %s "$O/$6.png")"; }
 shot -6348 873 0 60 500 24-01-gallery-top
 shot -6348 873 90 15 400 24-02-gallery-low-e
 shot -6348 873 270 15 400 24-03-gallery-low-w
