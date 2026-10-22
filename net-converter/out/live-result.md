@@ -1062,3 +1062,10 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
   - Filler Bush small 77, pd Aussie Bushes 75, PD Large EverGreen 51 / 34 / 11, Filler Bush Medium 43, mp9-LiveOaknvl 14, PD Pine short 11 / regular 9, Filler Bush Large 10;
   - Bare Tree E 11, Bare Tree D 8.
   - With the mask the fort loses its planted interior (bushes and conifers); the deciduous share is small (33).
+
+### Round 48c: the building-lot tree mask is the default
+
+- **Why:** the bridge's verdict is that the game never renders a tree inside a building lot. Placing a building clears the plants on its lot; ours survived only through Anarchy's PreventOverride and rendered as the texture placeholder (the A-v20 checkerboard at the fort).
+- **Change:** the converter masks trees on the lots of imported buildings by default (today the OldCastle01 keep, ±104 × ±96 m around (4.65, −2618.56)); `--no-mask-building-lots` keeps them.
+- **Fidelity cost:** **CS1 had 354 trees on that lot; we drop 340** (the other 14 were already masked by the net corridor and other rules). 33 deciduous, 116 conifers, 205 bushes.
+- A-v22 builds from the staged round-48b trees (same set). out/ is regenerated in place once that build is done.

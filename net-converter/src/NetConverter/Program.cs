@@ -23,7 +23,7 @@ const string NetCorridorRule = "on a ground-level net corridor (half width + 2 m
 ulong treeSeed = 20261019;
 double rampDelta = 6, rampLength = 60, minBridge = 8, seaLevel = 97.5, waterVariant = double.NaN, heightFactor = 2.0, topologyFactor = 2.0;
 bool absolute = true;
-bool maskBuildingLots = false;   // round 48b: optional tree mask over the lots of imported buildings (today OldCastle01 in import-fort.json)
+bool maskBuildingLots = true;   // round 48b/48c: tree mask over the lots of imported buildings (today OldCastle01 in import-fort.json); default since 48c: the game never renders a tree on a building lot
 for (int i = 0; i < args.Length; i++)
 {
     switch (args[i])
@@ -38,6 +38,7 @@ for (int i = 0; i < args.Length; i++)
         case "--rock-heightmap": rockHeightmapPath = args[++i]; break;
         case "--cs2-heightmap": cs2HeightmapPath = args[++i]; break;
         case "--mask-building-lots": maskBuildingLots = true; break;
+        case "--no-mask-building-lots": maskBuildingLots = false; break;
         case "--run-reports": runReportsDir = args[++i]; break;
         case "--keep-highway-stubs": keepHighwayStubs = true; break;
         // Round 26 (owner, A-v7 shot 12: "completely missing interchange"): the CS1 stubs and the unfinished branch behind them are kept by default.
@@ -837,7 +838,8 @@ void WriteLayers()
         var shedPo = Find(Path.Combine("..", "bridges", "data", "po-structures-proposal.json"));
         var shedStrip = File.Exists(shedPo) ? RockShed.ValleyStrip(PoStructures.Load(shedPo), result.Edges, cs2Terrain == null ? null : cs2Terrain.Sample) : null;
         // Round 48b (A-v20: deciduous trees inside the OldCastle01 lot render as a checkerboard): the lots of the buildings we import, from the prefab's
-        // lot (cells × 8 m) and the object's rotation. Counted always; masked only with --mask-building-lots (a fallback until the bridge explains it).
+        // lot (cells × 8 m) and the object's rotation. Round 48c: masked by default (bridge: placing a building clears the plants on its lot; ours survived only
+        // through Anarchy and rendered as the texture placeholder); --no-mask-building-lots keeps them.
         var lots = new List<(string Name, double X, double Z, double Rot, double HalfW, double HalfD)>();
         {
             var (fortObjs, _) = Round9.Fort(dump, new System.Text.RegularExpressions.Regex("(?i)Castle Wall"), 7168, treeSeed + 11);
@@ -852,14 +854,14 @@ void WriteLayers()
         string lotText = $"{inLots.Count} trees in the lots of {string.Join(", ", lots.Select(b => FormattableString.Invariant($"{b.Name} at ({b.X:F1}, {b.Z:F1}) ±{b.HalfW:F0} × ±{b.HalfD:F0} m")))}: " +
             string.Join(", ", inLots.GroupBy(t => t.Prefab).OrderByDescending(g => g.Count()).Select(g => $"{g.Key} {g.Count()}")) +
             "; CS1 species there: " + string.Join(", ", inLots.GroupBy(t => t.Cs1).OrderByDescending(g => g.Count()).Select(g => $"{g.Key} {g.Count()}"));
-        Console.WriteLine((maskBuildingLots ? "building lot tree mask ON: " : "building lot tree mask off (--mask-building-lots): ") + lotText);
-        auditLog.AppendLine($"- Building lots (round 48b): {lotText}; masked: {(maskBuildingLots ? "yes" : "no (--mask-building-lots)")}.");
+        Console.WriteLine((maskBuildingLots ? "building lot tree mask ON: " : "building lot tree mask OFF (--no-mask-building-lots): ") + lotText);
+        auditLog.AppendLine($"- Building lots (round 48b): {lotText}; masked: {(maskBuildingLots ? "yes" : "no (--no-mask-building-lots)")}.");
         var masked = Trees.Mask(trees,
             ("CS2 terrain below sea level 93 m + 0.5", (x, z) => treeTerr(x, z) < treeSea),
             ("inside the CS1 water surface and below 93.5 m", (x, z) => surfaceEarly != null && surfaceEarly.Cells.TryGetValue(surfaceEarly.Grid.Index(x, z), out var c) && c.Depth > 0.05 && treeTerr(x, z) < treeSea),
             (NetCorridorRule, OnNet),
             ("the rock shed's open valley side (20 m strip, 10 m past each end)", (x, z) => shedStrip != null && RockShed.Inside(shedStrip, x, z)),
-            ("inside the lot of an imported building (--mask-building-lots)", (x, z) => maskBuildingLots && InLot(x, z)));
+            ("inside the lot of an imported building", (x, z) => maskBuildingLots && InLot(x, z)));
         // EXPERIMENT: the net-corridor trees in their own file, so the game's behaviour (hidden under nets, or fine at the
         // verge) can be tried and undone alone.
         var expFiles = Trees.WriteChunks(tdir, trees.Removed[NetCorridorRule], 50000, "experiment-trees-net-corridor", "trees-net-corridor-experiment");
