@@ -9,11 +9,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import zlib from 'node:zlib';
 import { fileURLToPath } from 'node:url';
-import { readCrpTexture, decode, writePng } from '../tools/crp-tex.mjs';
+import { readCrpTexture, decode, writePng } from './crp-tex.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const W = process.argv[2] || 'D:/SteamLibrary/steamapps/workshop/content/255710';
-const src = path.join(here, 'current'), out = path.join(here, 'v3');
+const tex = path.join(here, '..', 'textures');
+const src = path.join(tex, 'current'), out = path.join(tex, 'v3');
 const crp = {
   seychelles: `${W}/1230768185/Seychelles.crp`, springwood: `${W}/921636136/Springwood.crp`,
   owl: `${W}/1367973971/Owl's Albedo.crp`, coastal: `${W}/1594406264/r69-coastal.crp`,
@@ -22,12 +23,12 @@ const crp = {
 // grass slot whose source alpha is flat 255, so it takes the Grass value)
 const slots = {
   Grass: { src: [crp.seychelles, 'GrassDiffuseTexture'], uniform: 60 },
-  Cliff: { src: [crp.springwood, 'CliffDiffuseTexture'], uniform: 90 },
+  Cliff: { src: [crp.springwood, 'CliffDiffuseTexture'], uniform: 90, cap: 110 },
   Dirt: { src: [crp.springwood, 'RuinedDiffuseTexture'], uniform: 50 },
   Extra1: { src: [crp.coastal, 'GrassDiffuseTexture'], uniform: 98 },
   Extra2: { src: [crp.springwood, 'GrassDiffuseTexture'], uniform: 60 },
-  Extra3: { src: [crp.seychelles, 'GravelDiffuseTexture'], uniform: 110 },
-  Extra4: { src: [crp.owl, 'SandDiffuseTexture'], uniform: 110 },
+  Extra3: { src: [crp.seychelles, 'GravelDiffuseTexture'], uniform: 110, cap: 110 },
+  Extra4: { src: [crp.owl, 'SandDiffuseTexture'], uniform: 110, cap: 110 },
 };
 
 // minimal PNG reader: 8-bit RGB/RGBA, non-interlaced (what crp-tex writePng produces)
@@ -67,7 +68,8 @@ for (const [slot, s] of Object.entries(slots)) {
     else if (mn === 255) mode += ' (CS1 alpha flat 255)';
     else { alpha = cs1.rgba; mode = 'CS1 alpha per pixel'; }
   } catch (e) { mode += ` (CS1 source unreadable: ${e.message})`; }
-  for (let i = 3; i < img.rgba.length; i += 4) img.rgba[i] = alpha ? alpha[i] : s.uniform;
+  for (let i = 3; i < img.rgba.length; i += 4) { const a = alpha ? alpha[i] : s.uniform; img.rgba[i] = s.cap ? Math.min(a, s.cap) : a; }
+  if (s.cap) mode += ` capped at ${s.cap}`;
   writePng(path.join(out, `${slot}_BaseColor.png`), img, 4);
   fs.copyFileSync(path.join(src, `${slot}_Normal.png`), path.join(out, `${slot}_Normal.png`));
   rows.push({ slot, mode });
