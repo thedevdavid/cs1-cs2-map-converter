@@ -105,8 +105,63 @@ function clearCastleLot(dir) {
   }
   return rep;
 }
+// Round 50c (bridge 0.9.58: HydroelectricPowerPlant01's own sub-objects loop too, ~31 props): nothing of ours inside the plant's footprint except the
+// power line that ends on its marker. The plant is spawned by the dam course: centre as measured live, rotation unknown, so both orientations along and
+// across the dam course's bearing count. Our buildings there are moved up to CASTLE_MOVE m out, else dropped; waterway courses (canals, ship paths)
+// through it are dropped with their orphaned nodes (boats do not pass a dam); the power-end course stays (it must stay connected to the marker).
+const WATERWAY_FILES = ["import-canals.json", "import-shippaths.json"], WATERWAY_HALF = 4;
+function clearPlant(dir) {
+  const damPath = join(dir, "import-dam.json"); if (!existsSync(damPath)) return null;
+  const dam = J(damPath), DN = new Map(dam.nodes.map(n => [n.id, n])), e = dam.edges[0], a = DN.get(e.a), b = DN.get(e.b);
+  const bearing = Math.atan2(b.x - a.x, b.z - a.z) * 180 / Math.PI;
+  const quads = [bearing, bearing + 90].map(r => corners({ ...DAM_PLANT, rotation: r }));
+  const hit = q => quads.some(p => overlap(p, q));
+  const rep = { bearing, moved: [], dropped: [], waterways: [], power: [] };
+  for (const f of ["import-fort-buildings.json", "import-objects.json"]) {
+    const p = join(dir, f); if (!existsSync(p)) continue;
+    const j = J(p), keep = []; let changed = false;
+    for (const o of j.objects) {
+      if (o.prefab === DAM_PLANT.prefab || bounds[o.prefab]?.type !== "BuildingPrefab" || !hit(corners(o))) { keep.push(o); continue; }
+      changed = true; let to = null;
+      for (let rad = 0.5; rad <= CASTLE_MOVE + 1e-9 && !to; rad += 0.5)
+        for (let k = 0; k < 64; k++) { const an = 2 * Math.PI * k / 64, x = o.x + rad * Math.cos(an), z = o.z + rad * Math.sin(an); if (!hit(corners(o, x, z))) { to = { x: Math.round(x * 100) / 100, z: Math.round(z * 100) / 100, d: rad }; break; } }
+      if (to) { rep.moved.push({ file: f, id: o.id, prefab: o.prefab, from: [o.x, o.z], to: [to.x, to.z], d: to.d }); keep.push({ ...o, x: to.x, z: to.z }); }
+      else rep.dropped.push({ file: f, id: o.id, prefab: o.prefab, at: [o.x, o.z] });
+    }
+    if (changed) { j.objects = keep; writeFileSync(p, JSON.stringify(j, null, 1)); }
+  }
+  // A course "touches" the footprint when a point along it, widened by its half width, lies inside either orientation.
+  const near = (x, z, m) => [bearing, bearing + 90].some(r => inside({ ...DAM_PLANT, rotation: r }, x, z, m));
+  const touches = (j, ed, m) => { const N = new Map(j.nodes.map(n => [n.id, n])), p = N.get(ed.a), q = N.get(ed.b); if (!p || !q) return false;
+    for (let k = 0; k <= 40; k++) { const t = k / 40; if (near(p.x + (q.x - p.x) * t, p.z + (q.z - p.z) * t, m)) return true; } return false; };
+  for (const f of WATERWAY_FILES) {
+    const p = join(dir, f); if (!existsSync(p)) continue;
+    const j = J(p), drop = j.edges.filter(ed => touches(j, ed, WATERWAY_HALF));
+    if (!drop.length) continue;
+    j.edges = j.edges.filter(ed => !drop.includes(ed));
+    const used = new Set(j.edges.flatMap(ed => [ed.a, ed.b])); j.nodes = j.nodes.filter(n => used.has(n.id));
+    writeFileSync(p, JSON.stringify(j, null, 1));
+    for (const ed of drop) rep.waterways.push({ file: f, id: ed.id, prefab: ed.prefab });
+  }
+  const pe = join(dir, "import-power-ends.json");
+  if (existsSync(pe)) { const j = J(pe); for (const ed of j.edges) if (touches(j, ed, 0)) rep.power.push({ id: ed.id, prefab: ed.prefab }); }
+  return rep;
+}
 for (const [dir, treeDir] of [[out, join(out, "trees")], [join(out, "x1"), null]]) {
   if (!existsSync(dir)) continue;
+  const plant = clearPlant(dir);
+  if (plant) {
+    const lines = [`# Our layers inside the HydroelectricPowerPlant01 footprint (round 50c)`, ``,
+      `Plant (spawned by the dam course) at its live centre (${DAM_PLANT.x}, ${DAM_PLANT.z}); rotation not known, so the footprint counts in both orientations, along (${plant.bearing.toFixed(1)}°) and across the dam course.`, ``,
+      `Buildings moved out (≤ ${CASTLE_MOVE} m): **${plant.moved.length}**; dropped: **${plant.dropped.length}**. Waterway courses dropped: **${plant.waterways.length}**. Power-end courses touching it (kept, they end on the plant's marker): **${plant.power.length}**.`, ``,
+      `| file | id | prefab | action | from | to | m |`, `|---|---|---|---|---|---|---:|`,
+      ...plant.moved.map(m => `| ${m.file} | ${m.id} | ${m.prefab} | moved | (${m.from[0]}, ${m.from[1]}) | (${m.to[0]}, ${m.to[1]}) | ${m.d.toFixed(1)} |`),
+      ...plant.dropped.map(m => `| ${m.file} | ${m.id} | ${m.prefab} | dropped | (${m.at[0]}, ${m.at[1]}) | – | – |`),
+      ...plant.waterways.map(m => `| ${m.file} | ${m.id} | ${m.prefab} | dropped (waterway course) | | | |`),
+      ...plant.power.map(m => `| import-power-ends.json | ${m.id} | ${m.prefab} | kept (ends on the marker) | | | |`)];
+    writeFileSync(join(dir, "plant-lot-check.md"), lines.join("\n") + "\n");
+    console.log(`plant lot ${dir}: buildings moved ${plant.moved.length}, dropped ${plant.dropped.length}; waterway courses dropped ${plant.waterways.length}; power-end courses kept ${plant.power.length} -> plant-lot-check.md`);
+  }
   const castle = clearCastleLot(dir);
   if (castle) {
     const cnt = a => Object.entries(a.reduce((m, q) => (m[q.prefab] = (m[q.prefab] ?? 0) + 1, m), {})).map(([k, v]) => `${k} ${v}`).join(", ") || "none";

@@ -1131,3 +1131,15 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
 - **Off (`--keep-castle-lot-ruins`):** exactly round 49 (63 ruins kept inside the castle footprint, 105 / 99 objects removed); their overlap with the castle's sub-objects keeps the prop loop (no visual effect after the plant strip).
 - **Surfaces:** no surface polygon intersects the castle lot. The polygons that do are terrain paint (dry-grass 2, n11 ore-dirt 4, n5 scree-dirt 2), which paints the terrain texture and creates no entity, so it cannot take part in the loop; left as they are.
 - **Files to swap in from out.next/** (out/ and out/x1/): import-fort-buildings.json, import-objects.json, plus the round-49 set (import-fort-props.json, import-po-rocks.json, import-rock-scatter.json, the two terrain-paint files, trees 02/03/04/07/10), castle-lot-check.md, footprints-check.md / .json.
+
+## Round 50c (staged in out.next/): nothing of ours in the HydroelectricPowerPlant01 footprint except the power end
+
+- **Cause** (bridge 0.9.58): the plant's own sub-objects loop too (about 31 props: electrical boxes, hydrants, fences, street lights, a container).
+- **building-footprints.mjs, plant step.** The plant is spawned by the dam course: live centre (1381.35, 4691.62), rotation unknown. Its 47.6 × 71.6 m footprint (GET /prefabs/info) counts in both orientations, along the dam course's bearing (79.2°) and across it.
+- **Result** (both scales):
+  - **Fort ruin pieces on the dam wall line overlapping it:** 9. **5 moved** out (0.5–14 m: fort39, 40, 41, 46, 47); **4 dropped** (fort35–38, RuinsStoneFormation01/02, no clear spot within 15 m).
+  - **Narrow Boatway courses through the plant: 2 dropped** (e28383_0 passes 0.9 m from its centre, e1253_0 ends inside), with their orphaned nodes. Boats do not pass the dam anyway.
+  - **Power:** the high-voltage course e32855_0_to_dam_c ends on the plant's marker and stays (connectTo high, radius 60), so the plant stays connected.
+  - **Objects:** no other object or road of ours is within the footprint. The 2 rock-scatter rocks were removed in round 49; the access road does not reach it.
+- **Report:** plant-lot-check.md (both folders).
+- **Files to swap in from out.next/** (out/ and out/x1/), with round 50b: import-fort-buildings.json, import-canals.json, plant-lot-check.md. import-power-ends.json is unchanged.
