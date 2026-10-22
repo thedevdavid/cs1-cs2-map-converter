@@ -1050,3 +1050,15 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
 - Age profiles, masks and fixed-height files unchanged.
 - **Tests:** the Bare Tree E expectation is updated, and a new test covers the alias lines; 143 tests pass.
 - pd Leafy Tree is written like every tree (kind tree, an age). If the asset turns out to be an object rather than a tree prefab, the bridge's tree/kind check will say so in the import report.
+
+## Round 48b (staged, not the default): tree mask over imported building lots
+
+- **What it is:** an optional tree mask for A-v20's checkerboard trees in the OldCastle01 lot (cause under investigation on the bridge side). `--mask-building-lots` on the converter, passed through by `node tools/run-all.mjs --mask-building-lots`. The lots come from the imported buildings: today OldCastle01 from the fort (Round9.Fort), lot 26 × 24 cells × 8 m around (4.65, −2618.56), rotation 0, i.e. ±104 × ±96 m, turned with the object's rotation. Off by default; every run counts the trees in the lots and logs them in stats.md.
+- **Staged variant:** `out.next/` (`node tools/run-all.mjs --out out.next --mask-building-lots`; out.next/ is git-ignored). **Swap in out.next/trees/import-trees-01…10.json (+ README.md)**. All 10 chunks change, because the 50,000-tree chunks shift. Fixed-height tree files, network and shed files are identical to out/.
+- **Removed:** 340 trees. 354 lie in the lot; 14 of them were already masked by the net corridor or the other masks.
+  - In the lot, by CS2 prefab: GreenBushWild01 105, GreenBushWild02 60, EuropeanSpruce01 55, SpruceTree01 41, FlowerBushWild01 21, PineTree01 20, FlowerBushWild02 19, OakTree01 14, pd Leafy Tree 12, EU_ChestnutTree01 3, NA_LindenTree01 2, EU_AlderTree01 1, NA_LondonPlaneTree01 1. That is 33 deciduous, 116 conifers, 205 bushes.
+  - The orchestrator's count from the game (118 in the box, 72 deciduous) differs. Ours is the converter's point set before import.
+- **CS1 had trees inside the castle walls: yes, 354 points in the lot**, mostly undergrowth and evergreens:
+  - Filler Bush small 77, pd Aussie Bushes 75, PD Large EverGreen 51 / 34 / 11, Filler Bush Medium 43, mp9-LiveOaknvl 14, PD Pine short 11 / regular 9, Filler Bush Large 10;
+  - Bare Tree E 11, Bare Tree D 8.
+  - With the mask the fort loses its planted interior (bushes and conifers); the deciduous share is small (33).

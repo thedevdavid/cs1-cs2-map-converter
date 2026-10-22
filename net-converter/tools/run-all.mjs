@@ -1,5 +1,6 @@
 // One command for a full conversion: both scales, then out/ROUND.md (file list, counts, import order).
-// node tools/run-all.mjs [dump.json] [--heightmap ../hm-rebuild/out/DakotaFalls-1to1-4096.png] [--out out] [--water-variant 93.0]
+// node tools/run-all.mjs [dump.json] [--heightmap ../hm-rebuild/out/DakotaFalls-1to1-4096.png] [--out out] [--water-variant 93.0] [--mask-building-lots]
+// While an import build runs, write to a staging folder (--out out.next) and swap it in between builds.
 // Default dump: the newest <id>_Dakota_Falls-<stamp>.json in %LOCALAPPDATA%\DakotaExport.
 import { execFileSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
@@ -10,6 +11,8 @@ const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args.
 const heightmap = opt("--heightmap", "../hm-rebuild/out/DakotaFalls-1to1-4096.png");
 const out = opt("--out", "out");
 const waterVariant = opt("--water-variant", "93.0"); // second sea level (CS1 m) next to 97.5
+// Round 48b: optional flags passed to both conversions (e.g. --mask-building-lots, the fallback tree mask over imported building lots).
+const passFlags = ["--mask-building-lots"].filter(fl => { const i = args.indexOf(fl); if (i < 0) return false; args.splice(i, 1); return true; });
 let dump = args[0];
 if (!dump) {
   const dir = join(process.env.LOCALAPPDATA ?? "", "DakotaExport");
@@ -21,7 +24,7 @@ if (!dump) {
 console.log(`dump ${dump}`);
 
 const run = extra => execFileSync("dotnet", ["run", "-c", "Release", "--project", "src/NetConverter", "--", dump, "--mapping", "mapping.tsv", "--water-variant", waterVariant,
-  "--heightmap", heightmap, ...extra], { stdio: ["ignore", "inherit", "inherit"] });
+  "--heightmap", heightmap, ...passFlags, ...extra], { stdio: ["ignore", "inherit", "inherit"] });
 const live = join(out, "live-graph.json");
 run(["--out", out, ...(existsSync(live) ? ["--live", live, "--baseline", join(out, "none")] : [])]);
 run(["--out", join(out, "x1"), "--height-factor", "1.0", "--sea-level", "97.5", "--trees-dir", join(out, "trees")]);
