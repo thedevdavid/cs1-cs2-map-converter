@@ -27,12 +27,20 @@ public class LayersTests
     [InlineData("mp9-BorealPine", "SpruceTree01|EuropeanSpruce01")]
     [InlineData("1230960704.PD - Pine Tall_Data", "PineTree01")]
     [InlineData("mp9-LiveOaknvl", "OakTree01")]
-    [InlineData("1238991822.Bare Tree E_Data", "EU_ChestnutTree01|NA_LindenTree01")]
+    [InlineData("1238991822.Bare Tree E_Data", "pd Leafy Tree|EU_ChestnutTree01|NA_LindenTree01")]
     [InlineData("2346312805.Filler Bush small 1_Data", "GreenBushWild01|GreenBushWild02")]
     [InlineData("1953870276.Corn Stalk _Data", "CROP")]
     [InlineData("883313481.RiverReeds Detail Edition cluste_Data", "SKIP")]
     public void TreeMapping_CoversTheDumpSpecies(string cs1, string expected) =>
         Assert.Equal(expected, string.Join("|", TreeMap.Resolve(cs1)!.Select(t => t.Prefab)));
+
+    [Fact]
+    public void TargetMapping_AliasLines_NameATargetOnce()
+    {
+        var m = TargetMapping.Parse(new[] { "@LEAFY\tpd Leafy Tree", "(?i)Bare Tree D\t@LEAFY\t0.6\told", "(?i)Bare Tree D\tEU_AlderTree01\t0.4\told" });
+        Assert.Equal("pd Leafy Tree|EU_AlderTree01", string.Join("|", m.Resolve("Bare Tree D_Data")!.Select(t => t.Prefab)));
+        Assert.Throws<FormatException>(() => TargetMapping.Parse(new[] { "(?i)x\t@MISSING\t1" }));
+    }
 
     static JsonElement Raster(string json) => JsonDocument.Parse(json).RootElement;
 

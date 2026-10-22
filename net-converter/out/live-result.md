@@ -1037,3 +1037,16 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
 - **TM:PE:** only 2 of the 27 TM:PE nodes sit on the remapped CS1 roads: n9988 and n11611, the shed road's junctions on the 4-Lane National Road. That road went to the 4-lane highway in round 43, and Medium Road and the highway both have 2 + 2 car lanes. No TM:PE node is on a 2- or 3-lane National Road, so round 47 changes no lane mapping. The live lane mapping (cs2mcp/scripts/import-tmpe.mjs, even --dry-run, calls the bridge) can only be re-checked after the A-v20 build.
 - **File fidelity check** (file-graph.mjs + fidelity.mjs on the import files): unchanged. 19 OK, and the same CHECK boxes with the same counts as before: interchange 8 (6/8, the spread offsets), 9, 11, 12, 14, 15, 16.
 - 142 tests pass.
+
+## Round 48: pdelmo's leafy tree for the former birch species
+
+- **tree-mapping.tsv** now has alias lines: `@NAME<TAB>prefab` defines a target once, and rows use `@NAME`. **`@PD_LEAFY_TREE` → `pd Leafy Tree`** (PDX package 131824, cache "pd Leafy Tree_8c7127eb1c4e1dfc2ffc5681fe7e07e1.cok"). The live name is not confirmed yet: `/prefabs?query=Leafy` finds nothing before the restart. If it differs, correct that one line (tree-mapping.tsv, line 10) and regenerate. TargetMapping refuses an undefined alias.
+- **Mapping:**
+  - Bare Tree D_Data (28,300): pd Leafy Tree 0.6, EU_AlderTree01 0.2, NA_LondonPlaneTree01 0.2 (old age profile);
+  - Bare Tree E_Data (28,301): pd Leafy Tree 0.6, EU_ChestnutTree01 0.2, NA_LindenTree01 0.2 (old);
+  - Semi Bare Tree Gold_Data (13,389): pd Leafy Tree 0.5, NA_HickoryTree01 0.5 (EU_PoplarTree01 is no longer used);
+  - OakTree01 (mp9-LiveOaknvl) unchanged; BirchTree01 still 0.
+- **Placed totals** (out/trees/README.md): pd Leafy Tree 28,907, OakTree01 30,660, NA_HickoryTree01 14,704, NA_LindenTree01 10,782, NA_LondonPlaneTree01 4,099, EU_AlderTree01 3,973, EU_ChestnutTree01 3,954.
+- Age profiles, masks and fixed-height files unchanged.
+- **Tests:** the Bare Tree E expectation is updated, and a new test covers the alias lines; 143 tests pass.
+- pd Leafy Tree is written like every tree (kind tree, an age). If the asset turns out to be an object rather than a tree prefab, the bridge's tree/kind check will say so in the import report.

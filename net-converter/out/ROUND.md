@@ -1129,3 +1129,29 @@ tree-mapping.tsv; all six target species verified on the running bridge (/prefab
   - BirchTree01 0 in every tree file (out/trees, out/ and out/x1 fixed-height files).
 - Age profiles, masks (incl. the rock shed strip) and fixed-height files are as before.
 - The mapping test now expects EU_ChestnutTree01|NA_LindenTree01 for Bare Tree E; 142 tests pass.
+
+## Round 47: sidewalked roads become highways outside the starting area
+
+Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other than what's in the starting area interchange. everything else must be highway that you currently selected as sidewalked roads.."
+
+- **RoadsToHighways.cs**, per CS1 segment at conversion time; mapping.tsv is unchanged. A segment whose target is a sidewalked road becomes the matching highway unless its CS1 midpoint is in the starting area. Prefab names and widths are from the live bridge (0.9.52, /prefabs?category=net, /prefabs/info):
+  - Small Road, Alley → **Highway Twoway - 2 lanes** (12 m);
+  - Medium Road (the CS1 3-lane 2+1 and 4-lane two-way roads), Medium Road Asymmetric, Large Road → **Highway Twoway - 4 lanes** (20 m);
+  - Small Road Oneway 1 / 3 lanes → Highway Oneway 1 / 3 lanes.
+  - The game also has `Highway Twoway - 3 lanes` (16 m), a closer twin of the CS1 2+1 road; not used, as asked.
+- **Starting area:** the 3 × 3 tiles around the origin, 21 × 21 tiles over 14 336 m = 682.7 m each, so |x|, |z| ≤ 1 024 m. It holds only the interchange: 36 Highway Oneway - 1 lane, 57 Highway Oneway - 2 lanes, 24 Double Train Track. **No sidewalked road lies inside it**; the nearest one's midpoint is 1 253 m out. So the exception keeps 0 segments, and no sidewalked road is left in the network files.
+- **Courses in import-all.json (x1 and out/)**, before → after:
+
+| CS1 prefab | before | after | courses |
+|---|---|---|---:|
+| USRP 2-Lane National Road_Data | Small Road | Highway Twoway - 2 lanes | 307 |
+| USRP 2-Lane National Road B | Small Road | Highway Twoway - 2 lanes | 1 |
+| USRP 3-Lane National Road_Data | Medium Road | Highway Twoway - 4 lanes | 24 |
+| USRP 3-Lane National Road E | Medium Road | Highway Twoway - 4 lanes | 4 |
+| USRP 4-Lane National Road_Data | Highway Twoway - 4 lanes (round 43) | unchanged | 11 |
+
+- **Totals in import-all:** Small Road 308 → 0; Medium Road 28 → 0; Highway Twoway - 2 lanes 0 → 308; Highway Twoway - 4 lanes 11 → 39. Edge count 3 793 unchanged; gaps, access roads and bridges unchanged. The converter's own count, which includes courses that go into other files or are dropped later by road QA: 325 courses (313 CS1 segments) and 28 (25).
+- **Kept, as asked:** the regraded shed profile, bridge overrides, the carriageway spread and the elevated flags. The bridge override prefabs are unchanged: `Truss Arch Bridge - Small Road - 2 Lanes` (4) and `Wooden Covered Bridge - 2 lanes` (8) in import-bridges.json. The truss arch one is a Small Road bridge; it may still carry sidewalks.
+- **TM:PE:** only 2 of the 27 TM:PE nodes sit on the remapped CS1 roads: n9988 and n11611, the shed road's junctions on the 4-Lane National Road. That road went to the 4-lane highway in round 43, and Medium Road and the highway both have 2 + 2 car lanes. No TM:PE node is on a 2- or 3-lane National Road, so round 47 changes no lane mapping. The live lane mapping (cs2mcp/scripts/import-tmpe.mjs, even --dry-run, calls the bridge) can only be re-checked after the A-v20 build.
+- **File fidelity check** (file-graph.mjs + fidelity.mjs on the import files): unchanged. 19 OK, and the same CHECK boxes with the same counts as before: interchange 8 (6/8, the spread offsets), 9, 11, 12, 14, 15, 16.
+- 142 tests pass.
