@@ -147,8 +147,8 @@ const steps = [
   // Round 49: the fort's buildings, then its standing stones with skipInsideBuildings (they stood inside the formations' footprints).
   ["fort-buildings", "/import/objects", [p("import-fort-buildings.json")]],
   ["fort-props", "/import/objects", [p("import-fort-props.json")]],
-  // Round 51: fallback for stripOwnedPlants (bridge 0.9.59 on fort-buildings and objects): if a layer's stripOwned count came back 0, strip the owned
-  // trees and plants of its building prefabs (building-bounds.json) once the fort buildings and the objects (the 3 CS1 RuinsCastle01) are in.
+  // Round 51/52: strips the props of the decorative ruins in import-objects.json (that layer only gets stripOwnedPlants), and falls back to
+  // /build/strip-subobjects for a building layer whose stripOwned count came back 0; runs once the fort buildings and the objects are in.
   ["fort-strip", "/build/strip-subobjects", [p("import-fort-buildings.json"), p("import-objects.json")]],
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
   ["resources", "/import/resources", [p("import-resources.json")]],
@@ -256,10 +256,12 @@ const objectTilt = j => j?.tilt ? `; tilt ${compact(Object.fromEntries(Object.en
 // Round 48d/49: /import/objects layers that get skipInsideBuildings (not fort-buildings, substation, po-structures / arches / gantry / piers, connections: they place
 // the buildings, or sit on structures rather than near buildings).
 const SKIP_INSIDE_BUILDINGS = new Set(["trees", "rock-scatter", "po-rocks", "objects", "barriers", "rock-shed", "fort-props"]);
-// Round 51 (bridge 0.9.59): the layers that create decorative buildings get options.stripOwnedPlants, which deletes those buildings' own trees and plants
+// Round 51/52 (bridge 0.9.59): the layers that create decorative buildings get options.stripOwnedPlants and stripOwnedProps, which delete those buildings' own
+// trees, plants and props (A-v24: the ruins' column props showed as placeholder cylinders too)
 // right after the import (they render as placeholders here); the bridge reports it as a "stripOwned: deleted N ..." warning. fort-strip falls back to
 // POST /build/strip-subobjects for any of these layers whose count came back 0.
 const STRIP_OWNED = { "fort-buildings": "import-fort-buildings.json", "objects": "import-objects.json" };
+const STRIP_PROPS = new Set(["fort-buildings"]);   // objects also creates TransformerStation01: its ruins' props go through fort-strip by prefab
 const stripOwned = {};   // layer -> deleted count (summed over its files)
 const stripCount = j => { const m = JSON.stringify(j ?? {}).match(/stripOwned: deleted (\d+)/); return m ? Number(m[1]) : 0; };
 const undoOf = (endpoint, r, name) => endpoint === "/import/network" ? `POST /import/undo?id=${r.importId}` : endpoint === "/import/water" ? `POST /import/water/undo?id=${r.importId}`
@@ -317,16 +319,26 @@ outer: for (const [name, endpoint, files] of steps) {
   if (!wanted(name)) continue;
   if (endpoint === "/build/strip-subobjects") {
     const bb = JSON.parse(readFileSync(new URL("../building-bounds.json", import.meta.url), "utf8")).buildings;
-    // Fallback only: the layers whose stripOwnedPlants removed nothing (or were not imported in this run).
+    const prefabsIn = (fileList, keep) => [...new Set(fileList.filter(f => existsSync(f)).flatMap(f => JSON.parse(readFileSync(f, "utf8")).objects.map(o => o.prefab)).filter(pf => bb[pf]?.type === "BuildingPrefab" && keep(pf)))];
+    const strip = async (prefabs, kinds, why) => {
+      const t0 = Date.now(), body = { prefabs, kinds, onlyLooping: false, ...(dryRun ? { dryRun: true } : {}) };
+      const r = await request("POST", "/build/strip-subobjects", body).catch(e => ({ status: 0, json: { error: String(e) } }));
+      const j = r.json ?? {}, text = `${why}: strip owned ${kinds.join("/")} of ${prefabs.join(", ")}: HTTP ${r.status}; matched ${j.matched ?? "?"}, removed ${j.removed ?? j.deleted ?? (j.dryRun ? 0 : j.matched) ?? "?"}${j.perPrefab ? `; ${JSON.stringify(j.perPrefab).slice(0, 200)}` : ""}${j.error ? `; ${j.error}` : ""}`;
+      console.log(`${r.status === 200 ? "✓" : "!"} ${name}: ${text}`);
+      rows.push({ name, file: "POST /build/strip-subobjects", status: r.status === 200 ? "ok" : `HTTP ${r.status}`, secs: (Date.now() - t0) / 1000, text, strip: j });
+    };
+    // (a) Round 52: the decorative ruins that import-objects.json creates (RuinsCastle01, RuinsOldMill01) lose their own props too; that layer also creates
+    // the functional TransformerStation01, so it gets stripOwnedPlants only, and its ruins' props are stripped here by prefab (kind "object" = props).
+    const ruins = prefabsIn(files.filter(f => f.endsWith("import-objects.json")), pf => /^Ruins/.test(pf));
+    if (ruins.length) await strip(ruins, ["object"], "decorative ruins in objects");
+    // (b) Fallback: the layers whose stripOwnedPlants / stripOwnedProps removed nothing (or that were not imported in this run).
     const need = Object.entries(STRIP_OWNED).filter(([layer]) => !(stripOwned[layer] > 0)).map(([, fname]) => fname);
-    if (!need.length) { const text = `not needed: stripOwnedPlants deleted ${Object.entries(stripOwned).map(([k, v]) => `${k} ${v}`).join(", ")}`; console.log(`- ${name}: ${text}`); rows.push({ name, file: "POST /build/strip-subobjects", status: "not needed", text }); continue; }
-    const prefabs = [...new Set(files.filter(f => existsSync(f) && need.some(n => f.endsWith(n))).flatMap(f => JSON.parse(readFileSync(f, "utf8")).objects.map(o => o.prefab)).filter(pf => bb[pf]?.type === "BuildingPrefab"))];
-    if (!prefabs.length) { console.log(`- ${name}: no building prefabs in ${files.join(", ")}, skipped`); rows.push({ name, file: "POST /build/strip-subobjects", status: "nothing to strip" }); continue; }
-    const t0 = Date.now(), body = { prefabs, kinds: ["tree", "plant"], onlyLooping: false, ...(dryRun ? { dryRun: true } : {}) };
-    const r = await request("POST", "/build/strip-subobjects", body).catch(e => ({ status: 0, json: { error: String(e) } }));
-    const j = r.json ?? {}, text = `strip owned trees/plants of ${prefabs.join(", ")}: HTTP ${r.status}; matched ${j.matched ?? "?"}, removed ${j.removed ?? j.deleted ?? (j.dryRun ? 0 : j.matched) ?? "?"}${j.perPrefab ? `; ${JSON.stringify(j.perPrefab).slice(0, 200)}` : ""}${j.error ? `; ${j.error}` : ""}`;
-    console.log(`${r.status === 200 ? "✓" : "!"} ${name}: ${text}`);
-    rows.push({ name, file: "POST /build/strip-subobjects", status: r.status === 200 ? "ok" : `HTTP ${r.status}`, secs: (Date.now() - t0) / 1000, text, strip: j });
+    if (!need.length) { const text = `fallback not needed: stripOwned deleted ${Object.entries(stripOwned).map(([k, v]) => `${k} ${v}`).join(", ")}`; console.log(`- ${name}: ${text}`); rows.push({ name, file: "POST /build/strip-subobjects", status: "not needed", text }); continue; }
+    for (const fname of need) {
+      const fileList = files.filter(f => f.endsWith(fname)), decorativeOnly = fname === STRIP_OWNED["objects"];
+      const prefabs = prefabsIn(fileList, pf => !decorativeOnly || /^Ruins/.test(pf));
+      if (prefabs.length) await strip(prefabs, decorativeOnly ? ["tree", "plant"] : ["tree", "plant", "object"], `fallback for ${fname}`);
+    }
     continue;
   }
   if (endpoint === "netcount") {
@@ -353,6 +365,8 @@ outer: for (const [name, endpoint, files] of steps) {
     // buildings themselves. Older bridges ignore the option.
     if (endpoint === "/import/objects" && SKIP_INSIDE_BUILDINGS.has(name)) body.options.skipInsideBuildings = true;
     if (endpoint === "/import/objects" && STRIP_OWNED[name]) body.options.stripOwnedPlants = true;
+    // Round 52 (A-v24: the ruins' own props render as placeholder cylinders): props too, but only where every building the layer creates is decorative.
+    if (endpoint === "/import/objects" && STRIP_PROPS.has(name)) body.options.stripOwnedProps = true;
     if (dryRun) { body.options.dryRun = true; body.dryRun = true; }
     body.name ??= file.split(/[\\/]/).pop().replace(/\.json$/, "");
     if (endpoint === "/import/terrain-paint") {

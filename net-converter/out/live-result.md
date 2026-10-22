@@ -1165,3 +1165,15 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
 - **fort-strip** is now only a fallback: it POSTs /build/strip-subobjects `{prefabs, kinds: [tree, plant], onlyLooping: false}` just for a layer whose stripOwned count came back 0 (or that was not imported in this run), else it prints "not needed".
 - **out.next/** is regenerated and identical to out/ (round 51, fbb6b2b): the fort keep is RuinsCastle01; the 63 ruins of 50b are kept (keep-lot clearing is opt-in); 50c's dam plant clearing is kept.
 - **The 19 standing stones do not come back.** They stand inside RuinsStoneFormation footprints (the wall pieces overlap into a solid band, round 50), not inside the old OldCastle01 lot. They would only come back with the formations as non-building props, or by placing them by hand.
+
+### Round 52: the decorative buildings' own props are stripped too
+
+- **Cause** (A-v24): the ruins' own props (column-like sub-objects of RuinsCastle01 / RuinsStoneFormation / Cairns) render as placeholder cylinders, like their foliage did.
+- **Runner:**
+  - **fort-buildings:** `stripOwnedPlants` + **`stripOwnedProps`** (every building it creates is a ruin).
+  - **objects:** `stripOwnedPlants` only. That layer also creates the functional TransformerStation01, and stripOwnedProps would strip its props too.
+  - **fort-strip**, after both:
+    - (a) always strips kind `object` (props; the bridge's kinds are tree / plant / object / building) of the decorative ruins in import-objects.json (RuinsCastle01, RuinsOldMill01) by prefab;
+    - (b) falls back to /build/strip-subobjects for a layer whose stripOwned count came back 0: fort-buildings with tree / plant / object, objects with tree / plant for its ruins only.
+- **Dry run** of fort-strip against the open A-v24 (dryRun, nothing removed): (a) matched 137 owned props of RuinsCastle01 / RuinsOldMill01 (BoulderRandom01 21, OldCemeteryTombstoneRandom01 / 02 20 / 12, …); the fort-buildings fallback would match 1 032.
+- Substation and dam plant: untouched (functional), as asked.
