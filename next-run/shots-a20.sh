@@ -1,6 +1,7 @@
 #!/bin/bash
 # A-v20 review shots: same cameras as A-v9 (sheets.ps1 -Run a11); season test runs separately via look/season-test.mjs.
 B=http://127.0.0.1:8642; O=next-run/shots-a20; mkdir -p "$O"
+echo "settle pause 25 s before the first camera jump (crash #4/#5 pattern)"; sleep 25
 shot(){ curl -s -m 20 "$B/camera/set?x=$1&z=$2&angleX=$3&angleY=$4&zoom=$5" >/dev/null; sleep 3; curl -s -m 90 "$B/screenshot" -o "$O/$6.png"; echo "$6 $(stat -c %s "$O/$6.png")"; }
 echo "== marked spots"
 shot -3525 -3181 144 12 380 01-br006-truss-arch-side
