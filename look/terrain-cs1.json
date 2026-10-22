@@ -16,10 +16,10 @@
       "farTiling": 40,
       "midTiling": 65,
       "nearTiling": 260
-    }
-  },
-  "m_Extra3SplatRange": 0.35,
-  "m_Extra3BlurDepth": 0.22,
-  "m_Extra4SplatRange": 0.35,
-  "m_Extra4BlurDepth": 0.22
+    },
+    "m_Extra3SplatRange": 0.35,
+    "m_Extra3BlurDepth": 0.22,
+    "m_Extra4SplatRange": 0.35,
+    "m_Extra4BlurDepth": 0.22
+  }
 }
