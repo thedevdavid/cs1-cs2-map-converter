@@ -11,10 +11,10 @@ CHECK: 2 CS1 segments without live counterpart, 1 live without CS1 source, 3 mor
 
 | live segment | prefab | elevation |
 |---|---|---:|
-| 1667267:3 | Highway Oneway - 3 lanes | 9.3 |
+| 1645185:5 | Highway Oneway - 3 lanes | 9.3 |
 
 | CS1 segment | prefab | CS1 y | live | live − CS1 m |
 |---|---|---:|---|---:|
-| 16619 | USRP 2L Interstate E | 170.2 | 1667514:3 Highway Oneway - 2 lanes | 4.4 |
-| 16914 | USRP 2L Interstate E | 169.1 | 1667291:3 Highway Oneway - 2 lanes | 4.5 |
-| 29966 | USRP 2L Interstate E | 169.1 | 1667636:3 Highway Oneway - 2 lanes | 4.8 |
+| 16619 | USRP 2L Interstate E | 170.2 | 1645429:5 Highway Oneway - 2 lanes | 4.4 |
+| 16914 | USRP 2L Interstate E | 169.1 | 1645208:5 Highway Oneway - 2 lanes | 4.5 |
+| 29966 | USRP 2L Interstate E | 169.1 | 1645033:5 Highway Oneway - 2 lanes | 4.8 |
