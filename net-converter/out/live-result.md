@@ -991,3 +991,23 @@ Owner: "mostly good but: 1. use 4-lane highway there. 2. still have issues with 
   - **import-rock-scatter.json:** 118 of 17547 with y (the re-seated rocks at the shed, 0.75 m into the ground).
   - For those two, pin only the ones with y: they are meant to sit in or on the ground, and re-grounding moves them only by their sink. **Optional.**
   - **Not object files:** power-end pylons, the dam and the fort walls go through /import/network. No po-structure gantry is written with y.
+
+## Round 46: no BirchTree01 (owner, A-v19: "Map BirchTree01 and OakTree01 to darker-foliage species and rebuild." / "oak can stay tho. and you can also use pdelmo tree")
+
+tree-mapping.tsv; all six target species verified on the running bridge (/prefabs?category=tree, 0.9.52):
+
+| CS1 | count | was | now |
+|---|---:|---|---|
+| Bare Tree D_Data | 28,300 | BirchTree01 (old) | EU_AlderTree01 0.5, NA_LondonPlaneTree01 0.5 (old) |
+| Bare Tree E_Data | 28,301 | BirchTree01 (old) | EU_ChestnutTree01 0.5, NA_LindenTree01 0.5 (old) |
+| Semi Bare Tree Gold_Data | 13,389 | BirchTree01 | NA_HickoryTree01 0.7, **EU_PoplarTree01 0.3** |
+| mp9-LiveOaknvl | 42,097 | OakTree01 | OakTree01 (kept) |
+
+- **pd Bloom is not used.** `/prefabs/info?name=pd Bloom` gives a StaticObjectPrefab of **1.34 × 0.91 × 1.34 m**, category object, OnGround: a knee-high flower prop, not a tree. As 30 % of Semi Bare Tree Gold it would replace about 4,000 trees with flowers. The accent is EU_PoplarTree01 instead. If the owner wants pd Bloom, it fits better as undergrowth scattered around trees, in its own object file.
+- **Placed totals** (out/trees/README.md):
+  - new: EU_AlderTree01 10,079, NA_LondonPlaneTree01 10,112, EU_ChestnutTree01 9,918, EU_PoplarTree01 2,845;
+  - grown: NA_LindenTree01 16,762, NA_HickoryTree01 16,703;
+  - OakTree01 30,660;
+  - BirchTree01 0 in every tree file (out/trees, out/ and out/x1 fixed-height files).
+- Age profiles, masks (incl. the rock shed strip) and fixed-height files are as before.
+- The mapping test now expects EU_ChestnutTree01|NA_LindenTree01 for Bare Tree E; 142 tests pass.

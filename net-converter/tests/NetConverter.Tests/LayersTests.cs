@@ -27,7 +27,7 @@ public class LayersTests
     [InlineData("mp9-BorealPine", "SpruceTree01|EuropeanSpruce01")]
     [InlineData("1230960704.PD - Pine Tall_Data", "PineTree01")]
     [InlineData("mp9-LiveOaknvl", "OakTree01")]
-    [InlineData("1238991822.Bare Tree E_Data", "BirchTree01")]
+    [InlineData("1238991822.Bare Tree E_Data", "EU_ChestnutTree01|NA_LindenTree01")]
     [InlineData("2346312805.Filler Bush small 1_Data", "GreenBushWild01|GreenBushWild02")]
     [InlineData("1953870276.Corn Stalk _Data", "CROP")]
     [InlineData("883313481.RiverReeds Detail Edition cluste_Data", "SKIP")]

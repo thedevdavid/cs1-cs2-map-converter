@@ -1,4 +1,4 @@
-# Conversion outputs (2026-10-21)
+# Conversion outputs (2026-10-22)
 
 Dump: `C:\Users\dleva\AppData\Local\DakotaExport\2972879554_Dakota_Falls-20261019-063123.json`. Run it all with `node tools/import-run.mjs --scale x1|x2 [--sea 93|97.5]`. Import order (bridges: import-bridges.json right after the network; round 10, owner review of A-v4: no quays, retaining walls, PO walls, monorail decor or dam files; dam by hand, see manual-objects.md): network → gaps → power, canals, ship paths → water (import-water.json at sea level 97.5 / 195, or the variant import-water-sea93.json / -sea186.json at the measured 93 / 186; try the variant first, fall back to 97.5) → connections → objects (incl. barrier props) → trees (shared files + the per-scale fixed-height file) → resources → dam (one network edge) after the bridges → … → surfaces (vanilla paint plan: fields, PO pavement, sand, dry grass; grass optional; the pack surfaces rock, PO rock, decals and pack sand are in optional/, runner --with) → experiments (order 9: net-corridor trees, unmerged decals and grass, instead of or on top of the default files); each file is its own import.
 out/ = 2× heights (Height Scale 4096), out/x1/ = true heights (Height Scale 2048); same nodes and courses in both.
@@ -1092,3 +1092,20 @@ Owner: "mostly good but: 1. use 4-lane highway there. 2. still have issues with 
 - **Pillars:** centres 8.98–9.07 m from the live centreline (offset 10.5 − 1.5).
 - **No transition width:** the shed uses the highway's 10 m half width over its full length; the road has no other prefab there.
 - **What the stepped edge in 24-18 and the row-to-row "sawtooth" in 24-19 are:** the pillar tops showing above the roof at the valley edge (item a), seen top-down as a row of small dark cubes. Not the plates. They follow from the bridge's live-y readout of the pillars (pending).
+
+## Round 45: rock shed objects pinned (bridge 0.9.51)
+
+- **Cause** (bridge session, A-v18): the game's GroundHeightSystem re-grounds OnGround objects after any terrain change nearby. The bridge had clamped the pillars' elevation to 0, because their bases were in the ground: 0.5–1.4 m (Pillar2x8) and 4.7–6.6 m (Pillar2x16) below the terrain of 10211409. So they came up by exactly that, through the roof.
+- **Fix:** bridge 0.9.51 (b315c27) per-object `"pin": true` keeps elevation = y − terrain (negative allowed), keeps the requested rotation and clears OnGround. Every object in import-rock-shed.json carries it: x1 210 of 210 (plates, pillars, rock face), out/ 208 of 208.
+- Everything else is as in round 43.
+- **Fix (test):** the mapping test still expected Medium Road for the 4-Lane National Road (round 43). It now expects Highway Twoway - 4 lanes; 142 tests pass.
+- **Other files with exact heights** that may want pin (not changed):
+  - **import-po-structure-piers.json:** 131 objects, all with y; ITBP_Pillar Piers 01 and Pillar4x16 under the bridge decks. Bases are set into the ground and tops at the deck, so the same re-grounding would lift them. **Yes.**
+  - **optional/import-po-structure-br006-arches.json:** 7 StoneArchRailBridge with y, tops at the rail deck. **Yes, if used.**
+  - **import-walls-props.json:** 35 ConcreteBarrier01 with y (on structures). **Yes.**
+  - **import-trees-fixed-01.json:** 50 trees/bushes with y (on structures, roofs or decks). **Probably**: they float if lifted, or get pushed onto the terrain.
+  - **import-po-candidates.json:** 2 RuinsCastle01 with y. **Probably.**
+  - **import-objects.json:** 1073 of 6119 with y (rocks etc. off the terrain).
+  - **import-rock-scatter.json:** 118 of 17547 with y (the re-seated rocks at the shed, 0.75 m into the ground).
+  - For those two, pin only the ones with y: they are meant to sit in or on the ground, and re-grounding moves them only by their sink. **Optional.**
+  - **Not object files:** power-end pylons, the dam and the fort walls go through /import/network. No po-structure gantry is written with y.
