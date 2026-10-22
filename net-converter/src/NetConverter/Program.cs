@@ -1294,8 +1294,13 @@ void WriteLayers()
             r9.Add(ci($"PO rock surfaces: {poRock.Count} polygons ({poRock.Sum(p => Math.Abs(Surfaces.Area(p.Ring))) / 1e6:F2} km² of {area / 1e6:F2} km² footprint, {patches} patches, {dropped} dropped), {prefab} -> import-surfaces-po-rock.json"));
         }
         var (fort, keep) = Round9.Fort(dump, new System.Text.RegularExpressions.Regex("(?i)Castle Wall"), 7168, treeSeed + 11);
-        Objects.Write(Path.Combine(outDir, "import-fort.json"), "fort ruins (round 11b)", fort, new Objects.Grounding());
-        r9.Add(ci($"fort: {fort.Count} objects along the 12 CS1 Castle Wall segments ({Round8.Counts(fort)}), keep OldCastle01 at ({keep?.X:F0}, {keep?.Z:F0}) (UNVERIFIED placeable) -> import-fort.json; RuinsCastle01 stays in import-objects.json"));
+        // Round 49 (bridge 0.9.56 override loop on A-v22: the StandingStone props stood inside RuinsStoneFormation footprints): the fort in two files, the
+        // buildings first (OldCastle01, RuinsStoneFormation*, RuinsStoneCairns* are BuildingPrefabs), the props after them with skipInsideBuildings.
+        bool FortBuilding(PlacedObject o) => !o.Prefab.StartsWith("StandingStone", StringComparison.Ordinal);
+        Objects.Write(Path.Combine(outDir, "import-fort-buildings.json"), "fort ruins, buildings (round 49)", fort.Where(FortBuilding), new Objects.Grounding());
+        Objects.Write(Path.Combine(outDir, "import-fort-props.json"), "fort ruins, standing stones (round 49)", fort.Where(o => !FortBuilding(o)), new Objects.Grounding());
+        File.Delete(Path.Combine(outDir, "import-fort.json"));
+        r9.Add(ci($"fort: {fort.Count} objects along the 12 CS1 Castle Wall segments ({Round8.Counts(fort)}), keep OldCastle01 at ({keep?.X:F0}, {keep?.Z:F0}) (UNVERIFIED placeable) -> import-fort-buildings.json + import-fort-props.json; RuinsCastle01 stays in import-objects.json"));
         var blocks = Round9.LoadPavedBlocks(poOfflinePath);
         string pave = smap.Resolve("pavement")?.FirstOrDefault()?.Prefab ?? "Pavement Surface 01";
         var (ps, pn, pe, tall) = Round9.PavedStructures(blocks, pave, heightFactor, 7168);

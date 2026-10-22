@@ -144,7 +144,9 @@ const steps = [
   // Round 34: the JP Rock shed stand-in (ConcreteSet01 gallery wall and columns along the National Road at x -6453…-6245).
   ["rock-shed", "/import/objects", [p("import-rock-shed.json")]],
   ["rock-scatter", "/import/objects", [p("import-rock-scatter.json")]],
-  ["fort", "/import/objects", [p("import-fort.json")]],
+  // Round 49: the fort's buildings, then its standing stones with skipInsideBuildings (they stood inside the formations' footprints).
+  ["fort-buildings", "/import/objects", [p("import-fort-buildings.json")]],
+  ["fort-props", "/import/objects", [p("import-fort-props.json")]],
   ["trees", "/import/objects", [...treeFiles, ...fixedFiles]],
   ["resources", "/import/resources", [p("import-resources.json")]],
   ["verify-end", "verify", []],
@@ -248,9 +250,9 @@ const paintTiming = j => j?.method != null || j?.seconds != null ? `; method=${j
 const objectTiming = j => (j?.timing ? `; timing ${compact(j.timing)}` : "") + (j?.skippedInsideBuildings != null ? `; skippedInsideBuildings ${typeof j.skippedInsideBuildings === "object" ? JSON.stringify(j.skippedInsideBuildings).slice(0, 200) : j.skippedInsideBuildings}` : "");
 // Bridge 0.9.50: objects with pitch / roll / quaternion get a "tilt" block (kept / changed per object against the live Transform). Round 43: kept in run-*.json.
 const objectTilt = j => j?.tilt ? `; tilt ${compact(Object.fromEntries(Object.entries(j.tilt).filter(([, v]) => typeof v !== "object" || v === null)))}` : "";
-// Round 48d: /import/objects layers that get skipInsideBuildings (not fort, substation, po-structures / arches / gantry / piers, connections: they place
+// Round 48d/49: /import/objects layers that get skipInsideBuildings (not fort-buildings, substation, po-structures / arches / gantry / piers, connections: they place
 // the buildings, or sit on structures rather than near buildings).
-const SKIP_INSIDE_BUILDINGS = new Set(["trees", "rock-scatter", "po-rocks", "objects", "barriers", "rock-shed"]);
+const SKIP_INSIDE_BUILDINGS = new Set(["trees", "rock-scatter", "po-rocks", "objects", "barriers", "rock-shed", "fort-props"]);
 const undoOf = (endpoint, r, name) => endpoint === "/import/network" ? `POST /import/undo?id=${r.importId}` : endpoint === "/import/water" ? `POST /import/water/undo?id=${r.importId}`
   : endpoint === "/import/resources" ? "(no undo: re-import the previous layers)" : `POST /import/objects/undo?id=${r.importId}`;
 

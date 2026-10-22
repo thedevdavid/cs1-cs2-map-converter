@@ -28,6 +28,8 @@ const run = extra => execFileSync("dotnet", ["run", "-c", "Release", "--project"
 const live = join(out, "live-graph.json");
 run(["--out", out, ...(existsSync(live) ? ["--live", live, "--baseline", join(out, "none")] : [])]);
 run(["--out", join(out, "x1"), "--height-factor", "1.0", "--sea-level", "97.5", "--trees-dir", join(out, "trees")]);
+// Round 49: no object of a masked layer inside a building footprint (override loop); rewrites those files and writes footprints-check.md.
+execFileSync("node", ["tools/building-footprints.mjs", "--out", out], { stdio: ["ignore", "inherit", "inherit"] });
 
 // Summary.
 const J = f => JSON.parse(readFileSync(f, "utf8"));
@@ -69,7 +71,7 @@ for (const [dir, scale] of [[out, "2×"], [join(out, "x1"), "1×"]]) {
   // Round 9.
   for (const [f, order, what] of [["import-gaps.json", 1, "ROUND 9 network gaps (snapToSegment onto the live network)"], ["import-gaps-e15883-taper.json", 1, "ROUND 9 alternative for e15883_0 (4-lane taper); import instead of its gap_e15883_3lane"],
     ["import-po-walls.json", 2, "ROUND 9 QuaySmall01 sides of the PO paved blocks"], ["import-water-lakes.json", 3, "ROUND 9 lake sources for unexplained wet bodies (after the water file)"],
-    ["import-fort.json", 5, "ROUND 11 fort ruins along the CS1 Castle Wall (OldCastle01 keep UNVERIFIED)"]])
+    ["import-fort-buildings.json", 5, "ROUND 49 fort ruins, buildings (OldCastle01 keep, RuinsStoneFormation, RuinsStoneCairns)"], ["import-fort-props.json", 5, "ROUND 49 fort standing stones (after the fort buildings, skipInsideBuildings)"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(order, p(f), `${what} (${scale})`, j.objects ? `${j.objects.length}` : j.sources ? `${j.sources.length} sources` : `${j.edges.length} edges`); }
   for (const [f, what] of [["import-terrain-paint-sand.json", "ROUND 24 terrain paint Sand (CS1 sand), softEdge 6 m"], ["import-terrain-paint-dry-grass.json", "ROUND 24 terrain paint Dry (plains + south-facing slopes), softEdge 6 m"], ["import-terrain-paint-bare-earth.json", "ROUND 24 terrain paint Dirt (11 m strokes at the CS1 dirt decals)"], [join("optional", "import-terrain-paint-rock.json"), "rock mask, NOT imported (no rock material)"]])
     if (existsSync(p(f))) { const j = J(p(f)); add(0, p(f), `${what} (${scale})`, `${j.polygons.length} polygons, ${(j.strokes ?? []).length} strokes`); }

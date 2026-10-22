@@ -1,0 +1,170 @@
+{
+ "source": "GET /prefabs/info, bridge 0.9.56, 2026-10-22 (geometry bounds x/z = the footprint the bridge tests for skipInsideBuildings)",
+ "buildings": {
+  "OldCastle01": {
+   "type": "BuildingPrefab",
+   "min": [
+    -103.8,
+    -95.8
+   ],
+   "max": [
+    103.8,
+    95.8
+   ],
+   "lot": {
+    "width": 208,
+    "depth": 192
+   }
+  },
+  "RuinsCastle01": {
+   "type": "BuildingPrefab",
+   "min": [
+    -39.8,
+    -31.8
+   ],
+   "max": [
+    39.8,
+    31.8
+   ],
+   "lot": {
+    "width": 80,
+    "depth": 64
+   }
+  },
+  "RuinsStoneFormation01": {
+   "type": "BuildingPrefab",
+   "min": [
+    -7.8,
+    -23.8
+   ],
+   "max": [
+    7.8,
+    23.8
+   ],
+   "lot": {
+    "width": 16,
+    "depth": 48
+   }
+  },
+  "RuinsStoneFormation02": {
+   "type": "BuildingPrefab",
+   "min": [
+    -15.8,
+    -15.8
+   ],
+   "max": [
+    15.8,
+    15.8
+   ],
+   "lot": {
+    "width": 32,
+    "depth": 32
+   }
+  },
+  "RuinsStoneCairns01": {
+   "type": "BuildingPrefab",
+   "min": [
+    -3.8,
+    -3.8
+   ],
+   "max": [
+    3.8,
+    3.8
+   ],
+   "lot": {
+    "width": 8,
+    "depth": 8
+   }
+  },
+  "RuinsStoneCairns02": {
+   "type": "BuildingPrefab",
+   "min": [
+    -3.8,
+    -3.8
+   ],
+   "max": [
+    3.8,
+    3.8
+   ],
+   "lot": {
+    "width": 8,
+    "depth": 8
+   }
+  },
+  "RuinsStoneCairns03": {
+   "type": "BuildingPrefab",
+   "min": [
+    -3.8,
+    -3.8
+   ],
+   "max": [
+    3.8,
+    3.8
+   ],
+   "lot": {
+    "width": 8,
+    "depth": 8
+   }
+  },
+  "RuinsOldMill01": {
+   "type": "BuildingPrefab",
+   "min": [
+    -11.8,
+    -11.8
+   ],
+   "max": [
+    11.8,
+    11.8
+   ],
+   "lot": {
+    "width": 24,
+    "depth": 24
+   }
+  },
+  "TransformerStation01": {
+   "type": "BuildingPrefab",
+   "min": [
+    -23.8,
+    -27.8
+   ],
+   "max": [
+    23.8,
+    27.8
+   ],
+   "lot": {
+    "width": 48,
+    "depth": 56
+   }
+  },
+  "TransformerStation02": {
+   "type": "BuildingPrefab",
+   "min": [
+    -11.8,
+    -15.8
+   ],
+   "max": [
+    11.8,
+    15.8
+   ],
+   "lot": {
+    "width": 24,
+    "depth": 32
+   }
+  },
+  "HydroelectricPowerPlant01": {
+   "type": "BuildingPrefab",
+   "min": [
+    -23.8,
+    -35.8
+   ],
+   "max": [
+    23.8,
+    35.8
+   ],
+   "lot": {
+    "width": 48,
+    "depth": 72
+   }
+  }
+ }
+}
