@@ -1077,3 +1077,26 @@ Owner: "there shouldn't be sidewalked roads pretty much nowhere on the map other
 - Older bridges ignore the option.
 - The bridge's `skippedInsideBuildings` count goes into the console line, run-*.md and run-*.json.
 - The converter's building-lot tree mask stays the default (48c).
+
+## Round 49: nothing of the masked layers inside a building footprint; fort split (staged in out.next/)
+
+- **Cause:** bridge 0.9.56 `GET /debug/override-loop` on dakota-A22b-2048 found 96 objects in the OverrideSystem / Anarchy PreventOverride loop (out/x1/override-loop-a22b.json): objects standing inside a building's footprint.
+- **building-bounds.json:** geometry bounds of every building the layers create (GET /prefabs/info, 0.9.56): OldCastle01, RuinsCastle01, RuinsStoneFormation01/02, RuinsStoneCairns01/02/03, RuinsOldMill01, TransformerStation01/02, HydroelectricPowerPlant01.
+- **tools/building-footprints.mjs**, run by run-all after both conversions:
+  - Buildings: the BuildingPrefabs in import-fort-buildings.json, import-objects.json and import-substation.json (100). The dam plant is spawned by the dam course, so it is taken at its live A-v22 centre (1381.35, 4691.62) with the circle through its bounds' corners (rotation not known).
+  - Every non-building object whose position lies inside a footprint (bounds turned with the building's rotation, the bridge's test) is removed from the masked layers: rock-scatter, po-rocks, objects, walls-props, rock-shed, fort-props, the tree chunks and the fixed-height trees.
+  - A second pass checks: **0 left**. Report: footprints-check.md / .json in each folder.
+- **Fort split:** import-fort.json is replaced by **import-fort-buildings.json** (OldCastle01, RuinsStoneFormation*, RuinsStoneCairns*: 94 buildings) and **import-fort-props.json** (the standing stones). The runner imports fort-buildings, then fort-props with skipInsideBuildings (round 48d list + fort-props). The building-lot tree mask (48c) stays the default.
+- **Removed** (out.next/, 2× / and x1 the same except trees):
+  - rock-scatter 55: 35 in the OldCastle01 lot, the rest in formations, 2 at the dam plant;
+  - po-rocks 9 (CliffStack 6, CliffRock5 2, CliffRock6 1 in the OldCastle01 lot);
+  - objects 16 (StreetlightSingle01: 3 in the keep's lot, 13 in RuinsStoneFormation footprints);
+  - fort-props 19 standing stones (inside formations);
+  - trees 6 (the conifers in the RuinsCastle01 footprints; the OldCastle01 lot was already masked).
+  - Total 105 in out.next/ (99 + 6 trees), 99 in out.next/x1/.
+- **Files to swap in from out.next/ before the next build** (both out/ and out/x1/ unless noted):
+  - new: import-fort-buildings.json, import-fort-props.json (import-fort.json is no longer written: remove it); footprints-check.md / .json;
+  - changed: import-objects.json, import-po-rocks.json, import-rock-scatter.json, import-terrain-paint-dry-grass.json, import-terrain-paint-n13-high-ground-dry.json (these two follow the 48c tree mask);
+  - trees (out/trees only): import-trees-02, -03, -04, -07, -10.json;
+  - plus the runner (tools/import-run.mjs, committed): steps fort-buildings → fort-props.
+- 143 tests pass.
