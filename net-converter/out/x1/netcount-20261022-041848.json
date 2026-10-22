@@ -1,0 +1,26 @@
+{
+ "topLevelSegments": 3204,
+ "ownedSegments": 12,
+ "perPrefab": {
+  "BXP SuspensionBridge03 - Six Lane Highway": 4,
+  "BXP Truss Arch Bridge - Highway Oneway - 2 Lanes": 8,
+  "BXP Truss Viaduct - Train": 26,
+  "Double Train Track": 262,
+  "Gravel Road": 841,
+  "High-voltage Line": 114,
+  "Highway Oneway - 1 lane": 291,
+  "Highway Oneway - 2 lanes": 769,
+  "Highway Oneway - 3 lanes": 467,
+  "Highway Oneway - 4 lanes": 26,
+  "Highway Twoway - 2 lanes": 247,
+  "Highway Twoway - 4 lanes": 30,
+  "Medium Seaway": 78,
+  "Narrow Boatway": 6,
+  "Pavement Path": 16,
+  "Sound Barrier": 2,
+  "Truss Arch Bridge - Small Road - 2 Lanes": 4,
+  "TrussArchBridge01": 4,
+  "Wooden Covered Bridge - 2 lanes": 9
+ },
+ "at": "2026-10-22T04:18:48.3113153Z"
+}
