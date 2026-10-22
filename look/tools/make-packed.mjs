@@ -73,7 +73,10 @@ for (const slot of ALL) {
   const layout = perSlot[slot] || LAYOUT;
   const n = readPng(path.join(src, `${slot}_Normal.png`)), d = readPng(path.join(out, `${slot}_BaseColor.s66.png`));
   if (n.w !== d.w || n.h !== d.h) throw new Error(`${slot}: normal ${n.w}x${n.h} vs diffuse ${d.w}x${d.h}`);
-  const hm = heightMap(d.rgba, d.w, d.h);
+  const hm0 = heightMap(d.rgba, d.w, d.h);
+  // --height-range lo,hi remaps the 0..255 height into [lo,hi] (e.g. 128,255 to test whether a channel is a blend height)
+  const hr = (process.argv[process.argv.indexOf('--height-range') + 1] || '').split(',').map(Number); const [hlo, hhi] = hr.length === 2 && process.argv.includes('--height-range') ? hr : [0, 255];
+  const hm = hm0.map(v => Math.round(hlo + v / 255 * (hhi - hlo)));
   for (let i = 0; i < n.w * n.h; i++) {
     if (layout === 'ah') { n.rgba[i * 4 + 2] = 255; n.rgba[i * 4 + 3] = hm[i]; }
     else { n.rgba[i * 4 + 2] = hm[i]; n.rgba[i * 4 + 3] = 128; }
