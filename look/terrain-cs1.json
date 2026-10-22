@@ -2,8 +2,24 @@
   "terrainRenderSettings": "DefaultTerrainRenderSettings",
   "terrainEdit": {
     "useLegacyTextureFormat": true,
-    "terrainGrassTiling": { "farTiling": 40, "midTiling": 143, "nearTiling": 572 },
-    "terrainDirtTiling": { "farTiling": 40, "midTiling": 172, "nearTiling": 688 },
-    "terrainRockTiling": { "farTiling": 40, "midTiling": 65, "nearTiling": 260 }
-  }
+    "terrainGrassTiling": {
+      "farTiling": 40,
+      "midTiling": 143,
+      "nearTiling": 572
+    },
+    "terrainDirtTiling": {
+      "farTiling": 40,
+      "midTiling": 172,
+      "nearTiling": 688
+    },
+    "terrainRockTiling": {
+      "farTiling": 40,
+      "midTiling": 65,
+      "nearTiling": 260
+    }
+  },
+  "m_Extra3SplatRange": 0.35,
+  "m_Extra3BlurDepth": 0.22,
+  "m_Extra4SplatRange": 0.35,
+  "m_Extra4BlurDepth": 0.22
 }
