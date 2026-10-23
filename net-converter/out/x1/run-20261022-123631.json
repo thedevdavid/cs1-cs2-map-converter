@@ -1,0 +1,17 @@
+{
+ "stamp": "20261022-123631",
+ "scale": "x1",
+ "sea": 93,
+ "netCountAfterNetwork": null,
+ "netCountEnd": null,
+ "guardStop": null,
+ "rows": [
+  {
+   "name": "textures",
+   "file": "POST /map/terrain-textures",
+   "status": "ok",
+   "secs": 104.57,
+   "text": "done: done 14, failed 0 of 14 files from D:/work/mods/csl2-editor/look/textures/v3"
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "stamp": "20261022-140820",
+ "scale": "x1",
+ "sea": 93,
+ "netCountAfterNetwork": null,
+ "netCountEnd": null,
+ "guardStop": null,
+ "rows": [
+  {
+   "name": "textures",
+   "file": "POST /map/terrain-textures",
+   "status": "ok",
+   "secs": 0.032,
+   "text": "POST HTTP 409 {\"error\":\"a terrain texture job is still running\",\"job\":{\"job\":18,\"state\":\"running\",\"worker\":true,\"total\":14,\"done\":4,\"failed\":0,\"renderSettingsApplied\":false,\"seconds\":13.6,\"log\":[{\"field\":\"m_RockDiffuse\",\"file\":\"D:/work/mods/csl2-editor/look/textures/v3/Cliff_BaseColor.e2.png\",\"result\":\"done\",\"imp"
+  }
+ ]
+}
