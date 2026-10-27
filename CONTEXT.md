@@ -1,8 +1,20 @@
 # CS1 → CS2 map conversion
 
-Converts the Cities: Skylines 1 map "Dakota Falls" into a Cities: Skylines 2 map: the converter turns the CS1 export into import files, and the runner imports them into the CS2 map editor through the bridge.
+A generic converter from a Cities: Skylines 1 map to a Cities: Skylines 2 map: the converter turns the CS1 export into import files, and the runner imports them into the CS2 map editor through the bridge. Dakota Falls is the reference map.
 
 ## Game and tooling
+
+**Engine**:
+The map-agnostic code of the tool: the converter, the runner and the bridge client. It holds no knowledge of any particular map.
+_Avoid_: core, the converter (when the runner is meant too)
+
+**Per-map profile**:
+One file under `profiles/` holding everything specific to one map: prefab mappings, species swaps, road-class rules, site-fix choices and ids, sea level, heightmap lineage. The engine reads it; Dakota Falls is one profile.
+_Avoid_: config, map settings (that is the bridge endpoint), site data
+
+**Reference map**:
+Dakota Falls, the map the tool was built on and the worked example shipped with it; its output is the identical-output baseline.
+_Avoid_: the map (on its own), test map
 
 **Bridge**:
 The CS2MCP mod running inside the CS2 editor, an HTTP server at 127.0.0.1:8642 with versioned behaviour ("bridge 0.9.62").

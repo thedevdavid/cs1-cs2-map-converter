@@ -1,6 +1,6 @@
-# CS1 → CS2 map converter (Dakota Falls)
+# CS1 → CS2 map converter
 
-Ports the Cities: Skylines 1 Workshop map **Dakota Falls** (Steam 2972879554) into the Cities: Skylines II map editor at true heights (Height Scale 2048), with roads, bridges, trees, props, water, climate, terrain textures and TM:PE data carried over.
+A generic, open-source tool for converting a Cities: Skylines 1 map into a Cities: Skylines II map in the map editor, at true heights, with roads, bridges, trees, props, water, climate, terrain textures and TM:PE data carried over. **Dakota Falls** (Steam Workshop 2972879554) is the reference map: it was converted end to end and is the worked example. The engine is being made map-agnostic, with everything map-specific moving into a per-map profile (roadmap: issue #3).
 
 ## Pipeline
 
@@ -22,4 +22,4 @@ Ports the Cities: Skylines 1 Workshop map **Dakota Falls** (Steam 2972879554) in
 
 ## Status
 
-Run A is accepted and the publishing save `Dakota Falls.cok` is prepared (not yet shared). Remaining: deploy bridge 0.9.63, share from the editor, optional playset trim, run B (4096) and a second climate variant.
+The converter works end to end on the reference map: Dakota Falls run A is accepted and its publishing save `Dakota Falls.cok` is prepared (not yet shared). The roadmap to a generic converter (bridge client and tests, identical-output check, fix passes, per-map profile, generic CS1 exporter and a second map as the acceptance test) is spec issue [#3](https://github.com/thedevdavid/cs1-cs2-map-converter/issues/3), with tickets in priority order. Bridge fork: <https://github.com/thedevdavid/cities-skylines-2-mcp> (branch `editor-import`); upstreaming plan: `docs/UPSTREAMING.md`. Dakota Falls leftovers: deploy bridge 0.9.63, share from the editor, run B (4096) and a second climate variant.

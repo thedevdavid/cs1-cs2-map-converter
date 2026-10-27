@@ -2,6 +2,8 @@
 
 How the engineering skills should consume this repo's domain documentation when exploring the codebase.
 
+Project goal (2026-10-27): a generic, open-source CS1 → CS2 map converter; Dakota Falls is the reference map, and map-specific knowledge belongs in a per-map profile, not the engine (roadmap: issue #3).
+
 ## Before exploring, read these
 
 - **`CONTEXT.md`** at the repo root, or
