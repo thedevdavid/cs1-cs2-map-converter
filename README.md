@@ -16,6 +16,7 @@ Ports the Cities: Skylines 1 Workshop map **Dakota Falls** (Steam 2972879554) in
 - `next-run/RUNBOOK.md` — how to run a build round, the screenshot audit and the publishing steps.
 - `MAP-DESCRIPTION.md` — the Paradox Mods page text and required-mods list.
 - `cs2-playset/PLAYSET-AUDIT.md`, `cs1-playset/` — mod dependency audits.
+- `docs/bridge-dev-notes.md` — the bridge fork's round-by-round development journal for this port (moved out of `cs2mcp/NOTES.md`).
 - `bridges/`, `analysis-assets/`, `audit/`, `docs/` — research, asset mappings, audits, glossary and ADRs.
 
 ## Status
