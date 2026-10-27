@@ -57,3 +57,6 @@ next-run/publish/
 
 # local third-party binaries (Real-ESRGAN etc.)
 tools-bin/
+
+# Claude Code /export transcripts
+2026-*-this-session-is-being-continued-*.txt
