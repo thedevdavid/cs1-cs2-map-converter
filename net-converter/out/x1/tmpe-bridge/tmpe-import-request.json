@@ -1,0 +1,5382 @@
+{
+ "schema": "cs2mcp/tmpe-import/v1",
+ "generatedFrom": {
+  "tmpe": "D:\\work\\mods\\csl2-editor\\cs1-offline\\out\\tmpe-offline.json",
+  "dump": "C:\\Users\\dleva\\AppData\\Local\\DakotaExport\\map-20261018-132303.json",
+  "body": "D:\\work\\mods\\csl2-editor\\net-converter\\out\\import-all.json",
+  "heightFactor": 2
+ },
+ "traffic": {
+  "pinnedVersion": "0.2.13",
+  "pinnedCommit": "ce1551f",
+  "forceVersion": false
+ },
+ "options": {
+  "dryRun": false,
+  "replace": false,
+  "nodeRadius": 12,
+  "edgeTolerance": 8
+ },
+ "notes": [],
+ "nodes": [
+  {
+   "id": "n527",
+   "cs1Node": 527,
+   "x": 59.09,
+   "y": 269.94,
+   "z": -97.53,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c59",
+     "group": "1",
+     "source": {
+      "segment": 15535,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e15535_0",
+      "dir": [
+       -0.32,
+       -0.95
+      ],
+      "probe": [
+       52.5,
+       -116.72
+      ],
+      "probeDist": 20,
+      "cs1Lane": 229200,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 25952,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e25952_0",
+      "dir": [
+       0.32,
+       0.95
+      ],
+      "probe": [
+       65.63,
+       -78.49
+      ],
+      "probeDist": 20,
+      "cs1Lane": 40927,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c60",
+     "group": "1",
+     "source": {
+      "segment": 15535,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e15535_0",
+      "dir": [
+       -0.32,
+       -0.95
+      ],
+      "probe": [
+       52.5,
+       -116.72
+      ],
+      "probeDist": 20,
+      "cs1Lane": 2987,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 25952,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e25952_0",
+      "dir": [
+       0.32,
+       0.95
+      ],
+      "probe": [
+       65.63,
+       -78.49
+      ],
+      "probeDist": 20,
+      "cs1Lane": 157032,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n1635",
+   "cs1Node": 1635,
+   "x": 867.22,
+   "y": 334.79,
+   "z": 4040.61,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c9",
+     "group": "1",
+     "source": {
+      "segment": 10900,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e10900_0b",
+      "dir": [
+       0.88,
+       0.47
+      ],
+      "probe": [
+       885.15,
+       4049.58
+      ],
+      "probeDist": 20,
+      "cs1Lane": 28420,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 20430,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20430_0a",
+      "dir": [
+       -0.88,
+       -0.48
+      ],
+      "probe": [
+       849.15,
+       4031.74
+      ],
+      "probeDist": 20,
+      "cs1Lane": 30798,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     }
+    },
+    {
+     "id": "c14",
+     "group": "1",
+     "source": {
+      "segment": 10900,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e10900_0b",
+      "dir": [
+       0.88,
+       0.47
+      ],
+      "probe": [
+       885.15,
+       4049.58
+      ],
+      "probeDist": 20,
+      "cs1Lane": 149107,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 20430,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20430_0a",
+      "dir": [
+       -0.88,
+       -0.48
+      ],
+      "probe": [
+       849.15,
+       4031.74
+      ],
+      "probeDist": 20,
+      "cs1Lane": 237956,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c15",
+     "group": "1",
+     "source": {
+      "segment": 10900,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e10900_0b",
+      "dir": [
+       0.88,
+       0.47
+      ],
+      "probe": [
+       885.15,
+       4049.58
+      ],
+      "probeDist": 20,
+      "cs1Lane": 149107,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 20430,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20430_0a",
+      "dir": [
+       -0.88,
+       -0.48
+      ],
+      "probe": [
+       849.15,
+       4031.74
+      ],
+      "probeDist": 20,
+      "cs1Lane": 250808,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a3",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 10900,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e10900_0b",
+      "dir": [
+       0.88,
+       0.47
+      ],
+      "probe": [
+       885.15,
+       4049.58
+      ],
+      "probeDist": 20,
+      "cs1Lane": 28420,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "targets": [
+      {
+       "segment": 20430,
+       "prefab": "2452038713.USRP 3L Interstate E",
+       "geometry": "e20430_0a",
+       "dir": [
+        -0.88,
+        -0.48
+       ],
+       "probe": [
+        849.15,
+        4031.74
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 3
+      }
+     ]
+    },
+    {
+     "id": "a20",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 10900,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e10900_0b",
+      "dir": [
+       0.88,
+       0.47
+      ],
+      "probe": [
+       885.15,
+       4049.58
+      ],
+      "probeDist": 20,
+      "cs1Lane": 149107,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "targets": [
+      {
+       "segment": 20430,
+       "prefab": "2452038713.USRP 3L Interstate E",
+       "geometry": "e20430_0a",
+       "dir": [
+        -0.88,
+        -0.48
+       ],
+       "probe": [
+        849.15,
+        4031.74
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n1884",
+   "cs1Node": 1884,
+   "x": -397.51,
+   "y": 361.02,
+   "z": 3911.85,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c34",
+     "group": "1",
+     "source": {
+      "segment": 8915,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e8915_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -378.2,
+       3905.26
+      ],
+      "probeDist": 20,
+      "cs1Lane": 140357,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "target": {
+      "segment": 7738,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e7738_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -416.59,
+       3918.21
+      ],
+      "probeDist": 20,
+      "cs1Lane": 90122,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     }
+    },
+    {
+     "id": "c35",
+     "group": "1",
+     "source": {
+      "segment": 8915,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e8915_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -378.2,
+       3905.26
+      ],
+      "probeDist": 20,
+      "cs1Lane": 150235,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "target": {
+      "segment": 7738,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e7738_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -416.59,
+       3918.21
+      ],
+      "probeDist": 20,
+      "cs1Lane": 81094,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c36",
+     "group": "1",
+     "source": {
+      "segment": 8915,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e8915_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -378.2,
+       3905.26
+      ],
+      "probeDist": 20,
+      "cs1Lane": 237006,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "target": {
+      "segment": 7738,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e7738_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -416.59,
+       3918.21
+      ],
+      "probeDist": 20,
+      "cs1Lane": 214187,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n4291",
+   "cs1Node": 4291,
+   "x": 739.76,
+   "y": 334.78,
+   "z": 3945.16,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c16",
+     "group": "1",
+     "source": {
+      "segment": 22564,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e22564_0b",
+      "dir": [
+       -0.86,
+       -0.51
+      ],
+      "probe": [
+       721.4,
+       3937.23
+      ],
+      "probeDist": 20,
+      "cs1Lane": 215124,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 22842,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e22842_0a",
+      "dir": [
+       0.85,
+       0.52
+      ],
+      "probe": [
+       756.93,
+       3955.77
+      ],
+      "probeDist": 20,
+      "cs1Lane": 185617,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c17",
+     "group": "1",
+     "source": {
+      "segment": 22564,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e22564_0b",
+      "dir": [
+       -0.86,
+       -0.51
+      ],
+      "probe": [
+       721.4,
+       3937.23
+      ],
+      "probeDist": 20,
+      "cs1Lane": 52278,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 22842,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e22842_0a",
+      "dir": [
+       0.85,
+       0.52
+      ],
+      "probe": [
+       756.93,
+       3955.77
+      ],
+      "probeDist": 20,
+      "cs1Lane": 192676,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     }
+    },
+    {
+     "id": "c18",
+     "group": "1",
+     "source": {
+      "segment": 9919,
+      "prefab": "2452038713.USRP 1L Interstate Ramp E",
+      "geometry": "e9919_0",
+      "dir": [
+       -0.51,
+       -0.86
+      ],
+      "probe": [
+       727.3,
+       3929.54
+      ],
+      "probeDist": 20,
+      "cs1Lane": 228702,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "target": {
+      "segment": 22842,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e22842_0a",
+      "dir": [
+       0.85,
+       0.52
+      ],
+      "probe": [
+       756.93,
+       3955.77
+      ],
+      "probeDist": 20,
+      "cs1Lane": 195535,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a7",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 22564,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e22564_0b",
+      "dir": [
+       -0.86,
+       -0.51
+      ],
+      "probe": [
+       721.4,
+       3937.23
+      ],
+      "probeDist": 20,
+      "cs1Lane": 52278,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "targets": [
+      {
+       "segment": 22842,
+       "prefab": "2452038713.USRP 3L Interstate E",
+       "geometry": "e22842_0a",
+       "dir": [
+        0.85,
+        0.52
+       ],
+       "probe": [
+        756.93,
+        3955.77
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 3
+      }
+     ]
+    },
+    {
+     "id": "a31",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 22564,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e22564_0b",
+      "dir": [
+       -0.86,
+       -0.51
+      ],
+      "probe": [
+       721.4,
+       3937.23
+      ],
+      "probeDist": 20,
+      "cs1Lane": 215124,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "targets": [
+      {
+       "segment": 22842,
+       "prefab": "2452038713.USRP 3L Interstate E",
+       "geometry": "e22842_0a",
+       "dir": [
+        0.85,
+        0.52
+       ],
+       "probe": [
+        756.93,
+        3955.77
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 3
+      }
+     ]
+    },
+    {
+     "id": "a34",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 9919,
+      "prefab": "2452038713.USRP 1L Interstate Ramp E",
+      "geometry": "e9919_0",
+      "dir": [
+       -0.51,
+       -0.86
+      ],
+      "probe": [
+       727.3,
+       3929.54
+      ],
+      "probeDist": 20,
+      "cs1Lane": 228702,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 22842,
+       "prefab": "2452038713.USRP 3L Interstate E",
+       "geometry": "e22842_0a",
+       "dir": [
+        0.85,
+        0.52
+       ],
+       "probe": [
+        756.93,
+        3955.77
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n4378",
+   "cs1Node": 4378,
+   "x": -464.14,
+   "y": 363.2,
+   "z": 3933.89,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c37",
+     "group": "1",
+     "source": {
+      "segment": 7738,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e7738_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -445.07,
+       3927.54
+      ],
+      "probeDist": 20,
+      "cs1Lane": 90122,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "target": {
+      "segment": 26633,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e26633_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -483.39,
+       3940.3
+      ],
+      "probeDist": 20,
+      "cs1Lane": 5120,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     }
+    },
+    {
+     "id": "c38",
+     "group": "1",
+     "source": {
+      "segment": 7738,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e7738_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -445.07,
+       3927.54
+      ],
+      "probeDist": 20,
+      "cs1Lane": 81094,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "target": {
+      "segment": 26633,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e26633_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -483.39,
+       3940.3
+      ],
+      "probeDist": 20,
+      "cs1Lane": 148314,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c39",
+     "group": "1",
+     "source": {
+      "segment": 7738,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e7738_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -445.07,
+       3927.54
+      ],
+      "probeDist": 20,
+      "cs1Lane": 214187,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "target": {
+      "segment": 26633,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e26633_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -483.39,
+       3940.3
+      ],
+      "probeDist": 20,
+      "cs1Lane": 239000,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n4801",
+   "cs1Node": 4801,
+   "x": 62.82,
+   "y": 284.34,
+   "z": 333.36,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c64",
+     "group": "1",
+     "source": {
+      "segment": 29285,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e29285_0",
+      "dir": [
+       -0.22,
+       0.98
+      ],
+      "probe": [
+       58.4,
+       353.07
+      ],
+      "probeDist": 20,
+      "cs1Lane": 143435,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 784,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e784_0",
+      "dir": [
+       0.22,
+       -0.98
+      ],
+      "probe": [
+       67.24,
+       313.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 237165,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c65",
+     "group": "1",
+     "source": {
+      "segment": 29285,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e29285_0",
+      "dir": [
+       -0.22,
+       0.98
+      ],
+      "probe": [
+       58.4,
+       353.07
+      ],
+      "probeDist": 20,
+      "cs1Lane": 141557,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 784,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e784_0",
+      "dir": [
+       0.22,
+       -0.98
+      ],
+      "probe": [
+       67.24,
+       313.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 38405,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n6802",
+   "cs1Node": 6802,
+   "x": 267.37,
+   "y": 328.84,
+   "z": 3395.15,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c52",
+     "group": "1",
+     "source": {
+      "segment": 12566,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e12566_0b",
+      "dir": [
+       -0.57,
+       0.82
+      ],
+      "probe": [
+       255.94,
+       3411.57
+      ],
+      "probeDist": 20,
+      "cs1Lane": 189037,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 1027,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e1027_0",
+      "dir": [
+       0.57,
+       -0.82
+      ],
+      "probe": [
+       278.91,
+       3378.57
+      ],
+      "probeDist": 20,
+      "cs1Lane": 78137,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c53",
+     "group": "1",
+     "source": {
+      "segment": 12566,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e12566_0b",
+      "dir": [
+       -0.57,
+       0.82
+      ],
+      "probe": [
+       255.94,
+       3411.57
+      ],
+      "probeDist": 20,
+      "cs1Lane": 168192,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 1027,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e1027_0",
+      "dir": [
+       0.57,
+       -0.82
+      ],
+      "probe": [
+       278.91,
+       3378.57
+      ],
+      "probeDist": 20,
+      "cs1Lane": 13179,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n7849",
+   "cs1Node": 7849,
+   "x": 797.67,
+   "y": 334.78,
+   "z": 4002.42,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c43",
+     "group": "1",
+     "source": {
+      "segment": 20430,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20430_0b",
+      "dir": [
+       0.86,
+       0.51
+      ],
+      "probe": [
+       815,
+       4012.58
+      ],
+      "probeDist": 20,
+      "cs1Lane": 250808,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "target": {
+      "segment": 20118,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20118_0a",
+      "dir": [
+       -0.86,
+       -0.51
+      ],
+      "probe": [
+       780.73,
+       3991.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 214725,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     }
+    },
+    {
+     "id": "c44",
+     "group": "1",
+     "source": {
+      "segment": 20430,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20430_0b",
+      "dir": [
+       0.86,
+       0.51
+      ],
+      "probe": [
+       815,
+       4012.58
+      ],
+      "probeDist": 20,
+      "cs1Lane": 237956,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "target": {
+      "segment": 20118,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20118_0a",
+      "dir": [
+       -0.86,
+       -0.51
+      ],
+      "probe": [
+       780.73,
+       3991.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 215809,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c45",
+     "group": "1",
+     "source": {
+      "segment": 20430,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20430_0b",
+      "dir": [
+       0.86,
+       0.51
+      ],
+      "probe": [
+       815,
+       4012.58
+      ],
+      "probeDist": 20,
+      "cs1Lane": 30798,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "target": {
+      "segment": 20118,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20118_0a",
+      "dir": [
+       -0.86,
+       -0.51
+      ],
+      "probe": [
+       780.73,
+       3991.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 85221,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n9988",
+   "cs1Node": 9988,
+   "x": -6197.74,
+   "y": 493.08,
+   "z": 626.68,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c4",
+     "group": "1",
+     "source": {
+      "segment": 24116,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e24116_0",
+      "dir": [
+       -0.96,
+       0.28
+      ],
+      "probe": [
+       -6215.68,
+       635.96
+      ],
+      "probeDist": 20,
+      "cs1Lane": 254201,
+      "cs1LaneIndex": 0,
+      "lanePosition": 1.85,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 24828,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e24828_0",
+      "dir": [
+       0.78,
+       -0.63
+      ],
+      "probe": [
+       -6181.42,
+       614.42
+      ],
+      "probeDist": 20,
+      "cs1Lane": 35912,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    },
+    {
+     "id": "c5",
+     "group": "1",
+     "source": {
+      "segment": 24116,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e24116_0",
+      "dir": [
+       -0.96,
+       0.28
+      ],
+      "probe": [
+       -6215.68,
+       635.96
+      ],
+      "probeDist": 20,
+      "cs1Lane": 166665,
+      "cs1LaneIndex": 1,
+      "lanePosition": 5.55,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 24828,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e24828_0",
+      "dir": [
+       0.78,
+       -0.63
+      ],
+      "probe": [
+       -6181.42,
+       614.42
+      ],
+      "probeDist": 20,
+      "cs1Lane": 218775,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c6",
+     "group": "1",
+     "source": {
+      "segment": 19095,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e19095_0",
+      "dir": [
+       0.96,
+       -0.26
+      ],
+      "probe": [
+       -6178.53,
+       620.89
+      ],
+      "probeDist": 20,
+      "cs1Lane": 206620,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 24116,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e24116_0",
+      "dir": [
+       -0.96,
+       0.28
+      ],
+      "probe": [
+       -6215.68,
+       635.96
+      ],
+      "probeDist": 20,
+      "cs1Lane": 31816,
+      "cs1LaneIndex": 3,
+      "lanePosition": -5.55,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c7",
+     "group": "1",
+     "source": {
+      "segment": 19095,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e19095_0",
+      "dir": [
+       0.96,
+       -0.26
+      ],
+      "probe": [
+       -6178.53,
+       620.89
+      ],
+      "probeDist": 20,
+      "cs1Lane": 99667,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 24116,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e24116_0",
+      "dir": [
+       -0.96,
+       0.28
+      ],
+      "probe": [
+       -6215.68,
+       635.96
+      ],
+      "probeDist": 20,
+      "cs1Lane": 149219,
+      "cs1LaneIndex": 2,
+      "lanePosition": -1.85,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a15",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 19095,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e19095_0",
+      "dir": [
+       0.96,
+       -0.26
+      ],
+      "probe": [
+       -6178.53,
+       620.89
+      ],
+      "probeDist": 20,
+      "cs1Lane": 99667,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "targets": [
+      {
+       "segment": 24116,
+       "prefab": "2097539846.USRP 4-Lane National Road_Data",
+       "geometry": "e24116_0",
+       "dir": [
+        -0.96,
+        0.28
+       ],
+       "probe": [
+        -6215.68,
+        635.96
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 24828,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e24828_0",
+       "dir": [
+        0.78,
+        -0.63
+       ],
+       "probe": [
+        -6181.42,
+        614.42
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a25",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 24116,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e24116_0",
+      "dir": [
+       -0.96,
+       0.28
+      ],
+      "probe": [
+       -6215.68,
+       635.96
+      ],
+      "probeDist": 20,
+      "cs1Lane": 166665,
+      "cs1LaneIndex": 1,
+      "lanePosition": 5.55,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "targets": [
+      {
+       "segment": 24116,
+       "prefab": "2097539846.USRP 4-Lane National Road_Data",
+       "geometry": "e24116_0",
+       "dir": [
+        -0.96,
+        0.28
+       ],
+       "probe": [
+        -6215.68,
+        635.96
+       ],
+       "probeDist": 20,
+       "arrow": "Turn",
+       "allowed": false,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 24828,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e24828_0",
+       "dir": [
+        0.78,
+        -0.63
+       ],
+       "probe": [
+        -6181.42,
+        614.42
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a29",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 19095,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e19095_0",
+      "dir": [
+       0.96,
+       -0.26
+      ],
+      "probe": [
+       -6178.53,
+       620.89
+      ],
+      "probeDist": 20,
+      "cs1Lane": 206620,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "targets": [
+      {
+       "segment": 24116,
+       "prefab": "2097539846.USRP 4-Lane National Road_Data",
+       "geometry": "e24116_0",
+       "dir": [
+        -0.96,
+        0.28
+       ],
+       "probe": [
+        -6215.68,
+        635.96
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 24828,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e24828_0",
+       "dir": [
+        0.78,
+        -0.63
+       ],
+       "probe": [
+        -6181.42,
+        614.42
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a37",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 24116,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e24116_0",
+      "dir": [
+       -0.96,
+       0.28
+      ],
+      "probe": [
+       -6215.68,
+       635.96
+      ],
+      "probeDist": 20,
+      "cs1Lane": 254201,
+      "cs1LaneIndex": 0,
+      "lanePosition": 1.85,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "targets": [
+      {
+       "segment": 24116,
+       "prefab": "2097539846.USRP 4-Lane National Road_Data",
+       "geometry": "e24116_0",
+       "dir": [
+        -0.96,
+        0.28
+       ],
+       "probe": [
+        -6215.68,
+        635.96
+       ],
+       "probeDist": 20,
+       "arrow": "Turn",
+       "allowed": false,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 24828,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e24828_0",
+       "dir": [
+        0.78,
+        -0.63
+       ],
+       "probe": [
+        -6181.42,
+        614.42
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n10346",
+   "cs1Node": 10346,
+   "x": -336.76,
+   "y": 358.55,
+   "z": 3872.41,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c31",
+     "group": "1",
+     "source": {
+      "segment": 13465,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e13465_0",
+      "dir": [
+       -0.95,
+       0.31
+      ],
+      "probe": [
+       -355.85,
+       3878.71
+      ],
+      "probeDist": 20,
+      "cs1Lane": 5329,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "target": {
+      "segment": 303,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e303_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -317.67,
+       3866.11
+      ],
+      "probeDist": 20,
+      "cs1Lane": 30056,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     }
+    },
+    {
+     "id": "c32",
+     "group": "1",
+     "source": {
+      "segment": 13465,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e13465_0",
+      "dir": [
+       -0.95,
+       0.31
+      ],
+      "probe": [
+       -355.85,
+       3878.71
+      ],
+      "probeDist": 20,
+      "cs1Lane": 178412,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "target": {
+      "segment": 303,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e303_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -317.67,
+       3866.11
+      ],
+      "probeDist": 20,
+      "cs1Lane": 77019,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c33",
+     "group": "1",
+     "source": {
+      "segment": 13465,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e13465_0",
+      "dir": [
+       -0.95,
+       0.31
+      ],
+      "probe": [
+       -355.85,
+       3878.71
+      ],
+      "probeDist": 20,
+      "cs1Lane": 65239,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "target": {
+      "segment": 303,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e303_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -317.67,
+       3866.11
+      ],
+      "probeDist": 20,
+      "cs1Lane": 127215,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n10611",
+   "cs1Node": 10611,
+   "x": 63.7,
+   "y": 270.69,
+   "z": -36.06,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c57",
+     "group": "1",
+     "source": {
+      "segment": 14444,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e14444_0",
+      "dir": [
+       0.32,
+       0.95
+      ],
+      "probe": [
+       70.24,
+       -17.01
+      ],
+      "probeDist": 20,
+      "cs1Lane": 145798,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 25187,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e25187_0",
+      "dir": [
+       -0.32,
+       -0.95
+      ],
+      "probe": [
+       57.16,
+       -55.12
+      ],
+      "probeDist": 20,
+      "cs1Lane": 229395,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c58",
+     "group": "1",
+     "source": {
+      "segment": 14444,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e14444_0",
+      "dir": [
+       0.32,
+       0.95
+      ],
+      "probe": [
+       70.24,
+       -17.01
+      ],
+      "probeDist": 20,
+      "cs1Lane": 227553,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 25187,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e25187_0",
+      "dir": [
+       -0.32,
+       -0.95
+      ],
+      "probe": [
+       57.16,
+       -55.12
+      ],
+      "probeDist": 20,
+      "cs1Lane": 159216,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n11611",
+   "cs1Node": 11611,
+   "x": -6462.7,
+   "y": 542.59,
+   "z": 1077.56,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c0",
+     "group": "1",
+     "source": {
+      "segment": 34976,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e34976_0",
+      "dir": [
+       0.42,
+       -0.91
+      ],
+      "probe": [
+       -6454.28,
+       1059.14
+      ],
+      "probeDist": 20,
+      "cs1Lane": 193943,
+      "cs1LaneIndex": 2,
+      "lanePosition": -1.85,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 15154,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e15154_0",
+      "dir": [
+       -0.24,
+       0.97
+      ],
+      "probe": [
+       -6468.28,
+       1097.16
+      ],
+      "probeDist": 20,
+      "cs1Lane": 176424,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    },
+    {
+     "id": "c1",
+     "group": "1",
+     "source": {
+      "segment": 34976,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e34976_0",
+      "dir": [
+       0.42,
+       -0.91
+      ],
+      "probe": [
+       -6454.28,
+       1059.14
+      ],
+      "probeDist": 20,
+      "cs1Lane": 111363,
+      "cs1LaneIndex": 3,
+      "lanePosition": -5.55,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 15154,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e15154_0",
+      "dir": [
+       -0.24,
+       0.97
+      ],
+      "probe": [
+       -6468.28,
+       1097.16
+      ],
+      "probeDist": 20,
+      "cs1Lane": 54727,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c2",
+     "group": "1",
+     "source": {
+      "segment": 31696,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e31696_0",
+      "dir": [
+       -0.65,
+       0.76
+      ],
+      "probe": [
+       -6475.01,
+       1093.56
+      ],
+      "probeDist": 20,
+      "cs1Lane": 53313,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 34976,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e34976_0",
+      "dir": [
+       0.42,
+       -0.91
+      ],
+      "probe": [
+       -6454.28,
+       1059.14
+      ],
+      "probeDist": 20,
+      "cs1Lane": 43903,
+      "cs1LaneIndex": 1,
+      "lanePosition": 5.55,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c3",
+     "group": "1",
+     "source": {
+      "segment": 31696,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e31696_0",
+      "dir": [
+       -0.65,
+       0.76
+      ],
+      "probe": [
+       -6475.01,
+       1093.56
+      ],
+      "probeDist": 20,
+      "cs1Lane": 4370,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 34976,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e34976_0",
+      "dir": [
+       0.42,
+       -0.91
+      ],
+      "probe": [
+       -6454.28,
+       1059.14
+      ],
+      "probeDist": 20,
+      "cs1Lane": 48261,
+      "cs1LaneIndex": 0,
+      "lanePosition": 1.85,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a0",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 31696,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e31696_0",
+      "dir": [
+       -0.65,
+       0.76
+      ],
+      "probe": [
+       -6475.01,
+       1093.56
+      ],
+      "probeDist": 20,
+      "cs1Lane": 4370,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "targets": [
+      {
+       "segment": 15154,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e15154_0",
+       "dir": [
+        -0.24,
+        0.97
+       ],
+       "probe": [
+        -6468.28,
+        1097.16
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 34976,
+       "prefab": "2097539846.USRP 4-Lane National Road_Data",
+       "geometry": "e34976_0",
+       "dir": [
+        0.42,
+        -0.91
+       ],
+       "probe": [
+        -6454.28,
+        1059.14
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a8",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 31696,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e31696_0",
+      "dir": [
+       -0.65,
+       0.76
+      ],
+      "probe": [
+       -6475.01,
+       1093.56
+      ],
+      "probeDist": 20,
+      "cs1Lane": 53313,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "targets": [
+      {
+       "segment": 15154,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e15154_0",
+       "dir": [
+        -0.24,
+        0.97
+       ],
+       "probe": [
+        -6468.28,
+        1097.16
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 34976,
+       "prefab": "2097539846.USRP 4-Lane National Road_Data",
+       "geometry": "e34976_0",
+       "dir": [
+        0.42,
+        -0.91
+       ],
+       "probe": [
+        -6454.28,
+        1059.14
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a16",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 34976,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e34976_0",
+      "dir": [
+       0.42,
+       -0.91
+      ],
+      "probe": [
+       -6454.28,
+       1059.14
+      ],
+      "probeDist": 20,
+      "cs1Lane": 111363,
+      "cs1LaneIndex": 3,
+      "lanePosition": -5.55,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "targets": [
+      {
+       "segment": 15154,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e15154_0",
+       "dir": [
+        -0.24,
+        0.97
+       ],
+       "probe": [
+        -6468.28,
+        1097.16
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 34976,
+       "prefab": "2097539846.USRP 4-Lane National Road_Data",
+       "geometry": "e34976_0",
+       "dir": [
+        0.42,
+        -0.91
+       ],
+       "probe": [
+        -6454.28,
+        1059.14
+       ],
+       "probeDist": 20,
+       "arrow": "Turn",
+       "allowed": false,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a28",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 34976,
+      "prefab": "2097539846.USRP 4-Lane National Road_Data",
+      "geometry": "e34976_0",
+      "dir": [
+       0.42,
+       -0.91
+      ],
+      "probe": [
+       -6454.28,
+       1059.14
+      ],
+      "probeDist": 20,
+      "cs1Lane": 193943,
+      "cs1LaneIndex": 2,
+      "lanePosition": -1.85,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "targets": [
+      {
+       "segment": 15154,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e15154_0",
+       "dir": [
+        -0.24,
+        0.97
+       ],
+       "probe": [
+        -6468.28,
+        1097.16
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 34976,
+       "prefab": "2097539846.USRP 4-Lane National Road_Data",
+       "geometry": "e34976_0",
+       "dir": [
+        0.42,
+        -0.91
+       ],
+       "probe": [
+        -6454.28,
+        1059.14
+       ],
+       "probeDist": 20,
+       "arrow": "Turn",
+       "allowed": false,
+       "cs1OutLanes": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n12156",
+   "cs1Node": 12156,
+   "x": 78.04,
+   "y": 284.07,
+   "z": 336.77,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c66",
+     "group": "1",
+     "source": {
+      "segment": 32183,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e32183_0",
+      "dir": [
+       0.22,
+       -0.98
+      ],
+      "probe": [
+       82.46,
+       317.06
+      ],
+      "probeDist": 20,
+      "cs1Lane": 3034,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 11276,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e11276_0",
+      "dir": [
+       -0.22,
+       0.98
+      ],
+      "probe": [
+       73.62,
+       356.48
+      ],
+      "probeDist": 20,
+      "cs1Lane": 19820,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c67",
+     "group": "1",
+     "source": {
+      "segment": 32183,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e32183_0",
+      "dir": [
+       0.22,
+       -0.98
+      ],
+      "probe": [
+       82.46,
+       317.06
+      ],
+      "probeDist": 20,
+      "cs1Lane": 49233,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 11276,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e11276_0",
+      "dir": [
+       -0.22,
+       0.98
+      ],
+      "probe": [
+       73.62,
+       356.48
+      ],
+      "probeDist": 20,
+      "cs1Lane": 173724,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n12773",
+   "cs1Node": 12773,
+   "x": 78.46,
+   "y": 270.31,
+   "z": -41.12,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c55",
+     "group": "1",
+     "source": {
+      "segment": 25952,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e25952_0",
+      "dir": [
+       -0.33,
+       -0.95
+      ],
+      "probe": [
+       71.95,
+       -60.07
+      ],
+      "probeDist": 20,
+      "cs1Lane": 40927,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 10600,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e10600_0",
+      "dir": [
+       0.73,
+       0.68
+      ],
+      "probe": [
+       91.74,
+       -26.07
+      ],
+      "probeDist": 20,
+      "cs1Lane": 93065,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c56",
+     "group": "1",
+     "source": {
+      "segment": 25952,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e25952_0",
+      "dir": [
+       -0.33,
+       -0.95
+      ],
+      "probe": [
+       71.95,
+       -60.07
+      ],
+      "probeDist": 20,
+      "cs1Lane": 157032,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 31983,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e31983_0",
+      "dir": [
+       0.32,
+       0.95
+      ],
+      "probe": [
+       84.96,
+       -22.18
+      ],
+      "probeDist": 20,
+      "cs1Lane": 236026,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a6",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 25952,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e25952_0",
+      "dir": [
+       -0.33,
+       -0.95
+      ],
+      "probe": [
+       71.95,
+       -60.07
+      ],
+      "probeDist": 20,
+      "cs1Lane": 40927,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "targets": [
+      {
+       "segment": 10600,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e10600_0",
+       "dir": [
+        0.73,
+        0.68
+       ],
+       "probe": [
+        91.74,
+        -26.07
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      },
+      {
+       "segment": 31983,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e31983_0",
+       "dir": [
+        0.32,
+        0.95
+       ],
+       "probe": [
+        84.96,
+        -22.18
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      }
+     ]
+    },
+    {
+     "id": "a24",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 25952,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e25952_0",
+      "dir": [
+       -0.33,
+       -0.95
+      ],
+      "probe": [
+       71.95,
+       -60.07
+      ],
+      "probeDist": 20,
+      "cs1Lane": 157032,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "targets": [
+      {
+       "segment": 10600,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e10600_0",
+       "dir": [
+        0.73,
+        0.68
+       ],
+       "probe": [
+        91.74,
+        -26.07
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      },
+      {
+       "segment": 31983,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e31983_0",
+       "dir": [
+        0.32,
+        0.95
+       ],
+       "probe": [
+        84.96,
+        -22.18
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n12950",
+   "cs1Node": 12950,
+   "x": 806.99,
+   "y": 334.79,
+   "z": 3986.46,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c40",
+     "group": "1",
+     "source": {
+      "segment": 22842,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e22842_0b",
+      "dir": [
+       -0.86,
+       -0.51
+      ],
+      "probe": [
+       789.77,
+       3975.91
+      ],
+      "probeDist": 20,
+      "cs1Lane": 195535,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "target": {
+      "segment": 16466,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e16466_0a",
+      "dir": [
+       0.86,
+       0.51
+      ],
+      "probe": [
+       824.46,
+       3996.57
+      ],
+      "probeDist": 20,
+      "cs1Lane": 14739,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     }
+    },
+    {
+     "id": "c41",
+     "group": "1",
+     "source": {
+      "segment": 22842,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e22842_0b",
+      "dir": [
+       -0.86,
+       -0.51
+      ],
+      "probe": [
+       789.77,
+       3975.91
+      ],
+      "probeDist": 20,
+      "cs1Lane": 185617,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "target": {
+      "segment": 16466,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e16466_0a",
+      "dir": [
+       0.86,
+       0.51
+      ],
+      "probe": [
+       824.46,
+       3996.57
+      ],
+      "probeDist": 20,
+      "cs1Lane": 152109,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c42",
+     "group": "1",
+     "source": {
+      "segment": 22842,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e22842_0b",
+      "dir": [
+       -0.86,
+       -0.51
+      ],
+      "probe": [
+       789.77,
+       3975.91
+      ],
+      "probeDist": 20,
+      "cs1Lane": 192676,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "target": {
+      "segment": 16466,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e16466_0a",
+      "dir": [
+       0.86,
+       0.51
+      ],
+      "probe": [
+       824.46,
+       3996.57
+      ],
+      "probeDist": 20,
+      "cs1Lane": 4791,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n13892",
+   "cs1Node": 13892,
+   "x": 335.01,
+   "y": 324.22,
+   "z": 3325.26,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c50",
+     "group": "1",
+     "source": {
+      "segment": 35734,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e35734_0",
+      "dir": [
+       0.57,
+       -0.82
+      ],
+      "probe": [
+       345.92,
+       3308.16
+      ],
+      "probeDist": 20,
+      "cs1Lane": 16888,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 1054,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e1054_0",
+      "dir": [
+       -0.57,
+       0.82
+      ],
+      "probe": [
+       323.47,
+       3341.84
+      ],
+      "probeDist": 20,
+      "cs1Lane": 149672,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c51",
+     "group": "1",
+     "source": {
+      "segment": 35734,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e35734_0",
+      "dir": [
+       0.57,
+       -0.82
+      ],
+      "probe": [
+       345.92,
+       3308.16
+      ],
+      "probeDist": 20,
+      "cs1Lane": 169624,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 1054,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e1054_0",
+      "dir": [
+       -0.57,
+       0.82
+      ],
+      "probe": [
+       323.47,
+       3341.84
+      ],
+      "probeDist": 20,
+      "cs1Lane": 139703,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n14204",
+   "cs1Node": 14204,
+   "x": 280.17,
+   "y": 325.85,
+   "z": 3404.06,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c48",
+     "group": "1",
+     "source": {
+      "segment": 1054,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e1054_0",
+      "dir": [
+       0.57,
+       -0.82
+      ],
+      "probe": [
+       291.73,
+       3387.46
+      ],
+      "probeDist": 20,
+      "cs1Lane": 149672,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 31965,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e31965_0",
+      "dir": [
+       -0.54,
+       0.84
+      ],
+      "probe": [
+       270.12,
+       3421.67
+      ],
+      "probeDist": 20,
+      "cs1Lane": 243651,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c49",
+     "group": "1",
+     "source": {
+      "segment": 1054,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e1054_0",
+      "dir": [
+       0.57,
+       -0.82
+      ],
+      "probe": [
+       291.73,
+       3387.46
+      ],
+      "probeDist": 20,
+      "cs1Lane": 139703,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 28080,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e28080_0",
+      "dir": [
+       -0.7,
+       0.71
+      ],
+      "probe": [
+       266.64,
+       3419.32
+      ],
+      "probeDist": 20,
+      "cs1Lane": 185930,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a19",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 1054,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e1054_0",
+      "dir": [
+       0.57,
+       -0.82
+      ],
+      "probe": [
+       291.73,
+       3387.46
+      ],
+      "probeDist": 20,
+      "cs1Lane": 139703,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "targets": [
+      {
+       "segment": 28080,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e28080_0",
+       "dir": [
+        -0.7,
+        0.71
+       ],
+       "probe": [
+        266.64,
+        3419.32
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      },
+      {
+       "segment": 31965,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e31965_0",
+       "dir": [
+        -0.54,
+        0.84
+       ],
+       "probe": [
+        270.12,
+        3421.67
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      }
+     ]
+    },
+    {
+     "id": "a21",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 1054,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e1054_0",
+      "dir": [
+       0.57,
+       -0.82
+      ],
+      "probe": [
+       291.73,
+       3387.46
+      ],
+      "probeDist": 20,
+      "cs1Lane": 149672,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "targets": [
+      {
+       "segment": 28080,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e28080_0",
+       "dir": [
+        -0.7,
+        0.71
+       ],
+       "probe": [
+        266.64,
+        3419.32
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      },
+      {
+       "segment": 31965,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e31965_0",
+       "dir": [
+        -0.54,
+        0.84
+       ],
+       "probe": [
+        270.12,
+        3421.67
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n14407",
+   "cs1Node": 14407,
+   "x": 223.71,
+   "y": 339.64,
+   "z": 3457.89,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c46",
+     "group": "1",
+     "source": {
+      "segment": 7747,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e7747_0",
+      "dir": [
+       -0.57,
+       0.82
+      ],
+      "probe": [
+       212.09,
+       3474.6
+      ],
+      "probeDist": 20,
+      "cs1Lane": 261497,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "target": {
+      "segment": 12566,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e12566_0a",
+      "dir": [
+       0.57,
+       -0.82
+      ],
+      "probe": [
+       235.21,
+       3441.36
+      ],
+      "probeDist": 20,
+      "cs1Lane": 189037,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c47",
+     "group": "1",
+     "source": {
+      "segment": 23246,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e23246_0",
+      "dir": [
+       -0.4,
+       0.92
+      ],
+      "probe": [
+       215.71,
+       3476.48
+      ],
+      "probeDist": 20,
+      "cs1Lane": 63573,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "target": {
+      "segment": 12566,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e12566_0a",
+      "dir": [
+       0.57,
+       -0.82
+      ],
+      "probe": [
+       235.21,
+       3441.36
+      ],
+      "probeDist": 20,
+      "cs1Lane": 168192,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a11",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 23246,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e23246_0",
+      "dir": [
+       -0.4,
+       0.92
+      ],
+      "probe": [
+       215.71,
+       3476.48
+      ],
+      "probeDist": 20,
+      "cs1Lane": 63573,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 12566,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e12566_0a",
+       "dir": [
+        0.57,
+        -0.82
+       ],
+       "probe": [
+        235.21,
+        3441.36
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a38",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 7747,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e7747_0",
+      "dir": [
+       -0.57,
+       0.82
+      ],
+      "probe": [
+       212.09,
+       3474.6
+      ],
+      "probeDist": 20,
+      "cs1Lane": 261497,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 12566,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e12566_0a",
+       "dir": [
+        0.57,
+        -0.82
+       ],
+       "probe": [
+        235.21,
+        3441.36
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n15971",
+   "cs1Node": 15971,
+   "x": -270.04,
+   "y": 357.26,
+   "z": 3850.64,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c28",
+     "group": "1",
+     "source": {
+      "segment": 303,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e303_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -289.13,
+       3856.93
+      ],
+      "probeDist": 20,
+      "cs1Lane": 30056,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "target": {
+      "segment": 822,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e822_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -250.72,
+       3844.08
+      ],
+      "probeDist": 20,
+      "cs1Lane": 115192,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     }
+    },
+    {
+     "id": "c29",
+     "group": "1",
+     "source": {
+      "segment": 303,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e303_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -289.13,
+       3856.93
+      ],
+      "probeDist": 20,
+      "cs1Lane": 77019,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "target": {
+      "segment": 822,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e822_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -250.72,
+       3844.08
+      ],
+      "probeDist": 20,
+      "cs1Lane": 97322,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c30",
+     "group": "1",
+     "source": {
+      "segment": 303,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e303_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -289.13,
+       3856.93
+      ],
+      "probeDist": 20,
+      "cs1Lane": 127215,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "target": {
+      "segment": 822,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e822_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -250.72,
+       3844.08
+      ],
+      "probeDist": 20,
+      "cs1Lane": 221162,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     }
+    }
+   ],
+   "arrows": []
+  },
+  {
+   "id": "n17002",
+   "cs1Node": 17002,
+   "x": 99.05,
+   "y": 279.32,
+   "z": 243.1,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c10",
+     "group": "1",
+     "source": {
+      "segment": 2218,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e2218_0",
+      "dir": [
+       0.18,
+       -0.98
+      ],
+      "probe": [
+       105.11,
+       223.84
+      ],
+      "probeDist": 20,
+      "cs1Lane": 35575,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "target": {
+      "segment": 32183,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e32183_0",
+      "dir": [
+       -0.22,
+       0.98
+      ],
+      "probe": [
+       94.63,
+       262.83
+      ],
+      "probeDist": 20,
+      "cs1Lane": 49233,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    },
+    {
+     "id": "c61",
+     "group": "1",
+     "source": {
+      "segment": 1009,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e1009_0",
+      "dir": [
+       0.39,
+       -0.92
+      ],
+      "probe": [
+       111.82,
+       227.79
+      ],
+      "probeDist": 20,
+      "cs1Lane": 120505,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "target": {
+      "segment": 32183,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e32183_0",
+      "dir": [
+       -0.22,
+       0.98
+      ],
+      "probe": [
+       94.63,
+       262.83
+      ],
+      "probeDist": 20,
+      "cs1Lane": 3034,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a4",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 2218,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e2218_0",
+      "dir": [
+       0.18,
+       -0.98
+      ],
+      "probe": [
+       105.11,
+       223.84
+      ],
+      "probeDist": 20,
+      "cs1Lane": 35575,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 32183,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e32183_0",
+       "dir": [
+        -0.22,
+        0.98
+       ],
+       "probe": [
+        94.63,
+        262.83
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a18",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 1009,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e1009_0",
+      "dir": [
+       0.39,
+       -0.92
+      ],
+      "probe": [
+       111.82,
+       227.79
+      ],
+      "probeDist": 20,
+      "cs1Lane": 120505,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 32183,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e32183_0",
+       "dir": [
+        -0.22,
+        0.98
+       ],
+       "probe": [
+        94.63,
+        262.83
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n17387",
+   "cs1Node": 17387,
+   "x": -203.58,
+   "y": 355.83,
+   "z": 3828.09,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c22",
+     "group": "1",
+     "source": {
+      "segment": 822,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e822_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -222.67,
+       3834.56
+      ],
+      "probeDist": 20,
+      "cs1Lane": 115192,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "target": {
+      "segment": 14787,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e14787_0",
+      "dir": [
+       0.56,
+       -0.83
+      ],
+      "probe": [
+       -189.25,
+       3813.96
+      ],
+      "probeDist": 20,
+      "cs1Lane": 100799,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c23",
+     "group": "1",
+     "source": {
+      "segment": 822,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e822_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -222.67,
+       3834.56
+      ],
+      "probeDist": 20,
+      "cs1Lane": 97322,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "target": {
+      "segment": 9948,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e9948_0",
+      "dir": [
+       0.96,
+       -0.28
+      ],
+      "probe": [
+       -184.16,
+       3822.18
+      ],
+      "probeDist": 20,
+      "cs1Lane": 193559,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c24",
+     "group": "1",
+     "source": {
+      "segment": 822,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e822_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -222.67,
+       3834.56
+      ],
+      "probeDist": 20,
+      "cs1Lane": 221162,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "target": {
+      "segment": 9948,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e9948_0",
+      "dir": [
+       0.96,
+       -0.28
+      ],
+      "probe": [
+       -184.16,
+       3822.18
+      ],
+      "probeDist": 20,
+      "cs1Lane": 67914,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a14",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 822,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e822_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -222.67,
+       3834.56
+      ],
+      "probeDist": 20,
+      "cs1Lane": 97322,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 9948,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e9948_0",
+       "dir": [
+        0.96,
+        -0.28
+       ],
+       "probe": [
+        -184.16,
+        3822.18
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 14787,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e14787_0",
+       "dir": [
+        0.56,
+        -0.83
+       ],
+       "probe": [
+        -189.25,
+        3813.96
+       ],
+       "probeDist": 20,
+       "arrow": "Right",
+       "allowed": false,
+       "cs1OutLanes": 1
+      }
+     ]
+    },
+    {
+     "id": "a17",
+     "arrows": "Right",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 822,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e822_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -222.67,
+       3834.56
+      ],
+      "probeDist": 20,
+      "cs1Lane": 115192,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "targets": [
+      {
+       "segment": 9948,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e9948_0",
+       "dir": [
+        0.96,
+        -0.28
+       ],
+       "probe": [
+        -184.16,
+        3822.18
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": false,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 14787,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e14787_0",
+       "dir": [
+        0.56,
+        -0.83
+       ],
+       "probe": [
+        -189.25,
+        3813.96
+       ],
+       "probeDist": 20,
+       "arrow": "Right",
+       "allowed": true,
+       "cs1OutLanes": 1
+      }
+     ]
+    },
+    {
+     "id": "a33",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 822,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e822_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -222.67,
+       3834.56
+      ],
+      "probeDist": 20,
+      "cs1Lane": 221162,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "targets": [
+      {
+       "segment": 9948,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e9948_0",
+       "dir": [
+        0.96,
+        -0.28
+       ],
+       "probe": [
+        -184.16,
+        3822.18
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 14787,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e14787_0",
+       "dir": [
+        0.56,
+        -0.83
+       ],
+       "probe": [
+        -189.25,
+        3813.96
+       ],
+       "probeDist": 20,
+       "arrow": "Right",
+       "allowed": false,
+       "cs1OutLanes": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n18884",
+   "cs1Node": 18884,
+   "x": 279.2,
+   "y": 270.96,
+   "z": 145.53,
+   "position": "body",
+   "connections": [],
+   "arrows": [
+    {
+     "id": "a22",
+     "arrows": "Forward",
+     "supersededByConnections": false,
+     "source": {
+      "segment": 36804,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e36804_0",
+      "dir": [
+       -0.92,
+       -0.38
+      ],
+      "probe": [
+       261.71,
+       135.87
+      ],
+      "probeDist": 20,
+      "cs1Lane": 151171,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 18923,
+       "prefab": "2452038713.USRP 2L Interstate B",
+       "geometry": "dump",
+       "dir": [
+        0.96,
+        0.27
+       ],
+       "probe": [
+        298.6,
+        150.96
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a26",
+     "arrows": "Forward",
+     "supersededByConnections": false,
+     "source": {
+      "segment": 3338,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e3338_0",
+      "dir": [
+       -0.96,
+       -0.27
+      ],
+      "probe": [
+       259.85,
+       140.11
+      ],
+      "probeDist": 20,
+      "cs1Lane": 168156,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 18923,
+       "prefab": "2452038713.USRP 2L Interstate B",
+       "geometry": "dump",
+       "dir": [
+        0.96,
+        0.27
+       ],
+       "probe": [
+        298.6,
+        150.96
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n21201",
+   "cs1Node": 21201,
+   "x": 83.83,
+   "y": 279.31,
+   "z": 239.69,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c62",
+     "group": "1",
+     "source": {
+      "segment": 784,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e784_0",
+      "dir": [
+       -0.22,
+       0.98
+      ],
+      "probe": [
+       79.4,
+       259.42
+      ],
+      "probeDist": 20,
+      "cs1Lane": 237165,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 16556,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e16556_0",
+      "dir": [
+       -0.01,
+       -1
+      ],
+      "probe": [
+       82.35,
+       219.71
+      ],
+      "probeDist": 20,
+      "cs1Lane": 222370,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c63",
+     "group": "1",
+     "source": {
+      "segment": 784,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e784_0",
+      "dir": [
+       -0.22,
+       0.98
+      ],
+      "probe": [
+       79.4,
+       259.42
+      ],
+      "probeDist": 20,
+      "cs1Lane": 38405,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 15937,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e15937_0",
+      "dir": [
+       0.22,
+       -0.98
+      ],
+      "probe": [
+       88.1,
+       219.94
+      ],
+      "probeDist": 20,
+      "cs1Lane": 34102,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a5",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 784,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e784_0",
+      "dir": [
+       -0.22,
+       0.98
+      ],
+      "probe": [
+       79.4,
+       259.42
+      ],
+      "probeDist": 20,
+      "cs1Lane": 38405,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "targets": [
+      {
+       "segment": 15937,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e15937_0",
+       "dir": [
+        0.22,
+        -0.98
+       ],
+       "probe": [
+        88.1,
+        219.94
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      },
+      {
+       "segment": 16556,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e16556_0",
+       "dir": [
+        -0.01,
+        -1
+       ],
+       "probe": [
+        82.35,
+        219.71
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      }
+     ]
+    },
+    {
+     "id": "a36",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 784,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e784_0",
+      "dir": [
+       -0.22,
+       0.98
+      ],
+      "probe": [
+       79.4,
+       259.42
+      ],
+      "probeDist": 20,
+      "cs1Lane": 237165,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "targets": [
+      {
+       "segment": 15937,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e15937_0",
+       "dir": [
+        0.22,
+        -0.98
+       ],
+       "probe": [
+        88.1,
+        219.94
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      },
+      {
+       "segment": 16556,
+       "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+       "geometry": "e16556_0",
+       "dir": [
+        -0.01,
+        -1
+       ],
+       "probe": [
+        82.35,
+        219.71
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n21320",
+   "cs1Node": 21320,
+   "x": -331.12,
+   "y": 358.73,
+   "z": 3889.07,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c25",
+     "group": "1",
+     "source": {
+      "segment": 35218,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e35218_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -312.1,
+       3882.38
+      ],
+      "probeDist": 20,
+      "cs1Lane": 60175,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "target": {
+      "segment": 8915,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e8915_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -350.19,
+       3895.62
+      ],
+      "probeDist": 20,
+      "cs1Lane": 150235,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c26",
+     "group": "1",
+     "source": {
+      "segment": 35218,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e35218_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -312.1,
+       3882.38
+      ],
+      "probeDist": 20,
+      "cs1Lane": 188553,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "target": {
+      "segment": 8915,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e8915_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -350.19,
+       3895.62
+      ],
+      "probeDist": 20,
+      "cs1Lane": 237006,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     }
+    },
+    {
+     "id": "c27",
+     "group": "1",
+     "source": {
+      "segment": 12088,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e12088_0",
+      "dir": [
+       0.97,
+       0.24
+      ],
+      "probe": [
+       -311.12,
+       3891.27
+      ],
+      "probeDist": 20,
+      "cs1Lane": 57440,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "target": {
+      "segment": 8915,
+      "prefab": "2452038713.USRP 3L Interstate_Data",
+      "geometry": "e8915_0",
+      "dir": [
+       -0.95,
+       0.32
+      ],
+      "probe": [
+       -350.19,
+       3895.62
+      ],
+      "probeDist": 20,
+      "cs1Lane": 140357,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a9",
+     "arrows": "Right",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 12088,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e12088_0",
+      "dir": [
+       0.97,
+       0.24
+      ],
+      "probe": [
+       -311.12,
+       3891.27
+      ],
+      "probeDist": 20,
+      "cs1Lane": 57440,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 8915,
+       "prefab": "2452038713.USRP 3L Interstate_Data",
+       "geometry": "e8915_0",
+       "dir": [
+        -0.95,
+        0.32
+       ],
+       "probe": [
+        -350.19,
+        3895.62
+       ],
+       "probeDist": 20,
+       "arrow": "Right",
+       "allowed": true,
+       "cs1OutLanes": 3
+      }
+     ]
+    },
+    {
+     "id": "a10",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 35218,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e35218_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -312.1,
+       3882.38
+      ],
+      "probeDist": 20,
+      "cs1Lane": 60175,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     },
+     "targets": [
+      {
+       "segment": 8915,
+       "prefab": "2452038713.USRP 3L Interstate_Data",
+       "geometry": "e8915_0",
+       "dir": [
+        -0.95,
+        0.32
+       ],
+       "probe": [
+        -350.19,
+        3895.62
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 3
+      }
+     ]
+    },
+    {
+     "id": "a27",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 35218,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e35218_0",
+      "dir": [
+       0.95,
+       -0.32
+      ],
+      "probe": [
+       -312.1,
+       3882.38
+      ],
+      "probeDist": 20,
+      "cs1Lane": 188553,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     },
+     "targets": [
+      {
+       "segment": 8915,
+       "prefab": "2452038713.USRP 3L Interstate_Data",
+       "geometry": "e8915_0",
+       "dir": [
+        -0.95,
+        0.32
+       ],
+       "probe": [
+        -350.19,
+        3895.62
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n23859",
+   "cs1Node": 23859,
+   "x": 730.25,
+   "y": 334.78,
+   "z": 3960.72,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c19",
+     "group": "1",
+     "source": {
+      "segment": 20118,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20118_0b",
+      "dir": [
+       0.85,
+       0.52
+      ],
+      "probe": [
+       747.5,
+       3970.97
+      ],
+      "probeDist": 20,
+      "cs1Lane": 214725,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "target": {
+      "segment": 26394,
+      "prefab": "2452038713.USRP 1L Interstate Ramp E",
+      "geometry": "e26394_0",
+      "dir": [
+       -1,
+       0.07
+      ],
+      "probe": [
+       710.56,
+       3957.87
+      ],
+      "probeDist": 20,
+      "cs1Lane": 224793,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     }
+    },
+    {
+     "id": "c20",
+     "group": "1",
+     "source": {
+      "segment": 20118,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20118_0b",
+      "dir": [
+       0.85,
+       0.52
+      ],
+      "probe": [
+       747.5,
+       3970.97
+      ],
+      "probeDist": 20,
+      "cs1Lane": 215809,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "target": {
+      "segment": 25731,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e25731_0a",
+      "dir": [
+       -0.85,
+       -0.53
+      ],
+      "probe": [
+       713.68,
+       3949.34
+      ],
+      "probeDist": 20,
+      "cs1Lane": 186042,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c21",
+     "group": "1",
+     "source": {
+      "segment": 20118,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20118_0b",
+      "dir": [
+       0.85,
+       0.52
+      ],
+      "probe": [
+       747.5,
+       3970.97
+      ],
+      "probeDist": 20,
+      "cs1Lane": 85221,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "target": {
+      "segment": 25731,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e25731_0a",
+      "dir": [
+       -0.85,
+       -0.53
+      ],
+      "probe": [
+       713.68,
+       3949.34
+      ],
+      "probeDist": 20,
+      "cs1Lane": 219726,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a13",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 20118,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20118_0b",
+      "dir": [
+       0.85,
+       0.52
+      ],
+      "probe": [
+       747.5,
+       3970.97
+      ],
+      "probeDist": 20,
+      "cs1Lane": 85221,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "targets": [
+      {
+       "segment": 25731,
+       "prefab": "2452038713.USRP 2L Interstate E",
+       "geometry": "e25731_0a",
+       "dir": [
+        -0.85,
+        -0.53
+       ],
+       "probe": [
+        713.68,
+        3949.34
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 26394,
+       "prefab": "2452038713.USRP 1L Interstate Ramp E",
+       "geometry": "e26394_0",
+       "dir": [
+        -1,
+        0.07
+       ],
+       "probe": [
+        710.56,
+        3957.87
+       ],
+       "probeDist": 20,
+       "arrow": "Right",
+       "allowed": false,
+       "cs1OutLanes": 1
+      }
+     ]
+    },
+    {
+     "id": "a30",
+     "arrows": "Right",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 20118,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20118_0b",
+      "dir": [
+       0.85,
+       0.52
+      ],
+      "probe": [
+       747.5,
+       3970.97
+      ],
+      "probeDist": 20,
+      "cs1Lane": 214725,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "targets": [
+      {
+       "segment": 25731,
+       "prefab": "2452038713.USRP 2L Interstate E",
+       "geometry": "e25731_0a",
+       "dir": [
+        -0.85,
+        -0.53
+       ],
+       "probe": [
+        713.68,
+        3949.34
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": false,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 26394,
+       "prefab": "2452038713.USRP 1L Interstate Ramp E",
+       "geometry": "e26394_0",
+       "dir": [
+        -1,
+        0.07
+       ],
+       "probe": [
+        710.56,
+        3957.87
+       ],
+       "probeDist": 20,
+       "arrow": "Right",
+       "allowed": true,
+       "cs1OutLanes": 1
+      }
+     ]
+    },
+    {
+     "id": "a32",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 20118,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e20118_0b",
+      "dir": [
+       0.85,
+       0.52
+      ],
+      "probe": [
+       747.5,
+       3970.97
+      ],
+      "probeDist": 20,
+      "cs1Lane": 215809,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 25731,
+       "prefab": "2452038713.USRP 2L Interstate E",
+       "geometry": "e25731_0a",
+       "dir": [
+        -0.85,
+        -0.53
+       ],
+       "probe": [
+        713.68,
+        3949.34
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      },
+      {
+       "segment": 26394,
+       "prefab": "2452038713.USRP 1L Interstate Ramp E",
+       "geometry": "e26394_0",
+       "dir": [
+        -1,
+        0.07
+       ],
+       "probe": [
+        710.56,
+        3957.87
+       ],
+       "probeDist": 20,
+       "arrow": "Right",
+       "allowed": false,
+       "cs1OutLanes": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n27056",
+   "cs1Node": 27056,
+   "x": 83.07,
+   "y": 271.31,
+   "z": 20.36,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c13",
+     "group": "1",
+     "source": {
+      "segment": 13450,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e13450_0",
+      "dir": [
+       0.44,
+       0.9
+      ],
+      "probe": [
+       92,
+       38.61
+      ],
+      "probeDist": 20,
+      "cs1Lane": 84866,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "target": {
+      "segment": 14444,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e14444_0",
+      "dir": [
+       -0.32,
+       -0.95
+      ],
+      "probe": [
+       76.56,
+       1.41
+      ],
+      "probeDist": 20,
+      "cs1Lane": 227553,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    },
+    {
+     "id": "c54",
+     "group": "1",
+     "source": {
+      "segment": 501,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e501_0",
+      "dir": [
+       0.24,
+       0.97
+      ],
+      "probe": [
+       88.05,
+       39.77
+      ],
+      "probeDist": 20,
+      "cs1Lane": 233879,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "target": {
+      "segment": 14444,
+      "prefab": "2452038713.USRP 2L Interstate_Data",
+      "geometry": "e14444_0",
+      "dir": [
+       -0.32,
+       -0.95
+      ],
+      "probe": [
+       76.56,
+       1.41
+      ],
+      "probeDist": 20,
+      "cs1Lane": 145798,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a12",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 13450,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e13450_0",
+      "dir": [
+       0.44,
+       0.9
+      ],
+      "probe": [
+       92,
+       38.61
+      ],
+      "probeDist": 20,
+      "cs1Lane": 84866,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 14444,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e14444_0",
+       "dir": [
+        -0.32,
+        -0.95
+       ],
+       "probe": [
+        76.56,
+        1.41
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a35",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 501,
+      "prefab": "2452038713.USRP 1L Interstate Ramp_Data",
+      "geometry": "e501_0",
+      "dir": [
+       0.24,
+       0.97
+      ],
+      "probe": [
+       88.05,
+       39.77
+      ],
+      "probeDist": 20,
+      "cs1Lane": 233879,
+      "cs1LaneIndex": 0,
+      "lanePosition": -0.9,
+      "laneCount": 1,
+      "rank": 0,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 14444,
+       "prefab": "2452038713.USRP 2L Interstate_Data",
+       "geometry": "e14444_0",
+       "dir": [
+        -0.32,
+        -0.95
+       ],
+       "probe": [
+        76.56,
+        1.41
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "n27789",
+   "cs1Node": 27789,
+   "x": 875.56,
+   "y": 334.78,
+   "z": 4025.45,
+   "position": "body",
+   "connections": [
+    {
+     "id": "c8",
+     "group": "1",
+     "source": {
+      "segment": 16466,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e16466_0b",
+      "dir": [
+       -0.87,
+       -0.49
+      ],
+      "probe": [
+       857.92,
+       4015.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 14739,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "target": {
+      "segment": 25138,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e25138_0a",
+      "dir": [
+       0.87,
+       0.49
+      ],
+      "probe": [
+       892.88,
+       4035.7
+      ],
+      "probeDist": 20,
+      "cs1Lane": 212461,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c11",
+     "group": "1",
+     "source": {
+      "segment": 16466,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e16466_0b",
+      "dir": [
+       -0.87,
+       -0.49
+      ],
+      "probe": [
+       857.92,
+       4015.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 152109,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "target": {
+      "segment": 25138,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e25138_0a",
+      "dir": [
+       0.87,
+       0.49
+      ],
+      "probe": [
+       892.88,
+       4035.7
+      ],
+      "probeDist": 20,
+      "cs1Lane": 212461,
+      "cs1LaneIndex": 0,
+      "lanePosition": 0.95,
+      "laneCount": 2,
+      "rank": 1,
+      "offset": 1.85
+     }
+    },
+    {
+     "id": "c12",
+     "group": "1",
+     "source": {
+      "segment": 16466,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e16466_0b",
+      "dir": [
+       -0.87,
+       -0.49
+      ],
+      "probe": [
+       857.92,
+       4015.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 4791,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "target": {
+      "segment": 25138,
+      "prefab": "2452038713.USRP 2L Interstate E",
+      "geometry": "e25138_0a",
+      "dir": [
+       0.87,
+       0.49
+      ],
+      "probe": [
+       892.88,
+       4035.7
+      ],
+      "probeDist": 20,
+      "cs1Lane": 65980,
+      "cs1LaneIndex": 1,
+      "lanePosition": -2.75,
+      "laneCount": 2,
+      "rank": 0,
+      "offset": -1.85
+     }
+    }
+   ],
+   "arrows": [
+    {
+     "id": "a1",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 16466,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e16466_0b",
+      "dir": [
+       -0.87,
+       -0.49
+      ],
+      "probe": [
+       857.92,
+       4015.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 4791,
+      "cs1LaneIndex": 4,
+      "lanePosition": -4.6,
+      "laneCount": 3,
+      "rank": 0,
+      "offset": -3.7
+     },
+     "targets": [
+      {
+       "segment": 25138,
+       "prefab": "2452038713.USRP 2L Interstate E",
+       "geometry": "e25138_0a",
+       "dir": [
+        0.87,
+        0.49
+       ],
+       "probe": [
+        892.88,
+        4035.7
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a2",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 16466,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e16466_0b",
+      "dir": [
+       -0.87,
+       -0.49
+      ],
+      "probe": [
+       857.92,
+       4015.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 14739,
+      "cs1LaneIndex": 0,
+      "lanePosition": 2.8,
+      "laneCount": 3,
+      "rank": 2,
+      "offset": 3.7
+     },
+     "targets": [
+      {
+       "segment": 25138,
+       "prefab": "2452038713.USRP 2L Interstate E",
+       "geometry": "e25138_0a",
+       "dir": [
+        0.87,
+        0.49
+       ],
+       "probe": [
+        892.88,
+        4035.7
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    },
+    {
+     "id": "a23",
+     "arrows": "Forward",
+     "supersededByConnections": true,
+     "source": {
+      "segment": 16466,
+      "prefab": "2452038713.USRP 3L Interstate E",
+      "geometry": "e16466_0b",
+      "dir": [
+       -0.87,
+       -0.49
+      ],
+      "probe": [
+       857.92,
+       4015.65
+      ],
+      "probeDist": 20,
+      "cs1Lane": 152109,
+      "cs1LaneIndex": 1,
+      "lanePosition": -0.9,
+      "laneCount": 3,
+      "rank": 1,
+      "offset": 0
+     },
+     "targets": [
+      {
+       "segment": 25138,
+       "prefab": "2452038713.USRP 2L Interstate E",
+       "geometry": "e25138_0a",
+       "dir": [
+        0.87,
+        0.49
+       ],
+       "probe": [
+        892.88,
+        4035.7
+       ],
+       "probeDist": 20,
+       "arrow": "Forward",
+       "allowed": true,
+       "cs1OutLanes": 2
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
