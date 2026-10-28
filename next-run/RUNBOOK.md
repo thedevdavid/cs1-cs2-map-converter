@@ -1,82 +1,74 @@
-# Next test run: Dakota Falls at Height Scale 2048 and 4096
+# Run A-v25: Dakota Falls at Height Scale 2048 on world map 10270758
 
-Draft 2026-10-19. Sections marked **[pending]** fill in when the worker sessions report
-(bridge 0.9.7, converter round 5, exporter v2, hm-rebuild v2, hmap-ext v2 world map).
+A-v25 repeats the accepted A-v24 chain (final `dakota-A24d-2048`) on a fresh map. The only change is the world map: hmap-ext ticket 30 (a divide range and two buttes in the east exterior). History of every earlier run is in `setup-plan.md`.
 
-Both runs use the **same heightmap pair**. Only the Height Scale field and the import file set differ. Run A (2048, true heights) is the main deliverable; run B (4096) is the experiment (owner, via the CS2-side audit session, 2026-10-19). Bridge 0.9.10 adds the `wall` edge option for the 21 flat quays; test one edge first.
+| Input | A-v25 |
+|---|---|
+| Playable heightmap | `10211409-dktflls-1to1.png` (accepted with A-v24), Height Scale **2048** |
+| World map | **`10270758-dktflls-1to1_worldmap.png`** with `10270758-dktflls-1to1_water.json` (hmap-ext main 6722d2e, inner 10211409: divide range 11.9 km / 158 m between the east river and the main river, two buttes 115–117 m east, seam 46 m) |
+| Heightmaps folder | `%USERPROFILE%\AppData\LocalLow\Colossal Order\Cities Skylines II\Heightmaps` |
+| Sea level | **93 m** |
+| Bridge | CS2MCP **0.9.63** (deployed 2026-10-28; texture asset names carry a content hash, so re-imports need no tag of their own) |
+| Converter | repo HEAD, round 52 (`dffafd6`): the runner strips the ruins' own props at build time; import files in `net-converter/out/x1` + `out/trees` |
+| Terrain textures | `look/textures/v3/*.u1.png` (14 files, final set of 2026-10-22) |
+| Look JSONs | `look/climate.json`, `look/water.json` (build phase); `look/terrain-cs1.json` (post-save; holds the Extra3/4 blend values in `terrainEdit`) |
+| Playset | DakotaFalls-E2C (`cs2-playset/PLAYSET.md`): CS2MCP local, the 14 asset packs, Anarchy, Traffic 80095, Move It, Find It, Lumina, TWA (Main profile) |
+| Saves | `dakota-A25a-2048` (build), `-A25b-` (textures), `-A25c-` (override loop + water + TM:PE), `-A25d-` (only if a fix pass is needed) |
 
-| | Run A | Run B |
-|---|---|---|
-| Height Scale on import | **2048** | **4096** |
-| Playable heightmap | **`10211409-dktflls-1to1.png` (final, accepted on `dakota-A24d-2048`)**: 10201528 + the JP Rock shed road regrade (ticket 31, `hm-rebuild regrade`, spec `net-converter/out/x1/regrade-rock-shed.json`). Lineage: 10190442 (1:1 rebuild + clipped peaks v2) → 10190615 (PO mountains + rock work, v2 layers) → 10190843 (falls steps capped at the CS1 water line) → 10201528 (road corridors, net-converter round 26) → 10211409. Documented alternative: `10201528-dktflls-1to1-soft.png` (softened mountains, without the ticket 31 regrade) with world map `10201624-dktflls-1to1-soft_worldmap.png`. Retired 2026-10-21 (moved to `hm-rebuild/out/retired-heightmaps/`): 10190843 (+soft), 10201528 | same |
-| World map | **`10270758-dktflls-1to1_worldmap.png`** (hmap-ext ticket 30, main 6722d2e, built on inner 10211409: divide range 11.9 km / 158 m between the east river and the main river, two buttes 115–117 m east; seam 46 m; not yet reviewed in game), with its `_water.json` and `_worldmap_preview.png`; soft variant `10270754-dktflls-1to1-soft_worldmap.png` (inner 10201528-soft). Superseded and deleted from the Heightmaps folder: `10201622` (ticket 29, accepted with 10211409) and `10201624` soft. Older entries: **`10201010-dktflls-1to1_worldmap.png`** (hmap-ext 6cd72f3, tickets 01–28: flats as swells with creeks, erosion slope cap removes the radial gullies, north foothills 380 m; soft variant `10201012-dktflls-1to1-soft_worldmap.png` for the soft inner). Previous `10200633-dktflls-1to1_worldmap.png` (f2e2e35, tickets 01–27: massifs, 8 hill groups, creek network cutting ~21 m, 29–33 % flats; heavier north foothills); `10200636-dktflls-1to1_worldmap.png` is the same with the lighter north of 10191247; soft variant `10200635-dktflls-1to1-soft_worldmap.png` | same | same |
-| Import file set | `net-converter/out/x1/` | `net-converter/out/` |
-| Sea Level (Water tab) | **93 m** first (measured CS1 lower river 92.8 m); 97.5 m if banks look dry | **186 m** first; 195 m fallback |
-| Heights in game | true CS1 metres | 2 × CS1 |
-| Save name | `dakota-A6-2048` (A-v6, 2026-10-20) | `dakota-B-4096` |
+## Before the game starts
 
-## Before the game starts (you)
+Run `bash next-run/preflight-a25.sh` from the repo root. It checks the heightmaps, every import file and texture the runner reads, the look JSONs, the TM:PE inputs, the converter commit, and the bridge version and deploy. It must end with `== PASS`. "bridge port 8642 not answering" is information only, expected while the game is closed.
 
-1. CS1: load Dakota Falls in the map editor and run the DakotaExport once: **v0.4.2 is installed and is the final version** (schema v5: water surface, Procedural Objects with meshes and Effects Module data incl. failed objects, terrain surfaces, tree height/scale, Network Skins, extra height grids, flagged buildings, raw data dump). Load the **Workshop map** in the map editor, dismiss PO's loading-failure popup **without deleting**, export, **do not save the map**. Tell the orchestrator the new file name.
-2. File naming: `<MMddHHmm>-dktflls-1to1*.png`, the prefix is the production time; a world map states which inner it was built from in its session report. The pair above is in place. Confirm the files exist in `%USERPROFILE%\AppData\LocalLow\Colossal Order\Cities Skylines II\Heightmaps`.
-3. Playset DakotaFalls-E2C: CS2MCP (local, **0.9.9 deployed** 2026-10-19; needs the game restart) plus the **14 asset packs** from `cs2-playset/ASSET_PACKS.md` added in Skyve (RZ Rocks, Arid Rocks, Cliffs and Rocks, pd Long Grass, Styx pack, Ferns, Leafy Undergrowth ×2, WildFlower, Bloom, Dirty Surfaces, Terrain Textures ×3). Without them the grass plants, pack rocks and decal surfaces fail the dry run, Anarchy, Scene Explorer, Image Overlay (optional, for `overlay-4096.png`).
+## Editor steps (owner, by hand)
 
-## Per run (you, in the editor)
+1. Start the game on the DakotaFalls-E2C playset. Editor → **Map → New**.
+2. Terrain tab → Import Heightmap: set **Height Scale 2048 first**, then pick `10211409-dktflls-1to1.png`.
+3. Terrain tab → Import World Map: `10270758-dktflls-1to1_worldmap.png`.
+4. Water tab → Sea Level **93** → Apply (a new map defaults to 511.7 m, which floods everything).
+5. Map Name: **Dakota Falls**. Say "A-v25 ready" in the orchestrator session.
 
-1. Map → New. Terrain tab → Import Heightmap: set **Height Scale** first (2048 for A, 4096 for B), then pick the playable file, then Import World Map with the `_worldmap` file.
-2. Water tab → Sea Level: 97.5 (A) or 195 (B) → Apply. (A new map defaults to 511.7 m, which floods everything.)
-3. Open the road tool once and turn the **Anarchy toggle on** (highlighted), or rely on `bypassValidation` (A-v5 ran without the toggle, no losses).
-3b. **Unpause the editor simulation** (play button bottom-left) before judging water: sources only flow while the clock runs; A-v5 showed 0 wet cells on the streams until it was unpaused, 290 within a minute. Let it run a few minutes and save again, since the water state is saved.
-4. Say "Run A ready" or "Run B ready" in the orchestrator session.
+## Runner chain (orchestrator)
 
-## Per run (orchestrator, through the bridge)
+`B=http://127.0.0.1:8642`. Runner commands from `net-converter/`, the rest from the repo root. Every save goes through `curl -s -X POST "$B/map/save?name=<name>"`; wait until `curl -s $B/map/save/status` says `done` (the runner's own `--save` line can say "not confirmed: HTTP 202" while the save is still running: check the status). Names have no leading or trailing space.
 
-**One command (A-v10, run from `net-converter/`, bridge 0.9.42, converter round 34+):** same command as A-v9 (`--skip textures`, textures on the reloaded save). New: dead-end fixes at (817, 4013) and (608, −4721), trees on the river islands (terrain-based mask), cliff pieces back with slope/spacing/sink rules, the rock-shed avalanche gallery (`rock-shed` step: ConcreteSet01 roof + hill wall, vanilla `Vertical Pillar` columns on the open valley side), climate with raised cold-season precipitation (light snow possible), Time & Weather Anarchy overrides cleared by the bridge on load. Before the import: measure `Vertical Pillar` with `/prefabs/info`. After the save: `node look/season-test.mjs --out next-run/shots-seasons/a10` and `next-run/shots-a9.sh`-style shots incl. 14, 15, 17, 22, 24 and 30. Previous: **One command (A-v9, run from `net-converter/`, bridge 0.9.39, converter 746ae4c):** `node tools/import-run.mjs --scale x1 --sea 93 --po-structures --with po-gantry --fresh --skip textures` — textures only on the reloaded save (a textured save on a fresh map failed once, cause open), then save again as A9b. New since A-v8: `elevated: true` on 505 CS1-elevated courses (pillars instead of retaining walls), clearance guard >= 7 m, bridge absolute-height fix (0.9.38), `/map/time` settle + live climate samples for the season test (`next-run/shots-a9.sh`), world map `10201622` (ticket 29; ticket 30 pending). Previous: **One command (A-v7, run from `net-converter/`):** `node tools/import-run.mjs --scale x1 --sea 93 --po-structures --with po-gantry` (bridge **0.9.29** required: TM:PE lane-index fix, terrain paint, folded-course reporting; new default steps terrain-paint after surfaces with a dry run first, pillars-off + po-piers after po-rocks; grass-dry gone; BR006 = truss arch only; `--with po-br006-arches` optional). Save `dakota-A7-2048`, TM:PE after the save (dry run self-check: lane indices 2/3 not 0/1, no "Traffic validation" skips), save `dakota-A7b-2048`, reload, Traffic must not show "couldn't load data". (run B: `--scale x2 --sea 186`; climate comes from `look/climate.json`, override with `--climate`). Order since A-v5: surfaces first, then nets (network, gaps, bridges, dam, power, canals, ship paths), then water, connections, objects, barriers, station, cliffs, scatter, fort, trees, resources, power ends, settings, look. The runner stops at the first step whose `netGuard.segmentsRemoved` is not 0 and prints `/net/count` after the nets and at the end.
+1. `curl -s $B/ping` → version `0.9.63-editor-import`, mode Editor.
+2. **Build:** `node tools/import-run.mjs --scale x1 --sea 93 --po-structures --with po-gantry --fresh --save dakota-A25a-2048`
+   Expect (A-v24): about 3 204 segments, 3 point-check failures, fort-buildings 89, the `fort-strip` line strips the ruins' props, netGuard 0 on every step.
+3. **Reload:** `curl -s -X POST "$B/map/load?name=dakota-A25a-2048"`, poll `curl -s $B/map/load/status` until `loaded`.
+4. **Textures:** `node tools/import-run.mjs --scale x1 --phase post-save --only textures --textures-dir D:/work/mods/csl2-editor/look/textures/v3 --textures-tag .u1`
+   Posts `look/terrain-cs1.json` (tiling and the Extra3/4 splat/blur values), then the 14 `.u1` files. Expect done 14, failed 0. `--textures-tag .u1` only selects the `.u1` files; the 0.9.63 hash keeps re-imports apart on its own.
+5. Save **`dakota-A25b-2048`**.
+6. **Override loop:** `curl -s $B/debug/override-loop` → objectsInLoop **0**. ownedInLoop of about 132 is the hydro plant's own props (CPU only, accepted on A-v24).
+   Ruin-prop fallback (A-v24 needed a live strip; round 52 should make it unnecessary): `node tools/import-run.mjs --scale x1 --only fort-strip --dry-run` must show matched 0 on every strip line; otherwise run it again without `--dry-run`.
+7. **Water fill:** `curl -s -X POST $B/map/time -H 'content-type: application/json' -d '{"settle":300,"speed":3}'`, then wait 300 s until the reservoir and rivers are full.
+8. **TM:PE → Traffic:** `node cs2mcp/scripts/import-tmpe.mjs --dump "$LOCALAPPDATA/DakotaExport/2972879554_Dakota_Falls-20261019-063123.json" --body net-converter/out/x1/import-all.json --out net-converter/out/x1/tmpe-bridge/tmpe-import-request.json --report-out net-converter/out/x1/tmpe-bridge/tmpe-import-report.json --dry-run` (lane indices 2/3, no "Traffic validation" skips), then the same command without `--dry-run`. Expect 38 created, 30 notNeeded.
+9. Save **`dakota-A25c-2048`**.
+10. **Review shots:** `bash next-run/shots-a25.sh` → `next-run/shots-a25/`: the 31 A-v24 cameras plus `E01`–`E09`, the east exterior (divide range, buttes, border). Audit every shot before the owner sees it; fix and re-shoot first.
+11. **Season test:** `node look/season-test.mjs --out next-run/shots-seasons/a25` → must report PASS 9/9.
+12. **Sheets:** `powershell -File next-run/small.ps1 -Dir next-run/shots-a25`, then `powershell -File next-run/sheets.ps1 -Run a25` → `next-run/sheets-a25/` (CS1 vs A-v25 pairs).
+13. **Fidelity:** `node tools/fidelity.mjs` (from `net-converter/`, newest `live-graph-*-end.json`) → expect 18/37 OK and no dead ends, as on A-v24.
+14. A fix pass (a strip, a demolish, a re-import of one layer), if any, ends with save **`dakota-A25d-2048`** and a re-shoot of the affected cameras.
 
-**A-v6 (2026-10-20):** bridge **0.9.26** must be the running build (closed surface polygons, so the surface step no longer deletes nets; Traffic-style TM:PE pre-validation) — restart the game after Skyve shows it. Converter round 19 + 20 files in `out/x1`: footpaths and dam walkway gone, organic sand/dry-grass polygons and true field circles, straightened BR005/BR009 approaches, interchange head-on joins and the (−4224,−60) crossing restored, nine low bridges at 8.5 m, BR007/BR010 single truss-arch edges, 304 m dam edge with `flow: invert`. `--po-structures` places the 72 PO structure objects (BR006 StoneArchRailBridge + ConcreteSet01 columns/piers, BR022 pads; mods 154132 + 135944 in the playset since 2026-10-20) after po-rocks; `--with po-gantry` adds the one Truss Gantry (132188). `po-piers` (ITBP 140978) stays off until `noPillars` is verified on BR001/BR003. The look step re-posts `look/climate.json` and the corrected `look/water.json`. After the save: `node cs2mcp/scripts/import-tmpe.mjs --dry-run --body net-converter/out/x1/import-all.json`, then the real import, save again as `dakota-A6b-2048`.
-
-**A-v5 acceptance (bridge round 24):** segment counts per prefab must match (a) right after the net steps, (b) after 2 minutes of idle editor time, (c) after save + reload (`node net-converter/tools/import-run.mjs --verify-only`). Save under a name with no leading or trailing space. It runs every layer below in order, prints one line per layer, stops on a body error and writes `out/<scale>/run-<timestamp>.md` with every importId. The numbered list stays as the reference and for manual re-runs of single layers.
-
-Order (converter `out/ROUND6.md`): network → power, walls, ship paths → water → connections → objects and barrier props → trees → resources → surfaces (fields, decals; grass surfaces only if the grass plants are rejected). Each layer is a separate import name so it can be undone alone. Every layer: dry run first, then real, then the live-graph defect scan where it applies.
-
-1. `cs2_ping`: version 0.9.7, mode Editor. `cs2_terrain`: heightScale 2048 or 4096, min ≈ 38 m (A) / 76 m (B).
-2. Network: `import-all.json` (4 072 edges, 3 915 nodes, heightMode absolute), options `nodesFirst`, `bypassValidation: true`. Expect ≈ 4 000 edges created+merged, 0 rejected batches.
-3. Power, walls, ship paths via `cs2_import_network`: `import-power.json` (60 edges, `High-voltage Line`), `import-walls.json` (113 edges: QuaySmall01 90, QuayMedium01 7, Medium Boatway 14 for canals, Sound Barrier 2), `import-shippaths.json` (100 edges of `Medium Seaway`, ending on the border so the game can tag the ship outside connection).
-4. Water: `import-water-sea93.json` (A) / `import-water-sea186.json` (B) via `cs2_import_water` (41 natural sources after the audit rule; dry run, then real); the 97.5/195 files are the fallback pair. `water-check.md` has the measured CS1 surface per source.
-5. Outside connections: `import-connections.json` via `cs2_import_objects` (25 entries: road + rail are **verification only**, the game tags border nodes itself; 4 air + 1 ship are placed on the border facing outward). Any `failed` road/rail entry means that net does not end exactly on ±7168.
-6. Objects: first the rotation test (one asymmetric building at rotation 0 and one at 90; 0 must face north, 90 east), then `import-objects.json` (6 130: 3 038 props incl. pack and vanilla rocks, 3 076 grass plants from the packs, 7 buildings incl. ruins/wreck/factory stand-ins) and `import-walls-props.json` (621 barrier and fence props). The dams and the two CS1 bridge models stay in `out/manual-objects.md` for hand placement.
-7. Trees: the bridge's 2 000-tree timing test first, then `out/trees/import-trees-01..10.json` (496 318 trees from the exact CS1 points, water and net corridors masked; shared by both runs) plus the per-scale `import-trees-fixed-01.json` (50 fixed-height trees with y). Expect roughly 20 s per 50 000 at the test rate; adjust `batchSize`.
-8. Resources: `import-resources.json` (real CS1 layers: fertility, ore, oil, groundwater); read back with `cs2_map_resources`.
-8b. Surfaces via `cs2_import_surfaces` (pack textures per audit/theme.md): `import-surfaces-sand.json` (479 polygons from CS1's painted sand), `import-surfaces-fields.json` (56), `import-surfaces-decals.json` (41); optional: `import-surfaces-rock.json` (151, slope ≥ 40°), `import-surfaces-grass.json` (51, only if the grass plants are rejected); `-unmerged` files are experiments. `import-surfaces-fields.json` (67 Agriculture Surface polygons), `import-surfaces-decals.json` (128 Dirty Surfaces Pack polygons for the CS1 dirt/mud decals); `import-surfaces-grass.json` (53) only as the fallback for grass.
-9. Map settings: `cs2_map_settings` sets theme North American, climate, then latitude 40.0 / longitude −105.3, sea level, height scale, left-hand traffic off, camera start. **Climate: try both** on the same map (owner decision): the River Valley / Colorado climate with winter snow, and a milder no-snow climate that keeps CS1's summer look; read the exact climate prefab names from the editor first (audit/theme.md), switch with `cs2_map_settings`, and judge in game before saving. By hand per `cs2mcp/MAP_SETTINGS.md`: map name, description, preview, starting tiles, content prerequisites.
-10. `pull-live-graph.mjs` + `defects.mjs` → `out/live-defects.md`; screenshots of the known trouble spots (river bridge, e15883, tunnel transitions).
-11. Save as `dakota-A-2048` / `dakota-B-4096`. **No leading or trailing space in the name**: a map saved as " dakota-A4-2048" froze on load until the name was fixed inside the file.
-12. **Last, after the save:** TM:PE lane connections → Traffic (PDX 80095, pinned 0.2.13; the mod is in the playset): `cs2_import_tmpe` dry run, import, check junctions in Traffic's Lane Connector, save again under a new name, reload, check again (bridge 0.9.11, untested; data `cs1-offline/out/tmpe-offline.json`).
-
-## Review checklist (you)
+## Review checklist (owner)
 
 - Water: lower river at sea level, upper reaches fed by sources, no flooding of the interchanges.
-- Power lines follow the CS1 corridor and connect to the dam / substation positions listed in `manual-objects.md`.
+- Power lines follow the CS1 corridor and connect to the dam and substation positions in `manual-objects.md`.
 - Every road and rail that reaches the border has an outside connection; 4 air + 1 ship exist.
 - Tree density reads like CS1 (dense pine on the western slopes, oaks along the river, open plains east).
 - Rocks sit on the slopes they came from; landmarks oriented correctly.
 - Resources visible in the editor's resource overlay where CS1 had cornfields.
 - Peaks: no flat 1024 m plateaus left; no seam at the playable/world-map edge.
+- **New world map:** the divide range and the two buttes are visible east of the border (E05–E07, E09).
+- **No seam step at the border** (E01–E04, E08: the playable edge runs into the exterior without a cliff or ledge).
+- **Water line held:** no new exterior lakes or dry river beds; nothing below 93 m outside the beds.
 
-## Next game start: world map 10270758 review (owner + orchestrator)
-
-1. You: start the game, Map → Load the latest Dakota Falls save, tell the orchestrator when the editor is on it.
-2. Orchestrator, by computer use: Terrain tab → Import World Map → `10270758-dktflls-1to1_worldmap.png` (Height Scale stays 2048; the playable map is untouched; no re-run of the import). Then `bash next-run/shots-worldmap-30.sh` and send the shots.
-3. What to judge against 10201622: the divide range running south-east between the east river valley and the main river (ridge 158 m above the floors, 11.9 km long, flanks about 2.4 km); the two flat-topped buttes east of the border (115–117 m); seam at the border still 46 m with no step; water line held (0 km² below 93 m outside the beds). Knobs if you want more: a different `--seed` draws another ridge length and cluster, `--hills` lower frees room for a third butte; `--upland-height` cannot raise the range (the rivers are only 7 km apart).
-4. Accept → save the map again (the world map lives in the save). Reject → re-import `10201622` is gone from the folder; hmap-ext rebuilds it with `--uplands` off on request.
-
-## Publishing (only after the owner accepts run A)
+## Publishing (only after the owner accepts the run)
 
 Done by hand in the editor's Map Inspector, then "Share map"; nothing here is automated yet.
 
-1. **Description:** paste the full text from `MAP-DESCRIPTION.md` (the A-v6 save has the short one-paragraph version) — Map Settings → Map Description; add translations only if wanted.
+1. **Description:** paste the full text from `MAP-DESCRIPTION.md` (the in-map field is single-line: `next-run/publish/description-inmap.txt`) — Map Settings → Map Description; add translations only if wanted.
 2. **Preview image and thumbnail:** take them in the editor's photo mode (the checklist accepts the defaults, but the defaults are the generic placeholder): preview from the river bend with the Detroit suspension bridge and the western range, thumbnail from the falls; set them in Map Settings → Preview / Thumbnail.
-3. **Starting tiles:** Map Settings → Select Starting Tiles; the 9 default tiles are the map centre. Proposed: the 9 tiles around the interstate junction north of the Detroit bridge (water, road and rail connections inside), to be confirmed on the accepted map.
+3. **Starting tiles:** Map Settings → Select Starting Tiles; the 9 default tiles are the map centre. Owner's pick: the 3 × 3 block around the Detroit junction (~1400, −3700), water, road and rail connections inside.
 4. **Content prerequisites:** the game lists them itself (Bridges & Ports for the BXP/vanilla bridge set; the asset packs and ConcreteSet01 / Stone Arch kit are mods, not DLC — note them in the description instead).
 5. **Camera start:** Map Settings → Capture Camera Properties from the preview viewpoint.
 6. Final `cs2_map_checklist` must be `playable: true` with every publishing item passing; save once more under the final name (no leading or trailing space), then Share map.

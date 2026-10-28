@@ -5,13 +5,14 @@ Ready request bodies for `POST /map/settings` (bridge 0.9.23 or later; MCP `cs2_
 | File | What it sets |
 |---|---|
 | [climate.json](climate.json) | Base climate `TemperateWaterwayPassClimate`, then an edited copy (saved in the map): sun at 40.0 / −105.3, the four seasons, plus theme, starting month/time and natural disasters |
-| [water.json](water.json) | All 22 `WaterRenderSettingsPrefab` fields on an edited copy of whatever water settings the map has (= water-v1) |
-| [water-v1.json](water-v1.json), [water-v2a.json](water-v2a.json), [water-v2b.json](water-v2b.json) | Water A/B. **Owner decision after A-v8: v1 (= water.json) is final; v2a and v2b are parked**, no new variants unless the owner asks |
+| [water.json](water.json) | All 22 `WaterRenderSettingsPrefab` fields on an edited copy of whatever water settings the map has. **The chosen water set** (owner after A-v8); no variants unless the owner asks |
 | [terrain.json](terrain.json) | Selects `DefaultTerrainRenderSettings`, no edits (superseded by terrain-cs1.json) |
-| [terrain-cs1.json](terrain-cs1.json) | Edited copy of `DefaultTerrainRenderSettings` for the **CS1 theme-mix textures**: legacy texture format on, CS1 tiling. The textures themselves are set in the panel (below) |
+| [terrain-cs1.json](terrain-cs1.json) | Edited copy of `DefaultTerrainRenderSettings` for the **CS1 theme-mix textures**: legacy texture format on, CS1 tiling, and the Extra3/Extra4 splat/blur values (`terrainEdit`). The runner posts it in the post-save phase, before the textures |
 | [swatch.mjs](swatch.mjs) | Writes the surface swatch-test body |
 | [season-test.md](season-test.md) | Every season with screenshots: dates, camera spots, expected values, pass/fail |
-| [tools/export-theme.mjs](tools/export-theme.mjs) | Extracts the CS1 theme-mix textures from the theme `.crp` files into `textures/` (regenerable, gitignored; `textures/manifest.json` is kept) |
+| `textures/current/` | The CS1 theme-mix export (14 PNGs, gitignored except `manifest-current.json`); the base of every later set |
+| `textures/v3/*.u1.png` | **The terrain texture set in use** (gitignored except `manifest-v3.json`): CS1 gloss alpha, graded Extra2, 4K Cliff/Dirt/Extra3. Rebuild path below |
+| [tools/](tools/) | The texture pipeline: `export-theme.mjs`, `export-current.mjs`, `make-v3.mjs`, `make-extras.mjs`, `make-up4k-set.mjs` and helpers |
 
 ## Owner decisions (2026-10-20), encoded in the files
 
@@ -38,7 +39,7 @@ Ready request bodies for `POST /map/settings` (bridge 0.9.23 or later; MCP `cs2_
 
 ## Climate: verified (A-v9b, 2026-10-21)
 
-Measured with `look/season-test.mjs` on dakota-A9c-2048, bridge 0.9.41, mod overrides cleared (report `next-run/shots-seasons/a9b/report.md`):
+Measured with `look/season-test.mjs` on dakota-A9c-2048, bridge 0.9.41, mod overrides cleared (that report was removed in the 2026-10-28 cleanup; the latest one is `next-run/shots-seasons/a24/report.md`, PASS 9/9):
 - **All nine shots PASS:** live = sampled curve value.
 - **Noon °C per shot:** Jan 11.8, Jan 06:00 4.8, Mar 14.1, May 25.7, Jul 28.6, Jul 20:00 17.0, Sep 23.3, Nov 14.3, Dec 10.5.
 - **Other checks:** every month's noon value is within ±7 °C of the design; no plains snow is possible April–October.
@@ -93,59 +94,23 @@ Run on the open map in the editor, after terrain, water sources and sea level.
 
 **terrain.json vs terrain-cs1.json:** terrain.json only picks the vanilla set. terrain-cs1.json makes an editable copy for the CS1 textures (next section). The texture fields cannot be written from code (asset references), so they are assigned once by hand in the panel; the numeric fields come from the file.
 
-## Water A/B (owner review of A-v7; decided after A-v8: keep v1)
+## Water: water.json is the chosen set
 
-**Decision (owner, A-v8):** "that water looks ugly as hell. midpoint too. keep first version." `water.json` = v1 stays. v2a/v2b are kept only for reference.
+**Decision (owner, A-v8):** keep the first version. `water.json` is the set the runner posts; the darker/siltier A/B variants were rejected ("ugly") and their files were deleted on 2026-10-28. If the river ever needs another pass: deep-channel brightness comes from `waterScatteringColor` × the ambient/sun scattering terms (ambient 0.5 here), so raise those rather than shifting the hue; `absorptionDistance` ±2 for muddy creeks or glassy river.
 
-Owner: "water coloring not correct". In `next-run/shots-a7/22-fort-ruins.png` the main river reads dark slate blue, near black in the deep channel.
-
-**Cause:**
-- **Body colour too dark.** v1's `waterScatteringColor` (0.18, 0.25, 0.20) is darker than the vanilla default (0.19, 0.33, 0.39). In deep water the body colour comes almost entirely from that scattering colour times the ambient/sun scattering terms (ambient only 0.5), so the channel goes near black.
-- **Sky reflection.** The high smoothness reflects the blue sky at the oblique camera angle, which adds the slate-blue cast.
-- **Wrong lever.** The "60 % silty" blend moved the hue but not the brightness, so the silt never shows.
-
-| Field | v1 (applied) | v2b (midpoint) | v2a (siltier) |
-|---|---|---|---|
-| `waterColor` (refraction tint) | 0.28, 0.48, 0.36 | 0.40, 0.475, 0.33 | 0.52, 0.47, 0.30 |
-| `waterScatteringColor` | 0.18, 0.25, 0.20 | 0.30, 0.325, 0.23 | **0.42, 0.40, 0.26** |
-| `absorptionDistance` m | 3.8 | 3.0 | 2.2 |
-| `maxRefractionDistance` m | 2 | 1.75 | 1.5 |
-| `ambientScattering` | 0.5 | 0.675 | **0.85** |
-| `heightScattering` | 0.2 | 0.25 | 0.3 |
-| `displacementScattering` | 0.1 | 0.15 | 0.2 |
-| `directLightTipScattering` | 0.4 | 0.45 | 0.5 |
-| `directLightBodyScattering` | 0.35 | 0.475 | 0.6 |
-| `foamAmount` | 0.9 | 1.05 | 1.2 |
-| `causticsIntensity` | 0.6 | 0.45 | 0.3 |
-| `smoothnessClose` | 0.92 | 0.9 | 0.88 |
-| `smoothnessDistant` | 0.78 | 0.74 | 0.7 |
-
-The other 9 fields are unchanged (waves, lake waves, minimum depth for waves, sea wind, foam fade range, caustics depth, ripples, smoothness range). The clear-creek rule still holds at v2a: a 0.5 m creek transmits about 80 % at 2.2 m absorption.
-
-**Camera spot for every water A/B shot** (run A, x1 frame = CS2 metres; `POST /camera/set` / `cs2_set_camera`):
+**Camera spot for water shots** (run A, x1 frame = CS2 metres; `POST /camera/set` / `cs2_set_camera`; shot W1 of the review scripts):
 
 | Shot | x | z | angleX (yaw) | angleY (pitch) | zoom | Time of day |
 |---|---|---|---|---|---|---|
-| W1 main channel, looking upstream | **600** | **−2750** | **0** | **35** | **700** | 17:56 (as `22-fort-ruins.png`) |
+| W1 main channel, looking upstream | **600** | **−2750** | **0** | **35** | **700** | 17:56 |
 | W2 same spot | 600 | −2750 | 0 | 35 | 700 | 12:00 |
 | W3 close look at the shallows | 600 | −2750 | 0 | 55 | 250 | 12:00 |
 
-- **Where:** the wide main channel 600 m east of the fort keep (OldCastle01 at 5, −2619). From the CS1 water raster the channel there is about 400–800 m wide and runs north–south, so yaw 0 looks straight upstream.
-- **Height:** `y` is left out (the bridge samples the terrain).
-- **Yaw convention:** check it once. If W1 does not look along the channel, read `GET /camera` after framing it by hand and replace the numbers here.
-- **Repeatable conditions:** pause the clock, keep the same date (June), and take all three shots for v1, v2b and v2a in one session, so sun and weather match.
-
-**How to A/B:** post v2b, then v2a (each edits the same map copy, no new clone). Screenshot the same camera and time as `22-fort-ruins.png` (17:56, June) plus one noon shot. If v2a is too muddy, the next step is v2b's scattering colour with v2a's ambient 0.85, since brightness, not hue, was the main problem. Keep the winner as `water.json`.
+The wide main channel 600 m east of the fort keep runs north–south there, so yaw 0 looks straight upstream; `y` is left out (the bridge samples the terrain). Pause the clock and keep the same date for comparable shots.
 
 ## CS1 theme-mix textures in the terrain render settings
 
-The textures the CS1 map really used (theme mix `2972881605`, audit/theme-remake.md §1), extracted and decoded from the theme `.crp` files:
-
-```bash
-node look/tools/export-theme.mjs
-```
-
-This writes `look/textures/raw/` (as stored in CS1) and `look/textures/gain16/` (RGB ×1.6). CS1's terrain shader brightens its textures, so stored as-is they are dark; try gain16 first. Each set has 14 PNGs named like a Map Texture Replacer pack (`<Slot>_BaseColor.png`, `<Slot>_Normal.png`).
+The textures the CS1 map really used (theme mix `2972881605`, audit/theme-remake.md §1), extracted and decoded from the theme `.crp` files. Each set has 14 PNGs named like a Map Texture Replacer pack (`<Slot>_BaseColor.png`, `<Slot>_Normal.png`).
 
 | Slot (panel field) | Editor brush | CS1 source | Normal |
 |---|---|---|---|
@@ -159,57 +124,28 @@ This writes `look/textures/raw/` (as stored in CS1) and `look/textures/gain16/` 
 
 The brush ↔ slot mapping is from the game's locale (`Assets.DESCRIPTION[Terrain Material Extra 1..4]`: Dry, Lush, Dirt, Sand) and `TerrainMaterialType` Extra1–4.
 
-**Current file list** (the default set from A-v9 on). Folder: `D:\work\mods\csl2-editor\look\textures\current\`, built by `node look/tools/export-theme.mjs` then `node look/tools/export-current.mjs`. It is the gain16 set (×1.6) for every slot, except **Dirt and Extra3**, which are one step lighter (×1.9, 10 % less saturated; owner after A-v8: "the dirt texture is very dark. maybe try to lighten it a little bit"). The raw and gain16 sets stay as fallbacks.
+**Current state (2026-10-28):**
+- `look/textures/current/` is the CS1 export: brightened ×1.6 for every slot (CS1's terrain shader brightens its textures), Dirt and Extra3 one step lighter (×1.9, 10 % less saturated; owner after A-v8). 2048² except Extra1 and Extra4 (4096²). It is the runner's default `--textures-dir`, but no longer the set in use.
+- `look/textures/v3/*.u1.png` is **the set in use** (owner, 2026-10-22; final on `Dakota Falls.cok` and in every run since). It adds three things to `current/`: the CS1 per-pixel alpha on the 7 BaseColor files (alpha = smoothness; scaled so the brightest pixel is 66, Grass/Extra2 uniform 60), Extra2 graded away from the base grass so the Lush brush shows, and Real-ESRGAN 4K Cliff/Dirt/Extra3 blended with a wrap-aware Lanczos 2× (Grass and Extra2 stay 2048, their ESRGAN output came out painterly).
+- The intermediate sets were deleted on 2026-10-28; only `current/` and the `.u1` files remain.
 
-| # | Panel field (Terrain Rendering Settings) | File | Size | Tiling (terrain-cs1.json: far / mid / near) |
-|---|---|---|---|---|
-| 1 | Rock Diffuse | `Cliff_BaseColor.png` | 2048² | rock 40 / 65 / 260 |
-| 2 | Rock Normal | `Cliff_Normal.png` | 2048² | (rock) |
-| 3 | Dirt Diffuse | `Dirt_BaseColor.png` (**one step lighter:** mean 113, 99, 83; was 96, 83, 68) | 2048² | dirt 40 / 172 / 688 |
-| 4 | Dirt Normal | `Dirt_Normal.png` | 2048² | (dirt) |
-| 5 | Grass Diffuse | `Grass_BaseColor.png` | 2048² | grass 40 / 143 / 572 |
-| 6 | Grass Normal | `Grass_Normal.png` | 2048² | (grass) |
-| 7 | Extra 1 Diffuse (brush **Dry**) | `Extra1_BaseColor.png` | 4096² | uses the grass tiling |
-| 8 | Extra 1 Normal | `Extra1_Normal.png` | 4096² | |
-| 9 | Extra 2 Diffuse (brush **Lush**) | `Extra2_BaseColor.png` | 2048² | grass tiling |
-| 10 | Extra 2 Normal | `Extra2_Normal.png` | 2048² | |
-| 11 | Extra 3 Diffuse (brush **Dirt**) | `Extra3_BaseColor.png` (**one step lighter:** mean 91, 80, 71; was 77, 67, 58) | 2048² | grass tiling |
-| 12 | Extra 3 Normal | `Extra3_Normal.png` | 2048² | |
-| 13 | Extra 4 Diffuse (brush **Sand**) | `Extra4_BaseColor.png` | 4096² | grass tiling |
-| 14 | Extra 4 Normal | `Extra4_Normal.png` | 4096² | |
+**Rebuild path** (from the CS1 theme `.crp` files; every output is gitignored):
+1. `node look/tools/export-theme.mjs` then `node look/tools/export-current.mjs` → `look/textures/current/`.
+2. `node look/tools/make-v3.mjs --max 66 --tag .s66` → `v3/*.s66.png` (gloss alpha).
+3. `node look/tools/make-extras.mjs --from .s66 --tag .e2 --cs1` → `v3/*.e2.png` (Extra2 graded).
+4. Real-ESRGAN x4plus (ncnn portable in `tools-bin/realesrgan`) on Cliff, Dirt and Extra3 BaseColor with 64 px wrap padding (`look/tools/wrap-pad.mjs` before, `crop-down.mjs` after) → `look/textures/up4k/`, plus the Lanczos 2× reference (`lanczos2x.mjs`) in `up4k/lanczos/`.
+5. `node look/tools/make-up4k-set.mjs --tag .u1 --w 0.6` → `v3/*.u1.png` (60/40 blend, colour-matched; RGB means exact, no seams; compare strips in `up4k/compare/`).
 
-The files are regenerated by the two commands above (≈ 30 s) and are gitignored, except `manifest-current.json`. They exist now on this machine. The runner (`net-converter/tools/import-run.mjs`, textures step) takes the folder from `--textures-dir`; point it at `look/textures/current` (its default is still `gain16` until the converter changes it).
+**Apply:** the runner does it on a saved and reloaded map (terrain render edits are refused on never-saved maps): `node tools/import-run.mjs --scale x1 --phase post-save --only textures --textures-dir D:/work/mods/csl2-editor/look/textures/v3 --textures-tag .u1` from `net-converter/`. That posts terrain-cs1.json (tiling, legacy format, Extra3/4 blend values), then the 14 files through `POST /map/terrain-textures`; save afterwards. The imports are BC7, stored in the user asset database and embedded in the map on save, so no mod is needed to play it. Bridge 0.9.63 names each texture asset by a hash of the file bytes, so a changed file is always re-imported (0.9.62 reused assets by name and silently kept old pixels; that is why the sets carry tags).
 
-**Can the picker reach them?** Yes (decompiled `DualImagePickerPopupField`, `FilePickerPopup`, `DirectoryBrowserPanel`):
-- The folder button ("Select from disk") opens a `DirectoryBrowserPanel` with **no root limit**: it lists every ready drive (`DriveInfo.GetDrives()`), so `D:\work\...` is reachable.
-- It opens at the last folder used for that field (`SharedSettings.editor.lastPickerDirectory`, else `lastTextureAssetDirectory`). After the first file, the rest are one click away.
-- The import (`DefaultTextureImporter`, BC7) is saved into the **user asset database** (`AssetDatabase.user.AddAsset`) and the field gets that asset's guid. So on every later fresh map the 14 textures are already in the picker's **asset list** (the left part of the field), with no disk browsing. And the map embeds them on save.
+**By hand instead** (Editor → Environment → Terrain Rendering Settings): the image picker's "Select from disk" browser has no root limit, so `D:\work\...` is reachable; pick the 14 files from `look/textures/v3/` after posting terrain-cs1.json. If a brush looks wrongly lit, clear that slot's normal (the game falls back to a flat normal).
 
-**For the bridge:** the same path works from code. Run `DefaultTextureImporter.Import` with the field's `TextureImportAttribute` settings, then `AssetDatabase.user.AddAsset` + `Save`, then set the field to `new AssetReference<TextureAsset>(guid)`, then `TerrainMaterialSystem.ApplyRenderSettings()`. On the second and later maps, assigning by the guid of the already-imported asset avoids re-importing.
-
-**Apply (in the editor, once per map):**
-1. `POST /map/settings` with **terrain-cs1.json**. This creates the editable copy "DefaultTerrainRenderSettings (copy)", sets `m_UseLegacyTextureFormat` and the CS1 tiling. The legacy format means plain diffuse PNGs and standard normal maps for grass/dirt/rock; it is what Map Texture Replacer sets for user PNGs.
-2. Editor → Environment → Terrain Rendering Settings. For each of the 14 texture fields, use the image picker and choose the matching file from `look/textures/gain16/`. The import is BC7-compressed and embedded in the map, so no mod is needed.
-3. Save, reload, check: cliffs warm grey-brown, grass dark olive, the brushes show CS1 textures. Paint one stroke of each brush to see it.
-4. If a brush looks wrongly lit (the Extra slots' normals may expect the new packed format), clear that slot's normal; the game then uses its flat fallback normal.
-5. Alternative without touching the map: Map Texture Replacer (installed) can load the same folder as a pack, but only per player.
-
-**Tiling in terrain-cs1.json** (repeats per layer; starting values, judge in game):
+**Tiling in terrain-cs1.json** (repeats per layer):
 - **mid** = 14 336 m ÷ the CS1 repeat (grass 100 m → 143; dirt 83 m → 172; rock 222 m → 65);
 - **near** = 4 × mid (CS1's textures hold 5 cm/px, enough up close);
 - **far** = the default 40.
 
-The Extra slots reuse the grass tiling (`TerrainMaterialSystem` binds `_TerrainExtraTextureTiling` from `m_TerrainGrassTiling`). If the playable area is not the tiling unit, all three scale together.
-
-**A-v8 review: Dirt reads as dark red-brown.** Decided: one step lighter, same textures, in `current/` (above). The bigger alternatives below are parked. On screen the base Dirt slot measured about (120, 102, 83) next to grass at (77, 94, 62). CS2 draws its base Dirt layer under forest and scattered trees, so this slot covers far more ground than CS1's "ruined" texture did. Parked v2 options (`node look/tools/export-v2.mjs`, `look/textures/v2/`):
-
-| File | For panel field | Mean RGB (albedo) | Idea |
-|---|---|---|---|
-| `Dirt-forestfloor_BaseColor.png` | Dirt Diffuse | 83, 84, 58 | **recommended:** 60 % Seychelles grass + 40 % Springwood ruined, ×1.8. An olive-brown forest floor, closest to CS1's forest-tinted grass |
-| `Dirt-lighter_BaseColor.png` | Dirt Diffuse | 129, 115, 99 | the same ruined texture, ×2.2, 20 % desaturated: light, less red soil |
-| `Extra3-lighter_BaseColor.png` | Extra 3 Diffuse (brush Dirt) | 113, 101, 92 | Seychelles gravel ×2.4, 25 % desaturated: grey-tan gravel/scree for N2, N5, N7 and N9 |
-
-gain16 for comparison: Dirt 96, 83, 68; Extra3 77, 67, 58. Swap the Diffuse files only; the matching `_Normal.png` files are in the same folder.
+The Extra slots reuse the grass tiling (`TerrainMaterialSystem` binds `_TerrainExtraTextureTiling` from `m_TerrainGrassTiling`). Extra3/Extra4 use the grass brush's blend (`m_Extra3/4SplatRange` 0.35, `m_Extra3/4BlurDepth` 0.22; owner, 2026-10-22: the defaults painted "too rectangular" edges).
 
 ## Terrain material slots (Dry / Lush / Dirt / Sand) and "DesertTerrainRenderingSettings"
 
