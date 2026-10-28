@@ -63,6 +63,13 @@ Order (converter `out/ROUND6.md`): network → power, walls, ship paths → wate
 - Resources visible in the editor's resource overlay where CS1 had cornfields.
 - Peaks: no flat 1024 m plateaus left; no seam at the playable/world-map edge.
 
+## Next game start: world map 10270758 review (owner + orchestrator)
+
+1. You: start the game, Map → Load the latest Dakota Falls save, tell the orchestrator when the editor is on it.
+2. Orchestrator, by computer use: Terrain tab → Import World Map → `10270758-dktflls-1to1_worldmap.png` (Height Scale stays 2048; the playable map is untouched; no re-run of the import). Then `bash next-run/shots-worldmap-30.sh` and send the shots.
+3. What to judge against 10201622: the divide range running south-east between the east river valley and the main river (ridge 158 m above the floors, 11.9 km long, flanks about 2.4 km); the two flat-topped buttes east of the border (115–117 m); seam at the border still 46 m with no step; water line held (0 km² below 93 m outside the beds). Knobs if you want more: a different `--seed` draws another ridge length and cluster, `--hills` lower frees room for a third butte; `--upland-height` cannot raise the range (the rivers are only 7 km apart).
+4. Accept → save the map again (the world map lives in the save). Reject → re-import `10201622` is gone from the folder; hmap-ext rebuilds it with `--uplands` off on request.
+
 ## Publishing (only after the owner accepts run A)
 
 Done by hand in the editor's Map Inspector, then "Share map"; nothing here is automated yet.
