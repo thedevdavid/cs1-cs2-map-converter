@@ -2,7 +2,7 @@
   "mcpServers": {
     "cs2": {
       "command": "node",
-      "args": ["D:\\work\\mods\\csl2-editor\\cs2mcp\\mcp-server\\dist\\index.js"],
+      "args": ["D:\\work\\mods\\cs\\csl2-editor\\cs2mcp\\mcp-server\\dist\\index.js"],
       "env": {
         "CS2_BRIDGE_URL": "http://127.0.0.1:8642"
       }

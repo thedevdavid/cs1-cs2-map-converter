@@ -59,9 +59,9 @@ Facts worth knowing before you approve:
 
 ## B. Register CS2MCP with this coding agent (needs approval, same reason: edits `.claude.json`)
 
-Option 1 (project scope, no global change): add `.mcp.json` to `D:\work\mods\csl2-editor` registering `cs2` as `node D:\work\mods\csl2-editor\cs2mcp\mcp-server\dist\index.js`. Claude Code asks for trust once.
+Option 1 (project scope, no global change): add `.mcp.json` to `D:\work\mods\cs\csl2-editor` registering `cs2` as `node D:\work\mods\cs\csl2-editor\cs2mcp\mcp-server\dist\index.js`. Claude Code asks for trust once.
 
-Option 2 (user scope): `claude mcp add --scope user cs2 -- node D:\work\mods\csl2-editor\cs2mcp\mcp-server\dist\index.js`.
+Option 2 (user scope): `claude mcp add --scope user cs2 -- node D:\work\mods\cs\csl2-editor\cs2mcp\mcp-server\dist\index.js`.
 
 I recommend option 1. Either way the tools only answer while the game runs with the CS2MCP mod enabled (bridge on `127.0.0.1:8642`).
 
