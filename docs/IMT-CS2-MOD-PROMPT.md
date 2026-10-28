@@ -1,26 +1,11 @@
-Build a Cities: Skylines II mod that draws custom road markings, grown from the simplest thing that works toward an Intersection Marking Tool equivalent. Load the skills `reverse-engineer-anything` and `cs2-modding:*` first.
+I want a Cities: Skylines II mod for custom road markings, eventually something like CS1's Intersection Marking Tool, but built up from the simplest thing that works.
 
-## 1. REA the game's own markings
+Start by reverse-engineering the game's own marking systems with REA on Game.dll: how lane lines, crosswalks, stop lines and arrows are defined, generated and rendered; how decal objects are placed, rendered and saved; how area surfaces are drawn on terrain; and what each needs serialised to survive save and load. From that, rank the ways to draw a thin white line along an arbitrary curve, easiest first.
 
-Open `Game.dll` (`…\Cities Skylines II\Cities2_Data\Managed\`) with the REA tools and find, with decompiled evidence:
+Then get one hard-coded solid white line onto a road, visible in the editor and in game, surviving save and load. Make it dashed, then coloured.
 
-- Where lane lines, crosswalks, stop lines and arrows come from: the lane / lane-marking prefabs and components in `Game.Net` and `Game.Prefabs`, the systems that generate their geometry, and the rendering path in `Game.Rendering` that puts them on the road surface.
-- How decal-type `ObjectPrefab`s are placed, rendered and saved, and whether a decal can be stretched or repeated along a curve.
-- How `Game.Areas` surfaces are triangulated and rendered on terrain.
-- What is serialised for each, so a created entity survives save and load.
+Then a tool: click two points on a road, get a line, with width, colour and dash settings, and a way to delete it.
 
-Write `docs/REA.md`: one page per mechanism (type names, system order, the smallest component set an entity needs), ending with a ranked list of routes for "a 10 cm white line along an arbitrary curve", easiest first.
+Only once that is solid, grow toward IMT: lines snapped to lane edges at junctions, fillers, guardrails along curves, import and export of a marking set.
 
-## 2. One line on the road
-
-Using the easiest route: a mod with one debug hotkey that draws a solid white line between two hard-coded points on a road, visible in the editor and in game, surviving save and load. Screenshot as proof. Then dashed, then coloured.
-
-## 3. A marking tool
-
-Click two points on a road to get a line; settings for width, colour, dash pattern; click a line to delete it. Data model: a list of polylines with a style. UI via the game's tool panel conventions.
-
-## 4. Toward IMT
-
-In order, each only after the previous is solid: lines snapped to lane edges at a junction (IMT's "points"), fillers (chevron, stripe, solid polygon), guardrails along a curve (fence props or a net lane object, whichever step 1 showed works), JSON import/export of a marking set.
-
-Stop after each step with a short report and wait for a go.
+Stop after each part and show me before continuing.
