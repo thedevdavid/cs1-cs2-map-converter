@@ -1,1 +1,0 @@
-{"buildingsChecked":100,"objectsInLoop":0,"buildings":[],"note":"PreventOverride objects whose position lies inside a top-level building's prefab geometry bounds (rotated): OverrideSystem and Anarchy's PreventOverrideSystem update them every frame. Remove them (/build/demolish-area) or re-import with options.skipInsideBuildings."}

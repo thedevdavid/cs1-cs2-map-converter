@@ -1,1 +1,0 @@
-{"name":"dam-deck","options":{"heightMode":"absolute","bypassValidation":true,"nodesFirst":true,"batchSize":16},"nodes":[{"id":"d1","x":1440,"y":172,"z":4673,"elevation":0},{"id":"d2","x":1576,"y":172,"z":4694,"elevation":0}],"edges":[{"id":"dam_deck","a":"d1","b":"d2","prefab":"Hydroelectric_Power_Plant_01 Dam","elevation":[0,0]}]}
